@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maxime Droux</title>
+  <style>
+    :root {
+      --bg: #0f1220;
+      --bg-soft: #171a2e;
+      --text: #e9ecf5;
+      --muted: #a2a8c0;
+      --accent: #6c8cff;
+      --accent-2: #59e6c3;
+      --card: rgba(255, 255, 255, 0.04);
+      --border: rgba(255, 255, 255, 0.08);
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f7f8fc;
+        --bg-soft: #ffffff;
+        --text: #1a1d2e;
+        --muted: #5a6076;
+        --accent: #3b5bff;
+        --accent-2: #10a37f;
+        --card: rgba(0, 0, 0, 0.03);
+        --border: rgba(0, 0, 0, 0.08);
+      }
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .hero {
+      min-height: 60vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 1.5rem 3rem;
+      background:
+        radial-gradient(900px 400px at 50% -10%, rgba(108, 140, 255, 0.25), transparent 60%),
+        radial-gradient(700px 350px at 80% 20%, rgba(89, 230, 195, 0.18), transparent 60%);
+    }
+
+    .avatar {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.6rem;
+      font-weight: 700;
+      color: #fff;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 12px 40px rgba(108, 140, 255, 0.35);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 6vw, 3.2rem);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero .tagline {
+      color: var(--muted);
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      max-width: 640px;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-top: 1.4rem;
+      padding: 0.4rem 0.9rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--card);
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    .card {
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .card h2 {
+      font-size: 1.15rem;
+      margin-bottom: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .card p { color: var(--muted); }
+
+    .card p .fill {
+      color: var(--accent);
+      border-bottom: 1px dashed var(--accent);
+      cursor: help;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .grid .item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem 1.1rem;
+    }
+
+    .grid .item strong { display: block; margin-bottom: 0.15rem; }
+    .grid .item span { color: var(--muted); font-size: 0.9rem; }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+
+    .links a {
+      text-decoration: none;
+      color: var(--text);
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 0.55rem 1rem;
+      border-radius: 10px;
+      font-size: 0.92rem;
+      transition: transform 0.15s ease, border-color 0.15s ease;
+    }
+
+    .links a:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.82rem;
+      padding: 2rem 1.5rem 3rem;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="avatar">MD</div>
+    <h1>Maxime Droux</h1>
+    <p class="tagline">Building at Climb Ventures — and learning to code, one commit at a time.</p>
+    <span class="badge">🌱 New to code &amp; loving it</span>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>👋 About me</h2>
+      <p>
+        Hi! I'm Maxime. I work at <strong>Climb Ventures</strong>, and I'm
+        currently exploring the world of software — starting with tools like
+        Claude Code. <span class="fill" title="Edit me!">This is a placeholder — tell me more and I'll fill it in.</span>
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>🧭 Quick facts</h2>
+      <div class="grid">
+        <div class="item">
+          <strong>Role</strong>
+          <span class="fill" title="Edit me!">Add your role</span>
+        </div>
+        <div class="item">
+          <strong>Company</strong>
+          <span>Climb Ventures</span>
+        </div>
+        <div class="item">
+          <strong>Based in</strong>
+          <span class="fill" title="Edit me!">Add your city</span>
+        </div>
+        <div class="item">
+          <strong>Currently learning</strong>
+          <span>Coding &amp; Claude Code</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>✨ What I'm into</h2>
+      <p class="fill" title="Edit me!">
+        A few interests or things you're passionate about go here — ventures,
+        hobbies, whatever you'd like people to know.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>🔗 Find me</h2>
+      <div class="links">
+        <a href="mailto:md@climbventures.com">✉️ Email</a>
+        <a href="https://github.com/maximedroux55-hue">💻 GitHub</a>
+        <a href="#" class="fill" title="Edit me!">Add a link</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Made with Claude Code · <span class="fill" title="Edit me!">Your first webpage 🎉</span>
+  </footer>
+</body>
+</html>
