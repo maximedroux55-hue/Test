@@ -5,320 +5,268 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Max Droux</title>
   <style>
-    /* ---- Brand tokens: change --accent to your Climb brand color ---- */
+    /* ---- Climb Ventures brand tokens ---- */
     :root {
-      --bg: #f6f5f1;
-      --panel: #ffffff;
-      --ink: #14161a;
-      --ink-soft: #565b64;
-      --line: rgba(20, 22, 26, 0.10);
-      --accent: #1f3a5f;      /* deep navy, swap for your brand hex */
-      --accent-soft: rgba(31, 58, 95, 0.08);
-      --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
-      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --green: #46b96a;
+      --green-dark: #37a85b;
+      --green-soft: rgba(70, 185, 106, 0.12);
+      --green-ring: rgba(70, 185, 106, 0.35);
+      --ink: #1b2430;
+      --ink-soft: #5b6472;
+      --bg: #f6f8f7;
+      --card: #ffffff;
+      --line: #e6eae8;
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", Roboto, Helvetica, Arial, sans-serif;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
 
     body {
       font-family: var(--sans);
       background: var(--bg);
       color: var(--ink);
-      line-height: 1.65;
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
 
-    .wrap { max-width: 940px; margin: 0 auto; padding: 0 2rem; }
-
-    .label {
-      font-size: 0.72rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--ink-soft);
-      font-weight: 600;
-    }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 0 1.25rem; }
 
     /* ---- Top bar ---- */
     .topbar {
+      background: rgba(246, 248, 247, 0.9);
+      backdrop-filter: saturate(150%) blur(8px);
       border-bottom: 1px solid var(--line);
-      background: rgba(246, 245, 241, 0.85);
-      backdrop-filter: saturate(140%) blur(8px);
-      position: sticky;
-      top: 0;
-      z-index: 10;
+      position: sticky; top: 0; z-index: 20;
     }
     .topbar .wrap {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 66px;
     }
-    .brand {
-      font-family: var(--serif);
-      font-size: 1.15rem;
-      font-weight: 600;
-      letter-spacing: 0.01em;
+    .wordmark {
+      font-size: 1.5rem; font-weight: 800; letter-spacing: -0.03em; color: var(--ink);
     }
-    .brand .dot { color: var(--accent); }
-    .nav { display: flex; gap: 1.6rem; }
-    .nav a {
-      color: var(--ink-soft);
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: color 0.15s ease;
+    .wordmark .dot { color: var(--green); }
+    .top-links { display: flex; align-items: center; gap: 0.6rem; }
+    .icon-btn {
+      width: 38px; height: 38px; border-radius: 9px;
+      display: inline-flex; align-items: center; justify-content: center;
+      text-decoration: none; font-weight: 700; font-size: 0.9rem;
+      border: 1px solid var(--line); background: var(--card); color: var(--ink-soft);
+      transition: all 0.15s ease;
     }
-    .nav a:hover { color: var(--ink); }
-    @media (max-width: 620px) { .nav { display: none; } }
+    .icon-btn:hover { border-color: var(--green); color: var(--green); }
+    .icon-btn.li { background: #0a66c2; color: #fff; border-color: #0a66c2; }
 
-    /* ---- Hero ---- */
-    .hero { padding: 6.5rem 0 5rem; }
-    .hero .eyebrow { margin-bottom: 1.6rem; display: inline-block; }
-    .hero h1 {
-      font-family: var(--serif);
-      font-weight: 600;
-      font-size: clamp(2.6rem, 7vw, 4.6rem);
-      line-height: 1.04;
-      letter-spacing: -0.015em;
-      margin-bottom: 1.4rem;
+    /* ---- Profile hero card ---- */
+    .hero { padding: 3rem 0 1.5rem; }
+    .profile-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 2.6rem 2rem 2.2rem;
+      text-align: center;
+      box-shadow: 0 10px 40px rgba(27, 36, 48, 0.05);
     }
-    .hero h1 em {
-      font-style: italic;
-      color: var(--accent);
+    .avatar {
+      width: 116px; height: 116px; border-radius: 50%;
+      margin: 0 auto 1.3rem;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.5rem; font-weight: 800; color: var(--green-dark);
+      background: var(--green-soft);
+      border: 3px solid var(--green-ring);
     }
-    .hero .lead {
-      font-size: clamp(1.05rem, 2.2vw, 1.3rem);
-      color: var(--ink-soft);
-      max-width: 46ch;
+    .profile-card h1 { font-size: 1.9rem; font-weight: 800; letter-spacing: -0.02em; }
+    .profile-card .role { color: var(--green); font-weight: 600; font-size: 1.1rem; margin-top: 0.15rem; }
+    .pill {
+      display: inline-block; margin-top: 0.9rem;
+      background: var(--green); color: #fff;
+      font-size: 0.82rem; font-weight: 600;
+      padding: 0.4rem 1rem; border-radius: 999px;
     }
-    .meta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2.2rem;
-      margin-top: 2.8rem;
-      padding-top: 2rem;
-      border-top: 1px solid var(--line);
+    .profile-card .blurb {
+      color: var(--ink-soft); font-size: 1.02rem;
+      max-width: 44ch; margin: 1.3rem auto 0;
     }
-    .meta-row .cell .label { display: block; margin-bottom: 0.35rem; }
-    .meta-row .cell .val { font-family: var(--serif); font-size: 1.05rem; }
+    .bullets {
+      list-style: none; text-align: left;
+      max-width: 30ch; margin: 1.6rem auto 0;
+      display: flex; flex-direction: column; gap: 0.7rem;
+    }
+    .bullets li { position: relative; padding-left: 1.4rem; color: var(--ink); }
+    .bullets li::before {
+      content: ""; position: absolute; left: 0; top: 0.55em;
+      width: 7px; height: 7px; border-radius: 50%; background: var(--green);
+    }
+    .connect {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      margin-top: 1.8rem;
+      text-decoration: none; font-weight: 600; font-size: 0.98rem;
+      color: var(--green-dark);
+      border: 1.5px solid var(--green-ring); border-radius: 12px;
+      padding: 0.7rem 1.5rem; background: var(--card);
+      transition: all 0.15s ease;
+    }
+    .connect:hover { background: var(--green-soft); border-color: var(--green); }
 
-    /* ---- Section scaffold ---- */
-    section.block { padding: 4rem 0; border-top: 1px solid var(--line); }
-    .block-head { margin-bottom: 2.2rem; }
-    .block-head .label { display: block; margin-bottom: 0.7rem; }
-    .block-head h2 {
-      font-family: var(--serif);
-      font-weight: 600;
-      font-size: clamp(1.7rem, 4vw, 2.4rem);
-      letter-spacing: -0.01em;
+    /* ---- Content cards ---- */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 1.9rem 1.8rem;
+      margin-top: 1.25rem;
+      box-shadow: 0 8px 30px rgba(27, 36, 48, 0.04);
     }
-    .prose p { font-size: 1.08rem; color: var(--ink-soft); max-width: 62ch; }
-    .prose p + p { margin-top: 1.1rem; }
-    .prose strong { color: var(--ink); font-weight: 600; }
+    .card-label {
+      font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+      font-weight: 700; color: var(--green);
+    }
+    .card h2 { font-size: 1.35rem; font-weight: 800; letter-spacing: -0.01em; margin: 0.5rem 0 1.1rem; }
+    .card p { color: var(--ink-soft); }
+    .card p + p { margin-top: 0.9rem; }
+    .card p strong { color: var(--ink); font-weight: 600; }
 
-    /* ---- Experience list ---- */
-    .exp { display: flex; flex-direction: column; }
-    .exp .row {
-      display: grid;
-      grid-template-columns: 160px 1fr;
-      gap: 1.5rem;
-      padding: 1.5rem 0;
-      border-top: 1px solid var(--line);
-      align-items: baseline;
+    /* ---- Experience ---- */
+    .exp-row {
+      padding: 1.1rem 0; border-top: 1px solid var(--line);
+      display: grid; grid-template-columns: 130px 1fr; gap: 1rem; align-items: baseline;
     }
-    .exp .row:first-child { border-top: none; }
-    .exp .when { font-family: var(--serif); color: var(--accent); font-size: 1rem; }
-    .exp .role-t { font-size: 1.15rem; font-weight: 600; margin-bottom: 0.2rem; }
-    .exp .role-d { color: var(--ink-soft); font-size: 0.98rem; }
-    @media (max-width: 620px) {
-      .exp .row { grid-template-columns: 1fr; gap: 0.4rem; }
-    }
+    .exp-row:first-of-type { border-top: none; padding-top: 0; }
+    .exp-when { color: var(--green-dark); font-weight: 600; font-size: 0.92rem; }
+    .exp-title { font-weight: 700; }
+    .exp-desc { color: var(--ink-soft); font-size: 0.95rem; margin-top: 0.15rem; }
+    @media (max-width: 560px) { .exp-row { grid-template-columns: 1fr; gap: 0.3rem; } }
 
     /* ---- Facts ---- */
-    .facts {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 1px;
-      background: var(--line);
-      border: 1px solid var(--line);
-      border-radius: 6px;
-      overflow: hidden;
-    }
-    .facts .fact { background: var(--panel); padding: 1.5rem; }
-    .facts .fact .label { display: block; margin-bottom: 0.55rem; }
-    .facts .fact .big { font-family: var(--serif); font-size: 1.15rem; }
+    .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.9rem; }
+    .fact { background: var(--green-soft); border-radius: 14px; padding: 1.1rem 1.2rem; }
+    .fact .k { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--green-dark); font-weight: 700; }
+    .fact .v { font-weight: 700; margin-top: 0.3rem; }
 
     /* ---- Contact ---- */
-    .contact { display: flex; flex-wrap: wrap; gap: 0.9rem; margin-top: 1.8rem; }
-    .contact a {
-      text-decoration: none;
-      color: var(--ink);
-      border: 1px solid var(--line);
-      background: var(--panel);
-      padding: 0.7rem 1.3rem;
-      border-radius: 999px;
-      font-size: 0.95rem;
-      transition: border-color 0.15s ease, color 0.15s ease;
+    .contact-links { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 0.4rem; }
+    .contact-links a {
+      text-decoration: none; color: var(--ink); font-weight: 600; font-size: 0.95rem;
+      border: 1px solid var(--line); border-radius: 11px; padding: 0.65rem 1.2rem;
+      background: var(--card); transition: all 0.15s ease;
     }
-    .contact a:hover { border-color: var(--accent); color: var(--accent); }
+    .contact-links a:hover { border-color: var(--green); color: var(--green-dark); }
 
-    footer {
-      border-top: 1px solid var(--line);
-      padding: 2.5rem 0;
-      color: var(--ink-soft);
-      font-size: 0.85rem;
-    }
-    footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
+    footer { text-align: center; color: var(--ink-soft); font-size: 0.82rem; padding: 2.5rem 0 3rem; }
+    footer .dot { color: var(--green); }
   </style>
 </head>
 <body>
   <div class="topbar">
     <div class="wrap">
-      <span class="brand">Max Droux<span class="dot">.</span></span>
-      <nav class="nav">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <span class="wordmark">Max<span class="dot">.</span></span>
+      <div class="top-links">
+        <a class="icon-btn li" href="https://www.linkedin.com/in/YOUR-LINKEDIN-HANDLE" title="LinkedIn">in</a>
+        <a class="icon-btn" href="https://github.com/maximedroux55-hue" title="GitHub">GH</a>
+      </div>
     </div>
   </div>
 
   <header class="hero">
     <div class="wrap">
-      <span class="eyebrow label">General Partner, Climb Ventures SA</span>
-      <h1>Backing Swiss<br /><em>DeepTech</em> scale-ups.</h1>
-      <p class="lead">
-        Venture investor and operator. Co-founder of Talent.com. I help
-        world-class Swiss research become companies built to scale globally.
-      </p>
-
-      <div class="meta-row">
-        <div class="cell">
-          <span class="label">Based in</span>
-          <span class="val">Lutry, Vaud 🇨🇭</span>
-        </div>
-        <div class="cell">
-          <span class="label">Languages</span>
-          <span class="val">FR · EN · ES</span>
-        </div>
-        <div class="cell">
-          <span class="label">Focus</span>
-          <span class="val">Swiss DeepTech</span>
-        </div>
+      <div class="profile-card">
+        <div class="avatar">MD</div>
+        <h1>Maxime Droux</h1>
+        <div class="role">General Partner, Climb Ventures</div>
+        <span class="pill">Entrepreneur · Investor</span>
+        <p class="blurb">
+          Accomplished business leader with experience building and scaling
+          technology companies, now backing Swiss DeepTech scale-ups.
+        </p>
+        <ul class="bullets">
+          <li>Serial entrepreneur with multiple exits</li>
+          <li>From $0 to $100M in revenue</li>
+          <li>Scaled to 78 countries over 13 years</li>
+        </ul>
+        <a class="connect" href="https://www.linkedin.com/in/YOUR-LINKEDIN-HANDLE">
+          <span>in</span> Connect
+        </a>
       </div>
     </div>
   </header>
 
-  <section class="block" id="about">
-    <div class="wrap">
-      <div class="block-head">
-        <span class="label">About</span>
-        <h2>Patient capital for Swiss deep technology.</h2>
-      </div>
-      <div class="prose">
-        <p>
-          I am a General Partner at <strong>Climb Ventures SA</strong>, a
-          Geneva-based, FINMA-authorized venture capital firm focused on Swiss
-          DeepTech scale-ups. My work centers on capital-efficient companies
-          turning Swiss research into global businesses.
-        </p>
-        <p>
-          Climb backs a focused set of Swiss DeepTech scale-ups, pairing patient
-          capital with hands-on support to help category-defining companies scale
-          globally from Switzerland.
-        </p>
-        <p>
-          Before venture, I co-founded <strong>Talent.com</strong> (formerly
-          neuvoo) in Montreal and served as co-CEO, growing it over 13 years into
-          a global recruitment platform. Earlier in my career I worked in finance
-          in London.
-        </p>
-      </div>
-    </div>
-  </section>
+  <main class="wrap">
+    <section class="card" id="about">
+      <span class="card-label">About</span>
+      <h2>Patient capital for Swiss deep technology</h2>
+      <p>
+        I am a General Partner at <strong>Climb Ventures SA</strong>, a
+        Geneva-based, FINMA-authorized venture capital firm focused on Swiss
+        DeepTech scale-ups. Climb backs a focused set of companies, pairing
+        patient capital with hands-on support to help world-class Swiss research
+        become businesses built to scale globally.
+      </p>
+      <p>
+        Before venture, I co-founded <strong>Talent.com</strong> (formerly
+        neuvoo) in Montreal and served as co-CEO, growing it over 13 years into a
+        global recruitment platform. Earlier in my career I worked in finance in
+        London.
+      </p>
+    </section>
 
-  <section class="block" id="experience">
-    <div class="wrap">
-      <div class="block-head">
-        <span class="label">Experience</span>
-        <h2>A path from operator to investor.</h2>
-      </div>
-      <div class="exp">
-        <div class="row">
-          <span class="when">Present</span>
-          <div>
-            <div class="role-t">General Partner, Climb Ventures SA</div>
-            <div class="role-d">Swiss DeepTech venture capital. Geneva, Switzerland.</div>
-          </div>
-        </div>
-        <div class="row">
-          <span class="when">2011 to 2024</span>
-          <div>
-            <div class="role-t">Co-founder &amp; Co-CEO, Talent.com</div>
-            <div class="role-d">Scaled to 100M+ revenue, 500 employees, 78 countries over 13 years.</div>
-          </div>
-        </div>
-        <div class="row">
-          <span class="when">Present</span>
-          <div>
-            <div class="role-t">Board Member, HC Fribourg-Gottéron</div>
-            <div class="role-d">Mandate over the business, digital, and branding department.</div>
-          </div>
-        </div>
-        <div class="row">
-          <span class="when">Earlier</span>
-          <div>
-            <div class="role-t">Finance, London</div>
-            <div class="role-d">UBS and MAN GLG.</div>
-          </div>
+    <section class="card" id="experience">
+      <span class="card-label">Experience</span>
+      <h2>From operator to investor</h2>
+      <div class="exp-row">
+        <span class="exp-when">Present</span>
+        <div>
+          <div class="exp-title">General Partner, Climb Ventures SA</div>
+          <div class="exp-desc">Swiss DeepTech venture capital. Geneva, Switzerland.</div>
         </div>
       </div>
-    </div>
-  </section>
+      <div class="exp-row">
+        <span class="exp-when">2011 to 2024</span>
+        <div>
+          <div class="exp-title">Co-founder &amp; Co-CEO, Talent.com</div>
+          <div class="exp-desc">Scaled to 100M+ revenue, 500 employees, 78 countries.</div>
+        </div>
+      </div>
+      <div class="exp-row">
+        <span class="exp-when">Present</span>
+        <div>
+          <div class="exp-title">Board Member, HC Fribourg-Gottéron</div>
+          <div class="exp-desc">Mandate over business, digital, and branding.</div>
+        </div>
+      </div>
+      <div class="exp-row">
+        <span class="exp-when">Earlier</span>
+        <div>
+          <div class="exp-title">Finance, London</div>
+          <div class="exp-desc">UBS and MAN GLG.</div>
+        </div>
+      </div>
+    </section>
 
-  <section class="block">
-    <div class="wrap">
+    <section class="card">
+      <span class="card-label">At a glance</span>
+      <h2>Quick facts</h2>
       <div class="facts">
-        <div class="fact">
-          <span class="label">Firm</span>
-          <span class="big">Climb Ventures SA</span>
-        </div>
-        <div class="fact">
-          <span class="label">Focus</span>
-          <span class="big">Swiss DeepTech scale-ups</span>
-        </div>
-        <div class="fact">
-          <span class="label">Founded</span>
-          <span class="big">Talent.com, 2011</span>
-        </div>
-        <div class="fact">
-          <span class="label">Languages</span>
-          <span class="big">French · English · Spanish</span>
-        </div>
+        <div class="fact"><div class="k">Firm</div><div class="v">Climb Ventures SA</div></div>
+        <div class="fact"><div class="k">Focus</div><div class="v">Swiss DeepTech</div></div>
+        <div class="fact"><div class="k">Based</div><div class="v">Lutry, Vaud 🇨🇭</div></div>
+        <div class="fact"><div class="k">Languages</div><div class="v">FR · EN · ES</div></div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="block" id="contact">
-    <div class="wrap">
-      <div class="block-head">
-        <span class="label">Contact</span>
-        <h2>Get in touch.</h2>
-      </div>
-      <div class="contact">
+    <section class="card" id="contact">
+      <span class="card-label">Contact</span>
+      <h2>Get in touch</h2>
+      <div class="contact-links">
         <a href="mailto:md@climbventures.com">Email</a>
         <a href="https://www.linkedin.com/in/YOUR-LINKEDIN-HANDLE">LinkedIn</a>
         <a href="https://github.com/maximedroux55-hue">GitHub</a>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer>
-    <div class="wrap">
-      <span>Max Droux</span>
-      <span>Built with Claude Code</span>
-    </div>
+    Maxime Droux <span class="dot">·</span> Built with Claude Code
   </footer>
 </body>
 </html>
