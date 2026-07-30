@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Maxime Droux</title>
+  <title>Max Droux</title>
   <style>
     :root {
       --bg: #0f1220;
@@ -40,7 +40,7 @@
     }
 
     .hero {
-      min-height: 60vh;
+      min-height: 62vh;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -70,24 +70,37 @@
     .hero h1 {
       font-size: clamp(2rem, 6vw, 3.2rem);
       letter-spacing: -0.02em;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero .role {
+      color: var(--text);
+      font-size: clamp(1.05rem, 2.6vw, 1.3rem);
+      font-weight: 600;
     }
 
     .hero .tagline {
       color: var(--muted);
-      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      font-size: clamp(0.95rem, 2.3vw, 1.1rem);
       max-width: 640px;
+      margin-top: 0.5rem;
     }
 
-    .badge {
-      display: inline-block;
-      margin-top: 1.4rem;
-      padding: 0.4rem 0.9rem;
+    .flags {
+      margin-top: 1.3rem;
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .flags span {
+      padding: 0.35rem 0.85rem;
       border: 1px solid var(--border);
       border-radius: 999px;
       background: var(--card);
       color: var(--muted);
-      font-size: 0.85rem;
+      font-size: 0.82rem;
     }
 
     main {
@@ -113,12 +126,32 @@
     }
 
     .card p { color: var(--muted); }
+    .card p + p { margin-top: 0.8rem; }
+    .card strong { color: var(--text); }
 
-    .card p .fill {
-      color: var(--accent);
-      border-bottom: 1px dashed var(--accent);
-      cursor: help;
+    .timeline {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
     }
+
+    .timeline li {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .timeline .when {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding-top: 0.1rem;
+    }
+
+    .timeline .what strong { display: block; }
+    .timeline .what span { color: var(--muted); font-size: 0.92rem; }
 
     .grid {
       display: grid;
@@ -170,63 +203,91 @@
 <body>
   <header class="hero">
     <div class="avatar">MD</div>
-    <h1>Maxime Droux</h1>
-    <p class="tagline">Building at Climb Ventures — and learning to code, one commit at a time.</p>
-    <span class="badge">🌱 New to code &amp; loving it</span>
+    <h1>Max Droux</h1>
+    <p class="role">General Partner, Climb Ventures SA</p>
+    <p class="tagline">Backing Swiss DeepTech scale-ups. Co-founder of Talent.com.</p>
+    <div class="flags">
+      <span>🇨🇭 Based in Lutry, Vaud</span>
+      <span>🗣️ FR · EN · ES</span>
+    </div>
   </header>
 
   <main>
     <section class="card">
-      <h2>👋 About me</h2>
+      <h2>👋 About</h2>
       <p>
-        Hi! I'm Maxime. I work at <strong>Climb Ventures</strong>, and I'm
-        currently exploring the world of software — starting with tools like
-        Claude Code. <span class="fill" title="Edit me!">This is a placeholder — tell me more and I'll fill it in.</span>
+        I am a General Partner at <strong>Climb Ventures SA</strong>, a Geneva-based,
+        FINMA-authorized venture capital firm focused on Swiss DeepTech scale-ups.
+        My work centers on capital-efficient companies turning Swiss research into
+        global businesses.
+      </p>
+      <p>
+        Before venture, I co-founded <strong>Talent.com</strong> (formerly neuvoo)
+        in Montreal and served as co-CEO, growing it over 13 years into a global
+        recruitment platform. Earlier in my career I worked in finance in London.
       </p>
     </section>
 
     <section class="card">
-      <h2>🧭 Quick facts</h2>
+      <h2>🧭 Journey</h2>
+      <ul class="timeline">
+        <li>
+          <span class="when">Now</span>
+          <span class="what">
+            <strong>General Partner, Climb Ventures SA</strong>
+            <span>Swiss DeepTech venture capital, Geneva.</span>
+          </span>
+        </li>
+        <li>
+          <span class="when">2011 to 2024</span>
+          <span class="what">
+            <strong>Co-founder &amp; Co-CEO, Talent.com</strong>
+            <span>Scaled to 100M+ revenue, 500 employees, 78 countries.</span>
+          </span>
+        </li>
+        <li>
+          <span class="when">Earlier</span>
+          <span class="what">
+            <strong>Finance, London</strong>
+            <span>UBS and MAN GLG.</span>
+          </span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>⚡ At a glance</h2>
       <div class="grid">
         <div class="item">
-          <strong>Role</strong>
-          <span class="fill" title="Edit me!">Add your role</span>
+          <strong>Focus</strong>
+          <span>Swiss DeepTech scale-ups</span>
         </div>
         <div class="item">
-          <strong>Company</strong>
-          <span>Climb Ventures</span>
+          <strong>Firm</strong>
+          <span>Climb Ventures SA, Geneva</span>
         </div>
         <div class="item">
-          <strong>Based in</strong>
-          <span class="fill" title="Edit me!">Add your city</span>
+          <strong>Board</strong>
+          <span>HC Fribourg-Gottéron</span>
         </div>
         <div class="item">
-          <strong>Currently learning</strong>
-          <span>Coding &amp; Claude Code</span>
+          <strong>Languages</strong>
+          <span>French, English, Spanish</span>
         </div>
       </div>
     </section>
 
     <section class="card">
-      <h2>✨ What I'm into</h2>
-      <p class="fill" title="Edit me!">
-        A few interests or things you're passionate about go here — ventures,
-        hobbies, whatever you'd like people to know.
-      </p>
-    </section>
-
-    <section class="card">
-      <h2>🔗 Find me</h2>
+      <h2>🔗 Get in touch</h2>
       <div class="links">
         <a href="mailto:md@climbventures.com">✉️ Email</a>
         <a href="https://github.com/maximedroux55-hue">💻 GitHub</a>
-        <a href="#" class="fill" title="Edit me!">Add a link</a>
       </div>
     </section>
   </main>
 
   <footer>
-    Made with Claude Code · <span class="fill" title="Edit me!">Your first webpage 🎉</span>
+    Built with Claude Code.
   </footer>
 </body>
 </html>
