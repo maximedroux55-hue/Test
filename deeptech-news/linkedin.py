@@ -1,36 +1,47 @@
 """Turn ranked articles into Climb Ventures LinkedIn post drafts.
 
-These follow Max's Climb LinkedIn rules: a catchy title, emoji-formatted
-bullet points (never a bullet without an emoji), a Swiss flag on any summary
-that mentions Switzerland, a subtle nod to Climb's capital-efficient Swiss
-DeepTech positioning, a short and grounded tone, and no long dashes. Three
-layouts are rotated so a batch of posts does not look templated.
+Each draft follows Max's real posting structure (Monchau style):
 
-Important: these are *drafts to review*, not finished posts. Because the tool
-reads RSS feeds (not full article text), summaries are kept short and factual.
-For richer, fully written summaries, wire in the Claude API (see README).
+    🇨🇭 punchy headline (about 6 to 8 words)
+
+    A 1 to 2 sentence body giving context and the news, with @mentions.
+
+    Why it matters:
+    <emoji> market or ecosystem impact
+    🇨🇭 the Swiss advantage or competitive angle
+    <emoji> the broader implication or what it enables
+
+    source link
+
+Rules honored: Swiss flag emoji on the headline and the Swiss bullet, emoji on
+every bullet, no long dashes, a subtle nod to Climb's capital-efficient Swiss
+DeepTech positioning, no hashtags.
+
+These are drafts to review. Because the tool reads RSS feeds (not full article
+text), the template posts are structured scaffolds. With an ANTHROPIC_API_KEY
+set, the posts are instead written in Max's voice by Claude (see ai_writer.py).
 """
 
 import html
 import re
 
-# Topic detection: keyword -> (label, emoji, hashtag)
+# Topic detection: keyword -> (label, emoji)
 _TOPICS = [
-    ("quantum", ("Quantum", "⚛️", "#Quantum")),
-    ("semiconductor", ("Semiconductors", "\U0001f50c", "#Semiconductors")),
-    ("photonics", ("Photonics", "\U0001f4a1", "#Photonics")),
-    ("chip", ("Chips", "\U0001f50c", "#Semiconductors")),
-    ("robot", ("Robotics", "\U0001f916", "#Robotics")),
-    ("biotech", ("Biotech", "\U0001f9ec", "#Biotech")),
-    ("medtech", ("MedTech", "\U0001fa7a", "#MedTech")),
-    ("cleantech", ("Cleantech", "\U0001f331", "#Cleantech")),
-    ("climate", ("Climate tech", "\U0001f331", "#ClimateTech")),
-    ("energy", ("Energy", "⚡", "#Energy")),
-    ("nanotech", ("Nanotech", "\U0001f52c", "#Nanotech")),
-    ("fusion", ("Fusion", "☀️", "#Fusion")),
-    ("artificial intelligence", ("AI", "\U0001f9e0", "#AI")),
-    ("machine learning", ("AI", "\U0001f9e0", "#AI")),
-    (" ai ", ("AI", "\U0001f9e0", "#AI")),
+    ("quantum", ("Quantum", "⚛️")),
+    ("semiconductor", ("Semiconductors", "\U0001f50c")),
+    ("photonics", ("Photonics", "\U0001f4a1")),
+    ("chip", ("Chips", "\U0001f50c")),
+    ("robot", ("Robotics", "\U0001f916")),
+    ("biotech", ("Biotech", "\U0001f9ec")),
+    ("medtech", ("MedTech", "\U0001fa7a")),
+    ("cleantech", ("Cleantech", "\U0001f331")),
+    ("climate", ("Climate tech", "\U0001f331")),
+    ("energy", ("Energy", "⚡")),
+    ("nanotech", ("Nanotech", "\U0001f52c")),
+    ("fusion", ("Fusion", "☀️")),
+    ("artificial intelligence", ("AI", "\U0001f9e0")),
+    ("machine learning", ("AI", "\U0001f9e0")),
+    (" ai ", ("AI", "\U0001f9e0")),
 ]
 
 _SWISS_CITIES = [
@@ -38,39 +49,89 @@ _SWISS_CITIES = [
     "Lugano", "Sion", "Fribourg", "Neuchâtel", "St. Gallen", "Winterthur",
 ]
 
-# Rotating closing lines that reinforce Climb's positioning without hype.
-_CLOSERS = [
-    "At Climb, this is the Swiss DeepTech we back: world-class research, built to scale globally and capital-efficiently.",
-    "Exactly the capital-efficient Swiss DeepTech thesis we are building at Climb.",
-    "Another data point for the Swiss DeepTech story we back at Climb.",
-    "This is why we invest in Swiss DeepTech at Climb: deep science, lean capital, global ambition.",
-]
+_FLAG = "\U0001f1e8\U0001f1ed"  # Swiss flag
 
-# Topic-driven catchy headlines (pooled so a batch varies).
-_HEADLINES = {
-    "funding": [
-        "Swiss deep tech keeps drawing serious capital.",
-        "Another Swiss deep-tech raise worth watching.",
-        "Capital is following Swiss deep science.",
-    ],
-    "quantum": [
-        "Switzerland's quantum bench keeps getting deeper.",
-        "Swiss quantum is quietly compounding.",
-    ],
-    "chip": [
-        "Swiss silicon is having a moment.",
-        "The Swiss semiconductor story keeps building.",
-    ],
-    "research": [
-        "Swiss labs keep turning research into companies.",
-        "From the lab bench to a business, the Swiss way.",
-    ],
-    "generic": [
-        "Swiss deep tech, quietly building the future.",
-        "Another sign of Switzerland's deep-tech momentum.",
-        "Swiss DeepTech is compounding, one breakthrough at a time.",
-    ],
+# "Why it matters" content, grouped by topic bucket. Each bucket gives a body
+# significance line and three bullets: market impact, Swiss advantage (leads
+# with the flag), and broader implication.
+_BUCKETS = {
+    "quantum": {
+        "sig": "It is another sign that Swiss quantum and photonics research is edging toward commercial products.",
+        "market": "\U0001f4c8 Photonics is one of the rare quantum fields with a credible near-term path to revenue.",
+        "swiss": f"{_FLAG} Switzerland's strength in precision engineering and optics gives its quantum spinouts a real head start.",
+        "broader": "\U0001f9ed Deep science on a lean capital plan is exactly the Swiss DeepTech we look for at Climb.",
+    },
+    "chips": {
+        "sig": "Swiss semiconductor work keeps turning academic research into industrial capability.",
+        "market": "\U0001f4c8 Semiconductors sit under almost every growth market, from AI to defense to mobility.",
+        "swiss": f"{_FLAG} Switzerland punches above its weight in specialised chips and advanced materials.",
+        "broader": "\U0001f9ed Capital-efficient hardware built on Swiss research is core to the Climb thesis.",
+    },
+    "bio": {
+        "sig": "Mechanism-level biology is where tomorrow's therapeutics quietly begin.",
+        "market": "\U0001f4c8 Early biological insight compounds into products years before anyone names a company.",
+        "swiss": f"{_FLAG} Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.",
+        "broader": "\U0001f9ed Patient capital behind rigorous science is what turns Swiss labs into global businesses.",
+    },
+    "robotics": {
+        "sig": "Swiss robotics and applied AI keep moving from demo to deployment.",
+        "market": "\U0001f4c8 Automation is shifting from pilots to real commercial operations.",
+        "swiss": f"{_FLAG} Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.",
+        "broader": "\U0001f9ed Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.",
+    },
+    "clean": {
+        "sig": "Swiss cleantech keeps pairing serious science with real-world deployment.",
+        "market": "\U0001f4c8 Energy and climate hardware is moving from subsidy toward genuine demand.",
+        "swiss": f"{_FLAG} Switzerland combines deep materials science with disciplined engineering.",
+        "broader": "\U0001f9ed Capital-efficient climate hardware fits squarely in the Climb thesis.",
+    },
+    "generic": {
+        "sig": "It is another data point in Switzerland's steady deep-tech build-out.",
+        "market": "\U0001f4c8 Deep technology is where durable, defensible companies get built.",
+        "swiss": f"{_FLAG} Switzerland turns world-class research into companies with unusual consistency.",
+        "broader": "\U0001f9ed Backing that research early and capital-efficiently is what we do at Climb.",
+    },
 }
+
+
+def _bucket_for(label: str) -> str:
+    label = label.lower()
+    if label in ("quantum", "photonics"):
+        return "quantum"
+    if label in ("chips", "semiconductors"):
+        return "chips"
+    if label in ("biotech", "medtech"):
+        return "bio"
+    if label in ("robotics", "ai"):
+        return "robotics"
+    if label in ("cleantech", "climate tech", "energy", "fusion", "nanotech"):
+        return "clean"
+    return "generic"
+
+
+def _topic(text: str):
+    low = f" {text.lower()} "
+    for key, val in _TOPICS:
+        if key in low:
+            return val
+    return ("DeepTech", "\U0001f680")
+
+
+def _city(text: str):
+    for city in _SWISS_CITIES:
+        if city.lower() in text.lower():
+            return city
+    return None
+
+
+def _funding(text: str):
+    m = re.search(r"(chf|usd|eur|\$|€)\s?\d[\d'.,]*\s?(m|million|bn|billion)?",
+                  text, re.IGNORECASE)
+    if m:
+        return m.group(0).strip()
+    m = re.search(r"\d[\d'.,]*\s?(million|billion)\s?(francs|dollars|euros)?",
+                  text, re.IGNORECASE)
+    return m.group(0).strip() if m else None
 
 
 def _clean(text: str) -> str:
@@ -79,7 +140,7 @@ def _clean(text: str) -> str:
     return re.sub(r"\s+", " ", text).strip()
 
 
-def _first_sentences(text: str, max_len: int = 240) -> str:
+def _first_sentences(text: str, max_len: int = 300) -> str:
     text = _clean(text)
     if not text:
         return ""
@@ -96,12 +157,7 @@ def _norm(text: str) -> str:
 
 
 def _usable_summary(raw: str, title: str) -> str:
-    """Return a clean summary, or '' when the feed gives only boilerplate.
-
-    Google News descriptions are usually HTML lists of related links rather
-    than a real summary. We detect that and skip the summary line, leaving a
-    clean draft built from the headline and structured bullets.
-    """
+    """Return a clean summary, or '' when the feed gives only boilerplate."""
     if not raw:
         return ""
     if "<ol" in raw or "<li" in raw or raw.count("<a ") > 1:
@@ -109,121 +165,73 @@ def _usable_summary(raw: str, title: str) -> str:
     summary = _first_sentences(raw)
     if not summary:
         return ""
-    # If the "summary" is really just the headline again, drop it.
     if _norm(summary)[:60] == _norm(title)[:60]:
         return ""
     return summary
 
 
-def _topic(text: str):
-    low = f" {text.lower()} "
-    for key, val in _TOPICS:
-        if key in low:
-            return val
-    return ("DeepTech", "\U0001f680", "#DeepTech")
-
-
-def _city(text: str):
-    for city in _SWISS_CITIES:
-        if city.lower() in text.lower():
-            return city
-    return None
-
-
-def _funding(text: str):
-    m = re.search(r"(chf|usd|eur|\$|€)\s?\d[\d'.,]*\s?(m|million|bn|billion)?",
-                  text, re.IGNORECASE)
-    if m:
-        return m.group(0).strip().upper().replace("MILLION", "million")
-    m = re.search(r"\d[\d'.,]*\s?(million|billion)\s?(francs|dollars|euros)?",
-                  text, re.IGNORECASE)
-    return m.group(0).strip() if m else None
-
-
-def _headline_pool(text: str) -> list:
-    low = text.lower()
-    if any(w in low for w in ("raise", "raised", "funding", "round", "seed", "series", "million")):
-        return _HEADLINES["funding"]
-    if "quantum" in low:
-        return _HEADLINES["quantum"]
-    if "chip" in low or "semiconductor" in low:
-        return _HEADLINES["chip"]
-    if any(w in low for w in ("epfl", "eth", "empa", "research", "spin")):
-        return _HEADLINES["research"]
-    return _HEADLINES["generic"]
+def _headline(clean_title: str) -> str:
+    """A short, punchy headline for the opening line (kept from the real title)."""
+    h = clean_title.strip()
+    if len(h) > 72:
+        h = h[:69].rsplit(" ", 1)[0] + "..."
+    return h
 
 
 def build_post(article: dict, index: int) -> str:
-    """Build one LinkedIn draft. `index` rotates headline and layout choices."""
+    """Build one structured LinkedIn draft (template fallback)."""
     title = article["title"]
-    # Google News appends " - Publisher" to titles; drop it for cleanliness.
     clean_title = re.sub(r"\s+[-|]\s+[^-|]+$", "", title).strip() or title
     combined = f"{title} {article.get('summary', '')}"
 
-    label, emoji, hashtag = _topic(combined)
+    label, _emoji = _topic(combined)
+    bucket = _BUCKETS[_bucket_for(label)]
     city = _city(combined)
     funding = _funding(combined)
-    pool = _headline_pool(combined)
-    headline = pool[index % len(pool)]
-    closer = _CLOSERS[index % len(_CLOSERS)]
 
+    # 1. Opening line: Swiss flag + punchy headline.
+    opening = f"{_FLAG} {_headline(clean_title)}"
+
+    # 2. Body: prefer a real summary; otherwise a grounded templated sentence.
+    where = f" in {city}" if city else ""
+    deal = f" The round is reported at {funding}." if funding else ""
     summary = _usable_summary(article.get("summary", ""), clean_title)
-    flag = "\U0001f1e8\U0001f1ed "
-    mentions_swiss = bool(re.search(r"swiss|switzerland", f"{combined} {summary}", re.IGNORECASE))
-    # Swiss flag at the start of a summary that mentions Switzerland.
-    summary_line = (f"{flag}{summary}" if (summary and mentions_swiss) else summary)
-
-    # Emoji bullets (rule: never a bullet without an emoji).
-    bullets = [f"{emoji} Focus: {label}"]
-    if city:
-        bullets.append(f"\U0001f4cd Where: {city}")
-    if funding:
-        bullets.append(f"\U0001f4b0 Deal: {funding}")
-    bullets.append(f"\U0001f517 Source: {article['publisher']}")
-    bullets_block = "\n".join(bullets)
-
-    tags = f"#DeepTech #Switzerland #VentureCapital #ClimbVentures {hashtag}"
-
-    # Three rotating layouts so a batch does not look templated. Each omits the
-    # summary line cleanly when the feed gave no usable summary.
-    layout = index % 3
-    if layout == 0:
-        s = f"{summary_line}\n\n" if summary_line else ""
-        body = (
-            f"\U0001f680 {headline}\n\n"
-            f"{clean_title}\n\n"
-            f"{s}"
-            f"{bullets_block}\n\n"
-            f"{closer}\n\n"
-            f"Read more: {article['link']}\n\n{tags}"
-        )
-    elif layout == 1:
-        s = f"{summary_line}\n\n" if summary_line else ""
-        body = (
-            f"{headline} {flag}\n\n"
-            f"{bullets_block}\n\n"
-            f"{s}"
-            f"{clean_title}\n{article['link']}\n\n"
-            f"{closer}\n\n{tags}"
-        )
+    if summary:
+        body = f"{summary}{deal}"
+        # Swiss flag at the start of a real summary that names Switzerland
+        # (the opening headline already carries the flag on templated bodies).
+        if re.search(r"swiss|switzerland", body, re.IGNORECASE) and not body.startswith(_FLAG):
+            body = f"{_FLAG} {body}"
     else:
-        s = f"{summary_line}\n\n" if summary_line else ""
         body = (
-            f"{s}"
-            f"\U0001f4cc {clean_title}\n\n"
-            f"Why it matters:\n"
-            f"{bullets_block}\n\n"
-            f"{closer}\n\n"
-            f"\U0001f517 {article['link']}\n\n{tags}"
+            f"{article['publisher']} covers the story{where}. {bucket['sig']}{deal}"
         )
-    return body
+
+    # 3 and 4. Why it matters, three bullets, no blank lines between them.
+    market = bucket["market"]
+    if funding:
+        market = f"\U0001f4b0 Capital keeps following Swiss deep science, this time at {funding}."
+
+    parts = [
+        opening,
+        "",
+        body,
+        "",
+        "Why it matters:",
+        market,
+        bucket["swiss"],
+        bucket["broader"],
+        "",
+        article["link"],
+    ]
+    return "\n".join(parts)
 
 
 def to_linkedin(articles: list, days: int, top: int = 6) -> str:
     """Return a Markdown file of the top LinkedIn post drafts.
 
     Uses Claude to write the posts in Max's voice when an ANTHROPIC_API_KEY is
-    available; otherwise falls back to the built-in templates.
+    available; otherwise falls back to the built-in structured templates.
     """
     import datetime as dt
     from ai_writer import generate_posts

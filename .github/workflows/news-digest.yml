@@ -2,21 +2,22 @@ name: Swiss DeepTech news digest
 
 # Two ways to run:
 #  1. Manually: Actions tab -> "Swiss DeepTech news digest" -> "Run workflow".
-#  2. Automatically: every Monday morning (for the weekly roundup).
+#  2. Automatically: every morning, so fresh drafts are ready before 8am.
 on:
   workflow_dispatch:
     inputs:
       days:
         description: "How many days back to look"
-        default: "7"
+        default: "3"
       min_score:
         description: "Minimum relevance score"
         default: "4"
       limit:
         description: "Maximum number of stories"
-        default: "25"
+        default: "10"
   schedule:
-    - cron: "0 6 * * 1"  # Mondays 06:00 UTC (about 08:00 in Switzerland)
+    # 05:00 UTC daily (about 07:00 in Switzerland), an hour before posting time.
+    - cron: "0 5 * * *"
 
 permissions:
   contents: write
@@ -44,9 +45,9 @@ jobs:
         run: |
           cd deeptech-news
           python scraper.py \
-            --days "${{ github.event.inputs.days || '7' }}" \
+            --days "${{ github.event.inputs.days || '3' }}" \
             --min-score "${{ github.event.inputs.min_score || '4' }}" \
-            --limit "${{ github.event.inputs.limit || '25' }}"
+            --limit "${{ github.event.inputs.limit || '10' }}"
 
       - name: Upload digest (Markdown + HTML)
         uses: actions/upload-artifact@v4

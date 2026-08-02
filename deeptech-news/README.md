@@ -33,9 +33,10 @@ python scraper.py --min-score 6        # stricter relevance filter
 Output is written to `output/`:
 
 - `digest-YYYY-MM-DD.md` and `.html` — the ranked list of stories.
-- `linkedin-YYYY-MM-DD.md` — ready-to-edit Climb Ventures LinkedIn drafts for
-  the top stories (catchy title, emoji bullets, Swiss flag on Swiss summaries,
-  Climb positioning, varied layouts).
+- `linkedin-YYYY-MM-DD.md` — ready-to-edit Climb Ventures LinkedIn drafts,
+  structured the way Max posts: a Swiss-flag headline, a short body with
+  @mentions, a "Why it matters:" section with three bullets (market impact,
+  Swiss advantage, broader implication), and the source link.
 
 > The LinkedIn drafts are a strong starting point, not final copy. Because the
 > tool reads RSS feeds rather than full article text, review and polish each
