@@ -244,6 +244,10 @@ COWORK_PROMPT = (
 # Cowork prompt always agree.
 POST_TIME = "08:00"
 
+# The Cloudflare Worker that triggers a fresh run when the page button is tapped.
+# It holds the GitHub token; the page only pings this URL.
+RUN_URL = "https://md-news-button.maxime-droux55.workers.dev/"
+
 
 def build_posts(articles: list, days: int, top: int = 7):
     """Build the week's posts once. Returns (records, mode).
@@ -383,6 +387,14 @@ def render_plan_html(records: list, mode: str, days: int) -> str:
   h1 {{ font-size:1.6rem; letter-spacing:-0.02em; }}
   h1 .dot {{ color:var(--green); }}
   .sub {{ color:var(--soft); margin:0.4rem 0 1.5rem; font-size:0.9rem; }}
+  .runbox {{ margin-bottom:1.5rem; }}
+  .runbtn {{ width:100%; background:var(--green); color:#fff; border:0;
+            border-radius:12px; padding:0.9rem 1rem; font-size:1rem; font-weight:700;
+            cursor:pointer; }}
+  .runbtn:active {{ transform:scale(0.99); }}
+  .runbtn:disabled {{ opacity:0.55; cursor:default; }}
+  .runstatus {{ margin-top:0.5rem; font-size:0.85rem; color:var(--soft);
+               text-align:center; }}
   .cowork {{ background:#fff; border:1px solid var(--line); border-radius:14px;
             padding:1rem; margin-bottom:1.8rem; }}
   .cowork h2 {{ font-size:1rem; margin-bottom:0.5rem; }}
@@ -413,6 +425,11 @@ def render_plan_html(records: list, mode: str, days: int) -> str:
   <h1>This week on LinkedIn<span class="dot">.</span></h1>
   <p class="sub">Generated {today} &middot; {len(records)} posts, one per day &middot; {esc(mode)}</p>
 
+  <div class="runbox">
+    <button id="runbtn" class="runbtn">&#8635; Generate this week's posts now</button>
+    <p id="runstatus" class="runstatus"></p>
+  </div>
+
   <div class="cowork">
     <h2>Publish with Claude Cowork</h2>
     <p>Copy this into Cowork to schedule the whole week in one go:</p>
@@ -432,6 +449,30 @@ def render_plan_html(records: list, mode: str, days: int) -> str:
     navigator.clipboard.writeText(pre.innerText).then(function() {{
       var old = btn.textContent; btn.textContent = 'Copied';
       setTimeout(function() {{ btn.textContent = old; }}, 1500);
+    }});
+  }}
+
+  var RUN_URL = "{RUN_URL}";
+  var runBtn = document.getElementById('runbtn');
+  if (runBtn) {{
+    runBtn.addEventListener('click', function() {{
+      var s = document.getElementById('runstatus');
+      runBtn.disabled = true;
+      s.textContent = 'Starting...';
+      fetch(RUN_URL, {{ method: 'POST' }})
+        .then(function(r) {{ return r.json(); }})
+        .then(function(d) {{
+          if (d && d.ok) {{
+            s.textContent = 'Started. Your new posts will be ready here in about 3 minutes. Refresh this page then.';
+          }} else {{
+            s.textContent = 'Could not start (error ' + ((d && d.status) || '?') + '). Try again in a moment.';
+            runBtn.disabled = false;
+          }}
+        }})
+        .catch(function() {{
+          s.textContent = 'Network error. Try again in a moment.';
+          runBtn.disabled = false;
+        }});
     }});
   }}
 </script>
