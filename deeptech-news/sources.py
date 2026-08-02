@@ -19,6 +19,12 @@ DIRECT_FEEDS = [
     ("EPFL News", "https://actu.epfl.ch/feeds/rss/mediacom/en/"),
     ("ETH Zurich News", "https://ethz.ch/en/news-and-events/eth-news.rss.xml"),
     ("SWI swissinfo (Business)", "https://www.swissinfo.ch/eng/business/rss"),
+
+    # Startupticker candidates (found in public feed lists). Keep the working
+    # one after a test run and remove the rest.
+    ("Startupticker", "https://www.startupticker.ch/en/rss/news.rss"),
+    ("Startupticker (news)", "https://www.startupticker.ch/en/news/rss-feed"),
+    ("Startupticker (feed)", "https://www.startupticker.ch/feed/"),
 ]
 
 
