@@ -4,119 +4,126 @@ _Generated 02 August 2026. 7 posts, one per day, from Swiss DeepTech news of the
 ## Post 1 — schedule for Monday 03 August
 
 ```
-🇨🇭 Swiss open AI infrastructure enters next phase
+🇨🇭 Swiss open AI infrastructure enters its next phase
 
-@EPFL has unveiled Apertus 1.5, the next iteration of Switzerland's open large language model effort, developed alongside @ETH Zurich and the national supercomputing infrastructure. The direction is clear: transparent weights, transparent data, sovereign compute.
+@EPFL has unveiled Apertus 1.5, the latest iteration of Switzerland's fully open large language model effort, built with @ETH Zurich and the national supercomputing infrastructure. Sovereign, transparent, and auditable by design.
 
 Why it matters:
-🧠 Open models compress the cost of building applied AI products, letting Swiss startups build on national infrastructure instead of renting closed APIs at foreign margins.
-🇨🇭 Switzerland's advantage is credibility: public research institutions, world-class compute, and a regulatory reputation that makes auditable AI a feature rather than a constraint for banks, hospitals, and industrials.
-🔓 The broader implication is a supply chain for European AI sovereignty, where the model layer becomes a public good and value accrues to the companies solving specific, hard problems on top of it.
+🌍 Open weights and open data pipelines lower the entry cost for every Swiss startup building applied AI, instead of renting intelligence from a handful of foreign platforms.
+🇨🇭 Switzerland is one of very few countries combining world-class research, public compute capacity, and a credible regulatory reputation. That trio is hard to replicate and it turns transparency into a commercial asset rather than a constraint.
+⚙️ The real unlock is downstream: regulated sectors (health, finance, industry) can now fine-tune on models whose provenance they can actually verify, which is exactly where European enterprise adoption has been stalling.
 
-We keep coming back to the same pattern in Swiss DeepTech: deep public research lowering the capital intensity of private company building. That is capital efficiency by design, not by austerity.
+A reminder that capital-efficient DeepTech often starts with shared public infrastructure, then compounds through the companies built on top of it.
 
 https://actu.epfl.ch/news/apertus-15-building-the-next-generation-of-open--2
 ```
+🖼️ **Article image:** https://actu.epfl.ch/image/165800/1440x810.jpg
 
 ## Post 2 — schedule for Tuesday 04 August
 
 ```
-🇨🇭 Rivers, cities, and the data underneath
+🇨🇭 Rivers as infrastructure, not just landscape
 
-New work from @EPFL examines how rivers have shaped the growth of cities and the structure of societies, connecting hydrology, urban form, and long-run development.
+New research from @EPFL examines how rivers have shaped the growth of cities and the organisation of societies, connecting hydrology, urban planning, and long-term resilience.
 
 Why it matters:
-🌊 Water infrastructure is becoming an investable category: flood modelling, sediment management, hydropower optimisation, and urban resilience all sit on the same scientific base.
-🇨🇭 Switzerland is Europe's water tower, with unmatched instrumentation of alpine catchments and decades of hydrological data, a natural advantage for companies building environmental sensing and simulation tools.
-💡 What it enables is a shift from descriptive research to decision tools, where municipalities, insurers, and utilities pay for models that quantify risk rather than reports that describe it.
+🏙️ Water systems sit upstream of energy, agriculture, insurance, and construction. Better models of river behaviour feed directly into a growing market for climate risk analytics and adaptive infrastructure design.
+🇨🇭 Switzerland is the water tower of Europe, with decades of hydrological data, alpine engineering expertise, and reinsurance capital concentrated in one small country. Few places can prototype and price water risk with that combination.
+🌊 Longer term, this kind of work turns environmental science into decision tools: where to build, what to reinforce, how to sequence investment over decades rather than quarters.
 
-We find that the most durable Swiss DeepTech companies often start from datasets and instruments that took public institutions decades to build. That head start is hard to replicate and cheap to commercialise.
+DeepTech is not only chips and qubits. Some of the most durable Swiss companies will come out of earth and environmental science, where the data moat takes generations to build.
 
 https://actu.epfl.ch/news/how-rivers-shape-cities-and-societies
 ```
+🖼️ **Article image:** https://actu.epfl.ch/image/164913/1440x810.jpg
 
 ## Post 3 — schedule for Wednesday 05 August
 
 ```
-🇨🇭 A lipid switch that stops anthrax
+🇨🇭 A molecular switch that stops anthrax
 
-Researchers at @EPFL have identified a lipid-based mechanism that blocks anthrax toxin from entering cells, a finding at the intersection of cell biology and infectious disease defence.
+Researchers at @EPFL have identified a lipid mechanism that blocks anthrax toxin from entering host cells, a finding with implications well beyond one pathogen.
 
 Why it matters:
-🧬 Host-directed approaches, targeting the cell rather than the pathogen, are attracting real pharma interest because they are harder for pathogens to evade through resistance.
-🇨🇭 Switzerland pairs fundamental cell biology of this calibre with one of the densest pharma and biotech clusters in the world, shortening the path from mechanism to licensing conversation.
-🛡️ Beyond anthrax, the broader implication touches biosecurity and countermeasure stockpiles, an area where public procurement budgets are expanding across Europe.
+🧬 Targeting the host pathway rather than the pathogen itself is a strategy that resists mutation, and it is attracting serious pharma interest as antimicrobial resistance worsens.
+🇨🇭 Swiss life sciences hold a rare adjacency: fundamental cell biology at @EPFL and @ETH Zurich sitting minutes away from global pharma operations and specialist CDMOs. Translation cycles are shorter here than the geography suggests.
+💡 If the lipid switch generalises to other toxin families, it opens a platform rather than a single asset, which is precisely the profile that supports capital-efficient biotech spinouts.
 
-Single-mechanism discoveries rarely make companies on their own. But platforms built on them can, and the Swiss model of translating lab insight into focused, lean spinouts remains one of the most capital-efficient routes we see in life sciences.
+Basic research rarely announces its commercial potential on day one. Our experience is that the Swiss ecosystem is unusually good at spotting it a few years later, and building disciplined companies around it.
 
 https://actu.epfl.ch/news/a-lipid-switch-that-blocks-anthrax
 ```
+🖼️ **Article image:** https://actu.epfl.ch/image/165737/1440x810.jpg
 
 ## Post 4 — schedule for Thursday 06 August
 
 ```
-🇨🇭 Quantum photonics crosses into commercial phase
+🇨🇭 Quantum photonics crosses into commercial territory
 
-@SEALSQ has announced the start of the commercial phase for its quantum photonics technology, moving from development into revenue-generating deployment.
+@SEALSQ has announced the start of the commercial phase of its quantum photonics technology, moving from development into revenue-generating deployment.
 
 Why it matters:
-📈 The gap between quantum demonstration and quantum revenue is where most of the sector stalls, so any credible commercial milestone resets expectations for the whole category.
-🇨🇭 Switzerland's semiconductor and photonics heritage, from precision manufacturing to secure chip design, gives local players a manufacturing base that pure software-side quantum firms lack.
-🔐 What this enables is practical post-quantum security in hardware, relevant to payments, identity, and critical infrastructure well before general-purpose quantum computers arrive.
+📈 The gap between quantum research and quantum revenue has been the sector's credibility problem. Companies reaching commercial phase reset expectations for the whole category, and for how investors underwrite it.
+🇨🇭 Switzerland already anchors the global quantum security stack, from post-quantum cryptography to secured semiconductors, with a trust premium that customers in defence, banking, and critical infrastructure genuinely pay for.
+🔐 Photonics is where quantum stops being a laboratory instrument and becomes a component: something that ships inside chips, networks, and identity systems at industrial volume.
 
-Commercialisation, not capability, is the binding constraint in deep tech. The companies that move first from physics to purchase orders tend to define the pricing and standards everyone else lives with.
+Commercialisation, not announcements, is the metric that matters in DeepTech. Watching Swiss teams convert deep physics into shipped product is the clearest sign this ecosystem is maturing.
 
 https://news.google.com/rss/articles/CBMiuwFBVV95cUxNSl9FXzd0MVRsMVMzMU1YYkVJMHJsZ0w3aS1wem5EZGhqZ2VSRS0tbW5Fb0NjMjBtcGFKNUJJaU0zeEdyeHVzdkpES0Q3Ym9QRGVLaV9NcWxIekRYX1JfUG9XT21FcGNvd3NIMW5idS1ubzRNZVZicHFvYWIxTEZDTEtJQUlSVmFGYVExeWRjbjl4RzNqZVBaWGw1REplSUpGNGIyX3RQa1AycWVTWXI2TThfQnVMNjMtVWhN?oc=5
 ```
+🖼️ **Article image:** none found, grab one from the article page.
 
 ## Post 5 — schedule for Friday 07 August
 
 ```
 🇨🇭 ZuriQ raises 25.5 million for 2D qubits
 
-@ZuriQ, the @ETH Zurich spinout, has raised 25.5 million dollars to scale its two-dimensional trapped-ion quantum architecture.
+@ZuriQ, the @ETH Zurich spinout, has closed a 25.5 million dollar round to scale its two-dimensional trapped-ion quantum architecture.
 
 Why it matters:
-💰 A round of this size at this stage signals that international investors are now underwriting Swiss quantum hardware, not just Swiss quantum research.
-🇨🇭 Trapped-ion work sits squarely in Switzerland's wheelhouse: ultra-high vacuum, precision optics, and control electronics, disciplines the domestic supplier base has served for decades.
-⚛️ Architecture choices made now determine who can scale qubit counts later, so backing a differentiated approach early is how a small country buys optionality in a strategic technology.
+💰 A round of this size at this stage signals that international investors are now underwriting Swiss quantum hardware, not just Swiss quantum research papers.
+🇨🇭 The Swiss advantage here is capital efficiency: world-class ion trap expertise, precision engineering suppliers next door, and teams that build working systems on budgets a Bay Area competitor would consider a seed round.
+⚛️ A 2D architecture matters because scaling qubit count is the bottleneck for the entire field. Solving geometry is how quantum computing moves from demonstration to useful machine.
 
-What stands out is the ratio of scientific ambition to capital raised. Swiss quantum teams tend to reach hardware milestones on budgets that would barely cover a US seed extension, which is precisely the profile that compounds well over a decade.
+Switzerland keeps producing hardware companies where the physics is genuinely differentiated and the burn stays disciplined. That combination is the reason we spend our time here.
 
-https://news.google.com/rss/articles/CBMingFBVV95cUxNWjJjNmduVEd4WWJpZnJicTBHMEhmVEhMcjNJWnRsd3JFdUZHWjFmRzBpanp6d0tqdTJPYk1Qb1l0ZFVUNy1LcHFWekJEV05oN0puVmk0ZGQ2SktEdlV5Q1FGdExCdEVvdkFoZHZDN0VsRkM4ZXZ4LUlxalE0ektFTkI2N1p6S1BvU1JtZFNrUDYtRUMwSlEyaVJ6MTh2UdIBowFBVV95cUxPWkstMWxFNS1pS1pKLTRTQzBmRTFFUVBsOEgyTmVNQ1ZiR3cxRGl4NnZfLXJCcG9pSF90T3RtUEctUWtBeUJYNXdLemhMWG9zT0FsNEZlUF9rc1ZOSzgzd00tV2otWDhVdGd6SVg4WlBoT2V3Vmh2SHFXUTI0M0I3TG4zNy11OFhhdmc2a3RRU1FKRWVGbXNPSlR2Qk5QWVhYbWk4?oc=5
+https://news.google.com/rss/articles/CBMinoFBVV95cUxNWjJjNmduVEd4WWJpZnJicTBHMEhmVEhMcjNJWnRsd3JFdUZHWjFmRzBpanp6d0tqdTJPYk1Qb1l0ZFVUNy1LcHFWekJEV05oN0puVmk0ZGQ2SktEdlV5Q1FGdExCdEVvdkFoZHZDN0VsRkM4ZXZ4LUlxalE0ektFTkI2N1p6S1BvU1JtZFNrUDYtRUMwSlEyaVJ6MTh2UdIBowFBVV95cUxPWkstMWxFNS1pS1pKLTRTQzBmRTFFUVBsOEgyTmVNQ1ZiR3cxRGl4NnZfLXJCcG9pSF90T3RtUEctUWtBeUJYNXdLemhMWG9zT0FsNEZlUF9rc1ZOSzgzd00tV2otWDhVdGd6SVg4WlBoT2V3Vmh2SHFXUTI0M0I3TG4zNy11OFhhdmc2a3RRU1FKRWVGbXNPSlR2Qk5QWVhYbWk4?oc=5
 ```
+🖼️ **Article image:** none found, grab one from the article page.
 
 ## Post 6 — schedule for Saturday 08 August
 
 ```
-🇨🇭 Swiss capital leans into semiconductor exposure
+🇨🇭 Swiss capital rotates toward semiconductors
 
-@Lombard Odier Investment Managers has disclosed a new position in @NXP Semiconductors, adding chip exposure to its Swiss-managed portfolios.
+@Lombard Odier Asset Management Switzerland has taken a new stake in @NXP Semiconductors, according to filings reported this week. A small signal, but a telling one.
 
 Why it matters:
-📊 Institutional allocation to semiconductors is a useful signal for founders: the public market appetite for hardware and chip value chains sets the tone for later-stage private rounds and exits.
-🇨🇭 Swiss asset managers sit on deep pools of long-duration capital, and the more they underwrite deep technology publicly, the more natural it becomes to fund it privately at home.
-🔗 The broader implication is a fuller domestic financing chain, from university spinout to growth round to listed comparable, which is what turns research strength into industrial outcomes.
+📊 Swiss institutional money is increasingly treating semiconductors as core infrastructure exposure rather than a cyclical trade, which gradually raises the ecosystem's fluency in hardware business models.
+🇨🇭 Switzerland has an underappreciated position in the chip value chain: precision manufacturing, photonics, packaging, sensing, and design talent from @EPFL and @ETH Zurich feeding both local startups and global players.
+🔗 Public market conviction usually precedes private market appetite. As allocators understand silicon economics, later-stage funding for Swiss hardware scale-ups becomes materially easier to assemble.
 
-The missing link in European DeepTech has rarely been science. It has been the scale-up capital between promising prototype and global market share. Movements like this, however incremental, point in the right direction.
+The missing piece in European DeepTech has rarely been science. It has been growth capital that understands long hardware cycles. Movements like this suggest that gap is slowly closing.
 
 https://news.google.com/rss/articles/CBMi6wFBVV95cUxObnlWMWVLR1EzWDJnYXJ5T19Ic09fQlBoVWEtVUw3M0U1RW1zS1RLUGEtbXNUbGJHWFc3YkZHRkNUblg4OUh5Sm9yVFRhZUdWZTl4RFlHbDRiRXdvaDg3RnpXV0JUdjcyZmtqaU1EUVVSY2EzMnh2aDFEMkZMTjhNSjBWMEUzS2pPci1kM0NvSGlRU1pPM3g2U0poMHB3QjVtTjF5VHF3WXBKSnJKWTRlN2FRVnpSMm9zS2RVQWcyaHllaWQtU21BNnc5Sy0xWVEwT2dTd3pNV3k2cFZmWnIzMXVyc3Y2SDEwa1dr?oc=5
 ```
+🖼️ **Article image:** none found, grab one from the article page.
 
 ## Post 7 — schedule for Sunday 09 August
 
 ```
-🇨🇭 Forbes puts a Swiss quantum enabler centre stage
+🇨🇭 Forbes puts a Swiss quantum player centre stage
 
-@Forbes profiles a Swiss start-up positioning itself as a key supplier to the global quantum computing industry, the layer that makes other people's machines work.
+@Forbes has profiled a Swiss start-up positioning itself to power the global quantum revolution, the latest sign that international media is treating Switzerland as a primary quantum hub.
 
 Why it matters:
-🏗️ Enabling technologies, cryogenics, control systems, lasers, and packaging, often capture value more reliably than the platforms they serve, because they sell to every competing architecture at once.
-🇨🇭 This is Switzerland's historical strength restated for a new industry: precision components and instrumentation exported worldwide, with margins protected by know-how rather than scale.
-🌍 What it enables is durable relevance regardless of which qubit modality wins, an unusually attractive risk profile in a field with genuine technical uncertainty.
+🌐 Visibility in outlets like this changes deal flow. It shortens the path to strategic customers, corporate partners, and the crossover investors who fund the scale-up phase.
+🇨🇭 The Swiss quantum stack is unusually complete: cryogenics, photonics, control electronics, error correction research, and cryptography, all within a two-hour train ride. Enabling layers, not just headline computers, are where durable margins tend to sit.
+⚡ Supplying the picks and shovels of quantum means revenue regardless of which computing architecture ultimately wins, a far more capital-efficient way to build in a field with long horizons.
 
-We pay close attention to companies selling picks and shovels into emerging deep tech markets. Revenue arrives earlier, customer concentration falls over time, and the capital required to reach it is a fraction of what platform plays demand.
+Switzerland does not need to win every quantum race. Being indispensable to all of them is the better strategy, and it plays directly to this country's engineering strengths.
 
 https://news.google.com/rss/articles/CBMiwAFBVV95cUxQWGdldHhla1hyRmVDanFPc0RpdDVvY290WTl4T01maURNTDNsNXhQNkMwX0c4Wk5INkJUNFhjYnhhRGIyUERJNUt4bW41LXVfa1FsNjVLUTd0UDdCdURrV0RCSm85aWFsYzVsTHk5TnBMRDY1ZU5mWm94ZHktR0FmcDhrejBoREhZWnlFQlpIMHNFVnpGSUR2OVNhaXN5OW8zSWdwLUltRWFrajY3WS1nNF9XSWhZLUhjdENGWl9vaDg?oc=5
 ```
+🖼️ **Article image:** none found, grab one from the article page.
 

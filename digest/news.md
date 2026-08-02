@@ -1,5 +1,5 @@
 # Swiss DeepTech news digest
-_Generated 02 August 2026, covering the last 10 days. 14 stories._
+_Generated 02 August 2026, covering the last 10 days. 13 stories._
 
 1. **[Apertus 1.5: Building the next generation of open AI infrastructure](https://actu.epfl.ch/news/apertus-15-building-the-next-generation-of-open--2)**  
    EPFL News · 24 Jul 2026 · relevance 20
@@ -15,17 +15,15 @@ _Generated 02 August 2026, covering the last 10 days. 14 stories._
    MarketBeat · 28 Jul 2026 · relevance 6
 7. **[Meet The Swiss Start-Up Hoping To Power The World’s Quantum Revolution - Forbes](https://news.google.com/rss/articles/CBMiwAFBVV95cUxQWGdldHhla1hyRmVDanFPc0RpdDVvY290WTl4T01maURNTDNsNXhQNkMwX0c4Wk5INkJUNFhjYnhhRGIyUERJNUt4bW41LXVfa1FsNjVLUTd0UDdCdURrV0RCSm85aWFsYzVsTHk5TnBMRDY1ZU5mWm94ZHktR0FmcDhrejBoREhZWnlFQlpIMHNFVnpGSUR2OVNhaXN5OW8zSWdwLUltRWFrajY3WS1nNF9XSWhZLUhjdENGWl9vaDg?oc=5)**  
    Forbes · 28 Jul 2026 · relevance 6
-8. **[SoftBank Targets Swiss Robotics Startup Gravis in Prospective $500M Acquisition - streamlinefeed.co.ke](https://news.google.com/rss/articles/CBMisgFBVV95cUxQWlFoRkFSR0ZOOW5EWGhQTUMwbnFlelZwTEEyUmdNT1FIWHdTRmF6cV9ob1VXa3Y2UjRQaUNyV1ZER19BWFRFWk9BSWVUakJ3Zm5GTzBHWjUzLVBJRkdqRmoxQlM2bFNsVWo5TFFqQjZ5d2VISU1QRkJxUjRNT25uSzNYUFdCbTgyNjVaSm5ZMktDaXpJRmFsWEt5aWhGUXFlRlo5SzJzLUlrbWNheEFSYzBR?oc=5)**  
-   streamlinefeed.co.ke · 24 Jul 2026 · relevance 6
-9. **[Swiss preventive health startup Ahead Health raises $10M for Germany and Netherlands launch - Tech Funding News](https://news.google.com/rss/articles/CBMikwFBVV95cUxNV2JqQ2R5UlVCcDhrYk12TU9NWHVGQU9XOWZia0U1Wi0zeDg1NDdIN3lMRlAxMS1wN0pwaDZ0QWN4TTBObDVfWmtSOTBzSUNDWlRPUDRfM0RFeHZCNHBlM3k0al91c2VTRnpCVlhHc29XaTJOZGs2M0NpX2RiTjA3ZlFUUjd0SEVQMWs2Z1d1ZEp6VTA?oc=5)**  
+8. **[Swiss preventive health startup Ahead Health raises $10M for Germany and Netherlands launch - Tech Funding News](https://news.google.com/rss/articles/CBMikwFBVV95cUxNV2JqQ2R5UlVCcDhrYk12TU9NWHVGQU9XOWZia0U1Wi0zeDg1NDdIN3lMRlAxMS1wN0pwaDZ0QWN4TTBObDVfWmtSOTBzSUNDWlRPUDRfM0RFeHZCNHBlM3k0al91c2VTRnpCVlhHc29XaTJOZGs2M0NpX2RiTjA3ZlFUUjd0SEVQMWs2Z1d1ZEp6VTA?oc=5)**  
    Tech Funding News · 30 Jul 2026 · relevance 5
-10. **[Four Swiss medtechs mark commercial, regulatory and clinical milestones - Startupticker.ch](https://news.google.com/rss/articles/CBMiqwFBVV95cUxQQ3FrWVRDSkp0OUhkRmdfVVBack9kZEdSY1RfRXNKdHJrRzlzODVFWTNqQ0ZBdWdpVS1hRWk2YnlyLVdHVzcwMjNzVy1lOHVQQlRZTmFaLXhhNnFHZFBYTVppM3ZEUFNJZmx3bXp5bWFTRk9aVWZGMW5QcGZWbmU1V2prNUVYYld3Ykd2bk1TaGlqMm1SN2RBRFQ0S1pPTm54Wkp6VVM2emt2YmM?oc=5)**  
+9. **[Four Swiss medtechs mark commercial, regulatory and clinical milestones - Startupticker.ch](https://news.google.com/rss/articles/CBMiqwFBVV95cUxQQ3FrWVRDSkp0OUhkRmdfVVBack9kZEdSY1RfRXNKdHJrRzlzODVFWTNqQ0ZBdWdpVS1hRWk2YnlyLVdHVzcwMjNzVy1lOHVQQlRZTmFaLXhhNnFHZFBYTVppM3ZEUFNJZmx3bXp5bWFTRk9aVWZGMW5QcGZWbmU1V2prNUVYYld3Ykd2bk1TaGlqMm1SN2RBRFQ0S1pPTm54Wkp6VVM2emt2YmM?oc=5)**  
    Startupticker.ch · 27 Jul 2026 · relevance 5
-11. **[Swiss startup AI Infrastructure Capital AG launches with €16 million to tackle AI compute bottleneck - EU-Startups](https://news.google.com/rss/articles/CBMi0wFBVV95cUxQSjZ3RkVCUFNxaHEwR0lCVGRfTXhxa0JTUUxzcHNyR0oxTDFkeEhUQzNrX0VHYXhwRUFFbXlyX3pIdHNiUFpPLVBlVllQQ2t0R3V3Zy04WTNfeW9ncGctNF9VNExyMENuMmQyV1lyYk9YVlJFQW1tNEYyaE4xN19zVDBjX0x1dkdZTWRVNTR2SU5GOGo2WmVIejdrajdVNEtza25hR1o2YkhxUmcxaXlCVnlTSFhOaC1RalptREgzSGMzWVhkSUF6dE1McGRNT2VZSTZj?oc=5)**  
+10. **[Swiss startup AI Infrastructure Capital AG launches with €16 million to tackle AI compute bottleneck - EU-Startups](https://news.google.com/rss/articles/CBMi0wFBVV95cUxQSjZ3RkVCUFNxaHEwR0lCVGRfTXhxa0JTUUxzcHNyR0oxTDFkeEhUQzNrX0VHYXhwRUFFbXlyX3pIdHNiUFpPLVBlVllQQ2t0R3V3Zy04WTNfeW9ncGctNF9VNExyMENuMmQyV1lyYk9YVlJFQW1tNEYyaE4xN19zVDBjX0x1dkdZTWRVNTR2SU5GOGo2WmVIejdrajdVNEtza25hR1o2YkhxUmcxaXlCVnlTSFhOaC1RalptREgzSGMzWVhkSUF6dE1McGRNT2VZSTZj?oc=5)**  
    EU-Startups · 30 Jul 2026 · relevance 4
-12. **[Technology And AI Talent Growth In Switzerland - menafn.com](https://news.google.com/rss/articles/CBMiggFBVV95cUxOWGhjMFU3WDFfRHkxV1FBVDZEYjAyRDVnV0s0VDV2R2kwX3RSaUpMYjJKeXVOVUpfeEJaZWg0b0VGdk5NUmlTUmRmY3NPOEdqVGFxd3ViNzNBZ2hBd1BRUkt3OGhrZEpfbUo1Ylc5OEZwMUtDZGN5MHNGdmxOZUdYTnZn?oc=5)**  
-   menafn.com · 30 Jul 2026 · relevance 4
-13. **[In AI arms race, Swiss neutrality is double-edged sword - SWI swissinfo.ch](https://news.google.com/rss/articles/CBMirAFBVV95cUxQOVNkR0M0NjB2eENDVXdYSmozRU8xMHp2cFFaUEtrM0xWNDlwWWtscE9aNzFuc0NHSGZnQXlUZFp5TFRXUlNwcDAwREJta0dGUFl3bWhmY0ZvRkRMQkQzZ3lTa0ZjMFAtZEJRM09VNEQyWGRUSVh4d1AySzk3bUZJb2JSMnZsVTgtTnNmX2czaGV5QnhySTJVajU2SmtHSHRDVDNLNEl2dkNmLThB?oc=5)**  
+11. **[Technology And AI Talent Growth In Switzerland - Menafn](https://news.google.com/rss/articles/CBMiggFBVV95cUxOWGhjMFU3WDFfRHkxV1FBVDZEYjAyRDVnV0s0VDV2R2kwX3RSaUpMYjJKeXVOVUpfeEJaZWg0b0VGdk5NUmlTUmRmY3NPOEdqVGFxd3ViNzNBZ2hBd1BRUkt3OGhrZEpfbUo1Ylc5OEZwMUtDZGN5MHNGdmxOZUdYTnZn?oc=5)**  
+   Menafn · 30 Jul 2026 · relevance 4
+12. **[In AI arms race, Swiss neutrality is double-edged sword - SWI swissinfo.ch](https://news.google.com/rss/articles/CBMirAFBVV95cUxQOVNkR0M0NjB2eENDVXdYSmozRU8xMHp2cFFaUEtrM0xWNDlwWWtscE9aNzFuc0NHSGZnQXlUZFp5TFRXUlNwcDAwREJta0dGUFl3bWhmY0ZvRkRMQkQzZ3lTa0ZjMFAtZEJRM09VNEQyWGRUSVh4d1AySzk3bUZJb2JSMnZsVTgtTnNmX2czaGV5QnhySTJVajU2SmtHSHRDVDNLNEl2dkNmLThB?oc=5)**  
    SWI swissinfo.ch · 30 Jul 2026 · relevance 4
-14. **[Swiss firms seek local cyber services as AI attacks evolve - Stock Titan](https://news.google.com/rss/articles/CBMioAFBVV95cUxPREVnZWtTUVptWEd6bnBnZzdZT0R2dHcyVm1XbHU1dThVRkVSd1dLbkhPSUo0S1JVdkwtOEFZSS03c05hUnNnX0NURzAxNGZFTmtUbkhzQUFrQVY0YjRuaFg2b1BFOVpKQ0xFeHBWVzZ6blc0ZmM5cnVtMUNrQnJ4SGJNeVN1cXpPczRsR1QwcUZpbjMySkF4bUp1MWpGQlFN?oc=5)**  
+13. **[Swiss firms seek local cyber services as AI attacks evolve - Stock Titan](https://news.google.com/rss/articles/CBMioAFBVV95cUxPREVnZWtTUVptWEd6bnBnZzdZT0R2dHcyVm1XbHU1dThVRkVSd1dLbkhPSUo0S1JVdkwtOEFZSS03c05hUnNnX0NURzAxNGZFTmtUbkhzQUFrQVY0YjRuaFg2b1BFOVpKQ0xFeHBWVzZ6blc0ZmM5cnVtMUNrQnJ4SGJNeVN1cXpPczRsR1QwcUZpbjMySkF4bUp1MWpGQlFN?oc=5)**  
    Stock Titan · 24 Jul 2026 · relevance 4
