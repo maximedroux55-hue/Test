@@ -1,5 +1,5 @@
 # Swiss DeepTech news digest
-_Generated 02 August 2026, covering the last 14 days. 19 stories._
+_Generated 02 August 2026, covering the last 14 days. 23 stories._
 
 1. **[Apertus 1.5: Building the next generation of open AI infrastructure](https://actu.epfl.ch/news/apertus-15-building-the-next-generation-of-open--2)**  
    EPFL News · 24 Jul 2026 · relevance 20
@@ -15,27 +15,35 @@ _Generated 02 August 2026, covering the last 14 days. 19 stories._
    Startupticker · 29 Jul 2026 · relevance 9
 7. **[Medyria raises CHF 3.5 million](https://www.startupticker.ch/en/news/medyria-raises-chf-3-5-million)**  
    Startupticker · 24 Jul 2026 · relevance 9
-8. **[CHF 150,000 from Venture Kick to scale autonomous fresh food deployments](https://www.startupticker.ch/en/news/chf-150-000-from-venture-kick-to-scale-autonomous-fresh-food-deployments)**  
+8. **[Revolut Customers Get Up to 12 Months of Free ChatGPT Go Access](https://fintechnews.ch/aifintech/revolut-openai-chatgpt-go-subscription/84829/)**  
+   Fintechnews Switzerland · 30 Jul 2026 · relevance 7
+9. **[NatWest Appoints Former Deutsche Bank Executive Triona O’Keeffe as Data Chief](https://fintechnews.ch/london/natwest-appoints-okeeffe-data-analytics-chief/84825/)**  
+   Fintechnews Switzerland · 30 Jul 2026 · relevance 7
+10. **[Cognizant Launches EMEA AI Unit to Move Enterprise Projects to Production](https://fintechnews.ch/aifintech/cognizant-emea-ai-unit-launch/84819/)**  
+   Fintechnews Switzerland · 29 Jul 2026 · relevance 7
+11. **[Trulioo Launches UBO Discovery Agent to Automate Ownership Verification](https://fintechnews.ch/aifintech/trulioo-ubo-discovery-agent-ai/84807/)**  
+   Fintechnews Switzerland · 28 Jul 2026 · relevance 7
+12. **[CHF 150,000 from Venture Kick to scale autonomous fresh food deployments](https://www.startupticker.ch/en/news/chf-150-000-from-venture-kick-to-scale-autonomous-fresh-food-deployments)**  
    Startupticker · 24 Jul 2026 · relevance 7
-9. **[Valuemize raises seven-figure pre-seed for product cost software](https://www.startupticker.ch/en/news/valuemize-raises-seven-figure-pre-seed-for-product-cost-software)**  
+13. **[Valuemize raises seven-figure pre-seed for product cost software](https://www.startupticker.ch/en/news/valuemize-raises-seven-figure-pre-seed-for-product-cost-software)**  
    Startupticker · 28 Jul 2026 · relevance 6
-10. **[England, the Middle East and India: Three start-ups are expanding with their digital solutions](https://www.startupticker.ch/en/news/england-the-middle-east-and-india-three-start-ups-are-expanding-with-their-digital-solutions)**  
+14. **[England, the Middle East and India: Three start-ups are expanding with their digital solutions](https://www.startupticker.ch/en/news/england-the-middle-east-and-india-three-start-ups-are-expanding-with-their-digital-solutions)**  
    Startupticker · 22 Jul 2026 · relevance 6
-11. **[Swiss Startup Aionic Labs selected for funding initiative by Germany's federal agency SPRIN-D](https://www.startupticker.ch/en/news/swiss-startup-aionic-labs-selected-for-funding-initiative-by-germany-s-federal-agency-sprin-d)**  
+15. **[Swiss Startup Aionic Labs selected for funding initiative by Germany's federal agency SPRIN-D](https://www.startupticker.ch/en/news/swiss-startup-aionic-labs-selected-for-funding-initiative-by-germany-s-federal-agency-sprin-d)**  
    Startupticker · 20 Jul 2026 · relevance 6
-12. **[Four Swiss medtechs mark commercial, regulatory and clinical milestones](https://www.startupticker.ch/en/news/four-swiss-medtechs-mark-commercial-regulatory-and-clinical-milestones)**  
+16. **[Four Swiss medtechs mark commercial, regulatory and clinical milestones](https://www.startupticker.ch/en/news/four-swiss-medtechs-mark-commercial-regulatory-and-clinical-milestones)**  
    Startupticker · 27 Jul 2026 · relevance 5
-13. **[KI-Startup Prodlane sammelt 4 Millionen Euro ein](https://www.startupticker.ch/en/news/ki-startup-prodlane-sammelt-4-millionen-euro-ein)**  
+17. **[KI-Startup Prodlane sammelt 4 Millionen Euro ein](https://www.startupticker.ch/en/news/ki-startup-prodlane-sammelt-4-millionen-euro-ein)**  
    Startupticker · 21 Jul 2026 · relevance 5
-14. **[Synhelion erhält Fördermittel für kommerzielle Demo-Anlage](https://www.startupticker.ch/en/news/synhelion-erhaelt-foerdermittel-fuer-kommerzielle-demo-anlage)**  
+18. **[Synhelion erhält Fördermittel für kommerzielle Demo-Anlage](https://www.startupticker.ch/en/news/synhelion-erhaelt-foerdermittel-fuer-kommerzielle-demo-anlage)**  
    Startupticker · 31 Jul 2026 · relevance 4
-15. **[PropTech AssetOS auf Wachstumskurs](https://www.startupticker.ch/en/news/proptech-assetos-auf-wachstumskurs)**  
+19. **[PropTech AssetOS auf Wachstumskurs](https://www.startupticker.ch/en/news/proptech-assetos-auf-wachstumskurs)**  
    Startupticker · 30 Jul 2026 · relevance 4
-16. **[Humboldt AI lanciert KI-Tool für den CV-Check im Schweizer Arbeitsmarkt](https://www.startupticker.ch/en/news/humboldt-ai-lanciert-ki-tool-fuer-den-cv-check-im-schweizer-arbeitsmarkt)**  
+20. **[Humboldt AI lanciert KI-Tool für den CV-Check im Schweizer Arbeitsmarkt](https://www.startupticker.ch/en/news/humboldt-ai-lanciert-ki-tool-fuer-den-cv-check-im-schweizer-arbeitsmarkt)**  
    Startupticker · 27 Jul 2026 · relevance 4
-17. **[Swiss founders in the global spotlight](https://www.startupticker.ch/en/news/swiss-founders-in-the-global-spotlight)**  
+21. **[Swiss founders in the global spotlight](https://www.startupticker.ch/en/news/swiss-founders-in-the-global-spotlight)**  
    Startupticker · 24 Jul 2026 · relevance 4
-18. **[SeasON Energy erhält Millionenfinanzierung für saisonale Energiespeicherung](https://www.startupticker.ch/en/news/cleantech-season-energy-erhaelt-millionenfinanzierung-fuer-saisonale-energiespeicherung)**  
+22. **[SeasON Energy erhält Millionenfinanzierung für saisonale Energiespeicherung](https://www.startupticker.ch/en/news/cleantech-season-energy-erhaelt-millionenfinanzierung-fuer-saisonale-energiespeicherung)**  
    Startupticker · 23 Jul 2026 · relevance 4
-19. **[Hilo closes Series B extension round to fuel US expansion](https://www.startupticker.ch/en/news/hilo-closes-series-b-extension-round-to-fuel-us-expansion)**  
+23. **[Hilo closes Series B extension round to fuel US expansion](https://www.startupticker.ch/en/news/hilo-closes-series-b-extension-round-to-fuel-us-expansion)**  
    Startupticker · 22 Jul 2026 · relevance 4
