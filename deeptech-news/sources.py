@@ -15,10 +15,21 @@ then run once and keep it only if the log does not mark it "skipped".
 # (name, url). All confirmed reachable in test runs. Startupticker is the
 # primary startup source; EPFL and ETH provide research and spinout news.
 DIRECT_FEEDS = [
+    # Confirmed working:
     ("Startupticker", "https://www.startupticker.ch/en/rss/news.rss"),
     ("EPFL News", "https://actu.epfl.ch/feeds/rss/mediacom/en/"),
     ("ETH Zurich News", "https://ethz.ch/en/news-and-events/eth-news.rss.xml"),
     ("SWI swissinfo (Business)", "https://www.swissinfo.ch/eng/business/rss"),
+
+    # New candidates (kept only if a test run shows they return items):
+    ("Fintechnews Switzerland", "https://fintechnews.ch/feed/"),
+    ("EU-Startups (Switzerland)", "https://www.eu-startups.com/tag/switzerland/feed/"),
+    ("Handelszeitung", "https://www.handelszeitung.ch/rss.xml"),
+    ("Cash", "https://www.cash.ch/rss"),
+    ("finews", "https://www.finews.ch/rss"),
+    ("CERN News", "https://home.cern/api/news/news/feed.rss"),
+    ("PSI News", "https://www.psi.ch/en/media/rss"),
+    ("University of Zurich", "https://www.news.uzh.ch/en.rss.html"),
 ]
 
 
