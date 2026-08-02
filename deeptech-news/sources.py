@@ -11,25 +11,35 @@ To add a source: append (name, url) below with the site's real RSS/Atom URL,
 then run once and keep it only if the log does not mark it "skipped".
 """
 
-# ---- Direct institutional and media feeds (Swiss research and startups) -------
-# (name, url). All confirmed reachable in test runs. Startupticker is the
-# primary startup source; EPFL and ETH provide research and spinout news.
+# ---- Feeds (Swiss research, startups, and Europe-wide tech) --------------------
+# (name, url). Two groups:
+#   1. Swiss-specific direct feeds (research institutions and Swiss startup press).
+#   2. Europe-wide tech feeds. These carry a lot of non-Swiss news, but the
+#      relevance scorer keeps only stories with a Swiss + DeepTech signal, so
+#      they act as extra Swiss deep-tech sources without the noise. Their
+#      WordPress /feed/ endpoints are also the least likely to be blocked.
+#
+# Feeds that are unreachable or empty are skipped automatically at run time, so a
+# wrong or retired URL never breaks a run. Keep an entry only if a run's log does
+# not mark it "skipped".
 DIRECT_FEEDS = [
-    # Confirmed working:
+    # --- Swiss research and institutions ---
     ("Startupticker", "https://www.startupticker.ch/en/rss/news.rss"),
     ("EPFL News", "https://actu.epfl.ch/feeds/rss/mediacom/en/"),
     ("ETH Zurich News", "https://ethz.ch/en/news-and-events/eth-news.rss.xml"),
-    ("SWI swissinfo (Business)", "https://www.swissinfo.ch/eng/business/rss"),
+    ("Empa Research", "https://www.empa.ch/web/empa/rss"),
+    ("Idiap Research Institute", "https://www.idiap.ch/en/rss.xml"),
 
-    # New candidates (kept only if a test run shows they return items):
+    # --- Swiss press ---
+    ("SWI swissinfo (Business)", "https://www.swissinfo.ch/eng/business/rss"),
     ("Fintechnews Switzerland", "https://fintechnews.ch/feed/"),
-    ("EU-Startups (Switzerland)", "https://www.eu-startups.com/tag/switzerland/feed/"),
-    ("Handelszeitung", "https://www.handelszeitung.ch/rss.xml"),
-    ("Cash", "https://www.cash.ch/rss"),
-    ("finews", "https://www.finews.ch/rss"),
-    ("CERN News", "https://home.cern/api/news/news/feed.rss"),
-    ("PSI News", "https://www.psi.ch/en/media/rss"),
-    ("University of Zurich", "https://www.news.uzh.ch/en.rss.html"),
+    ("SwissCognitive (AI)", "https://swisscognitive.ch/feed/"),
+
+    # --- Europe-wide tech (filtered to Swiss deep tech by the relevance scorer) ---
+    ("Tech.eu", "https://tech.eu/feed/"),
+    ("EU-Startups", "https://www.eu-startups.com/feed/"),
+    ("Silicon Canals", "https://siliconcanals.com/feed/"),
+    ("Tech Funding News", "https://techfundingnews.com/feed/"),
 ]
 
 
