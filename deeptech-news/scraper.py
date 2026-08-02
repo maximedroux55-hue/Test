@@ -75,8 +75,12 @@ def collect(days: int, min_score: int) -> list[dict]:
     articles: list[dict] = []
     seen_links = set()
 
+    browser_ua = (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+        "(KHTML, like Gecko) Chrome/126.0 Safari/537.36"
+    )
     for source_label, url in all_feeds(days):
-        parsed = feedparser.parse(url)
+        parsed = feedparser.parse(url, agent=browser_ua)
         if parsed.bozo and not parsed.entries:
             print(f"  ! skipped (unreachable): {source_label} {url}", file=sys.stderr)
             continue
