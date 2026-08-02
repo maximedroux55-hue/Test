@@ -13,16 +13,16 @@ The posts themselves are below, for review before you run it.
 ## Post 1 — schedule for Monday 03 August at 08:00
 
 ```
-🇨🇭 Swiss open AI infrastructure enters its second generation
+🇨🇭 Swiss open AI infrastructure enters its next chapter
 
-@EPFL has unveiled Apertus 1.5, the next iteration of Switzerland's open AI model effort, developed alongside @ETH Zurich and the national supercomputing ecosystem. It is a rare case of a country building foundational AI in public view rather than behind closed APIs.
+@EPFL has unveiled Apertus 1.5, the latest iteration of Switzerland's fully open large language model effort, built on public research infrastructure and shared openly with the wider community.
 
 Why it matters:
-🌍 Open weights and transparent training data lower the barrier for startups that cannot afford to license frontier models, which compounds directly into application-layer company formation.
-🇨🇭 Switzerland's combination of world-class compute, two federal institutes of technology, and a credible neutrality position makes it one of the few places able to offer sovereign AI infrastructure that others actually trust.
-⚙️ The broader implication is capital efficiency: founders building on open Swiss models spend less on inference contracts and more on product, which is exactly the profile of company that scales without burning through rounds.
+📊 Open weights and open data pipelines lower the entry cost for startups building applied AI, turning a capital-intensive layer into shared public infrastructure.
+🇨🇭 Switzerland is one of very few countries able to combine sovereign compute, world-class research institutions, and a credible position on transparency and data governance.
+🔓 Sovereign models matter for regulated sectors: banking, health, and industry need systems they can audit rather than rent as black boxes.
 
-The interesting question is who builds on top. Infrastructure only matters when a generation of companies treats it as default. Switzerland now has the substrate.
+This is the kind of foundation that makes capital-efficient DeepTech possible. When the base layer is public, founders can spend their seed round on product and go-to-market rather than on replicating what already exists. We expect a wave of Swiss application-layer companies built directly on top of this work over the next 24 months.
 
 https://actu.epfl.ch/news/apertus-15-building-the-next-generation-of-open--2
 ```
@@ -31,16 +31,16 @@ https://actu.epfl.ch/news/apertus-15-building-the-next-generation-of-open--2
 ## Post 2 — schedule for Tuesday 04 August at 08:00
 
 ```
-🇨🇭 Rivers as infrastructure, not just scenery
+🇨🇭 Rivers, cities, and the data behind resilience
 
-New research from @EPFL examines how rivers have shaped the form of cities and the structure of societies over time, connecting hydrology, urban planning, and long-run development.
+Researchers at @EPFL have published new work on how rivers shape the growth of cities and the societies around them, connecting hydrology, urban form, and long-run development.
 
 Why it matters:
-🏙️ Water systems sit at the centre of climate adaptation spending, and cities across Europe are re-engineering riverfronts, flood defences, and thermal networks. That is a large and durable market for modelling, sensing, and materials companies.
-🇨🇭 Switzerland is the water tower of Europe, with unmatched institutional expertise in hydrology, hydropower, and alpine environmental monitoring. That domain depth is difficult to replicate and translates naturally into exportable technology.
-🌊 The wider point is that environmental research of this kind produces the datasets and physical models that later become commercial products, from flood risk analytics to urban cooling design.
+🌍 Climate adaptation is becoming a procurement category, not just a research topic: cities and insurers need models that quantify water-related risk with real precision.
+🇨🇭 Switzerland sits at the source of Europe's major river systems and has decades of hydrological measurement, giving Swiss teams unusually deep datasets to build on.
+🏗️ The commercial path runs through infrastructure planning, reinsurance, and environmental monitoring, all sectors where Swiss institutions are already global players.
 
-DeepTech does not only emerge from labs with clean rooms. Some of the most defensible Swiss companies will come from decades of accumulated understanding of natural systems, applied to problems that every city now faces.
+We pay attention to research like this because it often precedes a spin-off wave by several years. Fundamental work on natural systems tends to produce tools first, then companies. The teams that turn academic models into decision software for utilities and insurers are building on a durable, defensible base.
 
 https://actu.epfl.ch/news/how-rivers-shape-cities-and-societies
 ```
@@ -49,16 +49,16 @@ https://actu.epfl.ch/news/how-rivers-shape-cities-and-societies
 ## Post 3 — schedule for Wednesday 05 August at 08:00
 
 ```
-🇨🇭 ZuriQ raises USD 25.5 million for trapped ion quantum
+🇨🇭 Quantum hardware attracts serious international capital
 
-@Startupticker reports that Quantonation has led a USD 25.5 million seed round for ZuriQ, a spin-off from @ETH Zurich working on trapped ion quantum computing architectures.
+@ZuriQ, a spin-off from @ETH Zurich, has raised USD 25.5 million in a seed round led by @Quantonation, as reported by @Startupticker.
 
 Why it matters:
-💰 A seed round of this size signals that specialist quantum investors now see Swiss hardware teams as fundable at scale, not as science projects. It also resets the benchmark for what an early round can look like in this ecosystem.
-🇨🇭 Switzerland's quantum advantage is concrete: decades of precision engineering, photonics, and cryogenics expertise, plus two federal institutes producing teams that can build and operate hardware rather than only publish about it.
-🔬 Trapped ion approaches are among the most credible paths to error-corrected machines, so this is a bet on the architecture question as much as on the team.
+💰 A seed round of this size signals that quantum hardware in Switzerland has moved past proof-of-concept and into the scale-up phase where capital intensity rises sharply.
+🇨🇭 Zurich's trapped-ion and photonics research base is one of the strongest in the world, and ETH continues to convert that depth into companies rather than only papers.
+🔬 Specialist investors like Quantonation lead these rounds because they can underwrite technical risk that generalist funds cannot, which is exactly what deep hardware requires.
 
-What stands out is how far a Swiss hardware team can go per franc raised. Talent density and public research infrastructure make the capital work harder here than in most competing hubs.
+The pattern here is familiar: Swiss teams reach credible technical milestones on modest budgets, then attract international capital at the inflection point. That capital efficiency is a structural advantage, not an accident. It means Swiss quantum companies reach the same milestones with less dilution than peers elsewhere.
 
 https://www.startupticker.ch/en/news/quantonation-leads-usd-25-5-million-seed-round-for-eth-spin-off-zuriq
 ```
@@ -69,14 +69,14 @@ https://www.startupticker.ch/en/news/quantonation-leads-usd-25-5-million-seed-ro
 ```
 🇨🇭 A lipid switch that stops anthrax cold
 
-Researchers at @EPFL have identified a lipid-based mechanism that blocks anthrax toxin from entering cells, a finding with implications well beyond a single pathogen.
+Scientists at @EPFL have identified a lipid-based mechanism that blocks anthrax toxin from entering cells, opening a new angle on how bacterial toxins are neutralised.
 
 Why it matters:
-🧬 Toxin entry pathways are shared across a range of bacterial threats, so a validated mechanism here opens a route to broader anti-infective programmes at a moment when antimicrobial resistance is a growing global priority.
-🇨🇭 Switzerland pairs fundamental life science of this calibre with the densest pharma and biotech cluster in Europe, which shortens the distance between a mechanism paper and a licensing conversation or a spin-off.
-🛡️ Biodefence and pandemic preparedness budgets are structurally rising, creating non-dilutive funding paths and government demand that few other deep science markets offer.
+🧬 Host-directed approaches sidestep the resistance problem that undermines conventional antibiotics, a market where new mechanisms are increasingly scarce.
+🇨🇭 Switzerland's life sciences cluster gives discoveries like this an unusually short path from lab bench to translational partner, with pharma headquarters within an hour's drive.
+💊 Beyond anthrax, the same cellular entry pathways are exploited by other toxins and pathogens, so the underlying insight may have far broader application.
 
-The pattern worth noting is that Swiss biotech rarely starts with a market and works backwards. It starts with mechanism, then finds several applications. That takes longer, but it produces the kind of defensibility that survives a decade of development.
+Biotech spin-offs from Swiss institutions tend to arrive with strong IP and a clear mechanistic story, which is what makes them fundable at seed despite long timelines. We watch fundamental discoveries like this closely: the therapeutic companies of 2030 are being written up in journals today, and Switzerland produces more of them per capita than almost anywhere.
 
 https://actu.epfl.ch/news/a-lipid-switch-that-blocks-anthrax
 ```
@@ -85,16 +85,16 @@ https://actu.epfl.ch/news/a-lipid-switch-that-blocks-anthrax
 ## Post 5 — schedule for Friday 07 August at 08:00
 
 ```
-🇨🇭 Ahead Health raises USD 10 million, goes international
+🇨🇭 Swiss health tech crosses its first borders
 
-@Startupticker reports that Ahead Health has closed a USD 10 million round and is opening its first markets outside Switzerland, moving from domestic validation to cross-border expansion.
+@Ahead Health has raised USD 10 million and is opening its first markets outside Switzerland, according to @Startupticker.
 
 Why it matters:
-📈 Digital health has been a difficult category for financing, so a round of this size tied to a concrete international launch suggests investors are rewarding evidence and traction rather than user growth alone.
-🇨🇭 The Swiss home market is small but demanding, with high clinical standards and rigorous regulation. Companies that clear that bar arrive in larger markets with credibility that is expensive to build elsewhere.
-🌐 Expansion at this stage matters because health platforms are winner-take-most within each geography, and being early into a market shapes reimbursement and distribution for years.
+🌐 Internationalisation is the hardest step for Swiss health companies: the domestic market validates the product but is too small to build a category leader.
+🇨🇭 Swiss regulatory rigour and clinical credibility travel well, giving companies a quality signal that competitors from larger but looser markets struggle to match.
+📈 A USD 10 million round sized around expansion rather than survival suggests unit economics that already work at home.
 
-Switzerland's constraint has always been market size, which forces founders to build for export from day one. That discipline shows up later as capital efficiency, and this round looks like the moment it starts paying off.
+This is the profile we look for: a company that proves the model on limited capital, then raises specifically to buy geographic reach. Switzerland's small home market forces discipline early, and disciplined teams tend to expand more efficiently than those that scaled on cheap money. The next 18 months of market entry data will tell us how well the thesis holds.
 
 https://www.startupticker.ch/en/news/ahead-health-raises-usd-10-million-and-opens-first-markets-outside-switzerland
 ```
@@ -103,16 +103,16 @@ https://www.startupticker.ch/en/news/ahead-health-raises-usd-10-million-and-open
 ## Post 6 — schedule for Saturday 08 August at 08:00
 
 ```
-🇨🇭 Medyria secures CHF 3.5 million for medtech sensing
+🇨🇭 Medtech precision attracts fresh capital in Zurich
 
-@Startupticker reports that Medyria has raised CHF 3.5 million, continuing a steady run of financings for Swiss medical device companies working at the intersection of sensing and intervention.
+@Medyria has closed a CHF 3.5 million financing round, @Startupticker reports, backing its work on sensor technology for interventional medicine.
 
 Why it matters:
-🩺 Rounds in this range are the backbone of the Swiss medtech pipeline: enough to complete clinical and regulatory milestones, small enough that founders retain meaningful ownership into later stages.
-🇨🇭 Switzerland's medtech cluster combines precision manufacturing, a dense supplier base, and clinical partners within an hour's drive. That proximity compresses development cycles in a way few ecosystems can match.
-⚕️ Sensing technologies inside catheters and surgical tools sit at the front of a broader shift toward data-guided intervention, where the device becomes a source of clinical intelligence rather than only a tool.
+🩺 Rounds of this size are the workhorse of Swiss medtech: enough to complete regulatory and clinical milestones without over-diluting founders years before revenue.
+🇨🇭 Switzerland's medtech density, precision manufacturing base, and proximity to notified bodies compress development timelines in a way few ecosystems can replicate.
+⚙️ Sensor-guided intervention sits at the intersection of hardware and data, where incremental accuracy gains translate directly into clinical outcomes and reimbursement.
 
-This is what capital efficient DeepTech looks like in practice. Not headline rounds, but disciplined companies converting modest capital into regulatory progress and eventual strategic value.
+We think this segment is structurally undervalued. Medtech does not generate the headlines that AI does, yet Swiss companies here reach commercial traction on a fraction of the capital, with defensible IP and clear exit paths to strategic acquirers. Capital efficiency is not a constraint in this market, it is the competitive edge.
 
 https://www.startupticker.ch/en/news/medyria-raises-chf-3-5-million
 ```
@@ -121,16 +121,16 @@ https://www.startupticker.ch/en/news/medyria-raises-chf-3-5-million
 ## Post 7 — schedule for Sunday 09 August at 08:00
 
 ```
-🇨🇭 Revolut bundles ChatGPT, and the stack shifts
+🇨🇭 AI distribution moves through the banking layer
 
-@Revolut is offering customers up to twelve months of free ChatGPT Go access through a partnership with @OpenAI, as reported by @Fintechnews Switzerland. Distribution, not the model, is the strategic asset here.
+@Revolut is giving customers up to twelve months of free ChatGPT Go access via a partnership with @OpenAI, reports @Fintechnews Switzerland.
 
 Why it matters:
-🏦 Consumer fintech is turning AI access into an acquisition and retention lever, which compresses margins for standalone AI subscription products and pushes value toward whoever owns the customer relationship.
-🇨🇭 Swiss financial institutions hold something Revolut cannot easily buy: regulated trust, private banking relationships, and data governance standards that matter enormously once AI moves from chat to advice and execution.
-🔐 The next competitive round will be fought over deployment inside regulated workflows, where accuracy, auditability, and data residency decide adoption. That is favourable terrain for Swiss infrastructure and compliance technology.
+📱 Consumer AI is being distributed through financial apps, turning banks and neobanks into acquisition channels for model providers rather than pure service platforms.
+🇨🇭 Swiss fintech and private banking hold something scarce in this equation: trusted customer relationships and strict data standards that global AI firms need to operate credibly in Europe.
+🤝 Bundling deals like this reset expectations on what a financial app includes, pressuring incumbents to define their own AI strategy quickly.
 
-Bundling a frontier model is a marketing move. Embedding one safely into regulated finance is an engineering problem, and it is the one Swiss founders are unusually well positioned to solve.
+The strategic question for Swiss institutions is whether they distribute someone else's intelligence layer or build proprietary capability on sovereign infrastructure. Both are viable, but they lead to very different margin structures. For founders, the opening is in the middle: compliance, data governance, and audit tooling that makes AI deployable inside regulated Swiss finance.
 
 https://fintechnews.ch/aifintech/revolut-openai-chatgpt-go-subscription/84829/
 ```
