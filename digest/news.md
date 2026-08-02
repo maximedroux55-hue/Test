@@ -1,5 +1,5 @@
 # Swiss DeepTech news digest
-_Generated 02 August 2026, covering the last 14 days. 23 stories._
+_Generated 02 August 2026, covering the last 14 days. 25 stories._
 
 1. **[Apertus 1.5: Building the next generation of open AI infrastructure](https://actu.epfl.ch/news/apertus-15-building-the-next-generation-of-open--2)**  
    EPFL News · 24 Jul 2026 · relevance 20
@@ -25,25 +25,29 @@ _Generated 02 August 2026, covering the last 14 days. 23 stories._
    Fintechnews Switzerland · 28 Jul 2026 · relevance 7
 12. **[CHF 150,000 from Venture Kick to scale autonomous fresh food deployments](https://www.startupticker.ch/en/news/chf-150-000-from-venture-kick-to-scale-autonomous-fresh-food-deployments)**  
    Startupticker · 24 Jul 2026 · relevance 7
-13. **[Valuemize raises seven-figure pre-seed for product cost software](https://www.startupticker.ch/en/news/valuemize-raises-seven-figure-pre-seed-for-product-cost-software)**  
+13. **[Swiss startup AI Infrastructure Capital AG launches with €16 million to tackle AI compute bottleneck](https://www.eu-startups.com/2026/07/swiss-startup-ai-infrastructure-capital-ag-launches-with-e16-million-to-tackle-ai-compute-bottleneck/)**  
+   EU-Startups · 30 Jul 2026 · relevance 6
+14. **[Valuemize raises seven-figure pre-seed for product cost software](https://www.startupticker.ch/en/news/valuemize-raises-seven-figure-pre-seed-for-product-cost-software)**  
    Startupticker · 28 Jul 2026 · relevance 6
-14. **[England, the Middle East and India: Three start-ups are expanding with their digital solutions](https://www.startupticker.ch/en/news/england-the-middle-east-and-india-three-start-ups-are-expanding-with-their-digital-solutions)**  
+15. **[England, the Middle East and India: Three start-ups are expanding with their digital solutions](https://www.startupticker.ch/en/news/england-the-middle-east-and-india-three-start-ups-are-expanding-with-their-digital-solutions)**  
    Startupticker · 22 Jul 2026 · relevance 6
-15. **[Swiss Startup Aionic Labs selected for funding initiative by Germany's federal agency SPRIN-D](https://www.startupticker.ch/en/news/swiss-startup-aionic-labs-selected-for-funding-initiative-by-germany-s-federal-agency-sprin-d)**  
+16. **[Swiss Startup Aionic Labs selected for funding initiative by Germany's federal agency SPRIN-D](https://www.startupticker.ch/en/news/swiss-startup-aionic-labs-selected-for-funding-initiative-by-germany-s-federal-agency-sprin-d)**  
    Startupticker · 20 Jul 2026 · relevance 6
-16. **[Four Swiss medtechs mark commercial, regulatory and clinical milestones](https://www.startupticker.ch/en/news/four-swiss-medtechs-mark-commercial-regulatory-and-clinical-milestones)**  
+17. **[Simile bags $200M at $2B, five months after $100M Series A, to predict what humans will do before AI gets it wrong](https://techfundingnews.com/simile-bags-200m-at-2b-five-months-after-100m-series-a-to-predict-what-humans-will-do-before-ai-gets-it-wrong/)**  
+   Tech Funding News · 31 Jul 2026 · relevance 5
+18. **[Four Swiss medtechs mark commercial, regulatory and clinical milestones](https://www.startupticker.ch/en/news/four-swiss-medtechs-mark-commercial-regulatory-and-clinical-milestones)**  
    Startupticker · 27 Jul 2026 · relevance 5
-17. **[KI-Startup Prodlane sammelt 4 Millionen Euro ein](https://www.startupticker.ch/en/news/ki-startup-prodlane-sammelt-4-millionen-euro-ein)**  
+19. **[KI-Startup Prodlane sammelt 4 Millionen Euro ein](https://www.startupticker.ch/en/news/ki-startup-prodlane-sammelt-4-millionen-euro-ein)**  
    Startupticker · 21 Jul 2026 · relevance 5
-18. **[Synhelion erhält Fördermittel für kommerzielle Demo-Anlage](https://www.startupticker.ch/en/news/synhelion-erhaelt-foerdermittel-fuer-kommerzielle-demo-anlage)**  
+20. **[Synhelion erhält Fördermittel für kommerzielle Demo-Anlage](https://www.startupticker.ch/en/news/synhelion-erhaelt-foerdermittel-fuer-kommerzielle-demo-anlage)**  
    Startupticker · 31 Jul 2026 · relevance 4
-19. **[PropTech AssetOS auf Wachstumskurs](https://www.startupticker.ch/en/news/proptech-assetos-auf-wachstumskurs)**  
+21. **[Oxford physicist’s Intropy lands $11M to bring AI automation to the spare parts industry](https://techfundingnews.com/intropy-11m-seed-felix-capital-ai-spare-parts/)**  
+   Tech Funding News · 30 Jul 2026 · relevance 4
+22. **[PropTech AssetOS auf Wachstumskurs](https://www.startupticker.ch/en/news/proptech-assetos-auf-wachstumskurs)**  
    Startupticker · 30 Jul 2026 · relevance 4
-20. **[Humboldt AI lanciert KI-Tool für den CV-Check im Schweizer Arbeitsmarkt](https://www.startupticker.ch/en/news/humboldt-ai-lanciert-ki-tool-fuer-den-cv-check-im-schweizer-arbeitsmarkt)**  
+23. **[Humboldt AI lanciert KI-Tool für den CV-Check im Schweizer Arbeitsmarkt](https://www.startupticker.ch/en/news/humboldt-ai-lanciert-ki-tool-fuer-den-cv-check-im-schweizer-arbeitsmarkt)**  
    Startupticker · 27 Jul 2026 · relevance 4
-21. **[Swiss founders in the global spotlight](https://www.startupticker.ch/en/news/swiss-founders-in-the-global-spotlight)**  
+24. **[Swiss founders in the global spotlight](https://www.startupticker.ch/en/news/swiss-founders-in-the-global-spotlight)**  
    Startupticker · 24 Jul 2026 · relevance 4
-22. **[SeasON Energy erhält Millionenfinanzierung für saisonale Energiespeicherung](https://www.startupticker.ch/en/news/cleantech-season-energy-erhaelt-millionenfinanzierung-fuer-saisonale-energiespeicherung)**  
+25. **[SeasON Energy erhält Millionenfinanzierung für saisonale Energiespeicherung](https://www.startupticker.ch/en/news/cleantech-season-energy-erhaelt-millionenfinanzierung-fuer-saisonale-energiespeicherung)**  
    Startupticker · 23 Jul 2026 · relevance 4
-23. **[Hilo closes Series B extension round to fuel US expansion](https://www.startupticker.ch/en/news/hilo-closes-series-b-extension-round-to-fuel-us-expansion)**  
-   Startupticker · 22 Jul 2026 · relevance 4
