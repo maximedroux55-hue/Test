@@ -1,5 +1,5 @@
 # Climb Ventures LinkedIn plan for the week
-_Generated 02 August 2026. 7 posts, one per day, from Swiss DeepTech news of the last 10 days. Written by Claude in Max's voice. Schedule each for 08:00 on its day. Review and edit before posting._
+_Generated 02 August 2026. 7 posts, one per day, from Swiss DeepTech news of the last 30 days. Written by Claude in Max's voice. Schedule each for 08:00 on its day. Review and edit before posting._
 
 ## Publish with Claude Cowork
 Paste this into Cowork to schedule the whole week in one go (it reads the structured file `digest/posts.json` next to this one):
@@ -13,14 +13,14 @@ The posts themselves are below, for review before you run it.
 ## Post 1 — schedule for Monday 03 August at 08:00
 
 ```
-🇨🇭 Swiss open AI infrastructure enters its second act
+🇨🇭 Swiss open AI infrastructure enters its next chapter
 
-@EPFL has unveiled Apertus 1.5, the next iteration of Switzerland's open large language model effort, developed alongside @ETH Zurich and the national supercomputing ecosystem. It is a rare example of a sovereign, fully transparent AI stack built in public view rather than behind a corporate API.
+@EPFL has unveiled Apertus 1.5, the next generation of its open AI infrastructure effort, building on Switzerland's push for transparent, sovereign models rather than closed black boxes.
 
 Why it matters:
-🌍 Open weights and open data pipelines lower the barrier for startups, hospitals, and industrial firms that cannot send sensitive workloads to foreign clouds, expanding the addressable market for applied AI built on Swiss foundations.
-🇨🇭 Switzerland is one of very few countries combining top-tier research institutions, national compute capacity, and a credible neutrality argument on data governance. That combination is difficult to replicate and increasingly commercially relevant.
-🚀 The real value sits in the application layer above the model: vertical AI companies that can build capital-efficiently on shared public infrastructure instead of burning capital on training runs. That is precisely the kind of leverage we look for when backing DeepTech founders here.
+🧠 Open weights and open pipelines lower the entry cost for startups that cannot afford to train frontier models from scratch, which widens the pool of applied AI companies Switzerland can produce.
+🇨🇭 Switzerland's combination of public compute, federal research institutions and a credible neutrality narrative makes it one of the few places able to offer AI infrastructure that European corporates and regulators actually trust.
+⚙️ The broader implication is a shift in where value accrues: not in another model race, but in the vertical applications, tooling and deployment layers built on top of shared infrastructure. That is precisely the capital-efficient DeepTech profile we look for, teams that leverage national research assets instead of burning venture money replicating them.
 
 https://actu.epfl.ch/news/apertus-15-building-the-next-generation-of-open--2
 ```
@@ -29,96 +29,96 @@ https://actu.epfl.ch/news/apertus-15-building-the-next-generation-of-open--2
 ## Post 2 — schedule for Tuesday 04 August at 08:00
 
 ```
-🇨🇭 Rivers, cities, and the data behind urban resilience
+🇨🇭 Forecasting the energy behind Swiss rail
 
-Researchers at @EPFL have published work examining how rivers have shaped the development of cities and societies over time, connecting hydrology, urban form, and social organisation. It is a reminder that infrastructure questions are rarely just engineering questions.
+Researchers at @EPFL are using forward-looking data to improve predictions of Switzerland's rail energy demand, a modelling problem that sits at the intersection of mobility, grid planning and decarbonisation.
 
 Why it matters:
-📊 Climate adaptation is becoming a procurement line for European cities, not an academic topic. Modelling tools that link water systems to urban planning have a growing institutional buyer base across utilities, insurers, and public authorities.
-🇨🇭 Switzerland sits at the source of several major European river systems and has decades of accumulated hydrological data and engineering expertise. That gives Swiss teams unusual credibility when selling water and climate intelligence abroad.
-🌊 Fundamental research like this often precedes a wave of spin-offs in geospatial analytics, sensing, and simulation. The gap between a strong publication and a fundable company is exactly where patient, technically literate capital earns its keep.
+⚡ Energy forecasting is unglamorous but commercially significant: better demand prediction reduces peak procurement costs and defers capital-heavy grid reinforcement, creating a real budget line for software vendors.
+🇨🇭 Switzerland runs one of the densest and most electrified rail networks in the world, which makes it an unusually rich testbed. Solutions proven here travel well into Germany, Austria and the Nordics.
+🔌 More broadly, this is what industrial AI actually looks like: narrow, data-rich, infrastructure-adjacent problems where accuracy translates directly into money saved. These companies rarely need enormous rounds to reach revenue, because the customer is a utility or an operator with a clear procurement process and a long contract horizon.
+
+https://actu.epfl.ch/news/using-future-data-to-better-predict-switzerland-s
+```
+🖼️ **Article image:** https://actu.epfl.ch/image/165533/1440x810.jpg
+
+## Post 3 — schedule for Wednesday 05 August at 08:00
+
+```
+🇨🇭 Rivers, cities and the data beneath them
+
+A new piece of work from @EPFL examines how rivers have shaped the development of cities and societies, connecting hydrology, urban form and long-run economic geography.
+
+Why it matters:
+🌊 Water infrastructure is becoming an investable category: flood modelling, hydropower optimisation and urban climate resilience are all moving from academic study into procurement budgets across European municipalities.
+🇨🇭 Switzerland is Europe's water tower, with unmatched alpine hydrology datasets and decades of institutional expertise in river management, a genuine and hard to copy research advantage.
+🏙️ What this enables is a generation of climate adaptation tools grounded in physics rather than marketing. The commercial opportunity sits in sensing, simulation and decision software sold to cities, insurers and utilities. These are patient markets, but they are durable ones, and Swiss teams start with credibility that competitors elsewhere have to buy.
 
 https://actu.epfl.ch/news/how-rivers-shape-cities-and-societies
 ```
 🖼️ **Article image:** https://actu.epfl.ch/image/164913/1440x810.jpg
 
-## Post 3 — schedule for Wednesday 05 August at 08:00
-
-```
-🇨🇭 ZuriQ lands USD 25.5 million for trapped-ion quantum
-
-@Quantonation has led a USD 25.5 million seed round in @ZuriQ, a spin-off from @ETH Zurich working on trapped-ion quantum computing architectures, as reported by @Startupticker. A seed round of that size signals serious conviction in the underlying physics.
-
-Why it matters:
-💰 Seed cheques above USD 25 million remain rare in Europe and rarer still in Switzerland. This one confirms that international specialist funds are willing to price Swiss quantum at global levels rather than a local discount.
-🇨🇭 Switzerland's quantum depth is not accidental: it comes from sustained public research funding, world-class labs, and a talent pool that stays. Hardware companies benefit enormously from that continuity, since progress is measured in years, not sprints.
-⚛️ Beyond the company itself, rounds like this build the supplier base in lasers, cryogenics, vacuum systems, and precision manufacturing where Swiss industry already excels. That is how an ecosystem compounds.
-
-https://www.startupticker.ch/en/news/quantonation-leads-usd-25-5-million-seed-round-for-eth-spin-off-zuriq
-```
-🖼️ **Article image:** none found, grab one from the article page.
-
 ## Post 4 — schedule for Thursday 06 August at 08:00
 
 ```
-🇨🇭 A lipid switch that stops anthrax entering cells
+🇨🇭 New professors, and the pipeline they represent
 
-Scientists at @EPFL have identified a lipid-based mechanism that blocks anthrax toxin, opening a potential new route to countering one of the most studied bacterial threats. The finding sits at the intersection of cell biology and therapeutic design.
+@EPFL has announced a fresh round of professorial appointments, the routine institutional news that quietly determines which research fields Switzerland will be strong in a decade from now.
 
 Why it matters:
-🧪 Host-directed approaches, targeting the cell rather than the pathogen, are attracting renewed attention as antimicrobial resistance grows. The commercial pull comes from biodefence budgets and infectious disease pipelines alike.
-🇨🇭 Swiss life sciences combine academic discovery with an unusually dense concentration of pharma, CDMOs, and clinical expertise within a short drive. Translation timelines here are structurally shorter than in most research geographies.
-🔬 Mechanistic insights like this rarely make headlines, yet they are the raw material for the next generation of biotech spin-offs. The discipline is in choosing which discoveries have a real path to patients and building them without excessive capital consumption.
+👩‍🔬 Every faculty hire is an upstream signal for the startup pipeline: new labs mean new PhD cohorts, new patent families and, three to seven years later, new spin-offs seeking their first round.
+🇨🇭 Switzerland's ability to attract senior researchers globally, on the strength of funding stability and quality of life, remains one of its most underrated competitive assets in the fight for DeepTech talent.
+🚀 The broader implication for investors is simple: watch the appointments, not just the announcements. Tracking where world class researchers choose to build tells you where deal flow will emerge before any pitch deck does. Sustained institutional investment in people is exactly what makes the Swiss ecosystem capital efficient at the company formation stage.
 
-https://actu.epfl.ch/news/a-lipid-switch-that-blocks-anthrax
+https://actu.epfl.ch/news/appointment-of-epfl-professors-210
 ```
-🖼️ **Article image:** https://actu.epfl.ch/image/165737/1440x810.jpg
+🖼️ **Article image:** https://actu.epfl.ch/image/165647/1440x810.jpg
 
 ## Post 5 — schedule for Friday 07 August at 08:00
 
 ```
-🇨🇭 Ahead Health raises USD 10 million, expands abroad
+🇨🇭 Students building what industry has not imagined
 
-@Ahead Health has closed a USD 10 million round and is entering its first markets outside Switzerland, according to @Startupticker. Funding and international launch announced together usually means the domestic model has already proven itself.
+@EPFL students have presented devices and prototypes that anticipate needs businesses have not yet articulated, the output of project-based engineering education meeting real hardware.
 
 Why it matters:
-📈 Digital health has had a difficult funding cycle, so a raise of this size tied to concrete geographic expansion is a useful signal about which business models are still attracting capital.
-🇨🇭 The Swiss home market is small and demanding, with high regulatory and clinical standards. Companies that win here arrive in larger markets with credibility and evidence already in hand, which shortens enterprise sales cycles considerably.
-🌍 Cross-border expansion is the moment Swiss scale-ups either compound or stall. Getting the sequencing right, proving unit economics locally before spending on new geographies, is what separates durable companies from expensive experiments.
+🛠️ Student projects are an undervalued source of deal flow: many Swiss hardware companies trace their origin to a semester project that found an unexpected customer, and the capital required to reach a working prototype keeps falling.
+🇨🇭 Switzerland's engineering culture, precision manufacturing base and dense supplier network mean a student team can go from sketch to functional device faster and cheaper here than almost anywhere else.
+🔭 The broader point is about where genuine novelty comes from. Corporate roadmaps optimise existing products, while student teams work without those constraints and occasionally land on categories nobody had defined. For investors, spending time at demo days is not charity, it is early access to a pipeline that has not yet learned to pitch.
 
-https://www.startupticker.ch/en/news/ahead-health-raises-usd-10-million-and-opens-first-markets-outside-switzerland
+https://actu.epfl.ch/news/students-invent-devices-that-businesses-haven-t--2
 ```
-🖼️ **Article image:** none found, grab one from the article page.
+🖼️ **Article image:** https://actu.epfl.ch/image/165685/1440x810.jpg
 
 ## Post 6 — schedule for Saturday 08 August at 08:00
 
 ```
-🇨🇭 Medyria secures CHF 3.5 million for medtech sensing
+🇨🇭 Public transport habits are built, not chosen
 
-@Medyria has raised CHF 3.5 million, @Startupticker reports, continuing the steady flow of Swiss medtech financings in a market that has been selective about hardware. Modest headline number, meaningful runway for a focused team.
+Research from @EPFL finds that using public transport is a learned habit, shaped by repeated exposure and context rather than one-off rational decisions about price or speed.
 
 Why it matters:
-🏥 Medtech remains one of Switzerland's largest export sectors, and early-stage rounds like this keep the innovation pipeline feeding an industrial base that employs tens of thousands of people.
-🇨🇭 Precision engineering, regulatory know-how, and proximity to leading clinical centres let Swiss medtech teams iterate on devices faster and with fewer wasted cycles than peers elsewhere. Capital efficiency here is a structural feature, not a slogan.
-⚙️ Not every DeepTech company needs a nine-figure round to reach commercial relevance. Disciplined financing against clear regulatory and clinical milestones often produces better outcomes for founders and investors than raising ahead of the evidence.
+🚇 This reframes the mobility market: if behaviour is habitual, then the products that win are the ones that intervene early and consistently, which favours subscription models, employer schemes and integrated ticketing over marginal fare tweaks.
+🇨🇭 Switzerland has the highest rail usage per capita in Europe and a population already conditioned to shared mobility, giving Swiss mobility startups a home market that validates products faster than most.
+📊 The wider implication is that behavioural science belongs inside DeepTech, not beside it. The best mobility and energy platforms combine hard modelling with an accurate understanding of how people actually behave, and that combination is far harder for competitors to replicate than the underlying software.
 
-https://www.startupticker.ch/en/news/medyria-raises-chf-3-5-million
+https://actu.epfl.ch/news/using-public-transport-is-a-learned-habit
 ```
-🖼️ **Article image:** none found, grab one from the article page.
+🖼️ **Article image:** https://actu.epfl.ch/image/162495/1440x810.jpg
 
 ## Post 7 — schedule for Sunday 09 August at 08:00
 
 ```
-🇨🇭 Revolut bundles ChatGPT, and the distribution question
+🇨🇭 Swiss trapped-ion quantum secures major seed round
 
-@Revolut is offering customers up to twelve months of free @OpenAI ChatGPT Go access, @Fintechnews Switzerland reports. A consumer perk on the surface, a distribution land grab underneath.
+@Quantonation has led a USD 25.5 million seed round for @ZuriQ, the @ETH Zurich spin-off pursuing scalable trapped-ion quantum computing, as reported by @Startupticker.
 
 Why it matters:
-📱 Banking apps are becoming acquisition channels for AI products, and AI subscriptions are becoming retention tools for banking apps. That reciprocal dynamic will reshape how both categories think about customer lifetime value.
-🇨🇭 Switzerland's financial sector combines enormous assets under management with strict data and privacy expectations. Any AI layer touching client information here has to clear a higher bar, which favours providers that can demonstrate genuine control over data residency and model behaviour.
-🔐 That creates real openings for Swiss teams building confidential computing, secure inference, and compliance infrastructure for regulated finance. The consumer headline is the visible part; the durable value is in the plumbing beneath it.
+💰 A seed round of this size signals that international specialist funds now treat Swiss quantum hardware as investable at the frontier, not merely as promising academic work waiting for a corporate partner.
+🇨🇭 Switzerland's depth in precision optics, cryogenics, photonics and ion trap physics, concentrated around @ETH Zurich and @EPFL, gives quantum teams here a supplier and talent base that few ecosystems can match.
+⚛️ What this enables goes beyond one company. Rounds like this anchor senior engineering talent in Switzerland, attract follow-on capital from abroad and validate the thesis that Swiss DeepTech can reach global scale without relocating. Capital intensive, yes, but grounded in real physics and real manufacturing capability rather than narrative. Congratulations to the team.
 
-https://fintechnews.ch/aifintech/revolut-openai-chatgpt-go-subscription/84829/
+https://www.startupticker.ch/en/news/quantonation-leads-usd-25-5-million-seed-round-for-eth-spin-off-zuriq
 ```
-🖼️ **Article image:** https://fintechnews.ch/wp-content/uploads/2026/07/Revolut-ChatGPT-Go.webp
+🖼️ **Article image:** none found, grab one from the article page.
 
