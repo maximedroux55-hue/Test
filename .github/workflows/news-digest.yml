@@ -26,6 +26,12 @@ on:
 permissions:
   contents: write
 
+# Never let two runs publish at the same time. A second trigger waits for the
+# first to finish instead of racing it on the git push.
+concurrency:
+  group: news-digest-publish
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -74,5 +80,16 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add digest plan
-          git commit -m "Update latest digest" || echo "No changes to publish."
-          git push origin HEAD:${GITHUB_REF_NAME}
+          git commit -m "Update latest digest" || { echo "No changes to publish."; exit 0; }
+          # Push resiliently: if another run pushed meanwhile, rebase and retry
+          # instead of failing.
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:${GITHUB_REF_NAME}; then
+              echo "Published."; exit 0
+            fi
+            echo "Push rejected (attempt $attempt); rebasing on latest and retrying."
+            git fetch origin ${GITHUB_REF_NAME}
+            git rebase origin/${GITHUB_REF_NAME} || git rebase --abort
+            sleep $((attempt * 3))
+          done
+          echo "Could not publish after retries."; exit 1
