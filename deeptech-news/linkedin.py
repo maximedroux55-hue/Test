@@ -227,16 +227,19 @@ def build_post(article: dict, index: int) -> str:
     return "\n".join(parts)
 
 
-def to_linkedin(articles: list, days: int, top: int = 6) -> str:
-    """Return a Markdown file of the top LinkedIn post drafts.
+def to_linkedin(articles: list, days: int, top: int = 7) -> str:
+    """Return a Markdown file of the week's LinkedIn post drafts, one per day.
 
     Uses Claude to write the posts in Max's voice when an ANTHROPIC_API_KEY is
-    available; otherwise falls back to the built-in structured templates.
+    available; otherwise falls back to the built-in structured templates. Each
+    draft is labeled with the day it is meant to be scheduled for, starting the
+    day after the run (so a Wednesday run plans Thursday through the next
+    Wednesday).
     """
     import datetime as dt
     from ai_writer import generate_posts
 
-    today = dt.date.today().strftime("%d %B %Y")
+    today = dt.date.today()
     picks = articles[:top]
 
     ai_posts = generate_posts(picks, days)
@@ -248,13 +251,15 @@ def to_linkedin(articles: list, days: int, top: int = 6) -> str:
         mode = "Template drafts (set ANTHROPIC_API_KEY for AI-written posts)."
 
     parts = [
-        "# Climb Ventures LinkedIn drafts",
-        f"_Generated {today} from the top {len(picks)} Swiss DeepTech stories "
-        f"of the last {days} days. {mode} Review and edit before posting._",
+        "# Climb Ventures LinkedIn plan for the week",
+        f"_Generated {today.strftime('%d %B %Y')}. {len(picks)} posts, one per "
+        f"day, from Swiss DeepTech news of the last {days} days. {mode} "
+        f"Schedule each for 8:00 AM on its day. Review and edit before posting._",
         "",
     ]
     for i, post in enumerate(posts):
-        parts.append(f"## Draft {i + 1}\n")
+        day = (today + dt.timedelta(days=i + 1)).strftime("%A %d %B")
+        parts.append(f"## Post {i + 1} — schedule for {day}\n")
         parts.append("```")
         parts.append(post)
         parts.append("```")

@@ -181,6 +181,8 @@ def main() -> None:
     ap.add_argument("--outdir", default="output", help="Output directory (default ./output)")
     ap.add_argument("--format", choices=["digest", "linkedin", "both"], default="both",
                     help="What to produce: ranked digest, LinkedIn drafts, or both (default both)")
+    ap.add_argument("--posts", type=int, default=7,
+                    help="Number of LinkedIn drafts to write, one per day (default 7)")
     args = ap.parse_args()
 
     print(f"Fetching Swiss DeepTech news (last {args.days} days)...", file=sys.stderr)
@@ -204,7 +206,7 @@ def main() -> None:
     if args.format in ("linkedin", "both"):
         li_path = os.path.join(args.outdir, f"linkedin-{stamp}.md")
         with open(li_path, "w", encoding="utf-8") as f:
-            f.write(to_linkedin(articles, args.days))
+            f.write(to_linkedin(articles, args.days, top=args.posts))
         print(f"Wrote {li_path}", file=sys.stderr)
 
 

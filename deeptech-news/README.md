@@ -33,10 +33,14 @@ python scraper.py --min-score 6        # stricter relevance filter
 Output is written to `output/`:
 
 - `digest-YYYY-MM-DD.md` and `.html` — the ranked list of stories.
-- `linkedin-YYYY-MM-DD.md` — ready-to-edit Climb Ventures LinkedIn drafts,
-  structured the way Max posts: a Swiss-flag headline, a short body with
-  @mentions, a "Why it matters:" section with three bullets (market impact,
-  Swiss advantage, broader implication), and the source link.
+- `linkedin-YYYY-MM-DD.md` — a week's plan of 7 ready-to-edit LinkedIn posts,
+  one per day, each labeled with the day to schedule it for. Structured the way
+  Max posts: a Swiss-flag headline, a short body with @mentions, a "Why it
+  matters:" section with three bullets (market impact, Swiss advantage, broader
+  implication), and the source link.
+
+The GitHub Actions workflow runs every **Wednesday** morning and produces the
+7 posts for the coming week, so they can all be scheduled in one session.
 
 > The LinkedIn drafts are a strong starting point, not final copy. Because the
 > tool reads RSS feeds rather than full article text, review and polish each
