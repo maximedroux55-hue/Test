@@ -9,22 +9,16 @@ retired URL never breaks a run.
 
 To add a source: append (name, url) below with the site's real RSS/Atom URL,
 then run once and keep it only if the log does not mark it "skipped".
-Startupticker is a wanted source but its public feed URL is not yet confirmed;
-add it here once you have the exact RSS link from their site.
 """
 
 # ---- Direct institutional and media feeds (Swiss research and startups) -------
-# (name, url). Confirmed reachable in test runs.
+# (name, url). All confirmed reachable in test runs. Startupticker is the
+# primary startup source; EPFL and ETH provide research and spinout news.
 DIRECT_FEEDS = [
+    ("Startupticker", "https://www.startupticker.ch/en/rss/news.rss"),
     ("EPFL News", "https://actu.epfl.ch/feeds/rss/mediacom/en/"),
     ("ETH Zurich News", "https://ethz.ch/en/news-and-events/eth-news.rss.xml"),
     ("SWI swissinfo (Business)", "https://www.swissinfo.ch/eng/business/rss"),
-
-    # Startupticker candidates (found in public feed lists). Keep the working
-    # one after a test run and remove the rest.
-    ("Startupticker", "https://www.startupticker.ch/en/rss/news.rss"),
-    ("Startupticker (news)", "https://www.startupticker.ch/en/news/rss-feed"),
-    ("Startupticker (feed)", "https://www.startupticker.ch/feed/"),
 ]
 
 
