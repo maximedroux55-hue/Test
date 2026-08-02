@@ -1,0 +1,105 @@
+"""Relevance scoring and de-duplication for the Swiss DeepTech aggregator.
+
+The idea is simple: an article is interesting to us when it is both about
+Switzerland AND about deep technology. We score each of those two dimensions
+from keyword hits, then combine them. An article with zero Swiss signal or zero
+DeepTech signal is dropped.
+"""
+
+import re
+from difflib import SequenceMatcher
+
+# Weighted keyword sets. Higher weight = stronger signal.
+SWISS_TERMS = {
+    "switzerland": 3, "swiss": 3, "suisse": 3, "schweiz": 3,
+    "zurich": 2, "geneva": 2, "genève": 2, "lausanne": 2, "basel": 2,
+    "bern": 2, "lugano": 2, "vaud": 2, "epfl": 3, "eth zurich": 3,
+    "eth zürich": 3, "empa": 3, "psi": 2, "chf": 2, "finma": 2,
+}
+
+DEEPTECH_TERMS = {
+    "deep tech": 4, "deeptech": 4, "deep-tech": 4,
+    "quantum": 3, "semiconductor": 3, "photonics": 3, "chip": 2,
+    "robotics": 3, "biotech": 2, "medtech": 2, "cleantech": 2,
+    "nanotech": 3, "materials": 2, "fusion": 3, "spin-off": 2,
+    "spinoff": 2, "spin off": 2, "artificial intelligence": 2,
+    "machine learning": 2, "ai ": 1, "series a": 2, "series b": 2,
+    "funding round": 2, "raises": 2, "raised": 2, "seed round": 2,
+    "research": 1, "laboratory": 1, "patent": 1,
+}
+
+
+def _count(text: str, terms: dict) -> int:
+    score = 0
+    for term, weight in terms.items():
+        if term in text:
+            score += weight
+    return score
+
+
+def score_article(title: str, summary: str, source: str = "") -> int:
+    """Return a relevance score. 0 means 'not relevant, drop it'."""
+    text = f" {title} {summary} {source} ".lower()
+    swiss = _count(text, SWISS_TERMS)
+    deep = _count(text, DEEPTECH_TERMS)
+
+    # Institutional sources are inherently Swiss and research-heavy, so give
+    # them a small Swiss floor even if the headline omits the country name.
+    if any(s in source.lower() for s in ("epfl", "eth", "empa", "startupticker", "swissinfo")):
+        swiss = max(swiss, 2)
+
+    if swiss == 0 or deep == 0:
+        return 0
+    return swiss + deep
+
+
+# Words too generic to help tell two stories apart. Overlap on these does not
+# mean two headlines describe the same event, so we ignore them when comparing.
+_STOP = {
+    "the", "and", "for", "with", "from", "that", "this", "into", "over",
+    "startup", "startups", "company", "raises", "raised", "raise", "round",
+    "seed", "series", "funding", "million", "billion", "francs", "franc",
+    "chf", "usd", "eur", "swiss", "switzerland", "lands", "secures", "closes",
+    "gets", "wins", "news", "technology", "tech", "new", "its", "after",
+}
+
+
+def _normalize(title: str) -> str:
+    t = title.lower()
+    t = re.sub(r"\s*[-|]\s*[^-|]+$", "", t)  # drop trailing " - Publisher"
+    t = re.sub(r"[^a-z0-9 ]", "", t)
+    return re.sub(r"\s+", " ", t).strip()
+
+
+def _keywords(title: str) -> set:
+    """Distinctive words from a title: length >= 4, not a stopword, not a pure number."""
+    words = _normalize(title).split()
+    return {w for w in words if len(w) >= 4 and w not in _STOP and not w.isdigit()}
+
+
+def _same_story(a: dict, b: dict) -> bool:
+    # Two signals, either one is enough: near-identical text, or a strong
+    # overlap of distinctive keywords (handles the same event reworded by
+    # different outlets).
+    if SequenceMatcher(None, a["_norm"], b["_norm"]).ratio() > 0.80:
+        return True
+    ka, kb = a["_kw"], b["_kw"]
+    if not ka or not kb:
+        return False
+    jaccard = len(ka & kb) / len(ka | kb)
+    return jaccard >= 0.5
+
+
+def deduplicate(articles: list) -> list:
+    """Remove near-duplicate stories (same event reported by several outlets).
+
+    Keeps the highest-scoring version of each story. `articles` is a list of
+    dicts with at least 'title' and 'score'.
+    """
+    kept = []
+    for art in sorted(articles, key=lambda a: a["score"], reverse=True):
+        art["_norm"] = _normalize(art["title"])
+        art["_kw"] = _keywords(art["title"])
+        if not any(_same_story(art, existing) for existing in kept):
+            kept.append(art)
+    return kept
