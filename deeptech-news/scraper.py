@@ -221,13 +221,32 @@ def main() -> None:
         print(f"Wrote {html_path}", file=sys.stderr)
 
     if args.format in ("linkedin", "both"):
+        import json
         from images import resolve_images
+        from linkedin import build_posts, render_markdown, COWORK_PROMPT
         print("Finding the article image for each post...", file=sys.stderr)
         resolve_images(articles[: args.posts])
+
+        # Build once, then write both the human plan and the machine-readable
+        # posts.json that the Cowork workflow schedules from.
+        records, mode = build_posts(articles, args.days, top=args.posts)
+
         li_path = os.path.join(args.outdir, f"linkedin-{stamp}.md")
         with open(li_path, "w", encoding="utf-8") as f:
-            f.write(to_linkedin(articles, args.days, top=args.posts))
+            f.write(render_markdown(records, mode, args.days))
         print(f"Wrote {li_path}", file=sys.stderr)
+
+        json_path = os.path.join(args.outdir, "posts.json")
+        payload = {
+            "generated": stamp,
+            "mode": mode,
+            "note": "Times are local. Schedule each post at its time on its date.",
+            "cowork_prompt": COWORK_PROMPT,
+            "posts": records,
+        }
+        with open(json_path, "w", encoding="utf-8") as f:
+            json.dump(payload, f, ensure_ascii=False, indent=2)
+        print(f"Wrote {json_path}", file=sys.stderr)
 
 
 if __name__ == "__main__":

@@ -68,6 +68,7 @@ jobs:
           cp deeptech-news/output/linkedin-*.md digest/linkedin.md
           cp deeptech-news/output/digest-*.md   digest/news.md
           cp deeptech-news/output/digest-*.html digest/index.html
+          cp deeptech-news/output/posts.json    digest/posts.json
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add digest

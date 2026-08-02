@@ -227,14 +227,30 @@ def build_post(article: dict, index: int) -> str:
     return "\n".join(parts)
 
 
-def to_linkedin(articles: list, days: int, top: int = 7) -> str:
-    """Return a Markdown file of the week's LinkedIn post drafts, one per day.
+# A standing instruction to paste into Claude Cowork. It drives the existing
+# Cowork + Chrome workflow off the structured posts.json, so the whole week gets
+# scheduled from one prompt.
+COWORK_PROMPT = (
+    "Schedule my Swiss DeepTech LinkedIn posts for this week. Read "
+    "digest/posts.json in this repo. For each post, create a LinkedIn post, "
+    "paste the `text` exactly as written (do not change the wording), attach "
+    "the picture at `image` (download it from that URL and upload it; if `image` "
+    "is null, skip the image), and schedule it for the `time` on the `date` "
+    "given. Do them in order, one per day."
+)
 
-    Uses Claude to write the posts in Max's voice when an ANTHROPIC_API_KEY is
-    available; otherwise falls back to the built-in structured templates. Each
-    draft is labeled with the day it is meant to be scheduled for, starting the
-    day after the run (so a Wednesday run plans Thursday through the next
-    Wednesday).
+# Post scheduling time (local). Kept here so the JSON, the Markdown, and the
+# Cowork prompt always agree.
+POST_TIME = "08:00"
+
+
+def build_posts(articles: list, days: int, top: int = 7):
+    """Build the week's posts once. Returns (records, mode).
+
+    Each record is a self-contained dict ready for both the human-readable
+    Markdown and the machine-readable posts.json, so the AI writer runs only
+    once per digest. Posts are dated one per day starting the day after the run
+    (a Wednesday run plans Thursday through the next Wednesday).
     """
     import datetime as dt
     from ai_writer import generate_posts
@@ -244,31 +260,69 @@ def to_linkedin(articles: list, days: int, top: int = 7) -> str:
 
     ai_posts = generate_posts(picks, days)
     if ai_posts:
-        posts = ai_posts
+        texts = ai_posts
         mode = "Written by Claude in Max's voice."
     else:
-        posts = [build_post(art, i) for i, art in enumerate(picks)]
+        texts = [build_post(art, i) for i, art in enumerate(picks)]
         mode = "Template drafts (set ANTHROPIC_API_KEY for AI-written posts)."
 
+    records = []
+    for i, (text, art) in enumerate(zip(texts, picks)):
+        day = today + dt.timedelta(days=i + 1)
+        records.append({
+            "index": i + 1,
+            "weekday": day.strftime("%A"),
+            "date": day.isoformat(),
+            "schedule_for": day.strftime("%A %d %B"),
+            "time": POST_TIME,
+            "text": text,
+            "image": art.get("image"),
+            "link": art.get("link"),
+            "publisher": art.get("publisher"),
+        })
+    return records, mode
+
+
+def render_markdown(records: list, mode: str, days: int) -> str:
+    """Render the human-readable weekly plan, with the Cowork handoff on top."""
+    import datetime as dt
+
+    today = dt.date.today()
     parts = [
         "# Climb Ventures LinkedIn plan for the week",
-        f"_Generated {today.strftime('%d %B %Y')}. {len(picks)} posts, one per "
+        f"_Generated {today.strftime('%d %B %Y')}. {len(records)} posts, one per "
         f"day, from Swiss DeepTech news of the last {days} days. {mode} "
-        f"Schedule each for 8:00 AM on its day. Review and edit before posting._",
+        f"Schedule each for {POST_TIME} on its day. Review and edit before posting._",
+        "",
+        "## Publish with Claude Cowork",
+        "Paste this into Cowork to schedule the whole week in one go (it reads the "
+        "structured file `digest/posts.json` next to this one):",
+        "",
+        "```",
+        COWORK_PROMPT,
+        "```",
+        "",
+        "The posts themselves are below, for review before you run it.",
         "",
     ]
-    for i, (post, art) in enumerate(zip(posts, picks)):
-        day = (today + dt.timedelta(days=i + 1)).strftime("%A %d %B")
-        parts.append(f"## Post {i + 1} — schedule for {day}\n")
+    for r in records:
+        parts.append(
+            f"## Post {r['index']} — schedule for {r['schedule_for']} at {r['time']}\n"
+        )
         parts.append("```")
-        parts.append(post)
+        parts.append(r["text"])
         parts.append("```")
-        image = art.get("image")
-        if image:
-            parts.append(f"🖼️ **Article image:** {image}")
+        if r["image"]:
+            parts.append(f"🖼️ **Article image:** {r['image']}")
         else:
             parts.append("🖼️ **Article image:** none found, grab one from the article page.")
         parts.append("")
-    if not picks:
+    if not records:
         parts.append("_No stories to turn into posts this run._")
     return "\n".join(parts) + "\n"
+
+
+def to_linkedin(articles: list, days: int, top: int = 7) -> str:
+    """Convenience: build and render the weekly plan in one call."""
+    records, mode = build_posts(articles, days, top)
+    return render_markdown(records, mode, days)
