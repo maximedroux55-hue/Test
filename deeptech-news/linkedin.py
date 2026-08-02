@@ -257,12 +257,17 @@ def to_linkedin(articles: list, days: int, top: int = 7) -> str:
         f"Schedule each for 8:00 AM on its day. Review and edit before posting._",
         "",
     ]
-    for i, post in enumerate(posts):
+    for i, (post, art) in enumerate(zip(posts, picks)):
         day = (today + dt.timedelta(days=i + 1)).strftime("%A %d %B")
         parts.append(f"## Post {i + 1} — schedule for {day}\n")
         parts.append("```")
         parts.append(post)
         parts.append("```")
+        image = art.get("image")
+        if image:
+            parts.append(f"🖼️ **Article image:** {image}")
+        else:
+            parts.append("🖼️ **Article image:** none found, grab one from the article page.")
         parts.append("")
     if not picks:
         parts.append("_No stories to turn into posts this run._")

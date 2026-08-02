@@ -77,6 +77,7 @@ Open `relevance.py`:
 | `relevance.py` | Scoring and de-duplication logic |
 | `linkedin.py` | Turns stories into Climb LinkedIn post drafts |
 | `ai_writer.py` | Optional: writes posts in Max's voice via the Claude API |
+| `images.py` | Finds each article's lead image (feed image, else og:image) |
 | `requirements.txt` | Python dependencies |
 | `output/` | Generated digests (git-ignored) |
 

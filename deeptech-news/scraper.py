@@ -44,6 +44,17 @@ def _entry_date(entry) -> dt.datetime | None:
     return dt.datetime.fromtimestamp(timegm(parsed), dt.timezone.utc)
 
 
+def _entry_image(entry) -> str | None:
+    """Return an image URL the RSS feed itself provides, if any."""
+    media = entry.get("media_thumbnail") or entry.get("media_content")
+    if isinstance(media, list) and media and media[0].get("url"):
+        return media[0]["url"]
+    for link in entry.get("links", []):
+        if link.get("rel") == "enclosure" and str(link.get("type", "")).startswith("image"):
+            return link.get("href")
+    return None
+
+
 def _publisher(entry, source_label: str) -> str:
     # Google News nests the real publisher under 'source'.
     src = entry.get("source")
@@ -94,6 +105,8 @@ def collect(days: int, min_score: int) -> list[dict]:
                 "publisher": publisher,
                 "date": date,
                 "score": score,
+                "summary": summary,
+                "image_feed": _entry_image(entry),
             })
 
     articles = deduplicate(articles)
@@ -204,6 +217,9 @@ def main() -> None:
         print(f"Wrote {html_path}", file=sys.stderr)
 
     if args.format in ("linkedin", "both"):
+        from images import resolve_images
+        print("Finding the article image for each post...", file=sys.stderr)
+        resolve_images(articles[: args.posts])
         li_path = os.path.join(args.outdir, f"linkedin-{stamp}.md")
         with open(li_path, "w", encoding="utf-8") as f:
             f.write(to_linkedin(articles, args.days, top=args.posts))
