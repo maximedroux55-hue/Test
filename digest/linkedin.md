@@ -1,102 +1,87 @@
 # Climb Ventures LinkedIn drafts
-_Generated 02 August 2026 from the top 6 Swiss DeepTech stories of the last 7 days. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Review and edit before posting._
+_Generated 02 August 2026 from the top 6 Swiss DeepTech stories of the last 7 days. Written by Claude in Max's voice. Review and edit before posting._
 
 ## Draft 1
 
 ```
-🚀 Swiss deep tech, quietly building the future.
+Rivers as infrastructure
 
-How rivers shape cities and societies
+EPFL is looking at how rivers shape cities and societies. A good reminder that the oldest infrastructure is still the one we understand least.
 
-🚀 Focus: DeepTech
-🔗 Source: EPFL News
+🌊 Water systems sit at the intersection of climate, urban planning and energy, three areas where hard science beats opinion.
+🏙️ Cities are becoming a research object, not just a backdrop.
+🇨🇭 Swiss labs have a long habit of turning environmental research into deployable tools, and that is where the venture opportunity usually hides.
 
-At Climb, this is the Swiss DeepTech we back: world-class research, built to scale globally and capital-efficiently.
-
-Read more: https://actu.epfl.ch/news/how-rivers-shape-cities-and-societies
-
-#DeepTech #Switzerland #VentureCapital #ClimbVentures #DeepTech
+#DeepTech #EPFL #ClimateTech #UrbanResilience
 ```
 
 ## Draft 2
 
 ```
-Another sign of Switzerland's deep-tech momentum. 🇨🇭 
-
-🚀 Focus: DeepTech
-🔗 Source: EPFL News
-
 A lipid switch that blocks anthrax
-https://actu.epfl.ch/news/a-lipid-switch-that-blocks-anthrax
 
-Exactly the capital-efficient Swiss DeepTech thesis we are building at Climb.
+EPFL researchers describe a lipid switch that blocks anthrax. Basic biology, potentially serious consequences.
 
-#DeepTech #Switzerland #VentureCapital #ClimbVentures #DeepTech
+🧬 Mechanism-level discoveries are what make future therapeutics possible, years before anyone talks about a product.
+🛡️ Biodefense and infectious disease keep coming back onto the agenda.
+🇨🇭 Swiss academic biology remains one of the most underrated sources of deeptech company creation in Europe.
+
+#DeepTech #LifeSciences #EPFL #Biotech
 ```
 
 ## Draft 3
 
 ```
-📌 SEALSQ begins commercial phase of quantum photonics technology
+SEALSQ moves quantum photonics into commercial phase
 
-Why it matters:
-⚛️ Focus: Quantum
-🔗 Source: Investing.com
+SEALSQ says its quantum photonics technology has entered its commercial phase. The step from lab to line item is the hard one.
 
-Another data point for the Swiss DeepTech story we back at Climb.
+💡 Photonics is one of the rare quantum areas with a near term path to revenue.
+🔐 Security and semiconductors are converging faster than most roadmaps assumed.
+🇨🇭 A Swiss-rooted player commercialising quantum hardware helps the whole local ecosystem, including the suppliers around it.
 
-🔗 https://news.google.com/rss/articles/CBMiuwFBVV95cUxNSl9FXzd0MVRsMVMzMU1YYkVJMHJsZ0w3aS1wem5EZGhqZ2VSRS0tbW5Fb0NjMjBtcGFKNUJJaU0zeEdyeHVzdkpES0Q3Ym9QRGVLaV9NcWxIekRYX1JfUG9XT21FcGNvd3NIMW5idS1ubzRNZVZicHFvYWIxTEZDTEtJQUlSVmFGYVExeWRjbjl4RzNqZVBaWGw1REplSUpGNGIyX3RQa1AycWVTWXI2TThfQnVMNjMtVWhN?oc=5
-
-#DeepTech #Switzerland #VentureCapital #ClimbVentures #Quantum
+#QuantumTech #Photonics #DeepTech #Semiconductors
 ```
 
 ## Draft 4
 
 ```
-🚀 Swiss deep tech keeps drawing serious capital.
+ZuriQ raises 25.5 million dollars
 
-ZuriQ Raises $25.5 Million To Scale New Groundbreaking 2D Quantum Architecture
+ZuriQ closed 25.5 million dollars to scale its 2D quantum architecture. Congratulations to the team.
 
-⚛️ Focus: Quantum
-💰 Deal: $25.5 M
-🔗 Source: Pulse 2.0
+⚛️ Architecture choices, not qubit counts, will decide who scales.
+🇨🇭 Another Swiss quantum company funded on the strength of its physics, not its narrative.
+📈 Capital-efficient hardware teams coming out of Zurich keep proving the model works.
 
-This is why we invest in Swiss DeepTech at Climb: deep science, lean capital, global ambition.
-
-Read more: https://news.google.com/rss/articles/CBMingFBVV95cUxNWjJjNmduVEd4WWJpZnJicTBHMEhmVEhMcjNJWnRsd3JFdUZHWjFmRzBpanp6d0tqdTJPYk1Qb1l0ZFVUNy1LcHFWekJEV05oN0puVmk0ZGQ2SktEdlV5Q1FGdExCdEVvdkFoZHZDN0VsRkM4ZXZ4LUlxalE0ektFTkI2N1p6S1BvU1JtZFNrUDYtRUMwSlEyaVJ6MTh2UdIBowFBVV95cUxPWkstMWxFNS1pS1pKLTRTQzBmRTFFUVBsOEgyTmVNQ1ZiR3cxRGl4NnZfLXJCcG9pSF90T3RtUEctUWtBeUJYNXdLemhMWG9zT0FsNEZlUF9rc1ZOSzgzd00tV2otWDhVdGd6SVg4WlBoT2V3Vmh2SHFXUTI0M0I3TG4zNy11OFhhdmc2a3RRU1FKRWVGbXNPSlR2Qk5QWVhYbWk4?oc=5
-
-#DeepTech #Switzerland #VentureCapital #ClimbVentures #Quantum
+#Quantum #DeepTech #VentureCapital #SwissInnovation
 ```
 
 ## Draft 5
 
 ```
-Swiss silicon is having a moment. 🇨🇭 
+Swiss capital, global semiconductors
 
-🔌 Focus: Semiconductors
-🔗 Source: MarketBeat
+Lombard Odier Asset Management Switzerland has taken a new stake in NXP Semiconductors.
 
-Lombard Odier Asset Management Switzerland SA Acquires New Stake in NXP Semiconductors N.V. $NXPI
-https://news.google.com/rss/articles/CBMi6wFBVV95cUxObnlWMWVLR1EzWDJnYXJ5T19Ic09fQlBoVWEtVUw3M0U1RW1zS1RLUGEtbXNUbGJHWFc3YkZHRkNUblg4OUh5Sm9yVFRhZUdWZTl4RFlHbDRiRXdvaDg3RnpXV0JUdjcyZmtqaU1EUVVSY2EzMnh2aDFEMkZMTjhNSjBWMEUzS2pPci1kM0NvSGlRU1pPM3g2U0poMHB3QjVtTjF5VHF3WXBKSnJKWTRlN2FRVnpSMm9zS2RVQWcyaHllaWQtU21BNnc5Sy0xWVEwT2dTd3pNV3k2cFZmWnIzMXVyc3Y2SDEwa1dr?oc=5
+🔎 Public market allocators are treating semis as a structural position, not a cycle trade.
+🇨🇭 Swiss institutional money is increasingly comfortable with hard technology risk.
+🔁 The next step is more of that comfort flowing into private, earlier-stage deeptech at home.
 
-At Climb, this is the Swiss DeepTech we back: world-class research, built to scale globally and capital-efficiently.
-
-#DeepTech #Switzerland #VentureCapital #ClimbVentures #Semiconductors
+#Semiconductors #DeepTech #Investing #SwissFinance
 ```
 
 ## Draft 6
 
 ```
-📌 Meet The Swiss Start-Up Hoping To Power The World’s Quantum Revolution
+Forbes turns its attention to Swiss quantum
 
-Why it matters:
-⚛️ Focus: Quantum
-🔗 Source: Forbes
+🇨🇭 Forbes profiles a Swiss start-up hoping to power the world's quantum revolution. Nice to see the coverage catch up with the substance.
 
-Exactly the capital-efficient Swiss DeepTech thesis we are building at Climb.
+⚛️ The picks-and-shovels layer of quantum is often the better business.
+🌍 International attention matters: it shortens the distance to global customers.
+🇨🇭 Switzerland keeps producing quantum teams that build a lot with relatively little capital.
 
-🔗 https://news.google.com/rss/articles/CBMiwAFBVV95cUxQWGdldHhla1hyRmVDanFPc0RpdDVvY290WTl4T01maURNTDNsNXhQNkMwX0c4Wk5INkJUNFhjYnhhRGIyUERJNUt4bW41LXVfa1FsNjVLUTd0UDdCdURrV0RCSm85aWFsYzVsTHk5TnBMRDY1ZU5mWm94ZHktR0FmcDhrejBoREhZWnlFQlpIMHNFVnpGSUR2OVNhaXN5OW8zSWdwLUltRWFrajY3WS1nNF9XSWhZLUhjdENGWl9vaDg?oc=5
-
-#DeepTech #Switzerland #VentureCapital #ClimbVentures #Quantum
+#Quantum #DeepTech #SwissTech #VentureCapital
 ```
 
