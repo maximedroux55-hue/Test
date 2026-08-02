@@ -231,13 +231,13 @@ def build_post(article: dict, index: int) -> str:
 # Cowork + Chrome workflow off the structured posts.json, so the whole week gets
 # scheduled from one prompt.
 COWORK_PROMPT = (
-    "Schedule my Swiss DeepTech LinkedIn posts for this week. Read "
-    "digest/posts.json in this repo. For each post: create a LinkedIn post, "
-    "paste the `text` exactly as written (do not change the wording), and "
-    "schedule it for the `time` on the `date` given. For the image, use the "
-    "picture at `image` (download it from that URL and upload it); if `image` "
-    "is null, open the `link` (the source article) in the browser and use the "
-    "article's own main photo. Do them in order, one per day."
+    "Schedule my Swiss DeepTech LinkedIn posts for this week. Open "
+    "https://maxime-droux.com/digest/posts.json and read the posts from it. "
+    "For each post: create a LinkedIn post, paste the `text` exactly as written "
+    "(do not change the wording), and schedule it for the `time` on the `date` "
+    "given. For the image, use the picture at `image` (download it from that URL "
+    "and upload it); if `image` is null, open the `link` (the source article) "
+    "and use the article's own main photo. Do them in order, one per day."
 )
 
 # Post scheduling time (local). Kept here so the JSON, the Markdown, and the
