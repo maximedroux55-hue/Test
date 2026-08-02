@@ -40,7 +40,7 @@ def _entry_date(entry) -> dt.datetime | None:
     parsed = entry.get("published_parsed") or entry.get("updated_parsed")
     if not parsed:
         return None
-    return dt.datetime.utcfromtimestamp(timegm(parsed))
+    return dt.datetime.fromtimestamp(timegm(parsed), dt.timezone.utc)
 
 
 def _publisher(entry, source_label: str) -> str:
@@ -59,7 +59,7 @@ def _publisher(entry, source_label: str) -> str:
 
 def collect(days: int, min_score: int) -> list[dict]:
     """Fetch all feeds and return a list of relevant, de-duplicated articles."""
-    cutoff = dt.datetime.utcnow() - dt.timedelta(days=days)
+    cutoff = dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=days)
     articles: list[dict] = []
     seen_links = set()
 
@@ -97,8 +97,9 @@ def collect(days: int, min_score: int) -> list[dict]:
 
     articles = deduplicate(articles)
     # Rank by relevance first, then most recent.
+    _oldest = dt.datetime.min.replace(tzinfo=dt.timezone.utc)
     articles.sort(
-        key=lambda a: (a["score"], a["date"] or dt.datetime.min),
+        key=lambda a: (a["score"], a["date"] or _oldest),
         reverse=True,
     )
     return articles

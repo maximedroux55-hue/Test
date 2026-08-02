@@ -36,11 +36,11 @@ def google_news_feed(query: str, days: int = 14) -> str:
 
 
 # ---- 2. Direct institutional / media feeds -----------------------------------
-# (name, url). If one breaks, the scraper logs it and moves on.
+# (name, url). If one breaks, the scraper logs it and moves on. Only verified,
+# working feeds are listed here; ETH and Startupticker are covered through the
+# Google News queries above instead (their public RSS URLs are unreliable).
 DIRECT_FEEDS = [
-    ("Startupticker", "https://www.startupticker.ch/en/rss"),
     ("EPFL News", "https://actu.epfl.ch/feeds/rss/mediacom/en/"),
-    ("ETH Zurich News", "https://ethz.ch/en/news-and-events/eth-news/_jcr_content/rightpar/textimage.rss.xml"),
     ("SWI swissinfo (Business)", "https://www.swissinfo.ch/eng/business/rss"),
 ]
 
