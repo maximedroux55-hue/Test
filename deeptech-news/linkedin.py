@@ -232,11 +232,12 @@ def build_post(article: dict, index: int) -> str:
 # scheduled from one prompt.
 COWORK_PROMPT = (
     "Schedule my Swiss DeepTech LinkedIn posts for this week. Read "
-    "digest/posts.json in this repo. For each post, create a LinkedIn post, "
-    "paste the `text` exactly as written (do not change the wording), attach "
-    "the picture at `image` (download it from that URL and upload it; if `image` "
-    "is null, skip the image), and schedule it for the `time` on the `date` "
-    "given. Do them in order, one per day."
+    "digest/posts.json in this repo. For each post: create a LinkedIn post, "
+    "paste the `text` exactly as written (do not change the wording), and "
+    "schedule it for the `time` on the `date` given. For the image, use the "
+    "picture at `image` (download it from that URL and upload it); if `image` "
+    "is null, open the `link` (the source article) in the browser and use the "
+    "article's own main photo. Do them in order, one per day."
 )
 
 # Post scheduling time (local). Kept here so the JSON, the Markdown, and the
@@ -320,6 +321,122 @@ def render_markdown(records: list, mode: str, days: int) -> str:
     if not records:
         parts.append("_No stories to turn into posts this run._")
     return "\n".join(parts) + "\n"
+
+
+def render_plan_html(records: list, mode: str, days: int) -> str:
+    """Render the weekly plan as a phone-friendly web page (for GitHub Pages).
+
+    Each post is a card with a one-tap Copy button, its image, the schedule
+    slot, and the source link. The Cowork prompt sits at the top with its own
+    Copy button. This is the page served at maxime-droux.com/plan so it opens on
+    any device with no GitHub login.
+    """
+    import datetime as dt
+
+    today = dt.date.today().strftime("%d %B %Y")
+
+    def esc(s: str) -> str:
+        return html.escape(s or "")
+
+    cards = []
+    for r in records:
+        if r.get("image"):
+            img = (
+                f'<img class="shot" src="{esc(r["image"])}" '
+                f'alt="Article image" loading="lazy" '
+                f'onerror="this.replaceWith(Object.assign(document.createElement(\'p\'),'
+                f'{{className:\'noimg\',textContent:\'Image preview blocked. Cowork will '
+                f'grab it from the article page.\'}}))">'
+            )
+        else:
+            img = (
+                '<p class="noimg">No preview image. Cowork will grab one from the '
+                "article page when scheduling.</p>"
+            )
+        cards.append(
+            f"""      <article class="card">
+        <div class="cardhead">
+          <span class="num">Post {r['index']}</span>
+          <span class="when">{esc(r['schedule_for'])} &middot; {esc(r['time'])}</span>
+        </div>
+        <div class="posttext">
+          <button class="copy" onclick="copyText(this)">Copy</button>
+          <pre class="post">{esc(r['text'])}</pre>
+        </div>
+        {img}
+        <a class="src" href="{esc(r['link'])}" target="_blank" rel="noopener">Source: {esc(r['publisher'] or 'link')}</a>
+      </article>"""
+        )
+    body = "\n".join(cards) or "<p>No stories to turn into posts this week.</p>"
+
+    return f"""<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Climb LinkedIn plan for the week</title>
+<meta name="robots" content="noindex">
+<style>
+  :root {{ --green:#46b96a; --ink:#1b2430; --soft:#5b6472; --line:#e6eae8; --bg:#f6f8f7; }}
+  * {{ box-sizing:border-box; margin:0; padding:0; }}
+  body {{ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+         background:var(--bg); color:var(--ink); line-height:1.55; }}
+  .wrap {{ max-width:720px; margin:0 auto; padding:2rem 1rem 4rem; }}
+  h1 {{ font-size:1.6rem; letter-spacing:-0.02em; }}
+  h1 .dot {{ color:var(--green); }}
+  .sub {{ color:var(--soft); margin:0.4rem 0 1.5rem; font-size:0.9rem; }}
+  .cowork {{ background:#fff; border:1px solid var(--line); border-radius:14px;
+            padding:1rem; margin-bottom:1.8rem; }}
+  .cowork h2 {{ font-size:1rem; margin-bottom:0.5rem; }}
+  .cowork p {{ font-size:0.85rem; color:var(--soft); margin-bottom:0.6rem; }}
+  .card {{ background:#fff; border:1px solid var(--line); border-radius:14px;
+          padding:1rem; margin-bottom:1rem; }}
+  .cardhead {{ display:flex; justify-content:space-between; align-items:baseline;
+              gap:0.5rem; margin-bottom:0.6rem; }}
+  .num {{ color:var(--green); font-weight:800; }}
+  .when {{ color:var(--soft); font-size:0.82rem; text-align:right; }}
+  .posttext {{ position:relative; }}
+  pre.post {{ white-space:pre-wrap; word-wrap:break-word; font:inherit;
+             background:var(--bg); border:1px solid var(--line); border-radius:10px;
+             padding:0.9rem; padding-top:2.4rem; }}
+  .copy {{ position:absolute; top:0.5rem; right:0.5rem; z-index:2;
+          background:var(--green); color:#fff; border:0; border-radius:8px;
+          padding:0.35rem 0.7rem; font-size:0.8rem; font-weight:600; cursor:pointer; }}
+  .copy:active {{ transform:scale(0.97); }}
+  .shot {{ display:block; width:100%; height:auto; border-radius:10px;
+          margin-top:0.8rem; border:1px solid var(--line); }}
+  .noimg {{ margin-top:0.8rem; font-size:0.82rem; color:var(--soft); font-style:italic; }}
+  .src {{ display:inline-block; margin-top:0.7rem; color:var(--green);
+         font-size:0.82rem; text-decoration:none; font-weight:600; }}
+  .src:hover {{ text-decoration:underline; }}
+  footer {{ color:var(--soft); font-size:0.78rem; margin-top:2rem; }}
+</style></head><body>
+<div class="wrap">
+  <h1>This week on LinkedIn<span class="dot">.</span></h1>
+  <p class="sub">Generated {today} &middot; {len(records)} posts, one per day &middot; {esc(mode)}</p>
+
+  <div class="cowork">
+    <h2>Publish with Claude Cowork</h2>
+    <p>Copy this into Cowork to schedule the whole week in one go:</p>
+    <div class="posttext">
+      <button class="copy" onclick="copyText(this)">Copy</button>
+      <pre class="post">{esc(COWORK_PROMPT)}</pre>
+    </div>
+  </div>
+
+{body}
+
+  <footer>Review each post before publishing. Times are Swiss local.</footer>
+</div>
+<script>
+  function copyText(btn) {{
+    var pre = btn.parentElement.querySelector('pre.post');
+    navigator.clipboard.writeText(pre.innerText).then(function() {{
+      var old = btn.textContent; btn.textContent = 'Copied';
+      setTimeout(function() {{ btn.textContent = old; }}, 1500);
+    }});
+  }}
+</script>
+</body></html>
+"""
 
 
 def to_linkedin(articles: list, days: int, top: int = 7) -> str:

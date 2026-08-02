@@ -223,18 +223,24 @@ def main() -> None:
     if args.format in ("linkedin", "both"):
         import json
         from images import resolve_images
-        from linkedin import build_posts, render_markdown, COWORK_PROMPT
+        from linkedin import build_posts, render_markdown, render_plan_html, COWORK_PROMPT
         print("Finding the article image for each post...", file=sys.stderr)
         resolve_images(articles[: args.posts])
 
-        # Build once, then write both the human plan and the machine-readable
-        # posts.json that the Cowork workflow schedules from.
+        # Build once, then write the human plan (Markdown), the phone-friendly
+        # web page (HTML, served at maxime-droux.com/plan), and the
+        # machine-readable posts.json the Cowork workflow schedules from.
         records, mode = build_posts(articles, args.days, top=args.posts)
 
         li_path = os.path.join(args.outdir, f"linkedin-{stamp}.md")
         with open(li_path, "w", encoding="utf-8") as f:
             f.write(render_markdown(records, mode, args.days))
         print(f"Wrote {li_path}", file=sys.stderr)
+
+        plan_path = os.path.join(args.outdir, "plan.html")
+        with open(plan_path, "w", encoding="utf-8") as f:
+            f.write(render_plan_html(records, mode, args.days))
+        print(f"Wrote {plan_path}", file=sys.stderr)
 
         json_path = os.path.join(args.outdir, "posts.json")
         payload = {
