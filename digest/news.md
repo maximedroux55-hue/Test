@@ -1,5 +1,5 @@
 # Swiss DeepTech news digest
-_Generated 02 August 2026, covering the last 7 days. 8 stories._
+_Generated 02 August 2026, covering the last 7 days. 6 stories._
 
 1. **[How rivers shape cities and societies](https://actu.epfl.ch/news/how-rivers-shape-cities-and-societies)**  
    EPFL News · 30 Jul 2026 · relevance 19
@@ -13,7 +13,3 @@ _Generated 02 August 2026, covering the last 7 days. 8 stories._
    MarketBeat · 28 Jul 2026 · relevance 6
 6. **[Meet The Swiss Start-Up Hoping To Power The World’s Quantum Revolution - Forbes](https://news.google.com/rss/articles/CBMiwAFBVV95cUxQWGdldHhla1hyRmVDanFPc0RpdDVvY290WTl4T01maURNTDNsNXhQNkMwX0c4Wk5INkJUNFhjYnhhRGIyUERJNUt4bW41LXVfa1FsNjVLUTd0UDdCdURrV0RCSm85aWFsYzVsTHk5TnBMRDY1ZU5mWm94ZHktR0FmcDhrejBoREhZWnlFQlpIMHNFVnpGSUR2OVNhaXN5OW8zSWdwLUltRWFrajY3WS1nNF9XSWhZLUhjdENGWl9vaDg?oc=5)**  
    Forbes · 28 Jul 2026 · relevance 6
-7. **[BE Semiconductor Industries (ENXTAM:BESI) Posted Strong Half Year Earnings, Is The Upside Already Priced In? - simplywall.st](https://news.google.com/rss/articles/CBMi7AFBVV95cUxPemctaC1ndVhHYktvbzhNRkRJemIxcjFPOU1XQWE2UGl5VG9QYl9makxQdVYzT0w2VzRVanJYbTdRZlhPUHlsVmJWdzJhMExtRnJyVnA5YjFvMF9kbjktYzBIVThVZ1o3Mkc4SS1maGh0SnU4V0VHNGxodzRfNURoc3JMc0tablR4Q19WQ09MMlRCSVVDNkdLcjNiZ2VTeUN1eUhMbWVwbTVxZFdVc1ZBdXFxZ0t3UzYwU0hmaHg4SzRIbWRMVXNvZTR4dkE5NDc2aTlGcVpfYnBmcGlsWDRYemN2UEFFYzN3NktpadIB8gFBVV95cUxOeTRMY1ZIOVY1SE01M2JLLUNCbmd6YmcybWZKVHo1Y1hEeFBwblJYdlF1alplYl9WQlcxSEEzdHFDOWFPUmMxVUFla1ltUnBIVVZKaVkwUTlCNTFsNXVhWXI4cjV2dEI0eHBQTUJPME1sMXA2ZTlOcVFnLXE5akc1XzR6OThVNHVjeEx2eEhZbEkxYVpjMjJGS05Eb0IyY2JNclJFRUJjOVJsMEoteUd6eXR6eDQ2VW0tZEdVMU9KNkRTRU9BTGc5b1FuWVJEcmRDY0tKZERDMG1PanhsdUtHUTFfdVJvUDdGOVZtYy1iMTVpUQ?oc=5)**  
-   simplywall.st · 01 Aug 2026 · relevance 5
-8. **[Swiss preventive health startup Ahead Health raises $10M for Germany and Netherlands launch - Tech Funding News](https://news.google.com/rss/articles/CBMikwFBVV95cUxNV2JqQ2R5UlVCcDhrYk12TU9NWHVGQU9XOWZia0U1Wi0zeDg1NDdIN3lMRlAxMS1wN0pwaDZ0QWN4TTBObDVfWmtSOTBzSUNDWlRPUDRfM0RFeHZCNHBlM3k0al91c2VTRnpCVlhHc29XaTJOZGs2M0NpX2RiTjA3ZlFUUjd0SEVQMWs2Z1d1ZEp6VTA?oc=5)**  
-   Tech Funding News · 30 Jul 2026 · relevance 5
