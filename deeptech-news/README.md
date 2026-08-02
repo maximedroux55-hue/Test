@@ -71,13 +71,29 @@ Open `relevance.py`:
 | `sources.py` | The list of feeds and search queries |
 | `relevance.py` | Scoring and de-duplication logic |
 | `linkedin.py` | Turns stories into Climb LinkedIn post drafts |
+| `ai_writer.py` | Optional: writes posts in Max's voice via the Claude API |
 | `requirements.txt` | Python dependencies |
 | `output/` | Generated digests (git-ignored) |
 
-## Going further
+## AI-written posts (optional)
 
-The LinkedIn drafts are built with templates (no API key, runs anywhere). To
-get fully written, human-quality summaries in Max's voice, the next step is to
-call the Claude API for each story. That needs an Anthropic API key stored as a
-GitHub secret, and a small change to `linkedin.py` to send each headline plus
-snippet to the model. Ask Claude to wire this up when you are ready.
+The LinkedIn drafts work with zero setup using built-in templates. For fully
+written posts in Max's voice, the tool can call the **Claude API** instead. This
+is automatic when an API key is present, and falls back to templates when it is
+not.
+
+To turn it on:
+
+1. Create an API key at https://console.anthropic.com. This is separate from a
+   Claude.ai subscription and is billed per use (a weekly digest costs cents).
+2. Provide the key:
+   - **Locally:** `export ANTHROPIC_API_KEY=sk-ant-...` before running.
+   - **In GitHub Actions:** add a repository secret named `ANTHROPIC_API_KEY`
+     (Settings, then Secrets and variables, then Actions). The workflow already
+     passes it through.
+
+Optional: set `ANTHROPIC_MODEL` (default `claude-opus-5`) to use a cheaper model
+such as `claude-sonnet-5`.
+
+The digest header notes which mode produced the posts, so you always know
+whether you are looking at AI-written or template drafts.

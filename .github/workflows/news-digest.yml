@@ -37,6 +37,10 @@ jobs:
         run: pip install -r deeptech-news/requirements.txt
 
       - name: Build the digest
+        env:
+          # Optional: add a repo secret named ANTHROPIC_API_KEY to get
+          # AI-written LinkedIn posts. Without it, template drafts are used.
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
           cd deeptech-news
           python scraper.py \

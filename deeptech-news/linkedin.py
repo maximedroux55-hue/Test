@@ -220,20 +220,35 @@ def build_post(article: dict, index: int) -> str:
 
 
 def to_linkedin(articles: list, days: int, top: int = 6) -> str:
-    """Return a Markdown file of the top LinkedIn post drafts."""
+    """Return a Markdown file of the top LinkedIn post drafts.
+
+    Uses Claude to write the posts in Max's voice when an ANTHROPIC_API_KEY is
+    available; otherwise falls back to the built-in templates.
+    """
     import datetime as dt
+    from ai_writer import generate_posts
+
     today = dt.date.today().strftime("%d %B %Y")
     picks = articles[:top]
+
+    ai_posts = generate_posts(picks, days)
+    if ai_posts:
+        posts = ai_posts
+        mode = "Written by Claude in Max's voice."
+    else:
+        posts = [build_post(art, i) for i, art in enumerate(picks)]
+        mode = "Template drafts (set ANTHROPIC_API_KEY for AI-written posts)."
+
     parts = [
-        f"# Climb Ventures LinkedIn drafts",
+        "# Climb Ventures LinkedIn drafts",
         f"_Generated {today} from the top {len(picks)} Swiss DeepTech stories "
-        f"of the last {days} days. Review and edit before posting._",
+        f"of the last {days} days. {mode} Review and edit before posting._",
         "",
     ]
-    for i, art in enumerate(picks):
+    for i, post in enumerate(posts):
         parts.append(f"## Draft {i + 1}\n")
         parts.append("```")
-        parts.append(build_post(art, i))
+        parts.append(post)
         parts.append("```")
         parts.append("")
     if not picks:
