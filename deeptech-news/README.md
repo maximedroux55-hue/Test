@@ -22,13 +22,24 @@ pip install -r requirements.txt
 ## Run it
 
 ```bash
-python scraper.py                 # last 7 days, top 25 stories
-python scraper.py --days 14       # widen the window
-python scraper.py --limit 15      # shorter digest
-python scraper.py --min-score 6   # stricter relevance filter
+python scraper.py                      # digest + LinkedIn drafts (default)
+python scraper.py --format digest      # ranked digest only
+python scraper.py --format linkedin    # Climb LinkedIn drafts only
+python scraper.py --days 14            # widen the window
+python scraper.py --limit 15           # shorter digest
+python scraper.py --min-score 6        # stricter relevance filter
 ```
 
-Output is written to `output/digest-YYYY-MM-DD.md` and `.html`.
+Output is written to `output/`:
+
+- `digest-YYYY-MM-DD.md` and `.html` — the ranked list of stories.
+- `linkedin-YYYY-MM-DD.md` — ready-to-edit Climb Ventures LinkedIn drafts for
+  the top stories (catchy title, emoji bullets, Swiss flag on Swiss summaries,
+  Climb positioning, varied layouts).
+
+> The LinkedIn drafts are a strong starting point, not final copy. Because the
+> tool reads RSS feeds rather than full article text, review and polish each
+> draft before posting. For fully AI-written summaries, see "Going further".
 
 > Note: this must run from a machine or environment with normal internet
 > access. It will not fetch news from inside a restricted/sandboxed network.
@@ -59,5 +70,14 @@ Open `relevance.py`:
 | `scraper.py` | Main program: fetch, filter, rank, write output |
 | `sources.py` | The list of feeds and search queries |
 | `relevance.py` | Scoring and de-duplication logic |
+| `linkedin.py` | Turns stories into Climb LinkedIn post drafts |
 | `requirements.txt` | Python dependencies |
 | `output/` | Generated digests (git-ignored) |
+
+## Going further
+
+The LinkedIn drafts are built with templates (no API key, runs anywhere). To
+get fully written, human-quality summaries in Max's voice, the next step is to
+call the Claude API for each story. That needs an Anthropic API key stored as a
+GitHub secret, and a small change to `linkedin.py` to send each headline plus
+snippet to the model. Ask Claude to wire this up when you are ready.

@@ -34,6 +34,7 @@ except ImportError:
 
 from sources import all_feeds
 from relevance import score_article, deduplicate
+from linkedin import to_linkedin
 
 
 def _entry_date(entry) -> dt.datetime | None:
@@ -178,6 +179,8 @@ def main() -> None:
     ap.add_argument("--limit", type=int, default=25, help="Max stories to keep (default 25)")
     ap.add_argument("--min-score", type=int, default=4, help="Minimum relevance score (default 4)")
     ap.add_argument("--outdir", default="output", help="Output directory (default ./output)")
+    ap.add_argument("--format", choices=["digest", "linkedin", "both"], default="both",
+                    help="What to produce: ranked digest, LinkedIn drafts, or both (default both)")
     args = ap.parse_args()
 
     print(f"Fetching Swiss DeepTech news (last {args.days} days)...", file=sys.stderr)
@@ -187,16 +190,22 @@ def main() -> None:
     import os
     os.makedirs(args.outdir, exist_ok=True)
     stamp = dt.date.today().isoformat()
-    md_path = os.path.join(args.outdir, f"digest-{stamp}.md")
-    html_path = os.path.join(args.outdir, f"digest-{stamp}.html")
 
-    with open(md_path, "w", encoding="utf-8") as f:
-        f.write(to_markdown(articles, args.days))
-    with open(html_path, "w", encoding="utf-8") as f:
-        f.write(to_html(articles, args.days))
+    if args.format in ("digest", "both"):
+        md_path = os.path.join(args.outdir, f"digest-{stamp}.md")
+        html_path = os.path.join(args.outdir, f"digest-{stamp}.html")
+        with open(md_path, "w", encoding="utf-8") as f:
+            f.write(to_markdown(articles, args.days))
+        with open(html_path, "w", encoding="utf-8") as f:
+            f.write(to_html(articles, args.days))
+        print(f"Wrote {md_path}", file=sys.stderr)
+        print(f"Wrote {html_path}", file=sys.stderr)
 
-    print(f"Wrote {md_path}", file=sys.stderr)
-    print(f"Wrote {html_path}", file=sys.stderr)
+    if args.format in ("linkedin", "both"):
+        li_path = os.path.join(args.outdir, f"linkedin-{stamp}.md")
+        with open(li_path, "w", encoding="utf-8") as f:
+            f.write(to_linkedin(articles, args.days))
+        print(f"Wrote {li_path}", file=sys.stderr)
 
 
 if __name__ == "__main__":

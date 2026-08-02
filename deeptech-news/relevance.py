@@ -66,7 +66,7 @@ _STOP = {
 
 def _normalize(title: str) -> str:
     t = title.lower()
-    t = re.sub(r"\s*[-|]\s*[^-|]+$", "", t)  # drop trailing " - Publisher"
+    t = re.sub(r"\s+[-|]\s+[^-|]+$", "", t)  # drop trailing " - Publisher"
     t = re.sub(r"[^a-z0-9 ]", "", t)
     return re.sub(r"\s+", " ", t).strip()
 
