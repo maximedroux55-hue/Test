@@ -19,7 +19,7 @@ on:
     - cron: "0 6 * * 1"  # Mondays 06:00 UTC (about 08:00 in Switzerland)
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build:
@@ -53,3 +53,17 @@ jobs:
         with:
           name: swiss-deeptech-digest
           path: deeptech-news/output/
+
+      # Publish the latest digest into the repo at stable filenames so it can be
+      # read (and copied) straight from github.com on a phone, no download needed.
+      - name: Publish latest digest to the repo
+        run: |
+          mkdir -p digest
+          cp deeptech-news/output/linkedin-*.md digest/linkedin.md
+          cp deeptech-news/output/digest-*.md   digest/news.md
+          cp deeptech-news/output/digest-*.html digest/index.html
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add digest
+          git commit -m "Update latest digest" || echo "No changes to publish."
+          git push origin HEAD:${GITHUB_REF_NAME}
