@@ -1,52 +1,35 @@
 """News sources for the Swiss DeepTech aggregator.
 
-Everything here is a public RSS feed, so no API keys are needed. Two kinds:
+Direct publisher RSS feeds only. Google News search feeds are intentionally not
+used: direct feeds give higher-quality items and, importantly, a usable lead
+image for each article (Google News hides the article behind a redirect).
 
-1. Google News search feeds. Each query is scoped to Switzerland and to deep
-   technology topics. Google News turns any search into an RSS feed, which is a
-   reliable, layout-proof way to collect news (far sturdier than scraping raw
-   web pages). Edit GOOGLE_NEWS_QUERIES to change what we look for.
-
-2. Direct feeds from Swiss research institutions and startup media. Feeds that
-   are unreachable or empty are skipped automatically, so it is safe to leave a
-   URL here even if it occasionally changes.
+Feeds that are unreachable or empty are skipped automatically, so a wrong or
+retired URL never breaks a run. After a run, prune any feed that the log marks
+as "skipped (unreachable)".
 """
 
-import urllib.parse
-
-# ---- 1. Google News search queries -------------------------------------------
-# Keep each query focused. "when:14d" limits Google News to the last 14 days.
-GOOGLE_NEWS_QUERIES = [
-    '"deep tech" Switzerland',
-    'Swiss deeptech startup',
-    'Switzerland startup funding round',
-    'EPFL spin-off OR spinoff',
-    'ETH Zurich spin-off OR spinoff',
-    'Switzerland quantum OR semiconductor OR photonics',
-    'Swiss robotics OR AI hardware startup',
-    'Switzerland biotech OR medtech financing',
-    'Swiss cleantech OR climate tech startup',
-]
-
-
-def google_news_feed(query: str, days: int = 14) -> str:
-    """Build a Google News RSS URL for a query, scoped to Switzerland."""
-    q = urllib.parse.quote(f"{query} when:{days}d")
-    return f"https://news.google.com/rss/search?q={q}&hl=en-CH&gl=CH&ceid=CH:en"
-
-
-# ---- 2. Direct institutional / media feeds -----------------------------------
-# (name, url). If one breaks, the scraper logs it and moves on. Only verified,
-# working feeds are listed here; ETH and Startupticker are covered through the
-# Google News queries above instead (their public RSS URLs are unreliable).
+# ---- Direct institutional and media feeds (Swiss research and startups) -------
+# (name, url). Verified-working feeds should stay near the top. Candidates that
+# may need their URL corrected are grouped below and pruned after a test run.
 DIRECT_FEEDS = [
+    # Proven working:
     ("EPFL News", "https://actu.epfl.ch/feeds/rss/mediacom/en/"),
+
+    # Candidates (kept only if a run shows they return items):
     ("SWI swissinfo (Business)", "https://www.swissinfo.ch/eng/business/rss"),
+    ("SWI swissinfo (Sci-Tech)", "https://www.swissinfo.ch/eng/sci-tech/rss"),
+    ("ETH Zurich News", "https://ethz.ch/en/news-and-events/eth-news.rss.xml"),
+    ("Empa News", "https://www.empa.ch/web/empa/rss"),
+    ("PSI News", "https://www.psi.ch/en/media/latest-news/rss.xml"),
+    ("Startupticker", "https://www.startupticker.ch/en/rss"),
 ]
 
 
 def all_feeds(days: int = 14):
-    """Return a list of (source_label, feed_url) for every configured source."""
-    feeds = [("Google News", google_news_feed(q, days)) for q in GOOGLE_NEWS_QUERIES]
-    feeds += DIRECT_FEEDS
-    return feeds
+    """Return a list of (source_label, feed_url) for every configured source.
+
+    `days` is accepted for compatibility but not used now that the sources are
+    direct feeds (the scraper filters by date after fetching).
+    """
+    return list(DIRECT_FEEDS)
