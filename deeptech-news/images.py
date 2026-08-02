@@ -16,11 +16,18 @@ judgment on rights and attribution before posting, as you already do.
 
 from __future__ import annotations
 
+import json
 import re
 import urllib.parse
 import urllib.request
 
-_UA = "Mozilla/5.0 (compatible; ClimbNewsBot/1.0; +https://climbventures.com)"
+# A real browser user-agent. Sites behind a firewall (Startupticker among them)
+# serve a 403 with no image to obvious bots, but let a normal browser through.
+# The RSS fetch already uses a browser UA for the same reason.
+_UA = (
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/126.0 Safari/537.36"
+)
 
 _META_PROPS = ("og:image", "og:image:url", "og:image:secure_url", "twitter:image")
 
@@ -41,15 +48,58 @@ def _og_image(html: str, base_url: str) -> str | None:
     return None
 
 
+def _link_image_src(html: str, base_url: str) -> str | None:
+    m = re.search(
+        r'<link[^>]+rel=["\']image_src["\'][^>]+href=["\']([^"\']+)["\']',
+        html, re.IGNORECASE,
+    )
+    return urllib.parse.urljoin(base_url, m.group(1).strip()) if m else None
+
+
+def _jsonld_image(html: str, base_url: str) -> str | None:
+    """Pull an image URL out of any JSON-LD block (schema.org 'image')."""
+    for block in re.findall(
+        r'<script[^>]+type=["\']application/ld\+json["\'][^>]*>(.*?)</script>',
+        html, re.IGNORECASE | re.DOTALL,
+    ):
+        try:
+            data = json.loads(block.strip())
+        except Exception:
+            continue
+        for node in data if isinstance(data, list) else [data]:
+            if not isinstance(node, dict):
+                continue
+            img = node.get("image")
+            if isinstance(img, str):
+                return urllib.parse.urljoin(base_url, img)
+            if isinstance(img, dict) and img.get("url"):
+                return urllib.parse.urljoin(base_url, img["url"])
+            if isinstance(img, list) and img:
+                first = img[0]
+                if isinstance(first, str):
+                    return urllib.parse.urljoin(base_url, first)
+                if isinstance(first, dict) and first.get("url"):
+                    return urllib.parse.urljoin(base_url, first["url"])
+    return None
+
+
 def article_image(url: str, timeout: int = 12) -> str | None:
-    """Fetch the article page and return its lead image URL, or None."""
+    """Fetch the article page and return its lead image URL, or None.
+
+    Tries, in order: Open Graph / Twitter image, <link rel="image_src">, and
+    JSON-LD schema.org image. The first that hits wins.
+    """
     try:
         req = urllib.request.Request(url, headers={"User-Agent": _UA})
         with urllib.request.urlopen(req, timeout=timeout) as resp:
             final_url = resp.geturl()
-            raw = resp.read(300_000)  # only need the <head>; cap the read
+            raw = resp.read(600_000)  # the <head> plus a little body; cap the read
         html = raw.decode("utf-8", "ignore")
-        return _og_image(html, final_url)
+        return (
+            _og_image(html, final_url)
+            or _link_image_src(html, final_url)
+            or _jsonld_image(html, final_url)
+        )
     except Exception:
         return None
 
