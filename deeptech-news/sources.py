@@ -5,24 +5,20 @@ used: direct feeds give higher-quality items and, importantly, a usable lead
 image for each article (Google News hides the article behind a redirect).
 
 Feeds that are unreachable or empty are skipped automatically, so a wrong or
-retired URL never breaks a run. After a run, prune any feed the log marks as
-"skipped (unreachable)".
+retired URL never breaks a run.
+
+To add a source: append (name, url) below with the site's real RSS/Atom URL,
+then run once and keep it only if the log does not mark it "skipped".
+Startupticker is a wanted source but its public feed URL is not yet confirmed;
+add it here once you have the exact RSS link from their site.
 """
 
 # ---- Direct institutional and media feeds (Swiss research and startups) -------
-# (name, url).
+# (name, url). Confirmed reachable in test runs.
 DIRECT_FEEDS = [
-    # Confirmed working (returned items in a test run):
     ("EPFL News", "https://actu.epfl.ch/feeds/rss/mediacom/en/"),
     ("ETH Zurich News", "https://ethz.ch/en/news-and-events/eth-news.rss.xml"),
     ("SWI swissinfo (Business)", "https://www.swissinfo.ch/eng/business/rss"),
-
-    # Startupticker candidates (Max's primary startup source). The exact RSS URL
-    # is unconfirmed; these are likely patterns. Unreachable ones are skipped,
-    # and the working one (if any) should be kept and the rest removed.
-    ("Startupticker", "https://www.startupticker.ch/en/rss.xml"),
-    ("Startupticker (feed)", "https://www.startupticker.ch/feed"),
-    ("Startupticker (rss)", "https://www.startupticker.ch/rss"),
 ]
 
 
