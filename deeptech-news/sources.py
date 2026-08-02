@@ -5,31 +5,31 @@ used: direct feeds give higher-quality items and, importantly, a usable lead
 image for each article (Google News hides the article behind a redirect).
 
 Feeds that are unreachable or empty are skipped automatically, so a wrong or
-retired URL never breaks a run. After a run, prune any feed that the log marks
-as "skipped (unreachable)".
+retired URL never breaks a run. After a run, prune any feed the log marks as
+"skipped (unreachable)".
 """
 
 # ---- Direct institutional and media feeds (Swiss research and startups) -------
-# (name, url). Verified-working feeds should stay near the top. Candidates that
-# may need their URL corrected are grouped below and pruned after a test run.
+# (name, url).
 DIRECT_FEEDS = [
-    # Proven working:
+    # Confirmed working (returned items in a test run):
     ("EPFL News", "https://actu.epfl.ch/feeds/rss/mediacom/en/"),
-
-    # Candidates (kept only if a run shows they return items):
-    ("SWI swissinfo (Business)", "https://www.swissinfo.ch/eng/business/rss"),
-    ("SWI swissinfo (Sci-Tech)", "https://www.swissinfo.ch/eng/sci-tech/rss"),
     ("ETH Zurich News", "https://ethz.ch/en/news-and-events/eth-news.rss.xml"),
-    ("Empa News", "https://www.empa.ch/web/empa/rss"),
-    ("PSI News", "https://www.psi.ch/en/media/latest-news/rss.xml"),
-    ("Startupticker", "https://www.startupticker.ch/en/rss"),
+    ("SWI swissinfo (Business)", "https://www.swissinfo.ch/eng/business/rss"),
+
+    # Startupticker candidates (Max's primary startup source). The exact RSS URL
+    # is unconfirmed; these are likely patterns. Unreachable ones are skipped,
+    # and the working one (if any) should be kept and the rest removed.
+    ("Startupticker", "https://www.startupticker.ch/en/rss.xml"),
+    ("Startupticker (feed)", "https://www.startupticker.ch/feed"),
+    ("Startupticker (rss)", "https://www.startupticker.ch/rss"),
 ]
 
 
 def all_feeds(days: int = 14):
-    """Return a list of (source_label, feed_url) for every configured source.
+    """Return (source_label, feed_url) for every configured direct feed.
 
-    `days` is accepted for compatibility but not used now that the sources are
-    direct feeds (the scraper filters by date after fetching).
+    `days` is accepted for compatibility but unused (the scraper filters by
+    date after fetching).
     """
     return list(DIRECT_FEEDS)
