@@ -1,15 +1,25 @@
 """News sources for the Swiss DeepTech aggregator.
 
-Direct publisher RSS feeds only. Google News search feeds are intentionally not
-used: direct feeds give higher-quality items and, importantly, a usable lead
-image for each article (Google News hides the article behind a redirect).
+Two layers of sources:
+
+  1. Direct publisher RSS feeds (below). Reliable, and each already carries a
+     lead image. But each covers only its own newsroom, so good Swiss deep-tech
+     stories are spread thin across many of them.
+
+  2. Google News search feeds (see google_news.py). A wide net across thousands
+     of publishers at once, including company press releases and newswires. Its
+     links are redirects, so for the stories we actually use we resolve each one
+     back to the real publisher URL (that is also where the article image is).
 
 Feeds that are unreachable or empty are skipped automatically, so a wrong or
 retired URL never breaks a run.
 
-To add a source: append (name, url) below with the site's real RSS/Atom URL,
-then run once and keep it only if the log does not mark it "skipped".
+To add a direct source: append (name, url) below with the site's real RSS/Atom
+URL, then run once and keep it only if the log does not mark it "skipped". To
+change what Google surfaces, edit GOOGLE_NEWS_QUERIES in google_news.py.
 """
+
+from google_news import google_news_feeds
 
 # ---- Feeds (Swiss research, startups, and Europe-wide tech) --------------------
 # (name, url). Two groups:
@@ -35,6 +45,11 @@ DIRECT_FEEDS = [
     ("Fintechnews Switzerland", "https://fintechnews.ch/feed/"),
     ("SwissCognitive (AI)", "https://swisscognitive.ch/feed/"),
 
+    # --- Company press releases (newswires, filtered to Swiss deep tech) ---
+    ("Presseportal Switzerland", "https://www.presseportal.ch/rss/index.rss2"),
+    ("Business Wire (technology)", "https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkJeEFpRWQ4="),
+    ("GlobeNewswire (technology)", "https://www.globenewswire.com/RssFeed/subjectcode/22-Technology/feedTitle/GlobeNewswire%20-%20Technology"),
+
     # --- Europe-wide tech (filtered to Swiss deep tech by the relevance scorer) ---
     ("Tech.eu", "https://tech.eu/feed/"),
     ("EU-Startups", "https://www.eu-startups.com/feed/"),
@@ -44,9 +59,10 @@ DIRECT_FEEDS = [
 
 
 def all_feeds(days: int = 14):
-    """Return (source_label, feed_url) for every configured direct feed.
+    """Return (source_label, feed_url) for every source: direct feeds first,
+    then the Google News discovery feeds.
 
     `days` is accepted for compatibility but unused (the scraper filters by
     date after fetching).
     """
-    return list(DIRECT_FEEDS)
+    return list(DIRECT_FEEDS) + google_news_feeds()

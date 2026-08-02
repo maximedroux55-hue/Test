@@ -55,9 +55,23 @@ def article_image(url: str, timeout: int = 12) -> str | None:
 
 
 def resolve_images(articles: list) -> None:
-    """Set article['image'] for each article (feed image, else og:image)."""
+    """Resolve each article's real source URL and lead image.
+
+    For Google News items the link is a redirect, so we first resolve it back to
+    the real publisher URL (and update article['link'] to it, since that is the
+    page worth linking to). Then the image is the feed image if the feed gave
+    one, otherwise the source page's og:image.
+    """
+    from google_news import is_google_news_url, resolve_url
+
     for a in articles:
+        link = a.get("link", "")
+        if is_google_news_url(link):
+            real = resolve_url(link)
+            if real:
+                a["link"] = link = real
+
         img = a.get("image_feed")
         if not img:
-            img = article_image(a.get("link", ""))
+            img = article_image(link)
         a["image"] = img

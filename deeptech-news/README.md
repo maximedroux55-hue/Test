@@ -5,11 +5,20 @@ feeds, scores each story for Swiss + DeepTech relevance, removes duplicate
 stories reported by several outlets, and writes a ranked digest as Markdown and
 HTML.
 
-It reads from direct publisher RSS feeds rather than scraping web pages
-directly. That is deliberate: feeds are stable, layout-proof, and respectful of
-sites' terms, so the tool needs far less maintenance than a traditional scraper.
-Direct feeds also carry a usable lead image for each article, which a Google
-News redirect would hide.
+It reads from RSS feeds rather than scraping web pages directly. That is
+deliberate: feeds are stable, layout-proof, and respectful of sites' terms, so
+the tool needs far less maintenance than a traditional scraper.
+
+Sources come in two layers:
+
+- **Direct publisher feeds** (EPFL, ETH, Empa, Idiap, Startupticker, swissinfo,
+  Fintechnews, SwissCognitive, and a few newswires). Reliable, and each already
+  carries a lead image.
+- **Google News discovery.** A wide net across thousands of publishers at once,
+  including company press releases. Google links are redirects, so for the
+  stories the tool actually uses it follows each link back to the original
+  publisher (the "use Google, then go to the source" idea). That real URL is
+  what gets linked, and it is where the article's image lives.
 
 ## Setup (once)
 
@@ -54,16 +63,19 @@ The GitHub Actions workflow runs every **Wednesday** morning and produces the
 
 Open `sources.py`:
 
-- `DIRECT_FEEDS` is the list of sources: `(name, url)` pairs. It mixes
+- `DIRECT_FEEDS` is the list of direct feeds: `(name, url)` pairs. It mixes
   Swiss-specific feeds (EPFL, ETH, Empa, Idiap, Startupticker, swissinfo,
-  Fintechnews, SwissCognitive) with a few Europe-wide tech feeds (Tech.eu,
-  EU-Startups, Silicon Canals). The Europe-wide feeds carry non-Swiss news too,
-  but the relevance scorer keeps only Swiss deep-tech stories, so they act as
-  extra sources without the noise.
-- To add a source, append a `(name, url)` pair with the site's real RSS/Atom
-  URL. Feeds that are unreachable or empty are skipped automatically, so a wrong
-  URL never breaks a run. Keep an entry only if a run's log does not mark it
-  "skipped".
+  Fintechnews, SwissCognitive), a few newswires for company press releases
+  (Presseportal, Business Wire, GlobeNewswire), and a few Europe-wide tech feeds
+  (Tech.eu, EU-Startups, Silicon Canals). Feeds that carry non-Swiss news are
+  fine: the relevance scorer keeps only Swiss deep-tech stories.
+- To add a direct source, append a `(name, url)` pair with the site's real
+  RSS/Atom URL. Feeds that are unreachable or empty are skipped automatically,
+  so a wrong URL never breaks a run. Keep an entry only if a run's log does not
+  mark it "skipped".
+- To change what Google surfaces, edit `GOOGLE_NEWS_QUERIES` in
+  `google_news.py`. Each phrase is scoped to the Swiss editions of Google News
+  (English, German, French).
 
 ## Tuning relevance
 
@@ -80,7 +92,8 @@ Open `relevance.py`:
 | File | Purpose |
 |------|---------|
 | `scraper.py` | Main program: fetch, filter, rank, write output |
-| `sources.py` | The list of feeds and search queries |
+| `sources.py` | The list of direct feeds, plus the Google News feeds |
+| `google_news.py` | Google News discovery and resolving links back to the source |
 | `relevance.py` | Scoring and de-duplication logic |
 | `linkedin.py` | Turns stories into Climb LinkedIn post drafts |
 | `ai_writer.py` | Optional: writes posts in Max's voice via the Claude API |
