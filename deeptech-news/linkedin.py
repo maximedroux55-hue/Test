@@ -465,7 +465,9 @@ def render_plan_html(records: list, mode: str, days: int) -> str:
           if (d && d.ok) {{
             s.textContent = 'Started. Your new posts will be ready here in about 3 minutes. Refresh this page then.';
           }} else {{
-            s.textContent = 'Could not start (error ' + ((d && d.status) || '?') + '). Try again in a moment.';
+            var why = (d && (d.error || d.detail)) ? (': ' + (d.error || d.detail)) : '';
+            var code = (d && d.status) ? (' ' + d.status) : '';
+            s.textContent = 'Could not start (error' + code + ')' + why + '. Try again in a moment.';
             runBtn.disabled = false;
           }}
         }})
