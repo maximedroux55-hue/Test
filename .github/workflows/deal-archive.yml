@@ -97,11 +97,13 @@ jobs:
             git fetch origin ${GITHUB_REF_NAME}
             git reset --hard origin/${GITHUB_REF_NAME}
 
-            mkdir -p digest
+            mkdir -p digest reports
             cp deeptech-news/output/archive.html digest/archive.html
             cp /tmp/carry/archive.json digest/archive.json 2>/dev/null || true
+            # One report per month, served at maxime-droux.com/reports/
+            cp deeptech-news/output/reports/*.html reports/ 2>/dev/null || true
 
-            git add digest/archive.html digest/archive.json
+            git add digest/archive.html digest/archive.json reports
             git commit -m "Update the deal database" || { echo "No changes to publish."; exit 0; }
             if git push origin HEAD:${GITHUB_REF_NAME}; then
               echo "Published."; exit 0

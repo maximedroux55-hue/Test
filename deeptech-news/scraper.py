@@ -683,6 +683,7 @@ def render_archive_html(known: dict) -> str:
   <h1>Swiss DeepTech rounds<span class="dot">.</span></h1>
   <p class="sub">Swiss companies only, newest first. One row per round: where several
   outlets covered the same one, their facts are combined.
+  <a href="/reports/">Monthly reports &rarr;</a>
   <span title="Kept in archive.json, which is the raw record">{foreign} foreign-headquartered rounds and {hidden} non-financing stories are held back.</span></p>
   <div class="stats">
     <div class="stat"><b>{len(stories)}</b><span>rounds</span></div>
@@ -1133,6 +1134,13 @@ def build_archive(articles: list, picks: list, args) -> None:
     _report_coverage(known)
     with open(os.path.join(args.outdir, "archive.html"), "w", encoding="utf-8") as f:
         f.write(render_archive_html(known))
+
+    # A month's rounds are worth a page of their own: the table says what
+    # happened, the report says what it amounts to.
+    import report
+    swiss_rounds = [r for r in merge_deals(
+        [s for s in known.values() if _is_round(s)]) if _is_swiss(r)]
+    report.write_all(swiss_rounds, os.path.join(args.outdir, "reports"))
 
 
 def _flag_missing_ai(articles: list, mode: str, args) -> None:
