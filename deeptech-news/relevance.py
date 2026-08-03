@@ -47,6 +47,8 @@ DEAL_TERMS = {
 # postable as DeepTech news. These pull the score down.
 NOISE_TERMS = {
     "appointment of": 4, "appointments": 3, "professors": 3,
+    "appoints": 4, "appointed": 3, "names new": 3, "steps down": 3,
+    "joins as": 3, "hires": 3, "promoted to": 3,
     "obituary": 4, "anniversary": 2, "open day": 3, "campus": 2,
     "semester": 3, "graduation": 3, "rector": 3, "lecture series": 3,
 }
@@ -75,7 +77,10 @@ def score_article(title: str, summary: str, source: str = "") -> int:
     The title carries more weight than the summary, so the bonus and penalty
     are measured on the title first.
     """
-    text = f" {title} {summary} {source} ".lower()
+    # Score the story itself, never the outlet's name. "Fintechnews
+    # Switzerland" contains "Switzerland", which otherwise handed a Swiss score
+    # to every story it runs, including its London desk's UK banking news.
+    text = f" {title} {summary} ".lower()
     title_text = f" {title} ".lower()
     swiss = _count(text, SWISS_TERMS)
     deep = _count(text, DEEPTECH_TERMS)
