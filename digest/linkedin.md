@@ -1,5 +1,5 @@
 # Climb Ventures LinkedIn plan for the week
-_Generated 03 August 2026. 7 posts, one per day, from Swiss DeepTech news of the last 21 days. Written by Claude in Max's voice. Schedule each for 08:00 on its day. Review and edit before posting._
+_Generated 03 August 2026. 7 posts, one per day, from Swiss DeepTech news of the last 10 days. Written by Claude in Max's voice. Schedule each for 08:00 on its day. Review and edit before posting._
 
 ## Publish with Claude Cowork
 Paste this into Cowork to schedule the whole week in one go (it reads the structured file `digest/posts.json` next to this one):
@@ -13,14 +13,14 @@ The posts themselves are below, for review before you run it.
 ## Post 1 — schedule for Tuesday 04 August at 08:00
 
 ```
-🇨🇭 Swiss quantum spinout ZuriQ raises $25.5M seed
+🇨🇭 Swiss trapped-ion startup raises $25.5M seed
 
-@ZuriQ, an @ETH Zurich spinout, has closed a $25.5M seed round to build trapped-ion quantum computers, as reported by @Sifted. The team moves ions across a chip surface rather than in a single line, an approach designed to scale qubit counts without the usual architectural limits.
+@ZuriQ, an @ETH Zurich spinout, has closed a $25.5M seed round to scale its trapped-ion quantum computing architecture, as reported by Sifted. The company moves ions across a 2D chip surface, an approach designed to break the linear-chain limits of today's ion-trap machines.
 
 Why it matters:
-⚛️ Trapped ions remain the highest-fidelity qubit platform today
+⚛️ 2D ion transport opens a path to thousands of qubits
 💰 One of Europe's largest quantum seed rounds this year
-🇨🇭 Zurich is becoming a dense quantum hardware cluster
+🇨🇭 ETH Zurich keeps exporting quantum hardware talent into companies
 
 https://sifted.eu/articles/eth-spinout-zuriq-seed-round
 ```
@@ -29,100 +29,99 @@ https://sifted.eu/articles/eth-spinout-zuriq-seed-round
 ## Post 2 — schedule for Wednesday 05 August at 08:00
 
 ```
-🇨🇭 Swiss startup raises CHF 2.4M for gene editing
+🇨🇭 Swiss software puts a price on engineering
 
-@Immitra Bio has raised CHF 2.4 million to advance its in-vivo gene editing platform, according to @Venturelab. The company aims to edit cells directly inside the body, removing the extraction and reinfusion steps that make current cell therapies slow and expensive.
-
-Why it matters:
-🧬 In-vivo editing could cut therapy costs dramatically
-🔬 Sidesteps the manufacturing bottleneck of ex-vivo cell therapy
-🇨🇭 Swiss biotech pipeline keeps producing platform plays
-
-https://www.venturelab.swiss/Immitra-Bio-raises-CHF-24-million-to-advance-invivo-gene-editing-platform
-```
-🖼️ **Article image:** https://www.venturelab.swiss/demandit/files/M_BB941CC4DCEF687AD98/dms/Image/immitra_bio.jpg
-
-## Post 3 — schedule for Thursday 06 August at 08:00
-
-```
-🇨🇭 Swiss space firm raises $70M to scale satellites
-
-@SWISSto12, based in Renens near Lausanne, has raised USD 70 million to scale its satellite business. The company 3D prints radio frequency payloads and is building HummingSat, a compact geostationary telecom satellite already contracted by @Intelsat and @Inmarsat.
+@Valuemize has raised a seven-figure pre-seed for software that calculates product costs at the design stage. The tool targets manufacturers where up to 80% of a product's cost is locked in before production begins, giving engineers cost feedback while decisions are still reversible.
 
 Why it matters:
-🛰️ Small GEO satellites open a segment incumbents ignored
-🖨️ 3D printed RF hardware cuts mass and lead times
-🇨🇭 Europe's rare full satellite prime outside the majors
-
-https://swissto12.com/
-```
-🖼️ **Article image:** https://ggba.swiss/app/uploads/2026/07/HummingSat-Swissto12-1180x811-1.jpg
-🔗 **Links to the original source.**
-
-## Post 4 — schedule for Friday 07 August at 08:00
-
-```
-🇨🇭 SkyPilot raises $20M to route AI compute
-
-@SkyPilot, founded by a @Databricks cofounder, has raised $20M to let teams run AI workloads across any cloud or GPU provider, per @Fortune. The pitch: neutrality, moving training and inference jobs to wherever capacity is cheapest and available.
-
-Why it matters:
-⚙️ GPU scarcity makes portability a hard cost lever
-🌐 Neutral routing weakens single-cloud lock-in for AI teams
-🇨🇭 Swiss neutrality now a positioning metaphor in AI infrastructure
-
-https://fortune.com/2026/07/21/skypilot-from-databricks-cofounder-raises-20m-to-be-the-switzerland-of-ai-compute/
-```
-🖼️ **Article image:** https://fortune.com/img-assets/wp-content/uploads/2026/07/Group-photo-01-server-room-e1784596163316.jpeg?resize=1200,600
-
-## Post 5 — schedule for Saturday 08 August at 08:00
-
-```
-🇨🇭 Swiss software attacks hidden product cost data
-
-@Valuemize has closed a seven-figure pre-seed for software that helps manufacturers calculate what a product actually costs to make. The tool targets engineering and procurement teams still reconciling cost estimates across spreadsheets, quotes and supplier data.
-
-Why it matters:
-📊 Cost transparency is the lever behind industrial margins
-🏭 Manufacturing procurement remains one of the least digitised functions
-🇨🇭 Swiss industrial software finding leverage in unglamorous workflows
+⚙️ Cost decisions happen in engineering, not in procurement
+📉 Margin pressure is pushing industrials toward design-stage analytics
+🇨🇭 Swiss precision manufacturing is a demanding first market
 
 https://www.valuemize.io/en
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 🔗 **Links to the original source.**
 
+## Post 3 — schedule for Thursday 06 August at 08:00
+
+```
+🇨🇭 Swiss preventive health platform raises $10M
+
+@Ahead Health has raised $10M to expand its preventive care offering into Germany and the Netherlands, according to Tech Funding News. The company combines deep diagnostic testing with data-driven follow-up, targeting a European market where healthcare spending is still overwhelmingly reactive.
+
+Why it matters:
+🩺 Preventive diagnostics shift spending upstream of chronic disease
+🌍 Germany and the Netherlands are the largest adjacent markets
+🇨🇭 Swiss health data standards travel well across the EU
+
+https://techfundingnews.com/ahead-health-10m-funding-preventive-care-germany-netherlands/
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## Post 4 — schedule for Friday 07 August at 08:00
+
+```
+🇨🇭 Salt batteries take on lithium in solar storage
+
+A Valais-based company is betting on sodium instead of lithium for home solar storage, as reported by Pomona. Sodium cells use abundant, non-flammable materials and no cobalt, trading some energy density for lower cost and safer stationary installations as rooftop solar keeps growing.
+
+Why it matters:
+🔋 Sodium removes lithium and cobalt supply chain exposure
+🔥 Lower fire risk matters most in residential basements
+🇨🇭 Swiss cleantech targeting Europe's fastest-growing storage segment
+
+https://pomona.ch/en/story/780425/salt-instead-of-lithium-how-a-swiss-company-plans-to-capitalise-on-the-solar-battery-boom
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## Post 5 — schedule for Saturday 08 August at 08:00
+
+```
+🇨🇭 Swiss firm launches with €16M for AI compute
+
+AI Infrastructure Capital AG has launched with €16 million to finance the compute capacity behind Europe's AI buildout. The vehicle targets the sector's hardest bottleneck: access to GPUs and data centre capacity, which remains scarce and capital-intensive for European model builders.
+
+Why it matters:
+🖥️ Compute access, not talent, is Europe's binding constraint
+💰 Infrastructure finance is becoming a distinct asset class
+🇨🇭 Switzerland positions itself as a sovereign AI capital hub
+
+https://ai-infrastructure.capital/
+```
+🖼️ **Article image:** https://www.eu-startups.com/wp-content/uploads/2026/07/Untitled-design-2026-07-30T150054.727.jpg
+🔗 **Links to the original source.**
+
 ## Post 6 — schedule for Sunday 09 August at 08:00
 
 ```
-🇨🇭 Swiss preventive health raises $10M for EU push
+🇨🇭 Swiss drone simulation technology expands to Latvia
 
-@Ahead Health has raised $10 million to launch in Germany and the Netherlands. The Swiss company combines extensive diagnostic testing with medical follow-up, turning biomarker data into structured prevention plans rather than one-off health checks.
+@Nordfen is bringing its drone simulation technology to Latvia, extending its footprint on NATO's eastern flank. The platform lets operators train and rehearse missions virtually, cutting the cost and risk of live flight hours as European demand for drone crews accelerates.
 
 Why it matters:
-🩺 Prevention markets grow as healthcare costs keep climbing
-📈 Germany and the Netherlands offer large private-pay demand
-🇨🇭 Swiss health model exporting into neighbouring EU markets
+🛩️ Simulated flight hours cost a fraction of live training
+🛡️ Baltic states are Europe's fastest-growing drone training market
+🇨🇭 Swiss dual-use software finding demand beyond neutral borders
 
-https://www.aheadhealth.com/ch/en
+https://nordfen.ch/#
 ```
-🖼️ **Article image:** https://techfundingnews.com/wp-content/uploads/2026/01/Ahead-Health-team.png
+🖼️ **Article image:** none found, grab one from the article page.
 🔗 **Links to the original source.**
 
 ## Post 7 — schedule for Monday 10 August at 08:00
 
 ```
-🇨🇭 Swiss agtech Hilo extends Series B for US
+🇨🇭 Swiss nanopore detects toxins in lake water
 
-@Hilo, the Swiss digital agriculture company spun out of @Syngenta, has closed a Series B extension to fund US expansion. Its platform combines satellite imagery, weather data and field models to guide crop decisions and quantify agronomic risk.
+Researchers at @EPFL have built a nanopore sensor that identifies cyanobacteria toxins directly in lake water, reading molecules one at a time as they pass through a tiny opening. The method targets microcystins, the compounds that force beach closures and threaten drinking water supplies.
 
 Why it matters:
-🌾 US row crop acreage is the largest addressable market
-🛰️ Remote sensing data now priced into insurance and financing
-🇨🇭 Swiss corporate spinouts scaling beyond their parent's footprint
+🔬 Single-molecule sensing replaces slow laboratory analysis
+💧 Warming lakes are making toxic algal blooms more frequent
+🇨🇭 EPFL sensing research with a clear path to field deployment
 
-https://hilo.com/
+https://actu.epfl.ch/news/a-tiny-pore-identifies-cyanobacteria-toxins-in-lak
 ```
-🖼️ **Article image:** none found, grab one from the article page.
-🔗 **Links to the original source.**
+🖼️ **Article image:** https://actu.epfl.ch/image/165891/1440x810.jpg
 
