@@ -1,0 +1,27 @@
+name: Tests
+
+# Every mistake the tool has made is a test in deeptech-news/tests. A fix
+# without a test lasts until the next change, so these run on every push and
+# before either job is allowed to publish.
+on:
+  push:
+    paths:
+      - "deeptech-news/**"
+      - ".github/workflows/**"
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install -r deeptech-news/requirements.txt
+      - name: Run the regression tests
+        run: |
+          cd deeptech-news
+          python tests/test_regressions.py

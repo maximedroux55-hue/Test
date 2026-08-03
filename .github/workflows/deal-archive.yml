@@ -56,6 +56,12 @@ jobs:
       - name: Install dependencies
         run: pip install -r deeptech-news/requirements.txt
 
+      # A change that breaks a known case must not reach the page.
+      - name: Run the regression tests
+        run: |
+          cd deeptech-news
+          python tests/test_regressions.py
+
       - name: Read the rounds into the database
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
