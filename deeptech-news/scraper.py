@@ -327,24 +327,23 @@ def _report_coverage(known: dict) -> None:
     import provenance
 
     raw = [s for s in known.values() if _is_round(s)]
-    rounds = merge_deals(raw)
+    merged = merge_deals(raw)
+    rounds = [s for s in merged if _is_swiss(s)]
     if not rounds:
         return
     fields = ("company", "description", "category", "stage", "amount",
               "location", "investors", "founders",
               "spinoff_origin", "founded", "total_raised")
-    merged_away = len(raw) - len(rounds)
-    print(f"Coverage over {len(rounds)} rounds"
-          f"{f' ({merged_away} duplicate write-ups merged)' if merged_away else ''}:",
+    merged_away = len(raw) - len(merged)
+    print(f"Coverage over {len(rounds)} Swiss rounds"
+          f"{f' ({merged_away} duplicate write-ups merged'if merged_away else ' ('}"
+          f"{', ' if merged_away else ''}{len(merged) - len(rounds)} foreign held back):",
           file=sys.stderr)
     for field in fields:
         filled = sum(1 for s in rounds if (s.get(field) or "").strip())
         print(f"  {field:<15} {filled:>3}/{len(rounds)}"
               f"  {100 * filled // len(rounds):>3}%", file=sys.stderr)
-    swiss = sum(1 for s in rounds if _is_swiss(s))
     total = sum(money.in_chf(s.get("amount", "")) for s in rounds)
-    print(f"  {'Swiss HQ':<15} {swiss:>3}/{len(rounds)}"
-          f"  {100 * swiss // len(rounds):>3}%", file=sys.stderr)
     print(f"  tracked {money.compact(total)} across the rounds with an amount",
           file=sys.stderr)
     sources = provenance.summary(rounds)
@@ -366,22 +365,37 @@ _SWISS_HOME = re.compile(
 )
 
 
-def _is_swiss(story: dict) -> bool:
-    """Is this a Swiss company, rather than a foreign one with a Swiss story?
+# What marks a company as Swiss when its headquarters was never recorded.
+_SWISS_SIGNAL = re.compile(
+    r"\bswiss\b|\bswitzerland\b|\bschweiz\w*\b|\bsuisse\b|\bsvizzer\w+\b|"
+    r"\bepfl\b|\beth\s*z|\bcsem\b|\bempa\b|\bidiap\b|\bpsi\b",
+    re.IGNORECASE,
+)
 
-    Prodlane is in Leipzig and SkyPilot is American; both reached the table
-    because the news had a Swiss angle. Whether they belong is Max's call, so
-    they are kept and marked rather than dropped.
+
+def _is_swiss(story: dict) -> bool:
+    """Is this a Swiss company?
+
+    The database is Swiss DeepTech, so a foreign company with a Swiss angle in
+    the coverage does not belong: Prodlane is in Leipzig and SkyPilot is
+    American. A recorded headquarters decides it outright.
+
+    Where no headquarters was found, the row is kept only if something else
+    says Swiss, such as an EPFL spin-off or a story about a Swiss company we
+    simply failed to place. Dropping those outright would quietly lose real
+    Swiss rounds for want of a city.
     """
     location = (story.get("location") or "").strip()
     if location:
         if re.search(r",\s*[A-Z]{2}$", location):
             return False
         return bool(_SWISS_HOME.search(location))
-    # No headquarters recorded: a Swiss institution behind it still counts.
     origin = (story.get("spinoff_origin") or "").lower()
-    return any(s in origin for s in
-               ("eth", "epfl", "csem", "empa", "psi", "idiap", "univers", "hsg"))
+    if any(s in origin for s in
+           ("eth", "epfl", "csem", "empa", "psi", "idiap", "univers", "hsg")):
+        return True
+    return bool(_SWISS_SIGNAL.search(
+        f"{story.get('title', '')} {story.get('description', '')}"))
 
 
 def _provenance(story: dict, field: str) -> str:
@@ -421,12 +435,16 @@ def render_archive_html(known: dict) -> str:
                        e.get("score") or 0),
         reverse=True,
     )
-    stories = merge_deals([s for s in everything if _is_round(s)])
-    hidden = len(everything) - len(stories)
+    rounds = merge_deals([s for s in everything if _is_round(s)])
+    # Swiss DeepTech, so a foreign company that happened to make Swiss news is
+    # not a row here. It stays in archive.json, which is the raw record.
+    stories = [s for s in rounds if _is_swiss(s)]
+    foreign = len(rounds) - len(stories)
+    hidden = len(everything) - len(rounds)
     posted = sum(1 for s in stories if s.get("posted"))
     with_investors = sum(1 for s in stories if _investor_line(s))
     with_founders = sum(1 for s in stories if (s.get("founders") or "").strip())
-    swiss = sum(1 for s in stories if _is_swiss(s))
+    placed = sum(1 for s in stories if (s.get("location") or "").strip())
     tracked = money.compact(sum(money.in_chf(s.get("amount", "")) for s in stories))
 
     rows = []
@@ -495,14 +513,12 @@ def render_archive_html(known: dict) -> str:
         where = (_provenance(s, "location")
                  or "as written in the coverage") if location_text else ""
         location = (f'<span title="Source: {html.escape(where)}">'
-                    f'{html.escape(location_text)}</span>'
-                    if location_text else '<span class="nd">n/d</span>')
-        if location_text and not _is_swiss(s):
-            location += ' <span class="foreign">non-CH</span>'
+                    f'{html.escape(location_text)}</span>' if location_text
+                    else '<span class="nd" title="Swiss company, city not '
+                         'found yet">CH</span>')
 
         rows.append(
-            f'<tr data-swiss="{"1" if _is_swiss(s) else "0"}" '
-            f'data-chf="{chf}">'
+            f'<tr data-chf="{chf}">'
             f'<td class="co"><a href="{link}" target="_blank" rel="noopener" '
             f'title="{html.escape(s.get("title",""))}">{company}</a>{tag}'
             f'{desc}{meta}</td>'
@@ -574,20 +590,19 @@ def render_archive_html(known: dict) -> str:
 </style></head><body>
 <div class="wrap">
   <h1>Swiss DeepTech rounds<span class="dot">.</span></h1>
-  <p class="sub">Every financing round the tool has found, newest first. One row per round:
-  where several outlets covered the same one, their facts are combined.
-  <span title="Research, partnerships and other non-financing news, kept in archive.json">{hidden} non-financing stories stay in archive.json and are not shown here.</span></p>
+  <p class="sub">Swiss companies only, newest first. One row per round: where several
+  outlets covered the same one, their facts are combined.
+  <span title="Kept in archive.json, which is the raw record">{foreign} foreign-headquartered rounds and {hidden} non-financing stories are held back.</span></p>
   <div class="stats">
     <div class="stat"><b>{len(stories)}</b><span>rounds</span></div>
     <div class="stat"><b>{tracked or "&ndash;"}</b><span>tracked</span></div>
-    <div class="stat"><b>{swiss}</b><span>Swiss HQ</span></div>
+    <div class="stat"><b>{placed}</b><span>with a city</span></div>
     <div class="stat"><b>{with_investors}</b><span>with investors</span></div>
     <div class="stat"><b>{with_founders}</b><span>with founders</span></div>
     <div class="stat"><b>{posted}</b><span>posted</span></div>
   </div>
   <div class="controls">
     <input type="text" id="q" placeholder="Filter by company, sector, investor, founder or city..." oninput="filter()">
-    <label class="toggle"><input type="checkbox" id="ch" onchange="filter()"> Swiss HQ only</label>
     <span class="live" id="count"></span>
   </div>
   <div class="box"><table>
@@ -604,13 +619,11 @@ def render_archive_html(known: dict) -> str:
 <script>
   function filter() {{
     var q = document.getElementById('q').value.toLowerCase();
-    var swissOnly = document.getElementById('ch').checked;
     var rows = document.querySelectorAll('#rows tr');
     var shown = 0, total = 0;
     for (var i = 0; i < rows.length; i++) {{
       var row = rows[i];
-      var matches = row.innerText.toLowerCase().indexOf(q) > -1
-                 && (!swissOnly || row.getAttribute('data-swiss') === '1');
+      var matches = row.innerText.toLowerCase().indexOf(q) > -1;
       row.style.display = matches ? '' : 'none';
       if (matches) {{ shown++; total += parseInt(row.getAttribute('data-chf') || '0', 10); }}
     }}
