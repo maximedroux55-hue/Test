@@ -10,11 +10,12 @@
       "date": "2026-08-04",
       "schedule_for": "Tuesday 04 August",
       "time": "08:00",
-      "text": "🇨🇭 Swiss trapped-ion quantum lands a landmark seed\n\n@ZuriQ, a spin-off from @ETH Zurich, has raised USD 25.5 million in a seed round led by @Quantonation, according to @Startupticker. It is one of the largest early-stage quantum tickets ever recorded in Switzerland.\n\nWhy it matters:\n⚛️ A seed round of this size signals that international specialist funds now treat Swiss quantum hardware as investable at scale, not as a research curiosity.\n🇨🇭 Switzerland's advantage is depth: decades of ion-trap and photonics work inside ETH and EPFL labs, plus a precision manufacturing base that lets hardware teams iterate without building everything from scratch.\n🔭 Capital at this level buys years of runway for a hardware roadmap, which is exactly what quantum needs. It also creates a local anchor for talent that would otherwise migrate to the US or the UK.\n\nThe pattern we keep seeing: Swiss DeepTech teams convert modest capital into credible technical milestones, then attract global rounds on the strength of the physics rather than the narrative.\n\nhttps://www.startupticker.ch/en/news/quantonation-leads-usd-25-5-million-seed-round-for-eth-spin-off-zuriq",
+      "text": "🇨🇭 Swiss trapped-ion quantum lands major seed round\n\n@Quantonation has led a USD 25.5 million seed round into @ZuriQ, an @ETH Zurich spin-off building trapped-ion quantum computing architectures, as reported by @Startupticker on 28 July.\n\nWhy it matters:\n💰 Seed rounds of this size remain rare in European quantum hardware, and they signal that specialist investors now see Swiss trapped-ion work as a credible path to scaled machines rather than a lab curiosity.\n🇨🇭 Switzerland's advantage here is compounding: decades of ion-trap and precision instrumentation expertise at ETH, a dense talent pool, and founders who are used to doing serious physics on disciplined budgets.\n🔭 Capital at this stage buys years of engineering runway, which is what turns a promising qubit modality into a roadmap with customers, partners, and eventually revenue attached.\n\nThe pattern we keep seeing: Swiss DeepTech teams convert relatively modest capital into hard technical milestones, then attract international investors on the strength of the results.\n\nhttps://zuriq.com/",
       "image": null,
-      "link": "https://www.startupticker.ch/en/news/quantonation-leads-usd-25-5-million-seed-round-for-eth-spin-off-zuriq",
+      "link": "https://zuriq.com/",
       "publisher": "Startupticker",
-      "primary_source": "https://zuriq.com/"
+      "primary_source": "https://zuriq.com/",
+      "coverage_url": "https://www.startupticker.ch/en/news/quantonation-leads-usd-25-5-million-seed-round-for-eth-spin-off-zuriq"
     },
     {
       "index": 2,
@@ -22,11 +23,12 @@
       "date": "2026-08-05",
       "schedule_for": "Wednesday 05 August",
       "time": "08:00",
-      "text": "🇨🇭 Rivers as infrastructure, not just landscape\n\nResearchers at @EPFL have published new work on how rivers shape the growth of cities and the societies built around them, connecting hydrology, urban form and long-run development.\n\nWhy it matters:\n🌊 Water systems are becoming an investable category. Monitoring, flood modelling and hydrological data services sit downstream of exactly this kind of academic groundwork.\n🇨🇭 Switzerland is the water tower of Europe, with unmatched instrumentation and long historical datasets. That combination makes it a natural test bed for climate adaptation technology sold worldwide.\n🏙️ Cities are now planning for decades of hydrological volatility. Research that quantifies the river-city relationship gives engineers, insurers and public authorities a defensible basis for spending.\n\nEnvironmental DeepTech rarely produces overnight commercial stories, but it produces durable ones. Swiss teams tend to be capital-efficient here because the science and the sensor supply chain are both on the doorstep.\n\nhttps://actu.epfl.ch/news/how-rivers-shape-cities-and-societies",
+      "text": "🇨🇭 Rivers as infrastructure, not just scenery\n\n@EPFL researchers published work on 30 July examining how rivers have shaped the growth of cities and the structure of societies, connecting hydrology, urban form, and long-run development.\n\nWhy it matters:\n🌊 Water systems sit underneath a large share of climate adaptation spending, and better models of how rivers interact with dense urban settlement inform where that money should go.\n🇨🇭 Switzerland is the water tower of Europe, which gives Swiss institutions unusual access to data, monitoring history, and engineering practice in alpine and river systems.\n🏗️ Research like this seeds a pipeline: sensing, flood modelling, and infrastructure resilience tools that later become commercial products with public and private buyers.\n\nFundamental research does not always look investable on day one. But climate-relevant infrastructure technology tends to emerge from exactly these long-horizon academic programmes, and Switzerland runs several of the best.\n\nhttps://actu.epfl.ch/news/how-rivers-shape-cities-and-societies",
       "image": "https://actu.epfl.ch/image/164913/1440x810.jpg",
       "link": "https://actu.epfl.ch/news/how-rivers-shape-cities-and-societies",
       "publisher": "EPFL News",
-      "primary_source": "https://people.epfl.ch/hector.garciamorales"
+      "primary_source": null,
+      "coverage_url": null
     },
     {
       "index": 3,
@@ -34,11 +36,12 @@
       "date": "2026-08-06",
       "schedule_for": "Thursday 06 August",
       "time": "08:00",
-      "text": "🇨🇭 Cost intelligence enters the industrial stack\n\n@Valuemize has closed a seven-figure pre-seed round for its product cost software, as reported by @Startupticker. The company targets manufacturers that need to understand what a product truly costs before it is built.\n\nWhy it matters:\n📊 Cost engineering is one of the least digitised corners of industrial operations. Tariff volatility and reshoring have turned it into a board-level question rather than a procurement detail.\n🇨🇭 Swiss industry is an unusually demanding first customer: high-precision, low-volume, margin-sensitive. Software that survives that environment travels well into German and Nordic manufacturing.\n⚙️ Vertical software built on real engineering data compounds. Every quoted part improves the model, which is how these companies eventually become the system of record.\n\nA reminder that DeepTech is not only hardware. Software that encodes industrial expertise can reach revenue on very little capital, which is the profile Swiss founders execute well.\n\nhttps://www.startupticker.ch/en/news/valuemize-raises-seven-figure-pre-seed-for-product-cost-software",
+      "text": "🇨🇭 Cost intelligence moves upstream in manufacturing\n\n@Valuemize has closed a seven-figure pre-seed round for its product cost software, according to @Startupticker on 28 July.\n\nWhy it matters:\n📊 Product costing is still handled in spreadsheets across large parts of industry, so software that makes cost transparent at design stage addresses a genuine and expensive gap.\n🇨🇭 Swiss industrial density is the moat: precision manufacturing, medtech, and machine building sit within driving distance, which shortens the path from first pilot to reference customer.\n⚙️ If early adoption holds, this is the kind of B2B software that expands quietly through procurement and engineering teams, then becomes hard to remove.\n\nWe pay close attention to pre-seed companies selling into Swiss industry. Short sales cycles, demanding buyers, and modest burn tend to produce durable businesses rather than expensive experiments.\n\nhttps://www.valuemize.io/en",
       "image": null,
-      "link": "https://www.startupticker.ch/en/news/valuemize-raises-seven-figure-pre-seed-for-product-cost-software",
+      "link": "https://www.valuemize.io/en",
       "publisher": "Startupticker",
-      "primary_source": "https://www.valuemize.io/en"
+      "primary_source": "https://www.valuemize.io/en",
+      "coverage_url": "https://www.startupticker.ch/en/news/valuemize-raises-seven-figure-pre-seed-for-product-cost-software"
     },
     {
       "index": 4,
@@ -46,11 +49,12 @@
       "date": "2026-08-07",
       "schedule_for": "Friday 07 August",
       "time": "08:00",
-      "text": "🇨🇭 European quantum funding finds a Swiss centre\n\n@Sifted has confirmed the USD 25.5 million seed round for @ZuriQ, the @ETH Zurich spinout working on trapped-ion quantum computing. The coverage frames it as one of Europe's notable early-stage quantum raises this year.\n\nWhy it matters:\n💶 When pan-European tech media lead with a Swiss deal, deal flow follows. Visibility outside the domestic market is still one of the ecosystem's scarcest resources.\n🇨🇭 Switzerland sits outside EU funding programmes yet keeps producing competitive quantum teams. That resilience comes from institutional research budgets and a dense pool of PhD-level engineering talent.\n🧭 Two independent reports on the same round set a reference point for valuation and round size that later Swiss quantum companies can negotiate against.\n\nThe strategic question for the next cycle is whether Swiss quantum companies scale manufacturing and commercial operations here, or drift toward larger markets. Capital, and how patient it is, decides that.\n\nhttps://sifted.eu/articles/eth-spinout-zuriq-seed-round",
-      "image": "https://images.sifted.eu/wp-content/uploads/2026/07/24121029/PW_260325_ZuriQ-people_007.jpg?w=1920&amp;h=1281&amp;q=75&amp;fit=crop&amp;auto=compress,format",
+      "text": "🇨🇭 European quantum hardware attracts serious capital\n\n@Sifted reported exclusively on 28 July that @ZuriQ, spun out of @ETH Zurich, has raised a USD 25.5 million seed round to advance its quantum computing platform.\n\nWhy it matters:\n🚀 A round of this scale at seed puts a Swiss team in the same conversation as the better-funded quantum groups in the US and UK, which matters for hiring and for partnership access.\n🇨🇭 Switzerland's quantum position rests on fundamentals that are difficult to replicate: world-class physics departments, tight academic to industry transfer, and a hardware culture built on precision engineering.\n📡 The next test is execution, moving from controlled laboratory demonstrations toward systems that outside users can actually run workloads on.\n\nTwo separate outlets covering the same round on the same day tells you something about attention levels. Swiss DeepTech is no longer a local story.\n\nhttps://sifted.eu/articles/eth-spinout-zuriq-seed-round",
+      "image": null,
       "link": "https://sifted.eu/articles/eth-spinout-zuriq-seed-round",
       "publisher": "Sifted",
-      "primary_source": "https://whatsapp.com/channel/0029VbD54jc4SpkF4lq81j41"
+      "primary_source": null,
+      "coverage_url": null
     },
     {
       "index": 5,
@@ -58,11 +62,12 @@
       "date": "2026-08-08",
       "schedule_for": "Saturday 08 August",
       "time": "08:00",
-      "text": "🇨🇭 Nanopore sensing takes on lake toxins\n\nScientists at @EPFL have developed a nanopore-based method to identify cyanobacteria toxins in lake water, offering a route to faster detection of a growing public health risk.\n\nWhy it matters:\n🔬 Warmer summers are making toxic algal blooms more frequent across Europe. Detection is currently slow and lab-bound, which creates a clear commercial gap for rapid field testing.\n🇨🇭 Swiss labs have world-class strength in nanopore and single-molecule sensing, sitting next to a diagnostics and instrumentation industry that knows how to certify and manufacture at volume.\n💧 A single sensing platform rarely stays single-purpose. Nanopore detection developed for one toxin class can extend to water utilities, food safety and environmental compliance.\n\nThis is the kind of research that becomes a spin-off two or three years later. Switzerland's advantage is that the path from a published method to a certified product is unusually short.\n\nhttps://actu.epfl.ch/news/a-tiny-pore-identifies-cyanobacteria-toxins-in-lak",
+      "text": "🇨🇭 Nanopore sensing tackles lake water safety\n\nResearchers at @EPFL have described a tiny pore capable of identifying cyanobacteria toxins in lake water, published on 3 August.\n\nWhy it matters:\n🔬 Toxin detection in freshwater is currently slow and lab-bound, so a sensing approach that can identify specific compounds directly opens the door to faster monitoring at far lower cost.\n🇨🇭 Switzerland combines deep nanotechnology and microfluidics capability with a national interest in lake and drinking water quality, an unusually good match between research strength and local demand.\n💧 Utilities, environmental agencies, and food and beverage producers all buy monitoring, which means a credible commercial route exists well before any consumer application.\n\nSensing platforms are among the most capital-efficient DeepTech categories we look at: the science is hard, but the hardware is small, the manufacturing is tractable, and the buyers are already spending.\n\nhttps://actu.epfl.ch/news/a-tiny-pore-identifies-cyanobacteria-toxins-in-lak",
       "image": "https://actu.epfl.ch/image/165891/1440x810.jpg",
       "link": "https://actu.epfl.ch/news/a-tiny-pore-identifies-cyanobacteria-toxins-in-lak",
       "publisher": "EPFL News",
-      "primary_source": "https://www.epfl.ch/labs/lbm/"
+      "primary_source": null,
+      "coverage_url": null
     },
     {
       "index": 6,
@@ -70,11 +75,12 @@
       "date": "2026-08-09",
       "schedule_for": "Sunday 09 August",
       "time": "08:00",
-      "text": "🇨🇭 Preventive health scales beyond the Swiss border\n\n@Ahead Health has raised USD 10 million to launch in Germany and the Netherlands, according to @Tech Funding News. The Swiss startup focuses on preventive care rather than treatment.\n\nWhy it matters:\n🩺 European health systems are under structural cost pressure. Preventive models that can demonstrate measurable outcomes are moving from wellness positioning toward reimbursable care.\n🇨🇭 Switzerland's high-spend, quality-driven healthcare market is a demanding proving ground, and Swiss clinical credibility travels well into Germany, the single largest health market in Europe.\n🌍 Cross-border expansion at Series A scale suggests the operating model is repeatable, which is the hardest part of health services to export given differing regulation and payer structures.\n\nHealth is where DeepTech meets distribution. The companies that win tend to pair rigorous science with disciplined market entry, one country at a time, rather than raising for a continental land grab.\n\nhttps://techfundingnews.com/ahead-health-10m-funding-preventive-care-germany-netherlands/",
+      "text": "🇨🇭 Preventive health platform expands into two markets\n\n@Ahead Health, the Swiss preventive health company, has raised USD 10 million to launch in Germany and the Netherlands, reported by @Tech Funding News on 30 July.\n\nWhy it matters:\n🩺 European health systems are under sustained cost pressure, and preventive diagnostics is one of the few areas where payers and consumers are both willing to spend.\n🇨🇭 Switzerland is a demanding first market: high standards of care, informed customers, and strict data expectations, so a product that works here travels well into Germany and the Benelux.\n🌍 Expansion into two markets simultaneously is the real signal, suggesting the underlying model is repeatable rather than dependent on a single regulatory setup.\n\nSwiss healthtech has a habit of building carefully at home before scaling abroad. It looks slower early on, then compounds faster once the playbook is proven.\n\nhttps://www.aheadhealth.com/ch/en",
       "image": "https://techfundingnews.com/wp-content/uploads/2026/01/Ahead-Health-team.png",
-      "link": "https://techfundingnews.com/ahead-health-10m-funding-preventive-care-germany-netherlands/",
+      "link": "https://www.aheadhealth.com/ch/en",
       "publisher": "Tech Funding News",
-      "primary_source": "https://www.aheadhealth.com/ch/en"
+      "primary_source": "https://www.aheadhealth.com/ch/en",
+      "coverage_url": "https://techfundingnews.com/ahead-health-10m-funding-preventive-care-germany-netherlands/"
     },
     {
       "index": 7,
@@ -82,11 +88,12 @@
       "date": "2026-08-10",
       "schedule_for": "Monday 10 August",
       "time": "08:00",
-      "text": "🇨🇭 Financing the compute layer from Geneva\n\nAI Infrastructure Capital AG has launched with EUR 16 million to address the AI compute bottleneck, @EU-Startups reports. The Swiss vehicle targets the physical and financial constraints behind AI capacity.\n\nWhy it matters:\n🔌 Compute has become the binding constraint on AI adoption. Financing structures for GPUs, data centres and energy are now as strategic as the models themselves.\n🇨🇭 Switzerland brings a rare combination: financial engineering expertise, legal and regulatory stability, and reliable low-carbon power. That is a credible base for infrastructure capital.\n🏗️ If European AI is to avoid full dependence on US hyperscalers, someone has to fund the substrate. Vehicles like this are the connective tissue between capital markets and hard assets.\n\nWe read this as further evidence that Swiss DeepTech is expanding beyond the lab into the infrastructure and capital layers that let deep technology actually deploy at scale.\n\nhttps://www.eu-startups.com/2026/07/swiss-startup-ai-infrastructure-capital-ag-launches-with-e16-million-to-tackle-ai-compute-bottleneck/",
+      "text": "🇨🇭 New Swiss vehicle targets AI compute bottleneck\n\n@AI Infrastructure Capital AG has launched with EUR 16 million to address the shortage of AI compute capacity, according to @EU-Startups on 30 July.\n\nWhy it matters:\n⚡ Compute scarcity is now the binding constraint for European AI companies, and dedicated capital for infrastructure addresses a gap that generalist funds are poorly structured to fill.\n🇨🇭 Switzerland is well positioned as a base: political stability, reliable and largely low-carbon power, strong data governance, and proximity to the research groups generating demand.\n🏭 If this works, it lowers the cost of ambitious model and simulation work for the whole regional ecosystem, from university spin-offs to industrial R&D teams.\n\nInfrastructure is unglamorous and expensive, but it determines what everyone else can build. Watching how Swiss capital positions itself here is worth the attention.\n\nhttps://ai-infrastructure.capital/",
       "image": "https://www.eu-startups.com/wp-content/uploads/2026/07/Untitled-design-2026-07-30T150054.727.jpg",
-      "link": "https://www.eu-startups.com/2026/07/swiss-startup-ai-infrastructure-capital-ag-launches-with-e16-million-to-tackle-ai-compute-bottleneck/",
+      "link": "https://ai-infrastructure.capital/",
       "publisher": "EU-Startups",
-      "primary_source": "https://ai-infrastructure.capital/"
+      "primary_source": "https://ai-infrastructure.capital/",
+      "coverage_url": "https://www.eu-startups.com/2026/07/swiss-startup-ai-infrastructure-capital-ag-launches-with-e16-million-to-tackle-ai-compute-bottleneck/"
     }
   ]
 }
