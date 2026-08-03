@@ -1,5 +1,5 @@
 # Swiss DeepTech news digest
-_Generated 03 August 2026, covering the last 10 days. 24 stories._
+_Generated 03 August 2026, covering the last 10 days. 23 stories._
 
 1. **[Quantonation leads USD 25.5 million seed round for ETH spin-off ZuriQ](https://www.startupticker.ch/en/news/quantonation-leads-usd-25-5-million-seed-round-for-eth-spin-off-zuriq)**  
    Startupticker · 28 Jul 2026 · relevance 33
@@ -47,5 +47,3 @@ _Generated 03 August 2026, covering the last 10 days. 24 stories._
    SWI swissinfo.ch · 30 Jul 2026 · relevance 4
 23. **[Humboldt AI lanciert KI-Tool für den CV-Check im Schweizer Arbeitsmarkt](https://www.startupticker.ch/en/news/humboldt-ai-lanciert-ki-tool-fuer-den-cv-check-im-schweizer-arbeitsmarkt)**  
    Startupticker · 27 Jul 2026 · relevance 4
-24. **[Swiss founders in the global spotlight](https://www.startupticker.ch/en/news/swiss-founders-in-the-global-spotlight)**  
-   Startupticker · 24 Jul 2026 · relevance 4
