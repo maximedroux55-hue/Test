@@ -245,9 +245,14 @@ _NOT_A_ROUND = re.compile(
 )
 
 # Institutions receive research money; they are not companies raising rounds.
+# Bodies as well as schools: the Swiss Academy of Sciences taking a grant is
+# not a Swiss DeepTech round.
 _INSTITUTIONS = re.compile(
     r"^(epfl|eth|empa|csem|psi|idiap|agroscope|universit|hochschule|"
-    r"hes-so|zhaw|fhnw|supsi|inselspital|chuv|hug)\b",
+    r"hes-so|zhaw|fhnw|supsi|inselspital|chuv|hug)\b"
+    r"|\b(academy|akademie|acad(?:é|e)mie|society|soci(?:é|e)t(?:é|e)\s+suisse|"
+    r"association|verband|foundation|fondation|stiftung|federal\s+office|"
+    r"confederation|canton\s+of)\b",
     re.IGNORECASE,
 )
 
@@ -263,7 +268,9 @@ def _is_round(story: dict) -> bool:
     company = (story.get("company") or "").strip()
     if not company or re.search(r",|/| and ", company, re.IGNORECASE):
         return False
-    if _INSTITUTIONS.match(company):
+    # Searched, not matched from the start: the body is rarely the first word,
+    # as in "Swiss Academy of Sciences".
+    if _INSTITUTIONS.search(company):
         return False
     if not ((story.get("stage") or "").strip() in _FINANCING_STAGES
             or (story.get("amount") or "").strip()):
