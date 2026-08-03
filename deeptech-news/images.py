@@ -21,7 +21,7 @@ import re
 import urllib.parse
 import urllib.request
 
-from relevance import is_excluded
+from relevance import is_excluded, is_paywalled
 
 # A real browser user-agent. Sites behind a firewall (Startupticker among them)
 # serve a 403 with no image to obvious bots, but let a normal browser through.
@@ -171,6 +171,38 @@ def _primary_source(html: str, base_url: str, title: str):
     return None, "none"
 
 
+_ANNOUNCEMENT_HINTS = (
+    "news", "press", "media", "blog", "article", "story", "release",
+    "announcement", "newsroom", "post", "insights", "actualite", "aktuell",
+)
+
+# A path segment that is only a language or country code, e.g. /en, /de-ch.
+_LOCALE = re.compile(r"^[a-z]{2}(-[a-z]{2})?$")
+
+
+def _is_announcement_page(url: str) -> bool:
+    """True when a URL points at a specific announcement rather than a homepage.
+
+    Linking a post to "valuemize.io/en" tells the reader nothing: it is the
+    company's front door, not the news. Only a page about the story itself is
+    worth swapping the article link for, so require a real path once language
+    and country segments are removed, and either a newsroom-style folder or a
+    slug that looks like a headline.
+    """
+    try:
+        path = urllib.parse.urlsplit(url).path
+    except Exception:
+        return False
+    parts = [p for p in path.split("/") if p and not _LOCALE.match(p.lower())]
+    if not parts:
+        return False  # homepage, or just a language root
+    lowered = [p.lower() for p in parts]
+    if any(hint in seg for seg in lowered for hint in _ANNOUNCEMENT_HINTS):
+        return True
+    # A headline slug: long, hyphenated, and not a bare section name.
+    return any(len(seg) >= 12 and "-" in seg for seg in lowered)
+
+
 def _name_matches(root: str, token: str) -> bool:
     """Does a domain look like it belongs to a name from the headline?
 
@@ -236,6 +268,9 @@ def enrich_articles(articles: list) -> None:
                 a["link"] = link = real
 
         html, final_url = article_page(link)
+        # A gated article cannot be read by anyone who clicks the post, so mark
+        # it for the caller to drop and replace.
+        a["paywalled"] = bool(html) and is_paywalled(html)
         if html:
             if not a.get("image_feed"):
                 a["image"] = (
@@ -248,10 +283,10 @@ def enrich_articles(articles: list) -> None:
 
             source, confidence = _primary_source(html, final_url, a.get("title", ""))
             a["primary_source"] = source
-            # When we are confident, the post links to the original source
-            # rather than the coverage. The outlet that reported it is kept so
-            # it can still be credited in the text.
-            if source and confidence == "high":
+            # Swap to the original source only when it is the announcement
+            # itself. A company homepage says nothing about the news, so in
+            # that case the article stays as the link.
+            if source and confidence == "high" and _is_announcement_page(source):
                 a["coverage_url"] = link
                 a["link"] = source
         else:

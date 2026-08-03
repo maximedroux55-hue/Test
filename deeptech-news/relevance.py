@@ -130,7 +130,28 @@ EXCLUDED_DOMAINS = (
     "globenewswire.com/newsroom", "researchandmarkets.com", "grandviewresearch.com",
     "marketsandmarkets.com", "prnewswire.com/news-releases/global",
     "quantumzeitgeist.com", "wko.at", "simplywall.st", "investing.com",
+    # Paywalled: a link the reader cannot open is not worth posting.
+    "pomona.ch", "finanzundwirtschaft.ch", "bilanz.ch",
 )
+
+# Wording that means the page is gated. Kept to full phrases, so an ordinary
+# "subscribe to our newsletter" in a footer does not trip it.
+PAYWALL_MARKERS = (
+    "subscribers only", "subscribe to continue", "subscribe to read",
+    "this article is reserved", "to continue reading",
+    "nur für abonnenten", "nur fuer abonnenten", "abo abschliessen",
+    "jetzt abonnieren und weiterlesen", "premium-artikel",
+    "réservé aux abonnés", "reserve aux abonnes", "abonnez-vous pour lire",
+    "article réservé", "contenu réservé",
+)
+
+
+def is_paywalled(html: str) -> bool:
+    """True when a fetched page shows it is gated behind a subscription."""
+    if not html:
+        return False
+    text = html.lower()
+    return any(marker in text for marker in PAYWALL_MARKERS)
 
 
 def _squash(text: str) -> str:

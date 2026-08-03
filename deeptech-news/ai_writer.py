@@ -76,6 +76,10 @@ story means for Swiss DeepTech; the positioning shows through story choice.
 thought about capital efficiency read like a template.
 - Prefer a concrete number to an adjective. Amounts, revenue, growth rates, unit \
 counts, dates and named customers are what make these posts land.
+- Name the company. Headlines often hide it ("how a Swiss company plans to ..."), \
+so take the name from the summary. A post about an unnamed "Swiss startup" is a \
+failed post. If neither headline nor summary names it, write about what is \
+actually named instead, and never invent a name.
 - Never use long dashes. Use commas, colons, parentheses, or separate sentences.
 - Do not invent facts, numbers, or names beyond the headline. You have only a \
 headline, its origin, and a date. You may add analysis of why it matters for \
@@ -99,6 +103,17 @@ _SCHEMA = {
 }
 
 
+def _clean_summary(raw: str, limit: int = 600) -> str:
+    """Feed summaries as plain text, trimmed, for the writer to draw facts from."""
+    import html as _html
+    import re as _re
+
+    text = _re.sub(r"<[^>]+>", " ", raw or "")
+    text = _html.unescape(text)
+    text = _re.sub(r"\s+", " ", text).strip()
+    return text[:limit]
+
+
 def _build_user_prompt(articles: list, days: int) -> str:
     lines = [
         f"Here are the top {len(articles)} Swiss DeepTech stories from the last "
@@ -114,11 +129,16 @@ def _build_user_prompt(articles: list, days: int) -> str:
             if a.get("coverage_url")
             else f"   Publisher: {a['publisher']}\n"
         )
+        # The feed summary usually names the company and carries the numbers,
+        # which the headline alone often omits ("how a Swiss company plans to
+        # ..."). Without it the draft cannot name its own subject.
+        summary = _clean_summary(a.get("summary", ""))
         lines.append(
             f"{i}. Headline: {a['title']}\n"
             f"{origin}"
             f"   Date: {date}\n"
-            f"   Link: {a['link']}"
+            + (f"   Summary: {summary}\n" if summary else "")
+            + f"   Link: {a['link']}"
         )
     return "\n".join(lines)
 

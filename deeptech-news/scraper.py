@@ -259,7 +259,7 @@ def main() -> None:
         # than ending the week a post short.
         print("Finding the image and primary source for each post...", file=sys.stderr)
         pool = diversify(unused, args.max_per_source)
-        picks, cursor, dropped = [], 0, 0
+        picks, cursor, dropped, paywalled = [], 0, 0, 0
         while len(picks) < args.posts and cursor < len(pool):
             batch = pool[cursor: cursor + (args.posts - len(picks))]
             cursor += len(batch)
@@ -268,10 +268,18 @@ def main() -> None:
                 if is_excluded(art.get("link", "")):
                     dropped += 1
                     continue
+                if art.get("paywalled"):
+                    paywalled += 1
+                    continue
                 picks.append(art)
         if dropped:
             print(
                 f"Dropped {dropped} stories that resolved to an excluded site.",
+                file=sys.stderr,
+            )
+        if paywalled:
+            print(
+                f"Dropped {paywalled} stories behind a paywall.",
                 file=sys.stderr,
             )
         if len(picks) < args.posts:
