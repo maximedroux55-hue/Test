@@ -81,12 +81,33 @@ NOISE_TERMS = {
     "students": 4, "student project": 5, "semester project": 5,
 }
 
-# General news and tabloid outlets. They cover Switzerland broadly, so their
-# crime, politics and lifestyle stories keep surfacing on Swiss keywords alone.
-EXCLUDED_PUBLISHERS = (
-    "blick", "20 minuten", "20 minutes", "watson.ch", "nau.ch",
-    "gala", "people magazine",
-)
+# No outlet is barred for being general-interest: a mainstream Swiss title
+# reporting a photonics milestone is as welcome as a trade publication. What
+# gets filtered is the content, through the noise and opinion rules below.
+EXCLUDED_PUBLISHERS = ()
+
+# Opinion, analysis and interviews. The digest reports what happened, so
+# commentary about what it means is left out however relevant the topic.
+OPINION_TERMS = {
+    "opinion": 5, "commentary": 5, "editorial": 5, "op-ed": 5,
+    "viewpoint": 5, "interview": 5, "q&a": 5, "in conversation": 5,
+    "the case for": 5, "lessons from": 4, "here's why": 5, "heres why": 5,
+    "why we": 4, "my take": 5, "we need to": 5, "should we": 5,
+    "predictions": 4, "outlook": 4, "trends to watch": 5,
+    "what to expect": 5, "the future of": 4, "is the future": 5,
+    "emerges as": 4, "powerhouse": 4, "rethinking": 4, "reimagining": 4,
+    "can become": 4, "could become": 4, "must ": 3,
+}
+
+
+def _is_quoted_headline(title: str) -> bool:
+    """A headline wrapped in quotation marks is someone's view, not an event."""
+    t = (title or "").strip()
+    if len(t) < 2:
+        return False
+    return (t[0], t[-1]) in {
+        ("«", "»"), ('"', '"'), ("“", "”"), ("'", "'"),
+    }
 
 # Sites that publish market-research summaries, stock chatter or directory
 # pages. They mention the right words but never carry the news itself.
@@ -164,6 +185,12 @@ def score_article(title: str, summary: str, source: str = "") -> int:
     # makes it a DeepTech story. Deal language in the same headline overrides
     # this, so "EPFL professor's spin-off raises CHF 5 million" still counts.
     if _count(title_text, NOISE_TERMS) and not _count(title_text, DEAL_TERMS):
+        return 0
+
+    # Opinion and interviews are dropped outright. Unlike the noise rules, deal
+    # language does not rescue these: "why we should back quantum" is still a
+    # view, not a fact to report.
+    if _is_quoted_headline(title) or _count(title_text, OPINION_TERMS):
         return 0
 
     # The headline carries full weight; the summary is capped. A long research
