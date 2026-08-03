@@ -298,6 +298,9 @@ def render_archive_html(known: dict) -> str:
         origin = (s.get("spinoff_origin") or "").strip()
         if origin:
             bits.append(f'{html.escape(origin)} spin-off')
+        seat = (s.get("legal_seat") or "").strip()
+        if seat and seat.lower() != (s.get("location") or "").strip().lower():
+            bits.append(f'registered in {html.escape(seat)}')
         year = (s.get("founded") or "").strip()
         if year:
             bits.append(f'est. {html.escape(year)}')
@@ -642,9 +645,17 @@ def build_archive(articles: list, picks: list, args) -> None:
         print(f"Looking up {blanks} missing headquarters...", file=sys.stderr)
         print(f"  found {fill_missing(articles)} of them", file=sys.stderr)
 
+    # Max's corrections go on last, over everything the lookups produced.
+    import corrections
+    corrections.apply(articles)
+
     known = archive_mod.load(args.archive)
     before = len(known)
     known = archive_mod.record(known, articles, picks)
+    # Again over the whole database, not just this run's stories. A correction
+    # has to reach rows recorded weeks ago, and clearing a wrong value has to
+    # work at all: the archive never replaces something with a blank on its own.
+    corrections.apply(list(known.values()))
     archive_mod.save(args.archive, known)
     print(
         f"Archive: {len(known)} stories total ({len(known) - before} new "

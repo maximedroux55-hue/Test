@@ -85,7 +85,7 @@ def record(
             "company", "description", "category", "stage", "amount",
             "total_raised", "valuation", "lead_investor", "investors",
             "founders", "spinoff_origin", "founded", "employees",
-            "use_of_funds", "customers", "website", "location",
+            "use_of_funds", "customers", "website", "location", "legal_seat",
         ):
             value = art.get(field, "")
             if value or not entry.get(field):

@@ -65,7 +65,11 @@ def zefix_lookup(company: str, timeout: int = 12) -> dict:
         seat = entry.get("legalSeat") or ""
         out = {
             "legal_name": registered,
-            "location": seat,
+            # The registered seat is not the headquarters. Swiss companies
+            # routinely register in one canton and work from another, which is
+            # how Synhelion, run out of Zurich, was recorded in Lugano. It is
+            # kept as its own fact and never used as the address.
+            "legal_seat": seat,
             "legal_form": (entry.get("legalFormId") and str(entry["legalFormId"])) or "",
             "uid": entry.get("uid") or entry.get("uidFormatted") or "",
         }
@@ -128,7 +132,7 @@ def fill_from_registries(articles: list) -> int:
     """Fill blanks from Zefix, then Crunchbase when it is configured."""
     import sys
 
-    fields = ("location", "founded", "website", "description")
+    fields = ("legal_seat", "founded", "website", "description")
     todo = [a for a in articles
             if a.get("company") and any(not a.get(f) for f in fields)]
     if not todo:

@@ -1,0 +1,20 @@
+{
+  "note": "Max's corrections. Applied after every automatic lookup and always win. Add a company, add the fields to fix.",
+  "companies": {
+    "Synhelion": {
+      "location": "Zurich"
+    },
+    "Hilo": {
+      "location": "Neuchâtel"
+    },
+    "SWISSto12": {
+      "location": "Renens"
+    },
+    "Talentir": {
+      "location": ""
+    },
+    "Foldcast": {
+      "location": ""
+    }
+  }
+}
