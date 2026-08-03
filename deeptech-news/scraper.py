@@ -716,6 +716,9 @@ def main() -> None:
     ap.add_argument("--posts-only", action="store_true",
                     help="Only write the posts: do not read articles in full and "
                          "do not touch the archive.")
+    ap.add_argument("--reread", action="store_true",
+                    help="Read every story again, even ones the database has "
+                         "already read. Use after changing how articles are read.")
     ap.add_argument("--backfill-months", type=int, default=0,
                     help="Also search the news archive month by month, this many "
                          "months back. Feeds carry only recent items, so this is "
@@ -876,13 +879,42 @@ def build_archive(articles: list, picks: list, args) -> None:
     from extract import extract_fields
     from images import article_text
 
+    # What the database already holds, loaded before any work, so a story it
+    # has already read is not read again.
+    #
+    # The unit of "already done" is the article, never the round. A new piece
+    # about a round we have is a new article, so it is always read, and what it
+    # adds is merged into that round: the write-up that finally names the
+    # investors completes the row rather than being skipped as old news. Only
+    # the identical article, at the same address, is passed over.
+    known = archive_mod.load(args.archive)
+    if args.reread:
+        fresh = list(articles)
+        print("Re-reading every story, ignoring what the database holds.",
+              file=sys.stderr)
+    else:
+        fresh = []
+        for art in articles:
+            entry = known.get(archive_mod._key(art.get("link", "")))
+            if entry and entry.get("read"):
+                # Carry the stored facts so this run still sees the round.
+                for field, value in entry.items():
+                    if field not in ("key", "runs", "first_seen", "last_seen"):
+                        art.setdefault(field, value)
+            else:
+                fresh.append(art)
+        if len(fresh) < len(articles):
+            print(f"{len(articles) - len(fresh)} of {len(articles)} stories "
+                  f"were read in an earlier run; reading the {len(fresh)} new ones.",
+                  file=sys.stderr)
+
     # Only the seven picked posts had their Google News redirect resolved, so
     # every other story went into the archive as a news.google.com link. Asking
     # that URL for the article text returns Google's own redirect page, which
     # holds no facts, so those rows were extracted from the feed summary alone.
     # Resolve them all before reading.
     from google_news import is_google_news_url, resolve_url
-    redirects = [a for a in articles if is_google_news_url(a.get("link", ""))]
+    redirects = [a for a in fresh if is_google_news_url(a.get("link", ""))]
     if redirects:
         print(f"Resolving {len(redirects)} Google News links to the publisher...",
               file=sys.stderr)
@@ -896,13 +928,13 @@ def build_archive(articles: list, picks: list, args) -> None:
 
     # Read the articles themselves. Feed summaries are a sentence or two,
     # which is why investors and founders were mostly blank.
-    print(f"Fetching {len(articles)} articles in full...", file=sys.stderr)
+    print(f"Fetching {len(fresh)} articles in full...", file=sys.stderr)
     got = 0
-    for art in articles:
+    for art in fresh:
         art["fulltext"] = article_text(art.get("link", ""), limit=6000)
         if art["fulltext"]:
             got += 1
-    print(f"  read {got}/{len(articles)} in full", file=sys.stderr)
+    print(f"  read {got}/{len(fresh)} in full", file=sys.stderr)
 
     # Some publishers refuse us outright, and those stories reached the archive
     # with nothing but a headline: two rounds sat there nameless because The
@@ -911,7 +943,7 @@ def build_archive(articles: list, picks: list, args) -> None:
     from extract import _company_from_headline
     from hq_lookup import company_pages
 
-    blocked = [a for a in articles
+    blocked = [a for a in fresh
                if not a.get("fulltext") and _company_from_headline(a.get("title", ""))]
     if blocked:
         print(f"Falling back to the company's own site for {len(blocked)} "
@@ -927,21 +959,31 @@ def build_archive(articles: list, picks: list, args) -> None:
                 recovered += 1
         print(f"  recovered {recovered}/{len(blocked)}", file=sys.stderr)
 
-    print("Reading deal facts from each story...", file=sys.stderr)
-    for art, facts in zip(articles, extract_fields(articles)):
-        art.update(facts)
-    named = sum(1 for a in articles if a.get("company"))
-    print(f"  identified a company in {named}/{len(articles)} stories",
-          file=sys.stderr)
+    if fresh:
+        print("Reading deal facts from each new story...", file=sys.stderr)
+        for art, facts in zip(fresh, extract_fields(fresh)):
+            art.update(facts)
+            # Read once, and recorded as read, so tomorrow's run passes over it.
+            art["read"] = True
+        named = sum(1 for a in fresh if a.get("company"))
+        print(f"  identified a company in {named}/{len(fresh)} stories",
+              file=sys.stderr)
 
-    # News write-ups give the amount and little else, so read each
-    # company's own site for the investors, founders and the rest.
-    from extract import fill_from_company_sites
-    fill_from_company_sites([a for a in articles if _is_round(a)])
+    # The lookups below are about the company rather than the article, and each
+    # costs several page fetches, so they run only where the round still has a
+    # gap they could fill. A round that is already complete is left alone; one
+    # that a new write-up has just changed is looked at again, because the new
+    # facts may be exactly what makes the rest findable.
+    wanted = ("investors", "founders", "founded", "location", "website")
+    incomplete = [a for a in articles
+                  if _is_round(a) and any(not a.get(f) for f in wanted)]
+    if incomplete:
+        from extract import fill_from_company_sites
+        fill_from_company_sites(incomplete)
 
-    # The commercial register is authoritative for the registered seat.
-    from registries import fill_from_registries
-    fill_from_registries([a for a in articles if _is_round(a)])
+        # The commercial register is authoritative for the registered seat.
+        from registries import fill_from_registries
+        fill_from_registries(incomplete)
 
     # Anything still without a location gets the address lookup.
     from hq_lookup import fill_missing
@@ -967,7 +1009,6 @@ def build_archive(articles: list, picks: list, args) -> None:
     import corrections
     corrections.apply(articles)
 
-    known = archive_mod.load(args.archive)
     before = len(known)
     known = archive_mod.record(known, articles, picks)
     # Again over the whole database, not just this run's stories. A correction

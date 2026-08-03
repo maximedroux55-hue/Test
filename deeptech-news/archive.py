@@ -83,6 +83,9 @@ def record(
             "score": art.get("score"),
             "last_seen": stamp,
             "posted": entry.get("posted", False) or key in posted_keys,
+            # Whether this article has been read in full. A later run skips the
+            # ones it has, so only genuinely new coverage costs anything.
+            "read": entry.get("read", False) or bool(art.get("read")),
         })
         # Deal facts read out of the article, see extract.py. Only overwrite
         # with something, so a later thinner mention cannot blank a good value.
