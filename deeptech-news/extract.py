@@ -44,7 +44,9 @@ SYSTEM = (
     "wording such as 'Zurich-based', 'the Renens company' or 'headquartered "
     "in Basel'. It is never a market the company is expanding into, never an "
     "investor's home city, never where an event or conference took place, and "
-    "never the country alone.\n"
+    "never the country alone. The outlet's own name is not evidence: a story "
+    "carried by 'Greater Geneva Bern area' says nothing about the company "
+    "being in Geneva.\n"
     "Headquarters is the one field you may fill from your own knowledge of the "
     "company when the article does not state it, because it is a standing fact "
     "about the company rather than a detail of this news. Do so only when you "
@@ -330,7 +332,6 @@ def _extract_batch(articles: list, model: str | None = None):
             body = a.get("fulltext") or _clean_summary(a.get("summary", ""), 500)
             lines.append(
                 f"{i}. Headline: {a.get('title','')}\n"
-                f"   Publisher: {a.get('publisher','')}\n"
                 f"   Link: {a.get('link','')}\n"
                 + (f"   Article: {body}\n" if body else "")
             )

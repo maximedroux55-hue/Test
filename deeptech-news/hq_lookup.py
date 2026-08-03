@@ -71,6 +71,19 @@ def _candidate_domains(company: str, website: str) -> list:
     return out[:4]
 
 
+def _is_the_company(text: str, company: str) -> bool:
+    """Does this page actually belong to the company we are looking for?
+
+    Domains guessed from a name land on unrelated businesses: hilo.com is not
+    the Swiss company, and taking its address gave the wrong headquarters.
+    Require the company's name to appear on the page before trusting anything
+    on it.
+    """
+    squashed = re.sub(r"[^a-z0-9]", "", (text or "").lower())
+    target = re.sub(r"[^a-z0-9]", "", (company or "").lower())
+    return len(target) >= 3 and target in squashed
+
+
 def find_hq(company: str, website: str = "", max_pages: int = 6) -> str:
     """Return the headquarters city from the company's own site, or ""."""
     if not company:
@@ -82,7 +95,7 @@ def find_hq(company: str, website: str = "", max_pages: int = 6) -> str:
                 return ""
             text = article_text(f"https://{domain}{path}", limit=6000)
             tried += 1
-            if not text:
+            if not text or not _is_the_company(text, company):
                 continue
             city = _city_from_address(text)
             if city:
@@ -130,7 +143,9 @@ def company_pages(company: str, website: str = "", max_pages: int = 5):
             if hits >= max_pages:
                 break
             text = article_text(f"https://{domain}{path}", limit=4000)
-            if text:
+            # A reachable page that never names the company is somebody else's
+            # site, and its founders and backers are not the ones we want.
+            if text and _is_the_company(text, company):
                 collected.append(text)
                 hits += 1
         # One reachable page is a coincidence; two means the domain is real.
