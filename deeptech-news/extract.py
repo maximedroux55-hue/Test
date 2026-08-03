@@ -337,7 +337,7 @@ def _extract_batch(articles: list, model: str | None = None):
         client = anthropic.Anthropic()
         resp = client.messages.create(
             model=model or os.environ.get("ANTHROPIC_MODEL", DEFAULT_MODEL),
-            max_tokens=16000,
+            max_tokens=8000,
             system=SYSTEM,
             messages=[{
                 "role": "user",
@@ -378,5 +378,8 @@ def _extract_batch(articles: list, model: str | None = None):
                     "location": item.get("location", "").strip(),
                 }
         return out
-    except Exception:
+    except Exception as exc:
+        import sys
+        print(f"    extraction error: {type(exc).__name__}: {str(exc)[:160]}",
+              file=sys.stderr)
         return None
