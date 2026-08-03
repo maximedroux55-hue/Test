@@ -76,6 +76,12 @@ def apply(articles: list, path: str = PATH) -> int:
         if any(art.get(k) != v for k, v in wanted.items()):
             changed += 1
         art.update(wanted)
+        seen = art.setdefault("provenance", {})
+        for field, value in wanted.items():
+            if value:
+                seen[field] = "Max"
+            else:
+                seen.pop(field, None)
     if changed:
         print(f"Applied {changed} corrections from corrections.json", file=sys.stderr)
     return changed

@@ -90,6 +90,11 @@ def record(
             value = art.get(field, "")
             if value or not entry.get(field):
                 entry[field] = value
+        # Where each fact came from, merged rather than replaced so a run that
+        # filled nothing new does not erase what an earlier one recorded.
+        if art.get("provenance"):
+            entry["provenance"] = {**entry.get("provenance", {}),
+                                   **art["provenance"]}
         if stamp not in entry["runs"]:
             entry["runs"].append(stamp)
         known[key] = entry

@@ -149,7 +149,9 @@ def fill_missing(articles: list) -> int:
             continue
         city = find_hq(art.get("company", ""), art.get("website", ""))
         if city:
+            import provenance
             art["location"] = city
+            provenance.note(art, "location", provenance.IMPRINT)
             found += 1
     return found
 

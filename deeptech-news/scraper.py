@@ -23,6 +23,7 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import html
+import re
 import sys
 import time
 from calendar import timegm
@@ -32,6 +33,7 @@ try:
 except ImportError:
     sys.exit("Missing dependency 'feedparser'. Run: pip install -r requirements.txt")
 
+import money
 from sources import all_feeds
 from relevance import score_article, deduplicate, is_excluded
 from linkedin import to_linkedin
@@ -207,12 +209,113 @@ _FINANCING_STAGES = {
 }
 
 
+# A figure on its own is not a round. Hitachi Energy putting USD 9B into a
+# factory is capital expenditure, and a laboratory being awarded research money
+# is not a company being financed.
+_NOT_A_ROUND = re.compile(
+    r"expand\w*\s+(?:its\s+)?(?:\w+\s+){0,2}(?:production|manufacturing|capacity|site|plant)|"
+    r"opens?\s+(?:a\s+)?(?:new\s+)?(?:factory|plant|site|campus|office)|"
+    r"production\s+(?:line|facility|site)|"
+    r"research\s+(?:grant|project|programme|program)\b|"
+    r"professorship|chair\s+of\b",
+    re.IGNORECASE,
+)
+
+# Institutions receive research money; they are not companies raising rounds.
+_INSTITUTIONS = re.compile(
+    r"^(epfl|eth|empa|csem|psi|idiap|agroscope|universit|hochschule|"
+    r"hes-so|zhaw|fhnw|supsi|inselspital|chuv|hug)\b",
+    re.IGNORECASE,
+)
+
+
 def _is_round(story: dict) -> bool:
-    """True when the story reports a financing or exit event."""
-    if (story.get("stage") or "").strip() in _FINANCING_STAGES:
-        return True
-    # A stated amount is a round even when the stage was never named.
-    return bool((story.get("amount") or "").strip())
+    """True when the story reports one company being financed.
+
+    A row needs a company, since a row with no name records nothing. It needs
+    to be one company, since an award split across three startups is not a
+    round. It needs a stage or an amount. And it must not be one of the things
+    that merely carry a number: a factory investment, or a grant to a lab.
+    """
+    company = (story.get("company") or "").strip()
+    if not company or re.search(r",|/| and ", company, re.IGNORECASE):
+        return False
+    if _INSTITUTIONS.match(company):
+        return False
+    if not ((story.get("stage") or "").strip() in _FINANCING_STAGES
+            or (story.get("amount") or "").strip()):
+        return False
+    text = f"{story.get('title', '')} {story.get('description', '')}"
+    return not _NOT_A_ROUND.search(text)
+
+
+def _company_stem(name: str) -> str:
+    """A company name reduced so spellings of it match each other."""
+    stem = re.sub(r"[^a-z0-9]", "", (name or "").lower())
+    return re.sub(r"(ag|sa|sarl|gmbh|ltd|inc|bv|nv|holding|group)$", "", stem)
+
+
+# Fields where a longer answer is a better answer, so the fuller of two
+# outlets' versions wins rather than whichever was seen first.
+_PREFER_LONGER = ("investors", "founders", "description", "use_of_funds",
+                  "customers")
+
+
+def merge_deals(stories: list) -> list:
+    """One row per round, not one row per article.
+
+    The same round gets written up by several outlets, and each leaves
+    something out: GGBa named CCRAFT's city, The Quantum Insider named its
+    technology, and keying on the article URL made them two half-empty rows.
+    Rows for the same company and amount are folded together, taking the value
+    each outlet did have.
+    """
+    groups, order = {}, []
+    for story in stories:
+        stem = _company_stem(story.get("company", ""))
+        if not stem:
+            continue
+        # Amount pins the round: two rounds for one company in a year are
+        # different deals and must not collapse into one.
+        _, value = money.parse(story.get("amount", ""))
+        key = (stem, int(value))
+        if key not in groups:
+            groups[key] = dict(story)
+            groups[key]["sources"] = []
+            order.append(key)
+        merged = groups[key]
+        for field, value2 in story.items():
+            if field in ("sources", "key"):
+                continue
+            existing = merged.get(field)
+            if not isinstance(value2, str):
+                if not existing:
+                    merged[field] = value2
+                continue
+            if not value2.strip():
+                continue
+            if not (existing or "").strip():
+                merged[field] = value2
+            elif field in _PREFER_LONGER and len(value2) > len(existing):
+                merged[field] = value2
+            elif field == "company" and existing.islower() and not value2.islower():
+                # One outlet wrote "valuemize", another "Valuemize".
+                merged[field] = value2
+        publisher = (story.get("publisher") or "").strip()
+        if publisher and publisher not in merged["sources"]:
+            merged["sources"].append(publisher)
+        merged["posted"] = merged.get("posted") or story.get("posted")
+
+    out = []
+    for key in order:
+        deal = groups[key]
+        name = deal.get("company") or ""
+        # An outlet that lower-cased the name should not decide how it reads.
+        # Only when every letter is lower, so SWISSto12 is left alone.
+        if name.islower():
+            deal["company"] = name[:1].upper() + name[1:]
+        out.append(deal)
+    return out
 
 
 def _report_coverage(known: dict) -> None:
@@ -221,17 +324,69 @@ def _report_coverage(known: dict) -> None:
     Without this the only way to tell whether a run read the articles properly
     was to open the page and count blanks.
     """
-    rounds = [s for s in known.values() if _is_round(s)]
+    import provenance
+
+    raw = [s for s in known.values() if _is_round(s)]
+    rounds = merge_deals(raw)
     if not rounds:
         return
     fields = ("company", "description", "category", "stage", "amount",
               "location", "investors", "founders",
               "spinoff_origin", "founded", "total_raised")
-    print(f"Archive coverage over {len(rounds)} rounds:", file=sys.stderr)
+    merged_away = len(raw) - len(rounds)
+    print(f"Coverage over {len(rounds)} rounds"
+          f"{f' ({merged_away} duplicate write-ups merged)' if merged_away else ''}:",
+          file=sys.stderr)
     for field in fields:
         filled = sum(1 for s in rounds if (s.get(field) or "").strip())
         print(f"  {field:<15} {filled:>3}/{len(rounds)}"
               f"  {100 * filled // len(rounds):>3}%", file=sys.stderr)
+    swiss = sum(1 for s in rounds if _is_swiss(s))
+    total = sum(money.in_chf(s.get("amount", "")) for s in rounds)
+    print(f"  {'Swiss HQ':<15} {swiss:>3}/{len(rounds)}"
+          f"  {100 * swiss // len(rounds):>3}%", file=sys.stderr)
+    print(f"  tracked {money.compact(total)} across the rounds with an amount",
+          file=sys.stderr)
+    sources = provenance.summary(rounds)
+    if sources:
+        print("  facts by source: "
+              + ", ".join(f"{v} from {k}" for k, v in sources.items()),
+              file=sys.stderr)
+
+
+# Cities and cantons that put a company in Switzerland. A location written as
+# "Munich, DE" or "Leipzig, DE" is explicitly not.
+_SWISS_HOME = re.compile(
+    r"z(?:ü|u)rich|geneva|gen(?:è|e)ve|lausanne|basel|b(?:â|a)le|bern|berne|"
+    r"lugano|sion|fribourg|neuch(?:â|a)tel|winterthur|zug|st\.?\s*gallen|"
+    r"renens|schlieren|d(?:ü|u)bendorf|biel|bienne|lucerne|luzern|thun|"
+    r"yverdon|villigen|chiasso|glattbrugg|vaud|valais|ticino|switzerland|"
+    r"lugano|martigny|monthey|nyon|morges|vevey|montreux|aarau|baden|olten",
+    re.IGNORECASE,
+)
+
+
+def _is_swiss(story: dict) -> bool:
+    """Is this a Swiss company, rather than a foreign one with a Swiss story?
+
+    Prodlane is in Leipzig and SkyPilot is American; both reached the table
+    because the news had a Swiss angle. Whether they belong is Max's call, so
+    they are kept and marked rather than dropped.
+    """
+    location = (story.get("location") or "").strip()
+    if location:
+        if re.search(r",\s*[A-Z]{2}$", location):
+            return False
+        return bool(_SWISS_HOME.search(location))
+    # No headquarters recorded: a Swiss institution behind it still counts.
+    origin = (story.get("spinoff_origin") or "").lower()
+    return any(s in origin for s in
+               ("eth", "epfl", "csem", "empa", "psi", "idiap", "univers", "hsg"))
+
+
+def _provenance(story: dict, field: str) -> str:
+    """Where a fact came from, in words. Empty when it was not recorded."""
+    return ((story.get("provenance") or {}).get(field) or "").strip()
 
 
 def _investor_line(story: dict) -> str:
@@ -266,12 +421,13 @@ def render_archive_html(known: dict) -> str:
                        e.get("score") or 0),
         reverse=True,
     )
-    stories = [s for s in everything if _is_round(s)]
+    stories = merge_deals([s for s in everything if _is_round(s)])
     hidden = len(everything) - len(stories)
     posted = sum(1 for s in stories if s.get("posted"))
-    companies = len({(s.get("company") or "").lower() for s in stories if s.get("company")})
     with_investors = sum(1 for s in stories if _investor_line(s))
     with_founders = sum(1 for s in stories if (s.get("founders") or "").strip())
+    swiss = sum(1 for s in stories if _is_swiss(s))
+    tracked = money.compact(sum(money.in_chf(s.get("amount", "")) for s in stories))
 
     rows = []
     for s in stories:
@@ -313,6 +469,9 @@ def render_archive_html(known: dict) -> str:
         use = (s.get("use_of_funds") or "").strip()
         if use:
             bits.append(html.escape(use))
+        outlets = [p for p in (s.get("sources") or []) if p]
+        if len(outlets) > 1:
+            bits.append(f'{len(outlets)} sources: {html.escape(", ".join(outlets))}')
         meta = f'<div class="meta">{" &middot; ".join(bits)}</div>' if bits else ""
 
         stage_text = html.escape(s.get("stage") or "")
@@ -323,12 +482,27 @@ def render_archive_html(known: dict) -> str:
                     else '<span class="nd">n/d</span>')
         amount_text = html.escape(s.get("amount") or "")
         amount = amount_text or '<span class="nd">undisclosed</span>'
-        total_text = html.escape(s.get("total_raised") or "")
-        total = f'<span class="total">{total_text} total</span>' if total_text else ""
-        location = html.escape(s.get("location") or "") or '<span class="nd">n/d</span>'
+        chf = money.in_chf(s.get("amount", ""))
+        note = []
+        if (s.get("total_raised") or "").strip():
+            note.append(f'{html.escape(s["total_raised"])} total')
+        # The franc figure is only worth showing where it is not the currency.
+        if chf and not amount_text.upper().startswith("CHF"):
+            note.append(f'≈ {money.compact(chf)}')
+        total = f'<span class="total">{" &middot; ".join(note)}</span>' if note else ""
+
+        location_text = (s.get("location") or "").strip()
+        where = (_provenance(s, "location")
+                 or "as written in the coverage") if location_text else ""
+        location = (f'<span title="Source: {html.escape(where)}">'
+                    f'{html.escape(location_text)}</span>'
+                    if location_text else '<span class="nd">n/d</span>')
+        if location_text and not _is_swiss(s):
+            location += ' <span class="foreign">non-CH</span>'
 
         rows.append(
-            f'<tr>'
+            f'<tr data-swiss="{"1" if _is_swiss(s) else "0"}" '
+            f'data-chf="{chf}">'
             f'<td class="co"><a href="{link}" target="_blank" rel="noopener" '
             f'title="{html.escape(s.get("title",""))}">{company}</a>{tag}'
             f'{desc}{meta}</td>'
@@ -386,19 +560,36 @@ def render_archive_html(known: dict) -> str:
   .stage {{ border:1px solid var(--line); border-radius:6px; padding:0.1rem 0.45rem;
            font-size:0.76rem; font-weight:600; white-space:nowrap; }}
   .total {{ display:block; color:var(--soft); font-size:0.72rem; font-weight:500; }}
+  .foreign {{ background:#f3f0ea; color:#8a6d3b; border-radius:5px;
+             padding:0.02rem 0.3rem; font-size:0.68rem; font-weight:700; }}
+  .controls {{ display:flex; gap:0.6rem; align-items:center; margin-bottom:1rem;
+              flex-wrap:wrap; }}
+  .controls input[type=text] {{ flex:1 1 16rem; margin:0; }}
+  .toggle {{ display:flex; align-items:center; gap:0.4rem; font-size:0.85rem;
+            color:var(--soft); background:#fff; border:1px solid var(--line);
+            border-radius:10px; padding:0.62rem 0.8rem; cursor:pointer;
+            white-space:nowrap; }}
+  .note {{ color:var(--faint); font-size:0.76rem; margin-top:0.8rem; }}
+  .live {{ color:var(--soft); font-size:0.82rem; white-space:nowrap; }}
 </style></head><body>
 <div class="wrap">
   <h1>Swiss DeepTech rounds<span class="dot">.</span></h1>
-  <p class="sub">Every financing round the tool has found, newest first.
-  <span title="Research, partnerships and other non-financing news, kept in archive.json">{hidden} non-financing stories are kept in archive.json and not shown here.</span></p>
+  <p class="sub">Every financing round the tool has found, newest first. One row per round:
+  where several outlets covered the same one, their facts are combined.
+  <span title="Research, partnerships and other non-financing news, kept in archive.json">{hidden} non-financing stories stay in archive.json and are not shown here.</span></p>
   <div class="stats">
     <div class="stat"><b>{len(stories)}</b><span>rounds</span></div>
-    <div class="stat"><b>{companies}</b><span>companies</span></div>
+    <div class="stat"><b>{tracked or "&ndash;"}</b><span>tracked</span></div>
+    <div class="stat"><b>{swiss}</b><span>Swiss HQ</span></div>
     <div class="stat"><b>{with_investors}</b><span>with investors</span></div>
     <div class="stat"><b>{with_founders}</b><span>with founders</span></div>
     <div class="stat"><b>{posted}</b><span>posted</span></div>
   </div>
-  <input id="q" placeholder="Filter by company, sector, investor, founder or city..." oninput="filter()">
+  <div class="controls">
+    <input type="text" id="q" placeholder="Filter by company, sector, investor, founder or city..." oninput="filter()">
+    <label class="toggle"><input type="checkbox" id="ch" onchange="filter()"> Swiss HQ only</label>
+    <span class="live" id="count"></span>
+  </div>
   <div class="box"><table>
     <thead><tr><th>Company</th><th>Sector</th><th>Stage</th><th>Raised</th>
       <th>HQ</th><th>Date</th></tr></thead>
@@ -406,15 +597,31 @@ def render_archive_html(known: dict) -> str:
 {body}
     </tbody>
   </table></div>
+  <p class="note">Amounts are shown as the article wrote them. The franc figure beside a
+  foreign currency, and the total above, are converted at fixed indicative rates and are
+  meant for scale rather than accounting. Hover a headquarters to see where it came from.</p>
 </div>
 <script>
   function filter() {{
     var q = document.getElementById('q').value.toLowerCase();
+    var swissOnly = document.getElementById('ch').checked;
     var rows = document.querySelectorAll('#rows tr');
+    var shown = 0, total = 0;
     for (var i = 0; i < rows.length; i++) {{
-      rows[i].style.display = rows[i].innerText.toLowerCase().indexOf(q) > -1 ? '' : 'none';
+      var row = rows[i];
+      var matches = row.innerText.toLowerCase().indexOf(q) > -1
+                 && (!swissOnly || row.getAttribute('data-swiss') === '1');
+      row.style.display = matches ? '' : 'none';
+      if (matches) {{ shown++; total += parseInt(row.getAttribute('data-chf') || '0', 10); }}
+    }}
+    var box = document.getElementById('count');
+    if (box) {{
+      box.innerHTML = shown + ' round' + (shown === 1 ? '' : 's')
+        + (total ? ' &middot; ' + (total >= 1e9 ? (total / 1e9).toFixed(1) + 'B'
+                                                : Math.round(total / 1e6) + 'M') + ' CHF' : '');
     }}
   }}
+  filter();
 </script>
 </body></html>
 """
@@ -621,6 +828,29 @@ def build_archive(articles: list, picks: list, args) -> None:
         if art["fulltext"]:
             got += 1
     print(f"  read {got}/{len(articles)} in full", file=sys.stderr)
+
+    # Some publishers refuse us outright, and those stories reached the archive
+    # with nothing but a headline: two rounds sat there nameless because The
+    # Quantum Insider and EU-Startups would not serve the page. The company is
+    # usually named in the headline even so, and its own site will say the rest.
+    from extract import _company_from_headline
+    from hq_lookup import company_pages
+
+    blocked = [a for a in articles
+               if not a.get("fulltext") and _company_from_headline(a.get("title", ""))]
+    if blocked:
+        print(f"Falling back to the company's own site for {len(blocked)} "
+              f"stories the publisher would not serve...", file=sys.stderr)
+        recovered = 0
+        for art in blocked:
+            name = _company_from_headline(art.get("title", ""))
+            domain, text = company_pages(name, art.get("website", ""))
+            if text:
+                art["fulltext"] = text
+                art["company"] = art.get("company") or name
+                art.setdefault("website", domain)
+                recovered += 1
+        print(f"  recovered {recovered}/{len(blocked)}", file=sys.stderr)
 
     print("Reading deal facts from each story...", file=sys.stderr)
     for art, facts in zip(articles, extract_fields(articles)):

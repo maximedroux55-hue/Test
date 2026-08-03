@@ -401,9 +401,15 @@ def extract_fields(articles: list, model: str | None = None) -> list:
             print(f"  ! extraction failed for stories {start + 1}-{start + len(chunk)}, "
                   f"used keywords instead", file=sys.stderr)
             continue
+        import provenance
+
         for offset, facts in enumerate(got):
             if facts:
                 art = articles[start + offset]
+                facts["provenance"] = {
+                    f: provenance.ARTICLE for f, v in facts.items()
+                    if isinstance(v, str) and v.strip()
+                }
                 stated = _stage_from_text(
                     f"{art.get('title', '')}. "
                     f"{art.get('fulltext') or art.get('summary', '')}"
@@ -457,6 +463,8 @@ def fill_from_company_sites(articles: list, model: str | None = None) -> int:
         # the headquarters. A company's own imprint is authoritative and a
         # journalist's shorthand is not, which is how SWISSto12 in Renens was
         # recorded in Geneva and Hilo in Neuchâtel was recorded in Sion.
+        import provenance
+
         changed = False
         for field in wanted:
             authoritative = field == "location" and facts.get(field)
@@ -464,6 +472,7 @@ def fill_from_company_sites(articles: list, model: str | None = None) -> int:
                 if art.get(field) != facts[field]:
                     changed = True
                 art[field] = facts[field]
+                provenance.note(art, field, provenance.COMPANY_SITE)
         improved += bool(changed)
     print(f"  filled gaps on {improved} companies", file=sys.stderr)
     return improved

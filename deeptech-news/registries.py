@@ -25,6 +25,11 @@ CRUNCHBASE_SEARCH = "https://api.crunchbase.com/api/v4/searches/organizations"
 
 _UA = "Mozilla/5.0 (compatible; ClimbNewsBot/1.0; +https://climbventures.com)"
 
+# Why the register produced nothing, so an empty column can be diagnosed from
+# the run log instead of assumed to be the register's fault.
+_LAST_ERROR = ""
+_NO_MATCH = []
+
 
 def _post_json(url: str, payload: dict, headers: dict, timeout: int = 12):
     body = json.dumps(payload).encode("utf-8")
@@ -51,10 +56,16 @@ def zefix_lookup(company: str, timeout: int = 12) -> dict:
              "User-Agent": _UA},
             timeout,
         )
-    except Exception:
+    except Exception as exc:
+        # Every company came back empty, which reads the same whether the
+        # register has nothing or the call is broken. Say which.
+        global _LAST_ERROR
+        _LAST_ERROR = f"{type(exc).__name__}: {str(exc)[:150]}"
         return {}
 
     entries = data if isinstance(data, list) else data.get("list", []) or []
+    if not entries:
+        _NO_MATCH.append(name)
     target = re.sub(r"[^a-z0-9]", "", name.lower())
     for entry in entries:
         registered = entry.get("name", "")
@@ -132,6 +143,8 @@ def fill_from_registries(articles: list) -> int:
     """Fill blanks from Zefix, then Crunchbase when it is configured."""
     import sys
 
+    import provenance
+
     fields = ("legal_seat", "founded", "website", "description")
     todo = [a for a in articles
             if a.get("company") and any(not a.get(f) for f in fields)]
@@ -154,7 +167,15 @@ def fill_from_registries(articles: list) -> int:
         for field in fields + ("legal_name", "uid"):
             if not art.get(field) and facts.get(field):
                 art[field] = facts[field]
+                provenance.note(art, field, provenance.REGISTER)
                 changed = True
         improved += bool(changed)
     print(f"  filled {improved} companies", file=sys.stderr)
+    if not improved:
+        if _LAST_ERROR:
+            print(f"  ! the register call is failing: {_LAST_ERROR}",
+                  file=sys.stderr)
+        elif _NO_MATCH:
+            print(f"  the register answered but matched none of: "
+                  f"{', '.join(_NO_MATCH[:8])}", file=sys.stderr)
     return improved
