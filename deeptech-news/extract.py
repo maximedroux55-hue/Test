@@ -376,6 +376,12 @@ _NAMES_INVESTORS = re.compile(
 # those deals redemptions routinely run above 80%, so the headline can be a
 # multiple of what arrives.
 _NOT_CLOSED = re.compile(
+    # A round in progress. Bloomberg wrote that Prem "is raising $100 million"
+    # and expected to close in the third quarter; it was recorded as a closed
+    # Series A and sat inside the venture total. The tense is the whole signal.
+    r"\bis\s+rais\w+|\bare\s+rais\w+|seek(?:s|ing)\s+to\s+raise|"
+    r"in\s+talks\s+to\s+raise|plans?\s+to\s+raise|looking\s+to\s+raise|"
+    r"set\s+to\s+raise|plans?\s+to\s+close|will\s+close|"
     r"expected\s+to\s+close|targeted\s+(?:for|to\s+close)|subject\s+to\s+"
     r"(?:\w+\s+){0,3}approval|shareholder\s+approval|pending\s+approval|"
     r"upon\s+(?:the\s+)?clos|once\s+(?:the\s+deal\s+)?closes|"

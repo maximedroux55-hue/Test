@@ -17,6 +17,18 @@
     "Foldcast": {
       "location": ""
     },
+    "Prem": {
+      "stage": "Series A",
+      "status": "announced",
+      "amount_note": "raising, expected to close in Q3",
+      "investors": "",
+      "lead_investor": ""
+    },
+    "GR3N": {
+      "stage": "Series B",
+      "investors": "360 Capital, VP Textile",
+      "lead_investor": "360 Capital"
+    },
     "MoonLake": {
       "stage": "Follow-on",
       "amount_note": "USD 200M base closed 25 June, USD 30M over-allotment closed 14 July"
