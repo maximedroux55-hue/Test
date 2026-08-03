@@ -33,8 +33,8 @@ Structure EVERY post exactly like this, with a blank line between each part:
 1. Opening line: the Swiss flag emoji, then a short punchy headline of about 6 to \
 8 words. Example: "🇨🇭 Swiss quantum moves to commercial scale".
 2. Body: 1 or 2 sentences of context and the news. Where a company, university, \
-or institution is named, add an @mention for it (for example @EPFL, @ETH Zurich, \
-@Startupticker). Max verifies the exact handles before posting.
+or institution is named, add an @mention for it (for example @EPFL, @ETH Zurich). \
+Max verifies the exact handles before posting.
 3. The exact label "Why it matters:" on its own line.
 4. Exactly 3 bullet points, one per line, with NO blank lines between them. Each \
 bullet MUST start with a single relevant emoji, then the point. Cover, in order: \
@@ -49,8 +49,10 @@ Rules:
 without sounding like an advertisement.
 - Never use long dashes. Use commas, colons, parentheses, or separate sentences.
 - Do not invent facts, numbers, or names beyond the headline. You have only a \
-headline, publisher, and date. You may add analysis of why it matters for Swiss \
-DeepTech.
+headline, its origin, and a date. You may add analysis of why it matters for \
+Swiss DeepTech.
+- Only credit a news outlet when a Publisher is given. When the source is the \
+company's own announcement, mention no outlet at all.
 - Vary phrasing across posts so a batch does not look templated.
 - No hashtags. End with the source link.
 - These are drafts Max reviews and lightly edits before posting."""
@@ -76,9 +78,16 @@ def _build_user_prompt(articles: list, days: int) -> str:
     ]
     for i, a in enumerate(articles, 1):
         date = a["date"].strftime("%d %b %Y") if a.get("date") else "n/a"
+        # When the link is the company's own announcement, no outlet is named,
+        # so the post credits the company rather than whoever covered it.
+        origin = (
+            "   Source: the company's own announcement, credit no news outlet\n"
+            if a.get("coverage_url")
+            else f"   Publisher: {a['publisher']}\n"
+        )
         lines.append(
             f"{i}. Headline: {a['title']}\n"
-            f"   Publisher: {a['publisher']}\n"
+            f"{origin}"
             f"   Date: {date}\n"
             f"   Link: {a['link']}"
         )

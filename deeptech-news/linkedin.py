@@ -202,6 +202,9 @@ def build_post(article: dict, index: int) -> str:
         # (the opening headline already carries the flag on templated bodies).
         if re.search(r"swiss|switzerland", body, re.IGNORECASE) and not body.startswith(_FLAG):
             body = f"{_FLAG} {body}"
+    elif article.get("coverage_url"):
+        # Linking to the company's own announcement, so name no outlet.
+        body = f"{_FLAG} The announcement lands{where}. {bucket['sig']}{deal}"
     else:
         body = (
             f"{article['publisher']} covers the story{where}. {bucket['sig']}{deal}"
@@ -327,10 +330,7 @@ def render_markdown(records: list, mode: str, days: int) -> str:
         else:
             parts.append("🖼️ **Article image:** none found, grab one from the article page.")
         if r.get("coverage_url"):
-            parts.append(
-                f"🔗 **Links to the original source.** Covered by "
-                f"{r['publisher']}: {r['coverage_url']}"
-            )
+            parts.append("🔗 **Links to the original source.**")
         parts.append("")
     if not records:
         parts.append("_No stories to turn into posts this run._")
@@ -367,18 +367,14 @@ def render_plan_html(records: list, mode: str, days: int) -> str:
                 '<p class="noimg">No preview image. Cowork will grab one from the '
                 "article page when scheduling.</p>"
             )
-        # When the link is the original source, show it as such and keep a
-        # secondary link to the outlet that covered it.
+        # When the link is the original source, that is the only source shown.
+        # The outlet we happened to find the story through is not credited.
+        primary = ""
         if r.get("coverage_url"):
             host = r["link"].split("//", 1)[-1].split("/", 1)[0].replace("www.", "")
             main_label = f"Original source: {host}"
-            primary = (
-                f'<a class="src primary" href="{esc(r["coverage_url"])}" '
-                f'target="_blank" rel="noopener">via {esc(r["publisher"] or "coverage")}</a>'
-            )
         else:
             main_label = f"Article: {r['publisher'] or 'link'}"
-            primary = ""
         cards.append(
             f"""      <article class="card">
         <div class="cardhead">
