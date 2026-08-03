@@ -466,6 +466,13 @@ def main() -> None:
         named = sum(1 for a in articles if a.get("company"))
         print(f"  identified a company in {named}/{len(articles)} stories",
               file=sys.stderr)
+
+        # Articles often skip the location, so check the company's own site.
+        from hq_lookup import fill_missing
+        blanks = sum(1 for a in articles if a.get("company") and not a.get("location"))
+        if blanks:
+            print(f"Looking up {blanks} missing headquarters...", file=sys.stderr)
+            print(f"  found {fill_missing(articles)} of them", file=sys.stderr)
         known = archive_mod.load(args.archive)
         before = len(known)
         known = archive_mod.record(known, articles, picks)
