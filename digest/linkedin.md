@@ -13,16 +13,16 @@ The posts themselves are below, for review before you run it.
 ## Post 1 — schedule for Tuesday 04 August at 08:00
 
 ```
-🇨🇭 Swiss trapped-ion quantum secures major seed round
+🇨🇭 Swiss trapped-ion quantum lands major seed round
 
-@ZuriQ, a spinout from @ETH Zurich, has raised $25.5m in seed funding to advance its trapped-ion quantum computing architecture, as reported by @Sifted.
+@ZuriQ, a spinout from @ETH Zurich, has raised $25.5m in seed funding to advance its trapped-ion quantum computing architecture, according to Sifted.
 
 Why it matters:
-⚛️ Seed rounds of this size remain rare in European quantum, and they signal that international investors now see Swiss hardware teams as credible contenders rather than research curiosities.
-🇨🇭 Zurich's density of quantum physicists, precision engineering suppliers, and university infrastructure lets teams here reach technical milestones on leaner budgets than peers in the US or UK.
-🔭 If scalable ion trap architectures hold up, the payoff extends well beyond computing: metrology, sensing, and secure communications all sit downstream of the same engineering base.
+⚛️ Seed rounds of this size are rare in European quantum hardware, and they signal that investors now see Swiss quantum as a commercial category rather than a research curiosity.
+🇨🇭 Switzerland's advantage here is compounding: decades of ion-trap and photonics expertise at ETH and EPFL, a dense talent pipeline, and engineering teams that reach technical milestones on a fraction of the capital burned elsewhere.
+🔭 If the architecture scales, it opens a credible path to fault-tolerant systems built in Europe, with sovereignty implications for computing, cryptography, and defence that policymakers are only beginning to price in.
 
-Capital efficiency is the quiet advantage in Swiss DeepTech. Deep science, disciplined spend, and a talent pool that does not churn every eighteen months.
+This is the pattern we keep seeing at Climb Ventures: deep science, patient engineering, capital efficiency by design.
 
 https://sifted.eu/articles/eth-spinout-zuriq-seed-round
 ```
@@ -31,16 +31,16 @@ https://sifted.eu/articles/eth-spinout-zuriq-seed-round
 ## Post 2 — schedule for Wednesday 05 August at 08:00
 
 ```
-🇨🇭 Gene editing platform lands early Swiss backing
+🇨🇭 Swiss gene editing platform secures early capital
 
-@Immitra Bio has closed CHF 2.4 million to advance its in-vivo gene editing platform, according to @Venturelab Swiss.
+@Immitra Bio has raised CHF 2.4 million to advance its in-vivo gene editing platform, as reported by Venturelab Swiss.
 
 Why it matters:
-🧬 In-vivo editing is where the therapeutic market is heading, because delivering directly into the patient removes the cost and complexity of ex-vivo cell manufacturing.
-🇨🇭 Switzerland's life sciences cluster gives young biotech teams something scarce elsewhere: proximity to large pharma partners, contract manufacturing, and regulatory expertise within a short train ride.
-💊 A validated delivery platform rarely stops at one indication, and platform companies tend to compound value through partnerships long before their first approval.
+🧬 In-vivo editing is one of the hardest problems in therapeutics, and early rounds like this are how Switzerland converts academic biology into clinical assets rather than published papers.
+🇨🇭 The Swiss angle is infrastructure: world-class life science faculties, proximity to Basel's pharma cluster, and a regulatory culture that global partners already trust, which shortens the distance from bench to term sheet.
+🚀 A working delivery and editing platform is not one product, it is a pipeline. That optionality is exactly what makes small Swiss biotech rounds punch above their weight.
 
-Early-stage Swiss biotech has learned to stretch modest rounds into meaningful preclinical data. That discipline is exactly what makes the next round possible on better terms.
+Capital efficiency in Swiss biotech is not a constraint, it is a discipline that keeps founders focused on data that actually de-risks the science.
 
 https://www.venturelab.swiss/Immitra-Bio-raises-CHF-24-million-to-advance-invivo-gene-editing-platform
 ```
@@ -49,16 +49,16 @@ https://www.venturelab.swiss/Immitra-Bio-raises-CHF-24-million-to-advance-invivo
 ## Post 3 — schedule for Thursday 06 August at 08:00
 
 ```
-🇨🇭 Swiss space hardware scales with $70m round
+🇨🇭 Swiss space hardware scales to industrial volume
 
-@SWISSto12 has raised USD 70 million to scale its satellite business, building on its 3D-printed radio frequency payload technology and full small geostationary platforms.
+@SWISSto12 has announced a USD 70 million raise to scale its satellite business, building on its additive-manufactured radio frequency systems and small geostationary platforms.
 
 Why it matters:
-🛰️ Very few European companies deliver complete satellite platforms, and moving from components to full systems changes both the contract size and the customer relationship.
-🇨🇭 Precision manufacturing, additive production know-how, and a long aerospace supplier tradition in Vaud give the company a cost structure that large primes struggle to match.
-🚀 A credible European alternative in geostationary satellites matters for sovereignty as much as commerce, particularly for telecom operators seeking supply chain independence.
+🛰️ Seventy million dollars is growth capital, not proof-of-concept money: it funds production capacity, and production capacity is where space companies either become suppliers or stay suppliers of prototypes.
+🇨🇭 Switzerland's precision manufacturing base translates unusually well into space hardware, where tolerances, reliability, and repeatability decide contracts. That heritage is very hard for newer ecosystems to replicate quickly.
+📡 Europe needs sovereign satellite communications capacity, and a Swiss company delivering full telecom payloads and platforms changes who sits in that supply chain.
 
-This is what a Swiss scale-up trajectory looks like: years of engineering depth, then a financing round that converts that depth into industrial capacity. Hardware takes patience, and it rewards it.
+A reminder that Swiss DeepTech scale-ups can reach global relevance without the capital intensity typically assumed in space, largely because engineering rigour comes first and marketing comes later.
 
 https://swissto12.com/
 ```
@@ -70,14 +70,14 @@ https://swissto12.com/
 ```
 🇨🇭 Neutrality becomes a strategy in AI compute
 
-@SkyPilot, founded by a @Databricks cofounder, has raised $20M to position itself as the neutral layer for running AI workloads across clouds, as reported by @Fortune.
+@SkyPilot, founded by a @Databricks cofounder, has raised $20M to position itself as the neutral layer for AI compute across clouds, Fortune reports.
 
 Why it matters:
-☁️ Compute scarcity has made multi-cloud portability a board-level concern, and whoever owns the routing layer sits in a structurally strong position.
-🇨🇭 The company borrowed Switzerland's name for a reason: neutrality, trust, and interoperability are recognised globally as Swiss attributes, and Swiss DeepTech companies can trade on that reputation directly.
-🔀 Abstracting away infrastructure lowers the cost of experimentation for every AI team, which tends to accelerate the pace of applied research.
+☁️ Compute scarcity has made portability valuable: teams want to run workloads wherever capacity and pricing are best, without rewriting their stack for each provider.
+🇨🇭 The fact that "the Switzerland of" is still the global shorthand for trusted neutrality is an asset Swiss DeepTech founders underuse, particularly in data infrastructure, security, and sovereign AI, where trust is the product.
+🧠 Neutral orchestration lowers the effective cost of training and inference, which quietly expands what smaller, capital-efficient teams can attempt against incumbents.
 
-Worth noting how often Swiss identity shows up as shorthand for reliability in technical markets. That is an asset our own scale-ups should be using more deliberately.
+We see the same dynamic in our pipeline: European and Swiss founders competing not on GPU budgets, but on efficiency per franc deployed.
 
 https://fortune.com/2026/07/21/skypilot-from-databricks-cofounder-raises-20m-to-be-the-switzerland-of-ai-compute/
 ```
@@ -86,16 +86,16 @@ https://fortune.com/2026/07/21/skypilot-from-databricks-cofounder-raises-20m-to-
 ## Post 5 — schedule for Saturday 08 August at 08:00
 
 ```
-🇨🇭 Industrial cost software attracts early capital
+🇨🇭 Industrial cost intelligence gets its software layer
 
-@Valuemize has closed a seven-figure pre-seed round for its product cost software, targeting manufacturers that need visibility into where margin is actually created.
+@Valuemize has closed a seven-figure pre-seed round to build software for product cost management, targeting engineering and procurement teams that still run critical costing decisions in spreadsheets.
 
 Why it matters:
-📊 European manufacturers are under sustained margin pressure, and cost transparency at the component level has moved from a nice-to-have to a procurement priority.
-🇨🇭 Switzerland's industrial base, from precision machining to medtech and machinery, is an unusually demanding first market: solve it here and the product travels well into Germany and beyond.
-⚙️ Software that sits inside engineering and procurement workflows tends to become infrastructure, which is why these companies compound quietly rather than spectacularly.
+🏭 Product cost is decided early in design and locked in for years. Software that makes those trade-offs visible touches margin across an entire manufacturing portfolio.
+🇨🇭 Switzerland sits next to some of Europe's most demanding industrial customers, in machinery, medtech, and precision components. Selling into that base forces real product discipline and produces reference cases that travel well internationally.
+⚙️ This is the unglamorous side of industrial digitalisation, and often the most durable: workflow tools that become embedded in how engineers make decisions.
 
-Not every DeepTech story involves a laboratory. Applied software built on deep domain understanding of Swiss industry can reach profitability on a fraction of the capital a hardware play requires.
+Pre-seed rounds of this shape rarely make headlines, but they are where Swiss B2B software compounds quietly, with small teams, real revenue, and very little wasted capital.
 
 https://www.valuemize.io/en
 ```
@@ -105,35 +105,34 @@ https://www.valuemize.io/en
 ## Post 6 — schedule for Sunday 09 August at 08:00
 
 ```
-🇨🇭 Preventive health platform expands across Europe
+🇨🇭 Swiss preventive health expands across the DACH region
 
-@Ahead Health has raised $10M to fund its launch in Germany and the Netherlands, extending its preventive diagnostics and longevity offering beyond the Swiss market.
+@Ahead Health has raised $10M to launch in Germany and the Netherlands, according to Tech Funding News, extending its preventive and longevity-focused care model beyond Switzerland.
 
 Why it matters:
-🩺 Preventive health has shifted from a consumer trend to a payer conversation, as European systems look for ways to reduce the long-term cost of chronic disease.
-🇨🇭 Swiss healthcare gives a young company a rigorous testing ground: demanding patients, high clinical standards, and data protection expectations that translate cleanly into German and Dutch regulation.
-🌍 Multi-country expansion at this stage builds the evidence base needed for eventual reimbursement discussions, which is where the real market unlocks.
+🩺 European health systems are financially squeezed by chronic disease, and preventive models that combine diagnostics with structured follow-up are moving from consumer curiosity to reimbursable care.
+🇨🇭 Switzerland is an unusually good launchpad: high willingness to pay, dense clinical expertise, and demanding patients who validate quality standards before a company enters larger, price-sensitive markets like Germany.
+📈 Cross-border expansion at this stage tests whether a Swiss health model can scale operationally, and success there makes the domestic market a proving ground rather than a ceiling.
 
-Proving a health model in Switzerland first is a slower path, but it produces a product that clears the bar in neighbouring markets without a rebuild. Capital efficiency often comes from getting the sequence right.
+The pattern is familiar in Swiss DeepTech and health tech alike: validate rigorously at home, then export the playbook with modest capital and clear unit economics.
 
-https://www.aheadhealth.com/ch/en
+https://techfundingnews.com/ahead-health-10m-funding-preventive-care-germany-netherlands/
 ```
-🖼️ **Article image:** https://techfundingnews.com/wp-content/uploads/2026/01/Ahead-Health-team.png
-🔗 **Links to the original source.**
+🖼️ **Article image:** none found, grab one from the article page.
 
 ## Post 7 — schedule for Monday 10 August at 08:00
 
 ```
-🇨🇭 Swiss health tech sets course for America
+🇨🇭 Swiss digital health sets course for America
 
-@Hilo has closed a Series B extension to fund its expansion into the United States, taking its connected blood pressure and cardiovascular monitoring platform to a much larger market.
+@Hilo has closed a Series B extension to fund its US expansion, scaling its connected hypertension and cardiovascular management platform into the world's largest healthcare market.
 
 Why it matters:
-❤️ Remote monitoring for hypertension addresses one of the largest and most underserved chronic conditions, and US reimbursement codes make the business model considerably clearer there.
-🇨🇭 Building under Swiss and European medical device regulation is demanding, but it produces clinical validation and quality systems that stand up to FDA scrutiny and payer diligence.
-🇺🇸 A successful US entry by a Swiss medtech scale-up widens the path for others, both in credibility with American investors and in commercial playbooks that can be reused.
+💓 Hypertension is one of the largest and most poorly managed conditions globally, and remote monitoring tied to clinical workflows is where digital health finally meets reimbursement.
+🇨🇭 Swiss medtech brings regulatory credibility and clinical validation habits that translate directly into FDA pathways and payer conversations, an advantage that shortens the sales cycle in a market where trust is expensive to buy.
+🌍 An extension round rather than a full new raise says something about discipline: the company is buying a specific expansion, not repricing the whole business.
 
-Extension rounds are often read as a signal of caution. Used well, they are the opposite: additional fuel deployed once the growth engine is proven and the destination is clear.
+US expansion remains the hardest chapter for Swiss scale-ups. Doing it from a capital-efficient base, with proven clinical data, is the version that tends to work.
 
 https://hilo.com/
 ```
