@@ -26,7 +26,8 @@ CATEGORIES = [
 
 STAGES = [
     "Pre-seed", "Seed", "Series A", "Series B", "Series C", "Series D",
-    "Growth", "Grant", "IPO", "De-SPAC", "Acquisition", "Partnership", "None",
+    "Growth", "Grant", "IPO", "Follow-on", "De-SPAC", "Acquisition",
+    "Partnership", "None",
 ]
 
 SYSTEM = (
@@ -63,6 +64,11 @@ SYSTEM = (
     "shareholder or regulatory approval, expected or targeted to close, or a "
     "signed agreement rather than a closing. Otherwise 'closed'. A merger with "
     "a listed acquisition vehicle is 'De-SPAC', never 'IPO'.\n"
+    "'IPO' means a company reaching the public market for the first time. A "
+    "company that is already listed raising more shares, off a shelf "
+    "registration or as a secondary or follow-on offering, is 'Follow-on'. "
+    "The presence of a ticker, a shelf, a Form S-3 or an over-allotment "
+    "exercised by underwriters all point to a company that is already public.\n"
     "amount_note carries any condition attached to the figure, in a few words: "
     "'up to, assuming no redemptions', 'gross proceeds before expenses', "
     "'including debt'. An amount written as a ceiling is not an amount raised, "
@@ -395,6 +401,19 @@ _DE_SPAC = re.compile(
     re.IGNORECASE,
 )
 
+# A company that is already public raising more shares is not floating. Read as
+# an IPO it says a Swiss company reached the public market, which is a
+# different event from MoonLake, listed on Nasdaq since 2022, selling stock off
+# a shelf.
+_ALREADY_LISTED = re.compile(
+    r"follow[-\s]?on\s+offering|secondary\s+(?:public\s+)?offering|"
+    r"shelf\s+registration|form\s+s-3|\bs-3\b|at[-\s]the[-\s]market\s+offering|"
+    r"over[-\s]?allot(?:ment)?\s+option|underwriters?\s*.{0,20}\boption\b|"
+    r"already\s+(?:listed|public)|\b(?:NASDAQ|NYSE|SIX|Euronext)\s*:\s*[A-Z]{2,6}\b|"
+    r"existing\s+shareholders?\s+sold|its\s+shares\s+(?:trade|are\s+traded)",
+    re.IGNORECASE,
+)
+
 
 def _transaction_notes(text: str) -> dict:
     """Whether a deal has closed and whether its figure is conditional."""
@@ -412,6 +431,8 @@ def _transaction_notes(text: str) -> dict:
         out["amount_note"] = ", ".join(note)
     if _DE_SPAC.search(text or ""):
         out["stage"] = "De-SPAC"
+    elif _ALREADY_LISTED.search(text or ""):
+        out["stage"] = "Follow-on"
     return out
 
 

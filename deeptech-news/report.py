@@ -20,9 +20,13 @@ import statistics
 
 import money
 
-# Stages that are venture capital, as opposed to a listing or a public grant.
+# Stages that are venture capital, as opposed to public market money or a
+# public grant. The distinction is the point: a follow-on by a company listed
+# for years is not a Swiss startup raising venture capital, and a total that
+# blends the two describes neither.
 _VENTURE = {"Pre-seed", "Seed", "Series A", "Series B", "Series C", "Series D",
             "Growth"}
+_PUBLIC = {"IPO", "Follow-on", "De-SPAC"}
 _EARLY = {"Pre-seed", "Seed"}
 
 
@@ -56,6 +60,8 @@ def analyse(rounds: list, month: str) -> dict:
     venture_total = sum(money.in_chf(r.get("amount", "")) for r in venture)
     early = [r for r in closed if (r.get("stage") or "") in _EARLY]
     early_total = sum(money.in_chf(r.get("amount", "")) for r in early)
+    public = [r for r in closed if (r.get("stage") or "") in _PUBLIC]
+    public_total = sum(money.in_chf(r.get("amount", "")) for r in public)
 
     def tally(field):
         counts = collections.Counter()
@@ -93,6 +99,10 @@ def analyse(rounds: list, month: str) -> dict:
         "concentration": concentration,
         "venture_count": len(venture),
         "venture_total": venture_total,
+        "public": public,
+        "public_count": len(public),
+        "public_total": public_total,
+        "public_share": round(100 * public_total / total) if total else 0,
         "early_count": len(early),
         "early_total": early_total,
         "early_share": round(100 * early_total / total) if total else 0,
@@ -156,6 +166,18 @@ def render(stats: dict) -> str:
 
     # The sentences that follow are the ones the numbers actually support.
     notes = []
+    if stats["public_count"]:
+        names = ", ".join(
+            f'{html.escape(r.get("company",""))} '
+            f'({html.escape(r.get("stage") or "")}, '
+            f'{html.escape(r.get("amount") or "no figure")})'
+            for r in stats["public"])
+        notes.append(
+            f"{money.compact(stats['public_total'])} of the month's capital, "
+            f"{stats['public_share']}%, is public market money rather than "
+            f"venture: {names}. Venture capital proper was "
+            f"{money.compact(stats['venture_total'])} across "
+            f"{stats['venture_count']} rounds.")
     if stats["concentration"] >= 60 and stats["priced"] >= 3:
         notes.append(
             f"The two largest deals are {stats['concentration']}% of the "
@@ -266,8 +288,8 @@ def render(stats: dict) -> str:
   <div class="stats">
     <div class="stat"><b>{stats['count']}</b><span>rounds</span></div>
     <div class="stat"><b>{money.compact(stats['total']) or "&ndash;"}</b><span>capital</span></div>
+    <div class="stat"><b>{money.compact(stats['venture_total']) or "&ndash;"}</b><span>of which venture</span></div>
     <div class="stat"><b>{money.compact(stats['median']) or "&ndash;"}</b><span>median</span></div>
-    <div class="stat"><b>{stats['venture_count']}</b><span>venture rounds</span></div>
     <div class="stat"><b>{stats['spinoff_count']}</b><span>spin-offs</span></div>
   </div>
 

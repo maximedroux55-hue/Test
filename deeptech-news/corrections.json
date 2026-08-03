@@ -17,6 +17,10 @@
     "Foldcast": {
       "location": ""
     },
+    "MoonLake": {
+      "stage": "Follow-on",
+      "amount_note": "USD 200M base closed 25 June, USD 30M over-allotment closed 14 July"
+    },
     "Terra Quantum": {
       "stage": "De-SPAC",
       "status": "announced",
