@@ -95,6 +95,7 @@ def record(
             "founders", "spinoff_origin", "founded", "employees",
             "use_of_funds", "customers", "website", "location", "legal_seat",
             "status", "amount_note", "verified", "verified_source",
+            "startupticker_url",
         ):
             value = art.get(field, "")
             if value or not entry.get(field):

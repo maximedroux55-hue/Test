@@ -423,9 +423,30 @@ def test_accepting_a_proposal_moves_it():
     assert "Not Yet SA" in _json.load(open(prop))["proposals"]
 
 
+def test_the_row_links_to_startupticker_when_there_is_one():
+    # Startupticker writes the fullest Swiss round coverage, so the database
+    # links there whatever the round was originally found on.
+    import re as _re
+
+    known = {"a": {"company": "GR3N", "amount": "EUR 15.5M", "stage": "Series B",
+                   "category": "Cleantech", "location": "Chiasso",
+                   "title": "GR3N raises", "published": "2026-06-05",
+                   "link": "https://techfundingnews.com/gr3n",
+                   "startupticker_url":
+                       "https://www.startupticker.ch/en/news/gr3n-series-b"}}
+    page = scraper.render_archive_html(known)
+    hrefs = _re.findall(r'<td class="co"><a href="([^"]+)"', page)
+    assert hrefs and "startupticker.ch" in hrefs[0], hrefs
+    # Without one, the row keeps the link it has.
+    known["a"].pop("startupticker_url")
+    page = scraper.render_archive_html(known)
+    hrefs = _re.findall(r'<td class="co"><a href="([^"]+)"', page)
+    assert hrefs and "techfundingnews" in hrefs[0], hrefs
+
+
 # Locking the count means a test appended below the runner, where it would
 # never execute, shows up as a failure rather than as silence. That happened.
-EXPECTED = 35
+EXPECTED = 36
 
 
 if __name__ == "__main__":

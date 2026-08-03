@@ -580,7 +580,8 @@ def render_archive_html(known: dict) -> str:
         tag = ' <span class="tag posted">posted</span>' if s.get("posted") else ""
         company = html.escape(s.get("company") or "") or html.escape(
             (s.get("title") or "")[:40])
-        link = html.escape(s.get("link", ""))
+        # Startupticker where there is one, whatever the round was found on.
+        link = html.escape(s.get("startupticker_url") or s.get("link", ""))
         chf = money.in_chf(s.get("amount", ""))
 
         # What the row knows beyond its columns, kept on the company name so
@@ -1179,6 +1180,26 @@ def build_archive(articles: list, picks: list, args) -> None:
     from extract import clean_record
     for art in articles:
         clean_record(art)
+
+    # The database links to Startupticker where there is a Startupticker piece.
+    # Merging already prefers it among the write-ups collected; this looks for
+    # the one that was never collected, once per round, and keeps it.
+    from google_news import find_on
+
+    rounds_now = [a for a in articles if _is_round(a)]
+    missing = [a for a in rounds_now
+               if a.get("company") and not a.get("startupticker_url")
+               and "startupticker" not in (a.get("link") or "")]
+    if missing:
+        print(f"Looking for a Startupticker piece on {len(missing)} rounds...",
+              file=sys.stderr)
+        found = 0
+        for art in missing:
+            url = find_on("startupticker.ch", art["company"])
+            if url:
+                art["startupticker_url"] = url
+                found += 1
+        print(f"  found {found}/{len(missing)}", file=sys.stderr)
 
     # Anything Max ticked on the review page moves across first, so a
     # correction accepted this morning applies to this morning's run.

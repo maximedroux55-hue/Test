@@ -146,7 +146,7 @@ def render(stats: dict) -> str:
     rows = []
     for r in stats["rounds"]:
         rows.append(
-            f'<tr><td class="co"><a href="{html.escape(r.get("link",""))}" '
+            f'<tr><td class="co"><a href="{html.escape(r.get("startupticker_url") or r.get("link",""))}" '
             f'target="_blank" rel="noopener">'
             f'{html.escape(r.get("company") or "?")}</a></td>'
             f'<td>{html.escape(r.get("category") or "")}</td>'

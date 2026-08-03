@@ -110,6 +110,39 @@ def backfill_feeds(months: int, today=None) -> list:
     return feeds
 
 
+def find_on(domain: str, company: str, extra: str = "") -> str:
+    """The address of a story about this company on one particular site.
+
+    The database links to Startupticker where there is a Startupticker piece,
+    because it writes the fullest Swiss round coverage there is. Merging
+    already prefers it where both write-ups were collected; this finds the one
+    that was never collected in the first place.
+    """
+    import feedparser
+
+    query = urllib.parse.quote(f'site:{domain} "{company}" {extra}'.strip())
+    feed = (f"https://news.google.com/rss/search?q={query}"
+            f"&hl=en-CH&gl=CH&ceid=CH:en")
+    try:
+        parsed = feedparser.parse(feed)
+    except Exception:
+        return ""
+
+    squashed = re.sub(r"[^a-z0-9]", "", (company or "").lower())
+    for entry in parsed.entries[:8]:
+        link = entry.get("link", "")
+        if is_google_news_url(link):
+            link = resolve_url(link) or ""
+        if domain not in link:
+            continue
+        # The company has to be in the headline, or it is a different story
+        # that merely mentions it.
+        title = re.sub(r"[^a-z0-9]", "", entry.get("title", "").lower())
+        if squashed and squashed[:12] in title:
+            return link
+    return ""
+
+
 def is_google_news_url(url: str) -> bool:
     return "news.google.com" in (url or "")
 
