@@ -270,6 +270,53 @@ def extract_fields(articles: list, model: str | None = None) -> list:
     return out
 
 
+def fill_from_company_sites(articles: list, model: str | None = None) -> int:
+    """Fill blanks from each company's own site. Returns how many rows improved.
+
+    News write-ups name the amount and skip the rest, so investors, founders and
+    the founding year are usually missing. The company's own About and Press
+    pages carry them. Only empty fields are filled, so the article always wins
+    where the two disagree, and only rows with something missing are looked up.
+    """
+    import sys
+
+    from hq_lookup import company_pages
+
+    wanted = ("investors", "lead_investor", "founders", "founded",
+              "employees", "website", "spinoff_origin", "location")
+    todo = [
+        a for a in articles
+        if a.get("company") and any(not a.get(f) for f in wanted)
+    ]
+    if not todo:
+        return 0
+
+    print(f"Checking {len(todo)} company websites for the missing details...",
+          file=sys.stderr)
+    improved = 0
+    for art in todo:
+        domain, text = company_pages(art.get("company", ""), art.get("website", ""))
+        if not text:
+            continue
+        if not art.get("website"):
+            art["website"] = domain
+        probe = dict(art)
+        probe["fulltext"] = text
+        got = _extract_batch([probe], model)
+        facts = (got or [None])[0]
+        if not facts:
+            continue
+        # Only fill gaps. What the article said stands.
+        changed = False
+        for field in wanted:
+            if not art.get(field) and facts.get(field):
+                art[field] = facts[field]
+                changed = True
+        improved += bool(changed)
+    print(f"  filled gaps on {improved} companies", file=sys.stderr)
+    return improved
+
+
 def _extract_batch(articles: list, model: str | None = None):
     """One request for a handful of stories. None when it could not be read."""
     try:

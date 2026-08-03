@@ -469,7 +469,12 @@ def main() -> None:
         print(f"  identified a company in {named}/{len(articles)} stories",
               file=sys.stderr)
 
-        # Articles often skip the location, so check the company's own site.
+        # News write-ups give the amount and little else, so read each
+        # company's own site for the investors, founders and the rest.
+        from extract import fill_from_company_sites
+        fill_from_company_sites([a for a in articles if _is_round(a)])
+
+        # Anything still without a location gets the address lookup.
         from hq_lookup import fill_missing
         blanks = sum(1 for a in articles if a.get("company") and not a.get("location"))
         if blanks:

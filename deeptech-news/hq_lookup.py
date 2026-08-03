@@ -106,3 +106,34 @@ def fill_missing(articles: list) -> int:
             art["location"] = city
             found += 1
     return found
+
+
+# Pages that describe the company rather than sell to visitors.
+_PROFILE_PATHS = (
+    "", "/about", "/en/about", "/about-us", "/team", "/en/team", "/company",
+    "/news", "/en/news", "/press", "/blog", "/investors",
+)
+
+
+def company_pages(company: str, website: str = "", max_pages: int = 5):
+    """Return (domain, text) from a company's own site, or ("", "").
+
+    Used to fill what the news left out. A company's About or Press page names
+    its founders and backers far more reliably than a funding write-up, which
+    often says only that it "raised CHF 3.5 million".
+    """
+    if not company:
+        return "", ""
+    for domain in _candidate_domains(company, website):
+        collected, hits = [], 0
+        for path in _PROFILE_PATHS:
+            if hits >= max_pages:
+                break
+            text = article_text(f"https://{domain}{path}", limit=4000)
+            if text:
+                collected.append(text)
+                hits += 1
+        # One reachable page is a coincidence; two means the domain is real.
+        if len(collected) >= 2:
+            return domain, "\n\n".join(collected)[:12000]
+    return "", ""
