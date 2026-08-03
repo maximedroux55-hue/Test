@@ -23,6 +23,9 @@ on:
       limit:
         description: "Maximum number of stories to consider"
         default: "60"
+      backfill_months:
+        description: "Also walk the news archive back this many months (0 = off)"
+        default: "0"
   schedule:
     # 04:00 UTC daily, well before the Wednesday post run at 06:00.
     - cron: "0 4 * * *"
@@ -62,6 +65,7 @@ jobs:
             --days "${{ github.event.inputs.days || '14' }}" \
             --min-score "${{ github.event.inputs.min_score || '3' }}" \
             --limit "${{ github.event.inputs.limit || '60' }}" \
+            --backfill-months "${{ github.event.inputs.backfill_months || '0' }}" \
             --archive-only
 
       - name: Upload the database

@@ -72,6 +72,44 @@ def google_news_feeds() -> list[tuple[str, str]]:
     return feeds
 
 
+# Deal language only. A backfill is walking the calendar month by month, so a
+# query that returns research and product news as well multiplies the work
+# without adding rounds.
+_BACKFILL_QUERIES = [
+    "Swiss startup raises",
+    "Swiss startup funding round CHF million",
+    "EPFL OR ETH spin-off raises",
+    "Switzerland seed OR Series A OR Series B round",
+]
+
+
+def backfill_feeds(months: int, today=None) -> list:
+    """Feeds that reach back month by month, for building history.
+
+    Asking the ordinary feeds for a year returns nothing older than a few
+    weeks: an RSS feed carries only its most recent items, so a wider --days
+    window has nothing further to find. Google News does hold the archive, but
+    only answers for a period if the query names it, so the calendar is walked
+    one month at a time.
+    """
+    import datetime as dt
+
+    today = today or dt.date.today()
+    feeds = []
+    for step in range(months):
+        end = (today.replace(day=1) - dt.timedelta(days=step * 30)).replace(day=1)
+        start = (end - dt.timedelta(days=1)).replace(day=1)
+        window = f" after:{start.isoformat()} before:{end.isoformat()}"
+        for query in _BACKFILL_QUERIES:
+            q = urllib.parse.quote(query + window)
+            feeds.append((
+                f"Google News {start:%Y-%m}",
+                f"https://news.google.com/rss/search?q={q}"
+                f"&hl=en-CH&gl=CH&ceid=CH:en",
+            ))
+    return feeds
+
+
 def is_google_news_url(url: str) -> bool:
     return "news.google.com" in (url or "")
 

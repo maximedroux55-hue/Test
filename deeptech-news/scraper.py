@@ -71,17 +71,28 @@ def _publisher(entry, source_label: str) -> str:
     return "Google News"
 
 
-def collect(days: int, min_score: int) -> list[dict]:
+def collect(days: int, min_score: int, backfill_months: int = 0) -> list[dict]:
     """Fetch all feeds and return a list of relevant, de-duplicated articles."""
     cutoff = dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=days)
     articles: list[dict] = []
     seen_links = set()
 
+    feeds = list(all_feeds(days))
+    if backfill_months:
+        # An RSS feed holds only its latest items, so a wider window finds
+        # nothing older. Reaching back means asking Google News for one month
+        # at a time, which is what these feeds do.
+        from google_news import backfill_feeds
+        extra = backfill_feeds(backfill_months)
+        print(f"Walking back {backfill_months} months over {len(extra)} "
+              f"archive searches...", file=sys.stderr)
+        feeds += extra
+
     browser_ua = (
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
         "(KHTML, like Gecko) Chrome/126.0 Safari/537.36"
     )
-    for source_label, url in all_feeds(days):
+    for source_label, url in feeds:
         parsed = feedparser.parse(url, agent=browser_ua)
         if parsed.bozo and not parsed.entries:
             print(f"  ! skipped (unreachable): {source_label} {url}", file=sys.stderr)
@@ -665,12 +676,17 @@ def main() -> None:
     ap.add_argument("--posts-only", action="store_true",
                     help="Only write the posts: do not read articles in full and "
                          "do not touch the archive.")
+    ap.add_argument("--backfill-months", type=int, default=0,
+                    help="Also search the news archive month by month, this many "
+                         "months back. Feeds carry only recent items, so this is "
+                         "the only way to build history. Use with --archive-only.")
     args = ap.parse_args()
     if args.archive_only and args.posts_only:
         sys.exit("Pick one of --archive-only and --posts-only, not both.")
 
     print(f"Fetching Swiss DeepTech news (last {args.days} days)...", file=sys.stderr)
-    articles = collect(args.days, args.min_score)[: args.limit]
+    articles = collect(args.days, args.min_score,
+                       args.backfill_months)[: args.limit]
     print(f"Kept {len(articles)} relevant stories.", file=sys.stderr)
 
     import os
