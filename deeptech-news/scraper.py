@@ -376,10 +376,18 @@ _SWISS_HOME = re.compile(
 )
 
 
-# What marks a company as Swiss when its headquarters was never recorded.
+# What marks a company as Swiss when its headquarters was never recorded. The
+# word alone will not do: SkyPilot is in Berkeley and its headline says it wants
+# to be "the Switzerland of AI compute", which put an American company on a
+# Swiss page. The country has to be attached to the company.
 _SWISS_SIGNAL = re.compile(
-    r"\bswiss\b|\bswitzerland\b|\bschweiz\w*\b|\bsuisse\b|\bsvizzer\w+\b|"
-    r"\bepfl\b|\beth\s*z|\bcsem\b|\bempa\b|\bidiap\b|\bpsi\b",
+    r"\bswiss(?:\s+\w+){0,3}\s+(?:startup|start-up|company|firm|scaleup|"
+    r"scale-up|spin-?off|spin-?out|group|maker|manufacturer)\b|"
+    r"\bswiss-based\b|\bswitzerland-based\b|\bbased\s+in\s+switzerland\b|"
+    r"\bschweizer\s+\w+|\bstart-?up\s+suisse\b|\bsoci(?:é|e)t(?:é|e)\s+suisse\b|"
+    r"\b(?:z(?:ü|u)rich|geneva|gen(?:è|e)ve|lausanne|basel|bern|lugano|zug|"
+    r"neuch(?:â|a)tel|winterthur|renens|sion)-based\b|"
+    r"\bepfl\b|\beth\s*z(?:ü|u)rich\b|\bcsem\b|\bempa\b|\bidiap\b",
     re.IGNORECASE,
 )
 
@@ -460,90 +468,75 @@ def render_archive_html(known: dict) -> str:
     placed = sum(1 for s in stories if (s.get("location") or "").strip())
     tracked = money.compact(sum(money.in_chf(s.get("amount", "")) for s in stories))
 
+    def cell(value: str, css: str = "", title: str = "") -> str:
+        """One fact, one cell. An empty one is marked, not left blank."""
+        text = (value or "").strip()
+        if not text:
+            return f'<td class="{css}"><span class="nd">&middot;</span></td>'
+        attr = f' title="{html.escape(title)}"' if title else ""
+        return f'<td class="{css}"{attr}>{html.escape(text)}</td>'
+
     rows = []
     for s in stories:
         tag = ' <span class="tag posted">posted</span>' if s.get("posted") else ""
         company = html.escape(s.get("company") or "") or html.escape(
             (s.get("title") or "")[:40])
         link = html.escape(s.get("link", ""))
-
-        desc = html.escape(s.get("description") or "")
-        if not desc:
-            # Better the headline than an empty line under the name.
-            desc = html.escape((s.get("title") or "").strip())
-        desc = f'<div class="desc">{desc}</div>' if desc else ""
-
-        # Everything the article happened to give, written out only when it is
-        # there. No fact, no fragment, so nothing renders as a blank cell.
-        bits = []
-        investors = _investor_line(s)
-        if investors:
-            bits.append(f'Backed by <b>{html.escape(investors)}</b>')
-        founders = (s.get("founders") or "").strip()
-        if founders:
-            bits.append(f'Founded by {html.escape(founders)}')
-        origin = (s.get("spinoff_origin") or "").strip()
-        if origin:
-            bits.append(f'{html.escape(origin)} spin-off')
-        seat = (s.get("legal_seat") or "").strip()
-        if seat and seat.lower() != (s.get("location") or "").strip().lower():
-            bits.append(f'registered in {html.escape(seat)}')
-        year = (s.get("founded") or "").strip()
-        if year:
-            bits.append(f'est. {html.escape(year)}')
-        staff = (s.get("employees") or "").strip()
-        if staff:
-            bits.append(f'{html.escape(staff)} staff')
-        valuation = (s.get("valuation") or "").strip()
-        if valuation:
-            bits.append(f'valued {html.escape(valuation)}')
-        use = (s.get("use_of_funds") or "").strip()
-        if use:
-            bits.append(html.escape(use))
-        outlets = [p for p in (s.get("sources") or []) if p]
-        if len(outlets) > 1:
-            bits.append(f'{len(outlets)} sources: {html.escape(", ".join(outlets))}')
-        meta = f'<div class="meta">{" &middot; ".join(bits)}</div>' if bits else ""
-
-        stage_text = html.escape(s.get("stage") or "")
-        stage = (f'<span class="stage">{stage_text}</span>' if stage_text
-                 else '<span class="nd">round</span>')
-        category_text = html.escape(s.get("category") or "")
-        category = (f'<span class="cat">{category_text}</span>' if category_text
-                    else '<span class="nd">n/d</span>')
-        amount_text = html.escape(s.get("amount") or "")
-        amount = amount_text or '<span class="nd">undisclosed</span>'
         chf = money.in_chf(s.get("amount", ""))
-        note = []
-        if (s.get("total_raised") or "").strip():
-            note.append(f'{html.escape(s["total_raised"])} total')
-        # The franc figure is only worth showing where it is not the currency.
-        if chf and not amount_text.upper().startswith("CHF"):
-            note.append(f'≈ {money.compact(chf)}')
-        total = f'<span class="total">{" &middot; ".join(note)}</span>' if note else ""
+
+        # What the row knows beyond its columns, kept on the company name so
+        # the table stays one fact per column.
+        extra = []
+        for label, field in (("Founded", "founded"), ("Staff", "employees"),
+                             ("Total raised", "total_raised"),
+                             ("Valuation", "valuation"),
+                             ("Use of funds", "use_of_funds"),
+                             ("Registered in", "legal_seat")):
+            if (s.get(field) or "").strip():
+                extra.append(f"{label}: {s[field].strip()}")
+        outlets = [p for p in (s.get("sources") or []) if p]
+        if outlets:
+            extra.append("Source: " + ", ".join(outlets))
+        hover = html.escape(" · ".join(extra) or s.get("title", ""))
+
+        stage_text = (s.get("stage") or "").strip()
+        stage = (f'<td><span class="stage">{html.escape(stage_text)}</span></td>'
+                 if stage_text else '<td><span class="nd">&middot;</span></td>')
+        category_text = (s.get("category") or "").strip()
+        category = (f'<td><span class="cat">{html.escape(category_text)}</span></td>'
+                    if category_text else '<td><span class="nd">&middot;</span></td>')
+
+        amount_text = (s.get("amount") or "").strip()
+        amount = (f'<td class="amt" title="{money.compact(chf)}">'
+                  f'{html.escape(amount_text)}</td>' if amount_text
+                  else '<td class="amt"><span class="nd">undisclosed</span></td>')
 
         location_text = (s.get("location") or "").strip()
-        where = (_provenance(s, "location")
-                 or "as written in the coverage") if location_text else ""
-        location = (f'<span title="Source: {html.escape(where)}">'
-                    f'{html.escape(location_text)}</span>' if location_text
-                    else '<span class="nd" title="Swiss company, city not '
-                         'found yet">CH</span>')
+        if location_text:
+            where = _provenance(s, "location") or "as written in the coverage"
+            location = (f'<td class="loc" title="Source: {html.escape(where)}">'
+                        f'{html.escape(location_text)}</td>')
+        else:
+            location = ('<td class="loc"><span class="nd" title="Swiss company, '
+                        'city not found yet">CH</span></td>')
 
         rows.append(
             f'<tr data-chf="{chf}">'
             f'<td class="co"><a href="{link}" target="_blank" rel="noopener" '
-            f'title="{html.escape(s.get("title",""))}">{company}</a>{tag}'
-            f'{desc}{meta}</td>'
-            f'<td>{category}</td>'
-            f'<td>{stage}</td>'
-            f'<td class="amt">{amount}{total}</td>'
-            f'<td class="loc">{location}</td>'
-            f'<td class="d">{html.escape(s.get("published") or s.get("first_seen",""))}</td>'
-            f'</tr>'
+            f'title="{hover}">{company}</a>{tag}</td>'
+            + cell(s.get("description") or s.get("title", ""), "desc")
+            + category
+            + stage
+            + amount
+            + cell(_investor_line(s), "inv")
+            + cell(s.get("founders", ""), "fnd")
+            + cell(s.get("spinoff_origin", ""), "org")
+            + location
+            + cell(s.get("published") or s.get("first_seen", ""), "d")
+            + '</tr>'
         )
     body = "\n".join(rows) or (
-        '<tr><td colspan="6" class="nd">No financing rounds recorded yet. '
+        '<tr><td colspan="10" class="nd">No financing rounds recorded yet. '
         'The next run will fill this in.</td></tr>')
     return f"""<!DOCTYPE html>
 <html lang="en"><head>
@@ -555,7 +548,7 @@ def render_archive_html(known: dict) -> str:
   * {{ box-sizing:border-box; margin:0; padding:0; }}
   body {{ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
          background:var(--bg); color:var(--ink); line-height:1.5; }}
-  .wrap {{ max-width:1040px; margin:0 auto; padding:2rem 1rem 4rem; }}
+  .wrap {{ max-width:1500px; margin:0 auto; padding:2rem 1rem 4rem; }}
   h1 {{ font-size:1.6rem; letter-spacing:-0.02em; }} h1 .dot {{ color:var(--green); }}
   .sub {{ color:var(--soft); margin:0.4rem 0 1rem; font-size:0.9rem; }}
   .stats {{ display:flex; flex-wrap:wrap; gap:0.6rem; margin:0 0 1rem; }}
@@ -567,15 +560,19 @@ def render_archive_html(known: dict) -> str:
   input {{ width:100%; padding:0.7rem 0.9rem; border:1px solid var(--line);
           border-radius:10px; font-size:1rem; margin-bottom:1rem; }}
   .box {{ background:#fff; border:1px solid var(--line); border-radius:14px; overflow-x:auto; }}
-  table {{ width:100%; border-collapse:collapse; font-size:0.9rem; }}
-  th, td {{ text-align:left; padding:0.7rem 0.8rem; border-bottom:1px solid var(--line);
+  table {{ width:100%; border-collapse:collapse; font-size:0.85rem;
+          min-width:1180px; }}
+  th, td {{ text-align:left; padding:0.6rem 0.7rem; border-bottom:1px solid var(--line);
            vertical-align:top; }}
-  th {{ color:var(--soft); font-size:0.78rem; text-transform:uppercase; letter-spacing:0.04em; }}
+  th {{ color:var(--soft); font-size:0.72rem; text-transform:uppercase;
+       letter-spacing:0.04em; white-space:nowrap; position:sticky; top:0;
+       background:#fff; z-index:1; }}
   tr:last-child td {{ border-bottom:none; }}
-  td.co {{ font-weight:600; min-width:15rem; }}
-  .desc {{ font-weight:400; color:var(--soft); font-size:0.84rem; margin-top:0.15rem; }}
-  .meta {{ font-weight:400; color:var(--faint); font-size:0.78rem; margin-top:0.25rem; }}
-  .meta b {{ color:var(--soft); font-weight:600; }}
+  td.co {{ font-weight:600; min-width:9rem; }}
+  td.desc {{ color:var(--soft); min-width:15rem; max-width:20rem; }}
+  td.inv {{ color:var(--soft); min-width:12rem; max-width:17rem; }}
+  td.fnd {{ color:var(--soft); min-width:9rem; max-width:12rem; }}
+  td.org {{ color:var(--soft); white-space:nowrap; }}
   td.amt {{ color:var(--ink); font-weight:600; white-space:nowrap; }}
   td.loc, td.d {{ color:var(--soft); white-space:nowrap; }}
   a {{ color:var(--ink); text-decoration:none; }} a:hover {{ color:var(--green); }}
@@ -619,7 +616,8 @@ def render_archive_html(known: dict) -> str:
     <span class="live" id="count"></span>
   </div>
   <div class="box"><table>
-    <thead><tr><th>Company</th><th>Sector</th><th>Stage</th><th>Raised</th>
+    <thead><tr><th>Company</th><th>What it does</th><th>Sector</th><th>Stage</th>
+      <th>Raised</th><th>Investors</th><th>Founders</th><th>Spin-off</th>
       <th>HQ</th><th>Date</th></tr></thead>
     <tbody id="rows">
 {body}
