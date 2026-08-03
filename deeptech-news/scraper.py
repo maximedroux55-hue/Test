@@ -398,8 +398,10 @@ def _is_swiss(story: dict) -> bool:
     """
     location = (story.get("location") or "").strip()
     if location:
-        if re.search(r",\s*[A-Z]{2}$", location):
-            return False
+        country = re.search(r",\s*([A-Z]{2})$", location)
+        if country:
+            # "Chiasso, CH" is Switzerland; "Leipzig, DE" is not.
+            return country.group(1) == "CH"
         return bool(_SWISS_HOME.search(location))
     origin = (story.get("spinoff_origin") or "").lower()
     if any(s in origin for s in
@@ -904,6 +906,13 @@ def build_archive(articles: list, picks: list, args) -> None:
         print(f"Looking up {blanks} missing headquarters...", file=sys.stderr)
         print(f"  found {fill_missing(articles)} of them", file=sys.stderr)
 
+    # Scrub before anything is stored, and again over the whole database, since
+    # a value that reached it before this check will otherwise sit there for
+    # good: the archive never replaces something with a blank on its own.
+    from extract import clean_record
+    for art in articles:
+        clean_record(art)
+
     # Max's corrections go on last, over everything the lookups produced.
     import corrections
     corrections.apply(articles)
@@ -914,7 +923,10 @@ def build_archive(articles: list, picks: list, args) -> None:
     # Again over the whole database, not just this run's stories. A correction
     # has to reach rows recorded weeks ago, and clearing a wrong value has to
     # work at all: the archive never replaces something with a blank on its own.
-    corrections.apply(list(known.values()))
+    stored = list(known.values())
+    for entry in stored:
+        clean_record(entry)
+    corrections.apply(stored)
     archive_mod.save(args.archive, known)
     print(
         f"Archive: {len(known)} stories total ({len(known) - before} new "

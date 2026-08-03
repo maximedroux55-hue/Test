@@ -178,6 +178,51 @@ _GENERIC_INVESTORS = re.compile(
 )
 
 
+# Model output occasionally carries stray markup into a field: two rows were
+# stored with a city of "Zurich}}</invoke>|;". Nothing we extract is markup, so
+# anything from the first bracket or brace onwards is cut.
+_STRAY_MARKUP = re.compile(r"[<>{}|\[\]].*$", re.DOTALL)
+_CONTROL = re.compile(r"[\x00-\x1f\x7f]+")
+
+# A city is a name, optionally with a country code. Anything else is not one.
+_CITY = re.compile(
+    r"^[A-ZÄÖÜÉÈÀ][\w\s.'’\-]{1,28}(?:,\s?[A-Z]{2})?$", re.UNICODE)
+
+_MAX_LENGTH = {
+    "company": 60, "location": 40, "stage": 20, "amount": 30, "category": 20,
+    "founded": 4, "description": 160, "use_of_funds": 90,
+}
+
+
+def scrub(field: str, value: str) -> str:
+    """Return a value fit to store, or "" when it is not.
+
+    A wrong value is worse than a blank, and a value carrying markup is not a
+    fact at all.
+    """
+    if not isinstance(value, str):
+        return ""
+    text = _CONTROL.sub(" ", _STRAY_MARKUP.sub("", value))
+    text = re.sub(r"\s+", " ", text).strip(" ,;.|-")
+    limit = _MAX_LENGTH.get(field)
+    if limit and len(text) > limit:
+        # Truncating a name invents one, so drop it instead.
+        return "" if field in ("company", "location", "stage", "founded") else text[:limit]
+    if field == "location" and text and not _CITY.match(text):
+        return ""
+    if field == "founded" and not re.fullmatch(r"(19|20)\d{2}", text):
+        return ""
+    return text
+
+
+def clean_record(facts: dict) -> dict:
+    """Scrub every field of an extracted record in place."""
+    for field, value in list(facts.items()):
+        if isinstance(value, str):
+            facts[field] = scrub(field, value)
+    return facts
+
+
 def _clean_investors(value: str) -> str:
     """Drop generic descriptions, keep actual names."""
     names = [n.strip(" .;") for n in (value or "").split(",")]
@@ -537,6 +582,7 @@ def _extract_batch(articles: list, model: str | None = None):
                     "website": item.get("website", "").strip(),
                     "location": item.get("location", "").strip(),
                 }
+                clean_record(out[i])
         return out
     except Exception as exc:
         import sys
