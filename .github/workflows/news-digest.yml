@@ -118,3 +118,15 @@ jobs:
             sleep $((attempt * 3))
           done
           echo "Could not publish after retries."; exit 1
+
+      # The digest is published either way, but a run that could not reach the
+      # API produced template posts and a keyword-guessed archive, which is
+      # worth an email rather than a green tick.
+      - name: Fail if the AI was unavailable
+        if: always()
+        run: |
+          if [ -f deeptech-news/output/AI_UNAVAILABLE ]; then
+            cat deeptech-news/output/AI_UNAVAILABLE
+            echo "::error::$(head -1 deeptech-news/output/AI_UNAVAILABLE)"
+            exit 1
+          fi

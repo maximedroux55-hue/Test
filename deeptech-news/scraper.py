@@ -614,6 +614,24 @@ def main() -> None:
     with open(os.path.join(args.outdir, "archive.html"), "w", encoding="utf-8") as f:
         f.write(render_archive_html(known))
 
+    # When the API is unreachable the run still succeeds: template posts go out
+    # and the archive fills with keyword guesses. That has now happened twice
+    # without anyone noticing, so leave a marker the workflow turns into a
+    # failed run and an email, rather than a quietly worse week.
+    import extract as extract_mod
+    if (os.environ.get("ANTHROPIC_API_KEY") and articles
+            and extract_mod.LAST_RUN_OK == 0):
+        reason = extract_mod.LAST_RUN_ERROR or "every request failed"
+        note = (
+            "The Anthropic API was unavailable for this run, so the posts are "
+            "template drafts and the archive rows were filled by keyword "
+            f"guessing rather than read from the articles.\n{reason}"
+        )
+        with open(os.path.join(args.outdir, "AI_UNAVAILABLE"), "w",
+                  encoding="utf-8") as f:
+            f.write(note)
+        print(f"\n!! {note}", file=sys.stderr)
+
 
 if __name__ == "__main__":
     main()

@@ -247,10 +247,18 @@ def _fallback(article: dict) -> dict:
 BATCH = 8
 
 
+# How the last extraction went, so the caller can tell a thin archive caused by
+# quiet reporting apart from one caused by the API being unavailable.
+LAST_RUN_OK = 0
+LAST_RUN_ERROR = ""
+
+
 def extract_fields(articles: list, model: str | None = None) -> list:
     """Return one facts dict per article, in the same order."""
     import sys
 
+    global LAST_RUN_OK
+    LAST_RUN_OK = 0
     fallback = [_fallback(a) for a in articles]
     if not articles or not os.environ.get("ANTHROPIC_API_KEY"):
         return fallback
@@ -269,6 +277,7 @@ def extract_fields(articles: list, model: str | None = None) -> list:
                 out[start + offset] = facts
                 ok += 1
     print(f"  read the facts from {ok}/{len(articles)} stories", file=sys.stderr)
+    LAST_RUN_OK = ok
     return out
 
 
@@ -381,6 +390,7 @@ def _extract_batch(articles: list, model: str | None = None):
         return out
     except Exception as exc:
         import sys
-        print(f"    extraction error: {type(exc).__name__}: {str(exc)[:160]}",
-              file=sys.stderr)
+        global LAST_RUN_ERROR
+        LAST_RUN_ERROR = f"{type(exc).__name__}: {str(exc)[:200]}"
+        print(f"    extraction error: {LAST_RUN_ERROR}", file=sys.stderr)
         return None
