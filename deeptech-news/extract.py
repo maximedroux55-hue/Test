@@ -41,7 +41,20 @@ SYSTEM = (
     "for example 'Quantonation' or 'Swisscom Ventures, Venture Kick'. A "
     "headline of the form 'X leads a round for Y' names X as an investor of Y. "
     "Never write a generic description such as 'angel investors', 'VC firms', "
-    "'existing investors' or 'undisclosed': leave the field empty instead."
+    "'existing investors' or 'undisclosed': leave the field empty instead. "
+    "lead_investor is the one said to lead or co-lead; leave empty if none is.\n\n"
+    "The other fields:\n"
+    "- description: what the company does, at most 12 words, no marketing.\n"
+    "- total_raised: cumulative funding when stated ('brings the total to').\n"
+    "- valuation: only when the text gives one.\n"
+    "- founders: names of founders or the CEO when named.\n"
+    "- spinoff_origin: the institution it spun out of, such as 'ETH Zurich', "
+    "'EPFL', 'CSEM', 'Empa', 'University of Basel'. Empty if not a spin-off.\n"
+    "- founded: year of founding, four digits.\n"
+    "- employees: headcount when stated.\n"
+    "- use_of_funds: what the money is for, at most 10 words.\n"
+    "- customers: named customers or partners, comma separated.\n"
+    "- website: the company's own domain when the text gives it."
 )
 
 _SCHEMA = {
@@ -54,14 +67,30 @@ _SCHEMA = {
                 "properties": {
                     "index": {"type": "integer"},
                     "company": {"type": "string"},
+                    "description": {"type": "string"},
                     "category": {"type": "string", "enum": CATEGORIES},
                     "stage": {"type": "string", "enum": STAGES},
                     "amount": {"type": "string"},
+                    "total_raised": {"type": "string"},
+                    "valuation": {"type": "string"},
+                    "lead_investor": {"type": "string"},
                     "investors": {"type": "string"},
+                    "founders": {"type": "string"},
+                    "spinoff_origin": {"type": "string"},
+                    "founded": {"type": "string"},
+                    "employees": {"type": "string"},
+                    "use_of_funds": {"type": "string"},
+                    "customers": {"type": "string"},
+                    "website": {"type": "string"},
                     "location": {"type": "string"},
                 },
-                "required": ["index", "company", "category", "stage",
-                             "amount", "investors", "location"],
+                "required": [
+                    "index", "company", "description", "category", "stage",
+                    "amount", "total_raised", "valuation", "lead_investor",
+                    "investors", "founders", "spinoff_origin", "founded",
+                    "employees", "use_of_funds", "customers", "website",
+                    "location",
+                ],
                 "additionalProperties": False,
             },
         }
@@ -166,9 +195,19 @@ def _fallback(article: dict) -> dict:
     if m:
         company = m.group(1).strip()
 
+    origin = ""
+    for name in ("ETH Zurich", "EPFL", "CSEM", "Empa", "PSI", "Idiap"):
+        if name.lower() in text and re.search(r"spin[\s-]?o(ff|ut)", text):
+            origin = name
+            break
+
     return {
-        "company": company, "category": category, "stage": stage,
-        "amount": amount, "investors": "", "location": location,
+        "company": company, "description": "", "category": category,
+        "stage": stage, "amount": amount, "total_raised": "", "valuation": "",
+        "lead_investor": "", "investors": "", "founders": "",
+        "spinoff_origin": origin, "founded": "", "employees": "",
+        "use_of_funds": "", "customers": "", "website": "",
+        "location": location,
     }
 
 
@@ -185,11 +224,13 @@ def extract_fields(articles: list, model: str | None = None) -> list:
 
         lines = []
         for i, a in enumerate(articles, 1):
-            summary = _clean_summary(a.get("summary", ""), 500)
+            # The full article when we could fetch it, else the feed summary.
+            body = a.get("fulltext") or _clean_summary(a.get("summary", ""), 500)
             lines.append(
                 f"{i}. Headline: {a.get('title','')}\n"
                 f"   Publisher: {a.get('publisher','')}\n"
-                + (f"   Summary: {summary}\n" if summary else "")
+                f"   Link: {a.get('link','')}\n"
+                + (f"   Article: {body}\n" if body else "")
             )
         client = anthropic.Anthropic()
         resp = client.messages.create(
@@ -217,10 +258,21 @@ def extract_fields(articles: list, model: str | None = None) -> list:
             if 0 <= i < len(out):
                 out[i] = {
                     "company": item.get("company", "").strip(),
+                    "description": item.get("description", "").strip(),
                     "category": item.get("category", "Other"),
                     "stage": "" if item.get("stage") == "None" else item.get("stage", ""),
                     "amount": item.get("amount", "").strip(),
+                    "total_raised": item.get("total_raised", "").strip(),
+                    "valuation": item.get("valuation", "").strip(),
+                    "lead_investor": _clean_investors(item.get("lead_investor", "")),
                     "investors": _clean_investors(item.get("investors", "")),
+                    "founders": item.get("founders", "").strip(),
+                    "spinoff_origin": item.get("spinoff_origin", "").strip(),
+                    "founded": item.get("founded", "").strip(),
+                    "employees": item.get("employees", "").strip(),
+                    "use_of_funds": item.get("use_of_funds", "").strip(),
+                    "customers": item.get("customers", "").strip(),
+                    "website": item.get("website", "").strip(),
                     "location": item.get("location", "").strip(),
                 }
         return out

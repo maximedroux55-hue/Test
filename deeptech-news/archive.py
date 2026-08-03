@@ -78,14 +78,18 @@ def record(
             "score": art.get("score"),
             "last_seen": stamp,
             "posted": entry.get("posted", False) or key in posted_keys,
-            # Deal facts read out of the story, see extract.py.
-            "company": art.get("company", ""),
-            "category": art.get("category", ""),
-            "stage": art.get("stage", ""),
-            "amount": art.get("amount", ""),
-            "investors": art.get("investors", ""),
-            "location": art.get("location", ""),
         })
+        # Deal facts read out of the article, see extract.py. Only overwrite
+        # with something, so a later thinner mention cannot blank a good value.
+        for field in (
+            "company", "description", "category", "stage", "amount",
+            "total_raised", "valuation", "lead_investor", "investors",
+            "founders", "spinoff_origin", "founded", "employees",
+            "use_of_funds", "customers", "website", "location",
+        ):
+            value = art.get(field, "")
+            if value or not entry.get(field):
+                entry[field] = value
         if stamp not in entry["runs"]:
             entry["runs"].append(stamp)
         known[key] = entry

@@ -216,19 +216,28 @@ def render_archive_html(known: dict) -> str:
         stage = f'<span class="stage">{stage_text}</span>' if stage_text else ""
         category_text = html.escape(s.get("category") or "")
         category = f'<span class="cat">{category_text}</span>' if category_text else ""
+        total_text = html.escape(s.get("total_raised") or "")
+        total = f'<span class="total">tot {total_text}</span>' if total_text else ""
+        # Lead investor first, then the rest.
+        lead = (s.get("lead_investor") or "").strip()
+        rest = [x.strip() for x in (s.get("investors") or "").split(",") if x.strip()]
+        rest = [x for x in rest if x.lower() != lead.lower()]
+        investors = ", ".join(([f"{lead} (lead)"] if lead else []) + rest)
         rows.append(
             f'<tr>'
             f'<td class="co"><a href="{html.escape(s.get("link",""))}" target="_blank" '
             f'rel="noopener" title="{html.escape(s.get("title",""))}">{company}</a>{tag}</td>'
             f'<td>{category}</td>'
             f'<td>{stage}</td>'
-            f'<td class="amt">{html.escape(s.get("amount") or "")}</td>'
-            f'<td class="inv">{html.escape(s.get("investors") or "")}</td>'
+            f'<td class="amt">{html.escape(s.get("amount") or "")}'
+            f'{total}</td>'
+            f'<td class="inv">{html.escape(investors)}</td>'
+            f'<td class="loc">{html.escape(s.get("spinoff_origin") or "")}</td>'
             f'<td class="loc">{html.escape(s.get("location") or "")}</td>'
             f'<td class="d">{html.escape(s.get("published") or s.get("first_seen",""))}</td>'
             f'</tr>'
         )
-    body = "\n".join(rows) or '<tr><td colspan="7">Nothing archived yet.</td></tr>'
+    body = "\n".join(rows) or '<tr><td colspan="8">Nothing archived yet.</td></tr>'
     return f"""<!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -260,6 +269,7 @@ def render_archive_html(known: dict) -> str:
          white-space:nowrap; }}
   .stage {{ border:1px solid var(--line); border-radius:6px; padding:0.1rem 0.45rem;
            font-size:0.76rem; font-weight:600; white-space:nowrap; }}
+  .total {{ display:block; color:var(--soft); font-size:0.72rem; font-weight:500; }}
 </style></head><body>
 <div class="wrap">
   <h1>Swiss DeepTech archive<span class="dot">.</span></h1>
@@ -267,7 +277,7 @@ def render_archive_html(known: dict) -> str:
   <input id="q" placeholder="Filter by company, source or word..." oninput="filter()">
   <div class="box"><table>
     <thead><tr><th>Company</th><th>Category</th><th>Stage</th><th>Amount</th>
-      <th>Investors</th><th>Location</th><th>Date</th></tr></thead>
+      <th>Investors</th><th>Spin-off</th><th>Location</th><th>Date</th></tr></thead>
     <tbody id="rows">
 {body}
     </tbody>
@@ -419,6 +429,18 @@ def main() -> None:
         # builds up over time instead of being overwritten each run.
         import archive as archive_mod
         from extract import extract_fields
+        from images import article_text
+
+        # Read the articles themselves. Feed summaries are a sentence or two,
+        # which is why investors and founders were mostly blank.
+        print(f"Fetching {len(articles)} articles in full...", file=sys.stderr)
+        got = 0
+        for art in articles:
+            art["fulltext"] = article_text(art.get("link", ""))
+            if art["fulltext"]:
+                got += 1
+        print(f"  read {got}/{len(articles)} in full", file=sys.stderr)
+
         print("Reading deal facts from each story...", file=sys.stderr)
         for art, facts in zip(articles, extract_fields(articles)):
             art.update(facts)

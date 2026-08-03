@@ -16,6 +16,7 @@ judgment on rights and attribution before posting, as you already do.
 
 from __future__ import annotations
 
+import html as _html_lib
 import json
 import re
 import urllib.parse
@@ -231,6 +232,33 @@ def article_page(url: str, timeout: int = 12):
         return raw.decode("utf-8", "ignore"), final_url
     except Exception:
         return None, url
+
+
+_STRIP_BLOCKS = re.compile(
+    r"<(script|style|nav|header|footer|aside|form|noscript)\b[^>]*>.*?</\1>",
+    re.IGNORECASE | re.DOTALL,
+)
+
+
+def article_text(url: str, limit: int = 4000, timeout: int = 12) -> str:
+    """Return the readable text of an article, or "" when it cannot be fetched.
+
+    Feed summaries are a sentence or two, which is why investors, founders and
+    totals were so often missing. The article body carries them, so this pulls
+    the page down and reduces it to plain text for the extractor to read.
+    """
+    html_doc, _ = article_page(url, timeout)
+    if not html_doc:
+        return ""
+    body = _STRIP_BLOCKS.sub(" ", html_doc)
+    # Prefer the article element when the page marks one up.
+    m = re.search(r"<article\b[^>]*>(.*?)</article>", body, re.IGNORECASE | re.DOTALL)
+    if m and len(m.group(1)) > 400:
+        body = m.group(1)
+    text = re.sub(r"<[^>]+>", " ", body)
+    text = _html_lib.unescape(text)
+    text = re.sub(r"\s+", " ", text).strip()
+    return text[:limit]
 
 
 def article_image(url: str, timeout: int = 12) -> str | None:
