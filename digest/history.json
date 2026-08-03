@@ -106,8 +106,8 @@
     {
       "used": "2026-08-03",
       "title": "SkyPilot, from Databricks’ cofounder, raises $20M to be the Switzerland of AI compute - Fortune",
-      "link": "https://www.fortunebusinessinsights.com/ai-orchestration-market-107177",
-      "coverage_url": "https://fortune.com/2026/07/21/skypilot-from-databricks-cofounder-raises-20m-to-be-the-switzerland-of-ai-compute/",
+      "link": "https://fortune.com/2026/07/21/skypilot-from-databricks-cofounder-raises-20m-to-be-the-switzerland-of-ai-compute/",
+      "coverage_url": null,
       "norm": "skypilot from databricks cofounder raises 20m to be the switzerland of ai compute",
       "kw": [
         "cofounder",
@@ -124,23 +124,28 @@
     },
     {
       "used": "2026-08-03",
-      "title": "Schweizer Deep-Tech-Erfolg: Chancen für österreichische Unternehmen - wko.at",
-      "link": "https://www.wko.at/aussenwirtschaft/schweiz-deep-tech-erfolg",
-      "coverage_url": null,
-      "norm": "schweizer deeptecherfolg chancen fr sterreichische unternehmen",
+      "title": "Switzerland's Comet H1 sales rise on strong demand for chip-making tools - TradingView",
+      "link": "https://tradingviewstore.com/",
+      "coverage_url": "https://www.tradingview.com/news/reuters.com,2026:newsml_L1N43X06L:0-switzerland-s-comet-h1-sales-rise-on-strong-demand-for-chip-making-tools/",
+      "norm": "switzerlands comet h1 sales rise on strong demand for chipmaking tools",
       "kw": [
-        "chancen",
-        "deeptecherfolg",
-        "schweizer",
-        "sterreichische",
-        "unternehmen"
+        "chipmaking",
+        "comet",
+        "demand",
+        "rise",
+        "sales",
+        "strong",
+        "switzerlands",
+        "tools"
       ],
       "rare": [
-        "chancen",
-        "deeptecherfolg",
-        "schweizer",
-        "sterreichische",
-        "unternehmen"
+        "chipmaking",
+        "comet",
+        "demand",
+        "sales",
+        "strong",
+        "switzerlands",
+        "tools"
       ]
     }
   ]

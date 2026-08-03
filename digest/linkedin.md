@@ -13,16 +13,14 @@ The posts themselves are below, for review before you run it.
 ## Post 1 — schedule for Tuesday 04 August at 08:00
 
 ```
-🇨🇭 Swiss quantum hardware attracts serious international capital
+🇨🇭 Swiss quantum hardware attracts serious seed capital
 
-@ZuriQ, a spin-off from @ETH Zurich, has raised USD 25.5 million in a seed round led by @Quantonation to advance its trapped-ion quantum computing architecture. For a pre-revenue hardware company, that is a substantial first institutional cheque.
+@ZuriQ, a spin-off from @ETH Zurich, has raised USD 25.5 million in a seed round led by @Quantonation to advance its trapped-ion quantum computing architecture. That is one of the largest seed rounds ever recorded for a Swiss quantum company.
 
 Why it matters:
-⚛️ Seed rounds of this size signal that quantum hardware has moved from academic curiosity to a category where global specialist funds compete for allocation, and Zurich is now on that map.
-🇨🇭 Switzerland's advantage in quantum is structural: decades of public research funding, world-class photonics and precision engineering supply chains, and spin-off pipelines from @ETH Zurich and @EPFL that convert physics into companies.
-🔭 Trapped-ion approaches are among the more credible paths to fault tolerance, and a well-capitalised Swiss player gives European industry a domestic option rather than dependence on US or Chinese roadmaps.
-
-Capital efficiency in DeepTech is not about spending less, it is about buying the right milestones. This round looks designed for exactly that.
+⚛️ Quantum hardware is capital-intensive, and a round of this size signals that specialist investors now see Swiss engineering as a credible path to scalable machines, not just a research curiosity.
+🇨🇭 Switzerland's advantage is depth: decades of ion-trap and photonics expertise inside federal institutes, combined with a talent pool that stays close to the lab it came from. That combination produces teams who reach technical milestones on far less capital than their US peers.
+🔗 Trapped-ion systems remain one of the leading candidates for fault-tolerant computing. Building that stack in Europe matters for sovereignty as much as for science, and it anchors a supply chain of lasers, cryogenics, and control electronics that Swiss suppliers already serve.
 
 https://zuriq.com/
 ```
@@ -32,16 +30,14 @@ https://zuriq.com/
 ## Post 2 — schedule for Wednesday 05 August at 08:00
 
 ```
-🇨🇭 Rivers as infrastructure, data, and urban destiny
+🇨🇭 Rivers, cities, and the data behind resilience
 
-Researchers at @EPFL have published work on how rivers have shaped the location, growth, and social organisation of cities over time. It reads as history, but the underlying method is modern: geospatial data, modelling, and long-horizon analysis.
+Researchers at @EPFL have published work on how river systems have shaped the growth of cities and the societies around them, reported by EPFL News. It is a reminder that infrastructure decisions taken centuries ago still constrain how we build today.
 
 Why it matters:
-🌍 Urban and climate resilience is becoming a genuine market, not just a policy conversation. Hydrology, flood modelling, and water infrastructure analytics all sit downstream of research like this.
-🇨🇭 Switzerland is the natural home for water science: Alpine hydrology, a dense network of monitoring stations, and institutions such as @EPFL, @ETH Zurich, and @Eawag that combine environmental modelling with engineering rigour.
-🏗️ Cities worldwide are re-engineering their relationship with water. The tools needed (sensing, simulation, decision software) are exactly the kind of dual-use DeepTech that scales from a research group to a global product.
-
-The most durable DeepTech companies often start with a dataset and a model nobody else has. Fundamental research is where those originate.
+🌊 Climate adaptation is becoming a procurement category, not a policy debate. Municipalities and insurers need quantitative models of water risk, and academic work like this is the raw material for the tools that will be sold to them.
+🇨🇭 Switzerland sits at the hydrological headwaters of Europe, which gives Swiss institutions unusually long and precise datasets on flow, sediment, and settlement patterns. That data advantage is hard to replicate elsewhere.
+🏗️ The broader implication is a widening market for environmental DeepTech: sensing networks, hydrological modelling, and planning software. These are capital-efficient businesses built on scientific credibility rather than heavy manufacturing, which is exactly where Swiss research spin-offs tend to compete well.
 
 https://actu.epfl.ch/news/how-rivers-shape-cities-and-societies
 ```
@@ -50,16 +46,14 @@ https://actu.epfl.ch/news/how-rivers-shape-cities-and-societies
 ## Post 3 — schedule for Thursday 06 August at 08:00
 
 ```
-🇨🇭 Open Swiss AI infrastructure takes its next step
+🇨🇭 Open AI infrastructure gets a Swiss upgrade
 
-The @Apertus team has released Apertus 1.5, extending its work on fully open large language models and the infrastructure behind them. The project has been built with Swiss public compute and Swiss research institutions at its core.
+@Apertus has announced Apertus 1.5, the next iteration of its open AI infrastructure stack. The project continues a distinctly Swiss approach: transparent models, documented training data, and public accountability.
 
 Why it matters:
-🧠 Open weights plus open data pipelines change the economics for enterprises: fine-tuning a transparent model is often cheaper and more auditable than renting a black box through an API.
-🇨🇭 Switzerland brings a rare combination here: sovereign compute capacity, strong data protection norms, and neutrality that makes Swiss-hosted AI attractive to regulated sectors across Europe and beyond.
-🔓 Open infrastructure is a platform play. Every layer above it (vertical applications, tooling, evaluation, deployment) becomes investable, which is where capital-efficient Swiss startups tend to win.
-
-Foundation models built with public infrastructure are not a substitute for venture-backed companies. They are the substrate those companies build on, and Switzerland is quietly assembling one of the better ones.
+🧠 Enterprise adoption of AI keeps stalling on the same question: what is inside the model. Open, auditable infrastructure removes that objection and opens procurement doors that closed models struggle to pass, particularly in regulated sectors.
+🇨🇭 Switzerland can offer something few jurisdictions can: neutrality, strong data protection, and world-class compute hosted domestically. That makes it a natural home for AI infrastructure that banks, hospitals, and public bodies are willing to trust.
+⚙️ Longer term, open foundations lower the cost of building applications on top. Every Swiss startup that does not have to train from scratch becomes more capital-efficient, which compounds across the ecosystem and is precisely how a small country competes with far larger AI budgets.
 
 http://apertus-ai.org
 ```
@@ -69,16 +63,14 @@ http://apertus-ai.org
 ## Post 4 — schedule for Friday 07 August at 08:00
 
 ```
-🇨🇭 Industrial cost intelligence gets a software layer
+🇨🇭 Cost intelligence arrives for Swiss manufacturers
 
-@Valuemize has closed a seven-figure pre-seed round for its software that helps manufacturers understand and control product cost during design and sourcing. Early-stage, but pointed at a very real industrial pain point.
+@Valuemize has closed a seven-figure pre-seed round for its product cost software, targeting the engineering and procurement teams who decide what a product costs before it is ever built.
 
 Why it matters:
-🏭 Manufacturing margins are under pressure from input costs and supply chain volatility. Cost transparency at the design stage is one of the few levers that structurally improves profitability rather than just reporting on it.
-🇨🇭 Swiss and DACH industry is precision manufacturing, machinery, and medtech, sectors with complex bills of materials and demanding customers. That makes Switzerland an ideal proving ground for tools that must survive contact with real engineering teams.
-🌐 If it works in this environment, it travels. Industrial software validated by Swiss and German manufacturers carries credibility into every other market.
-
-Not every DeepTech story involves a cleanroom. Software that encodes deep domain knowledge about how things are actually made can compound just as durably, and usually on far less capital.
+📊 Margin pressure in industrial manufacturing is structural, not cyclical. Software that quantifies cost at the design stage attacks the point where roughly most of a product's lifetime cost is locked in, which is a rare combination of small implementation effort and large financial impact.
+🇨🇭 Switzerland's industrial base, precision machining, medtech, and machinery, is exactly the demanding customer set that forces a product to be genuinely good. Selling into it first is hard, then it travels well into Germany and beyond.
+🚀 This is also a reminder that DeepTech is not only hardware. Software built on deep domain knowledge can reach revenue fast on modest capital, and pre-seed rounds of this size are often enough to prove commercial pull before scaling.
 
 https://www.valuemize.io/en
 ```
@@ -88,16 +80,14 @@ https://www.valuemize.io/en
 ## Post 5 — schedule for Saturday 08 August at 08:00
 
 ```
-🇨🇭 Gene editing moves in vivo, funded in Switzerland
+🇨🇭 Swiss gene editing takes a step in vivo
 
-@Immitra Bio has raised CHF 2.4 million to advance its in-vivo gene editing platform, according to @venturelab.swiss. The financing is aimed at pushing the platform toward validation in therapeutically relevant settings.
+@Immitra Bio has raised CHF 2.4 million to advance its in-vivo gene editing platform, according to @venturelab.swiss. The financing supports development of therapies delivered directly inside the body rather than through cell manipulation outside it.
 
 Why it matters:
-🧬 In-vivo editing is the step that could take cell and gene therapy from bespoke, hospital-bound procedures to something closer to a scalable medicine, which changes the addressable market entirely.
-🇨🇭 Switzerland's life sciences density is hard to replicate: research groups at @ETH Zurich and @EPFL, a deep pharma talent pool around Basel, and clinical partners within an hour's drive of almost any lab.
-💊 Platform companies create optionality. One delivery and editing approach can support multiple indications and partnerships, which is how small Swiss teams reach global relevance without global balance sheets.
-
-CHF 2.4 million is a focused round, and that is the point: clear milestones, disciplined burn, and a valuation inflection earned rather than assumed.
+🧬 In-vivo editing is where the field is heading, because it removes the cost and complexity of ex-vivo manufacturing. Platforms that solve delivery credibly attract pharma partnerships early, which changes the funding maths for a small team.
+🇨🇭 Switzerland combines academic strength in molecular biology with one of the densest pharma clusters in the world. A seed-stage biotech here sits within walking distance of the partners, regulators, and CDMOs it eventually needs.
+💡 A round of this size shows what Swiss biotech does well: reaching meaningful preclinical milestones without raising nine figures first. Capital efficiency is not a constraint in this ecosystem, it is a competitive method.
 
 https://www.venturelab.swiss/Immitra-Bio-raises-CHF-24-million-to-advance-invivo-gene-editing-platform
 ```
@@ -106,37 +96,33 @@ https://www.venturelab.swiss/Immitra-Bio-raises-CHF-24-million-to-advance-invivo
 ## Post 6 — schedule for Sunday 09 August at 08:00
 
 ```
-🇨🇭 "The Switzerland of AI compute" as a strategy
+🇨🇭 When neutrality becomes an AI selling point
 
-@SkyPilot, founded by a Databricks cofounder, has raised USD 20 million to build a neutral orchestration layer that runs AI workloads across any cloud or GPU provider. The pitch, in their own framing: be the Switzerland of AI compute.
+SkyPilot, founded by a @Databricks cofounder, has raised USD 20 million to become what Fortune describes as the Switzerland of AI compute: a neutral layer that routes workloads across clouds and chip providers.
 
 Why it matters:
-💻 Compute is the largest line item for most AI companies. Software that arbitrages across providers and reclaims idle capacity attacks that cost directly, which is why orchestration has become its own category.
-🇨🇭 That neutrality is being used as a brand for a reason. Switzerland has spent a century turning independence and reliability into an economic asset, and the analogy now travels into infrastructure software.
-⚙️ Provider-agnostic tooling reduces lock-in for European scale-ups, making it realistic to train and serve models without betting the company on a single hyperscaler.
+💻 Compute is now the largest line item for most AI companies, and lock-in to a single provider is a strategic risk. An abstraction layer that arbitrages across suppliers turns that cost into something manageable, which is why investors are paying attention.
+🇨🇭 The metaphor is flattering, but it is also instructive. Neutrality is an asset class of its own, and Switzerland has spent a century monetising it in finance and diplomacy. Applying the same logic to data and compute infrastructure is an underexploited opportunity here.
+☁️ For European scale-ups, portable workloads mean real negotiating power and easier compliance with data residency rules. That is infrastructure sovereignty achieved through software rather than through building new data centres.
 
-When a US startup borrows Swiss positioning to explain itself, it is worth noticing what that positioning is actually worth.
-
-https://www.fortunebusinessinsights.com/ai-orchestration-market-107177
+https://fortune.com/2026/07/21/skypilot-from-databricks-cofounder-raises-20m-to-be-the-switzerland-of-ai-compute/
 ```
 🖼️ **Article image:** https://fortune.com/img-assets/wp-content/uploads/2026/07/Group-photo-01-server-room-e1784596163316.jpeg?resize=1200,600
-🔗 **Links to the original source.**
 
 ## Post 7 — schedule for Monday 10 August at 08:00
 
 ```
-🇨🇭 Neighbours start studying the Swiss DeepTech model
+🇨🇭 Semiconductor demand lifts a Swiss supplier
 
-@wko.at, Austria's federal economic chamber, has published an analysis of Swiss DeepTech success and the resulting opportunities for Austrian companies. When a neighbouring economy writes a playbook about your ecosystem, something is working.
+@Comet Group has reported higher first-half sales, driven by strong demand for its chip-making tools. The company supplies radio frequency and X-ray technology used in semiconductor production lines worldwide.
 
 Why it matters:
-📈 Swiss DeepTech has become an export category in its own right, attracting foreign corporates, suppliers, and co-investors who want exposure to spin-offs from @ETH Zurich and @EPFL.
-🇨🇭 The advantage is not one factor but a stack: world-class universities, strong IP protection, deep engineering talent, proximity to industrial customers, and a funding culture that rewards milestones over narrative.
-🤝 Cross-border collaboration widens the pipeline. Austrian and German industrial partners give Swiss startups pilot sites and first revenue, which is often more valuable than an extra financing round.
+📈 Semiconductor capex is recovering, and the beneficiaries are not only the fabs. Component and subsystem specialists capture a durable share of that spending because their technology is designed into equipment for years at a time.
+🇨🇭 Switzerland has quietly built a strong position in the hidden layers of the chip supply chain: precision components, metrology, and power electronics. These are high-margin niches where engineering depth matters more than scale, which suits the Swiss industrial model.
+🔧 It also validates a pattern worth noting for early-stage investors. Swiss hardware companies that pick a critical technical niche and dominate it can grow into global suppliers without ever needing consumer-scale capital, a route many of today's DeepTech scale-ups are following.
 
-Capital efficiency is a Swiss habit as much as a strategy. Companies here tend to reach technical proof on less money, and that discipline is precisely what makes the ecosystem interesting from the outside.
-
-https://www.wko.at/aussenwirtschaft/schweiz-deep-tech-erfolg
+https://tradingviewstore.com/
 ```
-🖼️ **Article image:** https://www.wko.at/oe/aussenwirtschaft/ingenieurswissenschaft-adobestock-gorodenkoff-289023614.jpeg
+🖼️ **Article image:** https://s.tradingview.com/static/images/illustrations/news-story.jpg
+🔗 **Links to the original source.**
 
