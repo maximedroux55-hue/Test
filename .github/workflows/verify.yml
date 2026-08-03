@@ -1,0 +1,80 @@
+name: Weekly verification pass
+
+# Works the queue at digest/verify.json: finds the primary source for each
+# round worth checking, compares it with what the database holds, and writes
+# proposals.
+#
+# It proposes and never decides. Everything lands in
+# deeptech-news/proposals.json, which is inert, and is laid out for reading at
+# maxime-droux.com/digest/review.html. Nothing reaches corrections.json, which
+# overrules the pipeline, without Max moving it there.
+on:
+  schedule:
+    # 05:00 UTC on Mondays, an hour after the database run.
+    - cron: "0 5 * * 1"
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "How many queued rounds to check"
+        default: "8"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: deal-archive-publish
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r deeptech-news/requirements.txt
+
+      - name: Run the regression tests
+        run: |
+          cd deeptech-news
+          python tests/test_regressions.py
+
+      - name: Work the queue
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          cd deeptech-news
+          python verify_pass.py \
+            --queue ../digest/verify.json \
+            --out proposals.json \
+            --limit "${{ github.event.inputs.limit || '8' }}"
+
+      # A proposal with no quote or no source fails here rather than reaching
+      # the review page, since the evidence is the only reason to believe it.
+      - name: Check the proposals are evidenced
+        run: |
+          cd deeptech-news
+          python tests/test_regressions.py
+
+      - name: Publish the proposals
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          cp deeptech-news/proposals.json /tmp/proposals.json
+
+          for attempt in 1 2 3 4 5; do
+            git fetch origin ${GITHUB_REF_NAME}
+            git reset --hard origin/${GITHUB_REF_NAME}
+            cp /tmp/proposals.json deeptech-news/proposals.json
+
+            git add deeptech-news/proposals.json
+            git commit -m "Weekly verification pass" || { echo "Nothing proposed."; exit 0; }
+            if git push origin HEAD:${GITHUB_REF_NAME}; then
+              echo "Proposed."; exit 0
+            fi
+            sleep $((attempt * 3))
+          done
+          echo "Could not publish after retries."; exit 1
