@@ -466,6 +466,22 @@ def _is_swiss(story: dict) -> bool:
         f"{story.get('title', '')} {story.get('description', '')}"))
 
 
+def is_closed(story: dict) -> bool:
+    """Has the transaction actually completed?
+
+    An announced deal is not capital raised. Terra Quantum's USD 190M was a
+    ceiling on a de-SPAC that had not closed, quoted gross and assuming no
+    redemptions, and it sat in the database's total as though the money had
+    arrived. Announced deals stay on the page, marked, and out of every sum.
+    """
+    return (story.get("status") or "").strip().lower() != "announced"
+
+
+def counted(stories: list) -> list:
+    """The rounds whose amounts may be added up."""
+    return [s for s in stories if is_closed(s)]
+
+
 def _provenance(story: dict, field: str) -> str:
     """Where a fact came from, in words. Empty when it was not recorded."""
     return ((story.get("provenance") or {}).get(field) or "").strip()
@@ -513,7 +529,9 @@ def render_archive_html(known: dict) -> str:
     with_investors = sum(1 for s in stories if _investor_line(s))
     with_founders = sum(1 for s in stories if (s.get("founders") or "").strip())
     placed = sum(1 for s in stories if (s.get("location") or "").strip())
-    tracked = money.compact(sum(money.in_chf(s.get("amount", "")) for s in stories))
+    announced = sum(1 for s in stories if not is_closed(s))
+    tracked = money.compact(
+        sum(money.in_chf(s.get("amount", "")) for s in counted(stories)))
 
     def options(field: str) -> str:
         """The values actually present, so no filter leads to an empty table."""
@@ -565,15 +583,28 @@ def render_archive_html(known: dict) -> str:
         hover = html.escape(" · ".join(extra) or s.get("title", ""))
 
         stage_text = (s.get("stage") or "").strip()
-        stage = (f'<td><span class="stage">{html.escape(stage_text)}</span></td>'
-                 if stage_text else '<td><span class="nd">&middot;</span></td>')
+        pending = ('<span class="pending" title="Announced, not closed. Its '
+                   'figure is excluded from every total.">announced</span>'
+                   if not is_closed(s) else "")
+        stage = (f'<td><span class="stage">{html.escape(stage_text)}</span>'
+                 f'{pending}</td>'
+                 if stage_text
+                 else f'<td><span class="nd">&middot;</span>{pending}</td>')
         category_text = (s.get("category") or "").strip()
         category = (f'<td><span class="cat">{html.escape(category_text)}</span></td>'
                     if category_text else '<td><span class="nd">&middot;</span></td>')
 
         amount_text = (s.get("amount") or "").strip()
-        amount = (f'<td class="amt" title="{money.compact(chf)}">'
-                  f'{html.escape(amount_text)}</td>' if amount_text
+        note = (s.get("amount_note") or "").strip()
+        if amount_text and note:
+            # "up to USD 190M" is a different claim from "USD 190M".
+            shown = (f'{html.escape(note.split(",")[0])} '
+                     f'{html.escape(amount_text)}')
+            title = f"{note}. Not counted in the total."
+        else:
+            shown, title = html.escape(amount_text), money.compact(chf)
+        amount = (f'<td class="amt" title="{html.escape(title)}">{shown}</td>'
+                  if amount_text
                   else '<td class="amt"><span class="nd">undisclosed</span></td>')
 
         location_text = (s.get("location") or "").strip()
@@ -587,7 +618,7 @@ def render_archive_html(known: dict) -> str:
 
         date_text = (s.get("published") or s.get("first_seen") or "").strip()
         rows.append(
-            f'<tr data-chf="{chf}" '
+            f'<tr data-chf="{chf if is_closed(s) else 0}" '
             f'data-sector="{html.escape(category_text)}" '
             f'data-stage="{html.escape(stage_text)}" '
             f'data-hq="{html.escape(location_text)}" '
@@ -656,6 +687,9 @@ def render_archive_html(known: dict) -> str:
   .stage {{ border:1px solid var(--line); border-radius:6px; padding:0.1rem 0.45rem;
            font-size:0.76rem; font-weight:600; white-space:nowrap; }}
   .total {{ display:block; color:var(--soft); font-size:0.72rem; font-weight:500; }}
+  .pending {{ display:block; margin-top:0.2rem; background:#fdf3e3; color:#8a6d3b;
+             border-radius:5px; padding:0.02rem 0.3rem; font-size:0.66rem;
+             font-weight:700; text-transform:uppercase; letter-spacing:0.03em; }}
   .foreign {{ background:#f3f0ea; color:#8a6d3b; border-radius:5px;
              padding:0.02rem 0.3rem; font-size:0.68rem; font-weight:700; }}
   .controls {{ display:flex; gap:0.6rem; align-items:center; margin-bottom:1rem;
@@ -689,6 +723,7 @@ def render_archive_html(known: dict) -> str:
     <div class="stat"><b>{len(stories)}</b><span>rounds</span></div>
     <div class="stat"><b>{tracked or "&ndash;"}</b><span>tracked</span></div>
     <div class="stat"><b>{placed}</b><span>with a city</span></div>
+    <div class="stat"><b>{announced}</b><span>announced, uncounted</span></div>
     <div class="stat"><b>{with_investors}</b><span>with investors</span></div>
     <div class="stat"><b>{with_founders}</b><span>with founders</span></div>
     <div class="stat"><b>{posted}</b><span>posted</span></div>
@@ -720,7 +755,9 @@ def render_archive_html(known: dict) -> str:
 {body}
     </tbody>
   </table></div>
-  <p class="note">Amounts are shown as the article wrote them. The franc figure beside a
+  <p class="note">An announced transaction is marked and its figure is excluded from
+  every total: a ceiling on a deal that has not closed, quoted gross and before
+  redemptions, is not capital raised. Amounts are shown as the article wrote them. The franc figure beside a
   foreign currency, and the total above, are converted at fixed indicative rates and are
   meant for scale rather than accounting. Hover a headquarters to see where it came from.</p>
 </div>

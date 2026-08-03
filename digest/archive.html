@@ -46,6 +46,9 @@
   .stage { border:1px solid var(--line); border-radius:6px; padding:0.1rem 0.45rem;
            font-size:0.76rem; font-weight:600; white-space:nowrap; }
   .total { display:block; color:var(--soft); font-size:0.72rem; font-weight:500; }
+  .pending { display:block; margin-top:0.2rem; background:#fdf3e3; color:#8a6d3b;
+             border-radius:5px; padding:0.02rem 0.3rem; font-size:0.66rem;
+             font-weight:700; text-transform:uppercase; letter-spacing:0.03em; }
   .foreign { background:#f3f0ea; color:#8a6d3b; border-radius:5px;
              padding:0.02rem 0.3rem; font-size:0.68rem; font-weight:700; }
   .controls { display:flex; gap:0.6rem; align-items:center; margin-bottom:1rem;
@@ -77,8 +80,9 @@
   <span title="Kept in archive.json, which is the raw record">8 foreign-headquartered rounds and 69 non-financing stories are held back.</span></p>
   <div class="stats">
     <div class="stat"><b>24</b><span>rounds</span></div>
-    <div class="stat"><b>CHF 577.7M</b><span>tracked</span></div>
+    <div class="stat"><b>CHF 425.7M</b><span>tracked</span></div>
     <div class="stat"><b>23</b><span>with a city</span></div>
+    <div class="stat"><b>1</b><span>announced, uncounted</span></div>
     <div class="stat"><b>19</b><span>with investors</span></div>
     <div class="stat"><b>19</b><span>with founders</span></div>
     <div class="stat"><b>3</b><span>posted</span></div>
@@ -86,7 +90,7 @@
   <div class="controls">
     <input type="text" id="q" placeholder="Search company, investor, founder..." oninput="filter()">
     <select id="sector" onchange="filter()"><option value="">Every sector</option><option value="AI">AI</option><option value="Biotech">Biotech</option><option value="Cleantech">Cleantech</option><option value="FinTech">FinTech</option><option value="Logistics">Logistics</option><option value="MedTech">MedTech</option><option value="Other">Other</option><option value="Photonics">Photonics</option><option value="Quantum">Quantum</option><option value="Research">Research</option><option value="Robotics">Robotics</option><option value="Software">Software</option><option value="Space">Space</option></select>
-    <select id="stage" onchange="filter()"><option value="">Every stage</option><option value="Pre-seed">Pre-seed</option><option value="Seed">Seed</option><option value="Series A">Series A</option><option value="Series B">Series B</option><option value="Series C">Series C</option><option value="Grant">Grant</option><option value="IPO">IPO</option><option value="Acquisition">Acquisition</option></select>
+    <select id="stage" onchange="filter()"><option value="">Every stage</option><option value="Pre-seed">Pre-seed</option><option value="Seed">Seed</option><option value="Series A">Series A</option><option value="Series B">Series B</option><option value="Series C">Series C</option><option value="Grant">Grant</option><option value="IPO">IPO</option><option value="Acquisition">Acquisition</option><option value="De-SPAC">De-SPAC</option></select>
     <select id="hq" onchange="filter()"><option value="">Everywhere</option><option value="Basel">Basel</option><option value="Glattbrugg">Glattbrugg</option><option value="Lausanne">Lausanne</option><option value="Lugano">Lugano</option><option value="Neuchâtel">Neuchâtel</option><option value="Renens">Renens</option><option value="St. Gallen">St. Gallen</option><option value="Winterthur">Winterthur</option><option value="Zug">Zug</option><option value="Zurich">Zurich</option></select>
     <label class="dates">from <input type="date" id="from" value="" min="2026-05-26" max="2026-07-31" onchange="filter()"></label>
     <label class="dates">to <input type="date" id="to" value="" min="2026-05-26" max="2026-07-31" onchange="filter()"></label>
@@ -130,10 +134,12 @@
 <tr data-chf="1500000" data-sector="Research" data-stage="Grant" data-hq="Lausanne" data-date="2026-06-10"><td class="co"><a href="https://actu.epfl.ch/news/what-our-neighborhood-reveals-about-our-sleep" target="_blank" rel="noopener" title="Use of funds: Map sleep habits, analyze data, prevention campaigns · Source: EPFL News">URBASAN</a></td><td class="desc">Project mapping how urban environments influence sleep quality</td><td><span class="cat">Research</span></td><td><span class="stage">Grant</span></td><td class="amt" title="CHF 1.5M">CHF 1.5M</td><td class="inv">Promotion Santé Suisse</td><td class="fnd">Stéphane Joost, Philippe Voruz</td><td class="org">EPFL</td><td class="loc" title="Source: the company&#x27;s own site">Lausanne</td><td class="d">2026-06-10</td></tr>
 <tr data-chf="14415000" data-sector="Cleantech" data-stage="" data-hq="Lugano" data-date="2026-06-05"><td class="co"><a href="https://techfundingnews.com/swiss-startup-gr3n-raises-e15-5m-to-build-the-worlds-first-microwave-pet-recycling-plant-and-tackle-the-85-of-plastic-that-never-gets-recycled/" target="_blank" rel="noopener" title="Use of funds: Build first microwave PET recycling plant · Source: Tech Funding News">GR3N</a></td><td class="desc">Microwave-based PET plastic chemical recycling</td><td><span class="cat">Cleantech</span></td><td><span class="nd">&middot;</span></td><td class="amt" title="CHF 14.4M">EUR 15.5M</td><td class="inv"><span class="nd">&middot;</span></td><td class="fnd"><span class="nd">&middot;</span></td><td class="org"><span class="nd">&middot;</span></td><td class="loc" title="Source: the article">Lugano</td><td class="d">2026-06-05</td></tr>
 <tr data-chf="0" data-sector="Quantum" data-stage="Acquisition" data-hq="Basel" data-date="2026-06-04"><td class="co"><a href="https://www.venturelab.swiss/Qnami-acquired-by-Quantum-Design" target="_blank" rel="noopener" title="Founded: 2017 · Source: Venturelab Swiss">Qnami</a></td><td class="desc">Diamond NV-center quantum sensing and nanoscale magnetic imaging</td><td><span class="cat">Quantum</span></td><td><span class="stage">Acquisition</span></td><td class="amt"><span class="nd">undisclosed</span></td><td class="inv">Runa Capital, SIT Capital, Quantonation, Verve Ventures, Zürcher Kantonalbank, High-Tech Gründerfonds</td><td class="fnd">Patrick Maletinsky</td><td class="org">University of Basel</td><td class="loc" title="Source: the company&#x27;s own site">Basel</td><td class="d">2026-06-04</td></tr>
-<tr data-chf="152000000" data-sector="Quantum" data-stage="IPO" data-hq="St. Gallen" data-date="2026-05-26"><td class="co"><a href="https://finance.yahoo.com/markets/stocks/articles/swiss-based-terra-quantum-changes-113238973.html" target="_blank" rel="noopener" title="Founded: 2019 · Staff: 200 · Valuation: USD 3.5B · Use of funds: Expand globally and accelerate innovation · Source: Yahoo Finance">Terra Quantum</a></td><td class="desc">Quantum algorithms, quantum security and hybrid quantum-classical computing</td><td><span class="cat">Quantum</span></td><td><span class="stage">IPO</span></td><td class="amt" title="CHF 152M">USD 190M</td><td class="inv">Axiom Intelligence Acquisition Corp 1</td><td class="fnd">Markus Pflitsch</td><td class="org"><span class="nd">&middot;</span></td><td class="loc" title="Source: the company&#x27;s own site">St. Gallen</td><td class="d">2026-05-26</td></tr>
+<tr data-chf="0" data-sector="Quantum" data-stage="De-SPAC" data-hq="St. Gallen" data-date="2026-05-26"><td class="co"><a href="https://finance.yahoo.com/markets/stocks/articles/swiss-based-terra-quantum-changes-113238973.html" target="_blank" rel="noopener" title="Founded: 2019 · Staff: 200 · Valuation: USD 3.5B · Use of funds: Expand globally and accelerate innovation · Source: Yahoo Finance">Terra Quantum</a></td><td class="desc">Quantum algorithms, quantum security and hybrid quantum-classical computing</td><td><span class="cat">Quantum</span></td><td><span class="stage">De-SPAC</span><span class="pending" title="Announced, not closed. Its figure is excluded from every total.">announced</span></td><td class="amt" title="up to, assuming no redemptions, gross proceeds. Not counted in the total.">up to USD 190M</td><td class="inv">Axiom Intelligence Acquisition Corp 1</td><td class="fnd">Markus Pflitsch</td><td class="org"><span class="nd">&middot;</span></td><td class="loc" title="Source: the company&#x27;s own site">St. Gallen</td><td class="d">2026-05-26</td></tr>
     </tbody>
   </table></div>
-  <p class="note">Amounts are shown as the article wrote them. The franc figure beside a
+  <p class="note">An announced transaction is marked and its figure is excluded from
+  every total: a ceiling on a deal that has not closed, quoted gross and before
+  redemptions, is not capital raised. Amounts are shown as the article wrote them. The franc figure beside a
   foreign currency, and the total above, are converted at fixed indicative rates and are
   meant for scale rather than accounting. Hover a headquarters to see where it came from.</p>
 </div>

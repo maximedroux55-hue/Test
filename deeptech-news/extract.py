@@ -26,7 +26,7 @@ CATEGORIES = [
 
 STAGES = [
     "Pre-seed", "Seed", "Series A", "Series B", "Series C", "Series D",
-    "Growth", "Grant", "IPO", "Acquisition", "Partnership", "None",
+    "Growth", "Grant", "IPO", "De-SPAC", "Acquisition", "Partnership", "None",
 ]
 
 SYSTEM = (
@@ -59,6 +59,14 @@ SYSTEM = (
     "Never write a generic description such as 'angel investors', 'VC firms', "
     "'existing investors' or 'undisclosed': leave the field empty instead. "
     "lead_investor is the one said to lead or co-lead; leave empty if none is.\n\n"
+    "status is 'announced' when the transaction has not completed: subject to "
+    "shareholder or regulatory approval, expected or targeted to close, or a "
+    "signed agreement rather than a closing. Otherwise 'closed'. A merger with "
+    "a listed acquisition vehicle is 'De-SPAC', never 'IPO'.\n"
+    "amount_note carries any condition attached to the figure, in a few words: "
+    "'up to, assuming no redemptions', 'gross proceeds before expenses', "
+    "'including debt'. An amount written as a ceiling is not an amount raised, "
+    "and the condition is the difference.\n\n"
     "Stage must be written in the text: 'Series C', 'a seed round', "
     "'pre-seed'. Never infer it. The size of the cheque, the maturity of the "
     "company and words such as 'to scale' or 'to expand' say nothing about "
@@ -110,13 +118,15 @@ _SCHEMA = {
                     "customers": {"type": "string"},
                     "website": {"type": "string"},
                     "location": {"type": "string"},
+                    "status": {"type": "string", "enum": ["closed", "announced"]},
+                    "amount_note": {"type": "string"},
                 },
                 "required": [
                     "index", "company", "description", "category", "stage",
                     "amount", "total_raised", "valuation", "lead_investor",
                     "investors", "founders", "spinoff_origin", "founded",
                     "employees", "use_of_funds", "customers", "website",
-                    "location",
+                    "location", "status", "amount_note",
                 ],
                 "additionalProperties": False,
             },
@@ -353,6 +363,58 @@ _NAMES_INVESTORS = re.compile(
 )
 
 
+# A transaction that has not closed. Terra Quantum's USD 190M was recorded as
+# capital raised when it was a ceiling on an unclosed de-SPAC: "up to
+# approximately $190 million of gross proceeds, assuming no redemptions",
+# targeted to close in the second half of the year subject to approvals. On
+# those deals redemptions routinely run above 80%, so the headline can be a
+# multiple of what arrives.
+_NOT_CLOSED = re.compile(
+    r"expected\s+to\s+close|targeted\s+(?:for|to\s+close)|subject\s+to\s+"
+    r"(?:\w+\s+){0,3}approval|shareholder\s+approval|pending\s+approval|"
+    r"upon\s+(?:the\s+)?clos|once\s+(?:the\s+deal\s+)?closes|"
+    r"(?:definitive|merger|business\s+combination)\s+agreement|"
+    r"has\s+agreed\s+to\s+merge|plans\s+to\s+(?:list|go\s+public)|"
+    r"ahead\s+of\s+(?:its\s+)?(?:listing|merger)|would\s+(?:raise|receive)",
+    re.IGNORECASE,
+)
+
+# A figure that is a ceiling or a gross, not money in the bank.
+_CONTINGENT = re.compile(
+    r"up\s+to\s+(?:approximately\s+|around\s+|about\s+)?(?:USD|EUR|CHF|\$|€|£)|"
+    r"assuming\s+no\s+redemption|before\s+(?:transaction\s+)?expenses|"
+    r"gross\s+proceeds|excluding\s+(?:transaction\s+)?(?:costs|expenses)|"
+    r"could\s+raise|potential(?:ly)?\s+(?:raise|receive)",
+    re.IGNORECASE,
+)
+
+# A merger with a listed shell is not a flotation, whatever the headline says.
+_DE_SPAC = re.compile(
+    r"\bde-?SPAC\b|special\s+purpose\s+acquisition|business\s+combination|"
+    r"acquisition\s+corp\b|blank[-\s]cheque\s+company",
+    re.IGNORECASE,
+)
+
+
+def _transaction_notes(text: str) -> dict:
+    """Whether a deal has closed and whether its figure is conditional."""
+    out = {}
+    if _NOT_CLOSED.search(text or ""):
+        out["status"] = "announced"
+    note = []
+    if re.search(r"up\s+to\b", text or "", re.IGNORECASE):
+        note.append("up to")
+    if re.search(r"assuming\s+no\s+redemption", text or "", re.IGNORECASE):
+        note.append("assuming no redemptions")
+    if re.search(r"gross\s+proceeds", text or "", re.IGNORECASE):
+        note.append("gross proceeds")
+    if note and _CONTINGENT.search(text or ""):
+        out["amount_note"] = ", ".join(note)
+    if _DE_SPAC.search(text or ""):
+        out["stage"] = "De-SPAC"
+    return out
+
+
 def _stage_from_text(text: str) -> str:
     """The stage the text states, or "".
 
@@ -437,7 +499,7 @@ def _fallback(article: dict) -> dict:
         "lead_investor": "", "investors": "", "founders": "",
         "spinoff_origin": origin, "founded": "", "employees": "",
         "use_of_funds": "", "customers": "", "website": "",
-        "location": location,
+        "location": location, "status": "", "amount_note": "",
     }
 
 
@@ -499,6 +561,13 @@ def extract_fields(articles: list, model: str | None = None) -> list:
                           or _stage_from_text(f"closes a {slug}"))
                 if stated:
                     facts["stage"] = stated
+                # Whether it closed, and whether the figure is a ceiling. Read
+                # from the text rather than left to be noticed, because the
+                # difference between "raised" and "up to, if nobody redeems"
+                # is the difference between a fact and a press release.
+                for field, value in _transaction_notes(
+                        f"{art.get('title', '')}. {body}").items():
+                    facts[field] = value
                 # The article names the backers and we came back with none: read
                 # that one again on its own, where the whole reply is about it.
                 if (not facts.get("investors") and not facts.get("lead_investor")
@@ -631,6 +700,8 @@ def _extract_batch(articles: list, model: str | None = None):
                     "customers": item.get("customers", "").strip(),
                     "website": item.get("website", "").strip(),
                     "location": item.get("location", "").strip(),
+                    "status": item.get("status", "").strip(),
+                    "amount_note": item.get("amount_note", "").strip(),
                 }
                 clean_record(out[i])
         return out

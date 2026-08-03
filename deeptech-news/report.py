@@ -33,13 +33,17 @@ def _month_name(month: str) -> str:
 
 def analyse(rounds: list, month: str) -> dict:
     """Everything the report states, worked out once."""
-    from scraper import _investor_line
+    from scraper import _investor_line, is_closed
 
     inside = [r for r in rounds
               if (r.get("published") or r.get("first_seen") or "").startswith(month)]
     inside.sort(key=lambda r: money.in_chf(r.get("amount", "")), reverse=True)
 
-    amounts = [money.in_chf(r.get("amount", "")) for r in inside
+    # An announced transaction is not capital raised, so it appears in the
+    # month's rounds and in none of its sums.
+    pending = [r for r in inside if not is_closed(r)]
+    closed = [r for r in inside if is_closed(r)]
+    amounts = [money.in_chf(r.get("amount", "")) for r in closed
                if money.in_chf(r.get("amount", ""))]
     total = sum(amounts)
 
@@ -48,9 +52,9 @@ def analyse(rounds: list, month: str) -> dict:
     top_two = sum(amounts[:2]) if len(amounts) >= 2 else total
     concentration = round(100 * top_two / total) if total else 0
 
-    venture = [r for r in inside if (r.get("stage") or "") in _VENTURE]
+    venture = [r for r in closed if (r.get("stage") or "") in _VENTURE]
     venture_total = sum(money.in_chf(r.get("amount", "")) for r in venture)
-    early = [r for r in inside if (r.get("stage") or "") in _EARLY]
+    early = [r for r in closed if (r.get("stage") or "") in _EARLY]
     early_total = sum(money.in_chf(r.get("amount", "")) for r in early)
 
     def tally(field):
@@ -59,7 +63,8 @@ def analyse(rounds: list, month: str) -> dict:
         for r in inside:
             key = (r.get(field) or "not stated").strip() or "not stated"
             counts[key] += 1
-            sums[key] += money.in_chf(r.get("amount", ""))
+            if r in closed:
+                sums[key] += money.in_chf(r.get("amount", ""))
         return [(k, counts[k], sums[k])
                 for k in sorted(counts, key=lambda k: (-counts[k], -sums[k]))]
 
@@ -83,7 +88,8 @@ def analyse(rounds: list, month: str) -> dict:
         "total": total,
         "median": statistics.median(amounts) if amounts else 0,
         "mean": sum(amounts) / len(amounts) if amounts else 0,
-        "largest": inside[0] if inside else None,
+        "largest": closed[0] if closed else None,
+        "pending": pending,
         "concentration": concentration,
         "venture_count": len(venture),
         "venture_total": venture_total,
@@ -130,8 +136,14 @@ def render(stats: dict) -> str:
             f'target="_blank" rel="noopener">'
             f'{html.escape(r.get("company") or "?")}</a></td>'
             f'<td>{html.escape(r.get("category") or "")}</td>'
-            f'<td>{html.escape(r.get("stage") or "&ndash;")}</td>'
-            f'<td class="a">{html.escape(r.get("amount") or "undisclosed")}</td>'
+            f'<td>{html.escape(r.get("stage") or "&ndash;")}'
+            + ('<span class="pending">announced</span>'
+               if r in stats["pending"] else "")
+            + '</td>'
+            f'<td class="a">'
+            + (html.escape(r.get("amount_note", "").split(",")[0] + " ")
+               if r.get("amount_note") else "")
+            + f'{html.escape(r.get("amount") or "undisclosed")}</td>'
             f'<td>{html.escape((_investor_line(r) or "&ndash;")[:60])}</td>'
             f'<td>{html.escape(r.get("location") or "CH")}</td></tr>')
 
@@ -177,7 +189,20 @@ def render(stats: dict) -> str:
             f"{stats['with_investors']} rounds, none of them twice. No fund "
             f"built a visible position this month.")
 
-    unpriced = stats["count"] - stats["priced"]
+    if stats["pending"]:
+        names = ", ".join(
+            f'{html.escape(r.get("company",""))} '
+            f'({html.escape(r.get("amount") or "no figure")}'
+            + (f', {html.escape(r.get("amount_note"))}' if r.get("amount_note") else "")
+            + ')' for r in stats["pending"])
+        notes.append(
+            f"{len(stats['pending'])} transaction"
+            f"{'s are' if len(stats['pending']) > 1 else ' is'} announced rather "
+            f"than closed and {'their figures are' if len(stats['pending']) > 1 else 'its figure is'} "
+            f"excluded from every total above: {names}. A ceiling quoted gross, "
+            f"before redemptions and subject to approval, is not capital raised.")
+
+    unpriced = len([r for r in stats["rounds"] if r not in stats["pending"]]) - stats["priced"]
     caveat = (
         f"{unpriced} of {stats['count']} rounds have no stated amount, so "
         f"{money.compact(stats['total'])} is a floor rather than a total. "
@@ -222,6 +247,9 @@ def render(stats: dict) -> str:
   td.co {{ font-weight:600; white-space:nowrap; }}
   td.a {{ white-space:nowrap; font-weight:600; }}
   td.n {{ width:3rem; color:var(--soft); }}
+  .pending {{ display:block; margin-top:0.15rem; color:#8a6d3b; background:#fdf3e3;
+             border-radius:5px; padding:0.02rem 0.3rem; font-size:0.64rem;
+             font-weight:700; text-transform:uppercase; letter-spacing:0.03em; }}
   table.mini {{ background:#fff; border:1px solid var(--line); border-radius:12px; }}
   table.mini td.a {{ text-align:right; color:var(--soft); font-weight:500; }}
   a {{ color:var(--ink); }} a:hover {{ color:var(--green); }}
