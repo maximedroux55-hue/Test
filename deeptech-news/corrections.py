@@ -41,6 +41,9 @@ def load(path: str = PATH) -> dict:
             raw = json.load(f)
     except Exception:
         return {}
+    # Notes about the check itself are evidence, not data about the company,
+    # so they are kept out of the fields written onto a round.
+    meta = ("verified_quote", "verified_by")
     entries = raw.get("companies", raw) if isinstance(raw, dict) else {}
     out = {}
     for company, fields in entries.items():
@@ -48,7 +51,7 @@ def load(path: str = PATH) -> dict:
             # An empty value is meaningful: it clears a wrong one, which is
             # better than a blank being silently refilled with the same error.
             out[_stem(company)] = {k: v for k, v in fields.items()
-                                   if isinstance(v, str)}
+                                   if isinstance(v, str) and k not in meta}
     return out
 
 

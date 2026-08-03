@@ -301,7 +301,7 @@ _ALLOWED = {
     "status", "total_raised", "valuation", "lead_investor", "investors",
     "founders", "spinoff_origin", "founded", "employees", "use_of_funds",
     "customers", "website", "location", "legal_seat", "verified",
-    "verified_source",
+    "verified_source", "verified_quote", "verified_by",
 }
 
 
