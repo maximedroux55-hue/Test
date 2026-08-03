@@ -59,6 +59,12 @@ SYSTEM = (
     "Never write a generic description such as 'angel investors', 'VC firms', "
     "'existing investors' or 'undisclosed': leave the field empty instead. "
     "lead_investor is the one said to lead or co-lead; leave empty if none is.\n\n"
+    "Stage must be written in the text: 'Series C', 'a seed round', "
+    "'pre-seed'. Never infer it. The size of the cheque, the maturity of the "
+    "company and words such as 'to scale' or 'to expand' say nothing about "
+    "the stage, and 'Growth' is only correct where the text calls it a growth "
+    "round. When the text says only that a company raised an amount, leave "
+    "stage empty.\n\n"
     "Category is the sector the company works in, judged from what it makes, "
     "never from the funding stage. 'Seed' is a stage, not a category. Use "
     "'Other' only when the text genuinely does not say what the company does: "
@@ -236,6 +242,66 @@ def _company_from_headline(title: str) -> str:
     return " ".join(words).strip(" ,.")
 
 
+# A stage the text states outright. SWISSto12's article said Series C and the
+# read came back "Growth", inferred from "raises USD 70 million to scale", so
+# what the text actually says is checked separately and wins.
+_STATED_STAGE = (
+    (re.compile(r"\bpre[\s\-]?seed\b", re.IGNORECASE), None),
+    (re.compile(r"\bseries[\s\-]?([A-E])\b", re.IGNORECASE), None),
+    # Not the "seed" inside "pre-seed", which is a different round.
+    (re.compile(r"(?<![\w\-])seed\s+(?:round|financing|funding|investment)\b"
+                r"|\brais\w+\s+(?:a\s+|its\s+)?(?<![\w\-])seed\b", re.IGNORECASE),
+     "Seed"),
+    (re.compile(r"\bgrowth\s+(?:round|financing|funding|equity)\b", re.IGNORECASE),
+     "Growth"),
+    (re.compile(r"\bbridge\s+(?:round|financing)\b", re.IGNORECASE), "Seed"),
+)
+
+# Words that mark the raise this story is about, as opposed to funding history
+# mentioned in passing.
+_RAISE_NEARBY = re.compile(
+    r"rais\w+|clos\w+|secur\w+|round|financing|funding|led\s+by|oversubscribed",
+    re.IGNORECASE,
+)
+
+# Where a story names more than one round, the later one is the news and the
+# earlier is the company's history: "after its 2021 seed, it closes a Series B"
+# is a Series B story.
+_SENIORITY = {
+    "Pre-seed": 1, "Seed": 2, "Series A": 3, "Series B": 4, "Series C": 5,
+    "Series D": 6, "Growth": 7, "IPO": 8,
+}
+
+
+def _stage_from_text(text: str) -> str:
+    """The stage the text states, or "".
+
+    Where several are named ("after its 2021 seed, it now closes a Series C")
+    the one nearest a word about raising wins, which is the round being
+    reported rather than the company's history.
+    """
+    text = (text or "")[:4000]
+    reported, mentioned = [], []
+    for pattern, fixed in _STATED_STAGE:
+        for m in pattern.finditer(text):
+            if fixed:
+                stage = fixed
+            elif m.lastindex:
+                stage = f"Series {m.group(1).upper()}"
+            else:
+                stage = "Pre-seed"
+            window = text[max(0, m.start() - 60): m.end() + 60]
+            (reported if _RAISE_NEARBY.search(window) else mentioned).append(
+                (stage, m.start()))
+
+    candidates = reported or mentioned
+    if not candidates:
+        return ""
+    # The most senior round wins, and position only breaks a tie.
+    return min(candidates,
+               key=lambda c: (-_SENIORITY.get(c[0], 0), c[1]))[0]
+
+
 def _fallback(article: dict) -> dict:
     """Best effort from the text alone, leaving unknowns blank."""
     title = article.get("title", "") or ""
@@ -337,6 +403,13 @@ def extract_fields(articles: list, model: str | None = None) -> list:
             continue
         for offset, facts in enumerate(got):
             if facts:
+                art = articles[start + offset]
+                stated = _stage_from_text(
+                    f"{art.get('title', '')}. "
+                    f"{art.get('fulltext') or art.get('summary', '')}"
+                )
+                if stated:
+                    facts["stage"] = stated
                 out[start + offset] = facts
                 ok += 1
     print(f"  read the facts from {ok}/{len(articles)} stories", file=sys.stderr)
