@@ -132,6 +132,9 @@ def _count(text: str, terms: dict) -> int:
     return score
 
 
+# Most a summary can contribute to any one signal, so headline relevance leads.
+_SUMMARY_CAP = 3
+
 _SWISS_SOURCES = (
     "epfl", "eth", "empa", "startupticker", "swissinfo", "csem", "idiap",
     "venturelab", "psi", "unibas", "uzh", "unige", "swissbiotech", "ibm research",
@@ -150,10 +153,21 @@ def score_article(title: str, summary: str, source: str = "") -> int:
     # Score the story itself, never the outlet's name. "Fintechnews
     # Switzerland" contains "Switzerland", which otherwise handed a Swiss score
     # to every story it runs, including its London desk's UK banking news.
-    text = f" {title} {summary} ".lower()
     title_text = f" {title} ".lower()
-    swiss = _count(text, SWISS_TERMS)
-    deep = _count(text, DEEPTECH_TERMS)
+    summary_text = f" {summary} ".lower()
+
+    # The headline states what the story is. When it announces an appointment
+    # or a student showcase, no amount of technical vocabulary further down
+    # makes it a DeepTech story.
+    if _count(title_text, NOISE_TERMS):
+        return 0
+
+    # The headline carries full weight; the summary is capped. A long research
+    # write-up can otherwise brush past a dozen keywords and outscore an actual
+    # funding round, which is how a piece on rivers and cities came to rank
+    # above a quantum seed round.
+    swiss = _count(title_text, SWISS_TERMS) + min(_count(summary_text, SWISS_TERMS), _SUMMARY_CAP)
+    deep = _count(title_text, DEEPTECH_TERMS) + min(_count(summary_text, DEEPTECH_TERMS), _SUMMARY_CAP)
 
     # Institutional sources are inherently Swiss and research-heavy, so give
     # them a small Swiss floor even if the headline omits the country name.
@@ -167,11 +181,12 @@ def score_article(title: str, summary: str, source: str = "") -> int:
     if swiss == 0 or deep < 2:
         return 0
 
-    score = swiss + deep
-    # Deal language counts double in the title, where it is most meaningful.
-    score += _count(title_text, DEAL_TERMS) + _count(text, DEAL_TERMS)
-    score -= _count(title_text, NOISE_TERMS)
-    return max(score, 0)
+    # Deal language counts double in the headline, where it is most meaningful.
+    return (
+        swiss + deep
+        + _count(title_text, DEAL_TERMS) * 2
+        + min(_count(summary_text, DEAL_TERMS), _SUMMARY_CAP)
+    )
 
 
 # Words too generic to help tell two stories apart. Overlap on these does not
