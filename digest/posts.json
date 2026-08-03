@@ -1,85 +1,85 @@
 {
-  "generated": "2026-08-02",
+  "generated": "2026-08-03",
   "mode": "Written by Claude in Max's voice.",
   "note": "Times are local. Schedule each post at its time on its date.",
   "cowork_prompt": "Schedule my Swiss DeepTech LinkedIn posts for this week. Open https://maxime-droux.com/digest/posts.json and read the posts from it. For each post: create a LinkedIn post, paste the `text` exactly as written (do not change the wording), and schedule it for the `time` on the `date` given. For the image, use the picture at `image` (download it from that URL and upload it); if `image` is null, open the `link` (the source article) and use the article's own main photo. Do them in order, one per day.",
   "posts": [
     {
       "index": 1,
-      "weekday": "Monday",
-      "date": "2026-08-03",
-      "schedule_for": "Monday 03 August",
-      "time": "08:00",
-      "text": "🇨🇭 Swiss open AI infrastructure enters its second act\n\n@EPFL has unveiled Apertus 1.5, the next iteration of Switzerland's open large language model effort, built on public research infrastructure and released for the community to inspect, adapt and build on.\n\nWhy it matters:\n🌍 Open models lower the entry cost for European startups that cannot justify training frontier systems from scratch, shifting competition toward applications, data quality and deployment.\n🇨🇭 Switzerland is one of the few countries combining world-class academic compute, neutrality and a credible governance story, which makes an open Swiss model attractive to regulated buyers in health, finance and public services.\n🔓 Transparency is becoming a commercial feature, not an ideological one: auditable weights and documented data lineage are exactly what compliance teams increasingly demand before signing.\n\nFor capital-efficient DeepTech founders, this is quietly significant. Access to a serious open base model means smaller teams can reach product maturity on far less capital, and spend their raise on domain expertise rather than GPU bills. That is the kind of leverage Swiss scale-ups should be exploiting.\n\nhttps://actu.epfl.ch/news/apertus-15-building-the-next-generation-of-open--2",
-      "image": "https://actu.epfl.ch/image/165800/1440x810.jpg",
-      "link": "https://actu.epfl.ch/news/apertus-15-building-the-next-generation-of-open--2",
-      "publisher": "EPFL News"
-    },
-    {
-      "index": 2,
       "weekday": "Tuesday",
       "date": "2026-08-04",
       "schedule_for": "Tuesday 04 August",
       "time": "08:00",
-      "text": "🇨🇭 Rivers, cities and the data behind urban resilience\n\n@EPFL researchers are examining how rivers have shaped the development of cities and societies, connecting hydrology, urban form and long-term social organisation.\n\nWhy it matters:\n🏙️ Water management is moving from civil engineering to a data problem, with sensing, modelling and prediction creating a growing market for climate adaptation tools in dense urban regions.\n🇨🇭 Switzerland sits at the head of several major European river systems and has decades of hydrological measurement, glaciology and infrastructure expertise, a combination few countries can match commercially.\n🌊 Better models of how water shapes settlement patterns feed directly into insurance pricing, infrastructure planning and flood risk, all sectors under pressure to modernise their analytics.\n\nResearch like this rarely makes headlines, but it seeds companies. The Swiss pattern is consistent: deep academic groundwork, then a small, technically dense team turning it into a defensible product. Environmental intelligence is one of the areas where that pattern should produce more spin-offs over the next decade.\n\nhttps://actu.epfl.ch/news/how-rivers-shape-cities-and-societies",
+      "text": "🇨🇭 Swiss quantum hardware attracts serious seed capital\n\n@ZuriQ, a spin-off from @ETH Zurich, has raised USD 25.5 million in a seed round led by @Quantonation, as reported by @Startupticker. That is a rare ticket size at seed stage in Europe, and it says something about where deep quantum engineering talent sits today.\n\nWhy it matters:\n💰 Rounds of this size at seed signal that international specialist funds now view Swiss quantum hardware as investable at the earliest stage, not just at Series B and beyond.\n🇨🇭 The Swiss advantage is compounding: decades of ion trap and photonics research, an unusually dense pool of PhD-level engineers, and a spin-off pipeline that reaches technical milestones on modest budgets.\n🔭 Capital of this depth buys years of runway, which is exactly what hardware needs to move from laboratory demonstration to systems that customers can actually operate.\n\nThe pattern we keep seeing: Swiss teams convert each franc into more technical progress than peers elsewhere. That is capital efficiency as a structural feature, not a slogan.\n\nhttps://www.startupticker.ch/en/news/quantonation-leads-usd-25-5-million-seed-round-for-eth-spin-off-zuriq",
+      "image": null,
+      "link": "https://www.startupticker.ch/en/news/quantonation-leads-usd-25-5-million-seed-round-for-eth-spin-off-zuriq",
+      "publisher": "Startupticker"
+    },
+    {
+      "index": 2,
+      "weekday": "Wednesday",
+      "date": "2026-08-05",
+      "schedule_for": "Wednesday 05 August",
+      "time": "08:00",
+      "text": "🇨🇭 Rivers as infrastructure, data and design constraint\n\nNew work from @EPFL examines how rivers have shaped the form of cities and the organisation of societies over time. It reads as history, but the underlying question is engineering: how do we plan around water systems we no longer fully control?\n\nWhy it matters:\n🌊 Climate volatility is turning water management into a commercial market, spanning sensing, flood modelling, hydropower optimisation and urban planning software.\n🇨🇭 Switzerland is the water tower of Europe, with an unmatched combination of hydrological data, alpine hydropower expertise and research groups that have studied these systems for generations.\n🏗️ Fundamental research like this often becomes the reference layer for later products: the models, datasets and physical understanding that startups build on a decade later.\n\nWe pay attention to this category because water and energy infrastructure rewards technical depth over marketing spend, and because Swiss teams tend to arrive with credibility that international utilities and municipalities actually trust.\n\nhttps://actu.epfl.ch/news/how-rivers-shape-cities-and-societies",
       "image": "https://actu.epfl.ch/image/164913/1440x810.jpg",
       "link": "https://actu.epfl.ch/news/how-rivers-shape-cities-and-societies",
       "publisher": "EPFL News"
     },
     {
       "index": 3,
-      "weekday": "Wednesday",
-      "date": "2026-08-05",
-      "schedule_for": "Wednesday 05 August",
-      "time": "08:00",
-      "text": "🇨🇭 ZuriQ lands one of Europe's largest quantum seeds\n\nQuantonation has led a USD 25.5 million seed round into ZuriQ, a spin-off from @ETH Zurich working on trapped-ion quantum computing, as reported by @Startupticker.\n\nWhy it matters:\n📈 A seed of this size signals that specialist quantum investors now see Swiss hardware teams as credible contenders rather than research curiosities, and it sets a new benchmark for the local ecosystem.\n🇨🇭 Zurich's concentration of ion trapping, photonics and precision engineering talent is genuinely rare, and it is paired with a manufacturing base that can build the components most quantum companies struggle to source.\n⚛️ Well-funded hardware efforts pull an entire supply chain with them: cryogenics, lasers, control electronics and software, much of which already exists in Switzerland.\n\nQuantum remains capital intensive, but Swiss teams tend to convert each franc into more experimental progress than their peers elsewhere. That efficiency, not headline round sizes, is what will decide who is still standing in a decade.\n\nhttps://www.startupticker.ch/en/news/quantonation-leads-usd-25-5-million-seed-round-for-eth-spin-off-zuriq",
-      "image": null,
-      "link": "https://www.startupticker.ch/en/news/quantonation-leads-usd-25-5-million-seed-round-for-eth-spin-off-zuriq",
-      "publisher": "Startupticker"
-    },
-    {
-      "index": 4,
       "weekday": "Thursday",
       "date": "2026-08-06",
       "schedule_for": "Thursday 06 August",
       "time": "08:00",
-      "text": "🇨🇭 A lipid switch that stops anthrax entering cells\n\nScientists at @EPFL have identified a lipid-based mechanism that blocks anthrax toxin, offering a new angle on how bacterial toxins hijack host cells.\n\nWhy it matters:\n🧬 Host-directed approaches are attracting renewed attention because they are harder for pathogens to evade than conventional antibiotics, a market with clear unmet need and public funding behind it.\n🇨🇭 Switzerland's density of structural biology, cell biology and pharma expertise means fundamental findings like this move toward translation faster here than almost anywhere else.\n🛡️ Beyond anthrax, understanding the lipid machinery toxins exploit could open therapeutic routes across a family of bacterial diseases and inform biodefence programmes.\n\nThe commercial path in this field is long, but the underlying science is exactly the kind that produces durable intellectual property. Swiss biotech has repeatedly shown that small, focused teams working close to their originating lab can reach clinical relevance without the burn rates seen in larger ecosystems.\n\nhttps://actu.epfl.ch/news/a-lipid-switch-that-blocks-anthrax",
-      "image": "https://actu.epfl.ch/image/165737/1440x810.jpg",
-      "link": "https://actu.epfl.ch/news/a-lipid-switch-that-blocks-anthrax",
-      "publisher": "EPFL News"
+      "text": "🇨🇭 Industrial cost intelligence gets its first cheque\n\n@Valuemize has closed a seven-figure pre-seed round for its product cost software, according to @Startupticker. The target is a persistent pain in manufacturing: understanding what a product truly costs before it is committed to production.\n\nWhy it matters:\n📊 Cost engineering is a large, deeply unglamorous software market where incumbents are spreadsheets and tribal knowledge, which usually means fast adoption once a credible tool appears.\n🇨🇭 Switzerland gives this category an ideal home market: precision manufacturing, medtech and machinery firms operating under high labour costs, where every basis point of margin is scrutinised.\n⚙️ If the product works, it becomes the decision layer between design and procurement, a position that generates proprietary benchmark data and gets very hard to displace.\n\nSoftware built next to real factories tends to be right about the details. That proximity is a genuine competitive asset for Swiss industrial software founders.\n\nhttps://www.startupticker.ch/en/news/valuemize-raises-seven-figure-pre-seed-for-product-cost-software",
+      "image": null,
+      "link": "https://www.startupticker.ch/en/news/valuemize-raises-seven-figure-pre-seed-for-product-cost-software",
+      "publisher": "Startupticker"
     },
     {
-      "index": 5,
+      "index": 4,
       "weekday": "Friday",
       "date": "2026-08-07",
       "schedule_for": "Friday 07 August",
       "time": "08:00",
-      "text": "🇨🇭 Ahead Health raises USD 10 million, goes international\n\nAhead Health has closed a USD 10 million round and is opening its first markets outside Switzerland, according to @Startupticker.\n\nWhy it matters:\n🚀 Reaching international expansion on a round of this size is a useful reminder that digital health can scale without the nine-figure war chests common in the United States.\n🇨🇭 Swiss health companies are forced to build for a demanding regulatory and clinical environment from day one, which makes subsequent entry into other European markets considerably smoother.\n🌐 Each successful cross-border expansion strengthens the case that Switzerland can be a launch base rather than just a research base, something the ecosystem has needed for years.\n\nThe discipline point deserves emphasis. Companies that internationalise early on modest capital tend to build better unit economics and retain more ownership for founders and early backers. That is the profile we look for, and it is becoming more common across Swiss DeepTech and health.\n\nhttps://www.startupticker.ch/en/news/ahead-health-raises-usd-10-million-and-opens-first-markets-outside-switzerland",
+      "text": "🇨🇭 Swiss health venture crosses the border\n\n@Ahead Health has raised USD 10 million and is opening its first markets outside Switzerland, @Startupticker reports. Two milestones in one announcement: fresh capital, and the beginning of international expansion.\n\nWhy it matters:\n🌍 Internationalisation is the real test for Swiss health companies, because the domestic market validates a product but rarely funds a category leader on its own.\n🇨🇭 Building first in Switzerland imposes discipline: a demanding regulatory environment, quality-conscious users and a small addressable base, which forces teams to earn every unit of growth rather than buying it.\n🚀 A round of this size, paired with market entry rather than pure product development, suggests the model has been proven at home and is now being repeated abroad.\n\nThis is the sequence we look for in Swiss scale-ups: prove the economics in a hard market, then export them. Capital efficiency early makes expansion capital far more productive later.\n\nhttps://www.startupticker.ch/en/news/ahead-health-raises-usd-10-million-and-opens-first-markets-outside-switzerland",
       "image": null,
       "link": "https://www.startupticker.ch/en/news/ahead-health-raises-usd-10-million-and-opens-first-markets-outside-switzerland",
       "publisher": "Startupticker"
     },
     {
-      "index": 6,
+      "index": 5,
       "weekday": "Saturday",
       "date": "2026-08-08",
       "schedule_for": "Saturday 08 August",
       "time": "08:00",
-      "text": "🇨🇭 Medyria secures CHF 3.5 million for medical sensing\n\nMedtech company Medyria has raised CHF 3.5 million, as reported by @Startupticker, adding to a steady flow of financing into Swiss medical device innovation this year.\n\nWhy it matters:\n🏥 Focused rounds in the low single-digit millions are the backbone of the Swiss medtech pipeline, funding the clinical and regulatory milestones that determine whether a device ever reaches patients.\n🇨🇭 Precision manufacturing, sensor engineering and a dense hospital network within a short drive of each other give Swiss medtech teams an iteration speed that is genuinely hard to replicate.\n⚕️ Devices that improve intraoperative data give clinicians better feedback, and that translates into measurable outcomes, which is what payers ultimately reimburse.\n\nMedtech rarely produces spectacular headlines, yet it remains one of the most reliable value creators in the Swiss economy. Modest rounds, tight milestones, real revenue: it is the definition of capital-efficient DeepTech.\n\nhttps://www.startupticker.ch/en/news/medyria-raises-chf-3-5-million",
-      "image": null,
-      "link": "https://www.startupticker.ch/en/news/medyria-raises-chf-3-5-million",
-      "publisher": "Startupticker"
+      "text": "🇨🇭 European quantum story reaches the international press\n\n@Sifted has covered the USD 25.5 million seed round raised by @ZuriQ, the @ETH Zurich spinout working on quantum computing hardware. When pan-European tech media leads with a Swiss deep tech deal, the signal travels well beyond Zurich.\n\nWhy it matters:\n📣 Visibility compounds: coverage in the main European tech outlets shapes where the next wave of specialist investors, senior engineers and corporate partners look first.\n🇨🇭 Switzerland is quietly becoming the reference address for quantum hardware in Europe, combining university research depth, precision engineering suppliers and unusually patient capital structures.\n🧠 For the ecosystem, one visible outcome makes the next ten rounds easier, because it establishes a comparable that founders and investors can point to.\n\nThe more Swiss deep tech is read about abroad, the less time founders spend explaining why the hard science is here. That is a real, if unmeasured, competitive advantage.\n\nhttps://sifted.eu/articles/eth-spinout-zuriq-seed-round",
+      "image": "https://images.sifted.eu/wp-content/uploads/2026/07/24121029/PW_260325_ZuriQ-people_007.jpg?w=1920&amp;h=1281&amp;q=75&amp;fit=crop&amp;auto=compress,format",
+      "link": "https://sifted.eu/articles/eth-spinout-zuriq-seed-round",
+      "publisher": "Sifted"
     },
     {
-      "index": 7,
+      "index": 6,
       "weekday": "Sunday",
       "date": "2026-08-09",
       "schedule_for": "Sunday 09 August",
       "time": "08:00",
-      "text": "🇨🇭 Revolut bundles ChatGPT, banking meets AI distribution\n\nRevolut is offering customers up to twelve months of free ChatGPT Go access through a tie-up with OpenAI, reports @Fintechnews Switzerland, another sign of AI moving into mainstream financial distribution.\n\nWhy it matters:\n💳 Bundling AI subscriptions turns model access into a customer acquisition tool, which will compress pricing power for anyone selling generic AI assistants to consumers.\n🇨🇭 Swiss financial institutions compete on trust, data residency and advisory depth rather than free add-ons, which favours specialised AI built for regulated environments over commodity chatbots.\n🔁 As distribution consolidates around a few large platforms, the defensible value shifts to proprietary data, workflow integration and compliance, precisely where smaller technical teams can win.\n\nThe lesson for founders is straightforward. If your product can be replaced by a bundled subscription, it was never a company. The Swiss opportunity lies further up the stack, in systems that banks and insurers cannot buy off the shelf.\n\nhttps://fintechnews.ch/aifintech/revolut-openai-chatgpt-go-subscription/84829/",
-      "image": "https://fintechnews.ch/wp-content/uploads/2026/07/Revolut-ChatGPT-Go.webp",
-      "link": "https://fintechnews.ch/aifintech/revolut-openai-chatgpt-go-subscription/84829/",
-      "publisher": "Fintechnews Switzerland"
+      "text": "🇨🇭 Nanopore sensing takes on lake water safety\n\nResearchers at @EPFL have developed a tiny pore capable of identifying cyanobacteria toxins in lake water. It is a precise answer to a growing problem: warming waters, more frequent algal blooms, and drinking supplies that need continuous monitoring.\n\nWhy it matters:\n🔬 Environmental diagnostics is shifting from periodic laboratory sampling to distributed, near-real-time sensing, which opens a hardware and data market rather than a services one.\n🇨🇭 Switzerland sits at the intersection of world-class nanotechnology, a strong instrumentation industry and thousands of monitored lakes and rivers, which means research and validation environment in the same country.\n💧 Single-molecule detection platforms rarely stay in one vertical: the same pore architecture can migrate into clinical diagnostics, food safety and industrial process control.\n\nSensing technologies out of Swiss labs typically need modest capital to reach a first product, then scale through partners. That profile suits the way we invest.\n\nhttps://actu.epfl.ch/news/a-tiny-pore-identifies-cyanobacteria-toxins-in-lak",
+      "image": "https://actu.epfl.ch/image/165891/1440x810.jpg",
+      "link": "https://actu.epfl.ch/news/a-tiny-pore-identifies-cyanobacteria-toxins-in-lak",
+      "publisher": "EPFL News"
+    },
+    {
+      "index": 7,
+      "weekday": "Monday",
+      "date": "2026-08-10",
+      "schedule_for": "Monday 10 August",
+      "time": "08:00",
+      "text": "🇨🇭 Medtech precision attracts fresh growth capital\n\n@Medyria has raised CHF 3.5 million, @Startupticker reports. A focused round for a company operating in one of the most technically unforgiving corners of Swiss industry, medical device engineering.\n\nWhy it matters:\n🏥 Medtech remains Switzerland's most reliable deep tech export engine, and rounds of this scale are what carry devices through regulatory work and early commercial traction.\n🇨🇭 The Swiss edge here is industrial rather than academic alone: micro-mechanics, sensor manufacturing and clinical partners are all within an hour's drive, which shortens development cycles considerably.\n🔧 Clinical-grade sensing platforms tend to unlock adjacent applications once validated, turning a single device approval into a broader technology franchise.\n\nCHF 3.5 million goes further in Switzerland than the headline number suggests, because teams here are used to hitting hard technical milestones without inflated burn. Capital efficiency is not a constraint in this ecosystem, it is a habit.\n\nhttps://www.startupticker.ch/en/news/medyria-raises-chf-3-5-million",
+      "image": null,
+      "link": "https://www.startupticker.ch/en/news/medyria-raises-chf-3-5-million",
+      "publisher": "Startupticker"
     }
   ]
 }
