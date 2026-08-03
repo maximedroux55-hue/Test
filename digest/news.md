@@ -1,18 +1,18 @@
 # Swiss DeepTech news digest
-_Generated 03 August 2026, covering the last 21 days. 28 stories._
+_Generated 03 August 2026, covering the last 21 days. 27 stories._
 
 1. **[Apertus 1.5: Building the next generation of open AI infrastructure](https://actu.epfl.ch/news/apertus-15-building-the-next-generation-of-open--2)**  
    EPFL News · 24 Jul 2026 · relevance 39
 2. **[Quantonation leads USD 25.5 million seed round for ETH spin-off ZuriQ](https://www.startupticker.ch/en/news/quantonation-leads-usd-25-5-million-seed-round-for-eth-spin-off-zuriq)**  
    Startupticker · 28 Jul 2026 · relevance 33
-3. **[Students invent devices that businesses haven't yet conjured up](https://actu.epfl.ch/news/students-invent-devices-that-businesses-haven-t--2)**  
-   EPFL News · 17 Jul 2026 · relevance 28
-4. **[A tiny pore identifies cyanobacteria toxins in lake water](https://actu.epfl.ch/news/a-tiny-pore-identifies-cyanobacteria-toxins-in-lak)**  
+3. **[A tiny pore identifies cyanobacteria toxins in lake water](https://actu.epfl.ch/news/a-tiny-pore-identifies-cyanobacteria-toxins-in-lak)**  
    EPFL News · 03 Aug 2026 · relevance 27
-5. **[How rivers shape cities and societies](https://actu.epfl.ch/news/how-rivers-shape-cities-and-societies)**  
+4. **[How rivers shape cities and societies](https://actu.epfl.ch/news/how-rivers-shape-cities-and-societies)**  
    EPFL News · 30 Jul 2026 · relevance 25
-6. **[Using future data to better predict Switzerland's rail energy demand](https://actu.epfl.ch/news/using-future-data-to-better-predict-switzerland-s)**  
+5. **[Using future data to better predict Switzerland's rail energy demand](https://actu.epfl.ch/news/using-future-data-to-better-predict-switzerland-s)**  
    EPFL News · 20 Jul 2026 · relevance 25
+6. **[Students invent devices that businesses haven't yet conjured up](https://actu.epfl.ch/news/students-invent-devices-that-businesses-haven-t--2)**  
+   EPFL News · 17 Jul 2026 · relevance 24
 7. **[A lipid switch that blocks anthrax](https://actu.epfl.ch/news/a-lipid-switch-that-blocks-anthrax)**  
    EPFL News · 28 Jul 2026 · relevance 22
 8. **[Valuemize raises seven-figure pre-seed for product cost software](https://www.startupticker.ch/en/news/valuemize-raises-seven-figure-pre-seed-for-product-cost-software)**  
@@ -43,17 +43,15 @@ _Generated 03 August 2026, covering the last 21 days. 28 stories._
    Startupticker · 20 Jul 2026 · relevance 9
 21. **[KI-Startup Prodlane sammelt 4 Millionen Euro ein](https://www.startupticker.ch/en/news/ki-startup-prodlane-sammelt-4-millionen-euro-ein)**  
    Startupticker · 21 Jul 2026 · relevance 8
-22. **[Suisse: Une célèbre avocate vaudoise accusée d'escroquerie - Blick](https://news.google.com/rss/articles/CBMipgFBVV95cUxQM1lJTkE3T3lpSHR2RVBXc1J0aVJtNUd4bGZkdDM4R0hiYjBDUWJRVFVVMURXMUNpT19sQ1UwY3BsLUM2LWRnd2RCZXNGNzRHcVllMHVZVF9jN1ZBTE1JT1BNR0hlanZsWXp4Y2Y5aFlCOHVQUlF2akNUOWUyMjVmcDZkNkdxY2xjZXg5MHNvVURoQko3dHBsRVA5b0JSamlmeTItdGt3?oc=5)**  
-   Blick · 14 Jul 2026 · relevance 8
-23. **[PropTech AssetOS auf Wachstumskurs](https://www.startupticker.ch/en/news/proptech-assetos-auf-wachstumskurs)**  
+22. **[PropTech AssetOS auf Wachstumskurs](https://www.startupticker.ch/en/news/proptech-assetos-auf-wachstumskurs)**  
    Startupticker · 30 Jul 2026 · relevance 7
-24. **[Switzerland Emerges as a Deep Tech Powerhouse - FintechNews CH](https://news.google.com/rss/articles/CBMiiwFBVV95cUxPUjFuT0pGY3VMZW9tbmxfb2FnZkxxa2NDX3FzdGdsaC1oMVNGRDZTSTVGSkZFNGFPV3FmQWQ5bU4xUDZHbVdjRkRHUDc0aF9NaEh3VXJTTnRNMGk1bVh4OFRDeC13Y0g0RE03TXNPTWw2UmZXTWF3Z2dOVkFGTzNBTHoyd05ZUUZad1kw?oc=5)**  
+23. **[Switzerland Emerges as a Deep Tech Powerhouse - FintechNews CH](https://news.google.com/rss/articles/CBMiiwFBVV95cUxPUjFuT0pGY3VMZW9tbmxfb2FnZkxxa2NDX3FzdGdsaC1oMVNGRDZTSTVGSkZFNGFPV3FmQWQ5bU4xUDZHbVdjRkRHUDc0aF9NaEh3VXJTTnRNMGk1bVh4OFRDeC13Y0g0RE03TXNPTWw2UmZXTWF3Z2dOVkFGTzNBTHoyd05ZUUZad1kw?oc=5)**  
    FintechNews CH · 17 Jul 2026 · relevance 7
-25. **[England, the Middle East and India: Three start-ups are expanding with their digital solutions](https://www.startupticker.ch/en/news/england-the-middle-east-and-india-three-start-ups-are-expanding-with-their-digital-solutions)**  
+24. **[England, the Middle East and India: Three start-ups are expanding with their digital solutions](https://www.startupticker.ch/en/news/england-the-middle-east-and-india-three-start-ups-are-expanding-with-their-digital-solutions)**  
    Startupticker · 22 Jul 2026 · relevance 6
-26. **[«Die Schweiz kann Marktleader bei den photonischen Chips werden» - Watson](https://news.google.com/rss/articles/CBMitAFBVV95cUxNY1d6cjJFdzlteDRaYlJvb2p6MWNZbmtZMzhfVjF5ek9UbHB6TlRXV1p2d3hXdzZRR2hDN3FacGhrSlZTY2c5MTdIWUtrV1JQcmNuRUg1X0RveU5LZ0JnZEhlcDBTUXJvTUdjQmpIUjAzWG9CeEFiWS12WkY3N2p0cVIxV1FWTjk2Ukt0VjRTUHlVWVVHQXFUdG1zdlprYWFKTjR5T2VHaTFwSE8zaUV6VlRVNDI?oc=5)**  
+25. **[«Die Schweiz kann Marktleader bei den photonischen Chips werden» - Watson](https://news.google.com/rss/articles/CBMitAFBVV95cUxNY1d6cjJFdzlteDRaYlJvb2p6MWNZbmtZMzhfVjF5ek9UbHB6TlRXV1p2d3hXdzZRR2hDN3FacGhrSlZTY2c5MTdIWUtrV1JQcmNuRUg1X0RveU5LZ0JnZEhlcDBTUXJvTUdjQmpIUjAzWG9CeEFiWS12WkY3N2p0cVIxV1FWTjk2Ukt0VjRTUHlVWVVHQXFUdG1zdlprYWFKTjR5T2VHaTFwSE8zaUV6VlRVNDI?oc=5)**  
    Watson · 19 Jul 2026 · relevance 5
-27. **[Synhelion erhält Fördermittel für kommerzielle Demo-Anlage](https://www.startupticker.ch/en/news/synhelion-erhaelt-foerdermittel-fuer-kommerzielle-demo-anlage)**  
+26. **[Synhelion erhält Fördermittel für kommerzielle Demo-Anlage](https://www.startupticker.ch/en/news/synhelion-erhaelt-foerdermittel-fuer-kommerzielle-demo-anlage)**  
    Startupticker · 31 Jul 2026 · relevance 4
-28. **[Delta Capacity completes Swedish battery project](https://www.startupticker.ch/en/news/delta-capacity-completes-swedish-battery-project)**  
+27. **[Delta Capacity completes Swedish battery project](https://www.startupticker.ch/en/news/delta-capacity-completes-swedish-battery-project)**  
    Startupticker · 30 Jul 2026 · relevance 4

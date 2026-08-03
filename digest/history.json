@@ -43,25 +43,24 @@
     },
     {
       "used": "2026-08-03",
-      "title": "Students invent devices that businesses haven't yet conjured up",
-      "link": "https://actu.epfl.ch/news/students-invent-devices-that-businesses-haven-t--2",
+      "title": "A tiny pore identifies cyanobacteria toxins in lake water",
+      "link": "https://actu.epfl.ch/news/a-tiny-pore-identifies-cyanobacteria-toxins-in-lak",
       "coverage_url": null,
-      "norm": "students invent devices that businesses havent yet conjured up",
+      "norm": "a tiny pore identifies cyanobacteria toxins in lake water",
       "kw": [
-        "businesses",
-        "conjured",
-        "devices",
-        "havent",
-        "invent",
-        "students"
+        "cyanobacteria",
+        "identifies",
+        "lake",
+        "pore",
+        "tiny",
+        "toxins",
+        "water"
       ],
       "rare": [
-        "businesses",
-        "conjured",
-        "devices",
-        "havent",
-        "invent",
-        "students"
+        "cyanobacteria",
+        "identifies",
+        "toxins",
+        "water"
       ]
     },
     {
@@ -129,25 +128,18 @@
     },
     {
       "used": "2026-08-03",
-      "title": "Suisse: Une célèbre avocate vaudoise accusée d'escroquerie - Blick",
-      "link": "https://www.blick.ch/fr/suisse/suisse-une-celebre-avocate-vaudoise-accusee-descroquerie-id22107093.html",
+      "title": "Switzerland Emerges as a Deep Tech Powerhouse - FintechNews CH",
+      "link": "https://fintechnews.ch/fintech/switzerland-emerges-as-a-deep-tech-powerhouse/84687/",
       "coverage_url": null,
-      "norm": "suisse une clbre avocate vaudoise accuse descroquerie",
+      "norm": "switzerland emerges as a deep tech powerhouse",
       "kw": [
-        "accuse",
-        "avocate",
-        "clbre",
-        "descroquerie",
-        "suisse",
-        "vaudoise"
+        "deep",
+        "emerges",
+        "powerhouse"
       ],
       "rare": [
-        "accuse",
-        "avocate",
-        "clbre",
-        "descroquerie",
-        "suisse",
-        "vaudoise"
+        "emerges",
+        "powerhouse"
       ]
     }
   ]
