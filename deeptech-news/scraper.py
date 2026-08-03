@@ -33,7 +33,7 @@ except ImportError:
     sys.exit("Missing dependency 'feedparser'. Run: pip install -r requirements.txt")
 
 from sources import all_feeds
-from relevance import score_article, deduplicate
+from relevance import score_article, deduplicate, is_excluded
 from linkedin import to_linkedin
 
 
@@ -88,6 +88,10 @@ def collect(days: int, min_score: int) -> list[dict]:
         for entry in parsed.entries:
             link = entry.get("link", "")
             if not link or link in seen_links:
+                continue
+            # Market-research pages, stock chatter and directory listings use
+            # the right vocabulary but never carry the story.
+            if is_excluded(link):
                 continue
 
             date = _entry_date(entry)

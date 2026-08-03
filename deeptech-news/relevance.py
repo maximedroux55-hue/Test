@@ -51,7 +51,25 @@ NOISE_TERMS = {
     "joins as": 3, "hires": 3, "promoted to": 3,
     "obituary": 4, "anniversary": 2, "open day": 3, "campus": 2,
     "semester": 3, "graduation": 3, "rector": 3, "lecture series": 3,
+    # Evergreen listicles and market-research filler, not news.
+    "vendor guide": 5, "complete guide": 5, "market size": 5,
+    "market report": 5, "market share": 4, "forecast to": 4,
+    "top 10": 4, "best of": 3, "everything you need": 4,
 }
+
+# Sites that publish market-research summaries, stock chatter or directory
+# pages. They mention the right words but never carry the news itself.
+EXCLUDED_DOMAINS = (
+    "fortunebusinessinsights.com", "marketscreener.com", "tradingview.com",
+    "globenewswire.com/newsroom", "researchandmarkets.com", "grandviewresearch.com",
+    "marketsandmarkets.com", "prnewswire.com/news-releases/global",
+    "quantumzeitgeist.com", "wko.at", "simplywall.st", "investing.com",
+)
+
+
+def is_excluded(url: str) -> bool:
+    """True when a link points at a site that never carries the story itself."""
+    return any(bad in (url or "").lower() for bad in EXCLUDED_DOMAINS)
 
 
 def _count(text: str, terms: dict) -> int:

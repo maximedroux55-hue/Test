@@ -156,11 +156,28 @@ def _primary_source(html: str, base_url: str, title: str):
 
     for host, href in candidates:
         root = _domain_root(host)
-        if root and any(root == t or (len(root) >= 5 and root in t) or
-                        (len(t) >= 5 and t in root) for t in tokens):
+        if root and any(_name_matches(root, t) for t in tokens):
             return href, "high"
 
     return None, "none"
+
+
+def _name_matches(root: str, token: str) -> bool:
+    """Does a domain look like it belongs to a name from the headline?
+
+    Matching is anchored at the start or end of the domain, never loose
+    containment: "aheadhealth" matches "ahead", and "ai-infrastructure"
+    matches "infrastructure", but "fortunebusinessinsights" must not match a
+    headline that merely contains the word "business".
+    """
+    if root == token:
+        return True
+    if len(token) < 5:
+        return False
+    return (
+        root.startswith(token) or root.endswith(token)
+        or token.startswith(root) or token.endswith(root)
+    )
 
 
 def article_page(url: str, timeout: int = 12):
