@@ -283,6 +283,20 @@ def _company_stem(name: str) -> str:
 _PREFER_LONGER = ("investors", "founders", "description", "use_of_funds",
                   "customers")
 
+# Outlets to believe first where two disagree. Startupticker writes the fullest
+# Swiss round coverage there is, so its version of a round leads and its
+# article is the one the row links to.
+_PREFERRED_SOURCES = ("startupticker",)
+
+
+def _source_rank(story: dict) -> int:
+    """Lower comes first when merging a round's write-ups."""
+    text = f"{story.get('publisher', '')} {story.get('link', '')}".lower()
+    for rank, name in enumerate(_PREFERRED_SOURCES):
+        if name in text:
+            return rank
+    return len(_PREFERRED_SOURCES)
+
 
 def merge_deals(stories: list) -> list:
     """One row per round, not one row per article.
@@ -292,8 +306,15 @@ def merge_deals(stories: list) -> list:
     technology, and keying on the article URL made them two half-empty rows.
     Rows for the same company and amount are folded together, taking the value
     each outlet did have.
+
+    Where two outlets both have a value, the preferred one wins, except for the
+    lists of investors and founders, where the longer answer is the fuller one
+    whoever wrote it.
     """
     groups, order = {}, []
+    # Group first, then merge each round's write-ups in order of preference, so
+    # the outlet trusted most is the one that sets the values and the link.
+    by_key = {}
     for story in stories:
         stem = _company_stem(story.get("company", ""))
         if not stem:
@@ -302,32 +323,39 @@ def merge_deals(stories: list) -> list:
         # different deals and must not collapse into one.
         _, value = money.parse(story.get("amount", ""))
         key = (stem, int(value))
-        if key not in groups:
-            groups[key] = dict(story)
-            groups[key]["sources"] = []
+        if key not in by_key:
+            by_key[key] = []
             order.append(key)
-        merged = groups[key]
-        for field, value2 in story.items():
-            if field in ("sources", "key"):
-                continue
-            existing = merged.get(field)
-            if not isinstance(value2, str):
-                if not existing:
+        by_key[key].append(story)
+
+    for key in order:
+        for story in sorted(by_key[key], key=_source_rank):
+            if key not in groups:
+                groups[key] = dict(story)
+                groups[key]["sources"] = []
+            merged = groups[key]
+            for field, value2 in story.items():
+                if field in ("sources", "key"):
+                    continue
+                existing = merged.get(field)
+                if not isinstance(value2, str):
+                    if not existing:
+                        merged[field] = value2
+                    continue
+                if not value2.strip():
+                    continue
+                if not (existing or "").strip():
                     merged[field] = value2
-                continue
-            if not value2.strip():
-                continue
-            if not (existing or "").strip():
-                merged[field] = value2
-            elif field in _PREFER_LONGER and len(value2) > len(existing):
-                merged[field] = value2
-            elif field == "company" and existing.islower() and not value2.islower():
-                # One outlet wrote "valuemize", another "Valuemize".
-                merged[field] = value2
-        publisher = (story.get("publisher") or "").strip()
-        if publisher and publisher not in merged["sources"]:
-            merged["sources"].append(publisher)
-        merged["posted"] = merged.get("posted") or story.get("posted")
+                elif field in _PREFER_LONGER and len(value2) > len(existing):
+                    merged[field] = value2
+                elif (field == "company" and existing.islower()
+                      and not value2.islower()):
+                    # One outlet wrote "valuemize", another "Valuemize".
+                    merged[field] = value2
+            publisher = (story.get("publisher") or "").strip()
+            if publisher and publisher not in merged["sources"]:
+                merged["sources"].append(publisher)
+            merged["posted"] = merged.get("posted") or story.get("posted")
 
     out = []
     for key in order:
