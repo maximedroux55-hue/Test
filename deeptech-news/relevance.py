@@ -62,9 +62,12 @@ DEAL_TERMS = {
 # Routine institutional items that are Swiss and research-adjacent but not
 # postable as DeepTech news. These pull the score down.
 NOISE_TERMS = {
-    "appointment of": 4, "appointments": 3, "professors": 3,
-    "appoints": 4, "appointed": 3, "names new": 3, "steps down": 3,
-    "joins as": 3, "hires": 3, "promoted to": 3,
+    # Academic appointments and honours, in every phrasing they arrive in.
+    "appointment of": 4, "appointments": 3, "professor": 3,
+    "appoints": 4, "appointed": 3, "professorship": 4, "professorial": 4,
+    "nomination of": 4, "emeritus": 4, "honorary": 4, "doctorate": 4,
+    "names new": 3, "steps down": 3, "joins as": 3, "hires": 3,
+    "promoted to": 3,
     "obituary": 4, "anniversary": 2, "open day": 3, "campus": 2,
     "semester": 3, "graduation": 3, "rector": 3, "lecture series": 3,
     # Evergreen listicles and market-research filler, not news.
@@ -158,8 +161,9 @@ def score_article(title: str, summary: str, source: str = "") -> int:
 
     # The headline states what the story is. When it announces an appointment
     # or a student showcase, no amount of technical vocabulary further down
-    # makes it a DeepTech story.
-    if _count(title_text, NOISE_TERMS):
+    # makes it a DeepTech story. Deal language in the same headline overrides
+    # this, so "EPFL professor's spin-off raises CHF 5 million" still counts.
+    if _count(title_text, NOISE_TERMS) and not _count(title_text, DEAL_TERMS):
         return 0
 
     # The headline carries full weight; the summary is capped. A long research
