@@ -15,14 +15,14 @@ The posts themselves are below, for review before you run it.
 ```
 🇨🇭 Swiss quantum spinout ZuriQ raises $25.5M seed
 
-@ZuriQ, an @ETH Zurich spinout, has closed a $25.5M seed round, one of the largest in Swiss quantum computing. The team works on trapped-ion architectures designed to move qubits in two dimensions, an approach aimed at scaling beyond the linear chains used today.
+@ZuriQ, an @ETH Zurich spinout, has closed a $25.5M seed round, one of the larger early rounds in European quantum hardware. The company works on trapped-ion architectures, aiming to move ions across chips rather than scaling qubits in fixed, crowded traps.
 
 Why it matters:
-⚛️ Trapped ions remain among the highest-fidelity qubit platforms
-💰 Seed size signals investor conviction in Swiss quantum hardware
-🇨🇭 @ETH Zurich keeps producing globally competitive quantum spinouts
+⚛️ Trapped-ion approach targets the scaling ceiling directly
+💰 $25.5M seed is unusually large for European quantum
+🇨🇭 @ETH Zurich keeps producing globally competitive quantum teams
 
-Quantum hardware is capital-hungry, and Switzerland is now raising at a scale that matches the physics.
+Quantum hardware rewards patient physics, and Zurich has been compounding that advantage for a decade.
 
 https://sifted.eu/articles/eth-spinout-zuriq-seed-round
 ```
@@ -33,14 +33,14 @@ https://sifted.eu/articles/eth-spinout-zuriq-seed-round
 ```
 🇨🇭 Swiss software prices designs before they are locked
 
-@valuemize, based in Zurich, has closed a seven-figure pre-seed round backed by a consortium of VC offices and angel investors. Its software shows manufacturers the cost consequence of a design decision while the design is still open, rather than after tooling is committed.
+@valuemize, based in Zurich, has raised a seven-figure pre-seed from a consortium of VC offices and angel investors. Its software shows manufacturers what a design decision will cost while the design is still changeable, when most of a product's cost is quietly fixed.
 
 Why it matters:
-🏭 Most product cost is fixed early in engineering
-📉 Cost transparency shortens the loop between design and procurement
-🇨🇭 Swiss industrial base is a demanding first test market
+⚙️ Up to 80% of product cost is set at design
+📊 Cost visibility moves from spreadsheets to live software
+🇨🇭 Swiss industrials are a demanding first customer base
 
-Software built next to real factories tends to travel further than software built next to other software.
+Selling into Swiss precision manufacturing is a hard start, and a credible reference for everywhere else.
 
 https://www.startupticker.ch/en/news/valuemize-raises-seven-figure-pre-seed-for-product-cost-software
 ```
@@ -49,16 +49,16 @@ https://www.startupticker.ch/en/news/valuemize-raises-seven-figure-pre-seed-for-
 ## Post 3 — schedule for Thursday 06 August at 08:00
 
 ```
-🇨🇭 Swiss preventive health raises $10M for expansion
+🇨🇭 Swiss preventive health platform raises $10M
 
-@Ahead Health, a Swiss preventive health startup, has raised $10M to launch in Germany and the Netherlands. The company builds diagnostics-led preventive care programmes, moving health spending upstream of disease in two of Europe's largest healthcare markets.
+@Ahead Health, the Swiss preventive health startup, has raised $10M to launch in Germany and the Netherlands. The company builds diagnostics-led prevention programmes, betting that structured early detection beats treating disease once it becomes expensive.
 
 Why it matters:
-🩺 Preventive care attacks cost before treatment, not after
-🌍 Germany and the Netherlands open large reimbursement markets
-🇨🇭 Swiss health ventures increasingly build for Europe from day one
+🩺 Prevention shifts healthcare spend from cure to detection
+🌍 Germany and the Netherlands open two large payer markets
+🇨🇭 Swiss health startups export standards, not just software
 
-Switzerland's small domestic market forces health companies to design for export early, which is often an advantage.
+Health systems under cost pressure are finally a market rather than a slogan, and Swiss operators are moving early.
 
 https://techfundingnews.com/ahead-health-10m-funding-preventive-care-germany-netherlands/
 ```
@@ -69,14 +69,14 @@ https://techfundingnews.com/ahead-health-10m-funding-preventive-care-germany-net
 ```
 🇨🇭 Swiss firm launches with €16M for AI compute
 
-@AI Infrastructure Capital AG has launched in Switzerland with €16 million to address the AI compute bottleneck, financing the hardware and data centre capacity that European model builders currently struggle to access. Reported by @EU-Startups.
+@AI Infrastructure Capital AG has launched in Switzerland with €16 million to attack the AI compute bottleneck, financing the hardware and infrastructure layer that European AI builders still struggle to access at scale.
 
 Why it matters:
-⚡ Compute scarcity is now Europe's binding constraint on AI
-🏦 Capital structures, not code, decide who gets GPUs
-🇨🇭 Switzerland positions itself as a neutral AI infrastructure base
+🖥️ Compute scarcity is now Europe's binding AI constraint
+💶 €16M launch targets infrastructure, not another model
+🇨🇭 Switzerland positions itself in sovereign compute financing
 
-Europe's AI ambitions will be settled as much by financing engineering as by research.
+The AI race is being decided in data centres and balance sheets, not only in labs.
 
 https://www.eu-startups.com/2026/07/swiss-startup-ai-infrastructure-capital-ag-launches-with-e16-million-to-tackle-ai-compute-bottleneck/
 ```
@@ -87,14 +87,14 @@ https://www.eu-startups.com/2026/07/swiss-startup-ai-infrastructure-capital-ag-l
 ```
 🇨🇭 Swiss drone simulation heads to Latvia
 
-@nordfen, a Zurich-based startup, is partnering with @Drone Force, Europe in Latvia to develop drone simulation technology and train operators. The training solutions are intended for use beyond Latvia, across European markets where drone pilot capacity is now a bottleneck.
+@nordfen, a Zurich-based startup, is partnering with @Drone Force – Europe in Latvia to develop drone simulation technology and operator training. The resulting programmes are intended for use beyond Latvia, across European markets where trained drone pilots are in short supply.
 
 Why it matters:
-🛩️ Operator training, not airframes, limits drone deployment speed
-🇪🇺 Baltic demand makes Latvia a fast reference market
-🇨🇭 Swiss simulation expertise exports without exporting hardware
+🚁 Operator training is the real bottleneck in drone deployment
+🇪🇺 Baltic partnership gives direct access to European defence demand
+🇨🇭 Swiss simulation expertise travels well beyond the domestic market
 
-Software-led defence and dual-use companies can scale across borders faster than anything built in metal.
+Swiss deeptech is increasingly finding its first scale customers in Europe's security and training budgets.
 
 https://www.startupticker.ch/en/news/nordfen-brings-drone-simulation-technology-to-latvia
 ```
@@ -103,16 +103,16 @@ https://www.startupticker.ch/en/news/nordfen-brings-drone-simulation-technology-
 ## Post 6 — schedule for Sunday 09 August at 08:00
 
 ```
-🇨🇭 Swiss nanopore detects lake toxins at trace levels
+🇨🇭 Swiss nanopore detects lake water toxins
 
-Researchers at @EPFL have built a nanopore sensor that distinguishes seven cyanobacteria toxins and detects one common microcystin far below World Health Organization limits. Blooms in waters such as Lake Geneva release microcystins, a family with more than 300 known variants threatening drinking water and swimmers.
+Researchers at @EPFL have built a nanopore sensor that distinguishes seven toxins produced by cyanobacteria blooms, detecting one common microcystin far below World Health Organization limits. Blooms in waters such as Lake Geneva release toxins that threaten drinking supplies, swimmers and aquatic ecosystems.
 
 Why it matters:
-🔬 Single-molecule sensing replaces slow centralised laboratory analysis
-💧 Variant-level detection matters for drinking-water safety decisions
-🇨🇭 @EPFL turns local lake problems into exportable instrumentation
+🔬 Single pore separates seven closely related toxin variants
+💧 Sensitivity below @World Health Organization drinking water thresholds
+🇨🇭 @EPFL turns Lake Geneva into an applied research laboratory
 
-Environmental monitoring is quietly becoming one of Switzerland's strongest applied science exports.
+Environmental monitoring is where Swiss sensing research finds an obvious and urgent customer.
 
 https://actu.epfl.ch/news/a-tiny-pore-identifies-cyanobacteria-toxins-in-lak
 ```
@@ -121,16 +121,16 @@ https://actu.epfl.ch/news/a-tiny-pore-identifies-cyanobacteria-toxins-in-lak
 ## Post 7 — schedule for Monday 10 August at 08:00
 
 ```
-🇨🇭 Swiss research maps how rivers shape cities
+🇨🇭 Swiss researchers rethink rivers and cities
 
-@EPFL researchers are examining how rivers have shaped settlement, industry and urban form, and how they now serve as infrastructure for climate adaptation and social cohesion. From irrigation to 19th century factory power, waterways have been diverted to human needs; growing cities are forcing that logic to reverse.
+@EPFL researchers are examining how rivers shaped urban development, from fishing and irrigation to powering 19th century factories, and how they now function as infrastructure for climate adaptation and social cohesion in growing cities.
 
 Why it matters:
-🌊 Rivers are cooling and flood infrastructure, not decoration
-🏙️ Urban adaptation decisions lock in for a century
-🇨🇭 @EPFL links hydrology, engineering and urban policy directly
+🌊 Rivers move from industrial asset to climate infrastructure
+🏙️ Urban growth is colliding with diverted natural waterways
+🇨🇭 @EPFL links engineering research to liveable city design
 
-Climate resilience will be built by civil engineers as much as by climate tech founders.
+Climate adaptation will be built as much by urban engineering as by new technology.
 
 https://actu.epfl.ch/news/how-rivers-shape-cities-and-societies
 ```
