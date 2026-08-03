@@ -199,13 +199,31 @@ def to_html(articles: list[dict], days: int) -> str:
 """
 
 
+# Stages that mean money changed hands. Partnerships and plain research news
+# are kept in archive.json but do not belong on a page of rounds.
+_FINANCING_STAGES = {
+    "Pre-seed", "Seed", "Series A", "Series B", "Series C", "Series D",
+    "Growth", "IPO", "Acquisition", "Grant",
+}
+
+
+def _is_round(story: dict) -> bool:
+    """True when the story reports a financing or exit event."""
+    if (story.get("stage") or "").strip() in _FINANCING_STAGES:
+        return True
+    # A stated amount is a round even when the stage was never named.
+    return bool((story.get("amount") or "").strip())
+
+
 def render_archive_html(known: dict) -> str:
-    """A browsable page of everything ever found, newest first."""
-    stories = sorted(
+    """A browsable page of the financing rounds found, newest first."""
+    everything = sorted(
         known.values(),
         key=lambda e: (e.get("last_seen", ""), e.get("score") or 0),
         reverse=True,
     )
+    stories = [s for s in everything if _is_round(s)]
+    hidden = len(everything) - len(stories)
     posted = sum(1 for s in stories if s.get("posted"))
     sources = len({s.get("publisher", "") for s in stories if s.get("publisher")})
     rows = []
@@ -237,11 +255,11 @@ def render_archive_html(known: dict) -> str:
             f'<td class="d">{html.escape(s.get("published") or s.get("first_seen",""))}</td>'
             f'</tr>'
         )
-    body = "\n".join(rows) or '<tr><td colspan="8">Nothing archived yet.</td></tr>'
+    body = "\n".join(rows) or '<tr><td colspan="8">No financing rounds recorded yet.</td></tr>'
     return f"""<!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Swiss DeepTech news archive</title><meta name="robots" content="noindex">
+<title>Swiss DeepTech rounds</title><meta name="robots" content="noindex">
 <style>
   :root {{ --green:#46b96a; --ink:#1b2430; --soft:#5b6472; --line:#e6eae8; --bg:#f6f8f7; }}
   * {{ box-sizing:border-box; margin:0; padding:0; }}
@@ -272,9 +290,10 @@ def render_archive_html(known: dict) -> str:
   .total {{ display:block; color:var(--soft); font-size:0.72rem; font-weight:500; }}
 </style></head><body>
 <div class="wrap">
-  <h1>Swiss DeepTech archive<span class="dot">.</span></h1>
-  <p class="sub">{len(stories)} stories &middot; {posted} posted &middot; {sources} sources</p>
-  <input id="q" placeholder="Filter by company, source or word..." oninput="filter()">
+  <h1>Swiss DeepTech rounds<span class="dot">.</span></h1>
+  <p class="sub">{len(stories)} financing rounds &middot; {posted} posted &middot; {sources} sources
+  &middot; <span title="Research, partnerships and other non-financing news, kept in archive.json">{hidden} other stories hidden</span></p>
+  <input id="q" placeholder="Filter by company, sector, investor or city..." oninput="filter()">
   <div class="box"><table>
     <thead><tr><th>Company</th><th>Category</th><th>Stage</th><th>Amount</th>
       <th>Investors</th><th>Spin-off</th><th>Location</th><th>Date</th></tr></thead>
