@@ -13,17 +13,16 @@ The posts themselves are below, for review before you run it.
 ## Post 1 — schedule for Tuesday 04 August at 08:00
 
 ```
-🇨🇭 Swiss trapped-ion startup raises $25.5M seed
+🇨🇭 Swiss quantum spinout ZuriQ raises $25.5M seed
 
-@ZuriQ, an @ETH Zurich spinout, has closed a $25.5M seed round to build quantum computers on trapped ions moved across a chip surface. @Sifted reports the round as one of the largest European quantum seeds, funding the leap from lab demonstration to scalable hardware.
+@ZuriQ, an @ETH Zurich spinout, has closed a $25.5M seed round, one of the largest seed rounds in Swiss quantum computing. The company builds trapped-ion machines, betting on an architecture designed to move qubits rather than add cables, according to @Sifted.
 
 Why it matters:
-⚛️ Trapped ions offer the highest qubit fidelities available today
-💰 Seed size signals investor conviction in Swiss quantum hardware
-🇨🇭 @ETH Zurich keeps producing globally competitive quantum spinouts
+⚛️ Trapped ions remain the highest-fidelity qubit platform today
+💰 $25.5M at seed signals real conviction, not tourism
+🇨🇭 ETH Zurich keeps producing globally competitive quantum hardware teams
 
-Quantum hardware is capital-hungry, and Zurich is proving it can attract that capital at seed.
-
+Swiss quantum research is now attracting the kind of cheques usually reserved for Silicon Valley labs.
 https://sifted.eu/articles/eth-spinout-zuriq-seed-round
 ```
 🖼️ **Article image:** https://images.sifted.eu/wp-content/uploads/2026/07/24121029/PW_260325_ZuriQ-people_007.jpg?w=1920&amp;h=1281&amp;q=75&amp;fit=crop&amp;auto=compress,format
@@ -33,15 +32,14 @@ https://sifted.eu/articles/eth-spinout-zuriq-seed-round
 ```
 🇨🇭 Swiss biotech raises CHF 2.4M for gene editing
 
-@Immitra Bio has raised CHF 2.4 million to advance its in-vivo gene editing platform, according to @Venturelab Swiss. The financing targets delivery inside the body, the step that separates elegant editing chemistry from an actual therapy.
+@Immitra Bio has raised CHF 2.4 million to advance its in-vivo gene editing platform, the round reported by @Venturelab Swiss. In-vivo editing removes the need to modify cells outside the body, cutting cost and complexity in a field still dominated by hospital-heavy protocols.
 
 Why it matters:
-🧬 In-vivo editing removes the cost of cell manufacturing
-💉 Delivery, not cutting, is the field's real bottleneck
-🇨🇭 Swiss life sciences moving early into next-generation genetic medicine
+🧬 In-vivo delivery is the real bottleneck in gene editing
+💊 Simpler protocols widen patient access considerably
+🇨🇭 Swiss life sciences still punch above its funding weight
 
-Small rounds in Swiss biotech tend to buy the one experiment that decides everything.
-
+Small rounds in Swiss biotech often buy more scientific ground than large ones elsewhere.
 https://www.venturelab.swiss/Immitra-Bio-raises-CHF-24-million-to-advance-invivo-gene-editing-platform
 ```
 🖼️ **Article image:** https://www.venturelab.swiss/demandit/files/M_BB941CC4DCEF687AD98/dms/Image/immitra_bio.jpg
@@ -49,17 +47,16 @@ https://www.venturelab.swiss/Immitra-Bio-raises-CHF-24-million-to-advance-invivo
 ## Post 3 — schedule for Thursday 06 August at 08:00
 
 ```
-🇨🇭 Swiss space firm raises $70M to build satellites
+🇨🇭 Swiss space firm raises $70M to scale satellites
 
-@SWISSto12, based in Renens, has raised USD 70 million to scale production of its 3D-printed radio frequency payloads and small geostationary satellites. Reported by @Greater Geneva Bern area (GGBa), the capital targets rising demand across multiple orbits.
+@SWISSto12, based in the Lausanne region, has raised USD 70 million to scale its satellite business and meet growing multi-orbit demand, as reported by @Greater Geneva Bern area (GGBa). The company builds radio frequency payloads and small geostationary satellites using 3D-printed components.
 
 Why it matters:
-🛰️ 3D-printed RF payloads cut satellite mass and lead times
-📡 Multi-orbit demand is reshaping the commercial satellite market
-🇨🇭 One of Europe's few full satellite manufacturers sits in Vaud
+🛰️ Multi-orbit demand is reshaping the satellite supply chain
+🏭 3D-printed RF payloads compress cost and lead times
+🇨🇭 A Swiss firm competing in an aerospace prime's market
 
-Additive manufacturing turned a niche Swiss competence into a position no one else in Europe holds.
-
+Precision manufacturing turns out to be the hardest moat to copy.
 https://ggba.swiss/en/swissto12-raises-usd-70-million-to-meet-growing-multi-orbit-satellite-demand/
 ```
 🖼️ **Article image:** https://ggba.swiss/app/uploads/2026/07/HummingSat-Swissto12-1180x811-1.jpg
@@ -69,15 +66,14 @@ https://ggba.swiss/en/swissto12-raises-usd-70-million-to-meet-growing-multi-orbi
 ```
 🇨🇭 Switzerland becomes the metaphor for neutral AI compute
 
-@SkyPilot, founded by a @Databricks cofounder, has raised $20M to route AI workloads across any cloud or GPU provider. @Fortune frames the ambition plainly: to be the Switzerland of AI compute, neutral infrastructure in a market dominated by a few vendors.
+@SkyPilot, founded by a @Databricks cofounder, has raised $20M to become what @Fortune calls the Switzerland of AI compute: a neutral layer routing workloads across clouds and GPU providers rather than locking teams into one vendor.
 
 Why it matters:
-🖥️ Compute portability is becoming a strategic cost lever
-🔀 Vendor neutrality is now a sellable technical product
-🇨🇭 Swiss neutrality has become shorthand in global tech
+⚙️ GPU scarcity makes cross-cloud portability a hard requirement
+🔀 Neutrality is a defensible position in concentrated markets
+🇨🇭 Swiss neutrality is now global shorthand for infrastructure trust
 
-When an American startup borrows Switzerland as its brand promise, the reputation is doing real work.
-
+When an American startup borrows Switzerland as its positioning, the brand is doing serious work.
 https://fortune.com/2026/07/21/skypilot-from-databricks-cofounder-raises-20m-to-be-the-switzerland-of-ai-compute/
 ```
 🖼️ **Article image:** https://fortune.com/img-assets/wp-content/uploads/2026/07/Group-photo-01-server-room-e1784596163316.jpeg?resize=1200,600
@@ -87,15 +83,14 @@ https://fortune.com/2026/07/21/skypilot-from-databricks-cofounder-raises-20m-to-
 ```
 🇨🇭 Swiss software prices designs before they are locked
 
-@valuemize, based in Zurich, has closed a seven-figure pre-seed round backed by a consortium of VC offices and angel investors. Its software shows manufacturers what a design decision will cost while the design can still be changed, per @Startupticker.
+@valuemize, based in Zurich, has closed a seven-figure pre-seed round backed by a consortium of VC offices and angel investors. Its software shows manufacturers what a design decision will cost before the design is frozen, when roughly all of a product's cost is still changeable.
 
 Why it matters:
-📐 Most product cost is fixed at the design stage
-🏭 Industrial margins are won upstream, not in procurement
-🇨🇭 Swiss manufacturing depth makes an ideal first market
+📉 Most product cost is committed at the design stage
+🏭 Industrial buyers pay for margin, not dashboards
+🇨🇭 Swiss manufacturing depth is a natural first market
 
-Software built next to real factories tends to solve problems consultants only describe.
-
+The best industrial software starts where the engineers already are, not where the CFO wishes they were.
 https://www.startupticker.ch/en/news/valuemize-raises-seven-figure-pre-seed-for-product-cost-software
 ```
 🖼️ **Article image:** none found, grab one from the article page.
@@ -103,17 +98,16 @@ https://www.startupticker.ch/en/news/valuemize-raises-seven-figure-pre-seed-for-
 ## Post 6 — schedule for Sunday 09 August at 08:00
 
 ```
-🇨🇭 Swiss preventive health raises $10M for expansion
+🇨🇭 Swiss preventive health raises $10M for EU push
 
-@Ahead Health, a Swiss preventive health startup, has raised $10 million to launch in Germany and the Netherlands. @Tech Funding News reports the funding will fund entry into two of Europe's largest healthcare markets, where diagnostics-led prevention remains largely unbuilt.
+@Ahead Health, a Swiss preventive health startup, has raised $10M to launch in Germany and the Netherlands, according to @Tech Funding News. The company sells structured diagnostics and follow-up to consumers, a model betting that early detection is cheaper than late treatment.
 
 Why it matters:
-🩺 Prevention shifts healthcare spend from treatment to diagnostics
-🌍 Germany and the Netherlands are demanding first export markets
-🇨🇭 Swiss health services scaling beyond a small home market
+🩺 Preventive care shifts spending from treatment to detection
+🌍 Germany and the Netherlands are dense, insurance-ready markets
+🇨🇭 Swiss clinical standards travel well across European healthcare
 
-Switzerland is too small to be an endpoint, which is why the good ones leave early.
-
+Health models built under Swiss regulatory scrutiny tend to export more easily than they expand at home.
 https://techfundingnews.com/ahead-health-10m-funding-preventive-care-germany-netherlands/
 ```
 🖼️ **Article image:** none found, grab one from the article page.
@@ -121,17 +115,16 @@ https://techfundingnews.com/ahead-health-10m-funding-preventive-care-germany-net
 ## Post 7 — schedule for Monday 10 August at 08:00
 
 ```
-🇨🇭 Swiss scale-up adds $19M for US push
+🇨🇭 Swiss scale-up Hilo adds $19M for US entry
 
-@Hilo has closed a Series B extension of $19 million, taking total funding past $119 million. New backing came from @Dell Family Office, the investment office of Michael Dell, alongside existing investors, as the company opens its US market expansion.
+@Hilo has closed a Series B extension of $19 million, taking total funding past $119 million. New backing came from @Dell Family Office, the investment office of Michael Dell, alongside existing investors, as the company prepares its move into the US market.
 
 Why it matters:
-💵 $119M raised to date signals a genuine scale-up trajectory
-🇺🇸 US entry is the hardest test of Swiss commercial models
-🇨🇭 Global tech investors increasingly comfortable with Swiss cap tables
+💵 $119M raised puts Hilo in Swiss growth-stage rarity
+🇺🇸 US entry is the real test of the model
+🇨🇭 Global tech investors increasingly source deals in Switzerland
 
-Attracting American family offices is a quieter validation than any product launch.
-
+Another sign that Swiss deeptech scales quietly, then all at once.
 https://www.startupticker.ch/en/news/hilo-closes-series-b-extension-round-to-fuel-us-expansion
 ```
 🖼️ **Article image:** none found, grab one from the article page.
