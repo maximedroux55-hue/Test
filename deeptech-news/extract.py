@@ -232,12 +232,38 @@ def _fallback(article: dict) -> dict:
     }
 
 
+# Eighteen fields for thirty stories overruns a single reply, and a truncated
+# reply is unparseable, which silently costs every field. Ask in small batches.
+BATCH = 8
+
+
 def extract_fields(articles: list, model: str | None = None) -> list:
     """Return one facts dict per article, in the same order."""
+    import sys
+
     fallback = [_fallback(a) for a in articles]
     if not articles or not os.environ.get("ANTHROPIC_API_KEY"):
         return fallback
 
+    out = list(fallback)
+    ok = 0
+    for start in range(0, len(articles), BATCH):
+        chunk = articles[start: start + BATCH]
+        got = _extract_batch(chunk, model)
+        if got is None:
+            print(f"  ! extraction failed for stories {start + 1}-{start + len(chunk)}, "
+                  f"used keywords instead", file=sys.stderr)
+            continue
+        for offset, facts in enumerate(got):
+            if facts:
+                out[start + offset] = facts
+                ok += 1
+    print(f"  read the facts from {ok}/{len(articles)} stories", file=sys.stderr)
+    return out
+
+
+def _extract_batch(articles: list, model: str | None = None):
+    """One request for a handful of stories. None when it could not be read."""
     try:
         import anthropic
 
@@ -256,7 +282,7 @@ def extract_fields(articles: list, model: str | None = None) -> list:
         client = anthropic.Anthropic()
         resp = client.messages.create(
             model=model or os.environ.get("ANTHROPIC_MODEL", DEFAULT_MODEL),
-            max_tokens=8000,
+            max_tokens=16000,
             system=SYSTEM,
             messages=[{
                 "role": "user",
@@ -268,12 +294,12 @@ def extract_fields(articles: list, model: str | None = None) -> list:
             },
         )
         if getattr(resp, "stop_reason", "") == "refusal":
-            return fallback
+            return None
 
         import json
         text = "".join(b.text for b in resp.content if getattr(b, "type", "") == "text")
         items = json.loads(text).get("items", [])
-        out = list(fallback)
+        out = [None] * len(articles)
         for item in items:
             i = item.get("index", 0) - 1
             if 0 <= i < len(out):
@@ -298,4 +324,4 @@ def extract_fields(articles: list, model: str | None = None) -> list:
                 }
         return out
     except Exception:
-        return fallback
+        return None
