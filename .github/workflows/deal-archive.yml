@@ -1,0 +1,116 @@
+name: Swiss DeepTech deal database
+
+# The deal database, at digest/archive.json and digest/archive.html.
+#
+# This is deliberately a separate job from the weekly LinkedIn posts
+# (news-digest.yml). The two read the same feeds and share the scoring and
+# duplicate checks, but they write different files and hold different state:
+# history.json belongs to the posts, archive.json belongs to this. Neither run
+# touches the other's files, so a failure on one side cannot cost the other its
+# output.
+#
+# It runs wider and more often than the posts: the posts want seven good
+# stories a week, the database wants every round it can find.
+on:
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "How many days back to look"
+        default: "14"
+      min_score:
+        description: "Minimum relevance score"
+        default: "3"
+      limit:
+        description: "Maximum number of stories to consider"
+        default: "60"
+  schedule:
+    # 04:00 UTC daily, well before the Wednesday post run at 06:00.
+    - cron: "0 4 * * *"
+
+permissions:
+  contents: write
+
+# Its own queue, so a database run never waits on a post run or races it.
+concurrency:
+  group: deal-archive-publish
+  cancel-in-progress: false
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r deeptech-news/requirements.txt
+
+      - name: Read the rounds into the database
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Optional. Without it the Crunchbase lookup stays dormant and only
+          # Zefix, the company's own site and the article itself are used.
+          CRUNCHBASE_API_KEY: ${{ secrets.CRUNCHBASE_API_KEY }}
+        run: |
+          cd deeptech-news
+          python scraper.py \
+            --days "${{ github.event.inputs.days || '14' }}" \
+            --min-score "${{ github.event.inputs.min_score || '3' }}" \
+            --limit "${{ github.event.inputs.limit || '60' }}" \
+            --archive-only
+
+      - name: Upload the database
+        uses: actions/upload-artifact@v4
+        with:
+          name: swiss-deeptech-archive
+          path: |
+            deeptech-news/output/archive.html
+            deeptech-news/output/AI_UNAVAILABLE
+          if-no-files-found: ignore
+
+      # Only the two archive files are written. digest/linkedin.md,
+      # digest/posts.json, digest/history.json and plan/ belong to the posts
+      # job and are left exactly as they are.
+      - name: Publish the database to the repo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # archive.json is written straight into digest/ by the scraper and is
+          # cumulative, so keep a copy before any reset.
+          mkdir -p /tmp/carry
+          cp digest/archive.json /tmp/carry/ 2>/dev/null || true
+
+          for attempt in 1 2 3 4 5; do
+            git fetch origin ${GITHUB_REF_NAME}
+            git reset --hard origin/${GITHUB_REF_NAME}
+
+            mkdir -p digest
+            cp deeptech-news/output/archive.html digest/archive.html
+            cp /tmp/carry/archive.json digest/archive.json 2>/dev/null || true
+
+            git add digest/archive.html digest/archive.json
+            git commit -m "Update the deal database" || { echo "No changes to publish."; exit 0; }
+            if git push origin HEAD:${GITHUB_REF_NAME}; then
+              echo "Published."; exit 0
+            fi
+            echo "Push rejected (attempt $attempt); taking the latest and retrying."
+            sleep $((attempt * 3))
+          done
+          echo "Could not publish after retries."; exit 1
+
+      # A run that could not reach the API filled the rows by keyword guessing.
+      # The database is published either way, but that deserves an email.
+      - name: Fail if the AI was unavailable
+        if: always()
+        run: |
+          if [ -f deeptech-news/output/AI_UNAVAILABLE ]; then
+            cat deeptech-news/output/AI_UNAVAILABLE
+            echo "::error::$(head -1 deeptech-news/output/AI_UNAVAILABLE)"
+            exit 1
+          fi

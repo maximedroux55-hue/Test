@@ -424,10 +424,18 @@ def main() -> None:
                     help="Record of stories already posted, so none repeats")
     ap.add_argument("--archive", default="../digest/archive.json",
                     help="Append-only record of every story ever found")
+    # The weekly posts and the deal database are two separate jobs that happen
+    # to read the same feeds. Either can be run without the other, so a problem
+    # in one cannot cost the other its output.
     ap.add_argument("--archive-only", action="store_true",
                     help="Only fill the archive: write no posts and touch no history. "
                          "Use with a wide --days to backfill past rounds.")
+    ap.add_argument("--posts-only", action="store_true",
+                    help="Only write the posts: do not read articles in full and "
+                         "do not touch the archive.")
     args = ap.parse_args()
+    if args.archive_only and args.posts_only:
+        sys.exit("Pick one of --archive-only and --posts-only, not both.")
 
     print(f"Fetching Swiss DeepTech news (last {args.days} days)...", file=sys.stderr)
     articles = collect(args.days, args.min_score)[: args.limit]
@@ -450,7 +458,7 @@ def main() -> None:
     # A backfill run fills the archive from a wide window. It must not write
     # posts: that would overwrite the week already planned and burn stories in
     # history that were never actually published.
-    picks = []
+    picks, mode = [], ""
     if args.format in ("linkedin", "both") and not args.archive_only:
         import json
         from images import enrich_articles
@@ -544,6 +552,30 @@ def main() -> None:
         history_mod.save(args.history, history_mod.record(past, picks))
         print(f"Recorded {len(picks)} stories in {args.history}", file=sys.stderr)
 
+    if not args.posts_only:
+        # The database is a separate job from the weekly posts. It reads the
+        # same feeds, but nothing it does may cost the posts their run, so a
+        # failure here is reported and stepped over rather than raised.
+        try:
+            build_archive(articles, picks, args)
+        except Exception as exc:
+            import traceback
+            print(f"\n!! The archive stage failed: {type(exc).__name__}: {exc}",
+                  file=sys.stderr)
+            traceback.print_exc()
+
+    _flag_missing_ai(articles, mode, args)
+
+
+def build_archive(articles: list, picks: list, args) -> None:
+    """Fill the deal database from this run's stories.
+
+    Kept separate from the post building above: the posts are a weekly editorial
+    job and this is a record that grows, and neither should depend on the other
+    having worked.
+    """
+    import os
+
     # Keep every story found, not just the ones posted, so the record
     # builds up over time instead of being overwritten each run.
     import archive as archive_mod
@@ -614,23 +646,39 @@ def main() -> None:
     with open(os.path.join(args.outdir, "archive.html"), "w", encoding="utf-8") as f:
         f.write(render_archive_html(known))
 
-    # When the API is unreachable the run still succeeds: template posts go out
-    # and the archive fills with keyword guesses. That has now happened twice
-    # without anyone noticing, so leave a marker the workflow turns into a
-    # failed run and an email, rather than a quietly worse week.
+
+def _flag_missing_ai(articles: list, mode: str, args) -> None:
+    """Leave a marker when this run silently fell back to no AI.
+
+    When the API is unreachable the run still succeeds: template posts go out
+    and the archive fills with keyword guesses. That happened twice without
+    anyone noticing, so the workflow turns this marker into a failed run and an
+    email rather than a quietly worse week.
+    """
+    import os
+
     import extract as extract_mod
-    if (os.environ.get("ANTHROPIC_API_KEY") and articles
-            and extract_mod.LAST_RUN_OK == 0):
-        reason = extract_mod.LAST_RUN_ERROR or "every request failed"
-        note = (
-            "The Anthropic API was unavailable for this run, so the posts are "
-            "template drafts and the archive rows were filled by keyword "
-            f"guessing rather than read from the articles.\n{reason}"
-        )
-        with open(os.path.join(args.outdir, "AI_UNAVAILABLE"), "w",
-                  encoding="utf-8") as f:
-            f.write(note)
-        print(f"\n!! {note}", file=sys.stderr)
+
+    if not os.environ.get("ANTHROPIC_API_KEY") or not articles:
+        return
+
+    problems = []
+    if not args.archive_only and mode and mode.lower().startswith("template"):
+        problems.append("the posts are template drafts rather than written in "
+                        "Max's voice")
+    if not args.posts_only and extract_mod.LAST_RUN_OK == 0:
+        problems.append("the archive rows were filled by keyword guessing "
+                        "rather than read from the articles")
+    if not problems:
+        return
+
+    reason = extract_mod.LAST_RUN_ERROR or "every request failed"
+    note = ("The Anthropic API was unavailable for this run, so "
+            + " and ".join(problems) + f".\n{reason}")
+    with open(os.path.join(args.outdir, "AI_UNAVAILABLE"), "w",
+              encoding="utf-8") as f:
+        f.write(note)
+    print(f"\n!! {note}", file=sys.stderr)
 
 
 if __name__ == "__main__":

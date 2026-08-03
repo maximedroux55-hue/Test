@@ -1,7 +1,12 @@
 name: Swiss DeepTech news digest
 
+# The weekly LinkedIn posts. This is one of two independent jobs reading the
+# same feeds; the deal database is deal-archive.yml and runs on its own. Neither
+# writes the other's files, so a bad week here cannot damage the database and a
+# broken lookup there cannot cost you the week's posts.
+#
 # Two ways to run:
-#  1. Manually: Actions tab -> "Swiss DeepTech news digest" -> "Run workflow".
+#  1. Manually: the button on maxime-droux.com, or Actions -> Run workflow.
 #  2. Automatically: every Wednesday morning, producing 7 posts for the week
 #     so they can all be scheduled in one session.
 on:
@@ -19,9 +24,6 @@ on:
       posts:
         description: "Number of LinkedIn posts to write (one per day)"
         default: "7"
-      archive_only:
-        description: "Backfill the archive only: write no posts, touch no history"
-        default: "false"
   schedule:
     # 06:00 UTC every Wednesday (about 08:00 in Switzerland).
     - cron: "0 6 * * 3"
@@ -50,21 +52,19 @@ jobs:
       - name: Install dependencies
         run: pip install -r deeptech-news/requirements.txt
 
-      - name: Build the digest
+      - name: Write the week's posts
         env:
           # Optional: add a repo secret named ANTHROPIC_API_KEY to get
           # AI-written LinkedIn posts. Without it, template drafts are used.
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          ARCHIVE_ONLY: ${{ github.event.inputs.archive_only || 'false' }}
         run: |
           cd deeptech-news
-          [ "$ARCHIVE_ONLY" = "true" ] && ONLY="--archive-only" || ONLY=""
           python scraper.py \
             --days "${{ github.event.inputs.days || '10' }}" \
             --min-score "${{ github.event.inputs.min_score || '4' }}" \
             --limit "${{ github.event.inputs.limit || '25' }}" \
             --posts "${{ github.event.inputs.posts || '7' }}" \
-            $ONLY
+            --posts-only
 
       - name: Upload digest (Markdown + HTML)
         uses: actions/upload-artifact@v4
@@ -74,18 +74,17 @@ jobs:
 
       # Publish the latest digest into the repo at stable filenames so it can be
       # read (and copied) straight from github.com on a phone, no download needed.
-      - name: Publish latest digest to the repo
-        env:
-          ARCHIVE_ONLY: ${{ github.event.inputs.archive_only || 'false' }}
+      # Only the post files are touched here. digest/archive.json and
+      # digest/archive.html belong to the database job and are left alone.
+      - name: Publish the posts to the repo
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # history.json and archive.json are written straight into digest/ by
-          # the scraper and are cumulative, so keep a copy before any reset.
+          # history.json is written straight into digest/ by the scraper and is
+          # cumulative, so keep a copy before any reset.
           mkdir -p /tmp/carry
           cp digest/history.json /tmp/carry/ 2>/dev/null || true
-          cp digest/archive.json /tmp/carry/ 2>/dev/null || true
 
           # These files are regenerated in full every run, so rebasing one run
           # onto another only produces conflicts in generated content. Take the
@@ -95,22 +94,16 @@ jobs:
             git reset --hard origin/${GITHUB_REF_NAME}
 
             mkdir -p digest plan
-            # A backfill run writes no posts, so leave the planned week alone
-            # and publish only the archive it just filled.
-            if [ "$ARCHIVE_ONLY" != "true" ]; then
-              cp deeptech-news/output/linkedin-*.md digest/linkedin.md
-              cp deeptech-news/output/digest-*.md   digest/news.md
-              cp deeptech-news/output/digest-*.html digest/index.html
-              cp deeptech-news/output/posts.json    digest/posts.json
-              # The phone-friendly weekly plan, served at maxime-droux.com/plan
-              cp deeptech-news/output/plan.html     plan/index.html
-              cp /tmp/carry/history.json digest/history.json 2>/dev/null || true
-            fi
-            cp deeptech-news/output/archive.html  digest/archive.html
-            cp /tmp/carry/archive.json digest/archive.json 2>/dev/null || true
+            cp deeptech-news/output/linkedin-*.md digest/linkedin.md
+            cp deeptech-news/output/digest-*.md   digest/news.md
+            cp deeptech-news/output/digest-*.html digest/index.html
+            cp deeptech-news/output/posts.json    digest/posts.json
+            cp /tmp/carry/history.json digest/history.json 2>/dev/null || true
+            # The phone-friendly weekly plan, served at maxime-droux.com/plan
+            cp deeptech-news/output/plan.html     plan/index.html
 
             git add digest plan
-            git commit -m "Update latest digest" || { echo "No changes to publish."; exit 0; }
+            git commit -m "Update the week's posts" || { echo "No changes to publish."; exit 0; }
             if git push origin HEAD:${GITHUB_REF_NAME}; then
               echo "Published."; exit 0
             fi
@@ -119,8 +112,8 @@ jobs:
           done
           echo "Could not publish after retries."; exit 1
 
-      # The digest is published either way, but a run that could not reach the
-      # API produced template posts and a keyword-guessed archive, which is
+      # The posts are published either way, but a run that could not reach the
+      # API produced template drafts rather than posts in Max's voice, which is
       # worth an email rather than a green tick.
       - name: Fail if the AI was unavailable
         if: always()
