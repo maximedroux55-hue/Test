@@ -291,9 +291,57 @@ def test_verified_share_is_reported():
     assert s["share"] == 50
 
 
+# ------------------------------------------------ the file Cowork writes -----
+# corrections.json is the contract between the database and the Cowork
+# session, and nothing in the pipeline can overrule it. A malformed edit must
+# fail here rather than reach the page.
+
+_ALLOWED = {
+    "company", "description", "category", "stage", "amount", "amount_note",
+    "status", "total_raised", "valuation", "lead_investor", "investors",
+    "founders", "spinoff_origin", "founded", "employees", "use_of_funds",
+    "customers", "website", "location", "legal_seat", "verified",
+    "verified_source",
+}
+
+
+def test_corrections_file_is_well_formed():
+    import datetime as dt
+    import json as _json
+
+    with open(os.path.join(os.path.dirname(os.path.dirname(
+            os.path.abspath(__file__))), "corrections.json"), encoding="utf-8") as f:
+        raw = _json.load(f)
+    entries = raw.get("companies", {})
+    assert entries, "corrections.json has no companies"
+    for company, fields in entries.items():
+        assert isinstance(fields, dict), company
+        unknown = set(fields) - _ALLOWED
+        assert not unknown, f"{company} sets unknown fields: {sorted(unknown)}"
+        for key, value in fields.items():
+            assert isinstance(value, str), f"{company}.{key} is not text"
+        if fields.get("stage"):
+            assert fields["stage"] in extract.STAGES, \
+                f"{company} has an unknown stage {fields['stage']!r}"
+        if fields.get("status"):
+            assert fields["status"] in ("closed", "announced"), company
+        if fields.get("verified"):
+            dt.date.fromisoformat(fields["verified"][:10])
+            assert fields.get("verified_source"), \
+                f"{company} is marked verified with no source"
+
+
+def test_a_correction_reaches_the_database():
+    import corrections
+    rows = [{"company": "Terra Quantum AG", "stage": "IPO", "status": ""}]
+    corrections.apply(rows)
+    assert rows[0]["stage"] == "De-SPAC"
+    assert rows[0]["status"] == "announced"
+
+
 # Locking the count means a test appended below the runner, where it would
 # never execute, shows up as a failure rather than as silence. That happened.
-EXPECTED = 29
+EXPECTED = 31
 
 
 if __name__ == "__main__":
