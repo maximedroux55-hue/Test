@@ -35,19 +35,19 @@ _Generated 03 August 2026, covering the last 14 days. 25 stories._
    Startupticker · 23 Jul 2026 · relevance 7
 17. **[England, the Middle East and India: Three start-ups are expanding with their digital solutions](https://www.startupticker.ch/en/news/england-the-middle-east-and-india-three-start-ups-are-expanding-with-their-digital-solutions)**  
    Startupticker · 22 Jul 2026 · relevance 6
-18. **[Switzerland's Comet H1 sales rise on strong demand for chip-making tools - TradingView](https://news.google.com/rss/articles/CBMi2gFBVV95cUxQUTl0dS1iRjBpdk9OeVY0T3ROQ1RtSTAyOUo4UXgwS2EzYVNtQUxNRy1jVTVNdzlBQkFTaTA2MmM1bTRVc2FERElHZXhVNGYxWmk4QUR3NXUxV0xJb0ZZMVE3NVdOLVBWa04yN1A5M2tWcHVFbGpLazFUbGk0cHNvdllQNnlsQUJ1ekN2YW9WeEhEcWdqY2Rya0pzaVRTTDh5Zjlya3dPa3hpaGEwNGdSbUJNNWR2SnV2cUhxbUpUd2doVFRvYnhNdnRxUmUyTXpSYnhPaExhZzFKZw?oc=5)**  
-   TradingView · 31 Jul 2026 · relevance 5
-19. **[Four Swiss medtechs mark commercial, regulatory and clinical milestones](https://www.startupticker.ch/en/news/four-swiss-medtechs-mark-commercial-regulatory-and-clinical-milestones)**  
+18. **[Four Swiss medtechs mark commercial, regulatory and clinical milestones](https://www.startupticker.ch/en/news/four-swiss-medtechs-mark-commercial-regulatory-and-clinical-milestones)**  
    Startupticker · 27 Jul 2026 · relevance 5
-20. **[Revolut Customers Get Up to 12 Months of Free ChatGPT Go Access](https://fintechnews.ch/aifintech/revolut-openai-chatgpt-go-subscription/84829/)**  
+19. **[Revolut Customers Get Up to 12 Months of Free ChatGPT Go Access](https://fintechnews.ch/aifintech/revolut-openai-chatgpt-go-subscription/84829/)**  
    Fintechnews Switzerland · 30 Jul 2026 · relevance 4
-21. **[Delta Capacity completes Swedish battery project](https://www.startupticker.ch/en/news/delta-capacity-completes-swedish-battery-project)**  
+20. **[Delta Capacity completes Swedish battery project](https://www.startupticker.ch/en/news/delta-capacity-completes-swedish-battery-project)**  
    Startupticker · 30 Jul 2026 · relevance 4
-22. **[In AI arms race, Swiss neutrality is double-edged sword - SWI swissinfo.ch](https://news.google.com/rss/articles/CBMirAFBVV95cUxQOVNkR0M0NjB2eENDVXdYSmozRU8xMHp2cFFaUEtrM0xWNDlwWWtscE9aNzFuc0NHSGZnQXlUZFp5TFRXUlNwcDAwREJta0dGUFl3bWhmY0ZvRkRMQkQzZ3lTa0ZjMFAtZEJRM09VNEQyWGRUSVh4d1AySzk3bUZJb2JSMnZsVTgtTnNmX2czaGV5QnhySTJVajU2SmtHSHRDVDNLNEl2dkNmLThB?oc=5)**  
+21. **[In AI arms race, Swiss neutrality is double-edged sword - SWI swissinfo.ch](https://news.google.com/rss/articles/CBMirAFBVV95cUxQOVNkR0M0NjB2eENDVXdYSmozRU8xMHp2cFFaUEtrM0xWNDlwWWtscE9aNzFuc0NHSGZnQXlUZFp5TFRXUlNwcDAwREJta0dGUFl3bWhmY0ZvRkRMQkQzZ3lTa0ZjMFAtZEJRM09VNEQyWGRUSVh4d1AySzk3bUZJb2JSMnZsVTgtTnNmX2czaGV5QnhySTJVajU2SmtHSHRDVDNLNEl2dkNmLThB?oc=5)**  
    SWI swissinfo.ch · 30 Jul 2026 · relevance 4
-23. **[Cognizant Launches EMEA AI Unit to Move Enterprise Projects to Production](https://fintechnews.ch/aifintech/cognizant-emea-ai-unit-launch/84819/)**  
+22. **[Cognizant Launches EMEA AI Unit to Move Enterprise Projects to Production](https://fintechnews.ch/aifintech/cognizant-emea-ai-unit-launch/84819/)**  
    Fintechnews Switzerland · 29 Jul 2026 · relevance 4
-24. **[Trulioo Launches UBO Discovery Agent to Automate Ownership Verification](https://fintechnews.ch/aifintech/trulioo-ubo-discovery-agent-ai/84807/)**  
+23. **[Trulioo Launches UBO Discovery Agent to Automate Ownership Verification](https://fintechnews.ch/aifintech/trulioo-ubo-discovery-agent-ai/84807/)**  
    Fintechnews Switzerland · 28 Jul 2026 · relevance 4
-25. **[Humboldt AI lanciert KI-Tool für den CV-Check im Schweizer Arbeitsmarkt](https://www.startupticker.ch/en/news/humboldt-ai-lanciert-ki-tool-fuer-den-cv-check-im-schweizer-arbeitsmarkt)**  
+24. **[Humboldt AI lanciert KI-Tool für den CV-Check im Schweizer Arbeitsmarkt](https://www.startupticker.ch/en/news/humboldt-ai-lanciert-ki-tool-fuer-den-cv-check-im-schweizer-arbeitsmarkt)**  
    Startupticker · 27 Jul 2026 · relevance 4
+25. **[Swiss founders in the global spotlight](https://www.startupticker.ch/en/news/swiss-founders-in-the-global-spotlight)**  
+   Startupticker · 24 Jul 2026 · relevance 4
