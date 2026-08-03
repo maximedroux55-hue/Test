@@ -455,7 +455,7 @@ def main() -> None:
         print(f"Fetching {len(articles)} articles in full...", file=sys.stderr)
         got = 0
         for art in articles:
-            art["fulltext"] = article_text(art.get("link", ""))
+            art["fulltext"] = article_text(art.get("link", ""), limit=6000)
             if art["fulltext"]:
                 got += 1
         print(f"  read {got}/{len(articles)} in full", file=sys.stderr)
