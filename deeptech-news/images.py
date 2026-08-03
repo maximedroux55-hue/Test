@@ -239,6 +239,16 @@ _STRIP_BLOCKS = re.compile(
     re.IGNORECASE | re.DOTALL,
 )
 
+# Where a page keeps its actual story. Themes differ, so several are tried and
+# the longest match wins.
+_CONTENT_BLOCKS = (
+    re.compile(r"<article\b[^>]*>(.*?)</article>", re.IGNORECASE | re.DOTALL),
+    re.compile(r"<main\b[^>]*>(.*?)</main>", re.IGNORECASE | re.DOTALL),
+    re.compile(r"<div\b[^>]*class=\"[^\"]*(?:entry-content|post-content|"
+               r"article-body|articleBody|story-body|content-body|rich-text)"
+               r"[^\"]*\"[^>]*>(.*?)</div>", re.IGNORECASE | re.DOTALL),
+)
+
 
 def article_text(url: str, limit: int = 4000, timeout: int = 12) -> str:
     """Return the readable text of an article, or "" when it cannot be fetched.
@@ -246,15 +256,26 @@ def article_text(url: str, limit: int = 4000, timeout: int = 12) -> str:
     Feed summaries are a sentence or two, which is why investors, founders and
     totals were so often missing. The article body carries them, so this pulls
     the page down and reduces it to plain text for the extractor to read.
+
+    Which part of the page is used matters as much as fetching it. Taking the
+    first <article> took a teaser on themes that mark up their related-post
+    cards the same way, and falling back to the whole page spent the character
+    budget on menus and cookie notices before reaching the paragraph naming the
+    investors. The longest content block wins, and only then is the text cut.
     """
     html_doc, _ = article_page(url, timeout)
     if not html_doc:
         return ""
     body = _STRIP_BLOCKS.sub(" ", html_doc)
-    # Prefer the article element when the page marks one up.
-    m = re.search(r"<article\b[^>]*>(.*?)</article>", body, re.IGNORECASE | re.DOTALL)
-    if m and len(m.group(1)) > 400:
-        body = m.group(1)
+
+    best = ""
+    for pattern in _CONTENT_BLOCKS:
+        for match in pattern.finditer(body):
+            if len(match.group(1)) > len(best):
+                best = match.group(1)
+    if len(best) > 400:
+        body = best
+
     text = re.sub(r"<[^>]+>", " ", body)
     text = _html_lib.unescape(text)
     text = re.sub(r"\s+", " ", text).strip()

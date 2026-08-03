@@ -223,10 +223,30 @@ def clean_record(facts: dict) -> dict:
     return facts
 
 
+def _is_a_name(text: str) -> bool:
+    """Is this an investor's name rather than a description of one?
+
+    CCRAFT's round included "a leading European AI infrastructure operator",
+    which is a fact about the round and not a name, so it is not an entry in a
+    list of investors.
+    """
+    words = text.split()
+    if not words or len(words) > 6:
+        return False
+    if re.match(r"^(a|an|the|another|several|various|two|three)\b", text,
+                re.IGNORECASE) and not text[0].isupper():
+        return False
+    if re.match(r"^(a|an|the)\s+[a-z]", text, re.IGNORECASE):
+        return False
+    # A name carries a capital. "european ai operator" does not.
+    return any(w[:1].isupper() for w in words)
+
+
 def _clean_investors(value: str) -> str:
     """Drop generic descriptions, keep actual names."""
     names = [n.strip(" .;") for n in (value or "").split(",")]
-    kept = [n for n in names if n and not _GENERIC_INVESTORS.match(n)]
+    kept = [n for n in names
+            if n and not _GENERIC_INVESTORS.match(n) and _is_a_name(n)]
     return ", ".join(kept)
 
 
@@ -316,6 +336,20 @@ _SENIORITY = {
     "Pre-seed": 1, "Seed": 2, "Series A": 3, "Series B": 4, "Series C": 5,
     "Series D": 6, "Growth": 7, "IPO": 8,
 }
+
+
+# Wording that means the article names who put the money in. If this is in the
+# text and the read came back with no investors, the read is wrong, not the
+# article: CCRAFT's write-up said "led by QBIT Capital, with participation from
+# Zürcher Kantonalbank, Apprecia Capital, Spacewalk, Blue Wonder Ventures" and
+# the row was stored empty.
+_NAMES_INVESTORS = re.compile(
+    r"led\s+by|co-?led\s+by|participation\s+(?:from|of)|backed\s+by|"
+    r"investors?\s+include|joined\s+by|with\s+support\s+from|"
+    r"angef(?:ü|ue)hrt\s+von|unter\s+(?:der\s+)?F(?:ü|ue)hrung|"
+    r"beteiligt\s+(?:sich|waren)|men(?:é|e)\s+par|avec\s+la\s+participation",
+    re.IGNORECASE,
+)
 
 
 def _stage_from_text(text: str) -> str:
@@ -455,12 +489,22 @@ def extract_fields(articles: list, model: str | None = None) -> list:
                     f: provenance.ARTICLE for f, v in facts.items()
                     if isinstance(v, str) and v.strip()
                 }
-                stated = _stage_from_text(
-                    f"{art.get('title', '')}. "
-                    f"{art.get('fulltext') or art.get('summary', '')}"
-                )
+                body = art.get("fulltext") or art.get("summary", "")
+                stated = _stage_from_text(f"{art.get('title', '')}. {body}")
                 if stated:
                     facts["stage"] = stated
+                # The article names the backers and we came back with none: read
+                # that one again on its own, where the whole reply is about it.
+                if (not facts.get("investors") and not facts.get("lead_investor")
+                        and _NAMES_INVESTORS.search(body)):
+                    retry = (_extract_batch([art], model) or [None])[0]
+                    if retry and (retry.get("investors")
+                                  or retry.get("lead_investor")):
+                        for field in ("investors", "lead_investor", "founders"):
+                            if retry.get(field) and not facts.get(field):
+                                facts[field] = retry[field]
+                        print(f"  re-read '{art.get('title', '')[:44]}' for its "
+                              f"investors", file=sys.stderr)
                 out[start + offset] = facts
                 ok += 1
     print(f"  read the facts from {ok}/{len(articles)} stories", file=sys.stderr)
