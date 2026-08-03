@@ -210,15 +210,25 @@ def render_archive_html(known: dict) -> str:
     sources = len({s.get("publisher", "") for s in stories if s.get("publisher")})
     rows = []
     for s in stories:
-        tag = '<span class="tag posted">posted</span>' if s.get("posted") else ""
+        tag = ' <span class="tag posted">posted</span>' if s.get("posted") else ""
+        company = html.escape(s.get("company") or "") or "&mdash;"
+        stage_text = html.escape(s.get("stage") or "")
+        stage = f'<span class="stage">{stage_text}</span>' if stage_text else ""
+        category_text = html.escape(s.get("category") or "")
+        category = f'<span class="cat">{category_text}</span>' if category_text else ""
         rows.append(
-            f'<tr><td class="s">{s.get("score") or ""}</td>'
-            f'<td><a href="{html.escape(s.get("link",""))}" target="_blank" '
-            f'rel="noopener">{html.escape(s.get("title",""))}</a> {tag}</td>'
-            f'<td class="p">{html.escape(s.get("publisher",""))}</td>'
-            f'<td class="d">{html.escape(s.get("published") or s.get("first_seen",""))}</td></tr>'
+            f'<tr>'
+            f'<td class="co"><a href="{html.escape(s.get("link",""))}" target="_blank" '
+            f'rel="noopener" title="{html.escape(s.get("title",""))}">{company}</a>{tag}</td>'
+            f'<td>{category}</td>'
+            f'<td>{stage}</td>'
+            f'<td class="amt">{html.escape(s.get("amount") or "")}</td>'
+            f'<td class="inv">{html.escape(s.get("investors") or "")}</td>'
+            f'<td class="loc">{html.escape(s.get("location") or "")}</td>'
+            f'<td class="d">{html.escape(s.get("published") or s.get("first_seen",""))}</td>'
+            f'</tr>'
         )
-    body = "\n".join(rows) or '<tr><td colspan="4">Nothing archived yet.</td></tr>'
+    body = "\n".join(rows) or '<tr><td colspan="7">Nothing archived yet.</td></tr>'
     return f"""<!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -238,18 +248,26 @@ def render_archive_html(known: dict) -> str:
   th, td {{ text-align:left; padding:0.6rem 0.8rem; border-bottom:1px solid var(--line);
            vertical-align:top; }}
   th {{ color:var(--soft); font-size:0.78rem; text-transform:uppercase; letter-spacing:0.04em; }}
-  td.s {{ color:var(--green); font-weight:700; width:3rem; }}
-  td.p, td.d {{ color:var(--soft); white-space:nowrap; }}
+  td.co {{ font-weight:600; }}
+  td.amt {{ color:var(--ink); font-weight:600; white-space:nowrap; }}
+  td.inv {{ color:var(--soft); }}
+  td.loc, td.d {{ color:var(--soft); white-space:nowrap; }}
   a {{ color:var(--ink); text-decoration:none; }} a:hover {{ color:var(--green); }}
   .tag.posted {{ background:var(--green); color:#fff; border-radius:6px;
                 padding:0.05rem 0.4rem; font-size:0.7rem; font-weight:700; }}
+  .cat {{ background:#eef4f0; color:#2f6b46; border-radius:6px;
+         padding:0.1rem 0.45rem; font-size:0.76rem; font-weight:600;
+         white-space:nowrap; }}
+  .stage {{ border:1px solid var(--line); border-radius:6px; padding:0.1rem 0.45rem;
+           font-size:0.76rem; font-weight:600; white-space:nowrap; }}
 </style></head><body>
 <div class="wrap">
   <h1>Swiss DeepTech archive<span class="dot">.</span></h1>
   <p class="sub">{len(stories)} stories &middot; {posted} posted &middot; {sources} sources</p>
   <input id="q" placeholder="Filter by company, source or word..." oninput="filter()">
   <div class="box"><table>
-    <thead><tr><th>Score</th><th>Story</th><th>Source</th><th>Date</th></tr></thead>
+    <thead><tr><th>Company</th><th>Category</th><th>Stage</th><th>Amount</th>
+      <th>Investors</th><th>Location</th><th>Date</th></tr></thead>
     <tbody id="rows">
 {body}
     </tbody>
@@ -400,6 +418,13 @@ def main() -> None:
         # Keep every story found, not just the ones posted, so the record
         # builds up over time instead of being overwritten each run.
         import archive as archive_mod
+        from extract import extract_fields
+        print("Reading deal facts from each story...", file=sys.stderr)
+        for art, facts in zip(articles, extract_fields(articles)):
+            art.update(facts)
+        named = sum(1 for a in articles if a.get("company"))
+        print(f"  identified a company in {named}/{len(articles)} stories",
+              file=sys.stderr)
         known = archive_mod.load(args.archive)
         before = len(known)
         known = archive_mod.record(known, articles, picks)
