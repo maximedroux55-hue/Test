@@ -602,6 +602,12 @@ def render_archive_html(known: dict) -> str:
         pending = ('<span class="pending" title="Announced, not closed. Its '
                    'figure is excluded from every total.">announced</span>'
                    if not is_closed(s) else "")
+        checked = (s.get("verified") or "").strip()
+        if checked:
+            src = (s.get("verified_source") or "a primary source").strip()
+            pending += (f'<span class="checked" title="Checked against '
+                        f'{html.escape(src)} on {html.escape(checked)}">'
+                        f'verified</span>')
         if stage_text == "Grant":
             pending += ('<span class="nondil" title="Public or foundation '
                         'money, not an equity round.">non-dilutive</span>')
@@ -707,6 +713,9 @@ def render_archive_html(known: dict) -> str:
            font-size:0.76rem; font-weight:600; white-space:nowrap; }}
   .total {{ display:block; color:var(--soft); font-size:0.72rem; font-weight:500; }}
   .pending {{ display:block; margin-top:0.2rem; background:#fdf3e3; color:#8a6d3b;
+             border-radius:5px; padding:0.02rem 0.3rem; font-size:0.66rem;
+             font-weight:700; text-transform:uppercase; letter-spacing:0.03em; }}
+  .checked {{ display:block; margin-top:0.2rem; color:#2f6b46; background:#eef4f0;
              border-radius:5px; padding:0.02rem 0.3rem; font-size:0.66rem;
              font-weight:700; text-transform:uppercase; letter-spacing:0.03em; }}
   .nondil {{ display:block; margin-top:0.2rem; color:#4a6b8a; background:#eef3f8;
@@ -1200,6 +1209,11 @@ def build_archive(articles: list, picks: list, args) -> None:
     swiss_rounds = [r for r in merge_deals(
         [s for s in known.values() if _is_round(s)]) if _is_swiss(r)]
     report.write_all(swiss_rounds, os.path.join(args.outdir, "reports"))
+
+    # What the scraper cannot check itself. Cowork reads the primary sources
+    # and reports back as corrections, which win over everything.
+    import verify
+    verify.write(swiss_rounds, os.path.join(args.outdir, "verify.json"))
 
 
 def _flag_missing_ai(articles: list, mode: str, args) -> None:

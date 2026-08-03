@@ -1,0 +1,140 @@
+{
+  "generated": "2026-08-03",
+  "note": "Rounds worth checking against a primary source.",
+  "how_to_report": "For each round below, find the primary source: the company's own release, the filing, or the outlet that reported it first. Check the four things that have actually been wrong. Has the transaction closed, or is it announced, in progress, or subject to approval? Is the label right, where a first listing is an IPO, an already listed company selling shares is a Follow-on, a merger with a listed shell is a De-SPAC, and a purchase is an Acquisition rather than a round? Is the figure money received, or a ceiling, a gross, or a target? And did the named investors take part in THIS round, rather than an earlier one?\n\nReport back as entries for corrections.json, keyed on the company name, setting only the fields that are wrong. Add \"verified\" with today's date and \"verified_source\" naming what you read. An empty string clears a wrong value. For example:\n\n  \"Prem\": {\n    \"status\": \"announced\",\n    \"amount_note\": \"raising, expected to close in Q3\",\n    \"investors\": \"\",\n    \"verified\": \"2026-08-03\",\n    \"verified_source\": \"Bloomberg, 18 June 2026\"\n  }\n\nWhere a round checks out, still send back \"verified\" and \"verified_source\" so it is not queued again. Say plainly when a primary source cannot be found: an unverifiable round should stay unverified rather than be marked correct.",
+  "corrections_file": "deeptech-news/corrections.json",
+  "count": 6,
+  "rounds": [
+    {
+      "company": "Terra Quantum",
+      "as_recorded": {
+        "stage": "De-SPAC",
+        "amount": "USD 190M",
+        "amount_note": "up to, assuming no redemptions, gross proceeds",
+        "status": "announced",
+        "investors": "Axiom Intelligence Acquisition Corp 1",
+        "date": "2026-05-26",
+        "hq": "St. Gallen"
+      },
+      "check": [
+        "recorded as announced rather than closed: has it closed since, and on what terms",
+        "an exit or a public market transaction, where the label and the figure mean different things",
+        "CHF 152M is large enough that an error moves the totals",
+        "the figure carries a condition (up to, assuming no redemptions, gross proceeds): is it the amount actually raised"
+      ],
+      "sources": [
+        "Yahoo Finance"
+      ],
+      "link": "https://finance.yahoo.com/markets/stocks/articles/swiss-based-terra-quantum-changes-113238973.html",
+      "last_verified": "2026-08-03"
+    },
+    {
+      "company": "Prem",
+      "as_recorded": {
+        "stage": "Series A",
+        "amount": "USD 100M",
+        "amount_note": "raising, expected to close in Q3",
+        "status": "announced",
+        "investors": "",
+        "date": "2026-06-18",
+        "hq": "Lugano"
+      },
+      "check": [
+        "recorded as announced rather than closed: has it closed since, and on what terms",
+        "CHF 80M is large enough that an error moves the totals",
+        "the only source is behind a paywall, so this rests on a headline",
+        "the figure carries a condition (raising, expected to close in Q3): is it the amount actually raised",
+        "a round this size with no investor named is usually a reading failure rather than an undisclosed syndicate"
+      ],
+      "sources": [
+        "Bloomberg.com",
+        "Startup Fortune"
+      ],
+      "link": "https://www.bloomberg.com/news/articles/2026-06-18/swiss-ai-startup-prem-is-raising-100-million-series-a-round",
+      "last_verified": "2026-08-03"
+    },
+    {
+      "company": "SWISSto12",
+      "as_recorded": {
+        "stage": "Series C",
+        "amount": "USD 70M",
+        "amount_note": "",
+        "status": "closed",
+        "investors": "",
+        "date": "2026-07-16",
+        "hq": "Renens"
+      },
+      "check": [
+        "CHF 56M is large enough that an error moves the totals",
+        "a round this size with no investor named is usually a reading failure rather than an undisclosed syndicate"
+      ],
+      "sources": [
+        "Startupticker",
+        "Greater Geneva Bern area (GGBa)"
+      ],
+      "link": "https://www.startupticker.ch/en/news/swissto12-raises-us-70-million-to-meet-growing-multi-orbit-demand",
+      "last_verified": ""
+    },
+    {
+      "company": "ZuriQ",
+      "as_recorded": {
+        "stage": "Seed",
+        "amount": "USD 25.5M",
+        "amount_note": "",
+        "status": "closed",
+        "investors": "Quantonation, Forward.one, Extantia, Firgun Ventures, Founderful",
+        "date": "2026-07-28",
+        "hq": "Zurich"
+      },
+      "check": [
+        "CHF 20.4M is large enough that an error moves the totals"
+      ],
+      "sources": [
+        "Startupticker",
+        "Sifted"
+      ],
+      "link": "https://www.startupticker.ch/en/news/quantonation-leads-usd-25-5-million-seed-round-for-eth-spin-off-zuriq",
+      "last_verified": ""
+    },
+    {
+      "company": "Hilo",
+      "as_recorded": {
+        "stage": "Series B",
+        "amount": "USD 19M",
+        "amount_note": "",
+        "status": "closed",
+        "investors": "Dell Family Office",
+        "date": "2026-07-22",
+        "hq": "Neuchâtel"
+      },
+      "check": [
+        "CHF 15.2M is large enough that an error moves the totals"
+      ],
+      "sources": [
+        "Startupticker"
+      ],
+      "link": "https://www.startupticker.ch/en/news/hilo-closes-series-b-extension-round-to-fuel-us-expansion",
+      "last_verified": ""
+    },
+    {
+      "company": "Nanoflex Robotics",
+      "as_recorded": {
+        "stage": "Grant",
+        "amount": "EUR 12.5M",
+        "amount_note": "",
+        "status": "closed",
+        "investors": "European Innovation Council, EIC Fund",
+        "date": "2026-06-25",
+        "hq": "Glattbrugg"
+      },
+      "check": [
+        "CHF 11.6M is large enough that an error moves the totals"
+      ],
+      "sources": [
+        "Venturelab Swiss"
+      ],
+      "link": "https://www.venturelab.swiss/Nanoflex-Robotics-awarded-EUR-125-Million-from-the-EIC-Accelerator",
+      "last_verified": ""
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "note": "Max's corrections. Applied after every automatic lookup and always win. Add a company, add the fields to fix.",
+  "note": "Max's corrections, and what Cowork verified against primary sources. Applied after every automatic lookup and always win. Set only the fields that are wrong; an empty string clears a value. 'verified' and 'verified_source' keep a round out of the checking queue in verify.json.",
   "companies": {
     "Synhelion": {
       "location": "Zurich"
@@ -22,21 +22,36 @@
       "status": "announced",
       "amount_note": "raising, expected to close in Q3",
       "investors": "",
-      "lead_investor": ""
+      "lead_investor": "",
+      "verified": "2026-08-03",
+      "verified_source": "Bloomberg, via Cowork fact-check"
     },
     "GR3N": {
       "stage": "Series B",
       "investors": "360 Capital, VP Textile",
-      "lead_investor": "360 Capital"
+      "lead_investor": "360 Capital",
+      "verified": "2026-08-03",
+      "verified_source": "Startupticker and 360 Capital, via Cowork fact-check"
     },
     "MoonLake": {
       "stage": "Follow-on",
-      "amount_note": "USD 200M base closed 25 June, USD 30M over-allotment closed 14 July"
+      "amount_note": "USD 200M base closed 25 June, USD 30M over-allotment closed 14 July",
+      "verified": "2026-08-03",
+      "verified_source": "Nasdaq MLTX filings, Form S-3 shelf, via Cowork fact-check"
     },
     "Terra Quantum": {
       "stage": "De-SPAC",
       "status": "announced",
-      "amount_note": "up to, assuming no redemptions, gross proceeds"
+      "amount_note": "up to, assuming no redemptions, gross proceeds",
+      "verified": "2026-08-03",
+      "verified_source": "Axiom Intelligence Acquisition Corp 1 announcement, via Cowork fact-check"
+    },
+    "CCRAFT": {
+      "stage": "Series B",
+      "investors": "QBIT Capital, Zürcher Kantonalbank, Apprecia Capital, Spacewalk, Blue Wonder Ventures",
+      "lead_investor": "QBIT Capital",
+      "verified": "2026-08-03",
+      "verified_source": "CCRAFT release, via Max"
     }
   }
 }
