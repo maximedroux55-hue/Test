@@ -1,0 +1,399 @@
+{
+  "note": "Every story this tool has seen. Appended to on each run.",
+  "total": 28,
+  "posted": 7,
+  "stories": [
+    {
+      "key": "sifted.eu/articles/eth-spinout-zuriq-seed-round",
+      "first_seen": "2026-08-03",
+      "runs": [
+        "2026-08-03"
+      ],
+      "title": "Exclusive: ETH Zurich spinout ZuriQ raises $25.5m seed - Sifted",
+      "link": "https://sifted.eu/articles/eth-spinout-zuriq-seed-round",
+      "publisher": "Sifted",
+      "published": "2026-07-28",
+      "score": 27,
+      "last_seen": "2026-08-03",
+      "posted": true
+    },
+    {
+      "key": "venturelab.swiss/immitra-bio-raises-chf-24-million-to-advance-invivo-gene-editing-platform",
+      "first_seen": "2026-08-03",
+      "runs": [
+        "2026-08-03"
+      ],
+      "title": "Immitra Bio raises CHF 2.4 million to advance in-vivo gene editing platform - Venturelab Swiss",
+      "link": "https://www.venturelab.swiss/Immitra-Bio-raises-CHF-24-million-to-advance-invivo-gene-editing-platform",
+      "publisher": "Venturelab Swiss",
+      "published": "2026-07-21",
+      "score": 27,
+      "last_seen": "2026-08-03",
+      "posted": true
+    },
+    {
+      "key": "ggba.swiss/en/swissto12-raises-usd-70-million-to-meet-growing-multi-orbit-satellite-demand",
+      "first_seen": "2026-08-03",
+      "runs": [
+        "2026-08-03"
+      ],
+      "title": "SWISSto12 raises USD 70 million to scale its satellite business - Greater Geneva Bern area (GGBa)",
+      "link": "https://ggba.swiss/en/swissto12-raises-usd-70-million-to-meet-growing-multi-orbit-satellite-demand/",
+      "publisher": "Greater Geneva Bern area (GGBa)",
+      "published": "2026-07-16",
+      "score": 26,
+      "last_seen": "2026-08-03",
+      "posted": true
+    },
+    {
+      "key": "fortune.com/2026/07/21/skypilot-from-databricks-cofounder-raises-20m-to-be-the-switzerland-of-ai-compute",
+      "first_seen": "2026-08-03",
+      "runs": [
+        "2026-08-03"
+      ],
+      "title": "SkyPilot, from Databricks’ cofounder, raises $20M to be the Switzerland of AI compute - Fortune",
+      "link": "https://fortune.com/2026/07/21/skypilot-from-databricks-cofounder-raises-20m-to-be-the-switzerland-of-ai-compute/",
+      "publisher": "Fortune",
+      "published": "2026-07-21",
+      "score": 23,
+      "last_seen": "2026-08-03",
+      "posted": true
+    },
+    {
+      "key": "startupticker.ch/en/news/valuemize-raises-seven-figure-pre-seed-for-product-cost-software",
+      "first_seen": "2026-08-03",
+      "runs": [
+        "2026-08-03"
+      ],
+      "title": "Valuemize raises seven-figure pre-seed for product cost software",
+      "link": "https://www.startupticker.ch/en/news/valuemize-raises-seven-figure-pre-seed-for-product-cost-software",
+      "publisher": "Startupticker",
+      "published": "2026-07-28",
+      "score": 21,
+      "last_seen": "2026-08-03",
+      "posted": true
+    },
+    {
+      "key": "techfundingnews.com/ahead-health-10m-funding-preventive-care-germany-netherlands",
+      "first_seen": "2026-08-03",
+      "runs": [
+        "2026-08-03"
+      ],
+      "title": "Swiss preventive health startup Ahead Health raises $10M for Germany and Netherlands launch - Tech Funding News",
+      "link": "https://techfundingnews.com/ahead-health-10m-funding-preventive-care-germany-netherlands/",
+      "publisher": "Tech Funding News",
+      "published": "2026-07-30",
+      "score": 19,
+      "last_seen": "2026-08-03",
+      "posted": true
+    },
+    {
+      "key": "startupticker.ch/en/news/hilo-closes-series-b-extension-round-to-fuel-us-expansion",
+      "first_seen": "2026-08-03",
+      "runs": [
+        "2026-08-03"
+      ],
+      "title": "Hilo closes Series B extension round to fuel US expansion",
+      "link": "https://www.startupticker.ch/en/news/hilo-closes-series-b-extension-round-to-fuel-us-expansion",
+      "publisher": "Startupticker",
+      "published": "2026-07-22",
+      "score": 19,
+      "last_seen": "2026-08-03",
+      "posted": true
+    },
+    {
+      "key": "startupticker.ch/en/news/moonlake-therapeutics-raises-usd-230-million-in-public-offering",
+      "first_seen": "2026-08-03",
+      "runs": [
+        "2026-08-03"
+      ],
+      "title": "Moonlake Therapeutics raises USD 230 million in public offering",
+      "link": "https://www.startupticker.ch/en/news/moonlake-therapeutics-raises-usd-230-million-in-public-offering",
+      "publisher": "Startupticker",
+      "published": "2026-07-16",
+      "score": 19,
+      "last_seen": "2026-08-03",
+      "posted": false
+    },
+    {
+      "key": "startupticker.ch/en/news/medyria-raises-chf-3-5-million",
+      "first_seen": "2026-08-03",
+      "runs": [
+        "2026-08-03"
+      ],
+      "title": "Medyria raises CHF 3.5 million",
+      "link": "https://www.startupticker.ch/en/news/medyria-raises-chf-3-5-million",
+      "publisher": "Startupticker",
+      "published": "2026-07-24",
+      "score": 18,
+      "last_seen": "2026-08-03",
+      "posted": false
+    },
+    {
+      "key": "startupticker.ch/en/news/cdds-secures-seed-capital-for-further-development-steps",
+      "first_seen": "2026-08-03",
+      "runs": [
+        "2026-08-03"
+      ],
+      "title": "CDDS secures seed capital for further development steps",
+      "link": "https://www.startupticker.ch/en/news/cdds-secures-seed-capital-for-further-development-steps",
+      "publisher": "Startupticker",
+      "published": "2026-07-17",
+      "score": 13,
+      "last_seen": "2026-08-03",
+      "posted": false
+    },
+    {
+      "key": "actu.epfl.ch/news/using-future-data-to-better-predict-switzerland-s",
+      "first_seen": "2026-08-03",
+      "runs": [
+        "2026-08-03"
+      ],
+      "title": "Using future data to better predict Switzerland's rail energy demand",
+      "link": "https://actu.epfl.ch/news/using-future-data-to-better-predict-switzerland-s",
+      "publisher": "EPFL News",
+      "published": "2026-07-20",
+      "score": 11,
+      "last_seen": "2026-08-03",
+      "posted": false
+    },
+    {
+      "key": "startupticker.ch/en/news/nordfen-brings-drone-simulation-technology-to-latvia",
+      "first_seen": "2026-08-03",
+      "runs": [
+        "2026-08-03"
+      ],
+      "title": "Nordfen brings drone simulation technology to Latvia",
+      "link": "https://www.startupticker.ch/en/news/nordfen-brings-drone-simulation-technology-to-latvia",
+      "publisher": "Startupticker",
+      "published": "2026-08-03",
+      "score": 9,
+      "last_seen": "2026-08-03",
+      "posted": false
+    },
+    {
+      "key": "actu.epfl.ch/news/apertus-15-building-the-next-generation-of-open--2",
+      "first_seen": "2026-08-03",
+      "runs": [
+        "2026-08-03"
+      ],
+      "title": "Apertus 1.5: Building the next generation of open AI infrastructure",
+      "link": "https://actu.epfl.ch/news/apertus-15-building-the-next-generation-of-open--2",
+      "publisher": "EPFL News",
+      "published": "2026-07-24",
+      "score": 9,
+      "last_seen": "2026-08-03",
+      "posted": false
+    },
+    {
+      "key": "startupticker.ch/en/news/swiss-startup-aionic-labs-selected-for-funding-initiative-by-germany-s-federal-agency-sprin-d",
+      "first_seen": "2026-08-03",
+      "runs": [
+        "2026-08-03"
+      ],
+      "title": "Swiss Startup Aionic Labs selected for funding initiative by Germany's federal agency SPRIN-D",
+      "link": "https://www.startupticker.ch/en/news/swiss-startup-aionic-labs-selected-for-funding-initiative-by-germany-s-federal-agency-sprin-d",
+      "publisher": "Startupticker",
+      "published": "2026-07-20",
+      "score": 9,
+      "last_seen": "2026-08-03",
+      "posted": false
+    },
+    {
+      "key": "actu.epfl.ch/news/a-tiny-pore-identifies-cyanobacteria-toxins-in-lak",
+      "first_seen": "2026-08-03",
+      "runs": [
+        "2026-08-03"
+      ],
+      "title": "A tiny pore identifies cyanobacteria toxins in lake water",
+      "link": "https://actu.epfl.ch/news/a-tiny-pore-identifies-cyanobacteria-toxins-in-lak",
+      "publisher": "EPFL News",
+      "published": "2026-08-03",
+      "score": 8,
+      "last_seen": "2026-08-03",
+      "posted": false
+    },
+    {
+      "key": "actu.epfl.ch/news/how-rivers-shape-cities-and-societies",
+      "first_seen": "2026-08-03",
+      "runs": [
+        "2026-08-03"
+      ],
+      "title": "How rivers shape cities and societies",
+      "link": "https://actu.epfl.ch/news/how-rivers-shape-cities-and-societies",
+      "publisher": "EPFL News",
+      "published": "2026-07-30",
+      "score": 8,
+      "last_seen": "2026-08-03",
+      "posted": false
+    },
+    {
+      "key": "news.google.com/rss/articles/cbmirafbvv95cuxqovnkr0m0njb2eendvxdysmozru8xmhp2cffauetrm0xwndlwwwtsce9anzfuc0nhsgznqxluzfp5tfrxulnwcdawrejta0dgufl3bwhmy0zvrkrmqkqzz3lta0zjmfatzejrm09vneqywgrusvh4d1ayszk3buzjb2jsmnzsvtgttnnmx2czagv5qnhystjvaju2smthshrdvdnlnel2dknmlthb",
+      "first_seen": "2026-08-03",
+      "runs": [
+        "2026-08-03"
+      ],
+      "title": "In AI arms race, Swiss neutrality is double-edged sword - swissinfo.ch",
+      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQOVNkR0M0NjB2eENDVXdYSmozRU8xMHp2cFFaUEtrM0xWNDlwWWtscE9aNzFuc0NHSGZnQXlUZFp5TFRXUlNwcDAwREJta0dGUFl3bWhmY0ZvRkRMQkQzZ3lTa0ZjMFAtZEJRM09VNEQyWGRUSVh4d1AySzk3bUZJb2JSMnZsVTgtTnNmX2czaGV5QnhySTJVajU2SmtHSHRDVDNLNEl2dkNmLThB?oc=5",
+      "publisher": "swissinfo.ch",
+      "published": "2026-07-30",
+      "score": 8,
+      "last_seen": "2026-08-03",
+      "posted": false
+    },
+    {
+      "key": "actu.epfl.ch/news/a-lipid-switch-that-blocks-anthrax",
+      "first_seen": "2026-08-03",
+      "runs": [
+        "2026-08-03"
+      ],
+      "title": "A lipid switch that blocks anthrax",
+      "link": "https://actu.epfl.ch/news/a-lipid-switch-that-blocks-anthrax",
+      "publisher": "EPFL News",
+      "published": "2026-07-28",
+      "score": 8,
+      "last_seen": "2026-08-03",
+      "posted": false
+    },
+    {
+      "key": "startupticker.ch/en/news/four-swiss-medtechs-mark-commercial-regulatory-and-clinical-milestones",
+      "first_seen": "2026-08-03",
+      "runs": [
+        "2026-08-03"
+      ],
+      "title": "Four Swiss medtechs mark commercial, regulatory and clinical milestones",
+      "link": "https://www.startupticker.ch/en/news/four-swiss-medtechs-mark-commercial-regulatory-and-clinical-milestones",
+      "publisher": "Startupticker",
+      "published": "2026-07-27",
+      "score": 8,
+      "last_seen": "2026-08-03",
+      "posted": false
+    },
+    {
+      "key": "startupticker.ch/en/news/humboldt-ai-lanciert-ki-tool-fuer-den-cv-check-im-schweizer-arbeitsmarkt",
+      "first_seen": "2026-08-03",
+      "runs": [
+        "2026-08-03"
+      ],
+      "title": "Humboldt AI lanciert KI-Tool für den CV-Check im Schweizer Arbeitsmarkt",
+      "link": "https://www.startupticker.ch/en/news/humboldt-ai-lanciert-ki-tool-fuer-den-cv-check-im-schweizer-arbeitsmarkt",
+      "publisher": "Startupticker",
+      "published": "2026-07-27",
+      "score": 8,
+      "last_seen": "2026-08-03",
+      "posted": false
+    },
+    {
+      "key": "startupticker.ch/en/news/ki-startup-prodlane-sammelt-4-millionen-euro-ein",
+      "first_seen": "2026-08-03",
+      "runs": [
+        "2026-08-03"
+      ],
+      "title": "KI-Startup Prodlane sammelt 4 Millionen Euro ein",
+      "link": "https://www.startupticker.ch/en/news/ki-startup-prodlane-sammelt-4-millionen-euro-ein",
+      "publisher": "Startupticker",
+      "published": "2026-07-21",
+      "score": 8,
+      "last_seen": "2026-08-03",
+      "posted": false
+    },
+    {
+      "key": "news.google.com/rss/articles/cbmiqgfbvv95cuxqclryn0p2aku2zgfqbndfutb1vc01qukxefrptndzn3m5vhntagjjow9krs1fc0kwnxbdcujeq0djos1fevpit1dlvdm1ahhieulhbxpsegjis0dkrgzxmvpkmlb4vnnxvldrwe45cuvlvwvpylznou5pdmthc0xjzvnzyxpnvu4yogdkqy1dq0fpmwjnvhlangd4rxf3zdbfm1fldufltnpyqq",
+      "first_seen": "2026-08-03",
+      "runs": [
+        "2026-08-03"
+      ],
+      "title": "J’ai montré ma poitrine à une IA suisse et j'en suis ravie - Watson",
+      "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQclRyN0p2akU2ZGFqbndFUTB1VC01QUkxeFRPTndzN3M5VHNTaGJjOW9KRS1Fc0kwNXBDcUJEQ0djOS1FeVpIT1dlVDM1aHhieUlhbXpSeGJiS0dkRGZxMVpkMlB4VnNxVldRWE45cUVlVWVPYlZNOU5PdmtHc0xjZVNzYXpNVU4yOGdKQy1DQ0FpMWJNVHlaNGd4RXF3ZDBfM1FLdUFlTnpYQQ?oc=5",
+      "publisher": "Watson",
+      "published": "2026-07-18",
+      "score": 8,
+      "last_seen": "2026-08-03",
+      "posted": false
+    },
+    {
+      "key": "startupticker.ch/en/news/aeler-eyes-oncoming-large-scale-roll-out",
+      "first_seen": "2026-08-03",
+      "runs": [
+        "2026-08-03"
+      ],
+      "title": "AELER eyes oncoming large-scale roll-out",
+      "link": "https://www.startupticker.ch/en/news/aeler-eyes-oncoming-large-scale-roll-out",
+      "publisher": "Startupticker",
+      "published": "2026-07-17",
+      "score": 8,
+      "last_seen": "2026-08-03",
+      "posted": false
+    },
+    {
+      "key": "startupticker.ch/en/news/proptech-assetos-auf-wachstumskurs",
+      "first_seen": "2026-08-03",
+      "runs": [
+        "2026-08-03"
+      ],
+      "title": "PropTech AssetOS auf Wachstumskurs",
+      "link": "https://www.startupticker.ch/en/news/proptech-assetos-auf-wachstumskurs",
+      "publisher": "Startupticker",
+      "published": "2026-07-30",
+      "score": 7,
+      "last_seen": "2026-08-03",
+      "posted": false
+    },
+    {
+      "key": "startupticker.ch/en/news/delta-capacity-completes-swedish-battery-project",
+      "first_seen": "2026-08-03",
+      "runs": [
+        "2026-08-03"
+      ],
+      "title": "Delta Capacity completes Swedish battery project",
+      "link": "https://www.startupticker.ch/en/news/delta-capacity-completes-swedish-battery-project",
+      "publisher": "Startupticker",
+      "published": "2026-07-30",
+      "score": 6,
+      "last_seen": "2026-08-03",
+      "posted": false
+    },
+    {
+      "key": "startupticker.ch/en/news/england-the-middle-east-and-india-three-start-ups-are-expanding-with-their-digital-solutions",
+      "first_seen": "2026-08-03",
+      "runs": [
+        "2026-08-03"
+      ],
+      "title": "England, the Middle East and India: Three start-ups are expanding with their digital solutions",
+      "link": "https://www.startupticker.ch/en/news/england-the-middle-east-and-india-three-start-ups-are-expanding-with-their-digital-solutions",
+      "publisher": "Startupticker",
+      "published": "2026-07-22",
+      "score": 6,
+      "last_seen": "2026-08-03",
+      "posted": false
+    },
+    {
+      "key": "fintechnews.ch/aifintech/cognizant-emea-ai-unit-launch/84819",
+      "first_seen": "2026-08-03",
+      "runs": [
+        "2026-08-03"
+      ],
+      "title": "Cognizant Launches EMEA AI Unit to Move Enterprise Projects to Production",
+      "link": "https://fintechnews.ch/aifintech/cognizant-emea-ai-unit-launch/84819/",
+      "publisher": "Fintechnews Switzerland",
+      "published": "2026-07-29",
+      "score": 5,
+      "last_seen": "2026-08-03",
+      "posted": false
+    },
+    {
+      "key": "startupticker.ch/en/news/synhelion-erhaelt-foerdermittel-fuer-kommerzielle-demo-anlage",
+      "first_seen": "2026-08-03",
+      "runs": [
+        "2026-08-03"
+      ],
+      "title": "Synhelion erhält Fördermittel für kommerzielle Demo-Anlage",
+      "link": "https://www.startupticker.ch/en/news/synhelion-erhaelt-foerdermittel-fuer-kommerzielle-demo-anlage",
+      "publisher": "Startupticker",
+      "published": "2026-07-31",
+      "score": 4,
+      "last_seen": "2026-08-03",
+      "posted": false
+    }
+  ]
+}

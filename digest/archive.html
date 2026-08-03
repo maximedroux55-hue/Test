@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Swiss DeepTech news archive</title><meta name="robots" content="noindex">
+<style>
+  :root { --green:#46b96a; --ink:#1b2430; --soft:#5b6472; --line:#e6eae8; --bg:#f6f8f7; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+         background:var(--bg); color:var(--ink); line-height:1.5; }
+  .wrap { max-width:960px; margin:0 auto; padding:2rem 1rem 4rem; }
+  h1 { font-size:1.6rem; letter-spacing:-0.02em; } h1 .dot { color:var(--green); }
+  .sub { color:var(--soft); margin:0.4rem 0 1rem; font-size:0.9rem; }
+  input { width:100%; padding:0.7rem 0.9rem; border:1px solid var(--line);
+          border-radius:10px; font-size:1rem; margin-bottom:1rem; }
+  .box { background:#fff; border:1px solid var(--line); border-radius:14px; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:0.9rem; }
+  th, td { text-align:left; padding:0.6rem 0.8rem; border-bottom:1px solid var(--line);
+           vertical-align:top; }
+  th { color:var(--soft); font-size:0.78rem; text-transform:uppercase; letter-spacing:0.04em; }
+  td.s { color:var(--green); font-weight:700; width:3rem; }
+  td.p, td.d { color:var(--soft); white-space:nowrap; }
+  a { color:var(--ink); text-decoration:none; } a:hover { color:var(--green); }
+  .tag.posted { background:var(--green); color:#fff; border-radius:6px;
+                padding:0.05rem 0.4rem; font-size:0.7rem; font-weight:700; }
+</style></head><body>
+<div class="wrap">
+  <h1>Swiss DeepTech archive<span class="dot">.</span></h1>
+  <p class="sub">28 stories &middot; 7 posted &middot; 10 sources</p>
+  <input id="q" placeholder="Filter by company, source or word..." oninput="filter()">
+  <div class="box"><table>
+    <thead><tr><th>Score</th><th>Story</th><th>Source</th><th>Date</th></tr></thead>
+    <tbody id="rows">
+<tr><td class="s">27</td><td><a href="https://sifted.eu/articles/eth-spinout-zuriq-seed-round" target="_blank" rel="noopener">Exclusive: ETH Zurich spinout ZuriQ raises $25.5m seed - Sifted</a> <span class="tag posted">posted</span></td><td class="p">Sifted</td><td class="d">2026-07-28</td></tr>
+<tr><td class="s">27</td><td><a href="https://www.venturelab.swiss/Immitra-Bio-raises-CHF-24-million-to-advance-invivo-gene-editing-platform" target="_blank" rel="noopener">Immitra Bio raises CHF 2.4 million to advance in-vivo gene editing platform - Venturelab Swiss</a> <span class="tag posted">posted</span></td><td class="p">Venturelab Swiss</td><td class="d">2026-07-21</td></tr>
+<tr><td class="s">26</td><td><a href="https://ggba.swiss/en/swissto12-raises-usd-70-million-to-meet-growing-multi-orbit-satellite-demand/" target="_blank" rel="noopener">SWISSto12 raises USD 70 million to scale its satellite business - Greater Geneva Bern area (GGBa)</a> <span class="tag posted">posted</span></td><td class="p">Greater Geneva Bern area (GGBa)</td><td class="d">2026-07-16</td></tr>
+<tr><td class="s">23</td><td><a href="https://fortune.com/2026/07/21/skypilot-from-databricks-cofounder-raises-20m-to-be-the-switzerland-of-ai-compute/" target="_blank" rel="noopener">SkyPilot, from Databricks’ cofounder, raises $20M to be the Switzerland of AI compute - Fortune</a> <span class="tag posted">posted</span></td><td class="p">Fortune</td><td class="d">2026-07-21</td></tr>
+<tr><td class="s">21</td><td><a href="https://www.startupticker.ch/en/news/valuemize-raises-seven-figure-pre-seed-for-product-cost-software" target="_blank" rel="noopener">Valuemize raises seven-figure pre-seed for product cost software</a> <span class="tag posted">posted</span></td><td class="p">Startupticker</td><td class="d">2026-07-28</td></tr>
+<tr><td class="s">19</td><td><a href="https://techfundingnews.com/ahead-health-10m-funding-preventive-care-germany-netherlands/" target="_blank" rel="noopener">Swiss preventive health startup Ahead Health raises $10M for Germany and Netherlands launch - Tech Funding News</a> <span class="tag posted">posted</span></td><td class="p">Tech Funding News</td><td class="d">2026-07-30</td></tr>
+<tr><td class="s">19</td><td><a href="https://www.startupticker.ch/en/news/hilo-closes-series-b-extension-round-to-fuel-us-expansion" target="_blank" rel="noopener">Hilo closes Series B extension round to fuel US expansion</a> <span class="tag posted">posted</span></td><td class="p">Startupticker</td><td class="d">2026-07-22</td></tr>
+<tr><td class="s">19</td><td><a href="https://www.startupticker.ch/en/news/moonlake-therapeutics-raises-usd-230-million-in-public-offering" target="_blank" rel="noopener">Moonlake Therapeutics raises USD 230 million in public offering</a> </td><td class="p">Startupticker</td><td class="d">2026-07-16</td></tr>
+<tr><td class="s">18</td><td><a href="https://www.startupticker.ch/en/news/medyria-raises-chf-3-5-million" target="_blank" rel="noopener">Medyria raises CHF 3.5 million</a> </td><td class="p">Startupticker</td><td class="d">2026-07-24</td></tr>
+<tr><td class="s">13</td><td><a href="https://www.startupticker.ch/en/news/cdds-secures-seed-capital-for-further-development-steps" target="_blank" rel="noopener">CDDS secures seed capital for further development steps</a> </td><td class="p">Startupticker</td><td class="d">2026-07-17</td></tr>
+<tr><td class="s">11</td><td><a href="https://actu.epfl.ch/news/using-future-data-to-better-predict-switzerland-s" target="_blank" rel="noopener">Using future data to better predict Switzerland&#x27;s rail energy demand</a> </td><td class="p">EPFL News</td><td class="d">2026-07-20</td></tr>
+<tr><td class="s">9</td><td><a href="https://www.startupticker.ch/en/news/nordfen-brings-drone-simulation-technology-to-latvia" target="_blank" rel="noopener">Nordfen brings drone simulation technology to Latvia</a> </td><td class="p">Startupticker</td><td class="d">2026-08-03</td></tr>
+<tr><td class="s">9</td><td><a href="https://actu.epfl.ch/news/apertus-15-building-the-next-generation-of-open--2" target="_blank" rel="noopener">Apertus 1.5: Building the next generation of open AI infrastructure</a> </td><td class="p">EPFL News</td><td class="d">2026-07-24</td></tr>
+<tr><td class="s">9</td><td><a href="https://www.startupticker.ch/en/news/swiss-startup-aionic-labs-selected-for-funding-initiative-by-germany-s-federal-agency-sprin-d" target="_blank" rel="noopener">Swiss Startup Aionic Labs selected for funding initiative by Germany&#x27;s federal agency SPRIN-D</a> </td><td class="p">Startupticker</td><td class="d">2026-07-20</td></tr>
+<tr><td class="s">8</td><td><a href="https://actu.epfl.ch/news/a-tiny-pore-identifies-cyanobacteria-toxins-in-lak" target="_blank" rel="noopener">A tiny pore identifies cyanobacteria toxins in lake water</a> </td><td class="p">EPFL News</td><td class="d">2026-08-03</td></tr>
+<tr><td class="s">8</td><td><a href="https://actu.epfl.ch/news/how-rivers-shape-cities-and-societies" target="_blank" rel="noopener">How rivers shape cities and societies</a> </td><td class="p">EPFL News</td><td class="d">2026-07-30</td></tr>
+<tr><td class="s">8</td><td><a href="https://news.google.com/rss/articles/CBMirAFBVV95cUxQOVNkR0M0NjB2eENDVXdYSmozRU8xMHp2cFFaUEtrM0xWNDlwWWtscE9aNzFuc0NHSGZnQXlUZFp5TFRXUlNwcDAwREJta0dGUFl3bWhmY0ZvRkRMQkQzZ3lTa0ZjMFAtZEJRM09VNEQyWGRUSVh4d1AySzk3bUZJb2JSMnZsVTgtTnNmX2czaGV5QnhySTJVajU2SmtHSHRDVDNLNEl2dkNmLThB?oc=5" target="_blank" rel="noopener">In AI arms race, Swiss neutrality is double-edged sword - swissinfo.ch</a> </td><td class="p">swissinfo.ch</td><td class="d">2026-07-30</td></tr>
+<tr><td class="s">8</td><td><a href="https://actu.epfl.ch/news/a-lipid-switch-that-blocks-anthrax" target="_blank" rel="noopener">A lipid switch that blocks anthrax</a> </td><td class="p">EPFL News</td><td class="d">2026-07-28</td></tr>
+<tr><td class="s">8</td><td><a href="https://www.startupticker.ch/en/news/four-swiss-medtechs-mark-commercial-regulatory-and-clinical-milestones" target="_blank" rel="noopener">Four Swiss medtechs mark commercial, regulatory and clinical milestones</a> </td><td class="p">Startupticker</td><td class="d">2026-07-27</td></tr>
+<tr><td class="s">8</td><td><a href="https://www.startupticker.ch/en/news/humboldt-ai-lanciert-ki-tool-fuer-den-cv-check-im-schweizer-arbeitsmarkt" target="_blank" rel="noopener">Humboldt AI lanciert KI-Tool für den CV-Check im Schweizer Arbeitsmarkt</a> </td><td class="p">Startupticker</td><td class="d">2026-07-27</td></tr>
+<tr><td class="s">8</td><td><a href="https://www.startupticker.ch/en/news/ki-startup-prodlane-sammelt-4-millionen-euro-ein" target="_blank" rel="noopener">KI-Startup Prodlane sammelt 4 Millionen Euro ein</a> </td><td class="p">Startupticker</td><td class="d">2026-07-21</td></tr>
+<tr><td class="s">8</td><td><a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxQclRyN0p2akU2ZGFqbndFUTB1VC01QUkxeFRPTndzN3M5VHNTaGJjOW9KRS1Fc0kwNXBDcUJEQ0djOS1FeVpIT1dlVDM1aHhieUlhbXpSeGJiS0dkRGZxMVpkMlB4VnNxVldRWE45cUVlVWVPYlZNOU5PdmtHc0xjZVNzYXpNVU4yOGdKQy1DQ0FpMWJNVHlaNGd4RXF3ZDBfM1FLdUFlTnpYQQ?oc=5" target="_blank" rel="noopener">J’ai montré ma poitrine à une IA suisse et j&#x27;en suis ravie - Watson</a> </td><td class="p">Watson</td><td class="d">2026-07-18</td></tr>
+<tr><td class="s">8</td><td><a href="https://www.startupticker.ch/en/news/aeler-eyes-oncoming-large-scale-roll-out" target="_blank" rel="noopener">AELER eyes oncoming large-scale roll-out</a> </td><td class="p">Startupticker</td><td class="d">2026-07-17</td></tr>
+<tr><td class="s">7</td><td><a href="https://www.startupticker.ch/en/news/proptech-assetos-auf-wachstumskurs" target="_blank" rel="noopener">PropTech AssetOS auf Wachstumskurs</a> </td><td class="p">Startupticker</td><td class="d">2026-07-30</td></tr>
+<tr><td class="s">6</td><td><a href="https://www.startupticker.ch/en/news/delta-capacity-completes-swedish-battery-project" target="_blank" rel="noopener">Delta Capacity completes Swedish battery project</a> </td><td class="p">Startupticker</td><td class="d">2026-07-30</td></tr>
+<tr><td class="s">6</td><td><a href="https://www.startupticker.ch/en/news/england-the-middle-east-and-india-three-start-ups-are-expanding-with-their-digital-solutions" target="_blank" rel="noopener">England, the Middle East and India: Three start-ups are expanding with their digital solutions</a> </td><td class="p">Startupticker</td><td class="d">2026-07-22</td></tr>
+<tr><td class="s">5</td><td><a href="https://fintechnews.ch/aifintech/cognizant-emea-ai-unit-launch/84819/" target="_blank" rel="noopener">Cognizant Launches EMEA AI Unit to Move Enterprise Projects to Production</a> </td><td class="p">Fintechnews Switzerland</td><td class="d">2026-07-29</td></tr>
+<tr><td class="s">4</td><td><a href="https://www.startupticker.ch/en/news/synhelion-erhaelt-foerdermittel-fuer-kommerzielle-demo-anlage" target="_blank" rel="noopener">Synhelion erhält Fördermittel für kommerzielle Demo-Anlage</a> </td><td class="p">Startupticker</td><td class="d">2026-07-31</td></tr>
+    </tbody>
+  </table></div>
+</div>
+<script>
+  function filter() {
+    var q = document.getElementById('q').value.toLowerCase();
+    var rows = document.querySelectorAll('#rows tr');
+    for (var i = 0; i < rows.length; i++) {
+      rows[i].style.display = rows[i].innerText.toLowerCase().indexOf(q) > -1 ? '' : 'none';
+    }
+  }
+</script>
+</body></html>

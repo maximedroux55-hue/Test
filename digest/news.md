@@ -33,8 +33,8 @@ _Generated 03 August 2026, covering the last 21 days. 28 stories._
    EPFL News · 03 Aug 2026 · relevance 8
 16. **[How rivers shape cities and societies](https://actu.epfl.ch/news/how-rivers-shape-cities-and-societies)**  
    EPFL News · 30 Jul 2026 · relevance 8
-17. **[In AI arms race, Swiss neutrality is double-edged sword - SWI swissinfo.ch](https://news.google.com/rss/articles/CBMirAFBVV95cUxQOVNkR0M0NjB2eENDVXdYSmozRU8xMHp2cFFaUEtrM0xWNDlwWWtscE9aNzFuc0NHSGZnQXlUZFp5TFRXUlNwcDAwREJta0dGUFl3bWhmY0ZvRkRMQkQzZ3lTa0ZjMFAtZEJRM09VNEQyWGRUSVh4d1AySzk3bUZJb2JSMnZsVTgtTnNmX2czaGV5QnhySTJVajU2SmtHSHRDVDNLNEl2dkNmLThB?oc=5)**  
-   SWI swissinfo.ch · 30 Jul 2026 · relevance 8
+17. **[In AI arms race, Swiss neutrality is double-edged sword - swissinfo.ch](https://news.google.com/rss/articles/CBMirAFBVV95cUxQOVNkR0M0NjB2eENDVXdYSmozRU8xMHp2cFFaUEtrM0xWNDlwWWtscE9aNzFuc0NHSGZnQXlUZFp5TFRXUlNwcDAwREJta0dGUFl3bWhmY0ZvRkRMQkQzZ3lTa0ZjMFAtZEJRM09VNEQyWGRUSVh4d1AySzk3bUZJb2JSMnZsVTgtTnNmX2czaGV5QnhySTJVajU2SmtHSHRDVDNLNEl2dkNmLThB?oc=5)**  
+   swissinfo.ch · 30 Jul 2026 · relevance 8
 18. **[A lipid switch that blocks anthrax](https://actu.epfl.ch/news/a-lipid-switch-that-blocks-anthrax)**  
    EPFL News · 28 Jul 2026 · relevance 8
 19. **[Four Swiss medtechs mark commercial, regulatory and clinical milestones](https://www.startupticker.ch/en/news/four-swiss-medtechs-mark-commercial-regulatory-and-clinical-milestones)**  
