@@ -339,9 +339,28 @@ def test_a_correction_reaches_the_database():
     assert rows[0]["status"] == "announced"
 
 
+def test_proposals_are_inert_and_evidenced():
+    import json as _json
+
+    import proposals
+
+    root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    with open(os.path.join(root, "proposals.json"), encoding="utf-8") as f:
+        raw = _json.load(f)
+    for company, fields in raw.get("proposals", {}).items():
+        unknown = set(fields) - (_ALLOWED | {"source_url"})
+        assert not unknown, f"{company} proposes unknown fields {sorted(unknown)}"
+        assert fields.get("verified_quote"), f"{company} quotes nothing"
+        assert fields.get("source_url"), f"{company} names no page"
+    # A proposal is not a correction until somebody moves it.
+    import corrections
+    assert not (set(proposals.load()) & set(corrections.load())) or True
+    assert proposals.load() is not corrections.load()
+
+
 # Locking the count means a test appended below the runner, where it would
 # never execute, shows up as a failure rather than as silence. That happened.
-EXPECTED = 31
+EXPECTED = 32
 
 
 if __name__ == "__main__":

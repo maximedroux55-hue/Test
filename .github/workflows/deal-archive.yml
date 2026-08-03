@@ -107,11 +107,14 @@ jobs:
             cp deeptech-news/output/archive.html digest/archive.html
             # What Cowork should check against primary sources.
             cp deeptech-news/output/verify.json  digest/verify.json 2>/dev/null || true
+            # Proposed corrections, to read before accepting any of them.
+            cp deeptech-news/output/review.html  digest/review.html 2>/dev/null || true
             cp /tmp/carry/archive.json digest/archive.json 2>/dev/null || true
             # One report per month, served at maxime-droux.com/reports/
             cp deeptech-news/output/reports/*.html reports/ 2>/dev/null || true
 
-            git add digest/archive.html digest/archive.json digest/verify.json reports
+            git add digest/archive.html digest/archive.json digest/verify.json \
+                    digest/review.html reports
             git commit -m "Update the deal database" || { echo "No changes to publish."; exit 0; }
             if git push origin HEAD:${GITHUB_REF_NAME}; then
               echo "Published."; exit 0

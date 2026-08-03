@@ -1215,6 +1215,13 @@ def build_archive(articles: list, picks: list, args) -> None:
     import verify
     verify.write(swiss_rounds, os.path.join(args.outdir, "verify.json"))
 
+    # Anything the weekly check proposes, laid out to be read and accepted or
+    # refused. It is not in the database and does not become so on its own.
+    import corrections as corrections_mod
+    import proposals
+    proposals.write_page(os.path.join(args.outdir, "review.html"),
+                         corrections_mod.load())
+
 
 def _flag_missing_ai(articles: list, mode: str, args) -> None:
     """Leave a marker when this run silently fell back to no AI.
