@@ -215,75 +215,159 @@ def _is_round(story: dict) -> bool:
     return bool((story.get("amount") or "").strip())
 
 
+def _report_coverage(known: dict) -> None:
+    """Print how full the archive actually is, field by field.
+
+    Without this the only way to tell whether a run read the articles properly
+    was to open the page and count blanks.
+    """
+    rounds = [s for s in known.values() if _is_round(s)]
+    if not rounds:
+        return
+    fields = ("company", "description", "category", "stage", "amount",
+              "location", "investors", "lead_investor", "founders",
+              "spinoff_origin", "founded", "total_raised")
+    print(f"Archive coverage over {len(rounds)} rounds:", file=sys.stderr)
+    for field in fields:
+        filled = sum(1 for s in rounds if (s.get(field) or "").strip())
+        print(f"  {field:<15} {filled:>3}/{len(rounds)}"
+              f"  {100 * filled // len(rounds):>3}%", file=sys.stderr)
+
+
+def _investor_line(story: dict) -> str:
+    """Investors with the lead first, or "" when none was named."""
+    lead = (story.get("lead_investor") or "").strip()
+    rest = [x.strip() for x in (story.get("investors") or "").split(",") if x.strip()]
+    rest = [x for x in rest if x.lower() != lead.lower()]
+    return ", ".join(([f"{lead} (lead)"] if lead else []) + rest)
+
+
 def render_archive_html(known: dict) -> str:
-    """A browsable page of the financing rounds found, newest first."""
+    """A browsable page of the financing rounds found, newest first.
+
+    Nine rigid columns left a hole wherever a fact was missing, and articles
+    routinely withhold investors and founders, so most of the table read as
+    blank. The columns here are the ones that are almost always known, and
+    everything else sits under the company name and only appears when it is
+    actually there, so a missing fact costs a phrase rather than a gap.
+    """
     everything = sorted(
         known.values(),
-        key=lambda e: (e.get("last_seen", ""), e.get("score") or 0),
+        key=lambda e: (e.get("published") or e.get("first_seen") or "",
+                       e.get("score") or 0),
         reverse=True,
     )
     stories = [s for s in everything if _is_round(s)]
     hidden = len(everything) - len(stories)
     posted = sum(1 for s in stories if s.get("posted"))
-    sources = len({s.get("publisher", "") for s in stories if s.get("publisher")})
+    companies = len({(s.get("company") or "").lower() for s in stories if s.get("company")})
+    with_investors = sum(1 for s in stories if _investor_line(s))
+    with_founders = sum(1 for s in stories if (s.get("founders") or "").strip())
+
     rows = []
     for s in stories:
         tag = ' <span class="tag posted">posted</span>' if s.get("posted") else ""
-        company = html.escape(s.get("company") or "") or "&mdash;"
+        company = html.escape(s.get("company") or "") or html.escape(
+            (s.get("title") or "")[:40])
+        link = html.escape(s.get("link", ""))
+
+        desc = html.escape(s.get("description") or "")
+        if not desc:
+            # Better the headline than an empty line under the name.
+            desc = html.escape((s.get("title") or "").strip())
+        desc = f'<div class="desc">{desc}</div>' if desc else ""
+
+        # Everything the article happened to give, written out only when it is
+        # there. No fact, no fragment, so nothing renders as a blank cell.
+        bits = []
+        investors = _investor_line(s)
+        if investors:
+            bits.append(f'Backed by <b>{html.escape(investors)}</b>')
+        founders = (s.get("founders") or "").strip()
+        if founders:
+            bits.append(f'Founded by {html.escape(founders)}')
+        origin = (s.get("spinoff_origin") or "").strip()
+        if origin:
+            bits.append(f'{html.escape(origin)} spin-off')
+        year = (s.get("founded") or "").strip()
+        if year:
+            bits.append(f'est. {html.escape(year)}')
+        staff = (s.get("employees") or "").strip()
+        if staff:
+            bits.append(f'{html.escape(staff)} staff')
+        valuation = (s.get("valuation") or "").strip()
+        if valuation:
+            bits.append(f'valued {html.escape(valuation)}')
+        use = (s.get("use_of_funds") or "").strip()
+        if use:
+            bits.append(html.escape(use))
+        meta = f'<div class="meta">{" &middot; ".join(bits)}</div>' if bits else ""
+
         stage_text = html.escape(s.get("stage") or "")
-        stage = f'<span class="stage">{stage_text}</span>' if stage_text else ""
+        stage = (f'<span class="stage">{stage_text}</span>' if stage_text
+                 else '<span class="nd">round</span>')
         category_text = html.escape(s.get("category") or "")
-        category = f'<span class="cat">{category_text}</span>' if category_text else ""
+        category = (f'<span class="cat">{category_text}</span>' if category_text
+                    else '<span class="nd">n/d</span>')
+        amount_text = html.escape(s.get("amount") or "")
+        amount = amount_text or '<span class="nd">undisclosed</span>'
         total_text = html.escape(s.get("total_raised") or "")
-        total = f'<span class="total">tot {total_text}</span>' if total_text else ""
-        # Lead investor first, then the rest.
-        lead = (s.get("lead_investor") or "").strip()
-        rest = [x.strip() for x in (s.get("investors") or "").split(",") if x.strip()]
-        rest = [x for x in rest if x.lower() != lead.lower()]
-        investors = ", ".join(([f"{lead} (lead)"] if lead else []) + rest)
+        total = f'<span class="total">{total_text} total</span>' if total_text else ""
+        location = html.escape(s.get("location") or "") or '<span class="nd">n/d</span>'
+
         rows.append(
             f'<tr>'
-            f'<td class="co"><a href="{html.escape(s.get("link",""))}" target="_blank" '
-            f'rel="noopener" title="{html.escape(s.get("title",""))}">{company}</a>{tag}</td>'
+            f'<td class="co"><a href="{link}" target="_blank" rel="noopener" '
+            f'title="{html.escape(s.get("title",""))}">{company}</a>{tag}'
+            f'{desc}{meta}</td>'
             f'<td>{category}</td>'
             f'<td>{stage}</td>'
-            f'<td class="amt">{html.escape(s.get("amount") or "")}'
-            f'{total}</td>'
-            f'<td class="inv">{html.escape(investors)}</td>'
-            f'<td class="fnd">{html.escape(s.get("founders") or "")}</td>'
-            f'<td class="loc">{html.escape(s.get("spinoff_origin") or "")}</td>'
-            f'<td class="loc">{html.escape(s.get("location") or "")}</td>'
+            f'<td class="amt">{amount}{total}</td>'
+            f'<td class="loc">{location}</td>'
             f'<td class="d">{html.escape(s.get("published") or s.get("first_seen",""))}</td>'
             f'</tr>'
         )
-    body = "\n".join(rows) or '<tr><td colspan="9">No financing rounds recorded yet.</td></tr>'
+    body = "\n".join(rows) or (
+        '<tr><td colspan="6" class="nd">No financing rounds recorded yet. '
+        'The next run will fill this in.</td></tr>')
     return f"""<!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Swiss DeepTech rounds</title><meta name="robots" content="noindex">
 <style>
-  :root {{ --green:#46b96a; --ink:#1b2430; --soft:#5b6472; --line:#e6eae8; --bg:#f6f8f7; }}
+  :root {{ --green:#46b96a; --ink:#1b2430; --soft:#5b6472; --faint:#9aa3ad;
+          --line:#e6eae8; --bg:#f6f8f7; }}
   * {{ box-sizing:border-box; margin:0; padding:0; }}
   body {{ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
          background:var(--bg); color:var(--ink); line-height:1.5; }}
-  .wrap {{ max-width:960px; margin:0 auto; padding:2rem 1rem 4rem; }}
+  .wrap {{ max-width:1040px; margin:0 auto; padding:2rem 1rem 4rem; }}
   h1 {{ font-size:1.6rem; letter-spacing:-0.02em; }} h1 .dot {{ color:var(--green); }}
   .sub {{ color:var(--soft); margin:0.4rem 0 1rem; font-size:0.9rem; }}
+  .stats {{ display:flex; flex-wrap:wrap; gap:0.6rem; margin:0 0 1rem; }}
+  .stat {{ background:#fff; border:1px solid var(--line); border-radius:12px;
+          padding:0.55rem 0.9rem; flex:1 1 auto; min-width:110px; }}
+  .stat b {{ display:block; font-size:1.25rem; letter-spacing:-0.02em; }}
+  .stat span {{ color:var(--soft); font-size:0.74rem; text-transform:uppercase;
+               letter-spacing:0.04em; }}
   input {{ width:100%; padding:0.7rem 0.9rem; border:1px solid var(--line);
           border-radius:10px; font-size:1rem; margin-bottom:1rem; }}
   .box {{ background:#fff; border:1px solid var(--line); border-radius:14px; overflow-x:auto; }}
   table {{ width:100%; border-collapse:collapse; font-size:0.9rem; }}
-  th, td {{ text-align:left; padding:0.6rem 0.8rem; border-bottom:1px solid var(--line);
+  th, td {{ text-align:left; padding:0.7rem 0.8rem; border-bottom:1px solid var(--line);
            vertical-align:top; }}
   th {{ color:var(--soft); font-size:0.78rem; text-transform:uppercase; letter-spacing:0.04em; }}
-  td.co {{ font-weight:600; }}
+  tr:last-child td {{ border-bottom:none; }}
+  td.co {{ font-weight:600; min-width:15rem; }}
+  .desc {{ font-weight:400; color:var(--soft); font-size:0.84rem; margin-top:0.15rem; }}
+  .meta {{ font-weight:400; color:var(--faint); font-size:0.78rem; margin-top:0.25rem; }}
+  .meta b {{ color:var(--soft); font-weight:600; }}
   td.amt {{ color:var(--ink); font-weight:600; white-space:nowrap; }}
-  td.inv {{ color:var(--soft); }}
-  td.fnd {{ color:var(--soft); }}
   td.loc, td.d {{ color:var(--soft); white-space:nowrap; }}
   a {{ color:var(--ink); text-decoration:none; }} a:hover {{ color:var(--green); }}
+  .nd {{ color:var(--faint); font-weight:400; font-size:0.82rem; }}
   .tag.posted {{ background:var(--green); color:#fff; border-radius:6px;
-                padding:0.05rem 0.4rem; font-size:0.7rem; font-weight:700; }}
+                padding:0.05rem 0.4rem; font-size:0.7rem; font-weight:700;
+                vertical-align:middle; }}
   .cat {{ background:#eef4f0; color:#2f6b46; border-radius:6px;
          padding:0.1rem 0.45rem; font-size:0.76rem; font-weight:600;
          white-space:nowrap; }}
@@ -293,12 +377,19 @@ def render_archive_html(known: dict) -> str:
 </style></head><body>
 <div class="wrap">
   <h1>Swiss DeepTech rounds<span class="dot">.</span></h1>
-  <p class="sub">{len(stories)} financing rounds &middot; {posted} posted &middot; {sources} sources
-  &middot; <span title="Research, partnerships and other non-financing news, kept in archive.json">{hidden} other stories hidden</span></p>
-  <input id="q" placeholder="Filter by company, sector, investor or city..." oninput="filter()">
+  <p class="sub">Every financing round the tool has found, newest first.
+  <span title="Research, partnerships and other non-financing news, kept in archive.json">{hidden} non-financing stories are kept in archive.json and not shown here.</span></p>
+  <div class="stats">
+    <div class="stat"><b>{len(stories)}</b><span>rounds</span></div>
+    <div class="stat"><b>{companies}</b><span>companies</span></div>
+    <div class="stat"><b>{with_investors}</b><span>with investors</span></div>
+    <div class="stat"><b>{with_founders}</b><span>with founders</span></div>
+    <div class="stat"><b>{posted}</b><span>posted</span></div>
+  </div>
+  <input id="q" placeholder="Filter by company, sector, investor, founder or city..." oninput="filter()">
   <div class="box"><table>
-    <thead><tr><th>Company</th><th>Category</th><th>Stage</th><th>Amount</th>
-      <th>Investors</th><th>Founders</th><th>Spin-off</th><th>HQ</th><th>Date</th></tr></thead>
+    <thead><tr><th>Company</th><th>Sector</th><th>Stage</th><th>Raised</th>
+      <th>HQ</th><th>Date</th></tr></thead>
     <tbody id="rows">
 {body}
     </tbody>
@@ -333,6 +424,9 @@ def main() -> None:
                     help="Record of stories already posted, so none repeats")
     ap.add_argument("--archive", default="../digest/archive.json",
                     help="Append-only record of every story ever found")
+    ap.add_argument("--archive-only", action="store_true",
+                    help="Only fill the archive: write no posts and touch no history. "
+                         "Use with a wide --days to backfill past rounds.")
     args = ap.parse_args()
 
     print(f"Fetching Swiss DeepTech news (last {args.days} days)...", file=sys.stderr)
@@ -353,7 +447,11 @@ def main() -> None:
         print(f"Wrote {md_path}", file=sys.stderr)
         print(f"Wrote {html_path}", file=sys.stderr)
 
-    if args.format in ("linkedin", "both"):
+    # A backfill run fills the archive from a wide window. It must not write
+    # posts: that would overwrite the week already planned and burn stories in
+    # history that were never actually published.
+    picks = []
+    if args.format in ("linkedin", "both") and not args.archive_only:
         import json
         from images import enrich_articles
         from relevance import diversify
@@ -446,55 +544,75 @@ def main() -> None:
         history_mod.save(args.history, history_mod.record(past, picks))
         print(f"Recorded {len(picks)} stories in {args.history}", file=sys.stderr)
 
-        # Keep every story found, not just the ones posted, so the record
-        # builds up over time instead of being overwritten each run.
-        import archive as archive_mod
-        from extract import extract_fields
-        from images import article_text
+    # Keep every story found, not just the ones posted, so the record
+    # builds up over time instead of being overwritten each run.
+    import archive as archive_mod
+    from extract import extract_fields
+    from images import article_text
 
-        # Read the articles themselves. Feed summaries are a sentence or two,
-        # which is why investors and founders were mostly blank.
-        print(f"Fetching {len(articles)} articles in full...", file=sys.stderr)
-        got = 0
-        for art in articles:
-            art["fulltext"] = article_text(art.get("link", ""), limit=6000)
-            if art["fulltext"]:
-                got += 1
-        print(f"  read {got}/{len(articles)} in full", file=sys.stderr)
-
-        print("Reading deal facts from each story...", file=sys.stderr)
-        for art, facts in zip(articles, extract_fields(articles)):
-            art.update(facts)
-        named = sum(1 for a in articles if a.get("company"))
-        print(f"  identified a company in {named}/{len(articles)} stories",
+    # Only the seven picked posts had their Google News redirect resolved, so
+    # every other story went into the archive as a news.google.com link. Asking
+    # that URL for the article text returns Google's own redirect page, which
+    # holds no facts, so those rows were extracted from the feed summary alone.
+    # Resolve them all before reading.
+    from google_news import is_google_news_url, resolve_url
+    redirects = [a for a in articles if is_google_news_url(a.get("link", ""))]
+    if redirects:
+        print(f"Resolving {len(redirects)} Google News links to the publisher...",
               file=sys.stderr)
+        done = 0
+        for art in redirects:
+            real = resolve_url(art["link"])
+            if real:
+                art["link"] = real
+                done += 1
+        print(f"  resolved {done}/{len(redirects)}", file=sys.stderr)
 
-        # News write-ups give the amount and little else, so read each
-        # company's own site for the investors, founders and the rest.
-        from extract import fill_from_company_sites
-        fill_from_company_sites([a for a in articles if _is_round(a)])
+    # Read the articles themselves. Feed summaries are a sentence or two,
+    # which is why investors and founders were mostly blank.
+    print(f"Fetching {len(articles)} articles in full...", file=sys.stderr)
+    got = 0
+    for art in articles:
+        art["fulltext"] = article_text(art.get("link", ""), limit=6000)
+        if art["fulltext"]:
+            got += 1
+    print(f"  read {got}/{len(articles)} in full", file=sys.stderr)
 
-        # The commercial register is authoritative for the registered seat.
-        from registries import fill_from_registries
-        fill_from_registries([a for a in articles if _is_round(a)])
+    print("Reading deal facts from each story...", file=sys.stderr)
+    for art, facts in zip(articles, extract_fields(articles)):
+        art.update(facts)
+    named = sum(1 for a in articles if a.get("company"))
+    print(f"  identified a company in {named}/{len(articles)} stories",
+          file=sys.stderr)
 
-        # Anything still without a location gets the address lookup.
-        from hq_lookup import fill_missing
-        blanks = sum(1 for a in articles if a.get("company") and not a.get("location"))
-        if blanks:
-            print(f"Looking up {blanks} missing headquarters...", file=sys.stderr)
-            print(f"  found {fill_missing(articles)} of them", file=sys.stderr)
-        known = archive_mod.load(args.archive)
-        before = len(known)
-        known = archive_mod.record(known, articles, picks)
-        archive_mod.save(args.archive, known)
-        print(
-            f"Archive: {len(known)} stories total ({len(known) - before} new "
-            f"this run) in {args.archive}",
-            file=sys.stderr,
-        )
-        with open(os.path.join(args.outdir, "archive.html"), "w", encoding="utf-8") as f:
-            f.write(render_archive_html(known))
+    # News write-ups give the amount and little else, so read each
+    # company's own site for the investors, founders and the rest.
+    from extract import fill_from_company_sites
+    fill_from_company_sites([a for a in articles if _is_round(a)])
+
+    # The commercial register is authoritative for the registered seat.
+    from registries import fill_from_registries
+    fill_from_registries([a for a in articles if _is_round(a)])
+
+    # Anything still without a location gets the address lookup.
+    from hq_lookup import fill_missing
+    blanks = sum(1 for a in articles if a.get("company") and not a.get("location"))
+    if blanks:
+        print(f"Looking up {blanks} missing headquarters...", file=sys.stderr)
+        print(f"  found {fill_missing(articles)} of them", file=sys.stderr)
+
+    known = archive_mod.load(args.archive)
+    before = len(known)
+    known = archive_mod.record(known, articles, picks)
+    archive_mod.save(args.archive, known)
+    print(
+        f"Archive: {len(known)} stories total ({len(known) - before} new "
+        f"this run) in {args.archive}",
+        file=sys.stderr,
+    )
+    _report_coverage(known)
+    with open(os.path.join(args.outdir, "archive.html"), "w", encoding="utf-8") as f:
+        f.write(render_archive_html(known))
 
 
 if __name__ == "__main__":
