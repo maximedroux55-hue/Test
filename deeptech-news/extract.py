@@ -415,6 +415,36 @@ _ALREADY_LISTED = re.compile(
 )
 
 
+def sane_amount(amount: str, text: str) -> str:
+    """Check a figure against the words it came from.
+
+    "InnoBooster backs three deep tech startups with CHF 450,000" was read as
+    CHF 150M, a thousandfold overstatement of a CHF 150,000 award. A figure
+    that appears nowhere in the text is invented, and one written in thousands
+    is not millions, so both are caught here rather than trusted.
+    """
+    m = re.match(r"^([A-Z]{3})\s*([\d.]+)\s*([KMB])?$", (amount or "").strip())
+    if not m or not text:
+        return amount
+    currency, digits, unit = m.group(1), m.group(2), (m.group(3) or "")
+    whole = digits.split(".")[0]
+    if len(whole) < 2:
+        # Single digits appear everywhere; the check would mean nothing.
+        return amount
+    if not re.search(rf"\b{re.escape(whole)}\b", text):
+        return ""
+    if unit == "M":
+        # The same number written with a thousands separator, and never as
+        # millions, is thousands.
+        thousands = re.search(rf"\b{re.escape(whole)}['’,. ]\d{{3}}\b", text)
+        millions = re.search(
+            rf"\b{re.escape(digits)}\s*(?:million|millionen|mio|m\b|mn\b)",
+            text, re.IGNORECASE)
+        if thousands and not millions:
+            return f"{currency} {whole}K"
+    return amount
+
+
 def _transaction_notes(text: str) -> dict:
     """Whether a deal has closed and whether its figure is conditional."""
     out = {}
@@ -589,6 +619,8 @@ def extract_fields(articles: list, model: str | None = None) -> list:
                 for field, value in _transaction_notes(
                         f"{art.get('title', '')}. {body}").items():
                     facts[field] = value
+                facts["amount"] = sane_amount(
+                    facts.get("amount", ""), f"{art.get('title', '')}. {body}")
                 # The article names the backers and we came back with none: read
                 # that one again on its own, where the whole reply is about it.
                 if (not facts.get("investors") and not facts.get("lead_investor")

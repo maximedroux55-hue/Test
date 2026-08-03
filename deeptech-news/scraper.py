@@ -264,7 +264,23 @@ def _is_round(story: dict) -> bool:
     to be one company, since an award split across three startups is not a
     round. It needs a stage or an amount. And it must not be one of the things
     that merely carry a number: a factory investment, or a grant to a lab.
+
+    Three kinds of story reach this point looking like rounds and are not.
+    An acquisition is an exit: the price is not capital into the company, and
+    the funds named are the sellers' old backers rather than anyone putting
+    money in. A grant to a research project is not a company being financed.
+    And a grant reported without a figure is not evidence of anything that can
+    be counted, however real the money.
     """
+    stage = (story.get("stage") or "").strip()
+    if stage in ("Acquisition", "Partnership"):
+        return False
+    if stage == "Grant":
+        if (story.get("category") or "").strip() == "Research":
+            return False
+        if not (story.get("amount") or "").strip():
+            return False
+
     company = (story.get("company") or "").strip()
     if not company or re.search(r",|/| and ", company, re.IGNORECASE):
         return False
@@ -586,6 +602,9 @@ def render_archive_html(known: dict) -> str:
         pending = ('<span class="pending" title="Announced, not closed. Its '
                    'figure is excluded from every total.">announced</span>'
                    if not is_closed(s) else "")
+        if stage_text == "Grant":
+            pending += ('<span class="nondil" title="Public or foundation '
+                        'money, not an equity round.">non-dilutive</span>')
         stage = (f'<td><span class="stage">{html.escape(stage_text)}</span>'
                  f'{pending}</td>'
                  if stage_text
@@ -690,6 +709,9 @@ def render_archive_html(known: dict) -> str:
   .pending {{ display:block; margin-top:0.2rem; background:#fdf3e3; color:#8a6d3b;
              border-radius:5px; padding:0.02rem 0.3rem; font-size:0.66rem;
              font-weight:700; text-transform:uppercase; letter-spacing:0.03em; }}
+  .nondil {{ display:block; margin-top:0.2rem; color:#4a6b8a; background:#eef3f8;
+            border-radius:5px; padding:0.02rem 0.3rem; font-size:0.66rem;
+            font-weight:700; text-transform:uppercase; letter-spacing:0.03em; }}
   .foreign {{ background:#f3f0ea; color:#8a6d3b; border-radius:5px;
              padding:0.02rem 0.3rem; font-size:0.68rem; font-weight:700; }}
   .controls {{ display:flex; gap:0.6rem; align-items:center; margin-bottom:1rem;
