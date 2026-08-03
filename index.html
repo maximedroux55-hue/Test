@@ -103,6 +103,21 @@
     .icon-btn:hover { border-color: var(--green); color: var(--green); }
     .icon-btn.li { background: #0a66c2; color: #fff; border-color: #0a66c2; }
 
+    /* ---- Link cards ---- */
+    .lead { color: var(--ink-soft); margin-bottom: 1.2rem; }
+    .links { display: grid; gap: 0.7rem; }
+    @media (min-width: 620px) { .links { grid-template-columns: 1fr 1fr; } }
+    .link-card {
+      display: flex; flex-direction: column; gap: 0.3rem;
+      padding: 1rem 1.1rem; border: 1px solid var(--line); border-radius: 14px;
+      text-decoration: none; background: var(--bg);
+      transition: border-color 0.15s ease, transform 0.15s ease;
+    }
+    .link-card:hover { border-color: var(--green); transform: translateY(-1px); }
+    .lk-title { font-weight: 700; color: var(--ink); }
+    .link-card:hover .lk-title { color: var(--green-dark); }
+    .lk-desc { color: var(--ink-soft); font-size: 0.88rem; line-height: 1.5; }
+
     /* ---- Profile hero card ---- */
     .hero { padding: 3rem 0 1.5rem; }
     .profile-card {
@@ -207,6 +222,8 @@
     <div class="wrap">
       <span class="wordmark">Max<span class="dot">.</span></span>
       <div class="top-links">
+      <a class="icon-btn" href="#deeptech" title="Swiss DeepTech rounds"
+         aria-label="Swiss DeepTech rounds">CH</a>
         <a class="icon-btn li" href="https://www.linkedin.com/in/maxime-droux-15139a26" title="LinkedIn">in</a>
         <a class="icon-btn" href="https://github.com/maximedroux55-hue" title="GitHub">GH</a>
       </div>
@@ -296,6 +313,55 @@
         <div class="fact"><div class="k">Focus</div><div class="v">Swiss DeepTech</div></div>
         <div class="fact"><div class="k">Based</div><div class="v">Lutry, Vaud 🇨🇭</div></div>
         <div class="fact"><div class="k">Languages</div><div class="v">FR · EN · ES</div></div>
+      </div>
+    </section>
+
+    <section class="card" id="deeptech">
+      <span class="card-label">Swiss DeepTech</span>
+      <h2>The deal database</h2>
+      <p class="lead">Every Swiss DeepTech financing round the tracker finds, read
+      from the coverage, merged across outlets and checked against primary
+      sources where it matters. Rebuilt every morning.</p>
+      <div class="links">
+        <a class="link-card" href="/digest/archive.html">
+          <span class="lk-title">Rounds &rarr;</span>
+          <span class="lk-desc">Company, sector, stage, amount, investors, founders,
+          spin-off and headquarters. Filter by sector, stage, city or date.</span>
+        </a>
+        <a class="link-card" href="/reports/">
+          <span class="lk-title">Monthly reports &rarr;</span>
+          <span class="lk-desc">What each month amounted to: venture against public
+          money, where the capital concentrated, and how much has been verified.</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="card" id="workbench">
+      <span class="card-label">Working pages</span>
+      <h2>The tracker itself</h2>
+      <p class="lead">The parts that run the thing rather than publish it. Open to
+      anyone with the address, so nothing sensitive belongs here.</p>
+      <div class="links">
+        <a class="link-card" href="/plan">
+          <span class="lk-title">This week&rsquo;s posts &rarr;</span>
+          <span class="lk-desc">Seven drafts, one per day, with copy buttons and a
+          button to generate a fresh set.</span>
+        </a>
+        <a class="link-card" href="/digest/review.html">
+          <span class="lk-title">Proposed corrections &rarr;</span>
+          <span class="lk-desc">What the weekly check found, with the sentence it
+          read and the page it read it on. Nothing applied until accepted.</span>
+        </a>
+        <a class="link-card" href="/digest/index.html">
+          <span class="lk-title">Latest digest &rarr;</span>
+          <span class="lk-desc">The week&rsquo;s stories ranked by relevance, before
+          any of them become posts.</span>
+        </a>
+        <a class="link-card" href="/digest/verify.json">
+          <span class="lk-title">Verification queue &rarr;</span>
+          <span class="lk-desc">The rounds worth checking against a primary source,
+          and why each one is queued. Machine readable.</span>
+        </a>
       </div>
     </section>
 
