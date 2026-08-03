@@ -199,6 +199,75 @@ def to_html(articles: list[dict], days: int) -> str:
 """
 
 
+def render_archive_html(known: dict) -> str:
+    """A browsable page of everything ever found, newest first."""
+    stories = sorted(
+        known.values(),
+        key=lambda e: (e.get("last_seen", ""), e.get("score") or 0),
+        reverse=True,
+    )
+    posted = sum(1 for s in stories if s.get("posted"))
+    sources = len({s.get("publisher", "") for s in stories if s.get("publisher")})
+    rows = []
+    for s in stories:
+        tag = '<span class="tag posted">posted</span>' if s.get("posted") else ""
+        rows.append(
+            f'<tr><td class="s">{s.get("score") or ""}</td>'
+            f'<td><a href="{html.escape(s.get("link",""))}" target="_blank" '
+            f'rel="noopener">{html.escape(s.get("title",""))}</a> {tag}</td>'
+            f'<td class="p">{html.escape(s.get("publisher",""))}</td>'
+            f'<td class="d">{html.escape(s.get("published") or s.get("first_seen",""))}</td></tr>'
+        )
+    body = "\n".join(rows) or '<tr><td colspan="4">Nothing archived yet.</td></tr>'
+    return f"""<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Swiss DeepTech news archive</title><meta name="robots" content="noindex">
+<style>
+  :root {{ --green:#46b96a; --ink:#1b2430; --soft:#5b6472; --line:#e6eae8; --bg:#f6f8f7; }}
+  * {{ box-sizing:border-box; margin:0; padding:0; }}
+  body {{ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+         background:var(--bg); color:var(--ink); line-height:1.5; }}
+  .wrap {{ max-width:960px; margin:0 auto; padding:2rem 1rem 4rem; }}
+  h1 {{ font-size:1.6rem; letter-spacing:-0.02em; }} h1 .dot {{ color:var(--green); }}
+  .sub {{ color:var(--soft); margin:0.4rem 0 1rem; font-size:0.9rem; }}
+  input {{ width:100%; padding:0.7rem 0.9rem; border:1px solid var(--line);
+          border-radius:10px; font-size:1rem; margin-bottom:1rem; }}
+  .box {{ background:#fff; border:1px solid var(--line); border-radius:14px; overflow-x:auto; }}
+  table {{ width:100%; border-collapse:collapse; font-size:0.9rem; }}
+  th, td {{ text-align:left; padding:0.6rem 0.8rem; border-bottom:1px solid var(--line);
+           vertical-align:top; }}
+  th {{ color:var(--soft); font-size:0.78rem; text-transform:uppercase; letter-spacing:0.04em; }}
+  td.s {{ color:var(--green); font-weight:700; width:3rem; }}
+  td.p, td.d {{ color:var(--soft); white-space:nowrap; }}
+  a {{ color:var(--ink); text-decoration:none; }} a:hover {{ color:var(--green); }}
+  .tag.posted {{ background:var(--green); color:#fff; border-radius:6px;
+                padding:0.05rem 0.4rem; font-size:0.7rem; font-weight:700; }}
+</style></head><body>
+<div class="wrap">
+  <h1>Swiss DeepTech archive<span class="dot">.</span></h1>
+  <p class="sub">{len(stories)} stories &middot; {posted} posted &middot; {sources} sources</p>
+  <input id="q" placeholder="Filter by company, source or word..." oninput="filter()">
+  <div class="box"><table>
+    <thead><tr><th>Score</th><th>Story</th><th>Source</th><th>Date</th></tr></thead>
+    <tbody id="rows">
+{body}
+    </tbody>
+  </table></div>
+</div>
+<script>
+  function filter() {{
+    var q = document.getElementById('q').value.toLowerCase();
+    var rows = document.querySelectorAll('#rows tr');
+    for (var i = 0; i < rows.length; i++) {{
+      rows[i].style.display = rows[i].innerText.toLowerCase().indexOf(q) > -1 ? '' : 'none';
+    }}
+  }}
+</script>
+</body></html>
+"""
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description="Swiss DeepTech news aggregator")
     ap.add_argument("--days", type=int, default=7, help="How many days back to look (default 7)")
@@ -213,6 +282,8 @@ def main() -> None:
                     help="Max posts from any single outlet, for variety (default 2)")
     ap.add_argument("--history", default="../digest/history.json",
                     help="Record of stories already posted, so none repeats")
+    ap.add_argument("--archive", default="../digest/archive.json",
+                    help="Append-only record of every story ever found")
     args = ap.parse_args()
 
     print(f"Fetching Swiss DeepTech news (last {args.days} days)...", file=sys.stderr)
@@ -325,6 +396,21 @@ def main() -> None:
         # Remember what went out, so a later run never repeats it.
         history_mod.save(args.history, history_mod.record(past, picks))
         print(f"Recorded {len(picks)} stories in {args.history}", file=sys.stderr)
+
+        # Keep every story found, not just the ones posted, so the record
+        # builds up over time instead of being overwritten each run.
+        import archive as archive_mod
+        known = archive_mod.load(args.archive)
+        before = len(known)
+        known = archive_mod.record(known, articles, picks)
+        archive_mod.save(args.archive, known)
+        print(
+            f"Archive: {len(known)} stories total ({len(known) - before} new "
+            f"this run) in {args.archive}",
+            file=sys.stderr,
+        )
+        with open(os.path.join(args.outdir, "archive.html"), "w", encoding="utf-8") as f:
+            f.write(render_archive_html(known))
 
 
 if __name__ == "__main__":

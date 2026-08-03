@@ -75,6 +75,7 @@ jobs:
           cp deeptech-news/output/digest-*.md   digest/news.md
           cp deeptech-news/output/digest-*.html digest/index.html
           cp deeptech-news/output/posts.json    digest/posts.json
+          cp deeptech-news/output/archive.html  digest/archive.html
           # The phone-friendly weekly plan, served at maxime-droux.com/plan
           cp deeptech-news/output/plan.html     plan/index.html
           git config user.name "github-actions[bot]"
