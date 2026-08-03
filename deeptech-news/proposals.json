@@ -19,19 +19,6 @@
       "source_url": "https://www.prnewswire.com/news-releases/terra-quantum-and-axiom-intelligence-acquisition-corp-1-announce-definitive-business-combination-agreement-at-a-3-5-billion-equity-valuation-302781704.html",
       "verified_by": "automated weekly check"
     },
-    "Prem": {
-      "verified": "2026-08-03",
-      "verified_source": "prnewswire.com",
-      "verified_quote": "today announced the successful close of an oversubscribed $15 million Series A financing round. The round, which was led by new investor SYN Ventures with participation from existing investors ClearSky Security and South Dakota Equity Partners",
-      "source_url": "https://www.prnewswire.com/news-releases/queryai-closes-oversubscribed-15-million-series-a-round-to-enable-greater-security-operations-efficacy-and-efficiency-across-decentralized-cloud-third-party-saas-and-on-prem-environments-301402861.html",
-      "verified_by": "automated weekly check",
-      "status": "closed",
-      "amount": "USD 15M",
-      "amount_note": "oversubscribed, successfully closed",
-      "investors": "SYN Ventures, ClearSky Security, South Dakota Equity Partners",
-      "lead_investor": "SYN Ventures",
-      "location": "Brookings, S.D."
-    },
     "SWISSto12": {
       "verified": "2026-08-03",
       "verified_source": "spacenews.com",
@@ -59,11 +46,13 @@
       "verified_quote": "The funding package includes a EUR 2.5 million grant and a EUR 10 million equity investment from the EIC Fund.",
       "source_url": "https://www.venturelab.swiss/Nanoflex-Robotics-awarded-EUR-125-Million-from-the-EIC-Accelerator",
       "verified_by": "automated weekly check",
-      "stage": "Grant & Equity (EIC Accelerator blended finance)",
       "amount_note": "Blended: EUR 2.5M grant plus EUR 10M equity investment from the EIC Fund",
       "location": "Glattbrugg"
     }
   },
   "last_run": "2026-08-03",
-  "could_not_verify": []
+  "could_not_verify": [],
+  "withdrawn": {
+    "Prem": "The pass read QueryAI's release, a different company in South Dakota, because the name check was a substring and 'prem' sits inside 'premises'. Withdrawn, and the check now requires the name as a word near the top of the page."
+  }
 }

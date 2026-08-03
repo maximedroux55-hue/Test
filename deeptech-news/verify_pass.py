@@ -107,6 +107,33 @@ def candidate_sources(company: str, stage: str, limit: int = 4) -> list:
     return found[:limit]
 
 
+def _is_about(company: str, text: str) -> bool:
+    """Is this page about the company we asked about?
+
+    The first pass searched for Prem and read QueryAI's release, because the
+    check was a substring: "prem" sits inside "premier", "premises" and
+    "premium". It then proposed moving a Swiss company to South Dakota. The
+    name has to appear as a word, and near the top where a story names its
+    subject, not once in passing halfway down.
+    """
+    import re
+
+    name = (company or "").strip()
+    if len(name) < 3:
+        return False
+    # Try the full name first, then the distinctive part of it.
+    candidates = [name]
+    first = name.split()[0]
+    if len(first) >= 4:
+        candidates.append(first)
+    head = text[:800].lower()
+    for candidate in candidates:
+        pattern = re.compile(rf"\b{re.escape(candidate.lower())}\b")
+        if pattern.search(head) and len(pattern.findall(text.lower())) >= 2:
+            return True
+    return False
+
+
 def _ask(claim: dict, text: str, model: str | None = None):
     """One source, one verdict. None when the call fails."""
     try:
@@ -144,7 +171,7 @@ def check(entry: dict, model: str | None = None) -> dict:
         text = article_text(url, limit=9000)
         if not text or len(text) < 400:
             continue
-        if company.lower().split()[0] not in text.lower():
+        if not _is_about(company, text):
             continue  # somebody else's story
         answer = _ask(claim, text, model)
         if not answer:
@@ -166,10 +193,19 @@ def check(entry: dict, model: str | None = None) -> dict:
             "verified_by": "automated weekly check",
         }
         if answer["verdict"] == "contradicts":
+            from extract import STAGES
+
             for field, value in (answer.get("changes") or {}).items():
                 value = (value or "").strip()
-                if value and value != (claim.get(field) or "").strip():
-                    proposal[field] = value
+                if not value or value == (claim.get(field) or "").strip():
+                    continue
+                # An invented stage would fail the corrections tests later; it
+                # is better refused here than proposed and rejected.
+                if field == "stage" and value not in STAGES:
+                    print(f"    ignoring an unknown stage {value!r}",
+                          file=sys.stderr)
+                    continue
+                proposal[field] = value
         print(f"    {answer['verdict']} via {proposal['verified_source']}",
               file=sys.stderr)
         return proposal

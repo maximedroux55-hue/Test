@@ -374,9 +374,26 @@ def test_a_post_lists_what_must_be_checked():
                       {"company": "Aylight"}) == ["the company is Aylight"]
 
 
+def test_a_source_must_be_about_the_company():
+    from verify_pass import _is_about
+
+    # The first automated pass searched for Prem and read QueryAI's release,
+    # because "prem" sits inside "premises". It proposed moving a Swiss
+    # company to South Dakota.
+    query_ai = ("QueryAI, based in Brookings, S.D., announced the successful "
+                "close of an oversubscribed $15 million Series A led by SYN "
+                "Ventures. The premises of the company are in South Dakota.")
+    assert _is_about("Prem", query_ai) is False
+    assert _is_about("ZuriQ", "ZuriQ has closed a USD 25.5 million seed round. "
+                              "ZuriQ is an ETH Zurich spin-off.") is True
+    # Named once, in passing, far down the page, is not a story about it.
+    assert _is_about("Aylight", "A long article about something else. " * 40
+                     + "Aylight was mentioned once.") is False
+
+
 # Locking the count means a test appended below the runner, where it would
 # never execute, shows up as a failure rather than as silence. That happened.
-EXPECTED = 33
+EXPECTED = 34
 
 
 if __name__ == "__main__":
