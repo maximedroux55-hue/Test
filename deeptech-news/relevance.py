@@ -132,6 +132,22 @@ def _same_story(a: dict, b: dict) -> bool:
     return jaccard >= 0.5
 
 
+def diversify(articles: list, max_per_publisher: int = 2) -> list:
+    """Re-order so no single outlet dominates, keeping the ranking otherwise.
+
+    Startupticker covers most Swiss rounds, so a purely score-ranked list tends
+    to be mostly Startupticker. This takes at most `max_per_publisher` stories
+    from any one outlet first, then appends the rest in score order, so the top
+    of the list spans several outlets without losing any story.
+    """
+    picked, overflow, seen = [], [], {}
+    for art in articles:
+        pub = (art.get("publisher") or "").strip().lower()
+        seen[pub] = seen.get(pub, 0) + 1
+        (picked if seen[pub] <= max_per_publisher else overflow).append(art)
+    return picked + overflow
+
+
 def deduplicate(articles: list) -> list:
     """Remove near-duplicate stories (same event reported by several outlets).
 

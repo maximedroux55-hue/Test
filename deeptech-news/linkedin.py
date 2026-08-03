@@ -284,6 +284,9 @@ def build_posts(articles: list, days: int, top: int = 7):
             "image": art.get("image"),
             "link": art.get("link"),
             "publisher": art.get("publisher"),
+            # The story's own source (company site or release) when we can find
+            # it behind the coverage. Useful to link or check the facts.
+            "primary_source": art.get("primary_source"),
         })
     return records, mode
 
@@ -321,6 +324,8 @@ def render_markdown(records: list, mode: str, days: int) -> str:
             parts.append(f"🖼️ **Article image:** {r['image']}")
         else:
             parts.append("🖼️ **Article image:** none found, grab one from the article page.")
+        if r.get("primary_source"):
+            parts.append(f"🔗 **Primary source:** {r['primary_source']}")
         parts.append("")
     if not records:
         parts.append("_No stories to turn into posts this run._")
@@ -357,6 +362,15 @@ def render_plan_html(records: list, mode: str, days: int) -> str:
                 '<p class="noimg">No preview image. Cowork will grab one from the '
                 "article page when scheduling.</p>"
             )
+        if r.get("primary_source"):
+            ps = r["primary_source"]
+            host = ps.split("//", 1)[-1].split("/", 1)[0].replace("www.", "")
+            primary = (
+                f'<a class="src primary" href="{esc(ps)}" target="_blank" '
+                f'rel="noopener">Primary source: {esc(host)}</a>'
+            )
+        else:
+            primary = ""
         cards.append(
             f"""      <article class="card">
         <div class="cardhead">
@@ -368,7 +382,8 @@ def render_plan_html(records: list, mode: str, days: int) -> str:
           <pre class="post">{esc(r['text'])}</pre>
         </div>
         {img}
-        <a class="src" href="{esc(r['link'])}" target="_blank" rel="noopener">Source: {esc(r['publisher'] or 'link')}</a>
+        <a class="src" href="{esc(r['link'])}" target="_blank" rel="noopener">Article: {esc(r['publisher'] or 'link')}</a>
+        {primary}
       </article>"""
         )
     body = "\n".join(cards) or "<p>No stories to turn into posts this week.</p>"
@@ -416,8 +431,10 @@ def render_plan_html(records: list, mode: str, days: int) -> str:
   .shot {{ display:block; width:100%; height:auto; border-radius:10px;
           margin-top:0.8rem; border:1px solid var(--line); }}
   .noimg {{ margin-top:0.8rem; font-size:0.82rem; color:var(--soft); font-style:italic; }}
-  .src {{ display:inline-block; margin-top:0.7rem; color:var(--green);
-         font-size:0.82rem; text-decoration:none; font-weight:600; }}
+  .src {{ display:inline-block; margin-top:0.7rem; margin-right:0.9rem;
+         color:var(--green); font-size:0.82rem; text-decoration:none;
+         font-weight:600; }}
+  .src.primary {{ color:var(--soft); }}
   .src:hover {{ text-decoration:underline; }}
   footer {{ color:var(--soft); font-size:0.78rem; margin-top:2rem; }}
 </style></head><body>

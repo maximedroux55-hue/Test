@@ -200,6 +200,8 @@ def main() -> None:
                     help="What to produce: ranked digest, LinkedIn drafts, or both (default both)")
     ap.add_argument("--posts", type=int, default=7,
                     help="Number of LinkedIn drafts to write, one per day (default 7)")
+    ap.add_argument("--max-per-source", type=int, default=2,
+                    help="Max posts from any single outlet, for variety (default 2)")
     args = ap.parse_args()
 
     print(f"Fetching Swiss DeepTech news (last {args.days} days)...", file=sys.stderr)
@@ -222,15 +224,26 @@ def main() -> None:
 
     if args.format in ("linkedin", "both"):
         import json
-        from images import resolve_images
+        from images import enrich_articles
+        from relevance import diversify
         from linkedin import build_posts, render_markdown, render_plan_html, COWORK_PROMPT
-        print("Finding the article image for each post...", file=sys.stderr)
-        resolve_images(articles[: args.posts])
+
+        # Spread the posts across outlets so one publisher does not take the
+        # whole week, then look up each one's image and primary source.
+        picks = diversify(articles, args.max_per_source)[: args.posts]
+        print(
+            f"Picked {len(picks)} posts across "
+            f"{len({p['publisher'] for p in picks})} outlets "
+            f"(max {args.max_per_source} each).",
+            file=sys.stderr,
+        )
+        print("Finding the image and primary source for each post...", file=sys.stderr)
+        enrich_articles(picks)
 
         # Build once, then write the human plan (Markdown), the phone-friendly
         # web page (HTML, served at maxime-droux.com/plan), and the
         # machine-readable posts.json the Cowork workflow schedules from.
-        records, mode = build_posts(articles, args.days, top=args.posts)
+        records, mode = build_posts(picks, args.days, top=args.posts)
 
         li_path = os.path.join(args.outdir, f"linkedin-{stamp}.md")
         with open(li_path, "w", encoding="utf-8") as f:

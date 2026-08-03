@@ -83,34 +83,123 @@ def _jsonld_image(html: str, base_url: str) -> str | None:
     return None
 
 
+# Domains that are never the primary source of a story: social networks, the
+# usual web infrastructure, and link shorteners.
+_NOT_A_SOURCE = (
+    "linkedin.com", "twitter.com", "x.com", "facebook.com", "instagram.com",
+    "youtube.com", "youtu.be", "xing.com", "mastodon", "bsky.app", "tiktok.com",
+    "google.com", "googleapis.com", "gstatic.com", "doubleclick.net",
+    "cookiebot.com", "addthis.com", "sharethis.com", "paypal.com",
+    "apple.com", "adobe.com", "wordpress.org", "creativecommons.org",
+    "bit.ly", "t.co", "lnkd.in",
+)
+
+_TITLE_STOP = {
+    "raises", "raised", "million", "billion", "round", "seed", "series",
+    "funding", "swiss", "switzerland", "startup", "company", "news", "with",
+    "from", "that", "this", "into", "closes", "secures", "spin", "spinoff",
+    "first", "opens", "markets", "outside", "growth", "capital", "chief",
+}
+
+
+def _domain(url: str) -> str:
+    try:
+        host = urllib.parse.urlparse(url).netloc.lower()
+    except Exception:
+        return ""
+    return host[4:] if host.startswith("www.") else host
+
+
+def _domain_root(host: str) -> str:
+    """The distinctive part of a domain: 'medyria.com' -> 'medyria'."""
+    parts = [p for p in host.split(".") if p]
+    return parts[-2] if len(parts) >= 2 else (parts[0] if parts else "")
+
+
+def _title_tokens(title: str) -> set:
+    words = re.findall(r"[a-z0-9]+", (title or "").lower())
+    return {w for w in words if len(w) >= 4 and w not in _TITLE_STOP}
+
+
+def _primary_source(html: str, base_url: str, title: str) -> str | None:
+    """Find the story's own source: usually the company's site or its release.
+
+    Strategy: look at the outbound links on the article page, drop the
+    publisher's own domain plus social and infrastructure links, then prefer a
+    domain that matches a distinctive word from the headline (so "Medyria
+    raises CHF 3.5 million" picks medyria.com). If nothing matches by name,
+    fall back to the most frequently linked outside domain, which is normally
+    the subject of the piece.
+    """
+    publisher = _domain(base_url)
+    tokens = _title_tokens(title)
+
+    candidates = []
+    for href in re.findall(r'<a[^>]+href=["\'](https?://[^"\'>\s]+)["\']', html, re.IGNORECASE):
+        host = _domain(href)
+        if not host or host == publisher or host.endswith("." + publisher):
+            continue
+        if any(bad in host for bad in _NOT_A_SOURCE):
+            continue
+        candidates.append((host, href))
+
+    if not candidates:
+        return None
+
+    # Best case: a linked domain carries a distinctive word from the headline.
+    for host, href in candidates:
+        root = _domain_root(host)
+        if root and any(root == t or (len(root) >= 5 and root in t) or
+                        (len(t) >= 5 and t in root) for t in tokens):
+            return href
+
+    # Otherwise the most-linked outside domain is usually the story's subject.
+    counts = {}
+    for host, _ in candidates:
+        counts[host] = counts.get(host, 0) + 1
+    top_host = max(counts, key=counts.get)
+    for host, href in candidates:
+        if host == top_host:
+            return href
+    return None
+
+
+def article_page(url: str, timeout: int = 12):
+    """Fetch an article once and return (html, final_url), or (None, url)."""
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": _UA})
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
+            final_url = resp.geturl()
+            raw = resp.read(600_000)  # the <head> plus a little body; cap the read
+        return raw.decode("utf-8", "ignore"), final_url
+    except Exception:
+        return None, url
+
+
 def article_image(url: str, timeout: int = 12) -> str | None:
     """Fetch the article page and return its lead image URL, or None.
 
     Tries, in order: Open Graph / Twitter image, <link rel="image_src">, and
     JSON-LD schema.org image. The first that hits wins.
     """
-    try:
-        req = urllib.request.Request(url, headers={"User-Agent": _UA})
-        with urllib.request.urlopen(req, timeout=timeout) as resp:
-            final_url = resp.geturl()
-            raw = resp.read(600_000)  # the <head> plus a little body; cap the read
-        html = raw.decode("utf-8", "ignore")
-        return (
-            _og_image(html, final_url)
-            or _link_image_src(html, final_url)
-            or _jsonld_image(html, final_url)
-        )
-    except Exception:
+    html, final_url = article_page(url, timeout)
+    if not html:
         return None
+    return (
+        _og_image(html, final_url)
+        or _link_image_src(html, final_url)
+        or _jsonld_image(html, final_url)
+    )
 
 
-def resolve_images(articles: list) -> None:
-    """Resolve each article's real source URL and lead image.
+def enrich_articles(articles: list) -> None:
+    """Resolve each article's real URL, lead image, and primary source.
 
     For Google News items the link is a redirect, so we first resolve it back to
     the real publisher URL (and update article['link'] to it, since that is the
-    page worth linking to). Then the image is the feed image if the feed gave
-    one, otherwise the source page's og:image.
+    page worth linking to). Then, from a single fetch of that page, we take the
+    lead image (feed image wins if the feed gave one) and the story's primary
+    source: the company's own site or release behind the coverage.
     """
     from google_news import is_google_news_url, resolve_url
 
@@ -121,7 +210,21 @@ def resolve_images(articles: list) -> None:
             if real:
                 a["link"] = link = real
 
-        img = a.get("image_feed")
-        if not img:
-            img = article_image(link)
-        a["image"] = img
+        html, final_url = article_page(link)
+        if html:
+            if not a.get("image_feed"):
+                a["image"] = (
+                    _og_image(html, final_url)
+                    or _link_image_src(html, final_url)
+                    or _jsonld_image(html, final_url)
+                )
+            else:
+                a["image"] = a["image_feed"]
+            a["primary_source"] = _primary_source(html, final_url, a.get("title", ""))
+        else:
+            a["image"] = a.get("image_feed")
+            a["primary_source"] = None
+
+
+# Kept for compatibility with older callers.
+resolve_images = enrich_articles
