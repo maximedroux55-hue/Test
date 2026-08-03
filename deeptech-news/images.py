@@ -88,6 +88,7 @@ def _jsonld_image(html: str, base_url: str) -> str | None:
 _NOT_A_SOURCE = (
     "linkedin.com", "twitter.com", "x.com", "facebook.com", "instagram.com",
     "youtube.com", "youtu.be", "xing.com", "mastodon", "bsky.app", "tiktok.com",
+    "whatsapp.com", "wa.me", "telegram.me", "t.me",
     "google.com", "googleapis.com", "gstatic.com", "doubleclick.net",
     "cookiebot.com", "addthis.com", "sharethis.com", "paypal.com",
     "apple.com", "adobe.com", "wordpress.org", "creativecommons.org",
@@ -121,47 +122,45 @@ def _title_tokens(title: str) -> set:
     return {w for w in words if len(w) >= 4 and w not in _TITLE_STOP}
 
 
-def _primary_source(html: str, base_url: str, title: str) -> str | None:
-    """Find the story's own source: usually the company's site or its release.
+def _primary_source(html: str, base_url: str, title: str):
+    """Find the story's own source, and say how sure we are.
 
-    Strategy: look at the outbound links on the article page, drop the
-    publisher's own domain plus social and infrastructure links, then prefer a
-    domain that matches a distinctive word from the headline (so "Medyria
-    raises CHF 3.5 million" picks medyria.com). If nothing matches by name,
-    fall back to the most frequently linked outside domain, which is normally
-    the subject of the piece.
+    Returns (url, confidence) where confidence is "high" or "none".
+
+    High confidence means a linked domain carries a distinctive word from the
+    headline, so "ZuriQ raises..." resolves to zuriq.com and "Ahead Health
+    raises..." to aheadhealth.com. That test proved reliable in practice, and
+    only those links are good enough to post.
+
+    Anything weaker is deliberately dropped. A "most linked domain" guess
+    produced a researcher's profile page, a lab page and, once, the covering
+    outlet's own WhatsApp channel. A wrong link in a post is worse than no
+    link, so we return nothing rather than guess.
     """
     publisher = _domain(base_url)
+    publisher_root = _domain_root(publisher)
     tokens = _title_tokens(title)
 
     candidates = []
     for href in re.findall(r'<a[^>]+href=["\'](https?://[^"\'>\s]+)["\']', html, re.IGNORECASE):
         host = _domain(href)
-        if not host or host == publisher or host.endswith("." + publisher):
+        if not host:
+            continue
+        # Skip the publisher, including its other subdomains: when actu.epfl.ch
+        # covers a story, epfl.ch and people.epfl.ch are not its source.
+        if host == publisher or _domain_root(host) == publisher_root:
             continue
         if any(bad in host for bad in _NOT_A_SOURCE):
             continue
         candidates.append((host, href))
 
-    if not candidates:
-        return None
-
-    # Best case: a linked domain carries a distinctive word from the headline.
     for host, href in candidates:
         root = _domain_root(host)
         if root and any(root == t or (len(root) >= 5 and root in t) or
                         (len(t) >= 5 and t in root) for t in tokens):
-            return href
+            return href, "high"
 
-    # Otherwise the most-linked outside domain is usually the story's subject.
-    counts = {}
-    for host, _ in candidates:
-        counts[host] = counts.get(host, 0) + 1
-    top_host = max(counts, key=counts.get)
-    for host, href in candidates:
-        if host == top_host:
-            return href
-    return None
+    return None, "none"
 
 
 def article_page(url: str, timeout: int = 12):
@@ -220,7 +219,15 @@ def enrich_articles(articles: list) -> None:
                 )
             else:
                 a["image"] = a["image_feed"]
-            a["primary_source"] = _primary_source(html, final_url, a.get("title", ""))
+
+            source, confidence = _primary_source(html, final_url, a.get("title", ""))
+            a["primary_source"] = source
+            # When we are confident, the post links to the original source
+            # rather than the coverage. The outlet that reported it is kept so
+            # it can still be credited in the text.
+            if source and confidence == "high":
+                a["coverage_url"] = link
+                a["link"] = source
         else:
             a["image"] = a.get("image_feed")
             a["primary_source"] = None

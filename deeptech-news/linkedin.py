@@ -284,9 +284,11 @@ def build_posts(articles: list, days: int, top: int = 7):
             "image": art.get("image"),
             "link": art.get("link"),
             "publisher": art.get("publisher"),
-            # The story's own source (company site or release) when we can find
-            # it behind the coverage. Useful to link or check the facts.
+            # When the story's own source (the company's site) was identified
+            # with confidence, `link` above is that source and `coverage_url`
+            # is where we found the story.
             "primary_source": art.get("primary_source"),
+            "coverage_url": art.get("coverage_url"),
         })
     return records, mode
 
@@ -324,8 +326,11 @@ def render_markdown(records: list, mode: str, days: int) -> str:
             parts.append(f"🖼️ **Article image:** {r['image']}")
         else:
             parts.append("🖼️ **Article image:** none found, grab one from the article page.")
-        if r.get("primary_source"):
-            parts.append(f"🔗 **Primary source:** {r['primary_source']}")
+        if r.get("coverage_url"):
+            parts.append(
+                f"🔗 **Links to the original source.** Covered by "
+                f"{r['publisher']}: {r['coverage_url']}"
+            )
         parts.append("")
     if not records:
         parts.append("_No stories to turn into posts this run._")
@@ -362,14 +367,17 @@ def render_plan_html(records: list, mode: str, days: int) -> str:
                 '<p class="noimg">No preview image. Cowork will grab one from the '
                 "article page when scheduling.</p>"
             )
-        if r.get("primary_source"):
-            ps = r["primary_source"]
-            host = ps.split("//", 1)[-1].split("/", 1)[0].replace("www.", "")
+        # When the link is the original source, show it as such and keep a
+        # secondary link to the outlet that covered it.
+        if r.get("coverage_url"):
+            host = r["link"].split("//", 1)[-1].split("/", 1)[0].replace("www.", "")
+            main_label = f"Original source: {host}"
             primary = (
-                f'<a class="src primary" href="{esc(ps)}" target="_blank" '
-                f'rel="noopener">Primary source: {esc(host)}</a>'
+                f'<a class="src primary" href="{esc(r["coverage_url"])}" '
+                f'target="_blank" rel="noopener">via {esc(r["publisher"] or "coverage")}</a>'
             )
         else:
+            main_label = f"Article: {r['publisher'] or 'link'}"
             primary = ""
         cards.append(
             f"""      <article class="card">
@@ -382,7 +390,7 @@ def render_plan_html(records: list, mode: str, days: int) -> str:
           <pre class="post">{esc(r['text'])}</pre>
         </div>
         {img}
-        <a class="src" href="{esc(r['link'])}" target="_blank" rel="noopener">Article: {esc(r['publisher'] or 'link')}</a>
+        <a class="src" href="{esc(r['link'])}" target="_blank" rel="noopener">{esc(main_label)}</a>
         {primary}
       </article>"""
         )
