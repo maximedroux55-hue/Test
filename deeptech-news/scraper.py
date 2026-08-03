@@ -250,12 +250,13 @@ def render_archive_html(known: dict) -> str:
             f'<td class="amt">{html.escape(s.get("amount") or "")}'
             f'{total}</td>'
             f'<td class="inv">{html.escape(investors)}</td>'
+            f'<td class="fnd">{html.escape(s.get("founders") or "")}</td>'
             f'<td class="loc">{html.escape(s.get("spinoff_origin") or "")}</td>'
             f'<td class="loc">{html.escape(s.get("location") or "")}</td>'
             f'<td class="d">{html.escape(s.get("published") or s.get("first_seen",""))}</td>'
             f'</tr>'
         )
-    body = "\n".join(rows) or '<tr><td colspan="8">No financing rounds recorded yet.</td></tr>'
+    body = "\n".join(rows) or '<tr><td colspan="9">No financing rounds recorded yet.</td></tr>'
     return f"""<!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -278,6 +279,7 @@ def render_archive_html(known: dict) -> str:
   td.co {{ font-weight:600; }}
   td.amt {{ color:var(--ink); font-weight:600; white-space:nowrap; }}
   td.inv {{ color:var(--soft); }}
+  td.fnd {{ color:var(--soft); }}
   td.loc, td.d {{ color:var(--soft); white-space:nowrap; }}
   a {{ color:var(--ink); text-decoration:none; }} a:hover {{ color:var(--green); }}
   .tag.posted {{ background:var(--green); color:#fff; border-radius:6px;
@@ -296,7 +298,7 @@ def render_archive_html(known: dict) -> str:
   <input id="q" placeholder="Filter by company, sector, investor or city..." oninput="filter()">
   <div class="box"><table>
     <thead><tr><th>Company</th><th>Category</th><th>Stage</th><th>Amount</th>
-      <th>Investors</th><th>Spin-off</th><th>HQ</th><th>Date</th></tr></thead>
+      <th>Investors</th><th>Founders</th><th>Spin-off</th><th>HQ</th><th>Date</th></tr></thead>
     <tbody id="rows">
 {body}
     </tbody>
