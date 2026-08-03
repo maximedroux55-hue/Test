@@ -71,7 +71,19 @@ NOISE_TERMS = {
     "vendor guide": 5, "complete guide": 5, "market size": 5,
     "market report": 5, "market share": 4, "forecast to": 4,
     "top 10": 4, "best of": 3, "everything you need": 4,
+    # Crime and courts. Swiss and occasionally technical, never a Climb post.
+    "fraud": 5, "scandal": 5, "lawsuit": 4, "court": 4, "trial of": 4,
+    "convicted": 5, "prosecutor": 5, "arrested": 5, "money laundering": 5,
+    # Campus showcases rather than commercial deep tech.
+    "students": 4, "student project": 5, "semester project": 5,
 }
+
+# General news and tabloid outlets. They cover Switzerland broadly, so their
+# crime, politics and lifestyle stories keep surfacing on Swiss keywords alone.
+EXCLUDED_PUBLISHERS = (
+    "blick", "20 minuten", "20 minutes", "watson.ch", "nau.ch",
+    "gala", "people magazine",
+)
 
 # Sites that publish market-research summaries, stock chatter or directory
 # pages. They mention the right words but never carry the news itself.
@@ -101,11 +113,13 @@ _EXCLUDED_NAMES = tuple(
 
 
 def is_excluded(text: str) -> bool:
-    """True for a link or publisher belonging to a site that never carries news."""
+    """True for a link or publisher we never want a story from."""
     squashed = _squash(text)
     if not squashed:
         return False
     if any(_squash(d) in squashed for d in EXCLUDED_DOMAINS):
+        return True
+    if any(_squash(p) in squashed for p in EXCLUDED_PUBLISHERS):
         return True
     return any(name in squashed for name in _EXCLUDED_NAMES)
 
