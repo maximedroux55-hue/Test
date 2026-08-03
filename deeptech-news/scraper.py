@@ -71,7 +71,8 @@ def _publisher(entry, source_label: str) -> str:
     return "Google News"
 
 
-def collect(days: int, min_score: int, backfill_months: int = 0) -> list[dict]:
+def collect(days: int, min_score: int, backfill_months: int = 0,
+            keep_all_coverage: bool = False) -> list[dict]:
     """Fetch all feeds and return a list of relevant, de-duplicated articles."""
     cutoff = dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=days)
     articles: list[dict] = []
@@ -135,7 +136,18 @@ def collect(days: int, min_score: int, backfill_months: int = 0) -> list[dict]:
                 "image_feed": _entry_image(entry),
             })
 
-    articles = deduplicate(articles)
+    if keep_all_coverage:
+        # The database wants every write-up of a round, not one of them.
+        # Deduplication picks a survivor by score, and it kept Tech Funding
+        # News over Startupticker for GR3N, dropping the write-up that named
+        # the round and its investors. The rows are merged later, where each
+        # outlet contributes what it had.
+        before = len(articles)
+        kept = deduplicate(articles)
+        print(f"Keeping {before - len(kept)} further write-ups of stories "
+              f"already covered, to merge their facts.", file=sys.stderr)
+    else:
+        articles = deduplicate(articles)
     # Rank by relevance first, then most recent.
     _oldest = dt.datetime.min.replace(tzinfo=dt.timezone.utc)
     articles.sort(
@@ -685,8 +697,8 @@ def main() -> None:
         sys.exit("Pick one of --archive-only and --posts-only, not both.")
 
     print(f"Fetching Swiss DeepTech news (last {args.days} days)...", file=sys.stderr)
-    articles = collect(args.days, args.min_score,
-                       args.backfill_months)[: args.limit]
+    articles = collect(args.days, args.min_score, args.backfill_months,
+                       keep_all_coverage=args.archive_only)[: args.limit]
     print(f"Kept {len(articles)} relevant stories.", file=sys.stderr)
 
     import os

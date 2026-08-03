@@ -313,9 +313,10 @@ def _company_from_headline(title: str) -> str:
 _STATED_STAGE = (
     (re.compile(r"\bpre[\s\-]?seed\b", re.IGNORECASE), None),
     (re.compile(r"\bseries[\s\-]?([A-E])\b", re.IGNORECASE), None),
-    # Not the "seed" inside "pre-seed", which is a different round.
-    (re.compile(r"(?<![\w\-])seed\s+(?:round|financing|funding|investment)\b"
-                r"|\brais\w+\s+(?:a\s+|its\s+)?(?<![\w\-])seed\b", re.IGNORECASE),
+    # Not the "seed" inside "pre-seed" or "pre seed", a different round.
+    (re.compile(r"(?<!pre )(?<![\w\-])seed\s+(?:round|financing|funding|investment)\b"
+                r"|\brais\w+\s+(?:a\s+|its\s+)?(?<!pre )(?<![\w\-])seed\b",
+                re.IGNORECASE),
      "Seed"),
     (re.compile(r"\bgrowth\s+(?:round|financing|funding|equity)\b", re.IGNORECASE),
      "Growth"),
@@ -490,7 +491,12 @@ def extract_fields(articles: list, model: str | None = None) -> list:
                     if isinstance(v, str) and v.strip()
                 }
                 body = art.get("fulltext") or art.get("summary", "")
-                stated = _stage_from_text(f"{art.get('title', '')}. {body}")
+                # The address often states the round outright, as in
+                # ".../gr3n-closes-a-15-5m-series-b-round", and a slug cannot
+                # be a passing mention of somebody else's raise.
+                slug = re.sub(r"[-_/]+", " ", art.get("link", "").rsplit("/", 1)[-1])
+                stated = (_stage_from_text(f"{art.get('title', '')}. {body}")
+                          or _stage_from_text(f"closes a {slug}"))
                 if stated:
                     facts["stage"] = stated
                 # The article names the backers and we came back with none: read
