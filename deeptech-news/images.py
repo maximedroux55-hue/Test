@@ -21,6 +21,8 @@ import re
 import urllib.parse
 import urllib.request
 
+from relevance import is_excluded
+
 # A real browser user-agent. Sites behind a firewall (Startupticker among them)
 # serve a 403 with no image to obvious bots, but let a normal browser through.
 # The RSS fetch already uses a browser UA for the same reason.
@@ -151,6 +153,9 @@ def _primary_source(html: str, base_url: str, title: str):
         if host == publisher or _domain_root(host) == publisher_root:
             continue
         if any(bad in host for bad in _NOT_A_SOURCE):
+            continue
+        # A market-research or directory page is never the story's source.
+        if is_excluded(href):
             continue
         candidates.append((host, href))
 

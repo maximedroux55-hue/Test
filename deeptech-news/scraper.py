@@ -102,6 +102,11 @@ def collect(days: int, min_score: int) -> list[dict]:
             summary = entry.get("summary", "")
             publisher = _publisher(entry, source_label)
 
+            # Google News names the real outlet even while its link is still a
+            # redirect, so an excluded site can be spotted here already.
+            if is_excluded(publisher):
+                continue
+
             score = score_article(title, summary, publisher)
             if score < min_score:
                 continue
@@ -247,7 +252,28 @@ def main() -> None:
 
         # Spread the posts across outlets so one publisher does not take the
         # whole week, then look up each one's image and primary source.
-        picks = diversify(unused, args.max_per_source)[: args.posts]
+        #
+        # Enrichment is where a Google News redirect finally reveals its real
+        # publisher, so a story can turn out to come from an excluded site only
+        # at this point. Work through the pool in batches and top up, rather
+        # than ending the week a post short.
+        print("Finding the image and primary source for each post...", file=sys.stderr)
+        pool = diversify(unused, args.max_per_source)
+        picks, cursor, dropped = [], 0, 0
+        while len(picks) < args.posts and cursor < len(pool):
+            batch = pool[cursor: cursor + (args.posts - len(picks))]
+            cursor += len(batch)
+            enrich_articles(batch)
+            for art in batch:
+                if is_excluded(art.get("link", "")):
+                    dropped += 1
+                    continue
+                picks.append(art)
+        if dropped:
+            print(
+                f"Dropped {dropped} stories that resolved to an excluded site.",
+                file=sys.stderr,
+            )
         if len(picks) < args.posts:
             print(
                 f"Only {len(picks)} unused stories available for {args.posts} "
@@ -260,8 +286,6 @@ def main() -> None:
             f"(max {args.max_per_source} each).",
             file=sys.stderr,
         )
-        print("Finding the image and primary source for each post...", file=sys.stderr)
-        enrich_articles(picks)
 
         # Build once, then write the human plan (Markdown), the phone-friendly
         # web page (HTML, served at maxime-droux.com/plan), and the
