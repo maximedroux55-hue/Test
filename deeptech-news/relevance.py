@@ -29,6 +29,22 @@ DEEPTECH_TERMS = {
     "series a": 2, "series b": 2,
     "funding round": 2, "raises": 2, "raised": 2, "seed round": 2,
     "research": 1, "laboratory": 1, "patent": 1,
+    # Models and compute
+    "llm": 3, "large language model": 3, "foundation model": 3,
+    "language model": 2, "supercomputer": 3, "compute": 2, "sovereign": 2,
+    "algorithm": 2, "simulation": 2, "digital twin": 3, "open source": 2,
+    # Hardware, optics, materials
+    "qubit": 3, "laser": 2, "optics": 2, "wafer": 3, "silicon": 2,
+    "microscopy": 2, "spectroscopy": 2, "catalyst": 2, "membrane": 2,
+    "sensing": 2, "sensor": 2, "biosensor": 3, "nanopore": 3,
+    # Life sciences
+    "gene editing": 3, "crispr": 3, "in vivo": 2, "in-vivo": 2,
+    "therapeutic": 2, "protein": 2, "molecule": 2, "vaccine": 2,
+    "diagnostic": 2, "imaging": 2, "implant": 2,
+    # Energy and climate hardware
+    "hydrogen": 2, "solar": 2, "carbon capture": 3, "grid": 1,
+    # Motion
+    "drone": 2, "satellite": 2, "autonomous": 2,
 }
 
 # A story is far more postable when it is a deal or a spinout, which is what
@@ -130,7 +146,11 @@ def score_article(title: str, summary: str, source: str = "") -> int:
     if any(s in source.lower() for s in _SWISS_SOURCES):
         swiss = max(swiss, 2)
 
-    if swiss == 0 or deep == 0:
+    # A single weight-1 mention is not evidence of deep tech. A passing "AI" in
+    # a consumer subscription story, or the bare word "research", would
+    # otherwise clear the bar. Require either one substantial signal (quantum,
+    # semiconductor, spin-off, a funding round) or two weak ones.
+    if swiss == 0 or deep < 2:
         return 0
 
     score = swiss + deep
