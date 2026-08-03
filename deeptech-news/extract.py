@@ -179,6 +179,63 @@ def _clean_investors(value: str) -> str:
     return ", ".join(kept)
 
 
+# Words that sit in front of a company name in a headline and are not part of
+# it: "Swiss AI startup Prem is raising" is Prem, not "Swiss AI startup Prem".
+_LEAD_NOISE = {
+    "swiss", "swiss-based", "ai", "startup", "start-up", "scaleup", "spinout",
+    "spin-off", "spinoff", "company", "firm", "tech", "deeptech", "biotech",
+    "medtech", "fintech", "quantum", "the", "a", "exclusive", "eth", "epfl",
+    "zurich", "geneva", "lausanne", "basel", "bern", "swiss-french",
+}
+
+# The verbs a funding headline uses, in the order they appear after the name.
+# German and French too, since the Swiss feeds carry all three.
+_RAISE_VERBS = (
+    r"raises|raised|is\s+raising|has\s+raised|closes|closed|secures|secured|"
+    r"lands|landed|nets|netted|completes|completed|announces|announced|"
+    r"bags|picks\s+up|receives|received|gets|attracts|banks|launches|launched|"
+    r"erh(?:ä|ae)lt|sammelt|sichert|schliesst|holt|"
+    r"l(?:è|e)ve|boucle|d(?:é|e)croche|obtient"
+)
+
+# A name ending in a legal form is complete as written, so the leading-word
+# clean-up must leave it alone: "AI Infrastructure Capital AG" is the company.
+_LEGAL_SUFFIX = re.compile(
+    r"\b(AG|SA|SÀRL|SARL|GmbH|Ltd|Inc|BV|NV|Holding|Group)\.?$", re.IGNORECASE)
+
+
+def _company_from_headline(title: str) -> str:
+    """The company named in a funding headline, or "".
+
+    Used when the article could not be read. The name is not always first:
+    "Exclusive: ETH Zurich spinout ZuriQ raises $25.5m seed - Sifted" and
+    "Swiss preventive health startup Ahead Health raises $10M" both name the
+    company in the middle, which an anchored match missed entirely.
+    """
+    head = re.sub(r"\s+[-–|]\s+[^-–|]{2,30}$", "", title or "").strip()
+    head = re.sub(r"^(exclusive|breaking|update|opinion|news)\s*:\s*", "", head,
+                  flags=re.IGNORECASE)
+    # The name must stay case sensitive, the verb must not: headlines write
+    # both "raises" and "Raises". The optional clause between them absorbs an
+    # aside, as in "SkyPilot, from Databricks' cofounder, raises $20M".
+    m = re.search(
+        rf"\b([A-Z][\w&.\-]*(?:\s+[A-Z0-9][\w&.\-]*){{0,3}})"
+        rf"(?:,[^,]{{0,50}},)?\s+(?i:{_RAISE_VERBS})\b",
+        head,
+    )
+    if not m:
+        return ""
+    name = m.group(1).strip(" ,.")
+    if _LEGAL_SUFFIX.search(name):
+        return name
+    words = name.split()
+    while len(words) > 1 and words[0].lower().strip(",.") in _LEAD_NOISE:
+        words.pop(0)
+    if words and words[0].lower().strip(",.") in _LEAD_NOISE:
+        return ""
+    return " ".join(words).strip(" ,.")
+
+
 def _fallback(article: dict) -> dict:
     """Best effort from the text alone, leaving unknowns blank."""
     title = article.get("title", "") or ""
@@ -220,11 +277,7 @@ def _fallback(article: dict) -> dict:
     if not location:
         location = next((p for p in _SWISS_PLACES if p.lower() in text), "")
 
-    # The company usually opens the headline: "Medyria raises CHF 3.5 million".
-    company = ""
-    m = re.match(r"([A-Z][\w&.\-]*(?:\s+[A-Z][\w&.\-]*){0,2})\s+(raises|closes|secures|lands|announces|has)", title)
-    if m:
-        company = m.group(1).strip()
+    company = _company_from_headline(title)
 
     origin = ""
     for name in ("ETH Zurich", "EPFL", "CSEM", "Empa", "PSI", "Idiap"):
@@ -268,6 +321,16 @@ def extract_fields(articles: list, model: str | None = None) -> list:
     for start in range(0, len(articles), BATCH):
         chunk = articles[start: start + BATCH]
         got = _extract_batch(chunk, model)
+        if got is None and len(chunk) > 1:
+            # One awkward story should not cost the other seven. A batch that
+            # fails is retried a story at a time, which is how six rounds ended
+            # up in the archive with no company name against a headline that
+            # said it plainly.
+            print(f"  batch {start + 1}-{start + len(chunk)} failed, "
+                  f"retrying one story at a time", file=sys.stderr)
+            got = []
+            for art in chunk:
+                got.extend(_extract_batch([art], model) or [None])
         if got is None:
             print(f"  ! extraction failed for stories {start + 1}-{start + len(chunk)}, "
                   f"used keywords instead", file=sys.stderr)
@@ -317,12 +380,17 @@ def fill_from_company_sites(articles: list, model: str | None = None) -> int:
         facts = (got or [None])[0]
         if not facts:
             continue
-        # Only fill gaps. What the article said stands.
+        # Only fill gaps. What the article said stands, with one exception:
+        # the headquarters. A company's own imprint is authoritative and a
+        # journalist's shorthand is not, which is how SWISSto12 in Renens was
+        # recorded in Geneva and Hilo in Neuchâtel was recorded in Sion.
         changed = False
         for field in wanted:
-            if not art.get(field) and facts.get(field):
+            authoritative = field == "location" and facts.get(field)
+            if (not art.get(field) or authoritative) and facts.get(field):
+                if art.get(field) != facts[field]:
+                    changed = True
                 art[field] = facts[field]
-                changed = True
         improved += bool(changed)
     print(f"  filled gaps on {improved} companies", file=sys.stderr)
     return improved
