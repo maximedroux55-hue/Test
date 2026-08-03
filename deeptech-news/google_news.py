@@ -29,14 +29,18 @@ import urllib.request
 # the Swiss edition parameters below. They mix research/company angles with
 # funding/announcement language so that company press releases get surfaced too.
 GOOGLE_NEWS_QUERIES = [
+    # Deal and spinout language: the news Climb Ventures actually comments on.
+    "Swiss startup raises seed OR Series A",
+    "EPFL OR ETH spin-off funding",
     "Swiss deeptech startup",
+    "Switzerland venture capital round CHF",
+    # Sectors matching Climb's portfolio and thesis.
     "Switzerland quantum technology",
-    "Switzerland semiconductor OR photonics",
-    "Swiss biotech OR medtech funding",
-    "EPFL OR ETH spin-off",
-    "Swiss startup raises round",
+    "Switzerland semiconductor OR photonics OR chip",
+    "Swiss biotech OR medtech OR longevity funding",
+    "Swiss cleantech OR battery OR energy startup",
     "Switzerland robotics OR AI startup",
-    "Swiss cleantech OR energy startup",
+    "Swiss materials science OR nanotech spinout",
 ]
 
 # Swiss editions of Google News. English is primary; adding the German and

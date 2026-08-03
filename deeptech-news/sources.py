@@ -39,6 +39,15 @@ DIRECT_FEEDS = [
     ("ETH Zurich News", "https://ethz.ch/en/news-and-events/eth-news.rss.xml"),
     ("Empa Research", "https://www.empa.ch/web/empa/rss"),
     ("Idiap Research Institute", "https://www.idiap.ch/en/rss.xml"),
+    # Swiss startup funding and spinouts: the closest match to what Climb backs.
+    ("Venturelab", "https://www.venturelab.swiss/feed"),
+    ("CSEM", "https://www.csem.ch/en/feed/"),
+    ("IBM Research Zurich", "https://www.zurich.ibm.com/rss/news.xml"),
+    ("PSI (Paul Scherrer Institute)", "https://www.psi.ch/en/media-corner/rss.xml"),
+    ("University of Basel", "https://www.unibas.ch/en/News.rss"),
+    ("University of Zurich", "https://www.news.uzh.ch/en.rss.xml"),
+    ("University of Geneva", "https://www.unige.ch/campus/rss/"),
+    ("Swiss Biotech Association", "https://www.swissbiotech.org/feed/"),
 
     # --- Swiss press ---
     ("SWI swissinfo (Business)", "https://www.swissinfo.ch/eng/business/rss"),

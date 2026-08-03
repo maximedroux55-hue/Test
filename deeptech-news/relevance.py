@@ -13,19 +13,42 @@ from difflib import SequenceMatcher
 SWISS_TERMS = {
     "switzerland": 3, "swiss": 3, "suisse": 3, "schweiz": 3,
     "zurich": 2, "geneva": 2, "genève": 2, "lausanne": 2, "basel": 2,
-    "bern": 2, "lugano": 2, "vaud": 2, "epfl": 3, "eth zurich": 3,
-    "eth zürich": 3, "empa": 3, "psi": 2, "chf": 2, "finma": 2,
+    "bern": 2, "lugano": 2, "vaud": 2, "neuchâtel": 2, "neuchatel": 2,
+    "epfl": 3, "eth zurich": 3, "eth zürich": 3, "empa": 3, "psi": 2,
+    "csem": 3, "idiap": 3, "unibas": 2, "chf": 2, "finma": 2,
 }
 
 DEEPTECH_TERMS = {
     "deep tech": 4, "deeptech": 4, "deep-tech": 4,
     "quantum": 3, "semiconductor": 3, "photonics": 3, "chip": 2,
     "robotics": 3, "biotech": 2, "medtech": 2, "cleantech": 2,
-    "nanotech": 3, "materials": 2, "fusion": 3, "spin-off": 2,
-    "spinoff": 2, "spin off": 2, "artificial intelligence": 2,
-    "machine learning": 2, "ai ": 1, "series a": 2, "series b": 2,
+    "nanotech": 3, "materials": 2, "fusion": 3,
+    "longevity": 3, "battery": 2, "sensor": 2, "microtech": 3,
+    "spin-off": 2, "spinoff": 2, "spin off": 2,
+    "artificial intelligence": 2, "machine learning": 2, "ai ": 1,
+    "series a": 2, "series b": 2,
     "funding round": 2, "raises": 2, "raised": 2, "seed round": 2,
     "research": 1, "laboratory": 1, "patent": 1,
+}
+
+# A story is far more postable when it is a deal or a spinout, which is what
+# Climb Ventures comments on. These add a bonus on top of the base score so
+# funding news outranks routine institutional updates (appointments, campus
+# stories) that would otherwise score similarly.
+DEAL_TERMS = {
+    "raises": 3, "raised": 3, "funding round": 3, "seed round": 3,
+    "series a": 3, "series b": 3, "series c": 3, "pre-seed": 3,
+    "closes": 2, "secures": 2, "led by": 2, "investment": 2,
+    "spin-off": 3, "spinoff": 3, "spin off": 3, "spinout": 3,
+    "acquisition": 2, "acquired": 2, "ipo": 2, "venture kick": 3,
+}
+
+# Routine institutional items that are Swiss and research-adjacent but not
+# postable as DeepTech news. These pull the score down.
+NOISE_TERMS = {
+    "appointment of": 4, "appointments": 3, "professors": 3,
+    "obituary": 4, "anniversary": 2, "open day": 3, "campus": 2,
+    "semester": 3, "graduation": 3, "rector": 3, "lecture series": 3,
 }
 
 
@@ -37,20 +60,39 @@ def _count(text: str, terms: dict) -> int:
     return score
 
 
+_SWISS_SOURCES = (
+    "epfl", "eth", "empa", "startupticker", "swissinfo", "csem", "idiap",
+    "venturelab", "psi", "unibas", "uzh", "unige", "swissbiotech", "ibm research",
+)
+
+
 def score_article(title: str, summary: str, source: str = "") -> int:
-    """Return a relevance score. 0 means 'not relevant, drop it'."""
+    """Return a relevance score. 0 means 'not relevant, drop it'.
+
+    Base score is Swiss signal + DeepTech signal. On top of that, funding and
+    spinout news gets a bonus (that is the news worth posting about), while
+    routine institutional items (appointments, campus notices) are penalised.
+    The title carries more weight than the summary, so the bonus and penalty
+    are measured on the title first.
+    """
     text = f" {title} {summary} {source} ".lower()
+    title_text = f" {title} ".lower()
     swiss = _count(text, SWISS_TERMS)
     deep = _count(text, DEEPTECH_TERMS)
 
     # Institutional sources are inherently Swiss and research-heavy, so give
     # them a small Swiss floor even if the headline omits the country name.
-    if any(s in source.lower() for s in ("epfl", "eth", "empa", "startupticker", "swissinfo")):
+    if any(s in source.lower() for s in _SWISS_SOURCES):
         swiss = max(swiss, 2)
 
     if swiss == 0 or deep == 0:
         return 0
-    return swiss + deep
+
+    score = swiss + deep
+    # Deal language counts double in the title, where it is most meaningful.
+    score += _count(title_text, DEAL_TERMS) + _count(text, DEAL_TERMS)
+    score -= _count(title_text, NOISE_TERMS)
+    return max(score, 0)
 
 
 # Words too generic to help tell two stories apart. Overlap on these does not
