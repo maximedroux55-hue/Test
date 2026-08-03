@@ -32,7 +32,8 @@
       "use_of_funds": "",
       "customers": "",
       "website": "zuriq.com",
-      "location": "Zurich"
+      "location": "Zurich",
+      "legal_seat": ""
     },
     {
       "key": "venturelab.swiss/immitra-bio-raises-chf-24-million-to-advance-invivo-gene-editing-platform",
@@ -63,7 +64,8 @@
       "use_of_funds": "Preclinical proof-of-concept for IB-003, pipeline expansion",
       "customers": "",
       "website": "immitrabio.com",
-      "location": "Geneva"
+      "location": "Geneva",
+      "legal_seat": ""
     },
     {
       "key": "ggba.swiss/en/swissto12-raises-usd-70-million-to-meet-growing-multi-orbit-satellite-demand",
@@ -79,7 +81,7 @@
       "last_seen": "2026-08-03",
       "posted": false,
       "company": "SWISSto12",
-      "description": "Satellite manufacturer, RF payloads and multi-orbit satellites",
+      "description": "Satellite manufacturer, RF products for multi-orbit satellite demand",
       "category": "Space",
       "stage": "Growth",
       "amount": "USD 70M",
@@ -91,10 +93,11 @@
       "spinoff_origin": "EPFL",
       "founded": "2011",
       "employees": "",
-      "use_of_funds": "Scale satellite business, meet multi-orbit demand",
+      "use_of_funds": "Scale satellite business",
       "customers": "",
       "website": "swissto12.com",
-      "location": "Renens"
+      "location": "Renens",
+      "legal_seat": ""
     },
     {
       "key": "thequantuminsider.com/2026/07/02/swiss-ccraft-expands-the-worlds-first-independent-foundry-for-tfln-photonic-chips",
@@ -109,9 +112,9 @@
       "score": 25,
       "last_seen": "2026-08-03",
       "posted": false,
-      "company": "",
-      "description": "",
-      "category": "Quantum",
+      "company": "CCRAFT",
+      "description": "Independent foundry for TFLN photonic chips",
+      "category": "Photonics",
       "stage": "",
       "amount": "USD 7.8M",
       "total_raised": "",
@@ -122,10 +125,11 @@
       "spinoff_origin": "",
       "founded": "",
       "employees": "",
-      "use_of_funds": "",
+      "use_of_funds": "Expand photonic chip foundry",
       "customers": "",
       "website": "",
-      "location": ""
+      "location": "",
+      "legal_seat": ""
     },
     {
       "key": "ggba.swiss/en/ccraft-raises-usd-7-8-million-to-scale-up-its-photonic-chip-foundry",
@@ -172,8 +176,8 @@
       "last_seen": "2026-08-03",
       "posted": false,
       "company": "SkyPilot",
-      "description": "Platform for running AI workloads across any cloud GPU provider",
-      "category": "AI",
+      "description": "Software to run AI compute workloads across multiple cloud providers",
+      "category": "Software",
       "stage": "Seed",
       "amount": "USD 20M",
       "total_raised": "",
@@ -187,7 +191,8 @@
       "use_of_funds": "",
       "customers": "CoreWeave, Nebius",
       "website": "",
-      "location": ""
+      "location": "Berkeley, US",
+      "legal_seat": ""
     },
     {
       "key": "startupticker.ch/en/news/valuemize-raises-seven-figure-pre-seed-for-product-cost-software",
@@ -202,8 +207,8 @@
       "score": 21,
       "last_seen": "2026-08-03",
       "posted": true,
-      "company": "Valuemize",
-      "description": "Software for manufacturers to simulate product cost during development",
+      "company": "valuemize",
+      "description": "Software for manufacturers to simulate product cost decisions",
       "category": "Software",
       "stage": "Pre-seed",
       "amount": "",
@@ -218,7 +223,8 @@
       "use_of_funds": "Establish product cost category, expand platform, AI features",
       "customers": "",
       "website": "valuemize.io",
-      "location": "Zurich"
+      "location": "Zurich",
+      "legal_seat": ""
     },
     {
       "key": "bloomberg.com/news/articles/2026-06-18/swiss-ai-startup-prem-is-raising-100-million-series-a-round",
@@ -226,9 +232,9 @@
       "runs": [
         "2026-08-03"
       ],
-      "title": "Swiss AI Startup Prem Is Raising $100 Million Series A Round - bloomberg.com",
+      "title": "Swiss AI Startup Prem Is Raising $100 Million Series A Round - Bloomberg.com",
       "link": "https://www.bloomberg.com/news/articles/2026-06-18/swiss-ai-startup-prem-is-raising-100-million-series-a-round",
-      "publisher": "bloomberg.com",
+      "publisher": "Bloomberg.com",
       "published": "2026-06-18",
       "score": 21,
       "last_seen": "2026-08-03",
@@ -249,7 +255,8 @@
       "use_of_funds": "",
       "customers": "",
       "website": "prem.io",
-      "location": "Lugano"
+      "location": "Lugano",
+      "legal_seat": ""
     },
     {
       "key": "techfundingnews.com/ahead-health-10m-funding-preventive-care-germany-netherlands",
@@ -265,7 +272,7 @@
       "last_seen": "2026-08-03",
       "posted": true,
       "company": "Ahead Health",
-      "description": "Preventive health services startup",
+      "description": "Preventive health startup",
       "category": "MedTech",
       "stage": "",
       "amount": "USD 10M",
@@ -280,7 +287,8 @@
       "use_of_funds": "Launch in Germany and Netherlands",
       "customers": "",
       "website": "aheadhealth.com",
-      "location": "Zurich"
+      "location": "Zurich",
+      "legal_seat": ""
     },
     {
       "key": "startupticker.ch/en/news/hilo-closes-series-b-extension-round-to-fuel-us-expansion",
@@ -296,7 +304,7 @@
       "last_seen": "2026-08-03",
       "posted": false,
       "company": "Hilo (Aktiia)",
-      "description": "Optical wearable blood pressure monitoring system with connected cuff",
+      "description": "Cuffless optical blood pressure monitoring wearable system",
       "category": "MedTech",
       "stage": "Series B",
       "amount": "USD 19M",
@@ -311,7 +319,8 @@
       "use_of_funds": "US market expansion",
       "customers": "Amazon",
       "website": "Hilo.com",
-      "location": "Neuchâtel"
+      "location": "Neuchâtel",
+      "legal_seat": ""
     },
     {
       "key": "startupticker.ch/en/news/moonlake-therapeutics-raises-usd-230-million-in-public-offering",
@@ -327,7 +336,7 @@
       "last_seen": "2026-08-03",
       "posted": false,
       "company": "MoonLake Immunotherapeutics",
-      "description": "Clinical-stage biotech developing sonelokimab for inflammatory skin and joint diseases",
+      "description": "Clinical-stage biotech treating inflammatory skin and joint diseases",
       "category": "Biotech",
       "stage": "IPO",
       "amount": "USD 230M",
@@ -342,7 +351,8 @@
       "use_of_funds": "Development and commercialization of sonelokimab",
       "customers": "",
       "website": "",
-      "location": "Zug"
+      "location": "Zug",
+      "legal_seat": ""
     },
     {
       "key": "trendingtopics.eu/talentir-austrian-swiss-startup-raises-e4-million-for-global-payout-infrastructure",
@@ -358,22 +368,23 @@
       "last_seen": "2026-08-03",
       "posted": false,
       "company": "Talentir",
-      "description": "AI and stablecoin-based international payout infrastructure platform",
+      "description": "AI and stablecoin-based global payout infrastructure platform",
       "category": "FinTech",
       "stage": "Seed",
       "amount": "EUR 4M",
       "total_raised": "",
       "valuation": "",
       "lead_investor": "Redstone",
-      "investors": "Redstone, Inovia Capital, Patrick Pichette, Raif Jacobs, Shapers, Philippe Teixeira da Mota, Inês Melo e Castro, Thomas Teixeira da Mota, Tenity, Oliver Sjöstedt, Guillermo Forteza, NOIA Capital, BFC, Cambrena Capital, Mark Ransford",
+      "investors": "Redstone, Inovia Capital, Patrick Pichette, Raif Jacobs, Shapers, Philippe Teixeira da Mota, Inês Melo e Castro, Thomas Teixeira da Mota, Tenity, NOIA Capital, BFC, Cambrena Capital, Mark Ransford",
       "founders": "",
       "spinoff_origin": "",
       "founded": "",
       "employees": "6",
-      "use_of_funds": "Expand AI platform, merchant-of-record infrastructure, international growth",
+      "use_of_funds": "Expand AI platform, merchant-of-record infrastructure, internationalisation",
       "customers": "",
       "website": "",
-      "location": "Mastercard"
+      "location": "",
+      "legal_seat": ""
     },
     {
       "key": "electronicsweekly.com/news/switzerland-hits-peak-deep-tech-investment-levels-2026-06",
@@ -390,7 +401,7 @@
       "posted": false,
       "company": "Deep Tech Nation Switzerland",
       "description": "Swiss Deep Tech Report 2026 ranks Switzerland first in deep tech VC share",
-      "category": "Research",
+      "category": "Other",
       "stage": "",
       "amount": "",
       "total_raised": "",
@@ -404,7 +415,8 @@
       "use_of_funds": "",
       "customers": "Founderful, Kickfund, Startupticker.ch, Dealroom.co",
       "website": "",
-      "location": ""
+      "location": "Zurich",
+      "legal_seat": ""
     },
     {
       "key": "techfundingnews.com/swiss-startup-gr3n-raises-e15-5m-to-build-the-worlds-first-microwave-pet-recycling-plant-and-tackle-the-85-of-plastic-that-never-gets-recycled",
@@ -420,7 +432,7 @@
       "last_seen": "2026-08-03",
       "posted": false,
       "company": "GR3N",
-      "description": "Microwave-based chemical PET plastic recycling technology",
+      "description": "Microwave-based chemical PET plastic recycling",
       "category": "Cleantech",
       "stage": "",
       "amount": "EUR 15.5M",
@@ -435,7 +447,8 @@
       "use_of_funds": "Build first microwave PET recycling plant",
       "customers": "",
       "website": "",
-      "location": "Chiasso"
+      "location": "Chiasso",
+      "legal_seat": ""
     },
     {
       "key": "startupticker.ch/en/news/medyria-raises-chf-3-5-million",
@@ -451,7 +464,7 @@
       "last_seen": "2026-08-03",
       "posted": false,
       "company": "Medyria",
-      "description": "Blood-flow-velocity sensor microcatheters for interventional cardiology",
+      "description": "Blood-flow-velocity sensor microcatheters for coronary diagnostics",
       "category": "MedTech",
       "stage": "",
       "amount": "CHF 3.5M",
@@ -466,7 +479,8 @@
       "use_of_funds": "FDA clearance and US launch of PyCath",
       "customers": "",
       "website": "",
-      "location": "Winterthur"
+      "location": "Winterthur",
+      "legal_seat": ""
     },
     {
       "key": "hackernoon.com/inside-the-swiss-deep-tech-report-2026-switzerland-out-invests-china-and-the-us-in-deep-tech",
@@ -497,7 +511,8 @@
       "use_of_funds": "",
       "customers": "Founderful, Kickfund, Startupticker.ch, Dealroom.co",
       "website": "",
-      "location": ""
+      "location": "Zurich",
+      "legal_seat": ""
     },
     {
       "key": "startupticker.ch/en/news/cdds-secures-seed-capital-for-further-development-steps",
@@ -513,7 +528,7 @@
       "last_seen": "2026-08-03",
       "posted": false,
       "company": "CDDS",
-      "description": "Autonomous kinetic interceptor drones neutralizing small airborne threats",
+      "description": "Autonomous kinetic interceptor drones neutralizing small aerial threats",
       "category": "Robotics",
       "stage": "Seed",
       "amount": "",
@@ -528,7 +543,8 @@
       "use_of_funds": "Product development, validation, team growth",
       "customers": "",
       "website": "",
-      "location": "Zurich"
+      "location": "Zurich",
+      "legal_seat": ""
     },
     {
       "key": "bilan.ch/story/deep-tech-la-suisse-surclasse-chine-et-etats-unis-en-capital-risque-102004606933",
@@ -545,7 +561,7 @@
       "posted": false,
       "company": "Deep Tech Nation Switzerland",
       "description": "Report ranks Switzerland ahead of China and US in deep tech VC share",
-      "category": "Research",
+      "category": "Other",
       "stage": "",
       "amount": "",
       "total_raised": "",
@@ -559,7 +575,8 @@
       "use_of_funds": "",
       "customers": "",
       "website": "",
-      "location": ""
+      "location": "Zurich",
+      "legal_seat": ""
     },
     {
       "key": "usi.ch/en/feeds/35430",
@@ -567,16 +584,16 @@
       "runs": [
         "2026-08-03"
       ],
-      "title": "Switzerland confirms its leading position in deep tech - usi.ch",
+      "title": "Switzerland confirms its leading position in deep tech - Università della Svizzera italiana | USI",
       "link": "https://www.usi.ch/en/feeds/35430",
-      "publisher": "usi.ch",
+      "publisher": "Università della Svizzera italiana | USI",
       "published": "2026-06-22",
       "score": 13,
       "last_seen": "2026-08-03",
       "posted": false,
       "company": "Deep Tech Nation Switzerland",
       "description": "Switzerland confirms leading position in deep tech",
-      "category": "Research",
+      "category": "Other",
       "stage": "",
       "amount": "",
       "total_raised": "",
@@ -590,7 +607,8 @@
       "use_of_funds": "",
       "customers": "",
       "website": "",
-      "location": ""
+      "location": "Zurich",
+      "legal_seat": ""
     },
     {
       "key": "watson.ch/fr/suisse/technologie/684589960-la-suisse-est-au-top-en-robotique-et-en-ia-mais-il-y-a-un-probleme",
@@ -606,7 +624,7 @@
       "last_seen": "2026-08-03",
       "posted": false,
       "company": "Deep Tech Nation Switzerland",
-      "description": "Annual report on Swiss deep tech startups and funding",
+      "description": "Foundation publishing annual Swiss deep tech ecosystem report",
       "category": "Research",
       "stage": "",
       "amount": "",
@@ -621,7 +639,8 @@
       "use_of_funds": "",
       "customers": "",
       "website": "",
-      "location": ""
+      "location": "",
+      "legal_seat": ""
     },
     {
       "key": "startupticker.ch/en/news/switzerland-extends-its-lead-as-deep-tech-hub",
@@ -637,7 +656,7 @@
       "last_seen": "2026-08-03",
       "posted": false,
       "company": "Deep Tech Nation Switzerland",
-      "description": "Publisher of Swiss Deep Tech Report 2026 ranking Switzerland first",
+      "description": "Foundation publishing Swiss Deep Tech Report 2026",
       "category": "Research",
       "stage": "",
       "amount": "",
@@ -652,7 +671,8 @@
       "use_of_funds": "",
       "customers": "Founderful, Kickfund, Startupticker.ch, Dealroom.co",
       "website": "",
-      "location": ""
+      "location": "",
+      "legal_seat": ""
     },
     {
       "key": "investrends.ch/aktuell/news/schweizer-deep-tech-weltspitze-bei-der-grundung-nachzugler-bei-der-finanzierung",
@@ -668,7 +688,7 @@
       "last_seen": "2026-08-03",
       "posted": false,
       "company": "Deep Tech Nation Switzerland",
-      "description": "Report shows Swiss deep tech leads globally but lacks domestic late-stage capital",
+      "description": "Foundation behind Swiss Deep Tech Report 2026",
       "category": "Research",
       "stage": "",
       "amount": "",
@@ -683,7 +703,8 @@
       "use_of_funds": "",
       "customers": "Founderful, Kickfund, Startupticker.ch, Dealroom.co",
       "website": "",
-      "location": ""
+      "location": "",
+      "legal_seat": ""
     },
     {
       "key": "bbntimes.com/global-economy/the-swiss-market-index-smi-today-switzerland-s-blue-chip-gauge-faces-mild-pressure-in-risk-off-environment",
@@ -700,7 +721,7 @@
       "posted": false,
       "company": "Swiss Market Index",
       "description": "Swiss blue-chip equity benchmark of 20 largest SIX-listed companies",
-      "category": "FinTech",
+      "category": "Other",
       "stage": "",
       "amount": "",
       "total_raised": "",
@@ -714,7 +735,8 @@
       "use_of_funds": "",
       "customers": "",
       "website": "",
-      "location": ""
+      "location": "Zurich",
+      "legal_seat": ""
     },
     {
       "key": "eu-startups.com/2026/07/swiss-startup-ai-infrastructure-capital-ag-launches-with-e16-million-to-tackle-ai-compute-bottleneck",
@@ -745,7 +767,7 @@
       "use_of_funds": "",
       "customers": "",
       "website": "",
-      "location": ""
+      "location": "Zurich"
     },
     {
       "key": "venturelab.swiss/nanoflex-robotics-awarded-eur-125-million-from-the-eic-accelerator",
@@ -768,7 +790,7 @@
       "total_raised": "",
       "valuation": "",
       "lead_investor": "European Innovation Council",
-      "investors": "EIC Fund",
+      "investors": "European Innovation Council, EIC Fund",
       "founders": "Matt Curran, Bradley Nelson",
       "spinoff_origin": "ETH Zurich",
       "founded": "2021",
@@ -776,7 +798,8 @@
       "use_of_funds": "Clinical validation toward CE marking and commercialization",
       "customers": "",
       "website": "nanoflexrobotics.com",
-      "location": "Glattbrugg"
+      "location": "Glattbrugg",
+      "legal_seat": ""
     },
     {
       "key": "hitachienergy.com/news-and-events/press-releases/2026/06/hitachi-energy-expands-power-semiconductor-production-at-swiss-site",
@@ -792,7 +815,7 @@
       "last_seen": "2026-08-03",
       "posted": false,
       "company": "Hitachi Energy",
-      "description": "Power semiconductor manufacturing for grids and electrification",
+      "description": "Power semiconductor and electrification equipment manufacturer",
       "category": "Semiconductors",
       "stage": "",
       "amount": "USD 9B",
@@ -800,14 +823,15 @@
       "valuation": "",
       "lead_investor": "",
       "investors": "",
-      "founders": "",
+      "founders": "Rainer Kaesmaier",
       "spinoff_origin": "",
       "founded": "",
-      "employees": "over 56,000",
+      "employees": "56,000",
       "use_of_funds": "New office and logistics building, capacity expansion",
       "customers": "ATP Architekten Ingenieure Zürich AG",
-      "website": "https://www.hitachienergy.com",
-      "location": "Zurich"
+      "website": "hitachienergy.com",
+      "location": "Zurich",
+      "legal_seat": ""
     },
     {
       "key": "swissinfo.ch/ger/berner-kantonsparlament-verlangt-chip-pflicht-f%c3%bcr-katzen/91562172",
@@ -838,7 +862,8 @@
       "use_of_funds": "",
       "customers": "",
       "website": "",
-      "location": ""
+      "location": "Zurich",
+      "legal_seat": ""
     },
     {
       "key": "electronicsweekly.com/news/swiss-blueprint-responsible-ai-starts-at-the-chip-level-2026-06",
@@ -869,7 +894,8 @@
       "use_of_funds": "",
       "customers": "",
       "website": "",
-      "location": "Neuchâtel"
+      "location": "Zurich",
+      "legal_seat": ""
     },
     {
       "key": "ifr.org/ifr-press-releases/news/iera-award-2026-goes-to-flying-warehouse-robots-by-verity",
@@ -900,7 +926,8 @@
       "use_of_funds": "",
       "customers": "",
       "website": "",
-      "location": "Zurich"
+      "location": "Zurich",
+      "legal_seat": ""
     },
     {
       "key": "startupticker.ch/en/news/innobooster-backs-three-deep-tech-startups-with-chf-450-000",
@@ -915,23 +942,24 @@
       "score": 11,
       "last_seen": "2026-08-03",
       "posted": false,
-      "company": "Foldcast, Kyra, Subatron",
-      "description": "Paper concrete formwork, grid congestion AI, underwater acoustic transducer",
-      "category": "Other",
+      "company": "Subatron",
+      "description": "Polymer-based acoustic transducer for underwater wireless communication",
+      "category": "Materials",
       "stage": "Grant",
-      "amount": "CHF 450,000",
+      "amount": "CHF 150K",
       "total_raised": "",
       "valuation": "",
       "lead_investor": "",
       "investors": "Gebert Rüf Stiftung",
-      "founders": "Ena Lloret-Fritschi, Fabio Amicarelli, Andrej Stankovski, Anna Varbella, Samira Baumann, Mathias Werder, Alissa Wyss",
-      "spinoff_origin": "USI, ETH Zurich",
+      "founders": "Samira Baumann, Mathias Werder, Alissa Wyss",
+      "spinoff_origin": "ETH Zurich",
       "founded": "",
       "employees": "",
-      "use_of_funds": "Advance research and development towards market entry",
+      "use_of_funds": "Characterise transducer, develop protocols in 50-300 kHz",
       "customers": "",
-      "website": "",
-      "location": "Boldbrain"
+      "website": "subatron.com",
+      "location": "Zurich",
+      "legal_seat": ""
     },
     {
       "key": "actu.epfl.ch/news/epfl-researchers-create-an-ai-model-that-thinks-li",
@@ -948,7 +976,7 @@
       "posted": false,
       "company": "EPFL",
       "description": "Brain-inspired modular large language model MiCRo",
-      "category": "AI",
+      "category": "Research",
       "stage": "",
       "amount": "",
       "total_raised": "",
@@ -962,7 +990,8 @@
       "use_of_funds": "",
       "customers": "",
       "website": "",
-      "location": "Lausanne"
+      "location": "Lausanne",
+      "legal_seat": ""
     },
     {
       "key": "actu.epfl.ch/news/mapping-the-hidden-rules-of-a-key-immune-sensor",
@@ -993,7 +1022,8 @@
       "use_of_funds": "",
       "customers": "",
       "website": "",
-      "location": "Lausanne"
+      "location": "Lausanne",
+      "legal_seat": ""
     },
     {
       "key": "actu.epfl.ch/news/do-ai-systems-learn-the-same-view-of-the-world",
@@ -1009,8 +1039,8 @@
       "last_seen": "2026-08-03",
       "posted": false,
       "company": "EPFL",
-      "description": "Study questioning convergence of AI model representations",
-      "category": "AI",
+      "description": "Study challenging AI representation convergence hypothesis",
+      "category": "Research",
       "stage": "",
       "amount": "",
       "total_raised": "",
@@ -1024,7 +1054,8 @@
       "use_of_funds": "",
       "customers": "",
       "website": "",
-      "location": "Lausanne"
+      "location": "Lausanne",
+      "legal_seat": ""
     },
     {
       "key": "startupticker.ch/en/news/nordfen-brings-drone-simulation-technology-to-latvia",
@@ -1040,7 +1071,7 @@
       "last_seen": "2026-08-03",
       "posted": true,
       "company": "nordfen",
-      "description": "AI-powered drone simulation software from satellite imagery",
+      "description": "AI-powered drone simulation software from satellite imagery, geodata",
       "category": "Software",
       "stage": "Partnership",
       "amount": "",
@@ -1053,9 +1084,10 @@
       "founded": "2025",
       "employees": "",
       "use_of_funds": "Drone operator training solutions in Latvia",
-      "customers": "Drone Force – Europe, Investment and Development Agency of Latvia",
+      "customers": "Drone Force – Europe, LIAA",
       "website": "",
-      "location": "Zurich"
+      "location": "Zurich",
+      "legal_seat": ""
     },
     {
       "key": "actu.epfl.ch/news/apertus-15-building-the-next-generation-of-open--2",
@@ -1086,7 +1118,8 @@
       "use_of_funds": "",
       "customers": "Canton of Ticino, Bajour, We.Publish",
       "website": "",
-      "location": "Lausanne"
+      "location": "Lausanne",
+      "legal_seat": ""
     },
     {
       "key": "startupticker.ch/en/news/swiss-startup-aionic-labs-selected-for-funding-initiative-by-germany-s-federal-agency-sprin-d",
@@ -1114,10 +1147,11 @@
       "spinoff_origin": "ETH Zurich",
       "founded": "",
       "employees": "",
-      "use_of_funds": "Develop European frontier AI lab and foundational models",
+      "use_of_funds": "Develop European frontier AI lab and TSLM models",
       "customers": "",
       "website": "",
-      "location": "Zurich"
+      "location": "Zurich",
+      "legal_seat": ""
     },
     {
       "key": "actu.epfl.ch/news/smarter-waste-sorting-with-ai",
@@ -1140,15 +1174,16 @@
       "total_raised": "CHF 1.5M",
       "valuation": "",
       "lead_investor": "",
-      "investors": "",
+      "investors": "Foundation for Innovation and Technology (FIT)",
       "founders": "Valentin Ibars, Théophile Agresti, Théo Vitupier",
       "spinoff_origin": "EPFL",
       "founded": "2023",
       "employees": "13",
-      "use_of_funds": "",
+      "use_of_funds": "Develop technology, add infrared, thermal and depth sensing",
       "customers": "",
       "website": "",
-      "location": "Lausanne"
+      "location": "Lausanne",
+      "legal_seat": ""
     },
     {
       "key": "actu.epfl.ch/news/squeezed-bacteria-are-harder-to-kill",
@@ -1179,7 +1214,8 @@
       "use_of_funds": "",
       "customers": "",
       "website": "",
-      "location": "Lausanne"
+      "location": "Lausanne",
+      "legal_seat": ""
     },
     {
       "key": "actu.epfl.ch/news/quantum-and-molecular-plumbing",
@@ -1195,7 +1231,7 @@
       "last_seen": "2026-08-03",
       "posted": false,
       "company": "EPFL Quantum Plumbing Lab",
-      "description": "Research on nanoscale water flow and hydro-electronic friction",
+      "description": "Research on nanoscale water flow and quantum friction",
       "category": "Research",
       "stage": "",
       "amount": "",
@@ -1210,7 +1246,8 @@
       "use_of_funds": "",
       "customers": "",
       "website": "",
-      "location": "Lausanne"
+      "location": "Lausanne",
+      "legal_seat": ""
     },
     {
       "key": "startupticker.ch/en/news/focus-on-deeptech",
@@ -1241,7 +1278,8 @@
       "use_of_funds": "",
       "customers": "",
       "website": "",
-      "location": "Lausanne"
+      "location": "Lausanne",
+      "legal_seat": ""
     },
     {
       "key": "actu.epfl.ch/news/a-tiny-pore-identifies-cyanobacteria-toxins-in-lak",
@@ -1257,7 +1295,7 @@
       "last_seen": "2026-08-03",
       "posted": true,
       "company": "CYnANO",
-      "description": "Nanopore sensor detecting and distinguishing cyanobacteria microcystin toxins",
+      "description": "Nanopore sensor detecting and distinguishing cyanobacterial microcystin toxins",
       "category": "MedTech",
       "stage": "",
       "amount": "",
@@ -1272,7 +1310,8 @@
       "use_of_funds": "",
       "customers": "",
       "website": "",
-      "location": "Lausanne"
+      "location": "Lausanne",
+      "legal_seat": ""
     },
     {
       "key": "actu.epfl.ch/news/how-rivers-shape-cities-and-societies",
@@ -1288,7 +1327,7 @@
       "last_seen": "2026-08-03",
       "posted": true,
       "company": "EPFL Laboratory of Urbanism",
-      "description": "Research on rivers, cities, climate adaptation and urbanism",
+      "description": "Research on rivers, cities and climate adaptation",
       "category": "Research",
       "stage": "",
       "amount": "",
@@ -1303,7 +1342,8 @@
       "use_of_funds": "",
       "customers": "",
       "website": "",
-      "location": "Lausanne"
+      "location": "Lausanne",
+      "legal_seat": ""
     },
     {
       "key": "news.google.com/rss/articles/cbmirafbvv95cuxqovnkr0m0njb2eendvxdysmozru8xmhp2cffauetrm0xwndlwwwtsce9anzfuc0nhsgznqxluzfp5tfrxulnwcdawrejta0dgufl3bwhmy0zvrkrmqkqzz3lta0zjmfatzejrm09vneqywgrusvh4d1ayszk3buzjb2jsmnzsvtgttnnmx2czagv5qnhystjvaju2smthshrdvdnlnel2dknmlthb",
@@ -1334,7 +1374,7 @@
       "use_of_funds": "",
       "customers": "",
       "website": "",
-      "location": ""
+      "location": "Zurich"
     },
     {
       "key": "actu.epfl.ch/news/a-lipid-switch-that-blocks-anthrax",
@@ -1365,7 +1405,8 @@
       "use_of_funds": "",
       "customers": "",
       "website": "",
-      "location": "Lausanne"
+      "location": "Lausanne",
+      "legal_seat": ""
     },
     {
       "key": "startupticker.ch/en/news/four-swiss-medtechs-mark-commercial-regulatory-and-clinical-milestones",
@@ -1380,23 +1421,24 @@
       "score": 8,
       "last_seen": "2026-08-03",
       "posted": false,
-      "company": "Alivion",
-      "description": "Handheld breath-analysis device measuring metabolic markers",
+      "company": "arcoris bio",
+      "description": "Nanotechnology platform for biomarker detection and signal amplification",
       "category": "MedTech",
-      "stage": "",
+      "stage": "Partnership",
       "amount": "",
       "total_raised": "",
       "valuation": "",
       "lead_investor": "",
       "investors": "",
-      "founders": "",
+      "founders": "Matyas Vegh",
       "spinoff_origin": "ETH Zurich",
-      "founded": "2020",
+      "founded": "2022",
       "employees": "",
-      "use_of_funds": "",
-      "customers": "",
+      "use_of_funds": "Distribute immunoMUSE kits in Europe and North America",
+      "customers": "Europa Biosite",
       "website": "",
-      "location": "Zurich"
+      "location": "Schlieren",
+      "legal_seat": ""
     },
     {
       "key": "startupticker.ch/en/news/humboldt-ai-lanciert-ki-tool-fuer-den-cv-check-im-schweizer-arbeitsmarkt",
@@ -1444,7 +1486,7 @@
       "posted": false,
       "company": "",
       "description": "",
-      "category": "AI",
+      "category": "Other",
       "stage": "",
       "amount": "",
       "total_raised": "",
@@ -1458,7 +1500,8 @@
       "use_of_funds": "",
       "customers": "",
       "website": "",
-      "location": ""
+      "location": "Zurich",
+      "legal_seat": ""
     },
     {
       "key": "startupticker.ch/en/news/cleantech-season-energy-erhaelt-millionenfinanzierung-fuer-saisonale-energiespeicherung",
@@ -1474,7 +1517,7 @@
       "last_seen": "2026-08-03",
       "posted": false,
       "company": "SeasON Energy",
-      "description": "Thermochemical seasonal heat storage using sorption heat pump",
+      "description": "Thermochemical seasonal heat storage using sodium hydroxide sorption heat pump",
       "category": "Energy",
       "stage": "",
       "amount": "",
@@ -1486,10 +1529,11 @@
       "spinoff_origin": "Matica AG, Hochschule Luzern",
       "founded": "2025",
       "employees": "8",
-      "use_of_funds": "Market entry in DACH, install first 5-10 systems",
+      "use_of_funds": "Market entry, install first five to ten storage systems",
       "customers": "",
       "website": "",
-      "location": "Zurich"
+      "location": "Zurich",
+      "legal_seat": ""
     },
     {
       "key": "startupticker.ch/en/news/ki-startup-prodlane-sammelt-4-millionen-euro-ein",
@@ -1505,8 +1549,8 @@
       "last_seen": "2026-08-03",
       "posted": false,
       "company": "Prodlane",
-      "description": "SaaS platform with AI software MAIA for industrial project documentation",
-      "category": "Software",
+      "description": "AI SaaS platform for traceable industrial project documentation",
+      "category": "AI",
       "stage": "",
       "amount": "EUR 4M",
       "total_raised": "",
@@ -1517,10 +1561,11 @@
       "spinoff_origin": "University of St. Gallen",
       "founded": "2021",
       "employees": "15",
-      "use_of_funds": "Expand development, sales, marketing; growth in DACH",
+      "use_of_funds": "Expand development, sales and marketing; DACH growth",
       "customers": "",
       "website": "",
-      "location": "Leipzig, DE"
+      "location": "Leipzig, DE",
+      "legal_seat": ""
     },
     {
       "key": "startupticker.ch/en/news/aeler-eyes-oncoming-large-scale-roll-out",
@@ -1536,22 +1581,23 @@
       "last_seen": "2026-08-03",
       "posted": false,
       "company": "AELER",
-      "description": "Sustainable smart shipping containers for logistics",
+      "description": "Smart sustainable shipping containers for logistics",
       "category": "Logistics",
       "stage": "",
       "amount": "CHF 8.4M",
-      "total_raised": "CHF 22M+ equity since 2022",
+      "total_raised": "CHF 22M+ equity plus EUR 4M asset-backed since 2022",
       "valuation": "",
       "lead_investor": "",
       "investors": "SipChem InnoVent",
-      "founders": "Naïk Londono, Benoit Dumont (CEO)",
+      "founders": "Naïk Londono",
       "spinoff_origin": "EPFL",
       "founded": "",
       "employees": "",
-      "use_of_funds": "Extend commercialization, prepare large-scale deployment",
+      "use_of_funds": "Scale commercialization and large-scale fleet deployment",
       "customers": "Procter & Gamble, Rhenus",
       "website": "aeler.com",
-      "location": "Lausanne"
+      "location": "Lausanne",
+      "legal_seat": ""
     },
     {
       "key": "actu.epfl.ch/news/mice-actively-seek-better-views-to-make-visual-d-2",
@@ -1567,7 +1613,7 @@
       "last_seen": "2026-08-03",
       "posted": false,
       "company": "EPFL",
-      "description": "Study showing mice move to gather better visual information",
+      "description": "Study showing mice move strategically to gain visual information",
       "category": "Research",
       "stage": "",
       "amount": "",
@@ -1582,7 +1628,8 @@
       "use_of_funds": "",
       "customers": "",
       "website": "",
-      "location": "Lausanne"
+      "location": "Lausanne",
+      "legal_seat": ""
     },
     {
       "key": "swissinfo.ch/eng/swiss-ai/swiss-shoppers-trust-chatbots-should-they/91641620",
@@ -1599,7 +1646,7 @@
       "posted": false,
       "company": "",
       "description": "",
-      "category": "AI",
+      "category": "Other",
       "stage": "",
       "amount": "",
       "total_raised": "",
@@ -1613,7 +1660,8 @@
       "use_of_funds": "",
       "customers": "",
       "website": "",
-      "location": ""
+      "location": "Zurich",
+      "legal_seat": ""
     },
     {
       "key": "startupticker.ch/en/news/proptech-assetos-auf-wachstumskurs",
@@ -1638,13 +1686,14 @@
       "lead_investor": "",
       "investors": "",
       "founders": "Matthias Falk, Matthias Erhart",
-      "spinoff_origin": "University of St. Gallen",
+      "spinoff_origin": "University of St. Gallen (HSG)",
       "founded": "2024",
       "employees": "8",
-      "use_of_funds": "Real-estate investment intelligence platform, internationalization",
+      "use_of_funds": "Develop real-estate investment intelligence platform, internationalisation",
       "customers": "Implenia, Avadis Vorsorge, Helvetica Property Group, PURE Group, Verium, Albin Kistler",
       "website": "",
-      "location": "Zurich"
+      "location": "Zurich",
+      "legal_seat": ""
     },
     {
       "key": "actu.epfl.ch/news/what-our-neighborhood-reveals-about-our-sleep",
@@ -1660,7 +1709,7 @@
       "last_seen": "2026-08-03",
       "posted": false,
       "company": "URBASAN",
-      "description": "Project mapping how urban environments influence sleep quality",
+      "description": "Project mapping how urban environments influence sleep",
       "category": "Research",
       "stage": "Grant",
       "amount": "CHF 1.5M",
@@ -1672,10 +1721,11 @@
       "spinoff_origin": "EPFL",
       "founded": "",
       "employees": "",
-      "use_of_funds": "Map sleep habits, prevention campaigns",
+      "use_of_funds": "Map sleep habits, analyse data, prevention campaigns",
       "customers": "HUG, CHUV, HEIG-VD, La Chaux-de-Fonds, Le Locle, Yverdon-les-Bains, Onex",
       "website": "urbasan.ch",
-      "location": "Lausanne"
+      "location": "Lausanne",
+      "legal_seat": ""
     },
     {
       "key": "startupticker.ch/en/news/delta-capacity-completes-swedish-battery-project",
@@ -1691,7 +1741,7 @@
       "last_seen": "2026-08-03",
       "posted": false,
       "company": "Delta Capacity",
-      "description": "Develops and operates utility-scale battery energy storage in Europe",
+      "description": "Develops, owns and operates utility-scale battery storage in Europe",
       "category": "Energy",
       "stage": "",
       "amount": "",
@@ -1704,9 +1754,10 @@
       "founded": "2023",
       "employees": "",
       "use_of_funds": "",
-      "customers": "Sungrow, WOOD & Company, RES",
+      "customers": "Sungrow, WOOD & Company Renewables Sub-Fund, RES",
       "website": "",
-      "location": "Zug"
+      "location": "Zug",
+      "legal_seat": ""
     },
     {
       "key": "actu.epfl.ch/news/3d-printable-elastic-polymer-proves-surprisingly-2",
@@ -1737,7 +1788,8 @@
       "use_of_funds": "",
       "customers": "",
       "website": "",
-      "location": "Lausanne"
+      "location": "Lausanne",
+      "legal_seat": ""
     },
     {
       "key": "actu.epfl.ch/news/a-flapping-robot-swims-and-flies-like-a-diving-b-2",
@@ -1768,7 +1820,8 @@
       "use_of_funds": "",
       "customers": "MIT, Northwest Indian College",
       "website": "",
-      "location": "Lausanne"
+      "location": "Lausanne",
+      "legal_seat": ""
     },
     {
       "key": "actu.epfl.ch/news/heatwaves-hinder-photosynthesis",
@@ -1784,7 +1837,7 @@
       "last_seen": "2026-08-03",
       "posted": false,
       "company": "EPFL",
-      "description": "Study on heat thresholds limiting photosynthesis in tropical forests",
+      "description": "Study on heat stress limiting tropical forest photosynthesis",
       "category": "Research",
       "stage": "",
       "amount": "",
@@ -1799,7 +1852,8 @@
       "use_of_funds": "",
       "customers": "",
       "website": "",
-      "location": "Lausanne"
+      "location": "Lausanne",
+      "legal_seat": ""
     },
     {
       "key": "actu.epfl.ch/news/when-brain-stimulation-learns-to-walk-with-you",
@@ -1814,8 +1868,8 @@
       "score": 6,
       "last_seen": "2026-08-03",
       "posted": false,
-      "company": "EPFL",
-      "description": "AI-assisted adaptive deep brain stimulation improving Parkinson's gait",
+      "company": "EPFL / .NeuroRestore",
+      "description": "AI-assisted adaptive deep-brain stimulation improving Parkinson's gait",
       "category": "MedTech",
       "stage": "",
       "amount": "CHF 4M",
@@ -1827,10 +1881,11 @@
       "spinoff_origin": "",
       "founded": "",
       "employees": "",
-      "use_of_funds": "Fund Medtronic Chair in Neuromodulation",
+      "use_of_funds": "Fund Medtronic Chair in Neuromodulation over eight years",
       "customers": "Medtronic, CHUV",
       "website": "epfl.ch",
-      "location": "Lausanne"
+      "location": "Lausanne",
+      "legal_seat": ""
     },
     {
       "key": "actu.epfl.ch/news/permafrost-is-not-simply-a-carbon-time-bomb",
@@ -1845,7 +1900,7 @@
       "score": 5,
       "last_seen": "2026-08-03",
       "posted": false,
-      "company": "EPFL",
+      "company": "EPFL River Ecosystems Laboratory",
       "description": "Study showing rock weathering offsets permafrost river CO2 emissions",
       "category": "Research",
       "stage": "",
@@ -1861,7 +1916,8 @@
       "use_of_funds": "",
       "customers": "East China Normal University, LMU Munich",
       "website": "",
-      "location": "Lausanne"
+      "location": "Lausanne",
+      "legal_seat": ""
     },
     {
       "key": "startupticker.ch/en/news/synhelion-erhaelt-foerdermittel-fuer-kommerzielle-demo-anlage",
@@ -1892,7 +1948,7 @@
       "use_of_funds": "Build commercial demonstration plant in Jülich",
       "customers": "",
       "website": "synhelion.com",
-      "location": "Lugano"
+      "location": "Zurich"
     },
     {
       "key": "startupticker.ch/en/news/tech4trust-crowns-aurigin-ai-as-grand-prize-winner",
@@ -1923,7 +1979,8 @@
       "use_of_funds": "",
       "customers": "",
       "website": "",
-      "location": "Zurich"
+      "location": "Zurich",
+      "legal_seat": ""
     }
   ]
 }
