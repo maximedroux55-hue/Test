@@ -120,10 +120,16 @@ def _keywords(title: str) -> set:
 
 
 def _same_story(a: dict, b: dict) -> bool:
-    # Two signals, either one is enough: near-identical text, or a strong
-    # overlap of distinctive keywords (handles the same event reworded by
-    # different outlets).
+    # Three signals, any one is enough: near-identical text, a strong overlap
+    # of distinctive keywords, or a shared rare name.
     if SequenceMatcher(None, a["_norm"], b["_norm"]).ratio() > 0.80:
+        return True
+    # A rare name shared by two headlines is almost always the same company,
+    # and so the same event. This catches the same round written up very
+    # differently, e.g. "Quantonation leads USD 25.5 million seed round for ETH
+    # spin-off ZuriQ" and "ETH Zurich spinout ZuriQ raises $25.5m seed", which
+    # share too few words to look alike but are plainly one story.
+    if a["_rare"] & b["_rare"]:
         return True
     ka, kb = a["_kw"], b["_kw"]
     if not ka or not kb:
@@ -154,10 +160,22 @@ def deduplicate(articles: list) -> list:
     Keeps the highest-scoring version of each story. `articles` is a list of
     dicts with at least 'title' and 'score'.
     """
-    kept = []
-    for art in sorted(articles, key=lambda a: a["score"], reverse=True):
+    # How many headlines each word appears in. A word used by only one or two
+    # stories is a name (a company, a product), not general vocabulary.
+    freq = {}
+    for art in articles:
+        for word in _keywords(art["title"]):
+            freq[word] = freq.get(word, 0) + 1
+
+    for art in articles:
         art["_norm"] = _normalize(art["title"])
         art["_kw"] = _keywords(art["title"])
+        art["_rare"] = {
+            w for w in art["_kw"] if len(w) >= 5 and freq.get(w, 0) <= 3
+        }
+
+    kept = []
+    for art in sorted(articles, key=lambda a: a["score"], reverse=True):
         if not any(_same_story(art, existing) for existing in kept):
             kept.append(art)
     return kept
