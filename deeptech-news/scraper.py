@@ -515,6 +515,24 @@ def render_archive_html(known: dict) -> str:
     placed = sum(1 for s in stories if (s.get("location") or "").strip())
     tracked = money.compact(sum(money.in_chf(s.get("amount", "")) for s in stories))
 
+    def options(field: str) -> str:
+        """The values actually present, so no filter leads to an empty table."""
+        seen = sorted({(s.get(field) or "").strip() for s in stories if s.get(field)})
+        return "".join(f'<option value="{html.escape(v)}">{html.escape(v)}</option>'
+                       for v in seen)
+
+    # Stages read better in the order money arrives than alphabetically.
+    _order = ["Pre-seed", "Seed", "Series A", "Series B", "Series C", "Series D",
+              "Growth", "Grant", "IPO", "Acquisition"]
+    present = {(s.get("stage") or "").strip() for s in stories if s.get("stage")}
+    stage_options = "".join(
+        f'<option value="{html.escape(v)}">{html.escape(v)}</option>'
+        for v in ([v for v in _order if v in present]
+                  + sorted(present - set(_order))))
+    dates = sorted(d for d in ((s.get("published") or s.get("first_seen") or "")
+                               for s in stories) if d)
+    first_date, last_date = (dates[0], dates[-1]) if dates else ("", "")
+
     def cell(value: str, css: str = "", title: str = "") -> str:
         """One fact, one cell. An empty one is marked, not left blank."""
         text = (value or "").strip()
@@ -567,8 +585,13 @@ def render_archive_html(known: dict) -> str:
             location = ('<td class="loc"><span class="nd" title="Swiss company, '
                         'city not found yet">CH</span></td>')
 
+        date_text = (s.get("published") or s.get("first_seen") or "").strip()
         rows.append(
-            f'<tr data-chf="{chf}">'
+            f'<tr data-chf="{chf}" '
+            f'data-sector="{html.escape(category_text)}" '
+            f'data-stage="{html.escape(stage_text)}" '
+            f'data-hq="{html.escape(location_text)}" '
+            f'data-date="{html.escape(date_text)}">'
             f'<td class="co"><a href="{link}" target="_blank" rel="noopener" '
             f'title="{hover}">{company}</a>{tag}</td>'
             + cell(s.get("description") or s.get("title", ""), "desc")
@@ -637,11 +660,22 @@ def render_archive_html(known: dict) -> str:
              padding:0.02rem 0.3rem; font-size:0.68rem; font-weight:700; }}
   .controls {{ display:flex; gap:0.6rem; align-items:center; margin-bottom:1rem;
               flex-wrap:wrap; }}
-  .controls input[type=text] {{ flex:1 1 16rem; margin:0; }}
-  .toggle {{ display:flex; align-items:center; gap:0.4rem; font-size:0.85rem;
-            color:var(--soft); background:#fff; border:1px solid var(--line);
-            border-radius:10px; padding:0.62rem 0.8rem; cursor:pointer;
-            white-space:nowrap; }}
+  .controls input[type=text] {{ flex:1 1 14rem; margin:0; min-width:11rem; }}
+  .controls select, .controls input[type=date] {{ font-size:0.85rem;
+    padding:0.55rem 0.6rem; border:1px solid var(--line); border-radius:10px;
+    background:#fff; color:var(--ink); font-family:inherit; }}
+  .dates {{ display:flex; align-items:center; gap:0.35rem; font-size:0.8rem;
+           color:var(--soft); background:#fff; border:1px solid var(--line);
+           border-radius:10px; padding:0 0 0 0.6rem; white-space:nowrap; }}
+  .dates input[type=date] {{ border:none; padding:0.55rem 0.4rem; }}
+  .clear {{ font-size:0.85rem; font-family:inherit; color:var(--soft);
+           background:#fff; border:1px solid var(--line); border-radius:10px;
+           padding:0.58rem 0.9rem; cursor:pointer; }}
+  .clear:hover {{ color:var(--green); border-color:var(--green); }}
+  th {{ cursor:pointer; user-select:none; }}
+  th:hover {{ color:var(--green); }}
+  th.up::after {{ content:" \\2191"; color:var(--green); }}
+  th.down::after {{ content:" \\2193"; color:var(--green); }}
   .note {{ color:var(--faint); font-size:0.76rem; margin-top:0.8rem; }}
   .live {{ color:var(--soft); font-size:0.82rem; white-space:nowrap; }}
 </style></head><body>
@@ -659,13 +693,28 @@ def render_archive_html(known: dict) -> str:
     <div class="stat"><b>{posted}</b><span>posted</span></div>
   </div>
   <div class="controls">
-    <input type="text" id="q" placeholder="Filter by company, sector, investor, founder or city..." oninput="filter()">
+    <input type="text" id="q" placeholder="Search company, investor, founder..." oninput="filter()">
+    <select id="sector" onchange="filter()"><option value="">Every sector</option>{options("category")}</select>
+    <select id="stage" onchange="filter()"><option value="">Every stage</option>{stage_options}</select>
+    <select id="hq" onchange="filter()"><option value="">Everywhere</option>{options("location")}</select>
+    <label class="dates">from <input type="date" id="from" value="" min="{first_date}" max="{last_date}" onchange="filter()"></label>
+    <label class="dates">to <input type="date" id="to" value="" min="{first_date}" max="{last_date}" onchange="filter()"></label>
+    <button type="button" class="clear" onclick="clearAll()">Clear</button>
     <span class="live" id="count"></span>
   </div>
   <div class="box"><table>
-    <thead><tr><th>Company</th><th>What it does</th><th>Sector</th><th>Stage</th>
-      <th>Raised</th><th>Investors</th><th>Founders</th><th>Spin-off</th>
-      <th>HQ</th><th>Date</th></tr></thead>
+    <thead><tr>
+      <th onclick="sortBy(0,'text')">Company</th>
+      <th onclick="sortBy(1,'text')">What it does</th>
+      <th onclick="sortBy(2,'text')">Sector</th>
+      <th onclick="sortBy(3,'text')">Stage</th>
+      <th onclick="sortBy(4,'chf')">Raised</th>
+      <th onclick="sortBy(5,'text')">Investors</th>
+      <th onclick="sortBy(6,'text')">Founders</th>
+      <th onclick="sortBy(7,'text')">Spin-off</th>
+      <th onclick="sortBy(8,'text')">HQ</th>
+      <th onclick="sortBy(9,'date')">Date</th>
+    </tr></thead>
     <tbody id="rows">
 {body}
     </tbody>
@@ -675,15 +724,25 @@ def render_archive_html(known: dict) -> str:
   meant for scale rather than accounting. Hover a headquarters to see where it came from.</p>
 </div>
 <script>
+  function val(id) {{ return document.getElementById(id).value; }}
+
   function filter() {{
-    var q = document.getElementById('q').value.toLowerCase();
+    var q = val('q').toLowerCase();
+    var sector = val('sector'), stage = val('stage'), hq = val('hq');
+    var from = val('from'), to = val('to');
     var rows = document.querySelectorAll('#rows tr');
     var shown = 0, total = 0;
     for (var i = 0; i < rows.length; i++) {{
       var row = rows[i];
-      var matches = row.innerText.toLowerCase().indexOf(q) > -1;
-      row.style.display = matches ? '' : 'none';
-      if (matches) {{ shown++; total += parseInt(row.getAttribute('data-chf') || '0', 10); }}
+      var date = row.getAttribute('data-date') || '';
+      var ok = row.innerText.toLowerCase().indexOf(q) > -1
+        && (!sector || row.getAttribute('data-sector') === sector)
+        && (!stage || row.getAttribute('data-stage') === stage)
+        && (!hq || row.getAttribute('data-hq') === hq)
+        && (!from || (date && date >= from))
+        && (!to || (date && date <= to));
+      row.style.display = ok ? '' : 'none';
+      if (ok) {{ shown++; total += parseInt(row.getAttribute('data-chf') || '0', 10); }}
     }}
     var box = document.getElementById('count');
     if (box) {{
@@ -691,6 +750,46 @@ def render_archive_html(known: dict) -> str:
         + (total ? ' &middot; ' + (total >= 1e9 ? (total / 1e9).toFixed(1) + 'B'
                                                 : Math.round(total / 1e6) + 'M') + ' CHF' : '');
     }}
+  }}
+
+  function clearAll() {{
+    ['q', 'sector', 'stage', 'hq', 'from', 'to'].forEach(function (id) {{
+      document.getElementById(id).value = '';
+    }});
+    filter();
+  }}
+
+  // Sorting keeps whatever is filtered: the two are independent.
+  var sortState = {{ column: -1, descending: true }};
+  function sortBy(index, kind) {{
+    var body = document.getElementById('rows');
+    var rows = Array.prototype.slice.call(body.querySelectorAll('tr'));
+    sortState.descending = sortState.column === index ? !sortState.descending : true;
+    sortState.column = index;
+    var sign = sortState.descending ? -1 : 1;
+    rows.sort(function (a, b) {{
+      var x, y;
+      if (kind === 'chf') {{
+        x = parseInt(a.getAttribute('data-chf') || '0', 10);
+        y = parseInt(b.getAttribute('data-chf') || '0', 10);
+      }} else if (kind === 'date') {{
+        x = a.getAttribute('data-date') || '';
+        y = b.getAttribute('data-date') || '';
+      }} else {{
+        x = (a.cells[index].innerText || '').trim().toLowerCase();
+        y = (b.cells[index].innerText || '').trim().toLowerCase();
+        // An empty cell belongs at the bottom whichever way the sort runs.
+        if (x === '\\u00b7') x = sign > 0 ? '\\uffff' : '';
+        if (y === '\\u00b7') y = sign > 0 ? '\\uffff' : '';
+      }}
+      return x < y ? -sign : x > y ? sign : 0;
+    }});
+    rows.forEach(function (row) {{ body.appendChild(row); }});
+    var heads = document.querySelectorAll('thead th');
+    for (var i = 0; i < heads.length; i++) {{
+      heads[i].classList.remove('up', 'down');
+    }}
+    heads[index].classList.add(sortState.descending ? 'down' : 'up');
   }}
   filter();
 </script>
