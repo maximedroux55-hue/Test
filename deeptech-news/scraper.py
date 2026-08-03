@@ -202,6 +202,8 @@ def main() -> None:
                     help="Number of LinkedIn drafts to write, one per day (default 7)")
     ap.add_argument("--max-per-source", type=int, default=2,
                     help="Max posts from any single outlet, for variety (default 2)")
+    ap.add_argument("--history", default="../digest/history.json",
+                    help="Record of stories already posted, so none repeats")
     args = ap.parse_args()
 
     print(f"Fetching Swiss DeepTech news (last {args.days} days)...", file=sys.stderr)
@@ -228,9 +230,26 @@ def main() -> None:
         from relevance import diversify
         from linkedin import build_posts, render_markdown, render_plan_html, COWORK_PROMPT
 
+        # Never post the same story twice, this week or in any earlier run.
+        import history as history_mod
+        past = history_mod.load(args.history)
+        unused = history_mod.filter_seen(articles, past)
+        if len(unused) < len(articles):
+            print(
+                f"Skipped {len(articles) - len(unused)} stories already posted "
+                f"in an earlier run.",
+                file=sys.stderr,
+            )
+
         # Spread the posts across outlets so one publisher does not take the
         # whole week, then look up each one's image and primary source.
-        picks = diversify(articles, args.max_per_source)[: args.posts]
+        picks = diversify(unused, args.max_per_source)[: args.posts]
+        if len(picks) < args.posts:
+            print(
+                f"Only {len(picks)} unused stories available for {args.posts} "
+                f"posts. Widen --days for more.",
+                file=sys.stderr,
+            )
         print(
             f"Picked {len(picks)} posts across "
             f"{len({p['publisher'] for p in picks})} outlets "
@@ -266,6 +285,10 @@ def main() -> None:
         with open(json_path, "w", encoding="utf-8") as f:
             json.dump(payload, f, ensure_ascii=False, indent=2)
         print(f"Wrote {json_path}", file=sys.stderr)
+
+        # Remember what went out, so a later run never repeats it.
+        history_mod.save(args.history, history_mod.record(past, picks))
+        print(f"Recorded {len(picks)} stories in {args.history}", file=sys.stderr)
 
 
 if __name__ == "__main__":
