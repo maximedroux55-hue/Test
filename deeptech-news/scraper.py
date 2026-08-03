@@ -1180,8 +1180,13 @@ def build_archive(articles: list, picks: list, args) -> None:
     for art in articles:
         clean_record(art)
 
-    # Max's corrections go on last, over everything the lookups produced.
+    # Anything Max ticked on the review page moves across first, so a
+    # correction accepted this morning applies to this morning's run.
     import corrections
+    import proposals as proposals_mod
+    proposals_mod.promote(corrections.PATH)
+
+    # Max's corrections go on last, over everything the lookups produced.
     corrections.apply(articles)
 
     before = len(known)

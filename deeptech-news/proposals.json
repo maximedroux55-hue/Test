@@ -1,5 +1,5 @@
 {
-  "note": "What the weekly automated check found, waiting to be accepted. Inert: nothing here reaches the database. Each entry needs verified_quote (the sentence read) and source_url (the page it was read on). Accepted entries move into corrections.json.",
+  "note": "What the weekly automated check found, waiting to be accepted. Inert: nothing here reaches the database. Accept one by setting \"accepted\": true on it, on the review page or by asking; the next run moves it into corrections.json. Each entry needs verified_quote (the sentence read) and source_url (the page it was read on).",
   "example": {
     "Company SA": {
       "status": "announced",
@@ -8,7 +8,8 @@
       "verified_source": "Company release, 3 August 2026",
       "verified_quote": "the transaction is expected to close in the fourth quarter, subject to regulatory approval",
       "source_url": "https://example.ch/news/round",
-      "verified_by": "automated weekly check"
+      "verified_by": "automated weekly check",
+      "accepted": false
     }
   },
   "proposals": {},

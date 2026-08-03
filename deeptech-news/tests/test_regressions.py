@@ -348,7 +348,7 @@ def test_proposals_are_inert_and_evidenced():
     with open(os.path.join(root, "proposals.json"), encoding="utf-8") as f:
         raw = _json.load(f)
     for company, fields in raw.get("proposals", {}).items():
-        unknown = set(fields) - (_ALLOWED | {"source_url"})
+        unknown = set(fields) - (_ALLOWED | {"source_url", "accepted"})
         assert not unknown, f"{company} proposes unknown fields {sorted(unknown)}"
         assert fields.get("verified_quote"), f"{company} quotes nothing"
         assert fields.get("source_url"), f"{company} names no page"
@@ -391,9 +391,41 @@ def test_a_source_must_be_about_the_company():
                      + "Aylight was mentioned once.") is False
 
 
+def test_accepting_a_proposal_moves_it():
+    import json as _json
+    import tempfile
+
+    import proposals
+
+    prop = tempfile.mktemp(suffix=".json")
+    corr = tempfile.mktemp(suffix=".json")
+    _json.dump({"proposals": {
+        "Yes SA": {"stage": "Series B", "verified": "2026-08-04",
+                   "verified_source": "release", "verified_quote": "closed a "
+                   "Series B", "source_url": "https://x.ch/a", "accepted": True},
+        "Not Yet SA": {"stage": "Seed", "verified": "2026-08-04",
+                       "verified_source": "release", "verified_quote": "seed",
+                       "source_url": "https://x.ch/b"},
+    }}, open(prop, "w"))
+    _json.dump({"companies": {}}, open(corr, "w"))
+
+    moved = proposals.promote(corr, prop)
+    assert moved == ["Yes SA"]
+
+    written = _json.load(open(corr))["companies"]
+    assert written["Yes SA"]["stage"] == "Series B"
+    # The page it was read on is kept with the source, since corrections carry
+    # no separate field for it.
+    assert "https://x.ch/a" in written["Yes SA"]["verified_source"]
+    assert "accepted" not in written["Yes SA"]
+    # An untouched proposal stays where it is.
+    assert "Not Yet SA" not in written
+    assert "Not Yet SA" in _json.load(open(prop))["proposals"]
+
+
 # Locking the count means a test appended below the runner, where it would
 # never execute, shows up as a failure rather than as silence. That happened.
-EXPECTED = 34
+EXPECTED = 35
 
 
 if __name__ == "__main__":
