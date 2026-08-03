@@ -3,28 +3,39 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Swiss DeepTech rounds</title><meta name="robots" content="noindex">
 <style>
-  :root { --green:#46b96a; --ink:#1b2430; --soft:#5b6472; --line:#e6eae8; --bg:#f6f8f7; }
+  :root { --green:#46b96a; --ink:#1b2430; --soft:#5b6472; --faint:#9aa3ad;
+          --line:#e6eae8; --bg:#f6f8f7; }
   * { box-sizing:border-box; margin:0; padding:0; }
   body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
          background:var(--bg); color:var(--ink); line-height:1.5; }
-  .wrap { max-width:960px; margin:0 auto; padding:2rem 1rem 4rem; }
+  .wrap { max-width:1040px; margin:0 auto; padding:2rem 1rem 4rem; }
   h1 { font-size:1.6rem; letter-spacing:-0.02em; } h1 .dot { color:var(--green); }
   .sub { color:var(--soft); margin:0.4rem 0 1rem; font-size:0.9rem; }
+  .stats { display:flex; flex-wrap:wrap; gap:0.6rem; margin:0 0 1rem; }
+  .stat { background:#fff; border:1px solid var(--line); border-radius:12px;
+          padding:0.55rem 0.9rem; flex:1 1 auto; min-width:110px; }
+  .stat b { display:block; font-size:1.25rem; letter-spacing:-0.02em; }
+  .stat span { color:var(--soft); font-size:0.74rem; text-transform:uppercase;
+               letter-spacing:0.04em; }
   input { width:100%; padding:0.7rem 0.9rem; border:1px solid var(--line);
           border-radius:10px; font-size:1rem; margin-bottom:1rem; }
   .box { background:#fff; border:1px solid var(--line); border-radius:14px; overflow-x:auto; }
   table { width:100%; border-collapse:collapse; font-size:0.9rem; }
-  th, td { text-align:left; padding:0.6rem 0.8rem; border-bottom:1px solid var(--line);
+  th, td { text-align:left; padding:0.7rem 0.8rem; border-bottom:1px solid var(--line);
            vertical-align:top; }
   th { color:var(--soft); font-size:0.78rem; text-transform:uppercase; letter-spacing:0.04em; }
-  td.co { font-weight:600; }
+  tr:last-child td { border-bottom:none; }
+  td.co { font-weight:600; min-width:15rem; }
+  .desc { font-weight:400; color:var(--soft); font-size:0.84rem; margin-top:0.15rem; }
+  .meta { font-weight:400; color:var(--faint); font-size:0.78rem; margin-top:0.25rem; }
+  .meta b { color:var(--soft); font-weight:600; }
   td.amt { color:var(--ink); font-weight:600; white-space:nowrap; }
-  td.inv { color:var(--soft); }
-  td.fnd { color:var(--soft); }
   td.loc, td.d { color:var(--soft); white-space:nowrap; }
   a { color:var(--ink); text-decoration:none; } a:hover { color:var(--green); }
+  .nd { color:var(--faint); font-weight:400; font-size:0.82rem; }
   .tag.posted { background:var(--green); color:#fff; border-radius:6px;
-                padding:0.05rem 0.4rem; font-size:0.7rem; font-weight:700; }
+                padding:0.05rem 0.4rem; font-size:0.7rem; font-weight:700;
+                vertical-align:middle; }
   .cat { background:#eef4f0; color:#2f6b46; border-radius:6px;
          padding:0.1rem 0.45rem; font-size:0.76rem; font-weight:600;
          white-space:nowrap; }
@@ -34,18 +45,25 @@
 </style></head><body>
 <div class="wrap">
   <h1>Swiss DeepTech rounds<span class="dot">.</span></h1>
-  <p class="sub">5 financing rounds &middot; 4 posted &middot; 4 sources
-  &middot; <span title="Research, partnerships and other non-financing news, kept in archive.json">9 other stories hidden</span></p>
-  <input id="q" placeholder="Filter by company, sector, investor or city..." oninput="filter()">
+  <p class="sub">Every financing round the tool has found, newest first.
+  <span title="Research, partnerships and other non-financing news, kept in archive.json">10 non-financing stories are kept in archive.json and not shown here.</span></p>
+  <div class="stats">
+    <div class="stat"><b>5</b><span>rounds</span></div>
+    <div class="stat"><b>2</b><span>companies</span></div>
+    <div class="stat"><b>0</b><span>with investors</span></div>
+    <div class="stat"><b>2</b><span>with founders</span></div>
+    <div class="stat"><b>4</b><span>posted</span></div>
+  </div>
+  <input id="q" placeholder="Filter by company, sector, investor, founder or city..." oninput="filter()">
   <div class="box"><table>
-    <thead><tr><th>Company</th><th>Category</th><th>Stage</th><th>Amount</th>
-      <th>Investors</th><th>Founders</th><th>Spin-off</th><th>HQ</th><th>Date</th></tr></thead>
+    <thead><tr><th>Company</th><th>Sector</th><th>Stage</th><th>Raised</th>
+      <th>HQ</th><th>Date</th></tr></thead>
     <tbody id="rows">
-<tr><td class="co"><a href="https://sifted.eu/articles/eth-spinout-zuriq-seed-round" target="_blank" rel="noopener" title="Exclusive: ETH Zurich spinout ZuriQ raises $25.5m seed - Sifted">&mdash;</a> <span class="tag posted">posted</span></td><td><span class="cat">Other</span></td><td><span class="stage">Seed</span></td><td class="amt">USD 25.5M</td><td class="inv"></td><td class="fnd"></td><td class="loc">ETH Zurich</td><td class="loc">Zurich</td><td class="d">2026-07-28</td></tr>
-<tr><td class="co"><a href="https://www.startupticker.ch/en/news/valuemize-raises-seven-figure-pre-seed-for-product-cost-software" target="_blank" rel="noopener" title="Valuemize raises seven-figure pre-seed for product cost software">Valuemize</a> <span class="tag posted">posted</span></td><td><span class="cat">Software</span></td><td><span class="stage">Pre-seed</span></td><td class="amt"></td><td class="inv"></td><td class="fnd"></td><td class="loc"></td><td class="loc">Zurich</td><td class="d">2026-07-28</td></tr>
-<tr><td class="co"><a href="https://techfundingnews.com/ahead-health-10m-funding-preventive-care-germany-netherlands/" target="_blank" rel="noopener" title="Swiss preventive health startup Ahead Health raises $10M for Germany and Netherlands launch - Tech Funding News">&mdash;</a> <span class="tag posted">posted</span></td><td><span class="cat">MedTech</span></td><td></td><td class="amt">USD 10M</td><td class="inv"></td><td class="fnd"></td><td class="loc"></td><td class="loc"></td><td class="d">2026-07-30</td></tr>
-<tr><td class="co"><a href="https://www.eu-startups.com/2026/07/swiss-startup-ai-infrastructure-capital-ag-launches-with-e16-million-to-tackle-ai-compute-bottleneck/" target="_blank" rel="noopener" title="Swiss startup AI Infrastructure Capital AG launches with €16 million to tackle AI compute bottleneck - EU-Startups">&mdash;</a> <span class="tag posted">posted</span></td><td><span class="cat">AI</span></td><td></td><td class="amt">EUR 16M</td><td class="inv"></td><td class="fnd"></td><td class="loc"></td><td class="loc"></td><td class="d">2026-07-30</td></tr>
-<tr><td class="co"><a href="https://www.startupticker.ch/en/news/synhelion-erhaelt-foerdermittel-fuer-kommerzielle-demo-anlage" target="_blank" rel="noopener" title="Synhelion erhält Fördermittel für kommerzielle Demo-Anlage">&mdash;</a></td><td><span class="cat">Cleantech</span></td><td><span class="stage">Grant</span></td><td class="amt"></td><td class="inv"></td><td class="fnd"></td><td class="loc"></td><td class="loc"></td><td class="d">2026-07-31</td></tr>
+<tr><td class="co"><a href="https://www.startupticker.ch/en/news/synhelion-erhaelt-foerdermittel-fuer-kommerzielle-demo-anlage" target="_blank" rel="noopener" title="Synhelion erhält Fördermittel für kommerzielle Demo-Anlage">Synhelion</a><div class="desc">Solar-based production of synthetic fuels: kerosene, diesel, petrol</div><div class="meta">Founded by Philipp Furler &middot; ETH Zurich spin-off &middot; est. 2016 &middot; Build commercial demonstration plant in Jülich</div></td><td><span class="cat">Cleantech</span></td><td><span class="stage">Grant</span></td><td class="amt"><span class="nd">undisclosed</span></td><td class="loc">Lugano</td><td class="d">2026-07-31</td></tr>
+<tr><td class="co"><a href="https://techfundingnews.com/ahead-health-10m-funding-preventive-care-germany-netherlands/" target="_blank" rel="noopener" title="Swiss preventive health startup Ahead Health raises $10M for Germany and Netherlands launch - Tech Funding News">Swiss preventive health startup Ahead He</a> <span class="tag posted">posted</span><div class="desc">Swiss preventive health startup Ahead Health raises $10M for Germany and Netherlands launch - Tech Funding News</div></td><td><span class="cat">MedTech</span></td><td><span class="nd">round</span></td><td class="amt">USD 10M</td><td class="loc"><span class="nd">n/d</span></td><td class="d">2026-07-30</td></tr>
+<tr><td class="co"><a href="https://www.eu-startups.com/2026/07/swiss-startup-ai-infrastructure-capital-ag-launches-with-e16-million-to-tackle-ai-compute-bottleneck/" target="_blank" rel="noopener" title="Swiss startup AI Infrastructure Capital AG launches with €16 million to tackle AI compute bottleneck - EU-Startups">Swiss startup AI Infrastructure Capital </a> <span class="tag posted">posted</span><div class="desc">Swiss startup AI Infrastructure Capital AG launches with €16 million to tackle AI compute bottleneck - EU-Startups</div></td><td><span class="cat">AI</span></td><td><span class="nd">round</span></td><td class="amt">EUR 16M</td><td class="loc"><span class="nd">n/d</span></td><td class="d">2026-07-30</td></tr>
+<tr><td class="co"><a href="https://sifted.eu/articles/eth-spinout-zuriq-seed-round" target="_blank" rel="noopener" title="Exclusive: ETH Zurich spinout ZuriQ raises $25.5m seed - Sifted">Exclusive: ETH Zurich spinout ZuriQ rais</a> <span class="tag posted">posted</span><div class="desc">Exclusive: ETH Zurich spinout ZuriQ raises $25.5m seed - Sifted</div><div class="meta">ETH Zurich spin-off</div></td><td><span class="cat">Other</span></td><td><span class="stage">Seed</span></td><td class="amt">USD 25.5M</td><td class="loc">Zurich</td><td class="d">2026-07-28</td></tr>
+<tr><td class="co"><a href="https://www.startupticker.ch/en/news/valuemize-raises-seven-figure-pre-seed-for-product-cost-software" target="_blank" rel="noopener" title="Valuemize raises seven-figure pre-seed for product cost software">Valuemize</a> <span class="tag posted">posted</span><div class="desc">Valuemize raises seven-figure pre-seed for product cost software</div><div class="meta">Founded by Hannes Gruber, Dominik Finkbeiner, Michael Domanegg &middot; 10+ staff</div></td><td><span class="cat">Software</span></td><td><span class="stage">Pre-seed</span></td><td class="amt"><span class="nd">undisclosed</span></td><td class="loc">Zurich</td><td class="d">2026-07-28</td></tr>
     </tbody>
   </table></div>
 </div>
