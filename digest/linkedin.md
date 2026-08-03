@@ -77,6 +77,22 @@ https://fortune.com/2026/07/21/skypilot-from-databricks-cofounder-raises-20m-to-
 ## Post 5 — schedule for Saturday 08 August at 08:00
 
 ```
+🇨🇭 Valuemize raises seven-figure pre-seed for product cost software
+
+Zurich-based valuemize has closed a seven-figure pre-seed round with participation from a consortium of VC offices and angel investors. The startup sells software that lets manufacturers see what a design decision will cost before the design is locked in.
+
+Why it matters:
+📈 Deep technology is where durable, defensible companies get built.
+🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
+🧭 Backing that research early and capital-efficiently is what we do at Climb.
+
+https://www.startupticker.ch/en/news/valuemize-raises-seven-figure-pre-seed-for-product-cost-software
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## Post 6 — schedule for Sunday 09 August at 08:00
+
+```
 🇨🇭 Swiss preventive health startup Ahead Health raises $10M for Germany...
 
 Tech Funding News covers the story. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at $10M.
@@ -90,35 +106,19 @@ https://techfundingnews.com/ahead-health-10m-funding-preventive-care-germany-net
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## Post 6 — schedule for Sunday 09 August at 08:00
-
-```
-🇨🇭 Using future data to better predict Switzerland's rail energy demand
-
-EPFL News covers the story in Zurich. Swiss cleantech keeps pairing serious science with real-world deployment.
-
-Why it matters:
-📈 Energy and climate hardware is moving from subsidy toward genuine demand.
-🇨🇭 Switzerland combines deep materials science with disciplined engineering.
-🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.
-
-https://actu.epfl.ch/news/using-future-data-to-better-predict-switzerland-s
-```
-🖼️ **Article image:** https://actu.epfl.ch/image/165533/1440x810.jpg
-
 ## Post 7 — schedule for Monday 10 August at 08:00
 
 ```
-🇨🇭 Apertus 1.5: Building the next generation of open AI infrastructure
+🇨🇭 Hilo closes Series B extension round to fuel US expansion
 
-EPFL News covers the story in Zurich. Swiss robotics and applied AI keep moving from demo to deployment.
+Hilo secured a Series B extension round, totaling $19 million in new funding and bringing its total funding to date to over $119 million. The round is reported at $19 m.
 
 Why it matters:
-📈 Automation is shifting from pilots to real commercial operations.
-🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
-🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
+💰 Capital keeps following Swiss deep science, this time at $19 m.
+🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
+🧭 Backing that research early and capital-efficiently is what we do at Climb.
 
-https://actu.epfl.ch/news/apertus-15-building-the-next-generation-of-open--2
+https://www.startupticker.ch/en/news/hilo-closes-series-b-extension-round-to-fuel-us-expansion
 ```
-🖼️ **Article image:** https://actu.epfl.ch/image/165800/1440x810.jpg
+🖼️ **Article image:** none found, grab one from the article page.
 

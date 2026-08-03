@@ -83,6 +83,28 @@
     },
     {
       "used": "2026-08-03",
+      "title": "Valuemize raises seven-figure pre-seed for product cost software",
+      "link": "https://www.startupticker.ch/en/news/valuemize-raises-seven-figure-pre-seed-for-product-cost-software",
+      "coverage_url": null,
+      "norm": "valuemize raises sevenfigure preseed for product cost software",
+      "kw": [
+        "cost",
+        "preseed",
+        "product",
+        "sevenfigure",
+        "software",
+        "valuemize"
+      ],
+      "rare": [
+        "preseed",
+        "product",
+        "sevenfigure",
+        "software",
+        "valuemize"
+      ]
+    },
+    {
+      "used": "2026-08-03",
       "title": "Swiss preventive health startup Ahead Health raises $10M for Germany and Netherlands launch - Tech Funding News",
       "link": "https://techfundingnews.com/ahead-health-10m-funding-preventive-care-germany-netherlands/",
       "coverage_url": null,
@@ -106,50 +128,19 @@
     },
     {
       "used": "2026-08-03",
-      "title": "Using future data to better predict Switzerland's rail energy demand",
-      "link": "https://actu.epfl.ch/news/using-future-data-to-better-predict-switzerland-s",
+      "title": "Hilo closes Series B extension round to fuel US expansion",
+      "link": "https://www.startupticker.ch/en/news/hilo-closes-series-b-extension-round-to-fuel-us-expansion",
       "coverage_url": null,
-      "norm": "using future data to better predict switzerlands rail energy demand",
+      "norm": "hilo closes series b extension round to fuel us expansion",
       "kw": [
-        "better",
-        "data",
-        "demand",
-        "energy",
-        "future",
-        "predict",
-        "rail",
-        "switzerlands",
-        "using"
+        "expansion",
+        "extension",
+        "fuel",
+        "hilo"
       ],
       "rare": [
-        "better",
-        "demand",
-        "energy",
-        "future",
-        "predict",
-        "switzerlands",
-        "using"
-      ]
-    },
-    {
-      "used": "2026-08-03",
-      "title": "Apertus 1.5: Building the next generation of open AI infrastructure",
-      "link": "https://actu.epfl.ch/news/apertus-15-building-the-next-generation-of-open--2",
-      "coverage_url": null,
-      "norm": "apertus 15 building the next generation of open ai infrastructure",
-      "kw": [
-        "apertus",
-        "building",
-        "generation",
-        "infrastructure",
-        "next",
-        "open"
-      ],
-      "rare": [
-        "apertus",
-        "building",
-        "generation",
-        "infrastructure"
+        "expansion",
+        "extension"
       ]
     }
   ]
