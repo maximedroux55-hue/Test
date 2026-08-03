@@ -81,6 +81,9 @@ def analyse(rounds: list, month: str) -> dict:
             if name:
                 investors[name] += 1
 
+    import trust
+    checked = trust.stats(inside)
+
     spinoffs = collections.Counter(
         (r.get("spinoff_origin") or "").strip() for r in inside
         if (r.get("spinoff_origin") or "").strip())
@@ -113,6 +116,7 @@ def analyse(rounds: list, month: str) -> dict:
         "repeat": [(k, v) for k, v in investors.most_common() if v > 1],
         "spinoffs": spinoffs,
         "spinoff_count": sum(spinoffs.values()),
+        "verified": checked,
         "with_investors": sum(1 for r in inside if _investor_line(r)),
         "with_founders": sum(1 for r in inside
                              if (r.get("founders") or "").strip()),
@@ -224,6 +228,18 @@ def render(stats: dict) -> str:
             f"excluded from every total above: {names}. A ceiling quoted gross, "
             f"before redemptions and subject to approval, is not capital raised.")
 
+    v = stats["verified"]
+    notes.append(
+        f"{v['verified_rounds']} of {v['rounds']} closed rounds have been "
+        f"checked against a primary source, covering "
+        f"{money.compact(v['verified_total']) or 'nothing'} of the "
+        f"{money.compact(v['total']) or 'total'}, {v['share']}%. The rest is "
+        f"as reported. Every error found in this database so far was a figure "
+        f"or a label that a primary source contradicted, so that share is the "
+        f"weight this page can carry."
+        if v["rounds"] else "")
+    notes = [n for n in notes if n]
+
     unpriced = len([r for r in stats["rounds"] if r not in stats["pending"]]) - stats["priced"]
     caveat = (
         f"{unpriced} of {stats['count']} rounds have no stated amount, so "
@@ -290,6 +306,7 @@ def render(stats: dict) -> str:
     <div class="stat"><b>{money.compact(stats['total']) or "&ndash;"}</b><span>capital</span></div>
     <div class="stat"><b>{money.compact(stats['venture_total']) or "&ndash;"}</b><span>of which venture</span></div>
     <div class="stat"><b>{money.compact(stats['median']) or "&ndash;"}</b><span>median</span></div>
+    <div class="stat"><b>{stats['verified']['share']}%</b><span>verified</span></div>
     <div class="stat"><b>{stats['spinoff_count']}</b><span>spin-offs</span></div>
   </div>
 

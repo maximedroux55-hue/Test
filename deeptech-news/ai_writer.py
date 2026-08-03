@@ -114,6 +114,19 @@ def _clean_summary(raw: str, limit: int = 600) -> str:
     return text[:limit]
 
 
+# Numbers only where somebody has checked them.
+_FIGURE = __import__("re").compile(
+    r"(?:CHF|USD|EUR|GBP)\s?[\d.,\']+\s?(?:m|bn|k|million|billion)?"
+    r"|[$€£]\s?[\d.,\']+\s?(?:m|bn|k|million|billion)?"
+    r"|\b(?:pre-?seed|seed|series\s+[a-e])\b",
+    __import__("re").IGNORECASE)
+
+
+def has_figure(text: str) -> bool:
+    """Does this post state an amount or a round?"""
+    return bool(_FIGURE.search(text or ""))
+
+
 def _build_user_prompt(articles: list, days: int) -> str:
     lines = [
         f"Here are the top {len(articles)} Swiss DeepTech stories from the last "
@@ -133,9 +146,22 @@ def _build_user_prompt(articles: list, days: int) -> str:
         # which the headline alone often omits ("how a Swiss company plans to
         # ..."). Without it the draft cannot name its own subject.
         summary = _clean_summary(a.get("summary", ""))
+        # A figure nobody has checked does not go out under Max's name. The
+        # database has carried a ceiling as proceeds, a follow-on as a
+        # flotation and an unclosed round as closed; a wrong number in a post
+        # tags the company and cannot be quietly corrected.
+        import trust
+        unchecked = ""
+        if a.get("company") and not trust.is_verified(a["company"]):
+            unchecked = (
+                "   UNVERIFIED: this round has not been checked against a "
+                "primary source. Write the post WITHOUT any funding figure, "
+                "round name or investor names. Say what the company does and "
+                "why it matters. Never write an amount here.\n")
         lines.append(
             f"{i}. Headline: {a['title']}\n"
             f"{origin}"
+            f"{unchecked}"
             f"   Date: {date}\n"
             + (f"   Summary: {summary}\n" if summary else "")
             + f"   Link: {a['link']}"

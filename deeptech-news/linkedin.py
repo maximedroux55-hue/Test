@@ -274,10 +274,28 @@ def build_posts(articles: list, days: int, top: int = 7):
         texts = [build_post(art, i) for i, art in enumerate(picks)]
         mode = "Template drafts (set ANTHROPIC_API_KEY for AI-written posts)."
 
+    # A post is the one output that cannot be quietly corrected: it goes out
+    # under Max's name and tags the company. So every draft is checked against
+    # what has actually been verified, and an unchecked figure is flagged for
+    # him rather than published on trust.
+    import sys
+    import trust
+    from ai_writer import has_figure
+
     records = []
     for i, (text, art) in enumerate(zip(texts, picks)):
         day = today + dt.timedelta(days=i + 1)
+        company = art.get("company", "")
+        checked = trust.verification(company) if company else {}
+        risky = bool(has_figure(text)) and not checked
+        if risky:
+            print(f"  ! post {i + 1} ({company or art.get('title','')[:40]}) "
+                  f"states a figure for a round nobody has verified",
+                  file=sys.stderr)
         records.append({
+            "verified": bool(checked),
+            "verified_source": checked.get("source", ""),
+            "needs_check": risky,
             "index": i + 1,
             "weekday": day.strftime("%A"),
             "date": day.isoformat(),
@@ -380,6 +398,7 @@ def render_plan_html(records: list, mode: str, days: int) -> str:
         <div class="cardhead">
           <span class="num">Post {r['index']}</span>
           <span class="when">{esc(r['schedule_for'])} &middot; {esc(r['time'])}</span>
+          {'<span class="flag">check this figure</span>' if r.get('needs_check') else ('<span class="ok">verified</span>' if r.get('verified') else '')}
         </div>
         <div class="posttext">
           <button class="copy" onclick="copyText(this)">Copy</button>
@@ -423,6 +442,12 @@ def render_plan_html(records: list, mode: str, days: int) -> str:
   .cardhead {{ display:flex; justify-content:space-between; align-items:baseline;
               gap:0.5rem; margin-bottom:0.6rem; }}
   .num {{ color:var(--green); font-weight:800; }}
+  .flag {{ background:#fdf3e3; color:#8a6d3b; border-radius:6px;
+          padding:0.05rem 0.45rem; font-size:0.7rem; font-weight:700;
+          text-transform:uppercase; letter-spacing:0.03em; }}
+  .ok {{ background:#eef4f0; color:#2f6b46; border-radius:6px;
+        padding:0.05rem 0.45rem; font-size:0.7rem; font-weight:700;
+        text-transform:uppercase; letter-spacing:0.03em; }}
   .when {{ color:var(--soft); font-size:0.82rem; text-align:right; }}
   .posttext {{ position:relative; }}
   pre.post {{ white-space:pre-wrap; word-wrap:break-word; font:inherit;

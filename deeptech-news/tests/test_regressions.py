@@ -274,3 +274,32 @@ if __name__ == "__main__":
                 print(f"  FAIL  {name}  {exc}")
     print(f"\n{failures} failing" if failures else "\nall passing")
     sys.exit(1 if failures else 0)
+
+
+# ------------------------------------------------------------------ trust ----
+# A figure nobody has checked must not go out under Max's name.
+
+def test_a_post_figure_is_detected():
+    from ai_writer import has_figure
+    assert has_figure("ZuriQ raised USD 25.5M in a seed round.") is True
+    assert has_figure("Closing a Series B this week.") is True
+    assert has_figure("CHF 2.4 million for gene editing.") is True
+    assert has_figure("A Zurich quantum company scaling its ion-trap platform.") is False
+
+
+def test_verification_expires():
+    import datetime as dt
+    import trust
+    fresh = trust.verification("CCRAFT", dt.date(2026, 8, 4))
+    assert fresh and fresh["source"]
+    # A check does not hold for ever; the round returns to the queue.
+    assert trust.verification("CCRAFT", dt.date(2027, 8, 4)) == {}
+
+
+def test_verified_share_is_reported():
+    import trust
+    rounds = [{"company": "CCRAFT", "amount": "USD 10M", "status": ""},
+              {"company": "Nobody Checked This", "amount": "USD 10M", "status": ""}]
+    s = trust.stats(rounds)
+    assert s["rounds"] == 2 and s["verified_rounds"] == 1
+    assert s["share"] == 50
