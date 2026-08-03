@@ -37,7 +37,11 @@ quantum computers cool", "🇨🇭 Swiss space firm raises $70M to build satelli
 2. Body: 2 or 3 sentences, 35 to 50 words, and nothing more. Lead with the \
 company, say where it came from ("an @EPFL spin-off", "Neuchâtel-based"), then \
 pack in the concrete facts you were given: the amount, the investor, revenue, \
-customers, the technical specific. @mention companies and institutions. Real \
+customers, the technical specific. EVERY organisation you name carries an @ \
+directly before it: the subject company first of all, plus universities, \
+investors, partners and customers. "AI Infrastructure Capital AG has launched" \
+is wrong; "@AI Infrastructure Capital AG has launched" is right. If you name it, \
+mention it, including in the closing line. Real \
 example: "@Rhonexum, an @EPFL spin-off, is building electronics that run near \
 absolute zero, right beside the qubits. Backed by @Venture Kick and a $1M \
 pre-seed, its cryo-CMOS control replaces today's tangle of cables, a key barrier \
@@ -119,6 +123,25 @@ def _build_user_prompt(articles: list, days: int) -> str:
     return "\n".join(lines)
 
 
+def _warn_missing_mentions(posts) -> None:
+    """Flag drafts whose body names no organisation with an @.
+
+    The writer occasionally states a company plainly ("AI Infrastructure Capital
+    AG has launched") instead of mentioning it. Every story here has a company or
+    institution behind it, so a draft with no @ at all is a miss worth seeing in
+    the run log rather than discovering on LinkedIn.
+    """
+    import sys
+
+    for i, post in enumerate(posts or [], 1):
+        if "@" not in post:
+            first = post.splitlines()[0][:60] if post else ""
+            print(
+                f"  ! post {i} has no @mention, add one before posting: {first}",
+                file=sys.stderr,
+            )
+
+
 def generate_posts(articles: list, days: int, model: str | None = None):
     """Return a list of post strings from Claude, or None to trigger fallback."""
     if not articles:
@@ -147,7 +170,9 @@ def generate_posts(articles: list, days: int, model: str | None = None):
             return None
         text = next((b.text for b in response.content if b.type == "text"), "")
         posts = json.loads(text).get("posts", [])
-        return [p.strip() for p in posts if isinstance(p, str) and p.strip()] or None
+        posts = [p.strip() for p in posts if isinstance(p, str) and p.strip()] or None
+        _warn_missing_mentions(posts)
+        return posts
     except Exception:
         # Any failure (network, auth, parsing) falls back to templates.
         return None
