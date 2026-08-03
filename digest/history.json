@@ -3,6 +3,27 @@
   "used": [
     {
       "used": "2026-08-03",
+      "title": "Apertus 1.5: Building the next generation of open AI infrastructure",
+      "link": "http://apertus-ai.org",
+      "coverage_url": "https://actu.epfl.ch/news/apertus-15-building-the-next-generation-of-open--2",
+      "norm": "apertus 15 building the next generation of open ai infrastructure",
+      "kw": [
+        "apertus",
+        "building",
+        "generation",
+        "infrastructure",
+        "next",
+        "open"
+      ],
+      "rare": [
+        "apertus",
+        "building",
+        "generation",
+        "infrastructure"
+      ]
+    },
+    {
+      "used": "2026-08-03",
       "title": "Quantonation leads USD 25.5 million seed round for ETH spin-off ZuriQ",
       "link": "https://zuriq.com/",
       "coverage_url": "https://www.startupticker.ch/en/news/quantonation-leads-usd-25-5-million-seed-round-for-eth-spin-off-zuriq",
@@ -22,41 +43,25 @@
     },
     {
       "used": "2026-08-03",
-      "title": "How rivers shape cities and societies",
-      "link": "https://actu.epfl.ch/news/how-rivers-shape-cities-and-societies",
+      "title": "Students invent devices that businesses haven't yet conjured up",
+      "link": "https://actu.epfl.ch/news/students-invent-devices-that-businesses-haven-t--2",
       "coverage_url": null,
-      "norm": "how rivers shape cities and societies",
+      "norm": "students invent devices that businesses havent yet conjured up",
       "kw": [
-        "cities",
-        "rivers",
-        "shape",
-        "societies"
+        "businesses",
+        "conjured",
+        "devices",
+        "havent",
+        "invent",
+        "students"
       ],
       "rare": [
-        "cities",
-        "rivers",
-        "shape",
-        "societies"
-      ]
-    },
-    {
-      "used": "2026-08-03",
-      "title": "Apertus 1.5: Building the next generation of open AI infrastructure",
-      "link": "http://apertus-ai.org",
-      "coverage_url": "https://actu.epfl.ch/news/apertus-15-building-the-next-generation-of-open--2",
-      "norm": "apertus 15 building the next generation of open ai infrastructure",
-      "kw": [
-        "apertus",
-        "building",
-        "generation",
-        "infrastructure",
-        "next",
-        "open"
-      ],
-      "rare": [
-        "apertus",
-        "building",
-        "generation"
+        "businesses",
+        "conjured",
+        "devices",
+        "havent",
+        "invent",
+        "students"
       ]
     },
     {
@@ -83,7 +88,7 @@
     },
     {
       "used": "2026-08-03",
-      "title": "Immitra Bio raises CHF 2.4 million to advance in-vivo gene editing platform - venturelab.swiss",
+      "title": "Immitra Bio raises CHF 2.4 million to advance in-vivo gene editing platform - Venturelab Swiss",
       "link": "https://www.venturelab.swiss/Immitra-Bio-raises-CHF-24-million-to-advance-invivo-gene-editing-platform",
       "coverage_url": null,
       "norm": "immitra bio raises chf 24 million to advance invivo gene editing platform",
@@ -124,24 +129,25 @@
     },
     {
       "used": "2026-08-03",
-      "title": "Revolut Customers Get Up to 12 Months of Free ChatGPT Go Access",
-      "link": "https://fintechnews.ch/aifintech/revolut-openai-chatgpt-go-subscription/84829/",
+      "title": "Suisse: Une célèbre avocate vaudoise accusée d'escroquerie - Blick",
+      "link": "https://www.blick.ch/fr/suisse/suisse-une-celebre-avocate-vaudoise-accusee-descroquerie-id22107093.html",
       "coverage_url": null,
-      "norm": "revolut customers get up to 12 months of free chatgpt go access",
+      "norm": "suisse une clbre avocate vaudoise accuse descroquerie",
       "kw": [
-        "access",
-        "chatgpt",
-        "customers",
-        "free",
-        "months",
-        "revolut"
+        "accuse",
+        "avocate",
+        "clbre",
+        "descroquerie",
+        "suisse",
+        "vaudoise"
       ],
       "rare": [
-        "access",
-        "chatgpt",
-        "customers",
-        "months",
-        "revolut"
+        "accuse",
+        "avocate",
+        "clbre",
+        "descroquerie",
+        "suisse",
+        "vaudoise"
       ]
     }
   ]
