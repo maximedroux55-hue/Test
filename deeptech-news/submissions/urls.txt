@@ -1,0 +1,6 @@
+# One article address per line. Each is fetched and read like any other story,
+# but skips the relevance scoring and the date window: it is here on purpose.
+#
+# Lines starting with # are ignored, so notes are fine.
+# Example:
+# https://www.startupticker.ch/en/news/gr3n-closes-a-15-5m-series-b-round

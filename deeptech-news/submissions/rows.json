@@ -1,0 +1,19 @@
+{
+  "note": "Rounds with no article behind them: a report, a dataset, a conversation. Same field names as the database. Only 'company' is required; leave out anything you do not have. 'source' says where it came from and is shown as the provenance. Rounds go in the 'rounds' list; 'example' is a template and is never read.",
+  "example": {
+    "company": "Example SA",
+    "description": "what the company does, at most a dozen words",
+    "category": "Quantum",
+    "stage": "Series A",
+    "amount": "CHF 12M",
+    "investors": "Fund One, Fund Two",
+    "founders": "Firstname Lastname",
+    "spinoff_origin": "EPFL",
+    "location": "Lausanne",
+    "founded": "2021",
+    "published": "2026-08-01",
+    "link": "https://example.ch/news/round",
+    "source": "Swiss Venture Capital Report 2026"
+  },
+  "rounds": []
+}

@@ -65,6 +65,10 @@ def record(
         if not key:
             continue
         date = art.get("date")
+        # A round taken from a report carries its date as text, having never
+        # come from a feed entry.
+        stated_date = (art.get("published") or "").strip() \
+            if isinstance(art.get("published"), str) else ""
         entry = known.get(key) or {
             "key": key,
             "first_seen": stamp,
@@ -74,7 +78,8 @@ def record(
             "title": art.get("title", ""),
             "link": link,
             "publisher": art.get("publisher", ""),
-            "published": date.date().isoformat() if hasattr(date, "date") else None,
+            "published": (date.date().isoformat() if hasattr(date, "date")
+                          else stated_date or entry.get("published")),
             "score": art.get("score"),
             "last_seen": stamp,
             "posted": entry.get("posted", False) or key in posted_keys,

@@ -727,6 +727,12 @@ def main() -> None:
     print(f"Fetching Swiss DeepTech news (last {args.days} days)...", file=sys.stderr)
     articles = collect(args.days, args.min_score, args.backfill_months,
                        keep_all_coverage=args.archive_only)[: args.limit]
+
+    # Anything Max supplied himself. Added after the cut, so a submission is
+    # never the row that the limit drops.
+    if not args.posts_only:
+        import submissions
+        articles += submissions.url_articles()
     print(f"Kept {len(articles)} relevant stories.", file=sys.stderr)
 
     import os
@@ -943,6 +949,12 @@ def build_archive(articles: list, picks: list, args) -> None:
     if blanks:
         print(f"Looking up {blanks} missing headquarters...", file=sys.stderr)
         print(f"  found {fill_missing(articles)} of them", file=sys.stderr)
+
+    # Rounds written out by hand, from a report or a dataset. They join the
+    # others before the merge, so one already in the database gains the new
+    # facts rather than appearing twice.
+    import submissions
+    articles = articles + submissions.rows()
 
     # Scrub before anything is stored, and again over the whole database, since
     # a value that reached it before this check will otherwise sit there for
