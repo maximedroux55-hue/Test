@@ -225,7 +225,7 @@ def _report_coverage(known: dict) -> None:
     if not rounds:
         return
     fields = ("company", "description", "category", "stage", "amount",
-              "location", "investors", "lead_investor", "founders",
+              "location", "investors", "founders",
               "spinoff_origin", "founded", "total_raised")
     print(f"Archive coverage over {len(rounds)} rounds:", file=sys.stderr)
     for field in fields:
@@ -235,11 +235,20 @@ def _report_coverage(known: dict) -> None:
 
 
 def _investor_line(story: dict) -> str:
-    """Investors with the lead first, or "" when none was named."""
-    lead = (story.get("lead_investor") or "").strip()
-    rest = [x.strip() for x in (story.get("investors") or "").split(",") if x.strip()]
-    rest = [x for x in rest if x.lower() != lead.lower()]
-    return ", ".join(([f"{lead} (lead)"] if lead else []) + rest)
+    """The investors named, or "" when none was.
+
+    Who led a round is usually not written down anywhere free, so it is not
+    called out separately. Any lead that was found is simply listed with the
+    rest, which keeps the rows where the lead was the only name we got.
+    """
+    names, seen = [], set()
+    for value in (story.get("lead_investor"), story.get("investors")):
+        for name in (value or "").split(","):
+            name = name.strip(" .;")
+            if name and name.lower() not in seen:
+                seen.add(name.lower())
+                names.append(name)
+    return ", ".join(names)
 
 
 def render_archive_html(known: dict) -> str:
