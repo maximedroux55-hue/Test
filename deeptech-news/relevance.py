@@ -67,9 +67,31 @@ EXCLUDED_DOMAINS = (
 )
 
 
-def is_excluded(url: str) -> bool:
-    """True when a link points at a site that never carries the story itself."""
-    return any(bad in (url or "").lower() for bad in EXCLUDED_DOMAINS)
+def _squash(text: str) -> str:
+    """Lowercase, letters and digits only, so 'Simply Wall St' meets simplywall.st."""
+    return re.sub(r"[^a-z0-9]", "", (text or "").lower())
+
+
+# The distinctive part of each excluded domain, long enough to be safe to look
+# for inside other strings. This catches the outlet's display name ("TradingView")
+# and copycat domains (tradingviewstore.com) as well as the domain itself.
+_EXCLUDED_NAMES = tuple(
+    sorted({
+        name for name in (
+            _squash(d.split("/")[0].rsplit(".", 1)[0]) for d in EXCLUDED_DOMAINS
+        ) if len(name) >= 6
+    })
+)
+
+
+def is_excluded(text: str) -> bool:
+    """True for a link or publisher belonging to a site that never carries news."""
+    squashed = _squash(text)
+    if not squashed:
+        return False
+    if any(_squash(d) in squashed for d in EXCLUDED_DOMAINS):
+        return True
+    return any(name in squashed for name in _EXCLUDED_NAMES)
 
 
 def _count(text: str, terms: dict) -> int:

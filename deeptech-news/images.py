@@ -120,7 +120,11 @@ def _domain_root(host: str) -> str:
 
 
 def _title_tokens(title: str) -> set:
-    words = re.findall(r"[a-z0-9]+", (title or "").lower())
+    # Drop a trailing " - Publisher", which Google News appends. Without this
+    # the outlet's own name counts as a name from the story, and a headline
+    # ending "- TradingView" happily matches tradingviewstore.com.
+    cleaned = re.sub(r"\s+[-|]\s+[^-|]+$", "", title or "")
+    words = re.findall(r"[a-z0-9]+", cleaned.lower())
     return {w for w in words if len(w) >= 4 and w not in _TITLE_STOP}
 
 
