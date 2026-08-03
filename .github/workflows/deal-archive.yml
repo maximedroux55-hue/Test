@@ -22,7 +22,10 @@ on:
         default: "3"
       limit:
         description: "Maximum number of stories to consider"
-        default: "60"
+        # A database run keeps every write-up of a round rather than one, so
+        # the same fortnight of news is now more stories, not fewer. At 60 the
+        # cut fell inside the window and dropped rounds the feeds had found.
+        default: "100"
       backfill_months:
         description: "Also walk the news archive back this many months (0 = off)"
         default: "0"
@@ -64,7 +67,7 @@ jobs:
           python scraper.py \
             --days "${{ github.event.inputs.days || '14' }}" \
             --min-score "${{ github.event.inputs.min_score || '3' }}" \
-            --limit "${{ github.event.inputs.limit || '60' }}" \
+            --limit "${{ github.event.inputs.limit || '100' }}" \
             --backfill-months "${{ github.event.inputs.backfill_months || '0' }}" \
             --archive-only
 
