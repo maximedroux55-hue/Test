@@ -44,6 +44,10 @@ what it enables.
 5. The source link on its own line.
 
 Rules:
+- Write every post in English. Swiss sources often report in German, French or \
+Italian: translate the substance into natural English and never leave a foreign \
+phrase, headline or quote untranslated. Keep company, institution and place \
+names as they are (ETH Zurich, EPFL, Neuchâtel).
 - Target 150 to 200 words total, not counting the link. Do not be terse.
 - Subtly reinforce Climb's positioning around Swiss, capital-efficient DeepTech, \
 without sounding like an advertisement.
