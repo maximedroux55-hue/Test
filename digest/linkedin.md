@@ -13,16 +13,17 @@ The posts themselves are below, for review before you run it.
 ## Post 1 — schedule for Tuesday 04 August at 08:00
 
 ```
-🇨🇭 Swiss trapped-ion quantum lands major seed round
+🇨🇭 Swiss trapped-ion quantum lands major seed
 
-@Quantonation has led a USD 25.5 million seed round into @ZuriQ, an @ETH Zurich spin-off building trapped-ion quantum computing architectures, as reported by @Startupticker on 28 July.
+@ZuriQ, a spin-off from @ETH Zurich, has raised USD 25.5 million in a seed round led by @Quantonation, one of the few funds fully dedicated to deep physics ventures, as reported by @Startupticker.
 
 Why it matters:
-💰 Seed rounds of this size remain rare in European quantum hardware, and they signal that specialist investors now see Swiss trapped-ion work as a credible path to scaled machines rather than a lab curiosity.
-🇨🇭 Switzerland's advantage here is compounding: decades of ion-trap and precision instrumentation expertise at ETH, a dense talent pool, and founders who are used to doing serious physics on disciplined budgets.
-🔭 Capital at this stage buys years of engineering runway, which is what turns a promising qubit modality into a roadmap with customers, partners, and eventually revenue attached.
 
-The pattern we keep seeing: Swiss DeepTech teams convert relatively modest capital into hard technical milestones, then attract international investors on the strength of the results.
+🔬 A seed round of this size signals that investors now see Swiss quantum hardware as an engineering scale-up question, not a research bet.
+🇨🇭 Switzerland's advantage remains structural: decades of ion trap and photonics expertise concentrated around ETH and EPFL, combined with talent density that lets small teams progress on modest budgets.
+⚙️ Trapped-ion architectures are among the credible paths to fault-tolerant machines, and a well-funded Swiss contender changes who supplies the next generation of computing infrastructure.
+
+Capital efficiency is the quiet story here. European quantum teams have consistently delivered comparable milestones with a fraction of US funding, which is exactly the profile that makes Swiss DeepTech attractive over a full cycle rather than a single hype window.
 
 https://zuriq.com/
 ```
@@ -32,16 +33,17 @@ https://zuriq.com/
 ## Post 2 — schedule for Wednesday 05 August at 08:00
 
 ```
-🇨🇭 Rivers as infrastructure, not just scenery
+🇨🇭 Rivers as infrastructure, not just landscape
 
-@EPFL researchers published work on 30 July examining how rivers have shaped the growth of cities and the structure of societies, connecting hydrology, urban form, and long-run development.
+New work from @EPFL examines how rivers have shaped the growth of cities and the organisation of societies, connecting hydrology, urban form and long-run economic development.
 
 Why it matters:
-🌊 Water systems sit underneath a large share of climate adaptation spending, and better models of how rivers interact with dense urban settlement inform where that money should go.
-🇨🇭 Switzerland is the water tower of Europe, which gives Swiss institutions unusual access to data, monitoring history, and engineering practice in alpine and river systems.
-🏗️ Research like this seeds a pipeline: sensing, flood modelling, and infrastructure resilience tools that later become commercial products with public and private buyers.
 
-Fundamental research does not always look investable on day one. But climate-relevant infrastructure technology tends to emerge from exactly these long-horizon academic programmes, and Switzerland runs several of the best.
+🌊 Water systems are becoming an investable category, from monitoring and flood modelling to sediment management and urban climate adaptation, with municipalities as long-term buyers.
+🇨🇭 Switzerland sits at the source of major European river basins and has built world-class hydraulic engineering and environmental modelling capabilities around its federal institutes.
+🏙️ Understanding rivers as living infrastructure enables better planning tools, and planning tools are where research converts into durable software and sensing businesses.
+
+Fundamental research like this rarely makes headlines, yet it defines the datasets and models that later become products. For DeepTech investors, the useful discipline is tracking which academic programmes are quietly assembling decades of measurement that no startup could replicate from scratch.
 
 https://actu.epfl.ch/news/how-rivers-shape-cities-and-societies
 ```
@@ -50,16 +52,17 @@ https://actu.epfl.ch/news/how-rivers-shape-cities-and-societies
 ## Post 3 — schedule for Thursday 06 August at 08:00
 
 ```
-🇨🇭 Cost intelligence moves upstream in manufacturing
+🇨🇭 Cost intelligence enters the engineering stack
 
-@Valuemize has closed a seven-figure pre-seed round for its product cost software, according to @Startupticker on 28 July.
+@Valuemize has closed a seven-figure pre-seed round for its software that helps manufacturers understand and control product cost, according to @Startupticker.
 
 Why it matters:
-📊 Product costing is still handled in spreadsheets across large parts of industry, so software that makes cost transparent at design stage addresses a genuine and expensive gap.
-🇨🇭 Swiss industrial density is the moat: precision manufacturing, medtech, and machine building sit within driving distance, which shortens the path from first pilot to reference customer.
-⚙️ If early adoption holds, this is the kind of B2B software that expands quietly through procurement and engineering teams, then becomes hard to remove.
 
-We pay close attention to pre-seed companies selling into Swiss industry. Short sales cycles, demanding buyers, and modest burn tend to produce durable businesses rather than expensive experiments.
+📊 Product cost decisions are made early in design but managed late in spreadsheets, and closing that gap is a large, underserved software market across European industry.
+🇨🇭 Swiss and southern German manufacturing form one of the densest precision industrial corridors in the world, giving local founders direct access to demanding reference customers.
+🧮 Turning cost engineering into structured data enables sourcing, sustainability and pricing decisions to run off the same model rather than three disconnected ones.
+
+This is the less glamorous half of DeepTech, and often the more capital-efficient one. Industrial software companies can reach real revenue on small rounds because the pain is measurable in basis points of margin. Worth watching how quickly the customer list broadens beyond the first design partners.
 
 https://www.valuemize.io/en
 ```
@@ -69,74 +72,78 @@ https://www.valuemize.io/en
 ## Post 4 — schedule for Friday 07 August at 08:00
 
 ```
-🇨🇭 European quantum hardware attracts serious capital
+🇨🇭 Nanopore sensing takes on lake toxins
 
-@Sifted reported exclusively on 28 July that @ZuriQ, spun out of @ETH Zurich, has raised a USD 25.5 million seed round to advance its quantum computing platform.
-
-Why it matters:
-🚀 A round of this scale at seed puts a Swiss team in the same conversation as the better-funded quantum groups in the US and UK, which matters for hiring and for partnership access.
-🇨🇭 Switzerland's quantum position rests on fundamentals that are difficult to replicate: world-class physics departments, tight academic to industry transfer, and a hardware culture built on precision engineering.
-📡 The next test is execution, moving from controlled laboratory demonstrations toward systems that outside users can actually run workloads on.
-
-Two separate outlets covering the same round on the same day tells you something about attention levels. Swiss DeepTech is no longer a local story.
-
-https://sifted.eu/articles/eth-spinout-zuriq-seed-round
-```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## Post 5 — schedule for Saturday 08 August at 08:00
-
-```
-🇨🇭 Nanopore sensing tackles lake water safety
-
-Researchers at @EPFL have described a tiny pore capable of identifying cyanobacteria toxins in lake water, published on 3 August.
+Researchers at @EPFL have developed a nanopore-based method that identifies cyanobacteria toxins in lake water, addressing a monitoring problem that grows with warming summers.
 
 Why it matters:
-🔬 Toxin detection in freshwater is currently slow and lab-bound, so a sensing approach that can identify specific compounds directly opens the door to faster monitoring at far lower cost.
-🇨🇭 Switzerland combines deep nanotechnology and microfluidics capability with a national interest in lake and drinking water quality, an unusually good match between research strength and local demand.
-💧 Utilities, environmental agencies, and food and beverage producers all buy monitoring, which means a credible commercial route exists well before any consumer application.
 
-Sensing platforms are among the most capital-efficient DeepTech categories we look at: the science is hard, but the hardware is small, the manufacturing is tractable, and the buyers are already spending.
+🧪 Water quality testing today relies on lab turnaround, so single-molecule detection points toward a shift from periodic sampling to continuous monitoring.
+🇨🇭 Switzerland combines a national interest in lake and drinking water quality with genuine leadership in nanopore and biosensing research, a rare pairing of demand and capability.
+🌍 Toxic algal blooms are a global public health issue, which means a platform validated on Swiss lakes has an addressable market well beyond them.
+
+The commercial question is always the same with sensing: can the physics survive field conditions and a realistic cost per test. When it does, these platforms tend to expand from one analyte to many, which is what makes them worth backing early rather than late.
 
 https://actu.epfl.ch/news/a-tiny-pore-identifies-cyanobacteria-toxins-in-lak
 ```
 🖼️ **Article image:** https://actu.epfl.ch/image/165891/1440x810.jpg
 
-## Post 6 — schedule for Sunday 09 August at 08:00
+## Post 5 — schedule for Saturday 08 August at 08:00
 
 ```
-🇨🇭 Preventive health platform expands into two markets
+🇨🇭 Geneva-style capital meets AI compute scarcity
 
-@Ahead Health, the Swiss preventive health company, has raised USD 10 million to launch in Germany and the Netherlands, reported by @Tech Funding News on 30 July.
+AI Infrastructure Capital AG has launched from Switzerland with EUR 16 million to address the compute bottleneck constraining AI development, as reported by @EU-Startups.
 
 Why it matters:
-🩺 European health systems are under sustained cost pressure, and preventive diagnostics is one of the few areas where payers and consumers are both willing to spend.
-🇨🇭 Switzerland is a demanding first market: high standards of care, informed customers, and strict data expectations, so a product that works here travels well into Germany and the Benelux.
-🌍 Expansion into two markets simultaneously is the real signal, suggesting the underlying model is repeatable rather than dependent on a single regulatory setup.
 
-Swiss healthtech has a habit of building carefully at home before scaling abroad. It looks slower early on, then compounds faster once the playbook is proven.
+⚡ Access to compute, not model architecture, is now the binding constraint for most European AI teams, and financing structures are becoming as important as chips.
+🇨🇭 Switzerland offers neutrality, legal stability and strong energy and data centre governance, an unusually credible base for infrastructure vehicles serving multiple jurisdictions.
+🏗️ Purpose-built financing for compute enables research-heavy startups to scale without surrendering equity to hyperscalers, which changes who captures the value created.
 
-https://www.aheadhealth.com/ch/en
-```
-🖼️ **Article image:** https://techfundingnews.com/wp-content/uploads/2026/01/Ahead-Health-team.png
-🔗 **Links to the original source.** Covered by Tech Funding News: https://techfundingnews.com/ahead-health-10m-funding-preventive-care-germany-netherlands/
-
-## Post 7 — schedule for Monday 10 August at 08:00
-
-```
-🇨🇭 New Swiss vehicle targets AI compute bottleneck
-
-@AI Infrastructure Capital AG has launched with EUR 16 million to address the shortage of AI compute capacity, according to @EU-Startups on 30 July.
-
-Why it matters:
-⚡ Compute scarcity is now the binding constraint for European AI companies, and dedicated capital for infrastructure addresses a gap that generalist funds are poorly structured to fill.
-🇨🇭 Switzerland is well positioned as a base: political stability, reliable and largely low-carbon power, strong data governance, and proximity to the research groups generating demand.
-🏭 If this works, it lowers the cost of ambitious model and simulation work for the whole regional ecosystem, from university spin-offs to industrial R&D teams.
-
-Infrastructure is unglamorous and expensive, but it determines what everyone else can build. Watching how Swiss capital positions itself here is worth the attention.
+The broader signal is that AI is maturing into an infrastructure asset class with the balance sheet questions that implies. For Swiss DeepTech, that is constructive: our companies compete on efficiency per unit of compute, and better access to capacity makes that advantage easier to convert into products.
 
 https://ai-infrastructure.capital/
 ```
 🖼️ **Article image:** https://www.eu-startups.com/wp-content/uploads/2026/07/Untitled-design-2026-07-30T150054.727.jpg
 🔗 **Links to the original source.** Covered by EU-Startups: https://www.eu-startups.com/2026/07/swiss-startup-ai-infrastructure-capital-ag-launches-with-e16-million-to-tackle-ai-compute-bottleneck/
+
+## Post 6 — schedule for Sunday 09 August at 08:00
+
+```
+🇨🇭 Distribution becomes AI's real battleground
+
+@Revolut customers will receive up to 12 months of free @OpenAI ChatGPT Go access, a bundling arrangement covered by @Fintechnews Switzerland.
+
+Why it matters:
+
+📱 Bundling AI subscriptions into consumer finance apps normalises paid AI for millions of users and resets expectations about what a banking relationship includes.
+🇨🇭 Swiss financial institutions sit on the most sensitive client data in Europe, so their slower, compliance-first path to AI could become a differentiator rather than a drag.
+🔗 Once AI assistants live inside financial interfaces, the strategic question shifts from who builds the model to who owns the customer context.
+
+For Swiss DeepTech founders, the lesson is about go-to-market rather than technology. Capability is increasingly commoditised at the application layer, and defensibility moves to proprietary data, regulated trust and hard engineering. That is the layer where Swiss teams tend to be strongest, and where patient capital pays off.
+
+https://fintechnews.ch/aifintech/revolut-openai-chatgpt-go-subscription/84829/
+```
+🖼️ **Article image:** https://fintechnews.ch/wp-content/uploads/2026/07/Revolut-ChatGPT-Go.webp
+
+## Post 7 — schedule for Monday 10 August at 08:00
+
+```
+🇨🇭 Banks put data leadership in the boardroom
+
+@NatWest Group has appointed Triona O'Keeffe, previously of @Deutsche Bank, as Chief Data and Analytics Officer, a move reported by @Fintechnews Switzerland.
+
+Why it matters:
+
+📈 Senior data mandates at large banks translate directly into procurement budgets for governance, lineage and AI tooling vendors over the following years.
+🇨🇭 Swiss providers built for private banking standards on privacy, auditability and cross-border data handling are well positioned as European institutions professionalise this function.
+🧭 Elevating data to an executive portfolio means AI deployment stops being an innovation project and becomes an operating discipline with accountability attached.
+
+Hiring signals are underrated market intelligence. When multiple systemically important banks create the same role in the same year, it tells you where enterprise spending is heading before any analyst report does. For B2B DeepTech founders selling into financial services, this is the moment to be in the room.
+
+https://www.natwestgroup.com/news-and-insights/news-room/press-releases/ai-and-data/2026/jul/natwest-appoints-triona-o-keeffe-as-chief-data-and-analytics-off.html
+```
+🖼️ **Article image:** https://fintechnews.ch/wp-content/uploads/2026/07/NatWest-Triona-OKeeffe.webp
+🔗 **Links to the original source.** Covered by Fintechnews Switzerland: https://fintechnews.ch/london/natwest-appoints-okeeffe-data-analytics-chief/84825/
 
