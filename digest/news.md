@@ -1,5 +1,5 @@
 # Swiss DeepTech news digest
-_Generated 03 August 2026, covering the last 21 days. 29 stories._
+_Generated 03 August 2026, covering the last 21 days. 28 stories._
 
 1. **[Exclusive: ETH Zurich spinout ZuriQ raises $25.5m seed - Sifted](https://news.google.com/rss/articles/CBMiZkFVX3lxTE4zOVBuNE5sb2dhcWY3NThySXFITnNPWkJsTndFSGRzZGR6NzBhNlV5N05XbWJ4VXU0T1V3NDMxMzRaLW1OSmVJNURVN0Y5ZjJsMkZaREJ6MkQ2RzdvWWV1U2FqalN1UQ?oc=5)**  
    Sifted · 28 Jul 2026 · relevance 27
@@ -21,10 +21,10 @@ _Generated 03 August 2026, covering the last 21 days. 29 stories._
    Startupticker · 24 Jul 2026 · relevance 18
 10. **[CDDS secures seed capital for further development steps](https://www.startupticker.ch/en/news/cdds-secures-seed-capital-for-further-development-steps)**  
    Startupticker · 17 Jul 2026 · relevance 13
-11. **[Switzerland Emerges as a Deep Tech Powerhouse - FintechNews CH](https://news.google.com/rss/articles/CBMiiwFBVV95cUxPUjFuT0pGY3VMZW9tbmxfb2FnZkxxa2NDX3FzdGdsaC1oMVNGRDZTSTVGSkZFNGFPV3FmQWQ5bU4xUDZHbVdjRkRHUDc0aF9NaEh3VXJTTnRNMGk1bVh4OFRDeC13Y0g0RE03TXNPTWw2UmZXTWF3Z2dOVkFGTzNBTHoyd05ZUUZad1kw?oc=5)**  
-   FintechNews CH · 17 Jul 2026 · relevance 13
-12. **[Using future data to better predict Switzerland's rail energy demand](https://actu.epfl.ch/news/using-future-data-to-better-predict-switzerland-s)**  
+11. **[Using future data to better predict Switzerland's rail energy demand](https://actu.epfl.ch/news/using-future-data-to-better-predict-switzerland-s)**  
    EPFL News · 20 Jul 2026 · relevance 11
+12. **[Suisse: Une célèbre avocate vaudoise accusée d'escroquerie - Blick](https://news.google.com/rss/articles/CBMipgFBVV95cUxQM1lJTkE3T3lpSHR2RVBXc1J0aVJtNUd4bGZkdDM4R0hiYjBDUWJRVFVVMURXMUNpT19sQ1UwY3BsLUM2LWRnd2RCZXNGNzRHcVllMHVZVF9jN1ZBTE1JT1BNR0hlanZsWXp4Y2Y5aFlCOHVQUlF2akNUOWUyMjVmcDZkNkdxY2xjZXg5MHNvVURoQko3dHBsRVA5b0JSamlmeTItdGt3?oc=5)**  
+   Blick · 14 Jul 2026 · relevance 11
 13. **[«Die Schweiz kann Marktleader bei den photonischen Chips werden» - Watson](https://news.google.com/rss/articles/CBMitAFBVV95cUxNY1d6cjJFdzlteDRaYlJvb2p6MWNZbmtZMzhfVjF5ek9UbHB6TlRXV1p2d3hXdzZRR2hDN3FacGhrSlZTY2c5MTdIWUtrV1JQcmNuRUg1X0RveU5LZ0JnZEhlcDBTUXJvTUdjQmpIUjAzWG9CeEFiWS12WkY3N2p0cVIxV1FWTjk2Ukt0VjRTUHlVWVVHQXFUdG1zdlprYWFKTjR5T2VHaTFwSE8zaUV6VlRVNDI?oc=5)**  
    Watson · 19 Jul 2026 · relevance 10
 14. **[Apertus 1.5: Building the next generation of open AI infrastructure](https://actu.epfl.ch/news/apertus-15-building-the-next-generation-of-open--2)**  
@@ -45,17 +45,15 @@ _Generated 03 August 2026, covering the last 21 days. 29 stories._
    Startupticker · 27 Jul 2026 · relevance 8
 22. **[KI-Startup Prodlane sammelt 4 Millionen Euro ein](https://www.startupticker.ch/en/news/ki-startup-prodlane-sammelt-4-millionen-euro-ein)**  
    Startupticker · 21 Jul 2026 · relevance 8
-23. **[J’ai montré ma poitrine à une IA suisse et j'en suis ravie - Watson](https://news.google.com/rss/articles/CBMiqgFBVV95cUxQclRyN0p2akU2ZGFqbndFUTB1VC01QUkxeFRPTndzN3M5VHNTaGJjOW9KRS1Fc0kwNXBDcUJEQ0djOS1FeVpIT1dlVDM1aHhieUlhbXpSeGJiS0dkRGZxMVpkMlB4VnNxVldRWE45cUVlVWVPYlZNOU5PdmtHc0xjZVNzYXpNVU4yOGdKQy1DQ0FpMWJNVHlaNGd4RXF3ZDBfM1FLdUFlTnpYQQ?oc=5)**  
-   Watson · 18 Jul 2026 · relevance 8
-24. **[AELER eyes oncoming large-scale roll-out](https://www.startupticker.ch/en/news/aeler-eyes-oncoming-large-scale-roll-out)**  
+23. **[AELER eyes oncoming large-scale roll-out](https://www.startupticker.ch/en/news/aeler-eyes-oncoming-large-scale-roll-out)**  
    Startupticker · 17 Jul 2026 · relevance 8
-25. **[PropTech AssetOS auf Wachstumskurs](https://www.startupticker.ch/en/news/proptech-assetos-auf-wachstumskurs)**  
+24. **[PropTech AssetOS auf Wachstumskurs](https://www.startupticker.ch/en/news/proptech-assetos-auf-wachstumskurs)**  
    Startupticker · 30 Jul 2026 · relevance 7
-26. **[Delta Capacity completes Swedish battery project](https://www.startupticker.ch/en/news/delta-capacity-completes-swedish-battery-project)**  
+25. **[Delta Capacity completes Swedish battery project](https://www.startupticker.ch/en/news/delta-capacity-completes-swedish-battery-project)**  
    Startupticker · 30 Jul 2026 · relevance 6
-27. **[England, the Middle East and India: Three start-ups are expanding with their digital solutions](https://www.startupticker.ch/en/news/england-the-middle-east-and-india-three-start-ups-are-expanding-with-their-digital-solutions)**  
+26. **[England, the Middle East and India: Three start-ups are expanding with their digital solutions](https://www.startupticker.ch/en/news/england-the-middle-east-and-india-three-start-ups-are-expanding-with-their-digital-solutions)**  
    Startupticker · 22 Jul 2026 · relevance 6
-28. **[Cognizant Launches EMEA AI Unit to Move Enterprise Projects to Production](https://fintechnews.ch/aifintech/cognizant-emea-ai-unit-launch/84819/)**  
+27. **[Cognizant Launches EMEA AI Unit to Move Enterprise Projects to Production](https://fintechnews.ch/aifintech/cognizant-emea-ai-unit-launch/84819/)**  
    Fintechnews Switzerland · 29 Jul 2026 · relevance 5
-29. **[Synhelion erhält Fördermittel für kommerzielle Demo-Anlage](https://www.startupticker.ch/en/news/synhelion-erhaelt-foerdermittel-fuer-kommerzielle-demo-anlage)**  
+28. **[Synhelion erhält Fördermittel für kommerzielle Demo-Anlage](https://www.startupticker.ch/en/news/synhelion-erhaelt-foerdermittel-fuer-kommerzielle-demo-anlage)**  
    Startupticker · 31 Jul 2026 · relevance 4
