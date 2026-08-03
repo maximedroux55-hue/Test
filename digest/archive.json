@@ -38,7 +38,7 @@
       "posted": true,
       "company": "Immitra Bio",
       "category": "Biotech",
-      "stage": "Seed",
+      "stage": "",
       "amount": "CHF 2.4M",
       "investors": "",
       "location": ""
@@ -58,7 +58,7 @@
       "posted": true,
       "company": "SWISSto12",
       "category": "Space",
-      "stage": "Growth",
+      "stage": "",
       "amount": "USD 70M",
       "investors": "",
       "location": ""
@@ -78,7 +78,7 @@
       "posted": true,
       "company": "SkyPilot",
       "category": "AI",
-      "stage": "Series A",
+      "stage": "",
       "amount": "USD 20M",
       "investors": "",
       "location": ""
@@ -100,7 +100,7 @@
       "category": "Software",
       "stage": "Pre-seed",
       "amount": "",
-      "investors": "VC offices, angel investors",
+      "investors": "",
       "location": "Zurich"
     },
     {
@@ -137,8 +137,8 @@
       "last_seen": "2026-08-03",
       "posted": true,
       "company": "Hilo",
-      "category": "Energy",
-      "stage": "Series B",
+      "category": "Other",
+      "stage": "Series D",
       "amount": "USD 19M",
       "investors": "Dell Family Office",
       "location": ""
@@ -458,7 +458,7 @@
       "posted": false,
       "company": "AELER",
       "category": "Logistics",
-      "stage": "Growth",
+      "stage": "",
       "amount": "CHF 22M",
       "investors": "",
       "location": ""
@@ -560,7 +560,7 @@
       "category": "Cleantech",
       "stage": "Grant",
       "amount": "",
-      "investors": "Produktives.NRW",
+      "investors": "",
       "location": ""
     }
   ]
