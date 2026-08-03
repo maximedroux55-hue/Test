@@ -35,9 +35,13 @@ SYSTEM = (
     "is not written, and leave a field empty when the text does not say. "
     "Company is the subject of the story, not the investor and not the "
     "publication. Amount is written compactly with its currency, for example "
-    "'CHF 3.5M', 'USD 25.5M', 'EUR 700M'. Investors is a comma separated list "
-    "of the funds or corporates putting money in. Location is the Swiss city or "
-    "canton when stated."
+    "'CHF 3.5M', 'USD 25.5M', 'EUR 700M'. Location is the Swiss city or "
+    "canton when stated.\n\n"
+    "Investors: list only named funds, corporates or people, comma separated, "
+    "for example 'Quantonation' or 'Swisscom Ventures, Venture Kick'. A "
+    "headline of the form 'X leads a round for Y' names X as an investor of Y. "
+    "Never write a generic description such as 'angel investors', 'VC firms', "
+    "'existing investors' or 'undisclosed': leave the field empty instead."
 )
 
 _SCHEMA = {
@@ -104,6 +108,25 @@ _CATEGORY_PATTERNS = [
     (r"\bai\b|machine learning|language model|llm|compute", "AI"),
     (r"software|platform|saas", "Software"),
 ]
+
+
+# Descriptions of investors rather than names. An empty cell is more honest.
+_GENERIC_INVESTORS = re.compile(
+    r"^\s*(and\s+)?("
+    r"angel|angels|investor|investors|vc|vcs|venture capital|"
+    r"venture capitalists?|business angels?|family offices?|funds?|"
+    r"existing|undisclosed|private|institutional|strategic|various|"
+    r"several|multiple|unnamed|others?|offices?"
+    r")\b[\s\w]*$",
+    re.IGNORECASE,
+)
+
+
+def _clean_investors(value: str) -> str:
+    """Drop generic descriptions, keep actual names."""
+    names = [n.strip(" .;") for n in (value or "").split(",")]
+    kept = [n for n in names if n and not _GENERIC_INVESTORS.match(n)]
+    return ", ".join(kept)
 
 
 def _fallback(article: dict) -> dict:
@@ -197,7 +220,7 @@ def extract_fields(articles: list, model: str | None = None) -> list:
                     "category": item.get("category", "Other"),
                     "stage": "" if item.get("stage") == "None" else item.get("stage", ""),
                     "amount": item.get("amount", "").strip(),
-                    "investors": item.get("investors", "").strip(),
+                    "investors": _clean_investors(item.get("investors", "")),
                     "location": item.get("location", "").strip(),
                 }
         return out
