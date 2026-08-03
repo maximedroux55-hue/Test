@@ -474,6 +474,10 @@ def main() -> None:
         from extract import fill_from_company_sites
         fill_from_company_sites([a for a in articles if _is_round(a)])
 
+        # The commercial register is authoritative for the registered seat.
+        from registries import fill_from_registries
+        fill_from_registries([a for a in articles if _is_round(a)])
+
         # Anything still without a location gets the address lookup.
         from hq_lookup import fill_missing
         blanks = sum(1 for a in articles if a.get("company") and not a.get("location"))
