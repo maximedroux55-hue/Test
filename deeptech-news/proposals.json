@@ -11,48 +11,19 @@
       "verified_by": "automated weekly check"
     }
   },
-  "proposals": {
-    "Terra Quantum": {
-      "verified": "2026-08-03",
-      "verified_source": "prnewswire.com",
-      "verified_quote": "Based on the funds in the trust account at the time of the IPO, the transaction is expected to deliver up to approximately $190 million of gross proceeds to the combined company, assuming no redemptions by Axiom's public stockholders, and without taking into account transaction expenses.",
-      "source_url": "https://www.prnewswire.com/news-releases/terra-quantum-and-axiom-intelligence-acquisition-corp-1-announce-definitive-business-combination-agreement-at-a-3-5-billion-equity-valuation-302781704.html",
-      "verified_by": "automated weekly check"
-    },
-    "SWISSto12": {
-      "verified": "2026-08-03",
-      "verified_source": "spacenews.com",
-      "verified_quote": "Swissto12 said it has raised $70 million in fresh funding",
-      "source_url": "https://spacenews.com/swissto12-raises-70-million-to-accelerate-small-geo-satellite-production/",
-      "verified_by": "automated weekly check"
-    },
-    "ZuriQ": {
-      "verified": "2026-08-03",
-      "verified_source": "startupticker.ch",
-      "verified_quote": "The USD 25.5 million seed round was led by Quantonation with participation from Forward.one, Extantia, Firgun Ventures and all previous investors.",
-      "source_url": "https://www.startupticker.ch/en/news/quantonation-leads-usd-25-5-million-seed-round-for-eth-spin-off-zuriq",
-      "verified_by": "automated weekly check"
-    },
-    "Hilo": {
-      "verified": "2026-08-03",
-      "verified_source": "startupticker.ch",
-      "verified_quote": "Hilo secured a Series B extension round, totaling $19 million in new funding and bringing its total funding to date to over $119 million. The round included new investment from Dell Family Office",
-      "source_url": "https://www.startupticker.ch/en/news/hilo-closes-series-b-extension-round-to-fuel-us-expansion",
-      "verified_by": "automated weekly check"
-    },
-    "Nanoflex Robotics": {
-      "verified": "2026-08-03",
-      "verified_source": "venturelab.swiss",
-      "verified_quote": "The funding package includes a EUR 2.5 million grant and a EUR 10 million equity investment from the EIC Fund.",
-      "source_url": "https://www.venturelab.swiss/Nanoflex-Robotics-awarded-EUR-125-Million-from-the-EIC-Accelerator",
-      "verified_by": "automated weekly check",
-      "amount_note": "Blended: EUR 2.5M grant plus EUR 10M equity investment from the EIC Fund",
-      "location": "Glattbrugg"
-    }
-  },
+  "proposals": {},
   "last_run": "2026-08-03",
   "could_not_verify": [],
   "withdrawn": {
     "Prem": "The pass read QueryAI's release, a different company in South Dakota, because the name check was a substring and 'prem' sits inside 'premises'. Withdrawn, and the check now requires the name as a word near the top of the page."
+  },
+  "accepted": {
+    "2026-08-03": [
+      "Hilo",
+      "Nanoflex Robotics",
+      "SWISSto12",
+      "Terra Quantum",
+      "ZuriQ"
+    ]
   }
 }
