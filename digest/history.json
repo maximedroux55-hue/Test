@@ -3,6 +3,25 @@
   "used": [
     {
       "used": "2026-08-03",
+      "title": "Quantonation leads USD 25.5 million seed round for ETH spin-off ZuriQ",
+      "link": "https://zuriq.com/",
+      "coverage_url": "https://www.startupticker.ch/en/news/quantonation-leads-usd-25-5-million-seed-round-for-eth-spin-off-zuriq",
+      "norm": "quantonation leads usd 255 million seed round for eth spinoff zuriq",
+      "kw": [
+        "leads",
+        "quantonation",
+        "spinoff",
+        "zuriq"
+      ],
+      "rare": [
+        "leads",
+        "quantonation",
+        "spinoff",
+        "zuriq"
+      ]
+    },
+    {
+      "used": "2026-08-03",
       "title": "How rivers shape cities and societies",
       "link": "https://actu.epfl.ch/news/how-rivers-shape-cities-and-societies",
       "coverage_url": null,
@@ -37,28 +56,29 @@
       "rare": [
         "apertus",
         "building",
-        "generation",
-        "infrastructure"
+        "generation"
       ]
     },
     {
       "used": "2026-08-03",
-      "title": "Exclusive: ETH Zurich spinout ZuriQ raises $25.5m seed - Sifted",
-      "link": "https://sifted.eu/articles/eth-spinout-zuriq-seed-round",
-      "coverage_url": null,
-      "norm": "exclusive eth zurich spinout zuriq raises 255m seed",
+      "title": "Valuemize raises seven-figure pre-seed for product cost software",
+      "link": "https://www.valuemize.io/en",
+      "coverage_url": "https://www.startupticker.ch/en/news/valuemize-raises-seven-figure-pre-seed-for-product-cost-software",
+      "norm": "valuemize raises sevenfigure preseed for product cost software",
       "kw": [
-        "255m",
-        "exclusive",
-        "spinout",
-        "zurich",
-        "zuriq"
+        "cost",
+        "preseed",
+        "product",
+        "sevenfigure",
+        "software",
+        "valuemize"
       ],
       "rare": [
-        "exclusive",
-        "spinout",
-        "zurich",
-        "zuriq"
+        "preseed",
+        "product",
+        "sevenfigure",
+        "software",
+        "valuemize"
       ]
     },
     {
@@ -85,7 +105,7 @@
     },
     {
       "used": "2026-08-03",
-      "title": "SkyPilot, from Databricks’ cofounder, raises $20M to be the Switzerland of AI compute - Fortune",
+      "title": "SkyPilot, from Databricks’ cofounder, raises $20M to be the Switzerland of AI compute - fortune.com",
       "link": "https://www.fortunebusinessinsights.com/ai-orchestration-market-107177",
       "coverage_url": "https://fortune.com/2026/07/21/skypilot-from-databricks-cofounder-raises-20m-to-be-the-switzerland-of-ai-compute/",
       "norm": "skypilot from databricks cofounder raises 20m to be the switzerland of ai compute",
@@ -100,29 +120,6 @@
         "compute",
         "databricks",
         "skypilot"
-      ]
-    },
-    {
-      "used": "2026-08-03",
-      "title": "Swiss preventive health startup Ahead Health raises $10M for Germany and Netherlands launch - Tech Funding News",
-      "link": "https://www.aheadhealth.com/ch/en",
-      "coverage_url": "https://techfundingnews.com/ahead-health-10m-funding-preventive-care-germany-netherlands/",
-      "norm": "swiss preventive health startup ahead health raises 10m for germany and netherlands launch",
-      "kw": [
-        "ahead",
-        "germany",
-        "health",
-        "launch",
-        "netherlands",
-        "preventive"
-      ],
-      "rare": [
-        "ahead",
-        "germany",
-        "health",
-        "launch",
-        "netherlands",
-        "preventive"
       ]
     },
     {
