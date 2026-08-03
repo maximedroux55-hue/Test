@@ -358,9 +358,25 @@ def test_proposals_are_inert_and_evidenced():
     assert proposals.load() is not corrections.load()
 
 
+def test_a_post_lists_what_must_be_checked():
+    from linkedin import _claims_in
+
+    art = {"company": "ZuriQ", "stage": "Seed",
+           "investors": "Quantonation, Founderful"}
+    claims = _claims_in(
+        "ZuriQ has closed a USD 25.5M seed round backed by Quantonation.", art)
+    joined = " | ".join(claims)
+    assert "USD 25.5M" in joined and "money received" in joined
+    assert "calls it a seed" in joined
+    assert "Quantonation" in joined and "earlier one" in joined
+    # A post that states no figure has no figure to check.
+    assert _claims_in("Aylight is building silicon lasers.",
+                      {"company": "Aylight"}) == ["the company is Aylight"]
+
+
 # Locking the count means a test appended below the runner, where it would
 # never execute, shows up as a failure rather than as silence. That happened.
-EXPECTED = 32
+EXPECTED = 33
 
 
 if __name__ == "__main__":

@@ -234,13 +234,36 @@ def build_post(article: dict, index: int) -> str:
 # Cowork + Chrome workflow off the structured posts.json, so the whole week gets
 # scheduled from one prompt.
 COWORK_PROMPT = (
-    "Schedule my Swiss DeepTech LinkedIn posts for this week. Open "
-    "https://maxime-droux.com/digest/posts.json and read the posts from it. "
-    "For each post: create a LinkedIn post, paste the `text` exactly as written "
-    "(do not change the wording), and schedule it for the `time` on the `date` "
-    "given. For the image, use the picture at `image` (download it from that URL "
-    "and upload it); if `image` is null, open the `link` (the source article) "
-    "and use the article's own main photo. Do them in order, one per day."
+    "Check and schedule my Swiss DeepTech LinkedIn posts for this week. Open "
+    "https://maxime-droux.com/digest/posts.json and read the posts from it.\n\n"
+    "CHECK EVERY POST BEFORE SCHEDULING IT. A post goes out under my name and "
+    "tags the company, so a wrong figure cannot be quietly corrected. Each post "
+    "carries a `claims` list: the factual assertions its text makes. For each "
+    "one, open the `link` and, where that does not settle it, find the "
+    "company's own release or the filing. Confirm four things:\n"
+    "  1. Has the round closed? A round being raised, expected to close, or "
+    "subject to approval has not. 'Is raising' is not 'raised'.\n"
+    "  2. Is the round name right? A first listing is an IPO, an already "
+    "listed company selling shares is a follow-on, a merger with a listed "
+    "shell is a de-SPAC.\n"
+    "  3. Is the amount money received, rather than a ceiling, a gross or a "
+    "target?\n"
+    "  4. Did the named investors take part in THIS round rather than an "
+    "earlier one?\n\n"
+    "Where everything checks out, schedule the post: paste the `text` exactly "
+    "as written, at the `time` on the `date` given. For the image use the "
+    "picture at `image`; if it is null, open the `link` and use the article's "
+    "own main photo.\n\n"
+    "Where anything does not check out, DO NOT SCHEDULE THAT POST. Tell me "
+    "what the source actually says and what the post claims, and add the "
+    "correction to deeptech-news/proposals.json in the maximedroux55-hue/Test "
+    "repository, branch claude/questions-9a5egd, with the sentence you read "
+    "and the page you read it on. Never write to corrections.json.\n\n"
+    "A post marked `needs_check: true` states a figure for a round nobody has "
+    "verified: treat those with particular care. A post marked "
+    "`verified: true` has already been checked against a primary source, so "
+    "confirm rather than re-research it.\n\n"
+    "Tell me at the end which you scheduled, which you held back and why."
 )
 
 # Post scheduling time (local). Kept here so the JSON, the Markdown, and the
@@ -250,6 +273,40 @@ POST_TIME = "08:00"
 # The Cloudflare Worker that triggers a fresh run when the page button is tapped.
 # It holds the GitHub token; the page only pings this URL.
 RUN_URL = "https://md-news-button.maxime-droux55.workers.dev/"
+
+
+def _claims_in(text: str, art: dict) -> list:
+    """The factual assertions a post makes, so they can be checked one by one.
+
+    Written from the post rather than from the database, because what needs
+    checking is what the post says, not what we meant it to say.
+    """
+    import re
+
+    amounts = re.compile(
+        r"(?:CHF|USD|EUR|GBP)\s?[\d.,\']+\s?(?:m|bn|k|million|billion)?"
+        r"|[$€£]\s?[\d.,\']+\s?(?:m|bn|k|million|billion)?", re.IGNORECASE)
+    rounds = re.compile(r"\b(pre-?seed|seed|series\s+[a-e])\b", re.IGNORECASE)
+
+    claims = []
+    company = (art.get("company") or "").strip()
+    if company:
+        claims.append(f"the company is {company}")
+    for found in dict.fromkeys(m.group(0).strip() for m in amounts.finditer(text or "")):
+        claims.append(f"the post states {found}: is that money received rather "
+                      f"than a ceiling or a target, and has the round closed")
+    for found in dict.fromkeys(m.group(0).strip().lower()
+                               for m in rounds.finditer(text or "")):
+        claims.append(f"the post calls it a {found}: is that the right name "
+                      f"for this transaction")
+    investors = (art.get("investors") or "").strip()
+    if investors:
+        named = [n.strip() for n in investors.split(",") if n.strip()]
+        mentioned = [n for n in named if n.lower() in (text or "").lower()]
+        if mentioned:
+            claims.append(f"the post names {', '.join(mentioned)}: did they "
+                          f"take part in this round rather than an earlier one")
+    return claims
 
 
 def build_posts(articles: list, days: int, top: int = 7):
@@ -288,11 +345,13 @@ def build_posts(articles: list, days: int, top: int = 7):
         company = art.get("company", "")
         checked = trust.verification(company) if company else {}
         risky = bool(has_figure(text)) and not checked
+        claims = _claims_in(text, art)
         if risky:
             print(f"  ! post {i + 1} ({company or art.get('title','')[:40]}) "
                   f"states a figure for a round nobody has verified",
                   file=sys.stderr)
         records.append({
+            "claims": claims,
             "verified": bool(checked),
             "verified_source": checked.get("source", ""),
             "needs_check": risky,
