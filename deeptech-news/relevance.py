@@ -75,8 +75,13 @@ NOISE_TERMS = {
     "market report": 5, "market share": 4, "forecast to": 4,
     "top 10": 4, "best of": 3, "everything you need": 4,
     # Crime and courts. Swiss and occasionally technical, never a Climb post.
+    # Listed in the three languages Swiss outlets publish in.
     "fraud": 5, "scandal": 5, "lawsuit": 4, "court": 4, "trial of": 4,
     "convicted": 5, "prosecutor": 5, "arrested": 5, "money laundering": 5,
+    "escroquerie": 5, "fraude": 5, "accusé": 5, "accusée": 5,
+    "procès": 5, "condamné": 5, "justice": 3, "plainte": 4,
+    "betrug": 5, "verurteilt": 5, "prozess": 4, "festgenommen": 5,
+    "staatsanwalt": 5, "skandal": 5, "anklage": 5,
     # Campus showcases rather than commercial deep tech.
     "students": 4, "student project": 5, "semester project": 5,
 }
@@ -97,16 +102,25 @@ OPINION_TERMS = {
     "what to expect": 5, "the future of": 4, "is the future": 5,
     "emerges as": 4, "powerhouse": 4, "rethinking": 4, "reimagining": 4,
     "can become": 4, "could become": 4, "must ": 3,
+    # The same, as Swiss outlets phrase it in German and French.
+    "kommentar": 5, "meinung": 5, "gastbeitrag": 5, "standpunkt": 5,
+    "kann werden": 4, "sollte": 3, "warum ": 3,
+    "tribune": 4, "édito": 5, "edito": 5, "pourquoi ": 3, "entretien": 5,
+    "analyse": 3, "chronique": 5,
 }
 
 
 def _is_quoted_headline(title: str) -> bool:
-    """A headline wrapped in quotation marks is someone's view, not an event."""
-    t = (title or "").strip()
+    """A headline wrapped in quotation marks is someone's view, not an event.
+
+    The trailing " - Publisher" that Google News appends is removed first,
+    otherwise a quoted headline ending "» - Watson" looks unquoted.
+    """
+    t = re.sub(r"\s+[-|]\s+[^-|]+$", "", (title or "")).strip()
     if len(t) < 2:
         return False
     return (t[0], t[-1]) in {
-        ("«", "»"), ('"', '"'), ("“", "”"), ("'", "'"),
+        ("«", "»"), ('"', '"'), ("“", "”"), ("'", "'"), ("‘", "’"),
     }
 
 # Sites that publish market-research summaries, stock chatter or directory
