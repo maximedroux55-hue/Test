@@ -26,6 +26,22 @@ _SWISS_ADDRESS = re.compile(
     r"(?:CH[-\s])?\b([1-9]\d{3})\s+([A-ZÄÖÜ][\wÄÖÜäöüéèàêç'’\-]{2,24})"
 )
 
+# A year followed by a capitalised word is shaped exactly like a postcode
+# followed by a town, which is how "© 2024 Mastercard" was read as a
+# headquarters in Mastercard and "2023 Boldbrain" as one in Boldbrain.
+_LOOKS_LIKE_YEAR = re.compile(r"^(?:19|20)\d{2}$")
+
+# What an actual postal address has around it.
+_ADDRESS_CONTEXT = re.compile(
+    r"strasse|straße|str\.|rue\b|route\b|avenue|chemin|via\b|weg\b|platz|"
+    r"gasse|quai|boulevard|all[ée]e|place\b|piazza|ring\b|postfach|case\s+postale|"
+    r"\bch\s*-\s*$|\d+\s*[a-z]?\s*,?\s*$",
+    re.IGNORECASE,
+)
+_COUNTRY_AFTER = re.compile(r"switzerland|schweiz|suisse|svizzera", re.IGNORECASE)
+# A copyright line is never an address.
+_COPYRIGHT_NEAR = re.compile(r"©|&copy;|\(c\)|copyright|all rights", re.IGNORECASE)
+
 # Addresses elsewhere, kept as "City, CC" so the column stays a city.
 _COUNTRY_HINTS = {
     "germany": "DE", "deutschland": "DE", "france": "FR", "italy": "IT",
@@ -41,11 +57,28 @@ _NOT_A_TOWN = {
 
 
 def _city_from_address(text: str) -> str:
-    """Return the town from the first plausible Swiss postal address."""
-    for match in _SWISS_ADDRESS.finditer(text or ""):
-        town = match.group(2).strip(" ,.")
-        if town and town not in _NOT_A_TOWN and not town.isupper():
-            return town
+    """Return the town from the first plausible Swiss postal address.
+
+    Four digits and a capitalised word is not enough on its own: a copyright
+    line has the same shape. A number that could be a year is only read as a
+    postcode when something around it says address.
+    """
+    text = text or ""
+    for match in _SWISS_ADDRESS.finditer(text):
+        code, town = match.group(1), match.group(2).strip(" ,.")
+        if not town or town in _NOT_A_TOWN or town.isupper():
+            continue
+        before = text[max(0, match.start() - 60): match.start()]
+        after = text[match.end(): match.end() + 40]
+        if _COPYRIGHT_NEAR.search(before[-30:]):
+            continue
+        if _LOOKS_LIKE_YEAR.match(code) and not (
+            match.group(0).lower().startswith("ch")
+            or _ADDRESS_CONTEXT.search(before)
+            or _COUNTRY_AFTER.search(after)
+        ):
+            continue
+        return town
     return ""
 
 
