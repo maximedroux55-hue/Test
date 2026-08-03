@@ -262,20 +262,6 @@ def test_two_rounds_for_one_company_stay_apart():
     assert len(merged) == 2
 
 
-if __name__ == "__main__":
-    failures = 0
-    for name, fn in sorted(globals().items()):
-        if name.startswith("test_") and callable(fn):
-            try:
-                fn()
-                print(f"  ok    {name}")
-            except AssertionError as exc:
-                failures += 1
-                print(f"  FAIL  {name}  {exc}")
-    print(f"\n{failures} failing" if failures else "\nall passing")
-    sys.exit(1 if failures else 0)
-
-
 # ------------------------------------------------------------------ trust ----
 # A figure nobody has checked must not go out under Max's name.
 
@@ -303,3 +289,29 @@ def test_verified_share_is_reported():
     s = trust.stats(rounds)
     assert s["rounds"] == 2 and s["verified_rounds"] == 1
     assert s["share"] == 50
+
+
+# Locking the count means a test appended below the runner, where it would
+# never execute, shows up as a failure rather than as silence. That happened.
+EXPECTED = 29
+
+
+if __name__ == "__main__":
+    failures = 0
+    for name, fn in sorted(globals().items()):
+        if name.startswith("test_") and callable(fn):
+            try:
+                fn()
+                print(f"  ok    {name}")
+            except AssertionError as exc:
+                failures += 1
+                print(f"  FAIL  {name}  {exc}")
+    ran = sum(1 for n, f in globals().items()
+              if n.startswith("test_") and callable(f))
+    if ran != EXPECTED:
+        print(f"\n{ran} tests found, {EXPECTED} expected. A test defined below "
+              f"the runner never runs; move it above, and update EXPECTED when "
+              f"adding one.")
+        sys.exit(1)
+    print(f"\n{failures} failing" if failures else f"\nall {ran} passing")
+    sys.exit(1 if failures else 0)
