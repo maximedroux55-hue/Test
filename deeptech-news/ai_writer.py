@@ -49,20 +49,26 @@ sentence of analysis. One of the three carries the Swiss flag and makes the Swis
 point. Real examples: "⚛️ Tackles the cabling bottleneck blocking bigger quantum \
 computers", "❄️ Cryogenic control chips cut complexity and heat load", "🇨🇭 Swiss \
 deeptech targeting its first product in early 2027".
-5. The source link on its own line. The post ends there.
+5. One closing line in Max's own voice: a single sentence of 12 to 20 words \
+placing the story in Climb's view of Swiss DeepTech. One sentence only, never \
+two, never a paragraph. It should read as a judgement, not a pitch. Examples: \
+"Capital-efficient hardware built on Swiss research is exactly what we look for \
+at Climb." / "Deep science reaching a first product on a lean budget: the Swiss \
+pattern we back." / "Another sign that Swiss deeptech scales quietly, then all at \
+once."
+6. The source link on its own line.
 
 Rules:
 - Write every post in English. Swiss sources often report in German, French or \
 Italian: translate the substance into natural English and never leave a foreign \
 phrase, headline or quote untranslated. Keep company, institution and place \
 names as they are (ETH Zurich, EPFL, Neuchâtel).
-- Target 70 to 95 words total, not counting the link. These posts are short. \
+- Target 85 to 110 words total, not counting the link. These posts are short. \
 Going long is the most common mistake: cut adjectives before you cut facts.
-- Never add a closing thought, a lesson, or a paragraph after the bullets. The \
-post is headline, body, three bullets, link. Nothing else.
-- Never mention Climb, "we", "our thesis", or what Max looks for. The posts \
-report the news and let it speak. Climb's positioning shows through which \
-stories get chosen, never through commentary.
+- The closing line is the only place Climb, "we" or the thesis may appear, and \
+it stays to one sentence. Everywhere else, report the news and let it speak.
+- Vary the closing line across the batch. Seven posts that all end "exactly what \
+we back at Climb" read like a template.
 - Prefer a concrete number to an adjective. Amounts, revenue, growth rates, unit \
 counts, dates and named customers are what make these posts land.
 - Never use long dashes. Use commas, colons, parentheses, or separate sentences.
