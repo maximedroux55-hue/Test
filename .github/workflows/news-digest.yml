@@ -70,27 +70,39 @@ jobs:
       # read (and copied) straight from github.com on a phone, no download needed.
       - name: Publish latest digest to the repo
         run: |
-          mkdir -p digest plan
-          cp deeptech-news/output/linkedin-*.md digest/linkedin.md
-          cp deeptech-news/output/digest-*.md   digest/news.md
-          cp deeptech-news/output/digest-*.html digest/index.html
-          cp deeptech-news/output/posts.json    digest/posts.json
-          cp deeptech-news/output/archive.html  digest/archive.html
-          # The phone-friendly weekly plan, served at maxime-droux.com/plan
-          cp deeptech-news/output/plan.html     plan/index.html
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add digest plan
-          git commit -m "Update latest digest" || { echo "No changes to publish."; exit 0; }
-          # Push resiliently: if another run pushed meanwhile, rebase and retry
-          # instead of failing.
+
+          # history.json and archive.json are written straight into digest/ by
+          # the scraper and are cumulative, so keep a copy before any reset.
+          mkdir -p /tmp/carry
+          cp digest/history.json /tmp/carry/ 2>/dev/null || true
+          cp digest/archive.json /tmp/carry/ 2>/dev/null || true
+
+          # These files are regenerated in full every run, so rebasing one run
+          # onto another only produces conflicts in generated content. Take the
+          # remote state, lay this run's output on top, and push that.
           for attempt in 1 2 3 4 5; do
+            git fetch origin ${GITHUB_REF_NAME}
+            git reset --hard origin/${GITHUB_REF_NAME}
+
+            mkdir -p digest plan
+            cp deeptech-news/output/linkedin-*.md digest/linkedin.md
+            cp deeptech-news/output/digest-*.md   digest/news.md
+            cp deeptech-news/output/digest-*.html digest/index.html
+            cp deeptech-news/output/posts.json    digest/posts.json
+            cp deeptech-news/output/archive.html  digest/archive.html
+            cp /tmp/carry/history.json digest/history.json 2>/dev/null || true
+            cp /tmp/carry/archive.json digest/archive.json 2>/dev/null || true
+            # The phone-friendly weekly plan, served at maxime-droux.com/plan
+            cp deeptech-news/output/plan.html     plan/index.html
+
+            git add digest plan
+            git commit -m "Update latest digest" || { echo "No changes to publish."; exit 0; }
             if git push origin HEAD:${GITHUB_REF_NAME}; then
               echo "Published."; exit 0
             fi
-            echo "Push rejected (attempt $attempt); rebasing on latest and retrying."
-            git fetch origin ${GITHUB_REF_NAME}
-            git rebase origin/${GITHUB_REF_NAME} || git rebase --abort
+            echo "Push rejected (attempt $attempt); taking the latest and retrying."
             sleep $((attempt * 3))
           done
           echo "Could not publish after retries."; exit 1
