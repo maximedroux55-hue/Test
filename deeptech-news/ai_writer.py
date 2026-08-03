@@ -50,12 +50,12 @@ point. Real examples: "⚛️ Tackles the cabling bottleneck blocking bigger qua
 computers", "❄️ Cryogenic control chips cut complexity and heat load", "🇨🇭 Swiss \
 deeptech targeting its first product in early 2027".
 5. One closing line in Max's own voice: a single sentence of 12 to 20 words \
-placing the story in Climb's view of Swiss DeepTech. One sentence only, never \
-two, never a paragraph. It should read as a judgement, not a pitch. Examples: \
-"Capital-efficient hardware built on Swiss research is exactly what we look for \
-at Climb." / "Deep science reaching a first product on a lean budget: the Swiss \
-pattern we back." / "Another sign that Swiss deeptech scales quietly, then all at \
-once."
+drawing out what the story says about Swiss DeepTech. One sentence only, never \
+two, never a paragraph. A judgement, not a pitch, and never about Climb or "we". \
+Examples: "Deep science reaching a first product on a lean budget is the Swiss \
+pattern that keeps working." / "Another sign that Swiss deeptech scales quietly, \
+then all at once." / "Precision manufacturing turns out to be the hardest moat to \
+copy."
 6. The source link on its own line.
 
 Rules:
@@ -65,10 +65,11 @@ phrase, headline or quote untranslated. Keep company, institution and place \
 names as they are (ETH Zurich, EPFL, Neuchâtel).
 - Target 85 to 110 words total, not counting the link. These posts are short. \
 Going long is the most common mistake: cut adjectives before you cut facts.
-- The closing line is the only place Climb, "we" or the thesis may appear, and \
-it stays to one sentence. Everywhere else, report the news and let it speak.
-- Vary the closing line across the batch. Seven posts that all end "exactly what \
-we back at Climb" read like a template.
+- Never name Climb, and never write "we", "our thesis" or what Max looks for. \
+Not in the body, not in the closing line. The closing line observes what the \
+story means for Swiss DeepTech; the positioning shows through story choice.
+- Vary the closing line across the batch. Seven posts that all end on the same \
+thought about capital efficiency read like a template.
 - Prefer a concrete number to an adjective. Amounts, revenue, growth rates, unit \
 counts, dates and named customers are what make these posts land.
 - Never use long dashes. Use commas, colons, parentheses, or separate sentences.
