@@ -35,8 +35,14 @@ SYSTEM = (
     "is not written, and leave a field empty when the text does not say. "
     "Company is the subject of the story, not the investor and not the "
     "publication. Amount is written compactly with its currency, for example "
-    "'CHF 3.5M', 'USD 25.5M', 'EUR 700M'. Location is the Swiss city or "
-    "canton when stated.\n\n"
+    "'CHF 3.5M', 'USD 25.5M', 'EUR 700M'.\n\n"
+    "Location is the company's headquarters, as a city, written as "
+    "'Lausanne' or, when the company is not Swiss, 'Munich, DE'. Take it from "
+    "wording such as 'Zurich-based', 'the Renens company' or 'headquartered "
+    "in Basel'. It is never a market the company is expanding into, never an "
+    "investor's home city, never where an event or conference took place, and "
+    "never the country alone. If the headquarters is not stated, leave it "
+    "empty rather than using any other city in the text.\n\n"
     "Investors: list only named funds, corporates or people, comma separated, "
     "for example 'Quantonation' or 'Swisscom Ventures, Venture Kick'. A "
     "headline of the form 'X leads a round for Y' names X as an investor of Y. "
@@ -192,7 +198,17 @@ def _fallback(article: dict) -> dict:
             category = label
             break
 
-    location = next((p for p in _SWISS_PLACES if p.lower() in text), "")
+    # Prefer a place the text ties to the company, so an expansion market or an
+    # investor's city is not mistaken for the headquarters.
+    location = ""
+    for place in _SWISS_PLACES:
+        p = re.escape(place.lower())
+        if re.search(rf"{p}[\s-]based|based in {p}|the {p} (company|startup|firm)"
+                     rf"|headquartered in {p}", text):
+            location = place
+            break
+    if not location:
+        location = next((p for p in _SWISS_PLACES if p.lower() in text), "")
 
     # The company usually opens the headline: "Medyria raises CHF 3.5 million".
     company = ""

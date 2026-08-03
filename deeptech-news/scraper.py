@@ -296,7 +296,7 @@ def render_archive_html(known: dict) -> str:
   <input id="q" placeholder="Filter by company, sector, investor or city..." oninput="filter()">
   <div class="box"><table>
     <thead><tr><th>Company</th><th>Category</th><th>Stage</th><th>Amount</th>
-      <th>Investors</th><th>Spin-off</th><th>Location</th><th>Date</th></tr></thead>
+      <th>Investors</th><th>Spin-off</th><th>HQ</th><th>Date</th></tr></thead>
     <tbody id="rows">
 {body}
     </tbody>
