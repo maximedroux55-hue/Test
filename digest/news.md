@@ -1,5 +1,5 @@
 # Swiss DeepTech news digest
-_Generated 03 August 2026, covering the last 21 days. 28 stories._
+_Generated 03 August 2026, covering the last 21 days. 13 stories._
 
 1. **[Exclusive: ETH Zurich spinout ZuriQ raises $25.5m seed - Sifted](https://news.google.com/rss/articles/CBMiZkFVX3lxTE4zOVBuNE5sb2dhcWY3NThySXFITnNPWkJsTndFSGRzZGR6NzBhNlV5N05XbWJ4VXU0T1V3NDMxMzRaLW1OSmVJNURVN0Y5ZjJsMkZaREJ6MkQ2RzdvWWV1U2FqalN1UQ?oc=5)**  
    Sifted · 28 Jul 2026 · relevance 27
@@ -9,51 +9,21 @@ _Generated 03 August 2026, covering the last 21 days. 28 stories._
    Greater Geneva Bern area (GGBa) · 16 Jul 2026 · relevance 26
 4. **[SkyPilot, from Databricks’ cofounder, raises $20M to be the Switzerland of AI compute - Fortune](https://news.google.com/rss/articles/CBMiswFBVV95cUxNcERYSWFFV25YYWhqdXdMRFlDR2VmZ1VKRVVEYTBZQjlpN0RadUFFRlJENzRfNkwwUkRVUnlNajVpT0psd1dJR0lxUDItaHFOaFNZeE9sQVBVRE1STlVnUEMtdXMwZzlkVFBLWDZjWThNb0pURU5kalZvYUpsVmZWQjN3a0NwRmw0aEthZGJObDJhQXR6SFdQeGNHSmQ0Nnp5Xy1NRVpzZ0luZEZlR0RCeU9QVQ?oc=5)**  
    Fortune · 21 Jul 2026 · relevance 23
-5. **[Valuemize raises seven-figure pre-seed for product cost software](https://www.startupticker.ch/en/news/valuemize-raises-seven-figure-pre-seed-for-product-cost-software)**  
-   Startupticker · 28 Jul 2026 · relevance 21
-6. **[Swiss preventive health startup Ahead Health raises $10M for Germany and Netherlands launch - Tech Funding News](https://news.google.com/rss/articles/CBMikwFBVV95cUxNV2JqQ2R5UlVCcDhrYk12TU9NWHVGQU9XOWZia0U1Wi0zeDg1NDdIN3lMRlAxMS1wN0pwaDZ0QWN4TTBObDVfWmtSOTBzSUNDWlRPUDRfM0RFeHZCNHBlM3k0al91c2VTRnpCVlhHc29XaTJOZGs2M0NpX2RiTjA3ZlFUUjd0SEVQMWs2Z1d1ZEp6VTA?oc=5)**  
+5. **[Swiss preventive health startup Ahead Health raises $10M for Germany and Netherlands launch - Tech Funding News](https://news.google.com/rss/articles/CBMikwFBVV95cUxNV2JqQ2R5UlVCcDhrYk12TU9NWHVGQU9XOWZia0U1Wi0zeDg1NDdIN3lMRlAxMS1wN0pwaDZ0QWN4TTBObDVfWmtSOTBzSUNDWlRPUDRfM0RFeHZCNHBlM3k0al91c2VTRnpCVlhHc29XaTJOZGs2M0NpX2RiTjA3ZlFUUjd0SEVQMWs2Z1d1ZEp6VTA?oc=5)**  
    Tech Funding News · 30 Jul 2026 · relevance 19
-7. **[Hilo closes Series B extension round to fuel US expansion](https://www.startupticker.ch/en/news/hilo-closes-series-b-extension-round-to-fuel-us-expansion)**  
-   Startupticker · 22 Jul 2026 · relevance 19
-8. **[Moonlake Therapeutics raises USD 230 million in public offering](https://www.startupticker.ch/en/news/moonlake-therapeutics-raises-usd-230-million-in-public-offering)**  
-   Startupticker · 16 Jul 2026 · relevance 19
-9. **[Medyria raises CHF 3.5 million](https://www.startupticker.ch/en/news/medyria-raises-chf-3-5-million)**  
-   Startupticker · 24 Jul 2026 · relevance 18
-10. **[CDDS secures seed capital for further development steps](https://www.startupticker.ch/en/news/cdds-secures-seed-capital-for-further-development-steps)**  
-   Startupticker · 17 Jul 2026 · relevance 13
-11. **[Using future data to better predict Switzerland's rail energy demand](https://actu.epfl.ch/news/using-future-data-to-better-predict-switzerland-s)**  
+6. **[Using future data to better predict Switzerland's rail energy demand](https://actu.epfl.ch/news/using-future-data-to-better-predict-switzerland-s)**  
    EPFL News · 20 Jul 2026 · relevance 11
-12. **[Nordfen brings drone simulation technology to Latvia](https://www.startupticker.ch/en/news/nordfen-brings-drone-simulation-technology-to-latvia)**  
-   Startupticker · 03 Aug 2026 · relevance 9
-13. **[Apertus 1.5: Building the next generation of open AI infrastructure](https://actu.epfl.ch/news/apertus-15-building-the-next-generation-of-open--2)**  
+7. **[Apertus 1.5: Building the next generation of open AI infrastructure](https://actu.epfl.ch/news/apertus-15-building-the-next-generation-of-open--2)**  
    EPFL News · 24 Jul 2026 · relevance 9
-14. **[Swiss Startup Aionic Labs selected for funding initiative by Germany's federal agency SPRIN-D](https://www.startupticker.ch/en/news/swiss-startup-aionic-labs-selected-for-funding-initiative-by-germany-s-federal-agency-sprin-d)**  
-   Startupticker · 20 Jul 2026 · relevance 9
-15. **[A tiny pore identifies cyanobacteria toxins in lake water](https://actu.epfl.ch/news/a-tiny-pore-identifies-cyanobacteria-toxins-in-lak)**  
+8. **[A tiny pore identifies cyanobacteria toxins in lake water](https://actu.epfl.ch/news/a-tiny-pore-identifies-cyanobacteria-toxins-in-lak)**  
    EPFL News · 03 Aug 2026 · relevance 8
-16. **[How rivers shape cities and societies](https://actu.epfl.ch/news/how-rivers-shape-cities-and-societies)**  
+9. **[How rivers shape cities and societies](https://actu.epfl.ch/news/how-rivers-shape-cities-and-societies)**  
    EPFL News · 30 Jul 2026 · relevance 8
-17. **[In AI arms race, Swiss neutrality is double-edged sword - SWI swissinfo.ch](https://news.google.com/rss/articles/CBMirAFBVV95cUxQOVNkR0M0NjB2eENDVXdYSmozRU8xMHp2cFFaUEtrM0xWNDlwWWtscE9aNzFuc0NHSGZnQXlUZFp5TFRXUlNwcDAwREJta0dGUFl3bWhmY0ZvRkRMQkQzZ3lTa0ZjMFAtZEJRM09VNEQyWGRUSVh4d1AySzk3bUZJb2JSMnZsVTgtTnNmX2czaGV5QnhySTJVajU2SmtHSHRDVDNLNEl2dkNmLThB?oc=5)**  
+10. **[In AI arms race, Swiss neutrality is double-edged sword - SWI swissinfo.ch](https://news.google.com/rss/articles/CBMirAFBVV95cUxQOVNkR0M0NjB2eENDVXdYSmozRU8xMHp2cFFaUEtrM0xWNDlwWWtscE9aNzFuc0NHSGZnQXlUZFp5TFRXUlNwcDAwREJta0dGUFl3bWhmY0ZvRkRMQkQzZ3lTa0ZjMFAtZEJRM09VNEQyWGRUSVh4d1AySzk3bUZJb2JSMnZsVTgtTnNmX2czaGV5QnhySTJVajU2SmtHSHRDVDNLNEl2dkNmLThB?oc=5)**  
    SWI swissinfo.ch · 30 Jul 2026 · relevance 8
-18. **[A lipid switch that blocks anthrax](https://actu.epfl.ch/news/a-lipid-switch-that-blocks-anthrax)**  
+11. **[A lipid switch that blocks anthrax](https://actu.epfl.ch/news/a-lipid-switch-that-blocks-anthrax)**  
    EPFL News · 28 Jul 2026 · relevance 8
-19. **[Four Swiss medtechs mark commercial, regulatory and clinical milestones](https://www.startupticker.ch/en/news/four-swiss-medtechs-mark-commercial-regulatory-and-clinical-milestones)**  
-   Startupticker · 27 Jul 2026 · relevance 8
-20. **[Humboldt AI lanciert KI-Tool für den CV-Check im Schweizer Arbeitsmarkt](https://www.startupticker.ch/en/news/humboldt-ai-lanciert-ki-tool-fuer-den-cv-check-im-schweizer-arbeitsmarkt)**  
-   Startupticker · 27 Jul 2026 · relevance 8
-21. **[KI-Startup Prodlane sammelt 4 Millionen Euro ein](https://www.startupticker.ch/en/news/ki-startup-prodlane-sammelt-4-millionen-euro-ein)**  
-   Startupticker · 21 Jul 2026 · relevance 8
-22. **[J’ai montré ma poitrine à une IA suisse et j'en suis ravie - Watson](https://news.google.com/rss/articles/CBMiqgFBVV95cUxQclRyN0p2akU2ZGFqbndFUTB1VC01QUkxeFRPTndzN3M5VHNTaGJjOW9KRS1Fc0kwNXBDcUJEQ0djOS1FeVpIT1dlVDM1aHhieUlhbXpSeGJiS0dkRGZxMVpkMlB4VnNxVldRWE45cUVlVWVPYlZNOU5PdmtHc0xjZVNzYXpNVU4yOGdKQy1DQ0FpMWJNVHlaNGd4RXF3ZDBfM1FLdUFlTnpYQQ?oc=5)**  
+12. **[J’ai montré ma poitrine à une IA suisse et j'en suis ravie - Watson](https://news.google.com/rss/articles/CBMiqgFBVV95cUxQclRyN0p2akU2ZGFqbndFUTB1VC01QUkxeFRPTndzN3M5VHNTaGJjOW9KRS1Fc0kwNXBDcUJEQ0djOS1FeVpIT1dlVDM1aHhieUlhbXpSeGJiS0dkRGZxMVpkMlB4VnNxVldRWE45cUVlVWVPYlZNOU5PdmtHc0xjZVNzYXpNVU4yOGdKQy1DQ0FpMWJNVHlaNGd4RXF3ZDBfM1FLdUFlTnpYQQ?oc=5)**  
    Watson · 18 Jul 2026 · relevance 8
-23. **[AELER eyes oncoming large-scale roll-out](https://www.startupticker.ch/en/news/aeler-eyes-oncoming-large-scale-roll-out)**  
-   Startupticker · 17 Jul 2026 · relevance 8
-24. **[PropTech AssetOS auf Wachstumskurs](https://www.startupticker.ch/en/news/proptech-assetos-auf-wachstumskurs)**  
-   Startupticker · 30 Jul 2026 · relevance 7
-25. **[Delta Capacity completes Swedish battery project](https://www.startupticker.ch/en/news/delta-capacity-completes-swedish-battery-project)**  
-   Startupticker · 30 Jul 2026 · relevance 6
-26. **[England, the Middle East and India: Three start-ups are expanding with their digital solutions](https://www.startupticker.ch/en/news/england-the-middle-east-and-india-three-start-ups-are-expanding-with-their-digital-solutions)**  
-   Startupticker · 22 Jul 2026 · relevance 6
-27. **[Cognizant Launches EMEA AI Unit to Move Enterprise Projects to Production](https://fintechnews.ch/aifintech/cognizant-emea-ai-unit-launch/84819/)**  
+13. **[Cognizant Launches EMEA AI Unit to Move Enterprise Projects to Production](https://fintechnews.ch/aifintech/cognizant-emea-ai-unit-launch/84819/)**  
    Fintechnews Switzerland · 29 Jul 2026 · relevance 5
-28. **[Synhelion erhält Fördermittel für kommerzielle Demo-Anlage](https://www.startupticker.ch/en/news/synhelion-erhaelt-foerdermittel-fuer-kommerzielle-demo-anlage)**  
-   Startupticker · 31 Jul 2026 · relevance 4

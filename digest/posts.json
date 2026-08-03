@@ -62,11 +62,11 @@
       "date": "2026-08-08",
       "schedule_for": "Saturday 08 August",
       "time": "08:00",
-      "text": "🇨🇭 Valuemize raises seven-figure pre-seed for product cost software\n\nZurich-based valuemize has closed a seven-figure pre-seed round with participation from a consortium of VC offices and angel investors. The startup sells software that lets manufacturers see what a design decision will cost before the design is locked in.\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.startupticker.ch/en/news/valuemize-raises-seven-figure-pre-seed-for-product-cost-software",
+      "text": "🇨🇭 Swiss preventive health startup Ahead Health raises $10M for Germany...\n\nTech Funding News covers the story. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at $10M.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at $10M.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://techfundingnews.com/ahead-health-10m-funding-preventive-care-germany-netherlands/",
       "image": null,
-      "link": "https://www.startupticker.ch/en/news/valuemize-raises-seven-figure-pre-seed-for-product-cost-software",
-      "publisher": "Startupticker",
-      "primary_source": "https://www.valuemize.io/en",
+      "link": "https://techfundingnews.com/ahead-health-10m-funding-preventive-care-germany-netherlands/",
+      "publisher": "Tech Funding News",
+      "primary_source": null,
       "coverage_url": null
     },
     {
@@ -75,10 +75,10 @@
       "date": "2026-08-09",
       "schedule_for": "Sunday 09 August",
       "time": "08:00",
-      "text": "🇨🇭 Swiss preventive health startup Ahead Health raises $10M for Germany...\n\nTech Funding News covers the story. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at $10M.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at $10M.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://techfundingnews.com/ahead-health-10m-funding-preventive-care-germany-netherlands/",
-      "image": null,
-      "link": "https://techfundingnews.com/ahead-health-10m-funding-preventive-care-germany-netherlands/",
-      "publisher": "Tech Funding News",
+      "text": "🇨🇭 Using future data to better predict Switzerland's rail energy demand\n\nEPFL News covers the story in Zurich. Swiss cleantech keeps pairing serious science with real-world deployment.\n\nWhy it matters:\n📈 Energy and climate hardware is moving from subsidy toward genuine demand.\n🇨🇭 Switzerland combines deep materials science with disciplined engineering.\n🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.\n\nhttps://actu.epfl.ch/news/using-future-data-to-better-predict-switzerland-s",
+      "image": "https://actu.epfl.ch/image/165533/1440x810.jpg",
+      "link": "https://actu.epfl.ch/news/using-future-data-to-better-predict-switzerland-s",
+      "publisher": "EPFL News",
       "primary_source": null,
       "coverage_url": null
     },
@@ -88,11 +88,11 @@
       "date": "2026-08-10",
       "schedule_for": "Monday 10 August",
       "time": "08:00",
-      "text": "🇨🇭 Hilo closes Series B extension round to fuel US expansion\n\nHilo secured a Series B extension round, totaling $19 million in new funding and bringing its total funding to date to over $119 million. The round is reported at $19 m.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at $19 m.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.startupticker.ch/en/news/hilo-closes-series-b-extension-round-to-fuel-us-expansion",
-      "image": null,
-      "link": "https://www.startupticker.ch/en/news/hilo-closes-series-b-extension-round-to-fuel-us-expansion",
-      "publisher": "Startupticker",
-      "primary_source": "https://hilo.com/",
+      "text": "🇨🇭 Apertus 1.5: Building the next generation of open AI infrastructure\n\nEPFL News covers the story in Zurich. Swiss robotics and applied AI keep moving from demo to deployment.\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://actu.epfl.ch/news/apertus-15-building-the-next-generation-of-open--2",
+      "image": "https://actu.epfl.ch/image/165800/1440x810.jpg",
+      "link": "https://actu.epfl.ch/news/apertus-15-building-the-next-generation-of-open--2",
+      "publisher": "EPFL News",
+      "primary_source": "http://apertus-ai.org",
       "coverage_url": null
     }
   ]

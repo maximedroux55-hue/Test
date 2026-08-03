@@ -1,7 +1,7 @@
 {
   "note": "Every story this tool has seen. Appended to on each run.",
   "total": 28,
-  "posted": 7,
+  "posted": 9,
   "stories": [
     {
       "key": "sifted.eu/articles/eth-spinout-zuriq-seed-round",
@@ -325,7 +325,7 @@
       "published": "2026-07-20",
       "score": 11,
       "last_seen": "2026-08-03",
-      "posted": false,
+      "posted": true,
       "company": "EPFL",
       "category": "Biotech",
       "stage": "Partnership",
@@ -387,7 +387,7 @@
       "published": "2026-07-24",
       "score": 9,
       "last_seen": "2026-08-03",
-      "posted": false,
+      "posted": true,
       "company": "Apertus",
       "category": "Biotech",
       "stage": "",
