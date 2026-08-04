@@ -599,6 +599,38 @@ def test_a_product_page_is_not_an_announcement():
     assert found == "https://immitrabio.com/news/immitra-bio-raises-chf-2-4m-pre-seed"
 
 
+def test_milestones_reach_the_posts_but_not_the_database():
+    """Every query was funding-shaped, so non-funding news came from one outlet."""
+    import google_news
+    from relevance import score_article
+
+    asked = " ".join(google_news.GOOGLE_NEWS_QUERIES).lower()
+    for term in ("clearance", "first customer", "contract", "partnership"):
+        assert term in asked, f"nothing asks for {term}"
+
+    # A milestone with no money in it has to clear the relevance bar, or the
+    # queries are decoration: the run's minimum is 4.
+    for title, summary in (
+        ("EPFL spin-off wins CE mark for its neural implant",
+         "The Lausanne-based EPFL spin-off received CE mark approval."),
+        ("Zurich robotics spin-off lands first industrial customer",
+         "The ETH Zurich spin-off signed its first contract with a Swiss "
+         "manufacturer."),
+        ("Swiss quantum firm ships first commercial system",
+         "The Zurich-based company delivered its first commercial system."),
+    ):
+        assert score_article(title, summary, "Google News") >= 4, title
+
+    # And none of them may become a row in the deal database. The posts and the
+    # database are two projects; widening one must not corrupt the other.
+    for title in ("Hi-D Imaging wins expanded FDA clearance",
+                  "Foo Robotics lands first industrial customer",
+                  "Bar SA ships its first commercial system"):
+        assert scraper._is_round({
+            "company": title.split()[0], "stage": "", "amount": "",
+            "category": "MedTech", "title": title}) is False, title
+
+
 def test_a_third_link_only_when_the_week_is_short():
     from urllib.parse import urlsplit
 
@@ -1053,7 +1085,7 @@ def test_short_week_skips_the_weekend():
 
 # Locking the count means a test appended below the runner, where it would
 # never execute, shows up as a failure rather than as silence. That happened.
-EXPECTED = 53
+EXPECTED = 54
 
 
 if __name__ == "__main__":

@@ -41,6 +41,15 @@ GOOGLE_NEWS_QUERIES = [
     "Swiss cleantech OR battery OR energy startup",
     "Switzerland robotics OR AI startup",
     "Swiss materials science OR nanotech spinout",
+    # Milestones, not money. Every query above is funding-shaped, so the only
+    # non-funding news reaching the digest was whatever Startupticker chose to
+    # write up: a week's best story was an FDA clearance and a first-in-human
+    # procedure, with no round attached. A company clearing a regulator or
+    # landing its first industrial customer is Swiss DeepTech news, and asking
+    # for it is what widens the pool away from one outlet.
+    "Swiss startup FDA clearance OR CE mark OR regulatory approval",
+    "Swiss spin-off first customer OR contract OR partnership",
+    "Swiss deeptech launches product OR pilot OR first-in-human",
 ]
 
 # Swiss editions of Google News. English is primary; adding the German and
