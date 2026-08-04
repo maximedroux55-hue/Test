@@ -567,6 +567,8 @@ def render_plan_html(records: list, mode: str, days: int) -> str:
     import datetime as dt
 
     today = dt.date.today().strftime("%d %B %Y")
+    spread = ("one per day" if len(records) >= 7
+              else "one per working day, weekend left blank")
 
     def esc(s: str) -> str:
         return html.escape(s or "")
@@ -670,7 +672,7 @@ def render_plan_html(records: list, mode: str, days: int) -> str:
 </style></head><body>
 <div class="wrap">
   <h1>This week on LinkedIn<span class="dot">.</span></h1>
-  <p class="sub">Generated {today} &middot; {len(records)} posts, one per day &middot; {esc(mode)}</p>
+  <p class="sub">Generated {today} &middot; {len(records)} posts, {spread} &middot; {esc(mode)}</p>
 
   <div class="runbox">
     <button id="runbtn" class="runbtn">&#8635; Generate this week's posts now</button>
