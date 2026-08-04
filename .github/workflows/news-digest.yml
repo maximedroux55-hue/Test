@@ -73,6 +73,7 @@ jobs:
             --min-score "${{ github.event.inputs.min_score || '4' }}" \
             --limit "${{ github.event.inputs.limit || '60' }}" \
             --posts "${{ github.event.inputs.posts || '7' }}" \
+            ${{ github.event_name == 'schedule' && '--skip-if-week-planned' || '' }} \
             --posts-only
 
       - name: Upload digest (Markdown + HTML)

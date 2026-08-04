@@ -706,6 +706,32 @@ def test_the_article_settles_what_it_can_and_no_more():
                                   {"source": "company release"})[0] == []
 
 
+def test_a_run_does_not_land_on_a_week_being_posted():
+    """A scheduled run mid-week overwrites the plan and spends its stories."""
+    import datetime as dt
+    import json
+    import tempfile
+
+    out = tempfile.mkdtemp()
+    with open(os.path.join(out, "posts.json"), "w", encoding="utf-8") as f:
+        json.dump({"posts": [{"date": "2026-08-05"}, {"date": "2026-08-11"}]}, f)
+
+    # Wednesday the 5th: the plan runs to the 11th, so leave it alone.
+    assert scraper.week_still_running(out, dt.date(2026, 8, 5)) is True
+    # The last day still counts: a post due today has not gone out yet.
+    assert scraper.week_still_running(out, dt.date(2026, 8, 11)) is True
+    # The Wednesday after: the week is over, so build the next one.
+    assert scraper.week_still_running(out, dt.date(2026, 8, 12)) is False
+    # No plan at all is not a live week.
+    assert scraper.week_still_running("/nonexistent", dt.date(2026, 8, 5)) is False
+
+    # Only the schedule may skip. Running it by hand always rebuilds.
+    with open("/home/user/Test/.github/workflows/news-digest.yml",
+              encoding="utf-8") as f:
+        flow = f.read()
+    assert "github.event_name == 'schedule' && '--skip-if-week-planned'" in flow
+
+
 def test_cowork_reads_only_what_it_uses():
     """Every field a scheduling session does not use is paid for and skipped."""
     import linkedin
@@ -1004,7 +1030,7 @@ def test_short_week_skips_the_weekend():
 
 # Locking the count means a test appended below the runner, where it would
 # never execute, shows up as a failure rather than as silence. That happened.
-EXPECTED = 52
+EXPECTED = 53
 
 
 if __name__ == "__main__":

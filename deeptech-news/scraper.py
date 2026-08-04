@@ -23,6 +23,7 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import html
+import os
 import re
 import sys
 import time
@@ -551,6 +552,35 @@ _FIXABLE = [
 
 CORRECTIONS_EDIT_URL = ("https://github.com/maximedroux55-hue/Test/edit/"
                         "claude/questions-9a5egd/deeptech-news/corrections.json")
+
+
+def week_still_running(outdir: str, today: dt.date | None = None) -> bool:
+    """Is the plan on disk still being posted?
+
+    True while any post in it is dated today or later. A scheduled run that
+    fires into a live week overwrites the plan being worked through, and worse,
+    records its own picks as used: five good stories spent on a plan nobody
+    posts. Running by hand still forces a rebuild.
+    """
+    import json as _json
+
+    today = today or _zurich_now().date()
+    try:
+        with open(os.path.join(outdir, "posts.json"), encoding="utf-8") as f:
+            posts = _json.load(f).get("posts", [])
+    except Exception:
+        return False
+    dates = [(p.get("date") or "").strip() for p in posts if p.get("date")]
+    if not dates:
+        return False
+    last = max(dates)
+    if last >= today.isoformat():
+        print(f"The plan on disk runs to {last} and is still being posted. "
+              f"Leaving it alone: a new one now would overwrite it and spend "
+              f"this week's stories on a plan nobody posts. Run it by hand to "
+              f"rebuild anyway.", file=sys.stderr)
+        return True
+    return False
 
 
 def _zurich_now() -> dt.datetime:
@@ -1254,6 +1284,10 @@ def main() -> None:
     ap.add_argument("--archive-only", action="store_true",
                     help="Only fill the archive: write no posts and touch no history. "
                          "Use with a wide --days to backfill past rounds.")
+    ap.add_argument("--skip-if-week-planned", action="store_true",
+                    help="Do nothing when the plan on disk still has posts "
+                         "dated today or later. The weekly schedule uses this "
+                         "so a run cannot overwrite a week being posted.")
     ap.add_argument("--posts-only", action="store_true",
                     help="Only write the posts: do not read articles in full and "
                          "do not touch the archive.")
@@ -1267,6 +1301,13 @@ def main() -> None:
     args = ap.parse_args()
     if args.archive_only and args.posts_only:
         sys.exit("Pick one of --archive-only and --posts-only, not both.")
+
+    # A weekly run that lands while the last week is still going does more harm
+    # than nothing: it writes over a plan already being posted, and it marks
+    # five fresh stories as used, so they can never be posted at all. The
+    # schedule passes this flag; running it by hand never does.
+    if args.skip_if_week_planned and week_still_running(args.outdir):
+        sys.exit(0)
 
     print(f"Fetching Swiss DeepTech news (last {args.days} days)...", file=sys.stderr)
     articles = collect(args.days, args.min_score, args.backfill_months,
