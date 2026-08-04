@@ -631,9 +631,27 @@ def test_a_third_link_only_when_the_week_is_short():
     assert per["startupticker.ch"] == 3 and n == 3
 
 
+def test_a_page_with_no_preview_image_still_yields_a_picture():
+    import images
+
+    # Four posts of seven had no image because Startupticker and actu.epfl.ch
+    # declare no og:image, and nothing looked inside the page.
+    page = ('<html><head><title>x</title></head><body>'
+            '<img src="/assets/logo.svg"><img src="/img/site-logo.png">'
+            '<img src="https://cdn.startupticker.ch/uploads/2026/07/'
+            'hilo-team-1200x800.jpg" alt="Hilo"></body></html>')
+    assert images._og_image(page, "https://x.ch") is None
+    found = images._content_image(page, "https://www.startupticker.ch/en/news/a")
+    assert found.endswith("hilo-team-1200x800.jpg")
+    # Furniture is not a photograph.
+    assert images._content_image('<img src="/logo.png">', "https://x.ch") is None
+    assert images._content_image('<img src="/icons/avatar.png">',
+                                 "https://x.ch") is None
+
+
 # Locking the count means a test appended below the runner, where it would
 # never execute, shows up as a failure rather than as silence. That happened.
-EXPECTED = 43
+EXPECTED = 44
 
 
 if __name__ == "__main__":

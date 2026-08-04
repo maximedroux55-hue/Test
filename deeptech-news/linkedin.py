@@ -353,6 +353,7 @@ def build_posts(articles: list, days: int, top: int = 7):
         records.append({
             "claims": claims,
             "link_note": art.get("link_note", ""),
+            "image_note": art.get("image_note", ""),
             "verified": bool(checked),
             "verified_source": checked.get("source", ""),
             "needs_check": risky,

@@ -222,6 +222,27 @@ def _name_matches(root: str, token: str) -> bool:
     )
 
 
+# A picture inside the article, for pages that set no preview image. Small
+# files are logos, spacers and tracking pixels rather than the photo.
+_CONTENT_IMG = re.compile(
+    r'<img\b[^>]*\bsrc=["\']([^"\']+\.(?:jpe?g|png|webp))[^"\']*["\'][^>]*>',
+    re.IGNORECASE)
+_TINY = re.compile(r"(logo|icon|avatar|sprite|placeholder|pixel|spacer|blank|"
+                   r"1x1|badge|favicon)", re.IGNORECASE)
+
+
+def _content_image(html_doc: str, base_url: str) -> str | None:
+    """The first picture in the article that is not furniture."""
+    for src in _CONTENT_IMG.findall(html_doc or "")[:12]:
+        if _TINY.search(src):
+            continue
+        full = urllib.parse.urljoin(base_url, src)
+        if any(bad in full for bad in ("data:", "base64")):
+            continue
+        return full
+    return None
+
+
 def article_page(url: str, timeout: int = 12):
     """Fetch an article once and return (html, final_url), or (None, url)."""
     try:
@@ -326,7 +347,13 @@ def enrich_articles(articles: list) -> None:
                     _og_image(html, final_url)
                     or _link_image_src(html, final_url)
                     or _jsonld_image(html, final_url)
+                    # Not every page declares a preview image. Startupticker
+                    # and actu.epfl.ch do not, which left four posts of seven
+                    # with no picture at all.
+                    or _content_image(html, final_url)
                 )
+                a["image_note"] = ("" if a["image"]
+                                   else f"no picture found on {_domain(final_url)}")
             else:
                 a["image"] = a["image_feed"]
 
@@ -363,6 +390,15 @@ def enrich_articles(articles: list) -> None:
                     a["coverage_url"] = a["link"]
                     a["link"] = own
                     a["link_note"] = "the company's own announcement"
+                    # The post now points at the company, so its own picture
+                    # belongs with it rather than the outlet's.
+                    own_page, own_url = article_page(own)
+                    if own_page:
+                        picture = (_og_image(own_page, own_url)
+                                   or _content_image(own_page, own_url))
+                        if picture:
+                            a["image"] = picture
+                            a["image_note"] = ""
                 elif own:
                     a["link_note"] = f"found {own}, not an announcement page"
                 else:
