@@ -344,9 +344,15 @@ def enrich_articles(articles: list) -> None:
         # survives the test above and the post credits the outlet. Go and look
         # in the company's own newsroom instead.
         if any(agg in (a.get("link") or "") for agg in AGGREGATORS):
-            own = company_announcement(a.get("company", ""),
-                                       a.get("website", ""),
-                                       a.get("amount", ""))
+            # The write-up nearly always links to the company somewhere, even
+            # when it links to the front page rather than the announcement.
+            # That domain is worth far more than one guessed from the name.
+            known_site = a.get("website") or ""
+            if not known_site and a.get("primary_source"):
+                known_site = _domain(a["primary_source"])
+            own = company_announcement(a.get("company", ""), known_site,
+                                       a.get("amount", ""),
+                                       a.get("title", ""))
             if own and _is_announcement_page(own):
                 a["coverage_url"] = a["link"]
                 a["link"] = own
@@ -384,25 +390,41 @@ _ROUND_WORDS = re.compile(
 
 
 def company_announcement(company: str, website: str, amount: str = "",
-                         limit: int = 4) -> str:
+                         title: str = "", limit: int = 6) -> str:
     """The company's own post about its round, or "".
 
     A post credits the company, so it should link to what the company itself
     published rather than to whoever wrote about it. The article does not
     always link there, so this goes to the company's newsroom and looks for the
-    entry about this round: one whose wording is about raising money, and where
-    an amount is known, one that carries it.
+    entry about this story.
+
+    The entry is matched on the words of the headline rather than a fixed
+    vocabulary. Looking only for funding language found nothing on a story
+    about a launch, which is most of what a newsroom carries.
     """
     from hq_lookup import _candidate_domains, _is_the_company
 
     if not company:
         return ""
     digits = re.sub(r"[^\d.]", "", amount or "")[:4].rstrip(".")
-    tried = 0
+    # Words from the headline that are not boilerplate, minus the company's
+    # own name, which is on every entry in its newsroom.
+    own_name = set(re.findall(r"[a-z0-9]+", (company or "").lower()))
+    tokens = _title_tokens(title) - own_name
+    # Funding language is only evidence when the story is about funding.
+    # Otherwise a piece on an office opening matches last year's seed round.
+    about_a_round = bool(digits) or bool(_ROUND_WORDS.search(title or ""))
     for domain in _candidate_domains(company, website):
+        # One request settles whether this domain exists and belongs to the
+        # company. Without it the budget went on newsroom paths of a domain
+        # that was never there, and the real one was never reached.
+        root, _ = article_page(f"https://{domain}")
+        if not root or not _is_the_company(root, company):
+            continue
+        tried = 0
         for path in _NEWSROOMS:
             if tried >= limit:
-                return ""
+                break
             page, final_url = article_page(f"https://{domain}{path}")
             tried += 1
             if not page or not _is_the_company(page, company):
@@ -413,7 +435,11 @@ def company_announcement(company: str, website: str, amount: str = "",
                     page, re.IGNORECASE | re.DOTALL):
                 label = re.sub(r"<[^>]+>", " ", text)
                 label = _html_lib.unescape(re.sub(r"\s+", " ", label)).strip()
-                if not _ROUND_WORDS.search(f"{label} {href}"):
+                blob = f"{label} {href}"
+                # The headline's own distinctive words, or failing that the
+                # language of a round.
+                if not (tokens & set(re.findall(r"[a-z0-9]+", blob.lower()))
+                        or (about_a_round and _ROUND_WORDS.search(blob))):
                     continue
                 full = urllib.parse.urljoin(final_url, href)
                 if domain not in full or full.rstrip("/") == final_url.rstrip("/"):

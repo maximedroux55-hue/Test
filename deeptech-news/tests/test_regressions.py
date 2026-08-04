@@ -465,6 +465,44 @@ def test_the_page_reads_on_a_phone():
     assert 'class="fnd empty"' in scraper.render_archive_html(thin)
 
 
+def test_the_newsroom_entry_matches_the_story():
+    import unittest.mock as mock
+
+    import images
+
+    pages = {
+        "https://humboldt-ai.ch":
+            ("<html><body>Humboldt AI</body></html>", "https://humboldt-ai.ch"),
+        "https://humboldt-ai.ch/news":
+            ('<html><body>Humboldt AI news'
+             '<a href="/news/humboldt-ai-launches-ki-tool">Humboldt AI '
+             'launches KI-Tool for Swiss SMEs</a>'
+             '<a href="/careers">Careers</a></body></html>',
+             "https://humboldt-ai.ch/news"),
+        "https://zuriq.com":
+            ("<html><body>ZuriQ</body></html>", "https://zuriq.com"),
+        "https://zuriq.com/news":
+            ('<html><body>ZuriQ news<a href="/news/zuriq-raises-25-5m-seed">'
+             'ZuriQ raises USD 25.5 million seed</a></body></html>',
+             "https://zuriq.com/news"),
+    }
+    with mock.patch.object(images, "article_page",
+                           lambda u, t=12: pages.get(u, (None, u))):
+        # A launch is most of what a newsroom carries, and looking only for
+        # funding language found nothing on those.
+        assert images.company_announcement(
+            "Humboldt AI", "humboldt-ai.ch", "",
+            "Humboldt AI lanciert KI-Tool für Schweizer KMU"
+        ) == "https://humboldt-ai.ch/news/humboldt-ai-launches-ki-tool"
+        assert images.company_announcement(
+            "ZuriQ", "zuriq.com", "USD 25.5M",
+            "ZuriQ raises USD 25.5 million seed round"
+        ) == "https://zuriq.com/news/zuriq-raises-25-5m-seed"
+        # A story about something else must not match last year's round.
+        assert images.company_announcement(
+            "ZuriQ", "zuriq.com", "", "ZuriQ opens a Munich office") == ""
+
+
 def test_a_post_links_to_the_company_not_the_outlet():
     import unittest.mock as mock
 
@@ -510,7 +548,7 @@ def test_a_company_is_found_in_more_than_a_funding_headline():
 
 # Locking the count means a test appended below the runner, where it would
 # never execute, shows up as a failure rather than as silence. That happened.
-EXPECTED = 39
+EXPECTED = 40
 
 
 if __name__ == "__main__":
