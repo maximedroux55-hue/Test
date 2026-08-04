@@ -664,6 +664,77 @@ def test_the_picture_comes_from_the_story_not_the_page():
     assert images._content_image(chrome, "https://x.ch") is None
 
 
+def test_the_article_settles_what_it_can_and_no_more():
+    """A browser session opening a page is the priciest check in the workflow."""
+    import linkedin
+
+    body = ("AssetOS, a spin-off from the University of St. Gallen, counts "
+            "Implenia and Avadis among its customers.")
+    art = {"fulltext": body, "summary": "", "status": ""}
+    remaining, settled = linkedin.settle_claims(
+        ["the company is AssetOS",
+         "the post names Implenia, Avadis: did they take part in this round "
+         "rather than an earlier one"], art, {})
+    assert remaining == [] and len(settled) == 2
+
+    # Nothing read means nothing settled. Silence is not confirmation.
+    assert linkedin.settle_claims(["the company is Foo"],
+                                  {"fulltext": "", "summary": ""}, {}) == \
+        (["the company is Foo"], [])
+
+    # A figure on an unclosed deal stays open however plainly it is printed:
+    # a ceiling appears in the text exactly as proceeds would.
+    spac = {"fulltext": "Terra Quantum will receive up to $190 million of "
+                        "gross proceeds.", "status": "announced"}
+    claim = ("the post states $190 million: is that money received rather "
+             "than a ceiling or a target, and has the round closed")
+    assert linkedin.settle_claims([claim], spac, {}) == ([claim], [])
+
+    # The one that matters. Every word of "the company is Humboldt AI" is in
+    # the article, so a plain match would settle it and lose the catch.
+    brand = {"fulltext": "Gegruendet wurde Humboldt AI, eine Marke der "
+                         "Raetica Innovation Labs GmbH, 2026.", "status": ""}
+    assert linkedin.settle_claims(["the company is Humboldt AI"], brand, {}) \
+        == (["the company is Humboldt AI"], [])
+    for phrase in ("a brand of Foo", "une marque de Foo", "trading as Foo",
+                   "division of Foo"):
+        assert linkedin._BRAND_OF.search(phrase), phrase
+
+    # Already read against a primary source: nothing left for a browser.
+    assert linkedin.settle_claims(["the company is Foo"],
+                                  {"fulltext": "", "summary": ""},
+                                  {"source": "company release"})[0] == []
+
+
+def test_cowork_reads_only_what_it_uses():
+    """Every field a scheduling session does not use is paid for and skipped."""
+    import linkedin
+
+    record = {"index": 1, "date": "2026-08-05", "time": "08:00", "text": "x",
+              "link": "https://e.ch", "mention": {"type": "A", "expect": "A"},
+              "needs_check": False, "claims": [], "settled": ["a"],
+              "weekday": "Wednesday", "schedule_for": "Wednesday 05 August",
+              "image": "https://e.ch/x.jpg", "publisher": "E",
+              "link_note": "-", "image_note": "", "primary_source": None,
+              "coverage_url": None, "verified": False, "verified_source": ""}
+    slim = linkedin.for_cowork([record])[0]
+    assert set(slim) == {"index", "date", "time", "text", "link", "mention",
+                         "needs_check", "claims"}
+    # The plan Max reads keeps everything; only the machine file is trimmed.
+    assert record.get("schedule_for") == "Wednesday 05 August"
+
+    # The mention is a check, not a guess at the first dropdown row.
+    hint = linkedin._mention_hint("@Humboldt AI launched a tool.", "Humboldt AI")
+    assert hint == {"type": "Humboldt", "expect": "Humboldt AI"}
+    assert linkedin._mention_hint("No mention here.", "Foo") == {}
+
+    # And the prompt must not send a browser session to GitHub to commit.
+    prompt = linkedin.COWORK_PROMPT
+    assert "do not edit any file or commit" in prompt
+    assert "proposals.json" not in prompt
+    assert "already scheduled" in prompt
+
+
 def test_one_mention_per_post():
     """Five @mentions per post cost a fortune in Cowork restarts."""
     import ai_writer
@@ -928,7 +999,7 @@ def test_short_week_skips_the_weekend():
 
 # Locking the count means a test appended below the runner, where it would
 # never execute, shows up as a failure rather than as silence. That happened.
-EXPECTED = 50
+EXPECTED = 52
 
 
 if __name__ == "__main__":

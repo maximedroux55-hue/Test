@@ -244,26 +244,32 @@ COWORK_PROMPT = (
     "  so do not add, move or retype the URL separately: typing it last is what "
     "makes\n"
     "  the link preview load the article photo.\n"
-    "- Each post has exactly one @mention, on the company itself. Type the "
-    "first\n"
-    "  word after the @, wait for the dropdown, click the first row. LinkedIn "
+    "- Each post has exactly one @mention. Type `mention.type`, wait for the\n"
+    "  dropdown, click the row matching `mention.expect`. If no row matches, "
+    "post\n"
+    "  it without the mention rather than tagging the wrong company. LinkedIn "
     "will\n"
-    "  render the company's official name: that is expected and fine, do not "
-    "fight\n"
-    "  it, do not restart the post, do not rewrite it.\n"
+    "  render the official name: that is expected and fine, do not fight it, "
+    "do not\n"
+    "  restart the post, do not rewrite it.\n"
     "- Schedule at `time` on `date`.\n\n"
-    "Verification, by flag:\n"
-    "- needs_check: true - confirm round closed / round name / amount received "
-    "/\n"
-    "  investors in THIS round, against `link`.\n"
-    "- claims non-empty - confirm each claim against `link`.\n"
-    "- claims empty - no research needed.\n\n"
-    "Anything that fails: do not schedule it. Report it and append to the\n"
-    "`held_posts` list in deeptech-news/proposals.json (branch "
-    "claude/questions-9a5egd)\n"
-    "with the sentence you read and the page you read it on. Keep the file "
-    "valid\n"
-    "JSON. Never touch corrections.json.\n\n"
+    "Before you start, open the scheduled-posts list once and note what is "
+    "already\n"
+    "there. Skip any post already scheduled: never schedule the same one "
+    "twice.\n\n"
+    "Verification:\n"
+    "- Claims already settled against the article are not in the file. Check "
+    "only\n"
+    "  what `claims` still lists, and posts with needs_check: true (a figure "
+    "nobody\n"
+    "  has verified: confirm round closed / round name / amount received / "
+    "investors\n"
+    "  in THIS round). Both empty and false means schedule it, no research.\n\n"
+    "Anything that fails: do not schedule it, and do not edit any file or "
+    "commit\n"
+    "anything. List the held posts at the end with the sentence you read and "
+    "the\n"
+    "page you read it on, and I will record them.\n\n"
     "Report what was scheduled and what was held."
 )
 
@@ -308,6 +314,78 @@ def _claims_in(text: str, art: dict) -> list:
             claims.append(f"the post names {', '.join(mentioned)}: did they "
                           f"take part in this round rather than an earlier one")
     return claims
+
+
+# A brand, a trading name or a division is not the company, and tagging it
+# points the @mention at the wrong entity. Where the article says so, the
+# question of who the company is stays open for someone to read.
+_BRAND_OF = re.compile(
+    r"\b(?:eine\s+marke\s+(?:der|von)|marke\s+der|a\s+brand\s+of|"
+    r"brand\s+(?:of|owned\s+by)|une\s+marque\s+de|un\s+marchio\s+di|"
+    r"trading\s+as|division\s+of|dba)\b", re.IGNORECASE)
+
+
+def settle_claims(claims: list, art: dict, checked: dict) -> tuple:
+    """Split a post's claims into what the article already settles and what not.
+
+    Every claim Cowork checks means opening a page in a browser session, which
+    is the most expensive way this workflow spends a token. The article text is
+    already downloaded by then, so a claim whose words are plainly in it does
+    not need a second reading.
+
+    What stays is what a machine reading one page cannot settle: an amount on a
+    round nobody has verified, a stage the article never names, an investor it
+    does not mention. Those are exactly the ones that have gone wrong before,
+    and they still get an independent read.
+    """
+    if checked:
+        # Already read against a primary source, so there is nothing left for a
+        # browser session to add, whatever the article does or does not say.
+        return [], list(claims)
+
+    text = ((art.get("fulltext") or "") + " "
+            + (art.get("summary") or "")).lower()
+    if not text.strip():
+        # Nothing was read, so nothing is settled. Silence is not confirmation.
+        return list(claims), []
+
+    settled, remaining = [], []
+    for claim in claims:
+        # A name appearing in the article does not make it the company. The
+        # Humboldt AI post tagged a brand: "Humboldt AI, eine Marke der Raetica
+        # Innovation Labs GmbH". The words were all there, so a plain text
+        # match would have settled it and lost the catch that mattered.
+        if claim.startswith("the company is ") and _BRAND_OF.search(text):
+            remaining.append(claim)
+            continue
+        subject = claim.split(":")[0]
+        # The quoted fact sits after "the company is" / "the post states" /
+        # "the post calls it a" / "the post names".
+        for lead in ("the company is ", "the post states ",
+                     "the post calls it a ", "the post names "):
+            if subject.startswith(lead):
+                facts = subject[len(lead):]
+                break
+        else:
+            remaining.append(claim)
+            continue
+
+        # An amount is only settled when the round has closed as well: the
+        # figure appearing in the text is what a ceiling on an unclosed deal
+        # does too, which is how Terra Quantum got counted.
+        if claim.startswith("the post states ") and \
+                (art.get("status") or "").strip().lower() == "announced":
+            remaining.append(claim)
+            continue
+
+        parts = [p.strip().lower() for p in facts.split(",") if p.strip()]
+        if parts and all(re.search(r"\b" + re.escape(p) + r"\b", text)
+                         for p in parts):
+            settled.append(claim)
+        else:
+            remaining.append(claim)
+
+    return remaining, settled
 
 
 def schedule_days(today, count: int, full_week: int = 7) -> list:
@@ -358,11 +436,10 @@ def build_posts(articles: list, days: int, top: int = 7):
     # him rather than published on trust.
     import sys
     import trust
-    from ai_writer import has_figure
-
-    from ai_writer import one_mention
+    from ai_writer import has_figure, one_mention
 
     records = []
+    settled_total = 0
     when = schedule_days(today, len(picks), full_week=top)
     for i, (text, art) in enumerate(zip(texts, picks)):
         day = when[i]
@@ -372,34 +449,62 @@ def build_posts(articles: list, days: int, top: int = 7):
         text = one_mention(text, company)
         checked = trust.verification(company) if company else {}
         risky = bool(has_figure(text)) and not checked
-        claims = _claims_in(text, art)
+        claims, settled = settle_claims(_claims_in(text, art), art, checked)
+        settled_total += len(settled)
         if risky:
             print(f"  ! post {i + 1} ({company or art.get('title','')[:40]}) "
                   f"states a figure for a round nobody has verified",
                   file=sys.stderr)
         records.append({
+            # What a browser session still has to read a page to confirm.
+            # Everything the article already settled is gone from here.
             "claims": claims,
-            "link_note": art.get("link_note", ""),
-            "image_note": art.get("image_note", ""),
+            "settled": settled,
             "verified": bool(checked),
             "verified_source": checked.get("source", ""),
             "needs_check": risky,
             "index": i + 1,
-            "weekday": day.strftime("%A"),
             "date": day.isoformat(),
-            "schedule_for": day.strftime("%A %d %B"),
             "time": POST_TIME,
             "text": text,
-            "image": art.get("image"),
             "link": art.get("link"),
             "publisher": art.get("publisher"),
-            # When the story's own source (the company's site) was identified
-            # with confidence, `link` above is that source and `coverage_url`
-            # is where we found the story.
+            # The one @mention in the text: what to type into LinkedIn's
+            # dropdown, and the name the right row should carry. A guess at
+            # the first row is what tagged the wrong entity and cost a restart.
+            "mention": _mention_hint(text, company),
+            # For the plan Max reads, not for the browser session.
+            "link_note": art.get("link_note", ""),
+            "image_note": art.get("image_note", ""),
+            "weekday": day.strftime("%A"),
+            "schedule_for": day.strftime("%A %d %B"),
+            "image": art.get("image"),
             "primary_source": art.get("primary_source"),
             "coverage_url": art.get("coverage_url"),
         })
+    if settled_total:
+        print(f"Settled {settled_total} claims against the article text; "
+              f"only what is left needs an outside read.", file=sys.stderr)
     return records, mode
+
+
+# What a browser session actually uses. Everything else on a record is for the
+# plan Max reads, and reading it in Cowork is paying to skip it.
+_FOR_COWORK = ("index", "date", "time", "text", "link", "mention",
+               "needs_check", "claims")
+
+
+def for_cowork(records: list) -> list:
+    """The posts, stripped to the fields a scheduling session needs."""
+    return [{k: r[k] for k in _FOR_COWORK if k in r} for r in records]
+
+
+def _mention_hint(text: str, company: str) -> dict:
+    """The single @mention in a post: what to type, and what to expect."""
+    found = re.search(r"@([A-Za-zÀ-ÿ0-9][\w\-.&']*)", text or "")
+    if not found:
+        return {}
+    return {"type": found.group(1), "expect": (company or found.group(1)).strip()}
 
 
 def render_markdown(records: list, mode: str, days: int) -> str:

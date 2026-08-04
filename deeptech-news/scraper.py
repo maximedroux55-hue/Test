@@ -1301,7 +1301,8 @@ def main() -> None:
         import json
         from images import enrich_articles
         from relevance import diversify
-        from linkedin import build_posts, render_markdown, render_plan_html, COWORK_PROMPT
+        from linkedin import (build_posts, for_cowork, render_markdown,
+                              render_plan_html, COWORK_PROMPT)
 
         # Never post the same story twice, this week or in any earlier run.
         import history as history_mod
@@ -1452,7 +1453,10 @@ def main() -> None:
             "mode": mode,
             "note": "Times are local. Schedule each post at its time on its date.",
             "cowork_prompt": COWORK_PROMPT,
-            "posts": records,
+            # Only the fields a scheduling session uses. The rest of each
+            # record belongs to the plan Max reads, and a browser session that
+            # reads it is paying to skip it.
+            "posts": for_cowork(records),
         }
         with open(json_path, "w", encoding="utf-8") as f:
             json.dump(payload, f, ensure_ascii=False, indent=2)

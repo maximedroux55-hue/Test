@@ -323,7 +323,17 @@ def article_text(url: str, limit: int = 4000, timeout: int = 12) -> str:
     html_doc, _ = article_page(url, timeout)
     if not html_doc:
         return ""
-    body = _STRIP_BLOCKS.sub(" ", html_doc)
+    return text_from_page(html_doc, limit)
+
+
+def text_from_page(html_doc: str, limit: int = 4000) -> str:
+    """Reduce an already-fetched page to its readable text.
+
+    Split out from article_text because enrich_articles has the page in hand
+    already: taking the text there costs nothing, where fetching it again is a
+    second round trip for bytes we have downloaded once.
+    """
+    body = _STRIP_BLOCKS.sub(" ", html_doc or "")
 
     best = ""
     for pattern in _CONTENT_BLOCKS:
@@ -378,6 +388,10 @@ def enrich_articles(articles: list) -> None:
         # it for the caller to drop and replace.
         a["paywalled"] = bool(html) and is_paywalled(html)
         if html:
+            # The page is already down the wire, so keep its text: it is what
+            # settles a post's claims without a browser session opening the
+            # article a second time.
+            a["fulltext"] = a.get("fulltext") or text_from_page(html, 6000)
             if not a.get("image_feed"):
                 a["image"] = (
                     _og_image(html, final_url)
