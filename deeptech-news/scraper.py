@@ -947,6 +947,9 @@ def main() -> None:
                     help="Number of LinkedIn drafts to write, one per day (default 7)")
     ap.add_argument("--max-per-source", type=int, default=2,
                     help="Max posts from any single outlet, for variety (default 2)")
+    ap.add_argument("--max-per-domain", type=int, default=2,
+                    help="Max posts linking to any one site, counted on the "
+                         "link the post carries (default 2)")
     ap.add_argument("--history", default="../digest/history.json",
                     help="Record of stories already posted, so none repeats")
     ap.add_argument("--archive", default="../digest/archive.json",
@@ -1034,7 +1037,14 @@ def main() -> None:
 
         print("Finding the image and primary source for each post...", file=sys.stderr)
         pool = diversify(unused, args.max_per_source)
-        picks, cursor, dropped, paywalled = [], 0, 0, 0
+        picks, cursor, dropped, paywalled, capped = [], 0, 0, 0, 0
+        # Counted on the link the post will actually carry, after the swap to
+        # the company's own announcement. The publisher field spells the same
+        # outlet several ways, which is how four Startupticker links survived a
+        # cap of two.
+        from urllib.parse import urlsplit
+
+        per_domain = {}
         while len(picks) < args.posts and cursor < len(pool):
             batch = pool[cursor: cursor + (args.posts - len(picks))]
             cursor += len(batch)
@@ -1046,7 +1056,23 @@ def main() -> None:
                 if art.get("paywalled"):
                     paywalled += 1
                     continue
+                host = urlsplit(art.get("link", "")).netloc.lower()
+                host = host[4:] if host.startswith("www.") else host
+                if host and per_domain.get(host, 0) >= args.max_per_domain:
+                    capped += 1
+                    continue
+                per_domain[host] = per_domain.get(host, 0) + 1
                 picks.append(art)
+        if capped:
+            print(
+                f"Skipped {capped} stories that would have put more than "
+                f"{args.max_per_domain} posts on one site.",
+                file=sys.stderr,
+            )
+        busiest = sorted(per_domain.items(), key=lambda kv: -kv[1])[:3]
+        if busiest:
+            print("  links by site: "
+                  + ", ".join(f"{h} {n}" for h, n in busiest), file=sys.stderr)
         if dropped:
             print(
                 f"Dropped {dropped} stories that resolved to an excluded site.",

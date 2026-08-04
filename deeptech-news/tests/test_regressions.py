@@ -546,9 +546,34 @@ def test_a_company_is_found_in_more_than_a_funding_headline():
     assert name("Swiss neutrality is doubly under pressure") == ""
 
 
+def test_no_more_than_two_posts_point_at_one_site():
+    from urllib.parse import urlsplit
+
+    # Counted on the link the post carries, after the swap to the company's
+    # own announcement. Counting the publisher field instead let four
+    # Startupticker links through a cap of two, because the same outlet
+    # arrives spelled several ways.
+    links = ["https://www.startupticker.ch/a", "https://www.startupticker.ch/b",
+             "https://www.startupticker.ch/c", "https://synhelion.com/news/x",
+             "https://actu.epfl.ch/news/y", "https://www.startupticker.ch/d",
+             "https://zuriq.com/news/z"]
+    per, kept = {}, []
+    for link in links:
+        host = urlsplit(link).netloc.lower()
+        host = host[4:] if host.startswith("www.") else host
+        if per.get(host, 0) >= 2:
+            continue
+        per[host] = per.get(host, 0) + 1
+        kept.append(link)
+    assert per["startupticker.ch"] == 2
+    assert len(kept) == 5
+    # A company link is its own domain, so the cap never touches those.
+    assert per["synhelion.com"] == 1 and per["zuriq.com"] == 1
+
+
 # Locking the count means a test appended below the runner, where it would
 # never execute, shows up as a failure rather than as silence. That happened.
-EXPECTED = 40
+EXPECTED = 41
 
 
 if __name__ == "__main__":
