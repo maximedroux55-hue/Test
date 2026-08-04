@@ -152,6 +152,151 @@
         "shape",
         "societies"
       ]
+    },
+    {
+      "used": "2026-08-04",
+      "title": "In AI arms race, Swiss neutrality is double-edged sword - SWI swissinfo.ch",
+      "link": "https://www.swissinfo.ch/eng/foreign-affairs/swiss-neutrality-is-double-edged-sword-in-ai-arms-race/91784797",
+      "coverage_url": null,
+      "norm": "in ai arms race swiss neutrality is doubleedged sword",
+      "kw": [
+        "arms",
+        "doubleedged",
+        "neutrality",
+        "race",
+        "sword"
+      ],
+      "rare": [
+        "doubleedged",
+        "neutrality",
+        "sword"
+      ]
+    },
+    {
+      "used": "2026-08-04",
+      "title": "A lipid switch that blocks anthrax",
+      "link": "https://actu.epfl.ch/news/a-lipid-switch-that-blocks-anthrax",
+      "coverage_url": null,
+      "norm": "a lipid switch that blocks anthrax",
+      "kw": [
+        "anthrax",
+        "blocks",
+        "lipid",
+        "switch"
+      ],
+      "rare": [
+        "anthrax",
+        "blocks",
+        "lipid",
+        "switch"
+      ]
+    },
+    {
+      "used": "2026-08-04",
+      "title": "Four Swiss medtechs mark commercial, regulatory and clinical milestones",
+      "link": "https://www.startupticker.ch/en/news/four-swiss-medtechs-mark-commercial-regulatory-and-clinical-milestones",
+      "coverage_url": null,
+      "norm": "four swiss medtechs mark commercial regulatory and clinical milestones",
+      "kw": [
+        "clinical",
+        "commercial",
+        "four",
+        "mark",
+        "medtechs",
+        "milestones",
+        "regulatory"
+      ],
+      "rare": [
+        "clinical",
+        "commercial",
+        "medtechs",
+        "milestones",
+        "regulatory"
+      ]
+    },
+    {
+      "used": "2026-08-04",
+      "title": "Humboldt AI lanciert KI-Tool für den CV-Check im Schweizer Arbeitsmarkt",
+      "link": "https://www.startupticker.ch/en/news/humboldt-ai-lanciert-ki-tool-fuer-den-cv-check-im-schweizer-arbeitsmarkt",
+      "coverage_url": null,
+      "norm": "humboldt ai lanciert kitool fr den cvcheck im schweizer arbeitsmarkt",
+      "kw": [
+        "arbeitsmarkt",
+        "cvcheck",
+        "humboldt",
+        "kitool",
+        "lanciert",
+        "schweizer"
+      ],
+      "rare": [
+        "arbeitsmarkt",
+        "cvcheck",
+        "humboldt",
+        "kitool",
+        "lanciert",
+        "schweizer"
+      ]
+    },
+    {
+      "used": "2026-08-04",
+      "title": "PropTech AssetOS auf Wachstumskurs",
+      "link": "https://www.startupticker.ch/en/news/proptech-assetos-auf-wachstumskurs",
+      "coverage_url": null,
+      "norm": "proptech assetos auf wachstumskurs",
+      "kw": [
+        "assetos",
+        "proptech",
+        "wachstumskurs"
+      ],
+      "rare": [
+        "assetos",
+        "proptech",
+        "wachstumskurs"
+      ]
+    },
+    {
+      "used": "2026-08-04",
+      "title": "Delta Capacity completes Swedish battery project",
+      "link": "https://www.startupticker.ch/en/news/delta-capacity-completes-swedish-battery-project",
+      "coverage_url": null,
+      "norm": "delta capacity completes swedish battery project",
+      "kw": [
+        "battery",
+        "capacity",
+        "completes",
+        "delta",
+        "project",
+        "swedish"
+      ],
+      "rare": [
+        "battery",
+        "capacity",
+        "completes",
+        "delta",
+        "project",
+        "swedish"
+      ]
+    },
+    {
+      "used": "2026-08-04",
+      "title": "Synhelion erhält Fördermittel für kommerzielle Demo-Anlage",
+      "link": "https://www.startupticker.ch/en/news/synhelion-erhaelt-foerdermittel-fuer-kommerzielle-demo-anlage",
+      "coverage_url": null,
+      "norm": "synhelion erhlt frdermittel fr kommerzielle demoanlage",
+      "kw": [
+        "demoanlage",
+        "erhlt",
+        "frdermittel",
+        "kommerzielle",
+        "synhelion"
+      ],
+      "rare": [
+        "demoanlage",
+        "erhlt",
+        "frdermittel",
+        "kommerzielle",
+        "synhelion"
+      ]
     }
   ]
 }
