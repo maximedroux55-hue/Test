@@ -1125,6 +1125,21 @@ def main() -> None:
             file=sys.stderr,
         )
 
+        # The overflow picks arrive at the end of the list, so a week with three
+        # links from one site reads as three days of that site in a row. Space
+        # them before the days are handed out.
+        from relevance import adjacent_repeats, space_out
+
+        picks = space_out(picks)
+        repeats = adjacent_repeats(picks)
+        if repeats:
+            print(
+                f"{repeats} pair{'s' if repeats > 1 else ''} of consecutive "
+                f"posts still share an outlet: too few outlets this week to "
+                f"space them all.",
+                file=sys.stderr,
+            )
+
         # Build once, then write the human plan (Markdown), the phone-friendly
         # web page (HTML, served at maxime-droux.com/plan), and the
         # machine-readable posts.json the Cowork workflow schedules from.

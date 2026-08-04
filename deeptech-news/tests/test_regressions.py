@@ -662,6 +662,47 @@ def test_the_picture_comes_from_the_story_not_the_page():
     assert images._content_image(chrome, "https://x.ch") is None
 
 
+def test_one_outlet_never_runs_two_days_running():
+    """Three Startupticker links went out on three consecutive days."""
+    from relevance import adjacent_repeats, space_out
+
+    def post(host, title, link=None):
+        return {"link": link or f"https://www.{host}/en/news/{title}",
+                "publisher": host, "title": title}
+
+    week = [post("swissinfo.ch", "neutrality"),
+            post("actu.epfl.ch", "anthrax"),
+            post("startupticker.ch", "immunomuse"),
+            post("startupticker.ch", "humboldt"),
+            post("startupticker.ch", "assetos")]
+    spaced = space_out(week)
+    assert adjacent_repeats(spaced) == 0, [p["publisher"] for p in spaced]
+    # Nothing is lost or duplicated in the reshuffle.
+    assert sorted(p["title"] for p in spaced) == \
+        sorted(p["title"] for p in week)
+    # The busiest outlet leads, which is what makes zero repeats possible.
+    assert spaced[0]["publisher"] == "startupticker.ch"
+
+    # A link swapped to the company's own site counts as that site, because
+    # that is the source the plan shows.
+    swapped = [post("startupticker.ch", "one"),
+               post("startupticker.ch", "two", link="https://gr3n.ch/news"),
+               post("startupticker.ch", "three")]
+    assert adjacent_repeats(space_out(swapped)) == 0
+
+    # Four of five from one outlet cannot be spaced. Return the best possible
+    # rather than failing, and keep every post.
+    lopsided = [post("startupticker.ch", f"s{i}") for i in range(4)] + \
+               [post("swissinfo.ch", "other")]
+    best = space_out(lopsided)
+    assert len(best) == 5
+    assert adjacent_repeats(best) == 2, [p["publisher"] for p in best]
+
+    # A week with no repeats at all keeps its ranking order untouched.
+    varied = [post("a.ch", "1"), post("b.ch", "2"), post("c.ch", "3")]
+    assert [p["title"] for p in space_out(varied)] == ["1", "2", "3"]
+
+
 def test_short_week_skips_the_weekend():
     """Fewer than seven posts go out on working days, weekend left blank."""
     import datetime as dt
@@ -691,7 +732,7 @@ def test_short_week_skips_the_weekend():
 
 # Locking the count means a test appended below the runner, where it would
 # never execute, shows up as a failure rather than as silence. That happened.
-EXPECTED = 45
+EXPECTED = 46
 
 
 if __name__ == "__main__":

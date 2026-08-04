@@ -314,6 +314,66 @@ def diversify(articles: list, max_per_publisher: int = 2) -> list:
     return picked + overflow
 
 
+def space_out(articles: list, host_of=None) -> list:
+    """Re-order the week's posts so the same outlet does not run back to back.
+
+    diversify() spreads outlets across the *pool*, but the picks that come back
+    from the overflow are appended at the end, which is how three Startupticker
+    links landed on three consecutive days. This spaces them: at each slot take
+    the outlet with the most posts still to place, other than the one just
+    used, and within that outlet the highest-ranked story.
+
+    Taking the busiest outlet first is what makes the spacing work. Leading with
+    the top story instead would strand the busiest outlet's remainder at the
+    end: with three of five posts from one site, the only arrangement with no
+    repeat puts that site on days one, three and five.
+
+    Where the counts make a repeat unavoidable (four of five from one outlet),
+    it returns the best it can rather than failing, and the caller reports it.
+    """
+    from urllib.parse import urlsplit
+
+    def domain(art):
+        if host_of:
+            return host_of(art)
+        host = urlsplit(art.get("link") or "").netloc.lower()
+        host = host[4:] if host.startswith("www.") else host
+        # Fall back to the outlet name when the link is a company announcement
+        # or is missing, so those do not all collapse into one empty group.
+        return host or (art.get("publisher") or "").strip().lower()
+
+    remaining = {}
+    for rank, art in enumerate(articles):
+        remaining.setdefault(domain(art), []).append((rank, art))
+
+    ordered, previous = [], None
+    while len(ordered) < len(articles):
+        options = [h for h, items in remaining.items() if items and h != previous]
+        if not options:
+            # Only the outlet just used is left. A repeat it is.
+            options = [h for h, items in remaining.items() if items]
+        # Busiest outlet first; ties go to whichever holds the better story.
+        host = min(options, key=lambda h: (-len(remaining[h]), remaining[h][0][0]))
+        ordered.append(remaining[host].pop(0)[1])
+        previous = host
+    return ordered
+
+
+def adjacent_repeats(articles: list, host_of=None) -> int:
+    """How many neighbouring pairs share an outlet. Zero is the goal."""
+    spaced = articles
+    hosts = []
+    from urllib.parse import urlsplit
+    for art in spaced:
+        if host_of:
+            hosts.append(host_of(art))
+        else:
+            host = urlsplit(art.get("link") or "").netloc.lower()
+            host = host[4:] if host.startswith("www.") else host
+            hosts.append(host or (art.get("publisher") or "").strip().lower())
+    return sum(1 for a, b in zip(hosts, hosts[1:]) if a == b)
+
+
 def deduplicate(articles: list) -> list:
     """Remove near-duplicate stories (same event reported by several outlets).
 
