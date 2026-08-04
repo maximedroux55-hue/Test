@@ -632,6 +632,29 @@ def test_a_third_link_only_when_the_week_is_short():
     per, n = week([f"https://www.startupticker.ch/{i}" for i in range(8)])
     assert per["startupticker.ch"] == 3 and n == 3
 
+    # The real week: Startupticker writes about two thirds of Swiss DeepTech
+    # news, so 8 of its stories and 2 from elsewhere is a normal ten days.
+    # At a hard cap of three that is a five-post week, which is what happened.
+    real = [f"https://www.startupticker.ch/{i}" for i in range(8)] + \
+           ["https://swissinfo.ch/1", "https://actu.epfl.ch/1"]
+    assert week(real, hard=3)[1] == 5
+    # At five it fills, and the soft cap of two still governs a week that can
+    # fill itself without borrowing.
+    assert week(real, hard=5)[1] == 7
+    assert week(ticker + others, hard=5)[0]["startupticker.ch"] == 2
+
+    # And that is what actually ships, not just what this test passes in.
+    import inspect
+    source = inspect.getsource(scraper.main)
+
+    def shipped(flag):
+        found = re.search(re.escape(f'"{flag}"') + r", type=int, default=(\d+)",
+                          source)
+        return int(found.group(1)) if found else None
+
+    assert shipped("--max-per-domain") == 2, "the normal cap moved"
+    assert shipped("--max-per-domain-hard") == 5, "the short-week cap moved"
+
 
 def test_the_picture_comes_from_the_story_not_the_page():
     import images

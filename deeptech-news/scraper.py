@@ -1271,9 +1271,13 @@ def main() -> None:
     ap.add_argument("--max-per-domain", type=int, default=2,
                     help="Max posts linking to any one site, counted on the "
                          "link the post carries (default 2)")
-    ap.add_argument("--max-per-domain-hard", type=int, default=3,
+    ap.add_argument("--max-per-domain-hard", type=int, default=5,
                     help="What one site may reach when the week would "
-                         "otherwise be short (default 3)")
+                         "otherwise be short (default 5). Startupticker "
+                         "writes about two thirds of Swiss DeepTech news, so "
+                         "a full week is not reachable on two links from it. "
+                         "The soft cap of two still governs any week that can "
+                         "fill itself without borrowing.")
     ap.add_argument("--history", default="../digest/history.json",
                     help="Record of stories already posted, so none repeats")
     ap.add_argument("--archive", default="../digest/archive.json",
