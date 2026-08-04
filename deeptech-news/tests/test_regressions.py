@@ -733,6 +733,11 @@ def test_cowork_reads_only_what_it_uses():
     assert "do not edit any file or commit" in prompt
     assert "proposals.json" not in prompt
     assert "already scheduled" in prompt
+    # Worst case has to be bounded. A post that will not go through can
+    # otherwise be retried until the session is out of money.
+    assert "Two attempts per post" in prompt
+    assert "Never start a third" in prompt
+    assert "do not hunt for an image" in prompt
 
 
 def test_one_mention_per_post():
