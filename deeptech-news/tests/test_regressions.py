@@ -664,6 +664,39 @@ def test_the_picture_comes_from_the_story_not_the_page():
     assert images._content_image(chrome, "https://x.ch") is None
 
 
+def test_a_broken_proposals_file_is_not_an_empty_one():
+    """A check appended its report after the closing brace and vanished."""
+    import json
+    import tempfile
+
+    import proposals
+
+    # Two JSON objects in one file, which is what an append produces.
+    broken = ('{"proposals": {"Foo": {"stage": "Seed"}}}, '
+              '{"post_index": 3, "status": "held_not_scheduled"}')
+    with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as f:
+        f.write(broken)
+        path = f.name
+    try:
+        proposals.load(path)
+        raise AssertionError("a file that will not parse read as empty")
+    except json.JSONDecodeError:
+        pass
+    finally:
+        os.unlink(path)
+
+    # A file that is simply absent is genuinely empty, and stays quiet.
+    assert proposals.load("/nonexistent/proposals.json") == {}
+
+    # And the real file parses, with the held post kept rather than dropped.
+    with open(proposals.PATH, encoding="utf-8") as f:
+        real = json.load(f)
+    assert isinstance(real.get("proposals"), dict)
+    for held in real.get("held_posts", []):
+        assert held.get("source_url"), "a held post must say where it read it"
+        assert held.get("problem"), "a held post must say what is wrong"
+
+
 def test_a_missing_fact_can_be_typed_in():
     """GR3N's founder was in no article the scraper could read."""
     import datetime as dt
@@ -851,7 +884,7 @@ def test_short_week_skips_the_weekend():
 
 # Locking the count means a test appended below the runner, where it would
 # never execute, shows up as a failure rather than as silence. That happened.
-EXPECTED = 48
+EXPECTED = 49
 
 
 if __name__ == "__main__":

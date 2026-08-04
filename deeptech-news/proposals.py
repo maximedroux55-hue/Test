@@ -19,13 +19,30 @@ import os
 PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "proposals.json")
 
 
-def load(path: str = PATH) -> dict:
-    """Return {company: {field: value, ...}} of pending proposals."""
+def _read(path: str) -> dict:
+    """Parse the file, loudly. A broken file is not an empty one.
+
+    A check once appended its report after the closing brace, leaving two JSON
+    objects in the file. Every reader here caught the parse error and returned
+    nothing, so the review page said "nothing waiting" and the finding was
+    invisible. Silence is the one answer this file must never give.
+    """
+    import sys
+
     try:
         with open(path, encoding="utf-8") as f:
-            raw = json.load(f)
-    except Exception:
+            return json.load(f)
+    except FileNotFoundError:
         return {}
+    except Exception as exc:
+        print(f"proposals.json will not parse ({exc}). Findings in it are "
+              f"being ignored until it is valid JSON again.", file=sys.stderr)
+        raise
+
+
+def load(path: str = PATH) -> dict:
+    """Return {company: {field: value, ...}} of pending proposals."""
+    raw = _read(path)
     entries = raw.get("proposals", {})
     return entries if isinstance(entries, dict) else {}
 
@@ -39,9 +56,8 @@ def promote(corrections_path: str, path: str = PATH) -> list:
     """
     import sys
 
+    raw = _read(path)
     try:
-        with open(path, encoding="utf-8") as f:
-            raw = json.load(f)
         with open(corrections_path, encoding="utf-8") as f:
             corrections = json.load(f)
     except Exception:
