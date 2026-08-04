@@ -526,6 +526,33 @@ def _investor_line(story: dict) -> str:
     return ", ".join(names)
 
 
+# The facts Max can set by hand, in the order they read on a card. Anything
+# here goes into corrections.json, which is applied after every lookup and
+# always wins, so a value he types survives every future run.
+_FIXABLE = [
+    ("description", "What it does"),
+    ("category", "Sector"),
+    ("stage", "Stage"),
+    ("amount", "Raised"),
+    ("amount_note", "Note on the amount"),
+    ("lead_investor", "Lead investor"),
+    ("investors", "Investors"),
+    ("founders", "Founders"),
+    ("spinoff_origin", "Spin-off from"),
+    ("location", "HQ"),
+    ("legal_seat", "Registered in"),
+    ("website", "Website"),
+    ("founded", "Founded"),
+    ("employees", "Staff"),
+    ("total_raised", "Total raised"),
+    ("valuation", "Valuation"),
+    ("use_of_funds", "Use of funds"),
+]
+
+CORRECTIONS_EDIT_URL = ("https://github.com/maximedroux55-hue/Test/edit/"
+                        "claude/questions-9a5egd/deeptech-news/corrections.json")
+
+
 def _zurich_now() -> dt.datetime:
     """Now, in Max's time. The runner is on UTC, which is not where he reads."""
     try:
@@ -640,6 +667,19 @@ def render_archive_html(known: dict, now: dt.datetime | None = None) -> str:
         attr = f' title="{html.escape(title)}"' if title else ""
         return f'<td class="{css}"{tag}{attr}>{html.escape(text)}</td>'
 
+    # The corrections file as it stands, so the panel can hand back a complete
+    # replacement rather than a fragment Max has to splice in by hand.
+    import json as _json
+
+    import corrections as _corrections
+    try:
+        with open(_corrections.PATH, encoding="utf-8") as f:
+            current_fixes = _json.load(f)
+    except Exception:
+        current_fixes = {"companies": {}}
+    current_fixes.setdefault("companies", {})
+    fields_json = _json.dumps(_FIXABLE)
+
     rows = []
     for s in stories:
         tag = ' <span class="tag posted">posted</span>' if s.get("posted") else ""
@@ -723,10 +763,14 @@ def render_archive_html(known: dict, now: dt.datetime | None = None) -> str:
             f'data-stage="{html.escape(stage_text)}" '
             f'data-hq="{html.escape(location_text)}" '
             f'data-added="{html.escape(first_seen)}" '
+            f'data-company="{html.escape(s.get("company") or "")}" '
+            f'data-facts="{html.escape(_json.dumps({k: (s.get(k) or "").strip() for k, _ in _FIXABLE}))}" '
             f'data-date="{html.escape(date_text)}">'
             f'<td class="co" data-label="Company">'
             f'<a href="{link}" target="_blank" rel="noopener" '
-            f'title="{hover}">{company}</a>{tag}</td>'
+            f'title="{hover}">{company}</a>{tag}'
+            f'<button type="button" class="fix" onclick="openFix(this)" '
+            f'title="Add or correct a fact on this round">+</button></td>'
             + cell(s.get("description") or s.get("title", ""), "desc",
                    label="What it does")
             + category
@@ -792,6 +836,43 @@ def render_archive_html(known: dict, now: dt.datetime | None = None) -> str:
                background:#fff; border:1px solid var(--line); border-radius:12px;
                padding:0.6rem 0.9rem; }}
   .refreshed b {{ color:var(--ink); }}
+
+  /* Typing in a fact the scraper could not find. */
+  .fix {{ margin-left:0.4rem; font-family:inherit; font-size:0.78rem;
+         font-weight:700; line-height:1; color:var(--soft); background:#fff;
+         border:1px solid var(--line); border-radius:6px; padding:0.15rem 0.4rem;
+         cursor:pointer; vertical-align:middle; }}
+  .fix:hover {{ color:var(--green); border-color:var(--green); }}
+  .sheet {{ position:fixed; inset:0; background:rgba(27,36,48,0.45);
+           display:flex; align-items:flex-end; justify-content:center;
+           z-index:20; }}
+  .sheet[hidden] {{ display:none; }}
+  .sheetbox {{ background:var(--bg); width:100%; max-width:620px;
+              max-height:92vh; overflow-y:auto; border-radius:18px 18px 0 0;
+              padding:1.2rem 1.1rem 1.6rem; }}
+  .sheetbox h2 {{ font-size:1.25rem; letter-spacing:-0.02em; }}
+  .sheetnote {{ color:var(--soft); font-size:0.8rem; margin:0.4rem 0 0.9rem; }}
+  .field {{ display:flex; align-items:center; gap:0.6rem; background:#fff;
+           border:1px solid var(--line); border-radius:10px; padding:0.4rem 0.7rem;
+           margin-bottom:0.4rem; }}
+  .field span {{ flex:0 0 7.5rem; color:var(--soft); font-size:0.72rem;
+                text-transform:uppercase; letter-spacing:0.04em; }}
+  .field input {{ flex:1 1 auto; border:none; padding:0.3rem 0; margin:0;
+                 font-size:0.92rem; background:none; }}
+  .field input:focus {{ outline:none; }}
+  .field.missing {{ border-style:dashed; }}
+  .field.missing span {{ color:var(--faint); }}
+  .sheetacts {{ display:flex; gap:0.5rem; flex-wrap:wrap; margin:0.9rem 0 0.6rem; }}
+  .btn {{ font-family:inherit; font-size:0.88rem; font-weight:600; color:#fff;
+         background:var(--ink); border:1px solid var(--ink); border-radius:10px;
+         padding:0.6rem 0.9rem; cursor:pointer; text-decoration:none;
+         display:inline-block; }}
+  .btn:hover {{ background:var(--green); border-color:var(--green); color:#fff; }}
+  .btn:disabled {{ background:#fff; color:var(--faint); border-color:var(--line);
+                  cursor:default; }}
+  #out {{ width:100%; height:8rem; font-family:ui-monospace,Menlo,Consolas,monospace;
+         font-size:0.72rem; color:var(--soft); border:1px solid var(--line);
+         border-radius:10px; padding:0.6rem; background:#fff; }}
   .cat {{ background:#eef4f0; color:#2f6b46; border-radius:6px;
          padding:0.1rem 0.45rem; font-size:0.76rem; font-weight:600;
          white-space:nowrap; }}
@@ -915,12 +996,37 @@ def render_archive_html(known: dict, now: dt.datetime | None = None) -> str:
     </tbody>
   </table></div>
   <button type="button" class="more" id="more" onclick="showMore()" hidden></button>
+  <p class="note"><b>Missing a fact?</b> Tap the <b>+</b> beside a company to type it in
+  yourself. What you write goes into corrections.json, which is applied after every
+  automatic lookup and always wins, so it survives every future run rather than being
+  overwritten the next morning.</p>
   <p class="note">An announced transaction is marked and its figure is excluded from
   every total: a ceiling on a deal that has not closed, quoted gross and before
   redemptions, is not capital raised. Amounts are shown as the article wrote them. The franc figure beside a
   foreign currency, and the total above, are converted at fixed indicative rates and are
   meant for scale rather than accounting. Hover a headquarters to see where it came from.</p>
 </div>
+
+<div class="sheet" id="sheet" hidden>
+  <div class="sheetbox">
+    <h2 id="sheettitle"></h2>
+    <p class="sheetnote">Type what is missing, or correct what is wrong. Emptying a
+    box that has a value clears it. Nothing changes here until you paste the file
+    into GitHub, and the next run picks it up.</p>
+    <div id="fields"></div>
+    <p class="sheetnote">Built from corrections.json as it stood at {refreshed}.
+    If you have edited it since, edit it on GitHub instead of pasting over it.</p>
+    <div class="sheetacts">
+      <button type="button" class="btn" id="copybtn" onclick="copyFile()">1. Copy the updated file</button>
+      <a class="btn" href="{CORRECTIONS_EDIT_URL}" target="_blank" rel="noopener">2. Open the file on GitHub</a>
+      <button type="button" class="clear" onclick="closeFix()">Close</button>
+    </div>
+    <p class="sheetnote">On GitHub: select everything in the box, paste, then
+    <b>Commit changes</b>. The database picks it up on the next run.</p>
+    <textarea id="out" readonly></textarea>
+  </div>
+</div>
+<script type="application/json" id="corrections">{_json.dumps(current_fixes)}</script>
 <script>
   function val(id) {{ return document.getElementById(id).value; }}
 
@@ -930,6 +1036,95 @@ def render_archive_html(known: dict, now: dt.datetime | None = None) -> str:
   // Date column is the news date; this is the "what changed since I last
   // looked" question, and the two are not the same.
   var NEWEST = "{newest}", WEEK_AGO = "{week_ago}", MONTH_AGO = "{month_ago}";
+
+  // ------------------------------------------------ typing in a missing fact
+  // The scraper will never get everything: GR3N's founder was in no article it
+  // could read. Rather than leaving the gap, the row hands Max the file with
+  // his answer already merged in, so the only manual step is a paste.
+  var FIELDS = {fields_json};
+  var CORRECTIONS = JSON.parse(document.getElementById('corrections').textContent);
+  var editing = null;
+
+  function openFix(btn) {{
+    var row = btn.parentNode.parentNode;
+    editing = {{
+      company: row.getAttribute('data-company') || '',
+      facts: JSON.parse(row.getAttribute('data-facts') || '{{}}')
+    }};
+    document.getElementById('sheettitle').textContent = editing.company;
+    var box = document.getElementById('fields');
+    box.innerHTML = '';
+    for (var i = 0; i < FIELDS.length; i++) {{
+      var key = FIELDS[i][0], label = FIELDS[i][1];
+      var was = editing.facts[key] || '';
+      var line = document.createElement('label');
+      line.className = 'field' + (was ? '' : ' missing');
+      var name = document.createElement('span');
+      name.textContent = label;
+      var input = document.createElement('input');
+      input.type = 'text';
+      input.id = 'f_' + key;
+      input.value = was;
+      input.placeholder = was ? '' : 'not known';
+      input.oninput = build;
+      line.appendChild(name);
+      line.appendChild(input);
+      box.appendChild(line);
+    }}
+    build();
+    document.getElementById('sheet').hidden = false;
+    document.body.style.overflow = 'hidden';
+  }}
+
+  function closeFix() {{
+    document.getElementById('sheet').hidden = true;
+    document.body.style.overflow = '';
+    editing = null;
+  }}
+
+  function build() {{
+    if (!editing) return '';
+    var file = JSON.parse(JSON.stringify(CORRECTIONS));
+    if (!file.companies) file.companies = {{}};
+    var entry = {{}};
+    var existing = file.companies[editing.company];
+    if (existing) {{
+      for (var k in existing) entry[k] = existing[k];
+    }}
+    var touched = 0;
+    for (var i = 0; i < FIELDS.length; i++) {{
+      var key = FIELDS[i][0];
+      var input = document.getElementById('f_' + key);
+      if (!input) continue;
+      var now = input.value.trim(), was = editing.facts[key] || '';
+      // Only what he actually changed. An empty box that was always empty is
+      // not an instruction; one he cleared himself is, and clears the value.
+      if (now !== was) {{ entry[key] = now; touched++; }}
+    }}
+    file.companies[editing.company] = entry;
+    var text = JSON.stringify(file, null, 2);
+    document.getElementById('out').value = text;
+    var btn = document.getElementById('copybtn');
+    btn.disabled = !touched;
+    btn.textContent = touched
+      ? '1. Copy the updated file (' + touched + ' change' + (touched === 1 ? '' : 's') + ')'
+      : '1. Copy the updated file';
+    return text;
+  }}
+
+  function copyFile() {{
+    var out = document.getElementById('out');
+    out.select();
+    if (navigator.clipboard) {{
+      navigator.clipboard.writeText(out.value);
+    }} else {{
+      document.execCommand('copy');
+    }}
+    var btn = document.getElementById('copybtn');
+    var said = btn.textContent;
+    btn.textContent = 'Copied';
+    setTimeout(function () {{ btn.textContent = said; }}, 1500);
+  }}
 
   function isAdded(seen, mode) {{
     if (!mode) return true;

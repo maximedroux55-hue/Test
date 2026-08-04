@@ -10,7 +10,9 @@ Run with:  python -m pytest tests/ -q      (or: python tests/test_regressions.py
 
 from __future__ import annotations
 
+import html
 import os
+import re
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -662,6 +664,60 @@ def test_the_picture_comes_from_the_story_not_the_page():
     assert images._content_image(chrome, "https://x.ch") is None
 
 
+def test_a_missing_fact_can_be_typed_in():
+    """GR3N's founder was in no article the scraper could read."""
+    import datetime as dt
+    import json
+
+    import archive
+    import corrections
+
+    known = {"g": {
+        "key": "g", "company": "GR3N", "first_seen": "2026-08-03",
+        "published": "2026-06-05", "stage": "Series B", "amount": "EUR 15.5M",
+        "category": "Cleantech", "location": "Chiasso", "founders": "",
+        "investors": "360 Capital, VP Textile",
+        "title": "GR3N closes a 15.5M Series B round",
+        "description": "Microwave-assisted depolymerization recycling",
+        "link": "https://www.startupticker.ch/en/news/gr3n"}}
+    page = scraper.render_archive_html(known, now=dt.datetime(2026, 8, 4, 6, 30))
+
+    # Every row offers it, and carries what it already knows so the panel can
+    # tell a gap from a value and only report what Max actually changed.
+    assert page.count('class="fix"') == 1
+    assert 'data-company="GR3N"' in page
+    facts = json.loads(html.unescape(
+        re.search(r'data-facts="([^"]+)"', page).group(1)))
+    assert facts["founders"] == ""
+    assert facts["investors"] == "360 Capital, VP Textile"
+    assert facts["location"] == "Chiasso"
+
+    # The panel hands back a whole file rather than a fragment to splice in,
+    # so the current corrections have to be embedded and parseable.
+    embedded = json.loads(re.search(
+        r'<script type="application/json" id="corrections">(.*?)</script>',
+        page, re.S).group(1))
+    assert "companies" in embedded
+
+    # A field offered for editing that the archive does not persist would be
+    # typed in, committed, and silently dropped on the next run.
+    import inspect
+    source = inspect.getsource(archive.record)
+    for field, _label in scraper._FIXABLE:
+        assert f'"{field}"' in source, f"{field} is not kept by archive.record"
+
+    # And corrections.py has to accept them: it drops anything it does not
+    # recognise as data about the company.
+    fixes = {"companies": {"GR3N": {f: "x" for f, _ in scraper._FIXABLE}}}
+    import tempfile
+    with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as f:
+        json.dump(fixes, f)
+        path = f.name
+    loaded = corrections.load(path)
+    assert set(loaded["gr3n"]) == {f for f, _ in scraper._FIXABLE}
+    os.unlink(path)
+
+
 def test_the_page_says_when_it_ran_and_what_it_added():
     """A database you cannot date is one you cannot trust."""
     import datetime as dt
@@ -795,7 +851,7 @@ def test_short_week_skips_the_weekend():
 
 # Locking the count means a test appended below the runner, where it would
 # never execute, shows up as a failure rather than as silence. That happened.
-EXPECTED = 47
+EXPECTED = 48
 
 
 if __name__ == "__main__":
