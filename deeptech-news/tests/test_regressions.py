@@ -492,9 +492,25 @@ def test_a_post_links_to_the_company_not_the_outlet():
         assert images.company_announcement("ZuriQ", "zuriq.com", "") == ""
 
 
+def test_a_company_is_found_in_more_than_a_funding_headline():
+    from extract import _company_from_headline as name
+
+    # A launch, a partnership or an approval still credits a company, and a
+    # company still has a newsroom the post should link to.
+    assert name("Humboldt AI lanciert KI-Tool für Schweizer KMU") == "Humboldt AI"
+    assert name("Nordfen brings drone simulation technology to Latvia") == "Nordfen"
+    assert name("Alivion wins regulatory approval") == "Alivion"
+    # The auxiliary sits between the name and the verb often enough to matter.
+    assert name("SWISSto12 has closed a USD 70 million Series C") == "SWISSto12"
+    assert name("Ahead Health has raised USD 10M") == "Ahead Health"
+    # A story about no single company still names none.
+    assert name("Four Swiss medtechs mark commercial milestones") == ""
+    assert name("Swiss neutrality is doubly under pressure") == ""
+
+
 # Locking the count means a test appended below the runner, where it would
 # never execute, shows up as a failure rather than as silence. That happened.
-EXPECTED = 38
+EXPECTED = 39
 
 
 if __name__ == "__main__":

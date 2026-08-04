@@ -285,6 +285,16 @@ _RAISE_VERBS = (
     r"l(?:è|e)ve|boucle|d(?:é|e)croche|obtient"
 )
 
+# What a company does in a headline that is not raising money: shipping a
+# product, winning an approval, opening a site, striking a partnership.
+_OTHER_VERBS = (
+    r"launch\w*|lanciert|unveil\w*|introduc\w*|present\w*|stellt\s+vor|"
+    r"d(?:é|e)voile|releas\w*|ship\w*|win[s]?|won|award\w*|receiv\w*\s+approval|"
+    r"open[s]?|expand\w*|partner[s]?\w*|sign[s]?|acquir\w*|appoint\w*|"
+    r"develop\w*|build[s]?|bring[s]?|mark[s]?|complet\w*|start\w*|"
+    r"er(?:ö|oe)ffnet|entwickelt|gewinnt"
+)
+
 # A name ending in a legal form is complete as written, so the leading-word
 # clean-up must leave it alone: "AI Infrastructure Capital AG" is the company.
 _LEGAL_SUFFIX = re.compile(
@@ -307,9 +317,20 @@ def _company_from_headline(title: str) -> str:
     # aside, as in "SkyPilot, from Databricks' cofounder, raises $20M".
     m = re.search(
         rf"\b([A-Z][\w&.\-]*(?:\s+[A-Z0-9][\w&.\-]*){{0,3}})"
-        rf"(?:,[^,]{{0,50}},)?\s+(?i:{_RAISE_VERBS})\b",
+        rf"(?:,[^,]{{0,50}},)?(?:\s+(?:has|have|had))?"
+        rf"\s+(?i:{_RAISE_VERBS})\b",
         head,
     )
+    if not m:
+        # Not every story is a round. A post about a launch, a partnership or
+        # an approval still credits a company, and a company still has a
+        # newsroom, so the same name is worth finding.
+        m = re.search(
+            rf"\b([A-Z][\w&.\-]*(?:\s+[A-Z0-9][\w&.\-]*){{0,3}})"
+            rf"(?:,[^,]{{0,50}},)?(?:\s+(?:has|have|had))?"
+            rf"\s+(?i:{_OTHER_VERBS})\b",
+            head,
+        )
     if not m:
         return ""
     name = m.group(1).strip(" ,.")
