@@ -597,9 +597,43 @@ def test_a_product_page_is_not_an_announcement():
     assert found == "https://immitrabio.com/news/immitra-bio-raises-chf-2-4m-pre-seed"
 
 
+def test_a_third_link_only_when_the_week_is_short():
+    from urllib.parse import urlsplit
+
+    def week(links, posts=7, soft=2, hard=3):
+        per, picks, overflow = {}, [], []
+        for link in links:
+            host = urlsplit(link).netloc.lower()
+            host = host[4:] if host.startswith("www.") else host
+            if per.get(host, 0) >= soft:
+                overflow.append((host, link))
+                continue
+            per[host] = per.get(host, 0) + 1
+            picks.append(link)
+        for host, link in overflow:
+            if len(picks) >= posts or per.get(host, 0) >= hard:
+                continue
+            per[host] = per.get(host, 0) + 1
+            picks.append(link)
+        return per, len(picks)
+
+    ticker = [f"https://www.startupticker.ch/{i}" for i in range(4)]
+    others = [f"https://c{i}.ch/x" for i in range(5)]
+    # With enough elsewhere the cap holds at two.
+    per, n = week(ticker + others)
+    assert per["startupticker.ch"] == 2 and n == 7
+    # Short, so one slot goes back, and only one.
+    per, n = week([f"https://www.startupticker.ch/{i}" for i in range(6)]
+                  + ["https://a.ch/1", "https://b.ch/1"])
+    assert per["startupticker.ch"] == 3
+    # Never past the hard limit, however short the week.
+    per, n = week([f"https://www.startupticker.ch/{i}" for i in range(8)])
+    assert per["startupticker.ch"] == 3 and n == 3
+
+
 # Locking the count means a test appended below the runner, where it would
 # never execute, shows up as a failure rather than as silence. That happened.
-EXPECTED = 42
+EXPECTED = 43
 
 
 if __name__ == "__main__":

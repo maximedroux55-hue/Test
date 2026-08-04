@@ -950,6 +950,9 @@ def main() -> None:
     ap.add_argument("--max-per-domain", type=int, default=2,
                     help="Max posts linking to any one site, counted on the "
                          "link the post carries (default 2)")
+    ap.add_argument("--max-per-domain-hard", type=int, default=3,
+                    help="What one site may reach when the week would "
+                         "otherwise be short (default 3)")
     ap.add_argument("--history", default="../digest/history.json",
                     help="Record of stories already posted, so none repeats")
     ap.add_argument("--archive", default="../digest/archive.json",
@@ -1044,7 +1047,7 @@ def main() -> None:
         # cap of two.
         from urllib.parse import urlsplit
 
-        per_domain = {}
+        per_domain, overflow = {}, []
         while len(picks) < args.posts and cursor < len(pool):
             batch = pool[cursor: cursor + (args.posts - len(picks))]
             cursor += len(batch)
@@ -1060,9 +1063,31 @@ def main() -> None:
                 host = host[4:] if host.startswith("www.") else host
                 if host and per_domain.get(host, 0) >= args.max_per_domain:
                     capped += 1
+                    overflow.append((host, art))
                     continue
                 per_domain[host] = per_domain.get(host, 0) + 1
                 picks.append(art)
+
+        # The cap is two, and a short week is worse than a third link from one
+        # outlet. Only what the week is actually missing is taken back, and
+        # never past the hard limit.
+        borrowed = 0
+        for host, art in overflow:
+            if len(picks) >= args.posts:
+                break
+            if per_domain.get(host, 0) >= args.max_per_domain_hard:
+                continue
+            per_domain[host] = per_domain.get(host, 0) + 1
+            picks.append(art)
+            borrowed += 1
+        if borrowed:
+            print(
+                f"The week was {borrowed} post{'s' if borrowed > 1 else ''} "
+                f"short, so {borrowed} slot{'s' if borrowed > 1 else ''} went "
+                f"to a site already at {args.max_per_domain}, up to "
+                f"{args.max_per_domain_hard}.",
+                file=sys.stderr,
+            )
         if capped:
             print(
                 f"Skipped {capped} stories that would have put more than "
