@@ -458,6 +458,15 @@ def company_announcement(company: str, website: str, amount: str = "",
                 full = urllib.parse.urljoin(final_url, href)
                 if domain not in full or full.rstrip("/") == final_url.rstrip("/"):
                     continue
+                # An anchor on a newsroom page is not necessarily a news entry.
+                # Matching on headline words alone returned
+                # immitrabio.com/index.html#platform and
+                # swissto12.com/products/satcom/, which are product pages that
+                # happen to share a word with the story.
+                if "#" in full or re.search(r"/index\.\w+$", full):
+                    continue
+                if not _is_announcement_page(full):
+                    continue
                 # An entry carrying the amount is the right entry, not merely a
                 # plausible one.
                 if digits and digits in f"{label} {href}":

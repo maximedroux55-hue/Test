@@ -571,9 +571,35 @@ def test_no_more_than_two_posts_point_at_one_site():
     assert per["synhelion.com"] == 1 and per["zuriq.com"] == 1
 
 
+def test_a_product_page_is_not_an_announcement():
+    import unittest.mock as mock
+
+    import images
+
+    # Matching on the headline's words alone found immitrabio.com/index.html
+    # #platform and swissto12.com/products/satcom/: product pages that happen
+    # to share a word with the story.
+    newsroom = (
+        '<html><body>Immitra Bio news'
+        '<a href="/index.html#platform">Our gene editing platform</a>'
+        '<a href="/products/platform">Platform</a>'
+        '<a href="/news/immitra-bio-raises-chf-2-4m-pre-seed">Immitra Bio '
+        'raises CHF 2.4M pre-seed</a></body></html>')
+    pages = {"https://immitrabio.com": ("<html>Immitra Bio</html>",
+                                        "https://immitrabio.com"),
+             "https://immitrabio.com/news": (newsroom,
+                                             "https://immitrabio.com/news")}
+    with mock.patch.object(images, "article_page",
+                           lambda u, t=12: pages.get(u, (None, u))):
+        found = images.company_announcement(
+            "Immitra Bio", "immitrabio.com", "CHF 2.4M",
+            "Immitra Bio raises CHF 2.4 million pre-seed for gene editing")
+    assert found == "https://immitrabio.com/news/immitra-bio-raises-chf-2-4m-pre-seed"
+
+
 # Locking the count means a test appended below the runner, where it would
 # never execute, shows up as a failure rather than as silence. That happened.
-EXPECTED = 41
+EXPECTED = 42
 
 
 if __name__ == "__main__":
