@@ -567,13 +567,19 @@ def render_archive_html(known: dict) -> str:
                                for s in stories) if d)
     first_date, last_date = (dates[0], dates[-1]) if dates else ("", "")
 
-    def cell(value: str, css: str = "", title: str = "") -> str:
-        """One fact, one cell. An empty one is marked, not left blank."""
+    def cell(value: str, css: str = "", title: str = "", label: str = "") -> str:
+        """One fact, one cell. An empty one is marked, not left blank.
+
+        The label travels with the value because a phone stacks the row into a
+        card, where a column heading three screens up is no help.
+        """
         text = (value or "").strip()
+        tag = f' data-label="{html.escape(label)}"' if label else ""
         if not text:
-            return f'<td class="{css}"><span class="nd">&middot;</span></td>'
+            return (f'<td class="{css} empty"{tag}>'
+                    f'<span class="nd">&middot;</span></td>')
         attr = f' title="{html.escape(title)}"' if title else ""
-        return f'<td class="{css}"{attr}>{html.escape(text)}</td>'
+        return f'<td class="{css}"{tag}{attr}>{html.escape(text)}</td>'
 
     rows = []
     for s in stories:
@@ -612,13 +618,16 @@ def render_archive_html(known: dict) -> str:
         if stage_text == "Grant":
             pending += ('<span class="nondil" title="Public or foundation '
                         'money, not an equity round.">non-dilutive</span>')
-        stage = (f'<td><span class="stage">{html.escape(stage_text)}</span>'
-                 f'{pending}</td>'
+        stage = (f'<td data-label="Stage"><span class="stage">'
+                 f'{html.escape(stage_text)}</span>{pending}</td>'
                  if stage_text
-                 else f'<td><span class="nd">&middot;</span>{pending}</td>')
+                 else f'<td data-label="Stage" class="{"" if pending else "empty"}">'
+                      f'<span class="nd">&middot;</span>{pending}</td>')
         category_text = (s.get("category") or "").strip()
-        category = (f'<td><span class="cat">{html.escape(category_text)}</span></td>'
-                    if category_text else '<td><span class="nd">&middot;</span></td>')
+        category = (f'<td data-label="Sector"><span class="cat">'
+                    f'{html.escape(category_text)}</span></td>' if category_text
+                    else '<td data-label="Sector" class="empty">'
+                         '<span class="nd">&middot;</span></td>')
 
         amount_text = (s.get("amount") or "").strip()
         note = (s.get("amount_note") or "").strip()
@@ -629,18 +638,20 @@ def render_archive_html(known: dict) -> str:
             title = f"{note}. Not counted in the total."
         else:
             shown, title = html.escape(amount_text), money.compact(chf)
-        amount = (f'<td class="amt" title="{html.escape(title)}">{shown}</td>'
-                  if amount_text
-                  else '<td class="amt"><span class="nd">undisclosed</span></td>')
+        amount = (f'<td class="amt" data-label="Raised" '
+                  f'title="{html.escape(title)}">{shown}</td>' if amount_text
+                  else '<td class="amt" data-label="Raised">'
+                       '<span class="nd">undisclosed</span></td>')
 
         location_text = (s.get("location") or "").strip()
         if location_text:
             where = _provenance(s, "location") or "as written in the coverage"
-            location = (f'<td class="loc" title="Source: {html.escape(where)}">'
+            location = (f'<td class="loc" data-label="HQ" '
+                        f'title="Source: {html.escape(where)}">'
                         f'{html.escape(location_text)}</td>')
         else:
-            location = ('<td class="loc"><span class="nd" title="Swiss company, '
-                        'city not found yet">CH</span></td>')
+            location = ('<td class="loc" data-label="HQ"><span class="nd" '
+                        'title="Swiss company, city not found yet">CH</span></td>')
 
         date_text = (s.get("published") or s.get("first_seen") or "").strip()
         rows.append(
@@ -649,17 +660,20 @@ def render_archive_html(known: dict) -> str:
             f'data-stage="{html.escape(stage_text)}" '
             f'data-hq="{html.escape(location_text)}" '
             f'data-date="{html.escape(date_text)}">'
-            f'<td class="co"><a href="{link}" target="_blank" rel="noopener" '
+            f'<td class="co" data-label="Company">'
+            f'<a href="{link}" target="_blank" rel="noopener" '
             f'title="{hover}">{company}</a>{tag}</td>'
-            + cell(s.get("description") or s.get("title", ""), "desc")
+            + cell(s.get("description") or s.get("title", ""), "desc",
+                   label="What it does")
             + category
             + stage
             + amount
-            + cell(_investor_line(s), "inv")
-            + cell(s.get("founders", ""), "fnd")
-            + cell(s.get("spinoff_origin", ""), "org")
+            + cell(_investor_line(s), "inv", label="Investors")
+            + cell(s.get("founders", ""), "fnd", label="Founders")
+            + cell(s.get("spinoff_origin", ""), "org", label="Spin-off")
             + location
-            + cell(s.get("published") or s.get("first_seen", ""), "d")
+            + cell(s.get("published") or s.get("first_seen", ""), "d",
+                   label="Date")
             + '</tr>'
         )
     body = "\n".join(rows) or (
@@ -744,6 +758,38 @@ def render_archive_html(known: dict) -> str:
   th.down::after {{ content:" \\2193"; color:var(--green); }}
   .note {{ color:var(--faint); font-size:0.76rem; margin-top:0.8rem; }}
   .live {{ color:var(--soft); font-size:0.82rem; white-space:nowrap; }}
+  .more {{ display:block; width:100%; margin-top:1rem; font-family:inherit;
+          font-size:0.9rem; font-weight:600; color:var(--ink); background:#fff;
+          border:1px solid var(--line); border-radius:12px; padding:0.8rem;
+          cursor:pointer; }}
+  .more:hover {{ border-color:var(--green); color:var(--green); }}
+
+  /* A ten column table does not fit a phone, so each round becomes a card and
+     every value carries its own label. Empty facts are dropped rather than
+     shown as a dot, which on a narrow screen is just a wasted line. */
+  @media (max-width: 760px) {{
+    .wrap {{ padding:1.5rem 0.85rem 3rem; }}
+    .box {{ border:none; background:none; border-radius:0; }}
+    table, tbody, tr, td {{ display:block; width:100%; }}
+    table {{ min-width:0; }}
+    thead {{ display:none; }}
+    tr {{ background:#fff; border:1px solid var(--line); border-radius:14px;
+         padding:0.85rem 1rem; margin-bottom:0.7rem; }}
+    td {{ border:none; padding:0.12rem 0; display:flex; gap:0.6rem;
+         align-items:baseline; }}
+    td.empty {{ display:none; }}
+    td::before {{ content:attr(data-label); flex:0 0 5.4rem; color:var(--faint);
+                 font-size:0.68rem; text-transform:uppercase;
+                 letter-spacing:0.04em; padding-top:0.15rem; }}
+    td.co {{ font-size:1.05rem; margin-bottom:0.1rem; }}
+    td.co::before, td.desc::before {{ display:none; }}
+    td.desc {{ color:var(--soft); margin-bottom:0.5rem; }}
+    td.amt {{ font-size:1rem; }}
+    .stats {{ gap:0.4rem; }}
+    .stat {{ min-width:0; flex:1 1 30%; padding:0.5rem 0.6rem; }}
+    .stat b {{ font-size:1.1rem; }}
+    .controls select, .controls input, .dates, .clear {{ flex:1 1 45%; }}
+  }}
 </style></head><body>
 <div class="wrap">
   <h1>Swiss DeepTech rounds<span class="dot">.</span></h1>
@@ -787,6 +833,7 @@ def render_archive_html(known: dict) -> str:
 {body}
     </tbody>
   </table></div>
+  <button type="button" class="more" id="more" onclick="showMore()" hidden></button>
   <p class="note">An announced transaction is marked and its figure is excluded from
   every total: a ceiling on a deal that has not closed, quoted gross and before
   redemptions, is not capital raised. Amounts are shown as the article wrote them. The franc figure beside a
@@ -796,7 +843,10 @@ def render_archive_html(known: dict) -> str:
 <script>
   function val(id) {{ return document.getElementById(id).value; }}
 
-  function filter() {{
+  var PAGE = 12, shown_upto = PAGE;
+
+  function filter(reset) {{
+    if (reset !== false) shown_upto = PAGE;
     var q = val('q').toLowerCase();
     var sector = val('sector'), stage = val('stage'), hq = val('hq');
     var from = val('from'), to = val('to');
@@ -811,8 +861,19 @@ def render_archive_html(known: dict) -> str:
         && (!hq || row.getAttribute('data-hq') === hq)
         && (!from || (date && date >= from))
         && (!to || (date && date <= to));
-      row.style.display = ok ? '' : 'none';
-      if (ok) {{ shown++; total += parseInt(row.getAttribute('data-chf') || '0', 10); }}
+      if (ok) {{
+        shown++;
+        total += parseInt(row.getAttribute('data-chf') || '0', 10);
+      }}
+      // Matching decides whether a round counts; paging decides whether it is
+      // on screen yet. The count and the total always describe every match.
+      row.style.display = (ok && shown <= shown_upto) ? '' : 'none';
+    }}
+    var more = document.getElementById('more');
+    if (more) {{
+      var left = shown - shown_upto;
+      more.hidden = left <= 0;
+      more.textContent = 'Show ' + Math.min(left, PAGE) + ' more of ' + shown;
     }}
     var box = document.getElementById('count');
     if (box) {{
@@ -820,6 +881,12 @@ def render_archive_html(known: dict) -> str:
         + (total ? ' &middot; ' + (total >= 1e9 ? (total / 1e9).toFixed(1) + 'B'
                                                 : Math.round(total / 1e6) + 'M') + ' CHF' : '');
     }}
+  }}
+
+  function showMore() {{
+    shown_upto += PAGE;
+    filter(false);
+    return false;
   }}
 
   function clearAll() {{
@@ -855,6 +922,7 @@ def render_archive_html(known: dict) -> str:
       return x < y ? -sign : x > y ? sign : 0;
     }});
     rows.forEach(function (row) {{ body.appendChild(row); }});
+    filter(false);
     var heads = document.querySelectorAll('thead th');
     for (var i = 0; i < heads.length; i++) {{
       heads[i].classList.remove('up', 'down');

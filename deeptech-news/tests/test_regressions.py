@@ -444,9 +444,30 @@ def test_the_row_links_to_startupticker_when_there_is_one():
     assert hrefs and "techfundingnews" in hrefs[0], hrefs
 
 
+def test_the_page_reads_on_a_phone():
+    known = {f"k{i}": {"company": f"Co {i}", "amount": "CHF 5M", "stage": "Seed",
+                       "category": "AI", "location": "Zurich",
+                       "title": f"Co {i} raises", "published": "2026-07-01",
+                       "link": "https://x.ch/a", "description": "does things"}
+             for i in range(20)}
+    page = scraper.render_archive_html(known)
+    # Every value carries its own label, since a card has no column heading.
+    assert page.count('data-label=') >= 20 * 8
+    # Below the breakpoint the table becomes cards and empty facts disappear.
+    assert "@media (max-width: 760px)" in page
+    assert "td.empty" in page
+    # Twenty rounds are not twenty screens: they arrive a page at a time.
+    assert 'id="more"' in page and "shown_upto" in page
+    # An unknown fact is marked as empty so a phone can drop it.
+    thin = {"k": {"company": "Co", "amount": "CHF 5M", "stage": "Seed",
+                  "category": "AI", "title": "Co raises", "link": "https://x.ch",
+                  "published": "2026-07-01"}}
+    assert 'class="fnd empty"' in scraper.render_archive_html(thin)
+
+
 # Locking the count means a test appended below the runner, where it would
 # never execute, shows up as a failure rather than as silence. That happened.
-EXPECTED = 36
+EXPECTED = 37
 
 
 if __name__ == "__main__":
