@@ -350,12 +350,26 @@ def enrich_articles(articles: list) -> None:
             known_site = a.get("website") or ""
             if not known_site and a.get("primary_source"):
                 known_site = _domain(a["primary_source"])
-            own = company_announcement(a.get("company", ""), known_site,
-                                       a.get("amount", ""),
-                                       a.get("title", ""))
-            if own and _is_announcement_page(own):
-                a["coverage_url"] = a["link"]
-                a["link"] = own
+            # Why a post still credits an outlet is worth recording. Reading
+            # it out of a run log means having the log; on the post it is
+            # there whenever the question comes up.
+            if not a.get("company"):
+                a["link_note"] = "no company named in the headline"
+            else:
+                own = company_announcement(a.get("company", ""), known_site,
+                                           a.get("amount", ""),
+                                           a.get("title", ""))
+                if own and _is_announcement_page(own):
+                    a["coverage_url"] = a["link"]
+                    a["link"] = own
+                    a["link_note"] = "the company's own announcement"
+                elif own:
+                    a["link_note"] = f"found {own}, not an announcement page"
+                else:
+                    a["link_note"] = (
+                        f"no announcement found for {a['company']}"
+                        + (f" at {known_site}" if known_site
+                           else ", and no site known"))
         else:
             a["image"] = a.get("image_feed")
             a["primary_source"] = None

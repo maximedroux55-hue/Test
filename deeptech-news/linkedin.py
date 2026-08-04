@@ -352,6 +352,7 @@ def build_posts(articles: list, days: int, top: int = 7):
                   file=sys.stderr)
         records.append({
             "claims": claims,
+            "link_note": art.get("link_note", ""),
             "verified": bool(checked),
             "verified_source": checked.get("source", ""),
             "needs_check": risky,
