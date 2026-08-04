@@ -9,10 +9,10 @@ _Generated 04 August 2026, covering the last 21 days. 28 stories._
    Greater Geneva Bern area (GGBa) · 16 Jul 2026 · relevance 26
 4. **[SkyPilot, from Databricks’ cofounder, raises $20M to be the Switzerland of AI compute - Fortune](https://news.google.com/rss/articles/CBMiswFBVV95cUxNcERYSWFFV25YYWhqdXdMRFlDR2VmZ1VKRVVEYTBZQjlpN0RadUFFRlJENzRfNkwwUkRVUnlNajVpT0psd1dJR0lxUDItaHFOaFNZeE9sQVBVRE1STlVnUEMtdXMwZzlkVFBLWDZjWThNb0pURU5kalZvYUpsVmZWQjN3a0NwRmw0aEthZGJObDJhQXR6SFdQeGNHSmQ0Nnp5Xy1NRVpzZ0luZEZlR0RCeU9QVQ?oc=5)**  
    Fortune · 21 Jul 2026 · relevance 23
-5. **[Valuemize raises seven-figure pre-seed for product cost software](https://www.startupticker.ch/en/news/valuemize-raises-seven-figure-pre-seed-for-product-cost-software)**  
+5. **[Swiss preventive health startup Ahead Health raises $10M for Germany and Netherlands launch - techfundingnews.com](https://news.google.com/rss/articles/CBMikwFBVV95cUxNV2JqQ2R5UlVCcDhrYk12TU9NWHVGQU9XOWZia0U1Wi0zeDg1NDdIN3lMRlAxMS1wN0pwaDZ0QWN4TTBObDVfWmtSOTBzSUNDWlRPUDRfM0RFeHZCNHBlM3k0al91c2VTRnpCVlhHc29XaTJOZGs2M0NpX2RiTjA3ZlFUUjd0SEVQMWs2Z1d1ZEp6VTA?oc=5)**  
+   techfundingnews.com · 30 Jul 2026 · relevance 21
+6. **[Valuemize raises seven-figure pre-seed for product cost software](https://www.startupticker.ch/en/news/valuemize-raises-seven-figure-pre-seed-for-product-cost-software)**  
    Startupticker · 28 Jul 2026 · relevance 21
-6. **[Swiss preventive health startup Ahead Health raises $10M for Germany and Netherlands launch - Tech Funding News](https://news.google.com/rss/articles/CBMikwFBVV95cUxNV2JqQ2R5UlVCcDhrYk12TU9NWHVGQU9XOWZia0U1Wi0zeDg1NDdIN3lMRlAxMS1wN0pwaDZ0QWN4TTBObDVfWmtSOTBzSUNDWlRPUDRfM0RFeHZCNHBlM3k0al91c2VTRnpCVlhHc29XaTJOZGs2M0NpX2RiTjA3ZlFUUjd0SEVQMWs2Z1d1ZEp6VTA?oc=5)**  
-   Tech Funding News · 30 Jul 2026 · relevance 19
 7. **[Hilo closes Series B extension round to fuel US expansion](https://www.startupticker.ch/en/news/hilo-closes-series-b-extension-round-to-fuel-us-expansion)**  
    Startupticker · 22 Jul 2026 · relevance 19
 8. **[Moonlake Therapeutics raises USD 230 million in public offering](https://www.startupticker.ch/en/news/moonlake-therapeutics-raises-usd-230-million-in-public-offering)**  
