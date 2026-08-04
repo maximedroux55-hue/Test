@@ -236,67 +236,6 @@
         "lanciert",
         "schweizer"
       ]
-    },
-    {
-      "used": "2026-08-04",
-      "title": "PropTech AssetOS auf Wachstumskurs",
-      "link": "https://www.startupticker.ch/en/news/proptech-assetos-auf-wachstumskurs",
-      "coverage_url": null,
-      "norm": "proptech assetos auf wachstumskurs",
-      "kw": [
-        "assetos",
-        "proptech",
-        "wachstumskurs"
-      ],
-      "rare": [
-        "assetos",
-        "proptech",
-        "wachstumskurs"
-      ]
-    },
-    {
-      "used": "2026-08-04",
-      "title": "Delta Capacity completes Swedish battery project",
-      "link": "https://www.startupticker.ch/en/news/delta-capacity-completes-swedish-battery-project",
-      "coverage_url": null,
-      "norm": "delta capacity completes swedish battery project",
-      "kw": [
-        "battery",
-        "capacity",
-        "completes",
-        "delta",
-        "project",
-        "swedish"
-      ],
-      "rare": [
-        "battery",
-        "capacity",
-        "completes",
-        "delta",
-        "project",
-        "swedish"
-      ]
-    },
-    {
-      "used": "2026-08-04",
-      "title": "Synhelion erhält Fördermittel für kommerzielle Demo-Anlage",
-      "link": "https://www.startupticker.ch/en/news/synhelion-erhaelt-foerdermittel-fuer-kommerzielle-demo-anlage",
-      "coverage_url": null,
-      "norm": "synhelion erhlt frdermittel fr kommerzielle demoanlage",
-      "kw": [
-        "demoanlage",
-        "erhlt",
-        "frdermittel",
-        "kommerzielle",
-        "synhelion"
-      ],
-      "rare": [
-        "demoanlage",
-        "erhlt",
-        "frdermittel",
-        "kommerzielle",
-        "synhelion"
-      ]
     }
   ]
 }
