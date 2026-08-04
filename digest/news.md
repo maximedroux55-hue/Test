@@ -7,8 +7,8 @@ _Generated 04 August 2026, covering the last 10 days. 14 stories._
    Startupticker · 28 Jul 2026 · relevance 21
 3. **[Swiss preventive health startup Ahead Health raises $10M for Germany and Netherlands launch - Tech Funding News](https://news.google.com/rss/articles/CBMikwFBVV95cUxNV2JqQ2R5UlVCcDhrYk12TU9NWHVGQU9XOWZia0U1Wi0zeDg1NDdIN3lMRlAxMS1wN0pwaDZ0QWN4TTBObDVfWmtSOTBzSUNDWlRPUDRfM0RFeHZCNHBlM3k0al91c2VTRnpCVlhHc29XaTJOZGs2M0NpX2RiTjA3ZlFUUjd0SEVQMWs2Z1d1ZEp6VTA?oc=5)**  
    Tech Funding News · 30 Jul 2026 · relevance 19
-4. **[Swiss startup AI Infrastructure Capital AG launches with €16 million to tackle AI compute bottleneck - EU-Startups](https://news.google.com/rss/articles/CBMi0wFBVV95cUxQSjZ3RkVCUFNxaHEwR0lCVGRfTXhxa0JTUUxzcHNyR0oxTDFkeEhUQzNrX0VHYXhwRUFFbXlyX3pIdHNiUFpPLVBlVllQQ2t0R3V3Zy04WTNfeW9ncGctNF9VNExyMENuMmQyV1lyYk9YVlJFQW1tNEYyaE4xN19zVDBjX0x1dkdZTWRVNTR2SU5GOGo2WmVIejdrajdVNEtza25hR1o2YkhxUmcxaXlCVnlTSFhOaC1RalptREgzSGMzWVhkSUF6dE1McGRNT2VZSTZj?oc=5)**  
-   EU-Startups · 30 Jul 2026 · relevance 12
+4. **[Swiss startup AI Infrastructure Capital AG launches with €16 million to tackle AI compute bottleneck - eu-startups.com](https://news.google.com/rss/articles/CBMi0wFBVV95cUxQSjZ3RkVCUFNxaHEwR0lCVGRfTXhxa0JTUUxzcHNyR0oxTDFkeEhUQzNrX0VHYXhwRUFFbXlyX3pIdHNiUFpPLVBlVllQQ2t0R3V3Zy04WTNfeW9ncGctNF9VNExyMENuMmQyV1lyYk9YVlJFQW1tNEYyaE4xN19zVDBjX0x1dkdZTWRVNTR2SU5GOGo2WmVIejdrajdVNEtza25hR1o2YkhxUmcxaXlCVnlTSFhOaC1RalptREgzSGMzWVhkSUF6dE1McGRNT2VZSTZj?oc=5)**  
+   eu-startups.com · 30 Jul 2026 · relevance 12
 5. **[Nordfen brings drone simulation technology to Latvia](https://www.startupticker.ch/en/news/nordfen-brings-drone-simulation-technology-to-latvia)**  
    Startupticker · 03 Aug 2026 · relevance 9
 6. **[A tiny pore identifies cyanobacteria toxins in lake water](https://actu.epfl.ch/news/a-tiny-pore-identifies-cyanobacteria-toxins-in-lak)**  
