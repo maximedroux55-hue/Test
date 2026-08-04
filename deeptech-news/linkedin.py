@@ -253,10 +253,12 @@ COWORK_PROMPT = (
     "  investors in THIS round, against `link`.\n"
     "- claims non-empty - confirm each claim against `link`.\n"
     "- claims empty - no research needed.\n\n"
-    "Anything that fails: do not schedule it. Report it and append to\n"
-    "deeptech-news/proposals.json (branch claude/questions-9a5egd) with the\n"
-    "sentence you read and the page you read it on. Never touch "
-    "corrections.json.\n\n"
+    "Anything that fails: do not schedule it. Report it and append to the\n"
+    "`held_posts` list in deeptech-news/proposals.json (branch "
+    "claude/questions-9a5egd)\n"
+    "with the sentence you read and the page you read it on. Keep the file "
+    "valid\n"
+    "JSON. Never touch corrections.json.\n\n"
     "Report what was scheduled and what was held."
 )
 
