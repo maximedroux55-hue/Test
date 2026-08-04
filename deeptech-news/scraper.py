@@ -1114,7 +1114,8 @@ def main() -> None:
                 f"posts"
                 + (f", after skipping {capped} that would have exceeded "
                    f"{args.max_per_domain} links on one site" if capped else "")
-                + ". Widen --days for more.",
+                + ". Ten days is the window and it stands: a short week "
+                  "means the news was thin, not that the tool failed.",
                 file=sys.stderr,
             )
         print(

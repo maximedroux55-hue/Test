@@ -14,10 +14,10 @@ on:
     inputs:
       days:
         description: "How many days back to look"
-        # Two links per site is a hard cap, so the week needs more candidates
-        # than posts. At ten days the pool ran dry and a seven post week came
-        # out as four.
-        default: "21"
+        # Ten days is the ceiling. A post about a three week old round is not
+        # news, so a short week is the better trade: the cap and the window
+        # both stand and the week is however long the news made it.
+        default: "10"
       min_score:
         description: "Minimum relevance score"
         default: "4"
@@ -69,7 +69,7 @@ jobs:
         run: |
           cd deeptech-news
           python scraper.py \
-            --days "${{ github.event.inputs.days || '21' }}" \
+            --days "${{ github.event.inputs.days || '10' }}" \
             --min-score "${{ github.event.inputs.min_score || '4' }}" \
             --limit "${{ github.event.inputs.limit || '60' }}" \
             --posts "${{ github.event.inputs.posts || '7' }}" \
