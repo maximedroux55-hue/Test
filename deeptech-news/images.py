@@ -246,7 +246,12 @@ def _content_image(html_doc: str, base_url: str) -> str | None:
 def article_page(url: str, timeout: int = 12):
     """Fetch an article once and return (html, final_url), or (None, url)."""
     try:
-        req = urllib.request.Request(url, headers={"User-Agent": _UA})
+        req = urllib.request.Request(url, headers={
+            "User-Agent": _UA,
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,"
+                      "image/avif,image/webp,*/*;q=0.8",
+            "Accept-Language": "en-GB,en;q=0.9,de;q=0.8,fr;q=0.7",
+        })
         with urllib.request.urlopen(req, timeout=timeout) as resp:
             final_url = resp.geturl()
             raw = resp.read(600_000)  # the <head> plus a little body; cap the read
@@ -409,6 +414,11 @@ def enrich_articles(articles: list) -> None:
         else:
             a["image"] = a.get("image_feed")
             a["primary_source"] = None
+            # No note at all was worse than a bad one: two posts came back with
+            # no picture and no reason, and the reason was that the page never
+            # opened.
+            a["image_note"] = (f"could not open {_domain(link)}"
+                               if not a["image"] else "")
 
 
 # Kept for compatibility with older callers.
