@@ -631,22 +631,35 @@ def test_a_third_link_only_when_the_week_is_short():
     assert per["startupticker.ch"] == 3 and n == 3
 
 
-def test_a_page_with_no_preview_image_still_yields_a_picture():
+def test_the_picture_comes_from_the_story_not_the_page():
     import images
 
-    # Four posts of seven had no image because Startupticker and actu.epfl.ch
-    # declare no og:image, and nothing looked inside the page.
-    page = ('<html><head><title>x</title></head><body>'
-            '<img src="/assets/logo.svg"><img src="/img/site-logo.png">'
-            '<img src="https://cdn.startupticker.ch/uploads/2026/07/'
-            'hilo-team-1200x800.jpg" alt="Hilo"></body></html>')
-    assert images._og_image(page, "https://x.ch") is None
-    found = images._content_image(page, "https://www.startupticker.ch/en/news/a")
-    assert found.endswith("hilo-team-1200x800.jpg")
-    # Furniture is not a photograph.
-    assert images._content_image('<img src="/logo.png">', "https://x.ch") is None
-    assert images._content_image('<img src="/icons/avatar.png">',
-                                 "https://x.ch") is None
+    # Startupticker declares no preview image, and taking the first picture on
+    # the page took the chrome around the story: a logo, a partner banner, a
+    # sponsor. Both posts carried the wrong image.
+    story = ("<html><body>"
+             '<header><img src="/img/startupticker-logo.png"></header>'
+             '<nav><img src="/img/partner-banner.jpg"></nav>'
+             '<aside><img src="/img/sponsor-swisscom.jpg"></aside>'
+             "<article><p>Hilo closes a Series B extension.</p>"
+             + "<p>body text. </p>" * 40
+             + '<img src="/uploads/2026/07/hilo-team.jpg" width="1200" '
+               'height="800"></article>'
+             '<footer><img src="/img/social-linkedin.png"></footer>'
+             "</body></html>")
+    assert images._og_image(story, "https://x.ch") is None
+    found = images._content_image(story,
+                                  "https://www.startupticker.ch/en/news/hilo")
+    assert found.endswith("/uploads/2026/07/hilo-team.jpg"), found
+
+    # Rather no picture than the wrong one: a thumbnail, or a story with
+    # nothing but chrome, yields nothing.
+    small = "<article>" + "x" * 500 + \
+            '<img src="/uploads/thumb.jpg" width="80" height="60"></article>'
+    assert images._content_image(small, "https://x.ch") is None
+    chrome = '<header><img src="/img/hero.jpg"></header><article>' + \
+             "y" * 500 + "</article>"
+    assert images._content_image(chrome, "https://x.ch") is None
 
 
 # Locking the count means a test appended below the runner, where it would

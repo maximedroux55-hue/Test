@@ -225,19 +225,50 @@ def _name_matches(root: str, token: str) -> bool:
 # A picture inside the article, for pages that set no preview image. Small
 # files are logos, spacers and tracking pixels rather than the photo.
 _CONTENT_IMG = re.compile(
-    r'<img\b[^>]*\bsrc=["\']([^"\']+\.(?:jpe?g|png|webp))[^"\']*["\'][^>]*>',
+    r'<img\b([^>]*)\bsrc=["\']([^"\']+\.(?:jpe?g|png|webp))[^"\']*["\']([^>]*)>',
     re.IGNORECASE)
-_TINY = re.compile(r"(logo|icon|avatar|sprite|placeholder|pixel|spacer|blank|"
-                   r"1x1|badge|favicon)", re.IGNORECASE)
+
+# Page furniture, sponsors and the widgets around a story. A wrong picture on a
+# published post is worse than none, so anything that looks like chrome is
+# refused rather than ranked.
+_NOT_A_PHOTO = re.compile(
+    r"logo|icon|avatar|sprite|placeholder|pixel|spacer|blank|1x1|badge|"
+    r"favicon|banner|sponsor|advert|/ads?/|partner|newsletter|footer|header|"
+    r"social|share|arrow|button|bullet|flag|emoji",
+    re.IGNORECASE)
+
+_DIMENSION = re.compile(r'\b(width|height)\s*=\s*["\']?(\d+)', re.IGNORECASE)
 
 
 def _content_image(html_doc: str, base_url: str) -> str | None:
-    """The first picture in the article that is not furniture."""
-    for src in _CONTENT_IMG.findall(html_doc or "")[:12]:
-        if _TINY.search(src):
+    """The article's own photograph, or None.
+
+    Scanning the whole page took the first picture on it, which on
+    Startupticker is the chrome around the story rather than the story. The
+    search is confined to the block that holds the article, the same one the
+    text is read from, and anything that looks like furniture or is declared
+    small is refused. Where nothing qualifies this returns None: a post with no
+    picture is fixable, a post with the wrong one is published.
+    """
+    if not html_doc:
+        return None
+    body = _STRIP_BLOCKS.sub(" ", html_doc)
+    best = ""
+    for pattern in _CONTENT_BLOCKS:
+        for match in pattern.finditer(body):
+            if len(match.group(1)) > len(best):
+                best = match.group(1)
+    if len(best) < 400:
+        return None
+
+    for before, src, after in _CONTENT_IMG.findall(best)[:12]:
+        if _NOT_A_PHOTO.search(src):
+            continue
+        sizes = [int(v) for _, v in _DIMENSION.findall(f"{before} {after}")]
+        if sizes and max(sizes) < 300:
             continue
         full = urllib.parse.urljoin(base_url, src)
-        if any(bad in full for bad in ("data:", "base64")):
+        if "data:" in full or "base64" in full:
             continue
         return full
     return None
