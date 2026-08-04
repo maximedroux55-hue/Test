@@ -1,5 +1,5 @@
 # Climb Ventures LinkedIn plan for the week
-_Generated 04 August 2026. 5 posts, one per day, from Swiss DeepTech news of the last 10 days. Written by Claude in Max's voice. Schedule each for 08:00 on its day. Review and edit before posting._
+_Generated 04 August 2026. 5 posts, one per working day, weekend left blank, from Swiss DeepTech news of the last 10 days. Written by Claude in Max's voice. Schedule each for 08:00 on its day. Review and edit before posting._
 
 ## Publish with Claude Cowork
 Paste this into Cowork to schedule the whole week in one go (it reads the structured file `digest/posts.json` next to this one):
@@ -29,14 +29,14 @@ The posts themselves are below, for review before you run it.
 ```
 🇨🇭 Swiss neutrality cuts both ways in AI race
 
-@SWI swissinfo.ch reports that Switzerland's neutral stance is becoming both an asset and a liability as global AI competition hardens. Neutrality attracts trusted data infrastructure and international governance bodies to Geneva, but it also complicates access to allied chip supply chains and defence-linked research funding.
+@SWI swissinfo.ch reports that Switzerland's neutral stance is becoming both an asset and a liability as the US and China compete for AI dominance. Neutrality attracts trust, data and research partners, but it also complicates access to chips, alliances and the compute agreements that shape frontier development.
 
 Why it matters:
-🌍 Trust is a scarce commodity in AI geopolitics
-🔌 Export controls do not exempt neutral countries
-🇨🇭 Switzerland must choose where its AI stack sits
+🤝 Trust is a real export product in AI governance
+🔌 Compute access increasingly depends on political alignment, not price
+🇨🇭 Swiss sovereignty ambitions need hardware, not only principles
 
-Neutrality buys Switzerland convening power, but compute and chips still answer to someone else's foreign policy.
+Neutrality buys credibility, but credibility without compute is a position that gets harder to hold each year.
 
 https://www.swissinfo.ch/eng/foreign-affairs/swiss-neutrality-is-double-edged-sword-in-ai-arms-race/91784797
 ```
@@ -47,14 +47,14 @@ https://www.swissinfo.ch/eng/foreign-affairs/swiss-neutrality-is-double-edged-sw
 ```
 🇨🇭 Swiss researchers find lipid switch blocking anthrax
 
-A study led by @EPFL researchers shows how a reversible fat-based modification controls CMG2, the protein anthrax toxin uses to enter cells. The same protein binds collagen VI to maintain the extracellular matrix, and its failure drives a rare genetic disease.
+A study led by @EPFL researchers shows how a reversible fat-based modification controls CMG2, the protein that binds collagen VI to maintain the extracellular matrix. The same protein is the door anthrax toxin uses to enter cells, and it is implicated in a rare genetic disease.
 
 Why it matters:
 🧬 One protein links tissue health, rare disease and toxin entry
 🔬 Reversible lipid modification is a druggable control point
-🇨🇭 Swiss fundamental biology feeding future therapeutic targets
+🇨🇭 Swiss basic biology feeding future therapeutic targets
 
-The unglamorous work of understanding one protein properly is where Swiss biotech pipelines actually begin.
+Mechanistic discoveries like this are the raw material Swiss biotech spin-offs will be built on a decade from now.
 
 https://actu.epfl.ch/news/a-lipid-switch-that-blocks-anthrax
 ```
@@ -63,52 +63,52 @@ https://actu.epfl.ch/news/a-lipid-switch-that-blocks-anthrax
 ## Post 3 — schedule for Friday 07 August at 08:00
 
 ```
-🇨🇭 Four Swiss medtechs clear commercial and clinical hurdles
+🇨🇭 Four Swiss medtechs clear major milestones at once
 
-@Arcoris bio signed a distribution deal taking its biomarker-detection kits into Europe and North America, @Hi-D Imaging won expanded @FDA clearance for AI-driven heart-valve planning, and @ABILITY Neurotech completed its first-in-human brain-computer interface procedure. @Alivion published supporting platform data, per @Startupticker.
+@Arcoris bio signed a distribution deal bringing its biomarker-detection kits to Europe and North America, @Hi-D Imaging won expanded FDA clearance for AI-driven heart-valve planning, @ABILITY Neurotech completed a first-in-human brain-computer interface procedure, and @Alivion published supporting platform data, all reported by @Startupticker.
 
 Why it matters:
-🫀 FDA clearance turns Swiss software into billable clinical practice
+🫀 FDA clearance opens the largest medtech market
 🧠 First-in-human is the hardest gate in neurotech
-🇨🇭 Four milestones in one week signals depth, not luck
+🇨🇭 Four Swiss companies crossing thresholds in the same week
 
-Swiss medtech rarely makes noise, but the regulatory scoreboard keeps moving in its favour.
+Swiss medtech rarely makes noise, but the regulatory scoreboard keeps moving in one direction.
 
 https://www.startupticker.ch/en/news/four-swiss-medtechs-mark-commercial-regulatory-and-clinical-milestones
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/bilder/immunoMUSE-Amplify-scaled-e1779091337103-small.jpg
 
-## Post 4 — schedule for Saturday 08 August at 08:00
+## Post 4 — schedule for Monday 10 August at 08:00
 
 ```
-🇨🇭 Swiss AI tool audits CVs for local market
+🇨🇭 Swiss AI tool audits CVs for local hiring
 
-@Humboldt AI, based in St. Gallen, has built an AI system that reviews and optimises CVs for Swiss hiring conditions. Since launching in January 2026 it has been used by several thousand people, with first pilot projects running with institutional partners in Switzerland and Liechtenstein.
+@Humboldt AI, based in St. Gallen, has built an AI system that analyses and optimises CVs for the Swiss labour market. Since launching in January 2026 several thousand people have used the platform, and first pilot projects are running with institutional partners in Switzerland and Liechtenstein.
 
 Why it matters:
-📄 Hiring norms are local, generic AI tools are not
-🤝 Institutional pilots beat consumer downloads as validation
-🇨🇭 St. Gallen adding applied AI to its finance base
+📄 Hiring standards are local, so generic AI underperforms
+🏛️ Institutional pilots signal demand beyond consumer users
+🇨🇭 Six months from launch to thousands of users
 
-Narrow, market-specific AI products are proving easier to defend than broad ones.
+Applied AI wins on domain specificity, and labour markets are about as domain-specific as it gets.
 
 https://www.startupticker.ch/en/news/humboldt-ai-lanciert-ki-tool-fuer-den-cv-check-im-schweizer-arbeitsmarkt
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Humboldt%20AI%20gratis%20CV%20Check%20Preview.png
 
-## Post 5 — schedule for Sunday 09 August at 08:00
+## Post 5 — schedule for Tuesday 11 August at 08:00
 
 ```
-🇨🇭 Swiss proptech AssetOS wins major real estate clients
+🇨🇭 Swiss proptech AssetOS lands blue-chip real estate clients
 
-@AssetOS, a spin-off from the @University of St. Gallen, has built an AI platform helping professional property investors capture, analyse and audit income-generating assets. Founded in late 2024 and live since summer 2025, it already counts @Implenia and @Avadis among its customers.
+@AssetOS, a spin-off from @HSG, has built an AI platform that helps professional property investors capture, analyse and audit income-generating assets. Founded in late 2024 and live since summer 2025, it already counts @Implenia and @Avadis among its customers.
 
 Why it matters:
-🏗️ Enterprise real estate names adopting a one-year-old product
-📊 Underwriting workflows are still largely manual and slow
-🇨🇭 HSG spin-offs moving from research into commercial software
+🏢 Real estate diligence is still largely manual work
+📈 Two named industry leaders within a year of go-live
+🇨🇭 Swiss university spin-off selling into a conservative sector
 
-Going from go-live to blue-chip clients in twelve months says the pain point was real.
+Winning incumbent real estate names this early says the product solves a problem people were paying for anyway.
 
 https://www.startupticker.ch/en/news/proptech-assetos-auf-wachstumskurs
 ```
