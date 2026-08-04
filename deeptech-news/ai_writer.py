@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 
 # Default to the most capable model. Override with ANTHROPIC_MODEL if you want a
 # cheaper one (e.g. claude-sonnet-5).
@@ -35,15 +36,15 @@ what happened. Most begin with "Swiss". Real examples: "🇨🇭 Swiss chips kee
 quantum computers cool", "🇨🇭 Swiss space firm raises $70M to build satellites", \
 "🇨🇭 Swiss capsules reinvent alcohol-free perfume".
 2. Body: 2 or 3 sentences, 35 to 50 words, and nothing more. Lead with the \
-company, say where it came from ("an @EPFL spin-off", "Neuchâtel-based"), then \
+company, say where it came from ("an EPFL spin-off", "Neuchâtel-based"), then \
 pack in the concrete facts you were given: the amount, the investor, revenue, \
-customers, the technical specific. EVERY organisation you name carries an @ \
-directly before it: the subject company first of all, plus universities, \
-investors, partners and customers. "AI Infrastructure Capital AG has launched" \
-is wrong; "@AI Infrastructure Capital AG has launched" is right. If you name it, \
-mention it, including in the closing line. Real \
-example: "@Rhonexum, an @EPFL spin-off, is building electronics that run near \
-absolute zero, right beside the qubits. Backed by @Venture Kick and a $1M \
+customers, the technical specific. Exactly ONE @mention per post, on the \
+company the post is about, the first time it appears. Every other organisation \
+is named in plain text with no @: universities, investors, partners, customers, \
+regulators. Each @ has to be typed into LinkedIn and picked from a dropdown, so \
+a post with five of them is five chances to stall or tag the wrong entity. Real \
+example: "@Rhonexum, an EPFL spin-off, is building electronics that run near \
+absolute zero, right beside the qubits. Backed by Venture Kick and a $1M \
 pre-seed, its cryo-CMOS control replaces today's tangle of cables, a key barrier \
 to scaling quantum machines."
 3. The exact label "Why it matters:" on its own line.
@@ -167,6 +168,38 @@ def _build_user_prompt(articles: list, days: int) -> str:
             + f"   Link: {a['link']}"
         )
     return "\n".join(lines)
+
+
+_MENTION = re.compile(r"@([A-Za-zÀ-ÿ0-9][\w\-.&']*)")
+
+
+def one_mention(post: str, company: str = "") -> str:
+    """Leave the @ on the subject company only, as plain text elsewhere.
+
+    Every mention costs a type-wait-click cycle in LinkedIn, and a post with
+    five of them is five chances to hang or tag the wrong entity. Two of them
+    could not be tagged at all: "@University of St. Gallen" begins with a
+    generic word, so typing the first word after the @ offers a list of
+    universities, and "@FDA" is a US regulator nobody meant to tag.
+
+    So one mention, the company the post is about. Everything else keeps its
+    name and loses the @.
+    """
+    stem = re.sub(r"[^a-z0-9]", "", (company or "").lower())
+    kept = [False]
+
+    def decide(match):
+        word = re.sub(r"[^a-z0-9]", "", match.group(1).lower())
+        subject = bool(stem) and (word.startswith(stem[:len(word)] or "x")
+                                  and stem.startswith(word[:len(stem)] or "x"))
+        # A round-up names four companies and is about none of them; the first
+        # is as good a choice as any, and it is only ever one.
+        if (subject or not stem) and not kept[0]:
+            kept[0] = True
+            return match.group(0)
+        return match.group(1)
+
+    return _MENTION.sub(decide, post or "")
 
 
 def _warn_missing_mentions(posts) -> None:

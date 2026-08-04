@@ -237,15 +237,20 @@ COWORK_PROMPT = (
     "Open https://maxime-droux.com/digest/posts.json and schedule this week's "
     "posts.\n\n"
     "For each post, in order:\n"
-    "- Type the `text`. Where it contains an @mention, type the first word "
-    "after\n"
-    "  the @, wait for the dropdown, click the first row. LinkedIn will render "
-    "the\n"
-    "  company's official name - that is expected and fine, do not fight it or\n"
-    "  rewrite the post.\n"
-    "- Type the article URL last, with real keystrokes, so the link preview "
-    "loads\n"
-    "  the article photo. Never insert text via JavaScript.\n"
+    "- Type the `text` straight through, once, with real keystrokes. Never "
+    "insert\n"
+    "  text via JavaScript. It already ends with the article URL on its own "
+    "line,\n"
+    "  so do not add, move or retype the URL separately: typing it last is what "
+    "makes\n"
+    "  the link preview load the article photo.\n"
+    "- Each post has exactly one @mention, on the company itself. Type the "
+    "first\n"
+    "  word after the @, wait for the dropdown, click the first row. LinkedIn "
+    "will\n"
+    "  render the company's official name: that is expected and fine, do not "
+    "fight\n"
+    "  it, do not restart the post, do not rewrite it.\n"
     "- Schedule at `time` on `date`.\n\n"
     "Verification, by flag:\n"
     "- needs_check: true - confirm round closed / round name / amount received "
@@ -355,11 +360,16 @@ def build_posts(articles: list, days: int, top: int = 7):
     import trust
     from ai_writer import has_figure
 
+    from ai_writer import one_mention
+
     records = []
     when = schedule_days(today, len(picks), full_week=top)
     for i, (text, art) in enumerate(zip(texts, picks)):
         day = when[i]
         company = art.get("company", "")
+        # One @ per post, on the subject company. Five mentions meant five
+        # dropdowns to fight in LinkedIn, and two of them could not be tagged.
+        text = one_mention(text, company)
         checked = trust.verification(company) if company else {}
         risky = bool(has_figure(text)) and not checked
         claims = _claims_in(text, art)

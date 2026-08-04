@@ -664,6 +664,50 @@ def test_the_picture_comes_from_the_story_not_the_page():
     assert images._content_image(chrome, "https://x.ch") is None
 
 
+def test_one_mention_per_post():
+    """Five @mentions per post cost a fortune in Cowork restarts."""
+    import ai_writer
+    import linkedin
+
+    # The real post: four organisations tagged, two of them untaggable. Typing
+    # the first word after "@University" offers a list of universities, and the
+    # FDA is a US regulator nobody meant to tag.
+    text = ("@AssetOS, a spin-off from @University of St. Gallen, counts "
+            "@Implenia and @Avadis among its customers.")
+    out = ai_writer.one_mention(text, "AssetOS")
+    assert re.findall(r"@[\w\-.&]+", out) == ["@AssetOS"]
+    # The other names survive in full, they just lose the @.
+    for name in ("University of St. Gallen", "Implenia", "Avadis"):
+        assert name in out, name
+
+    # A round-up is about no single company, so the first mention stands and
+    # the rest go plain: one is the cap either way.
+    roundup = ("@Arcoris bio signed a deal, while @Hi-D Imaging won @FDA "
+               "clearance. @ABILITY Neurotech and @Alivion followed.")
+    out = ai_writer.one_mention(roundup, "")
+    assert re.findall(r"@[\w\-.&]+", out) == ["@Arcoris"]
+    assert "FDA clearance" in out and "Hi-D Imaging" in out
+
+    # A multi-word company keeps its @ on the first word, which is what gets
+    # typed into the dropdown.
+    out = ai_writer.one_mention("@Humboldt AI, based in St. Gallen.",
+                                "Humboldt AI")
+    assert out.startswith("@Humboldt AI,")
+
+    # A post with no mention at all is left exactly as it is.
+    assert ai_writer.one_mention("No organisations here.", "Foo") == \
+        "No organisations here."
+
+    # The writing instruction has to agree, or every run pays to strip them.
+    assert "ONE @mention per post" in ai_writer.SYSTEM_PROMPT
+
+    # And the Cowork prompt must not ask for the URL twice: it is already the
+    # last line of the text, and asking again restarted posts.
+    prompt = linkedin.COWORK_PROMPT
+    assert "already ends with the article URL" in prompt
+    assert "exactly one @mention" in prompt
+
+
 def test_a_broken_proposals_file_is_not_an_empty_one():
     """A check appended its report after the closing brace and vanished."""
     import json
@@ -884,7 +928,7 @@ def test_short_week_skips_the_weekend():
 
 # Locking the count means a test appended below the runner, where it would
 # never execute, shows up as a failure rather than as silence. That happened.
-EXPECTED = 49
+EXPECTED = 50
 
 
 if __name__ == "__main__":
