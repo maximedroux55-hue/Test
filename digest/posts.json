@@ -2,104 +2,74 @@
   "generated": "2026-08-04",
   "mode": "Written by Claude in Max's voice.",
   "note": "Times are local. Schedule each post at its time on its date.",
-  "cowork_prompt": "Check and schedule my Swiss DeepTech LinkedIn posts for this week. Open https://maxime-droux.com/digest/posts.json and read the posts from it.\n\nCHECK EVERY POST BEFORE SCHEDULING IT. A post goes out under my name and tags the company, so a wrong figure cannot be quietly corrected. Each post carries a `claims` list: the factual assertions its text makes. For each one, open the `link` and, where that does not settle it, find the company's own release or the filing. Confirm four things:\n  1. Has the round closed? A round being raised, expected to close, or subject to approval has not. 'Is raising' is not 'raised'.\n  2. Is the round name right? A first listing is an IPO, an already listed company selling shares is a follow-on, a merger with a listed shell is a de-SPAC.\n  3. Is the amount money received, rather than a ceiling, a gross or a target?\n  4. Did the named investors take part in THIS round rather than an earlier one?\n\nWhere everything checks out, schedule the post: paste the `text` exactly as written, at the `time` on the `date` given. For the image use the picture at `image`; if it is null, open the `link` and use the article's own main photo.\n\nWhere anything does not check out, DO NOT SCHEDULE THAT POST. Tell me what the source actually says and what the post claims, and add the correction to deeptech-news/proposals.json in the maximedroux55-hue/Test repository, branch claude/questions-9a5egd, with the sentence you read and the page you read it on. Never write to corrections.json.\n\nA post marked `needs_check: true` states a figure for a round nobody has verified: treat those with particular care. A post marked `verified: true` has already been checked against a primary source, so confirm rather than re-research it.\n\nTell me at the end which you scheduled, which you held back and why.",
+  "cowork_prompt": "Open https://maxime-droux.com/digest/posts.json and schedule this week's posts.\n\nFor each post, in order:\n- Type the `text` straight through, once, with real keystrokes. Never insert\n  text via JavaScript. It already ends with the article URL on its own line,\n  so do not add, move or retype the URL separately: typing it last is what makes\n  the link preview load the article photo.\n- Each post has exactly one @mention. Type `mention.type`, wait for the\n  dropdown, click the row matching `mention.expect`. If no row matches, post\n  it without the mention rather than tagging the wrong company. LinkedIn will\n  render the official name: that is expected and fine, do not fight it, do not\n  restart the post, do not rewrite it.\n- Schedule at `time` on `date`. If no link preview appears, schedule it anyway:\n  do not hunt for an image.\n\nTwo attempts per post, then stop. If a post is not scheduled after two tries,\nleave it, move to the next one, and list it at the end. Never start a third.\n\nBefore you start, open the scheduled-posts list once and note what is already\nthere. Skip any post already scheduled: never schedule the same one twice.\n\nVerification:\n- Claims already settled against the article are not in the file. Check only\n  what `claims` still lists, and posts with needs_check: true (a figure nobody\n  has verified: confirm round closed / round name / amount received / investors\n  in THIS round). Both empty and false means schedule it, no research.\n\nAnything that fails: do not schedule it, and do not edit any file or commit\nanything. List the held posts at the end with the sentence you read and the\npage you read it on, and I will record them.\n\nReport what was scheduled and what was held.",
   "posts": [
     {
-      "claims": [],
-      "link_note": "no company named in the headline",
-      "image_note": "",
-      "verified": false,
-      "verified_source": "",
-      "needs_check": false,
       "index": 1,
-      "weekday": "Wednesday",
       "date": "2026-08-05",
-      "schedule_for": "Wednesday 05 August",
       "time": "08:00",
-      "text": "🇨🇭 Swiss medtechs clear regulatory and clinical hurdles\n\n@Arcoris bio has signed a distribution deal taking its biomarker-detection kits into Europe and North America, while @Hi-D Imaging won expanded @FDA clearance for AI-driven heart-valve planning. @ABILITY Neurotech completed its first-in-human brain-computer interface procedure, and @Alivion published supporting platform data.\n\nWhy it matters:\n🫀 FDA clearance opens the largest medtech market to Swiss software\n🧠 First-in-human is the milestone that separates research from product\n🇨🇭 Four companies crossing commercial thresholds in the same month\n\nMilestones rarely cluster by accident: Swiss medtech is reaching the stage where science meets paying customers.\n\nhttps://www.startupticker.ch/en/news/four-swiss-medtechs-mark-commercial-regulatory-and-clinical-milestones",
-      "image": "https://www.startupticker.ch/assets/images/bilder/immunoMUSE-Amplify-scaled-e1779091337103-small.jpg",
+      "text": "🇨🇭 Swiss medtechs clear commercial and clinical hurdles\n\n@ABILITY Neurotech has completed the first-in-human procedure for its brain-computer interface, one of four Swiss medtech milestones reported by Startupticker. Arcoris bio signed a distribution deal for its biomarker-detection kits across Europe and North America, Hi-D Imaging won expanded FDA clearance for AI heart-valve planning, and Alivion published supporting platform data.\n\nWhy it matters:\n🧠 First-in-human is the milestone investors cannot fake\n🏥 FDA clearance opens the largest medtech market immediately\n🇨🇭 Four companies crossing thresholds in a single week\n\nMedtech rewards patience, and Switzerland keeps producing companies willing to spend a decade earning it.\n\nhttps://www.startupticker.ch/en/news/four-swiss-medtechs-mark-commercial-regulatory-and-clinical-milestones",
       "link": "https://www.startupticker.ch/en/news/four-swiss-medtechs-mark-commercial-regulatory-and-clinical-milestones",
-      "publisher": "Startupticker",
-      "primary_source": null,
-      "coverage_url": null
-    },
-    {
-      "claims": [],
-      "link_note": "no company named in the headline",
-      "image_note": "",
-      "verified": false,
-      "verified_source": "",
+      "mention": {
+        "type": "ABILITY",
+        "expect": "ABILITY"
+      },
       "needs_check": false,
-      "index": 2,
-      "weekday": "Thursday",
-      "date": "2026-08-06",
-      "schedule_for": "Thursday 06 August",
-      "time": "08:00",
-      "text": "🇨🇭 Swiss neutrality cuts both ways in AI\n\n@SWI swissinfo.ch argues that Switzerland's neutrality is a double-edged sword in the global AI race: trusted ground for data, governance and international institutions, but exposed as compute and model power concentrate in Washington and Beijing.\n\nWhy it matters:\n⚖️ Trust is an asset only if compute stays domestic\n🌐 Geneva's institutions make Switzerland a natural AI governance venue\n🇨🇭 Sovereign infrastructure now shapes Swiss technological independence\n\nNeutrality buys Switzerland credibility in AI, but credibility without compute is a position, not a strategy.\n\nhttps://www.swissinfo.ch/eng/foreign-affairs/swiss-neutrality-is-double-edged-sword-in-ai-arms-race/91784797",
-      "image": "https://www.swissinfo.ch/content/wp-content/uploads/sites/13/2026/07/662478390_highres.jpg?ver=e0a2b121&fit=1200,800",
-      "link": "https://www.swissinfo.ch/eng/foreign-affairs/swiss-neutrality-is-double-edged-sword-in-ai-arms-race/91784797",
-      "publisher": "SWI swissinfo.ch",
-      "primary_source": null,
-      "coverage_url": null
+      "claims": []
     },
     {
+      "index": 2,
+      "date": "2026-08-06",
+      "time": "08:00",
+      "text": "🇨🇭 Swiss neutrality cuts both ways in AI\n\n@SWI swissinfo.ch argues that neutrality is a double-edged sword as the AI arms race hardens into blocs. Switzerland can host models and standards nobody else trusts equally, but sitting outside US and EU alliances also means sitting outside their compute, procurement and data arrangements.\n\nWhy it matters:\n🤝 Trusted-neutral positioning is a genuine commercial asset\n🔌 Outside the blocs means outside their compute deals\n🇨🇭 Swiss AI sovereignty depends on infrastructure, not diplomacy alone\n\nNeutrality only pays if it is backed by hardware, talent and standards nobody can switch off.\n\nhttps://www.swissinfo.ch/eng/foreign-affairs/swiss-neutrality-is-double-edged-sword-in-ai-arms-race/91784797",
+      "link": "https://www.swissinfo.ch/eng/foreign-affairs/swiss-neutrality-is-double-edged-sword-in-ai-arms-race/91784797",
+      "mention": {
+        "type": "SWI",
+        "expect": "SWI"
+      },
+      "needs_check": false,
+      "claims": []
+    },
+    {
+      "index": 3,
+      "date": "2026-08-07",
+      "time": "08:00",
+      "text": "🇨🇭 Swiss AI tool audits CVs at scale\n\n@Humboldt AI, based in St. Gallen, has built an AI platform that reviews and optimises CVs for the Swiss labour market. Since launching in January 2026, several thousand people have used it, and first pilot projects are running with institutional partners in Switzerland and Liechtenstein.\n\nWhy it matters:\n📄 Hiring friction is a large, badly served market\n🏛️ Institutional pilots validate faster than consumer downloads\n🇨🇭 St. Gallen keeps producing applied AI companies\n\nSix months from launch to institutional pilots suggests the product is solving something employers already measure.\n\nhttps://www.startupticker.ch/en/news/humboldt-ai-lanciert-ki-tool-fuer-den-cv-check-im-schweizer-arbeitsmarkt",
+      "link": "https://www.startupticker.ch/en/news/humboldt-ai-lanciert-ki-tool-fuer-den-cv-check-im-schweizer-arbeitsmarkt",
+      "mention": {
+        "type": "Humboldt",
+        "expect": "Humboldt AI"
+      },
+      "needs_check": false,
       "claims": [
         "the company is Humboldt AI"
-      ],
-      "link_note": "no announcement found for Humboldt AI at humboldt-ai.ch",
-      "image_note": "",
-      "verified": false,
-      "verified_source": "",
-      "needs_check": false,
-      "index": 3,
-      "weekday": "Friday",
-      "date": "2026-08-07",
-      "schedule_for": "Friday 07 August",
-      "time": "08:00",
-      "text": "🇨🇭 Swiss AI tool checks CVs for job seekers\n\n@Humboldt AI, based in St. Gallen, has built an AI platform that reviews and optimises CVs for the Swiss labour market. Since launching in January 2026, several thousand people have used it, and first pilot projects are running with institutional partners in Switzerland and Liechtenstein.\n\nWhy it matters:\n📄 Hiring data is local, so labour-market AI must be too\n🤝 Institutional pilots signal demand beyond individual users\n🇨🇭 Six months from launch to thousands of Swiss users\n\nApplied AI wins where local context matters more than model size.\n\nhttps://www.startupticker.ch/en/news/humboldt-ai-lanciert-ki-tool-fuer-den-cv-check-im-schweizer-arbeitsmarkt",
-      "image": "https://www.startupticker.ch/assets/images/articles/Humboldt%20AI%20gratis%20CV%20Check%20Preview.png",
-      "link": "https://www.startupticker.ch/en/news/humboldt-ai-lanciert-ki-tool-fuer-den-cv-check-im-schweizer-arbeitsmarkt",
-      "publisher": "Startupticker",
-      "primary_source": "https://humboldt-ai.ch/",
-      "coverage_url": null
+      ]
     },
     {
-      "claims": [],
-      "link_note": "",
-      "image_note": "could not open actu.epfl.ch",
-      "verified": false,
-      "verified_source": "",
-      "needs_check": false,
       "index": 4,
-      "weekday": "Monday",
       "date": "2026-08-10",
-      "schedule_for": "Monday 10 August",
       "time": "08:00",
-      "text": "🇨🇭 Swiss researchers find lipid switch blocking anthrax\n\nA study led by @EPFL researchers shows how a reversible fat-based modification controls CMG2, a protein that binds collagen VI to maintain the extracellular matrix. The same switch governs a rare genetic disease and the route anthrax toxin uses to enter cells.\n\nWhy it matters:\n🧬 One protein links tissue health, rare disease and toxin entry\n💊 Reversible modifications are attractive, tractable drug targets\n🇨🇭 EPFL basic biology feeding future therapeutic programmes\n\nSwiss fundamental research keeps producing the mechanistic detail that drug pipelines are eventually built on.\n\nhttps://actu.epfl.ch/news/a-lipid-switch-that-blocks-anthrax",
-      "image": null,
+      "text": "🇨🇭 Swiss researchers find lipid switch blocking anthrax\n\nA study led by @EPFL shows how a reversible fat-based modification controls CMG2, a protein that binds collagen VI to maintain the extracellular matrix. The same protein is the entry route anthrax toxin uses to get into cells, and is implicated in a rare genetic disease.\n\nWhy it matters:\n🧬 One protein links tissue health, rare disease and toxins\n🛡️ Blocking entry is a different strategy from killing bacteria\n🇨🇭 EPFL basic biology feeding future therapeutic targets\n\nThe most valuable Swiss science often starts as curiosity about how a single molecule gets to the cell surface.\n\nhttps://actu.epfl.ch/news/a-lipid-switch-that-blocks-anthrax",
       "link": "https://actu.epfl.ch/news/a-lipid-switch-that-blocks-anthrax",
-      "publisher": "EPFL News",
-      "primary_source": null,
-      "coverage_url": null
+      "mention": {
+        "type": "EPFL",
+        "expect": "EPFL"
+      },
+      "needs_check": false,
+      "claims": []
     },
     {
-      "claims": [],
-      "link_note": "no company named in the headline",
-      "image_note": "",
-      "verified": false,
-      "verified_source": "",
-      "needs_check": false,
       "index": 5,
-      "weekday": "Tuesday",
       "date": "2026-08-11",
-      "schedule_for": "Tuesday 11 August",
       "time": "08:00",
-      "text": "🇨🇭 Swiss proptech AssetOS wins major real estate clients\n\n@AssetOS, a spin-off from @University of St. Gallen, has built an AI-supported platform that helps professional property investors capture, analyse and screen income-producing assets. Founded in late 2024 and live since summer 2025, it already counts @Implenia and @Avadis among its customers.\n\nWhy it matters:\n🏢 Real estate due diligence is still largely manual work\n📈 Steady growth since go-live under a year ago\n🇨🇭 HSG spin-off selling to Switzerland's largest property players\n\nWinning names like Implenia this early says the product solves a problem the industry already knows it has.\n\nhttps://www.startupticker.ch/en/news/proptech-assetos-auf-wachstumskurs",
-      "image": "https://www.startupticker.ch/assets/images/articles/AssetOS%20Lo%CC%88sung.jpg",
+      "text": "🇨🇭 Swiss proptech signs Implenia and Avadis\n\n@AssetOS, an HSG spin-off founded in late 2024, has built an AI platform that helps professional real estate investors capture, analyse and underwrite income-producing properties. Since go-live in summer 2025 it has grown steadily and counts Implenia and Avadis among its customers.\n\nWhy it matters:\n🏢 Underwriting is where real estate errors get expensive\n📈 Blue-chip logos within a year of go-live\n🇨🇭 HSG spin-offs increasingly build software, not just consultancies\n\nSelling to conservative Swiss real estate buyers this fast is the strongest signal a proptech can send.\n\nhttps://www.startupticker.ch/en/news/proptech-assetos-auf-wachstumskurs",
       "link": "https://www.startupticker.ch/en/news/proptech-assetos-auf-wachstumskurs",
-      "publisher": "Startupticker",
-      "primary_source": "https://assetos.ch/de/",
-      "coverage_url": null
+      "mention": {
+        "type": "AssetOS",
+        "expect": "AssetOS"
+      },
+      "needs_check": false,
+      "claims": []
     }
   ]
 }

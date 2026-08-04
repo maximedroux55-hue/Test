@@ -68,21 +68,38 @@
     <p>Copy this into Cowork to schedule the whole week in one go:</p>
     <div class="posttext">
       <button class="copy" onclick="copyText(this)">Copy</button>
-      <pre class="post">Check and schedule my Swiss DeepTech LinkedIn posts for this week. Open https://maxime-droux.com/digest/posts.json and read the posts from it.
+      <pre class="post">Open https://maxime-droux.com/digest/posts.json and schedule this week&#x27;s posts.
 
-CHECK EVERY POST BEFORE SCHEDULING IT. A post goes out under my name and tags the company, so a wrong figure cannot be quietly corrected. Each post carries a `claims` list: the factual assertions its text makes. For each one, open the `link` and, where that does not settle it, find the company&#x27;s own release or the filing. Confirm four things:
-  1. Has the round closed? A round being raised, expected to close, or subject to approval has not. &#x27;Is raising&#x27; is not &#x27;raised&#x27;.
-  2. Is the round name right? A first listing is an IPO, an already listed company selling shares is a follow-on, a merger with a listed shell is a de-SPAC.
-  3. Is the amount money received, rather than a ceiling, a gross or a target?
-  4. Did the named investors take part in THIS round rather than an earlier one?
+For each post, in order:
+- Type the `text` straight through, once, with real keystrokes. Never insert
+  text via JavaScript. It already ends with the article URL on its own line,
+  so do not add, move or retype the URL separately: typing it last is what makes
+  the link preview load the article photo.
+- Each post has exactly one @mention. Type `mention.type`, wait for the
+  dropdown, click the row matching `mention.expect`. If no row matches, post
+  it without the mention rather than tagging the wrong company. LinkedIn will
+  render the official name: that is expected and fine, do not fight it, do not
+  restart the post, do not rewrite it.
+- Schedule at `time` on `date`. If no link preview appears, schedule it anyway:
+  do not hunt for an image.
 
-Where everything checks out, schedule the post: paste the `text` exactly as written, at the `time` on the `date` given. For the image use the picture at `image`; if it is null, open the `link` and use the article&#x27;s own main photo.
+Two attempts per post, then stop. If a post is not scheduled after two tries,
+leave it, move to the next one, and list it at the end. Never start a third.
 
-Where anything does not check out, DO NOT SCHEDULE THAT POST. Tell me what the source actually says and what the post claims, and add the correction to deeptech-news/proposals.json in the maximedroux55-hue/Test repository, branch claude/questions-9a5egd, with the sentence you read and the page you read it on. Never write to corrections.json.
+Before you start, open the scheduled-posts list once and note what is already
+there. Skip any post already scheduled: never schedule the same one twice.
 
-A post marked `needs_check: true` states a figure for a round nobody has verified: treat those with particular care. A post marked `verified: true` has already been checked against a primary source, so confirm rather than re-research it.
+Verification:
+- Claims already settled against the article are not in the file. Check only
+  what `claims` still lists, and posts with needs_check: true (a figure nobody
+  has verified: confirm round closed / round name / amount received / investors
+  in THIS round). Both empty and false means schedule it, no research.
 
-Tell me at the end which you scheduled, which you held back and why.</pre>
+Anything that fails: do not schedule it, and do not edit any file or commit
+anything. List the held posts at the end with the sentence you read and the
+page you read it on, and I will record them.
+
+Report what was scheduled and what was held.</pre>
     </div>
   </div>
 
@@ -94,16 +111,16 @@ Tell me at the end which you scheduled, which you held back and why.</pre>
         </div>
         <div class="posttext">
           <button class="copy" onclick="copyText(this)">Copy</button>
-          <pre class="post">🇨🇭 Swiss medtechs clear regulatory and clinical hurdles
+          <pre class="post">🇨🇭 Swiss medtechs clear commercial and clinical hurdles
 
-@Arcoris bio has signed a distribution deal taking its biomarker-detection kits into Europe and North America, while @Hi-D Imaging won expanded @FDA clearance for AI-driven heart-valve planning. @ABILITY Neurotech completed its first-in-human brain-computer interface procedure, and @Alivion published supporting platform data.
+@ABILITY Neurotech has completed the first-in-human procedure for its brain-computer interface, one of four Swiss medtech milestones reported by Startupticker. Arcoris bio signed a distribution deal for its biomarker-detection kits across Europe and North America, Hi-D Imaging won expanded FDA clearance for AI heart-valve planning, and Alivion published supporting platform data.
 
 Why it matters:
-🫀 FDA clearance opens the largest medtech market to Swiss software
-🧠 First-in-human is the milestone that separates research from product
-🇨🇭 Four companies crossing commercial thresholds in the same month
+🧠 First-in-human is the milestone investors cannot fake
+🏥 FDA clearance opens the largest medtech market immediately
+🇨🇭 Four companies crossing thresholds in a single week
 
-Milestones rarely cluster by accident: Swiss medtech is reaching the stage where science meets paying customers.
+Medtech rewards patience, and Switzerland keeps producing companies willing to spend a decade earning it.
 
 https://www.startupticker.ch/en/news/four-swiss-medtechs-mark-commercial-regulatory-and-clinical-milestones</pre>
         </div>
@@ -121,14 +138,14 @@ https://www.startupticker.ch/en/news/four-swiss-medtechs-mark-commercial-regulat
           <button class="copy" onclick="copyText(this)">Copy</button>
           <pre class="post">🇨🇭 Swiss neutrality cuts both ways in AI
 
-@SWI swissinfo.ch argues that Switzerland&#x27;s neutrality is a double-edged sword in the global AI race: trusted ground for data, governance and international institutions, but exposed as compute and model power concentrate in Washington and Beijing.
+@SWI swissinfo.ch argues that neutrality is a double-edged sword as the AI arms race hardens into blocs. Switzerland can host models and standards nobody else trusts equally, but sitting outside US and EU alliances also means sitting outside their compute, procurement and data arrangements.
 
 Why it matters:
-⚖️ Trust is an asset only if compute stays domestic
-🌐 Geneva&#x27;s institutions make Switzerland a natural AI governance venue
-🇨🇭 Sovereign infrastructure now shapes Swiss technological independence
+🤝 Trusted-neutral positioning is a genuine commercial asset
+🔌 Outside the blocs means outside their compute deals
+🇨🇭 Swiss AI sovereignty depends on infrastructure, not diplomacy alone
 
-Neutrality buys Switzerland credibility in AI, but credibility without compute is a position, not a strategy.
+Neutrality only pays if it is backed by hardware, talent and standards nobody can switch off.
 
 https://www.swissinfo.ch/eng/foreign-affairs/swiss-neutrality-is-double-edged-sword-in-ai-arms-race/91784797</pre>
         </div>
@@ -144,16 +161,16 @@ https://www.swissinfo.ch/eng/foreign-affairs/swiss-neutrality-is-double-edged-sw
         </div>
         <div class="posttext">
           <button class="copy" onclick="copyText(this)">Copy</button>
-          <pre class="post">🇨🇭 Swiss AI tool checks CVs for job seekers
+          <pre class="post">🇨🇭 Swiss AI tool audits CVs at scale
 
 @Humboldt AI, based in St. Gallen, has built an AI platform that reviews and optimises CVs for the Swiss labour market. Since launching in January 2026, several thousand people have used it, and first pilot projects are running with institutional partners in Switzerland and Liechtenstein.
 
 Why it matters:
-📄 Hiring data is local, so labour-market AI must be too
-🤝 Institutional pilots signal demand beyond individual users
-🇨🇭 Six months from launch to thousands of Swiss users
+📄 Hiring friction is a large, badly served market
+🏛️ Institutional pilots validate faster than consumer downloads
+🇨🇭 St. Gallen keeps producing applied AI companies
 
-Applied AI wins where local context matters more than model size.
+Six months from launch to institutional pilots suggests the product is solving something employers already measure.
 
 https://www.startupticker.ch/en/news/humboldt-ai-lanciert-ki-tool-fuer-den-cv-check-im-schweizer-arbeitsmarkt</pre>
         </div>
@@ -171,14 +188,14 @@ https://www.startupticker.ch/en/news/humboldt-ai-lanciert-ki-tool-fuer-den-cv-ch
           <button class="copy" onclick="copyText(this)">Copy</button>
           <pre class="post">🇨🇭 Swiss researchers find lipid switch blocking anthrax
 
-A study led by @EPFL researchers shows how a reversible fat-based modification controls CMG2, a protein that binds collagen VI to maintain the extracellular matrix. The same switch governs a rare genetic disease and the route anthrax toxin uses to enter cells.
+A study led by @EPFL shows how a reversible fat-based modification controls CMG2, a protein that binds collagen VI to maintain the extracellular matrix. The same protein is the entry route anthrax toxin uses to get into cells, and is implicated in a rare genetic disease.
 
 Why it matters:
-🧬 One protein links tissue health, rare disease and toxin entry
-💊 Reversible modifications are attractive, tractable drug targets
-🇨🇭 EPFL basic biology feeding future therapeutic programmes
+🧬 One protein links tissue health, rare disease and toxins
+🛡️ Blocking entry is a different strategy from killing bacteria
+🇨🇭 EPFL basic biology feeding future therapeutic targets
 
-Swiss fundamental research keeps producing the mechanistic detail that drug pipelines are eventually built on.
+The most valuable Swiss science often starts as curiosity about how a single molecule gets to the cell surface.
 
 https://actu.epfl.ch/news/a-lipid-switch-that-blocks-anthrax</pre>
         </div>
@@ -194,16 +211,16 @@ https://actu.epfl.ch/news/a-lipid-switch-that-blocks-anthrax</pre>
         </div>
         <div class="posttext">
           <button class="copy" onclick="copyText(this)">Copy</button>
-          <pre class="post">🇨🇭 Swiss proptech AssetOS wins major real estate clients
+          <pre class="post">🇨🇭 Swiss proptech signs Implenia and Avadis
 
-@AssetOS, a spin-off from @University of St. Gallen, has built an AI-supported platform that helps professional property investors capture, analyse and screen income-producing assets. Founded in late 2024 and live since summer 2025, it already counts @Implenia and @Avadis among its customers.
+@AssetOS, an HSG spin-off founded in late 2024, has built an AI platform that helps professional real estate investors capture, analyse and underwrite income-producing properties. Since go-live in summer 2025 it has grown steadily and counts Implenia and Avadis among its customers.
 
 Why it matters:
-🏢 Real estate due diligence is still largely manual work
-📈 Steady growth since go-live under a year ago
-🇨🇭 HSG spin-off selling to Switzerland&#x27;s largest property players
+🏢 Underwriting is where real estate errors get expensive
+📈 Blue-chip logos within a year of go-live
+🇨🇭 HSG spin-offs increasingly build software, not just consultancies
 
-Winning names like Implenia this early says the product solves a problem the industry already knows it has.
+Selling to conservative Swiss real estate buyers this fast is the strongest signal a proptech can send.
 
 https://www.startupticker.ch/en/news/proptech-assetos-auf-wachstumskurs</pre>
         </div>
