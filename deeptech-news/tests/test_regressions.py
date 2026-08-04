@@ -465,9 +465,36 @@ def test_the_page_reads_on_a_phone():
     assert 'class="fnd empty"' in scraper.render_archive_html(thin)
 
 
+def test_a_post_links_to_the_company_not_the_outlet():
+    import unittest.mock as mock
+
+    import images
+
+    newsroom = (
+        '<html><body><h1>ZuriQ News</h1>'
+        '<a href="/news/company-update">Company update</a>'
+        '<a href="/news/zuriq-raises-usd-25-5-million-seed">ZuriQ raises USD '
+        '25.5 million seed round</a>'
+        '<a href="/careers">Careers at ZuriQ</a></body></html>')
+    with mock.patch.object(images, "article_page",
+                           lambda u, t=12: (newsroom, "https://zuriq.com/news")):
+        found = images.company_announcement("ZuriQ", "zuriq.com", "USD 25.5M")
+    assert found == "https://zuriq.com/news/zuriq-raises-usd-25-5-million-seed"
+    assert images._is_announcement_page(found)
+    # Startupticker writes about a company; the post should credit the company.
+    assert any(a in "https://www.startupticker.ch/en/news/x"
+               for a in images.AGGREGATORS)
+    # A newsroom with nothing about a round yields nothing rather than a guess.
+    quiet = ('<html><body><h1>ZuriQ</h1><a href="/careers">Careers at ZuriQ</a>'
+             '<a href="/team">The ZuriQ team</a></body></html>')
+    with mock.patch.object(images, "article_page",
+                           lambda u, t=12: (quiet, "https://zuriq.com/news")):
+        assert images.company_announcement("ZuriQ", "zuriq.com", "") == ""
+
+
 # Locking the count means a test appended below the runner, where it would
 # never execute, shows up as a failure rather than as silence. That happened.
-EXPECTED = 37
+EXPECTED = 38
 
 
 if __name__ == "__main__":

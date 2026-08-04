@@ -1024,6 +1024,14 @@ def main() -> None:
         # publisher, so a story can turn out to come from an excluded site only
         # at this point. Work through the pool in batches and top up, rather
         # than ending the week a post short.
+        # enrich_articles goes looking for the company's own announcement, so
+        # it needs to know which company. The headline names it in almost every
+        # funding story, which is enough to find a newsroom.
+        from extract import _company_from_headline
+        for art in unused:
+            if not art.get("company"):
+                art["company"] = _company_from_headline(art.get("title", ""))
+
         print("Finding the image and primary source for each post...", file=sys.stderr)
         pool = diversify(unused, args.max_per_source)
         picks, cursor, dropped, paywalled = [], 0, 0, 0

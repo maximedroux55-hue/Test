@@ -338,6 +338,18 @@ def enrich_articles(articles: list) -> None:
             if source and confidence == "high" and _is_announcement_page(source):
                 a["coverage_url"] = link
                 a["link"] = source
+
+        # Startupticker and the other outlets that write about a company rather
+        # than for it rarely link to its announcement, so the article link
+        # survives the test above and the post credits the outlet. Go and look
+        # in the company's own newsroom instead.
+        if any(agg in (a.get("link") or "") for agg in AGGREGATORS):
+            own = company_announcement(a.get("company", ""),
+                                       a.get("website", ""),
+                                       a.get("amount", ""))
+            if own and _is_announcement_page(own):
+                a["coverage_url"] = a["link"]
+                a["link"] = own
         else:
             a["image"] = a.get("image_feed")
             a["primary_source"] = None
@@ -345,3 +357,72 @@ def enrich_articles(articles: list) -> None:
 
 # Kept for compatibility with older callers.
 resolve_images = enrich_articles
+
+
+# Outlets that write about a company rather than for it. A post credits the
+# company, so where one of these is the link, the company's own announcement is
+# worth going and finding.
+AGGREGATORS = (
+    "startupticker.ch", "venturelab.swiss", "ggba.swiss", "techfundingnews.com",
+    "eu-startups.com", "siliconcanals.com", "tech.eu", "swissinfo.ch",
+    "fintechnews.ch", "thequantuminsider.com", "spacenews.com", "sifted.eu",
+)
+
+# Where a company keeps its own announcements.
+_NEWSROOMS = (
+    "/news", "/en/news", "/press", "/en/press", "/press-releases", "/newsroom",
+    "/blog", "/en/blog", "/media", "/en/media", "/insights", "/updates",
+)
+
+# What an announcement of a round is called, in the languages Swiss sites use.
+_ROUND_WORDS = re.compile(
+    r"rais\w+|closes?|closing|secur\w+|funding|financing|round|seed|"
+    r"series[\s-]?[a-e]\b|investment|finanzierung|runde|lev(?:é|e)e|"
+    r"tour\s+de\s+table",
+    re.IGNORECASE,
+)
+
+
+def company_announcement(company: str, website: str, amount: str = "",
+                         limit: int = 4) -> str:
+    """The company's own post about its round, or "".
+
+    A post credits the company, so it should link to what the company itself
+    published rather than to whoever wrote about it. The article does not
+    always link there, so this goes to the company's newsroom and looks for the
+    entry about this round: one whose wording is about raising money, and where
+    an amount is known, one that carries it.
+    """
+    from hq_lookup import _candidate_domains, _is_the_company
+
+    if not company:
+        return ""
+    digits = re.sub(r"[^\d.]", "", amount or "")[:4].rstrip(".")
+    tried = 0
+    for domain in _candidate_domains(company, website):
+        for path in _NEWSROOMS:
+            if tried >= limit:
+                return ""
+            page, final_url = article_page(f"https://{domain}{path}")
+            tried += 1
+            if not page or not _is_the_company(page, company):
+                continue
+            best = ""
+            for href, text in re.findall(
+                    r'<a\b[^>]*href="([^"]+)"[^>]*>(.{0,160}?)</a>',
+                    page, re.IGNORECASE | re.DOTALL):
+                label = re.sub(r"<[^>]+>", " ", text)
+                label = _html_lib.unescape(re.sub(r"\s+", " ", label)).strip()
+                if not _ROUND_WORDS.search(f"{label} {href}"):
+                    continue
+                full = urllib.parse.urljoin(final_url, href)
+                if domain not in full or full.rstrip("/") == final_url.rstrip("/"):
+                    continue
+                # An entry carrying the amount is the right entry, not merely a
+                # plausible one.
+                if digits and digits in f"{label} {href}":
+                    return full
+                best = best or full
+            if best:
+                return best
+    return ""
