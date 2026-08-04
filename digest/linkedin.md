@@ -27,16 +27,16 @@ The posts themselves are below, for review before you run it.
 ## Post 1 — schedule for Wednesday 05 August at 08:00
 
 ```
-🇨🇭 Four Swiss medtechs hit milestones in one week
+🇨🇭 Swiss medtechs clear regulatory and clinical hurdles
 
-@Arcoris bio signed a distribution deal taking its biomarker-detection kits into Europe and North America, while @Hi-D Imaging won expanded FDA clearance for AI-driven heart-valve planning. @ABILITY Neurotech completed its first-in-human brain-computer interface procedure, and @Alivion published data backing its platforms.
+@Arcoris bio has signed a distribution deal taking its biomarker-detection kits into Europe and North America, while @Hi-D Imaging won expanded @FDA clearance for AI-driven heart-valve planning. @ABILITY Neurotech completed its first-in-human brain-computer interface procedure, and @Alivion published supporting platform data.
 
 Why it matters:
-🫀 FDA clearance opens the largest medtech market to Swiss AI
-🧠 First-in-human is the hardest gate in neurotech
-🇨🇭 Four companies crossing commercial and clinical thresholds simultaneously
+🫀 FDA clearance opens the largest medtech market to Swiss software
+🧠 First-in-human is the milestone that separates research from product
+🇨🇭 Four companies crossing commercial thresholds in the same month
 
-Milestones cluster when a medtech ecosystem finally has enough companies old enough to reach them.
+Milestones rarely cluster by accident: Swiss medtech is reaching the stage where science meets paying customers.
 
 https://www.startupticker.ch/en/news/four-swiss-medtechs-mark-commercial-regulatory-and-clinical-milestones
 ```
@@ -47,14 +47,14 @@ https://www.startupticker.ch/en/news/four-swiss-medtechs-mark-commercial-regulat
 ```
 🇨🇭 Swiss neutrality cuts both ways in AI
 
-@SWI swissinfo.ch argues that Switzerland's neutral stance is both an asset and a liability in the global AI race. Trusted ground for governance and data, yet outside the blocs where compute, capital and chip supply are being allocated at scale.
+@SWI swissinfo.ch argues that Switzerland's neutrality is a double-edged sword in the global AI race: trusted ground for data, governance and international institutions, but exposed as compute and model power concentrate in Washington and Beijing.
 
 Why it matters:
-⚖️ Neutrality attracts institutions but not strategic compute allocations
-🌐 Governance credibility is a real, underpriced Swiss export
-🇨🇭 Swiss AI must compete on quality, not sovereign spending power
+⚖️ Trust is an asset only if compute stays domestic
+🌐 Geneva's institutions make Switzerland a natural AI governance venue
+🇨🇭 Sovereign infrastructure now shapes Swiss technological independence
 
-Neutrality is a positioning, not a strategy, and the difference will show in the next five years.
+Neutrality buys Switzerland credibility in AI, but credibility without compute is a position, not a strategy.
 
 https://www.swissinfo.ch/eng/foreign-affairs/swiss-neutrality-is-double-edged-sword-in-ai-arms-race/91784797
 ```
@@ -63,16 +63,16 @@ https://www.swissinfo.ch/eng/foreign-affairs/swiss-neutrality-is-double-edged-sw
 ## Post 3 — schedule for Friday 07 August at 08:00
 
 ```
-🇨🇭 Swiss AI tool audits CVs for hiring
+🇨🇭 Swiss AI tool checks CVs for job seekers
 
-@Humboldt AI, based in St. Gallen, has built an AI platform that checks and optimises CVs for the Swiss labour market. Since launching in January 2026, several thousand people have used it, and first pilots are running with institutional partners in Switzerland and Liechtenstein.
+@Humboldt AI, based in St. Gallen, has built an AI platform that reviews and optimises CVs for the Swiss labour market. Since launching in January 2026, several thousand people have used it, and first pilot projects are running with institutional partners in Switzerland and Liechtenstein.
 
 Why it matters:
-📄 Labour market matching is a local problem, not a global one
-🤝 Institutional pilots validate faster than consumer traction alone
-🇨🇭 St. Gallen adds an applied AI company to the map
+📄 Hiring data is local, so labour-market AI must be too
+🤝 Institutional pilots signal demand beyond individual users
+🇨🇭 Six months from launch to thousands of Swiss users
 
-Six months from launch to institutional pilots is the kind of pace software should set.
+Applied AI wins where local context matters more than model size.
 
 https://www.startupticker.ch/en/news/humboldt-ai-lanciert-ki-tool-fuer-den-cv-check-im-schweizer-arbeitsmarkt
 ```
@@ -83,14 +83,14 @@ https://www.startupticker.ch/en/news/humboldt-ai-lanciert-ki-tool-fuer-den-cv-ch
 ```
 🇨🇭 Swiss researchers find lipid switch blocking anthrax
 
-A study led by @EPFL shows how a reversible fat-based modification controls CMG2, a protein that binds collagen VI to maintain the extracellular matrix. The same protein is the entry route for anthrax toxin and is implicated in a rare genetic disease.
+A study led by @EPFL researchers shows how a reversible fat-based modification controls CMG2, a protein that binds collagen VI to maintain the extracellular matrix. The same switch governs a rare genetic disease and the route anthrax toxin uses to enter cells.
 
 Why it matters:
 🧬 One protein links tissue health, rare disease and toxin entry
-🔬 Reversible modifications are druggable targets, not just biology
-🇨🇭 EPFL keeps producing the upstream science therapeutics are built on
+💊 Reversible modifications are attractive, tractable drug targets
+🇨🇭 EPFL basic biology feeding future therapeutic programmes
 
-Basic research like this rarely makes headlines, yet it sets the agenda for the next decade of biotech.
+Swiss fundamental research keeps producing the mechanistic detail that drug pipelines are eventually built on.
 
 https://actu.epfl.ch/news/a-lipid-switch-that-blocks-anthrax
 ```
@@ -99,16 +99,16 @@ https://actu.epfl.ch/news/a-lipid-switch-that-blocks-anthrax
 ## Post 5 — schedule for Tuesday 11 August at 08:00
 
 ```
-🇨🇭 Swiss PropTech AssetOS wins major real estate clients
+🇨🇭 Swiss proptech AssetOS wins major real estate clients
 
-@AssetOS, a spin-off from @HSG, built an AI platform helping professional property investors capture, analyse and underwrite income-producing assets. Founded in late 2024 and live since summer 2025, it already counts @Implenia and @Avadis among its customers.
+@AssetOS, a spin-off from @University of St. Gallen, has built an AI-supported platform that helps professional property investors capture, analyse and screen income-producing assets. Founded in late 2024 and live since summer 2025, it already counts @Implenia and @Avadis among its customers.
 
 Why it matters:
-🏢 Underwriting is the slowest step in real estate investing
-📈 Enterprise logos within a year of go-live
-🇨🇭 HSG spin-offs keep converting research into commercial software
+🏢 Real estate due diligence is still largely manual work
+📈 Steady growth since go-live under a year ago
+🇨🇭 HSG spin-off selling to Switzerland's largest property players
 
-Selling to conservative Swiss institutions this quickly says more than any funding round would.
+Winning names like Implenia this early says the product solves a problem the industry already knows it has.
 
 https://www.startupticker.ch/en/news/proptech-assetos-auf-wachstumskurs
 ```
