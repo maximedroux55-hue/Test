@@ -155,44 +155,6 @@
     },
     {
       "used": "2026-08-04",
-      "title": "In AI arms race, Swiss neutrality is double-edged sword - SWI swissinfo.ch",
-      "link": "https://www.swissinfo.ch/eng/foreign-affairs/swiss-neutrality-is-double-edged-sword-in-ai-arms-race/91784797",
-      "coverage_url": null,
-      "norm": "in ai arms race swiss neutrality is doubleedged sword",
-      "kw": [
-        "arms",
-        "doubleedged",
-        "neutrality",
-        "race",
-        "sword"
-      ],
-      "rare": [
-        "doubleedged",
-        "neutrality",
-        "sword"
-      ]
-    },
-    {
-      "used": "2026-08-04",
-      "title": "A lipid switch that blocks anthrax",
-      "link": "https://actu.epfl.ch/news/a-lipid-switch-that-blocks-anthrax",
-      "coverage_url": null,
-      "norm": "a lipid switch that blocks anthrax",
-      "kw": [
-        "anthrax",
-        "blocks",
-        "lipid",
-        "switch"
-      ],
-      "rare": [
-        "anthrax",
-        "blocks",
-        "lipid",
-        "switch"
-      ]
-    },
-    {
-      "used": "2026-08-04",
       "title": "Four Swiss medtechs mark commercial, regulatory and clinical milestones",
       "link": "https://www.startupticker.ch/en/news/four-swiss-medtechs-mark-commercial-regulatory-and-clinical-milestones",
       "coverage_url": null,
@@ -216,6 +178,25 @@
     },
     {
       "used": "2026-08-04",
+      "title": "In AI arms race, Swiss neutrality is double-edged sword - SWI swissinfo.ch",
+      "link": "https://www.swissinfo.ch/eng/foreign-affairs/swiss-neutrality-is-double-edged-sword-in-ai-arms-race/91784797",
+      "coverage_url": null,
+      "norm": "in ai arms race swiss neutrality is doubleedged sword",
+      "kw": [
+        "arms",
+        "doubleedged",
+        "neutrality",
+        "race",
+        "sword"
+      ],
+      "rare": [
+        "doubleedged",
+        "neutrality",
+        "sword"
+      ]
+    },
+    {
+      "used": "2026-08-04",
       "title": "Humboldt AI lanciert KI-Tool für den CV-Check im Schweizer Arbeitsmarkt",
       "link": "https://www.startupticker.ch/en/news/humboldt-ai-lanciert-ki-tool-fuer-den-cv-check-im-schweizer-arbeitsmarkt",
       "coverage_url": null,
@@ -235,6 +216,25 @@
         "kitool",
         "lanciert",
         "schweizer"
+      ]
+    },
+    {
+      "used": "2026-08-04",
+      "title": "A lipid switch that blocks anthrax",
+      "link": "https://actu.epfl.ch/news/a-lipid-switch-that-blocks-anthrax",
+      "coverage_url": null,
+      "norm": "a lipid switch that blocks anthrax",
+      "kw": [
+        "anthrax",
+        "blocks",
+        "lipid",
+        "switch"
+      ],
+      "rare": [
+        "anthrax",
+        "blocks",
+        "lipid",
+        "switch"
       ]
     },
     {
