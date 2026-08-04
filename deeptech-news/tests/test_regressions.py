@@ -599,6 +599,46 @@ def test_a_product_page_is_not_an_announcement():
     assert found == "https://immitrabio.com/news/immitra-bio-raises-chf-2-4m-pre-seed"
 
 
+def test_a_foreign_company_never_becomes_a_post():
+    """It scored 19 and was one pick away from going out under Max's name."""
+    # The database has always dropped these. The picks never checked at all,
+    # so only the shortage of candidates kept them out.
+    toronto = {
+        "title": "Toronto startup Terminal raises $20-million to become the "
+                 "'Switzerland' of telematics trade",
+        "summary": "The Toronto-based company wants to be the neutral party.",
+        "link": "https://www.theglobeandmail.com/business/article-terminal/"}
+    assert scraper.plausibly_swiss(toronto) is False
+    assert scraper._is_swiss(toronto) is False
+
+    # A metaphor is not a country, whoever writes it.
+    assert scraper.plausibly_swiss({
+        "title": "Berlin-based Baz raises Series A to expand into Switzerland",
+        "link": "https://tech.eu/baz"}) is False
+
+    # But a Swiss round covered abroad still counts, or the pool shrinks for
+    # nothing: Sifted and EU-Startups carry real Swiss rounds.
+    for title, link in (
+        ("Exclusive: ETH Zurich spinout ZuriQ raises $25.5m seed",
+         "https://sifted.eu/articles/zuriq"),
+        ("Swiss startup Foo raises EUR 4M seed",
+         "https://www.eu-startups.com/foo"),
+        ("Zurich-based Bar lands its first industrial customer",
+         "https://tech.eu/bar"),
+    ):
+        assert scraper.plausibly_swiss({"title": title, "link": link}), title
+
+    # And a Swiss outlet is Swiss enough on its own: judging these by headline
+    # threw out four of five real posts, because a post about "Swiss medtechs"
+    # names no single company.
+    for link in ("https://www.startupticker.ch/en/news/x",
+                 "https://actu.epfl.ch/news/y",
+                 "https://www.swissinfo.ch/eng/z",
+                 "https://venturelab.swiss/q"):
+        assert scraper.plausibly_swiss({"title": "Milestones this month",
+                                        "link": link}), link
+
+
 def test_milestones_reach_the_posts_but_not_the_database():
     """Every query was funding-shaped, so non-funding news came from one outlet."""
     import google_news
@@ -1090,7 +1130,7 @@ def test_short_week_skips_the_weekend():
 
 # Locking the count means a test appended below the runner, where it would
 # never execute, shows up as a failure rather than as silence. That happened.
-EXPECTED = 54
+EXPECTED = 55
 
 
 if __name__ == "__main__":

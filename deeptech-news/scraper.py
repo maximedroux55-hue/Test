@@ -489,6 +489,29 @@ def _is_swiss(story: dict) -> bool:
         f"{story.get('title', '')} {story.get('description', '')}"))
 
 
+def plausibly_swiss(story: dict) -> bool:
+    """Could this be a post on Max's Swiss DeepTech feed?
+
+    _is_swiss decides database rows, which carry a headquarters and a spin-off
+    origin. A post candidate has a headline and a summary and nothing else, and
+    judging it the same way threw out four of five real posts.
+
+    So the looser test the picks need: it came from a Swiss outlet, or the
+    story itself says Swiss about the company. That keeps a Swiss round covered
+    by Sifted and drops "Toronto startup Terminal raises $20-million to become
+    the 'Switzerland' of telematics trade", which scored 19 and was one pick
+    away from going out under his name.
+    """
+    from urllib.parse import urlsplit
+
+    host = urlsplit(story.get("link") or "").netloc.lower()
+    if host.endswith(".ch") or host.endswith(".swiss"):
+        return True
+    return bool(_SWISS_SIGNAL.search(
+        f"{story.get('title', '')} {story.get('summary', '')} "
+        f"{story.get('description', '')}"))
+
+
 def is_closed(story: dict) -> bool:
     """Has the transaction actually completed?
 
@@ -1378,6 +1401,7 @@ def main() -> None:
         print("Finding the image and primary source for each post...", file=sys.stderr)
         pool = diversify(unused, args.max_per_source)
         picks, cursor, dropped, paywalled, capped = [], 0, 0, 0, 0
+        foreign = 0
         # Counted on the link the post will actually carry, after the swap to
         # the company's own announcement. The publisher field spells the same
         # outlet several ways, which is how four Startupticker links survived a
@@ -1395,6 +1419,11 @@ def main() -> None:
                     continue
                 if art.get("paywalled"):
                     paywalled += 1
+                    continue
+                if not plausibly_swiss(art):
+                    foreign += 1
+                    print(f"  not Swiss, skipped: "
+                          f"{(art.get('title') or '')[:70]}", file=sys.stderr)
                     continue
                 host = urlsplit(art.get("link", "")).netloc.lower()
                 host = host[4:] if host.startswith("www.") else host
@@ -1443,6 +1472,12 @@ def main() -> None:
         if paywalled:
             print(
                 f"Dropped {paywalled} stories behind a paywall.",
+                file=sys.stderr,
+            )
+        if foreign:
+            print(
+                f"Dropped {foreign} stories about companies that are not "
+                f"Swiss.",
                 file=sys.stderr,
             )
         if len(picks) < args.posts:
