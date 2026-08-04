@@ -1480,6 +1480,17 @@ def main() -> None:
                 f"Swiss.",
                 file=sys.stderr,
             )
+        if not picks:
+            # A week with nothing in it is a broken run, not a quiet one: the
+            # feeds carry Swiss DeepTech news every week. Failing here leaves
+            # the published plan alone and raises the alarm, where writing an
+            # empty file would wipe the page and look like silence.
+            sys.exit(
+                "No posts to publish. Something upstream is wrong: the feeds "
+                "returned nothing usable, or a filter is rejecting everything. "
+                "The published plan is untouched. Check the log above for what "
+                "was dropped and why."
+            )
         if len(picks) < args.posts:
             print(
                 f"Only {len(picks)} unused stories available for {args.posts} "

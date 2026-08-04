@@ -599,6 +599,19 @@ def test_a_product_page_is_not_an_announcement():
     assert found == "https://immitrabio.com/news/immitra-bio-raises-chf-2-4m-pre-seed"
 
 
+def test_an_empty_week_is_never_published():
+    """A filter rejecting everything would wipe the plan page and look quiet."""
+    import inspect
+    source = inspect.getsource(scraper.main)
+    # The guard has to sit before anything is written, and it has to stop the
+    # run rather than warn: a warning still publishes the empty file.
+    guard = source.index("if not picks:")
+    written = source.index('"posts.json"')
+    assert guard < written, "the empty check runs after the file is written"
+    assert "sys.exit(" in source[guard:written]
+    assert "The published plan is untouched" in source
+
+
 def test_a_foreign_company_never_becomes_a_post():
     """It scored 19 and was one pick away from going out under Max's name."""
     # The database has always dropped these. The picks never checked at all,
@@ -1130,7 +1143,7 @@ def test_short_week_skips_the_weekend():
 
 # Locking the count means a test appended below the runner, where it would
 # never execute, shows up as a failure rather than as silence. That happened.
-EXPECTED = 55
+EXPECTED = 56
 
 
 if __name__ == "__main__":
