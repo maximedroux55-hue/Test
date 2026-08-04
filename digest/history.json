@@ -155,6 +155,110 @@
     },
     {
       "used": "2026-08-04",
+      "title": "Immitra Bio raises CHF 2.4 million to advance in-vivo gene editing platform - Venturelab Swiss",
+      "link": "https://www.venturelab.swiss/Immitra-Bio-raises-CHF-24-million-to-advance-invivo-gene-editing-platform",
+      "coverage_url": null,
+      "norm": "immitra bio raises chf 24 million to advance invivo gene editing platform",
+      "kw": [
+        "advance",
+        "editing",
+        "gene",
+        "immitra",
+        "invivo",
+        "platform"
+      ],
+      "rare": [
+        "advance",
+        "editing",
+        "immitra",
+        "invivo",
+        "platform"
+      ]
+    },
+    {
+      "used": "2026-08-04",
+      "title": "SWISSto12 raises USD 70 million to scale its satellite business - Greater Geneva Bern area (GGBa)",
+      "link": "https://ggba.swiss/en/swissto12-raises-usd-70-million-to-meet-growing-multi-orbit-satellite-demand/",
+      "coverage_url": null,
+      "norm": "swissto12 raises usd 70 million to scale its satellite business",
+      "kw": [
+        "business",
+        "satellite",
+        "scale",
+        "swissto12"
+      ],
+      "rare": [
+        "business",
+        "satellite",
+        "scale",
+        "swissto12"
+      ]
+    },
+    {
+      "used": "2026-08-04",
+      "title": "Hilo closes Series B extension round to fuel US expansion",
+      "link": "https://www.startupticker.ch/en/news/hilo-closes-series-b-extension-round-to-fuel-us-expansion",
+      "coverage_url": null,
+      "norm": "hilo closes series b extension round to fuel us expansion",
+      "kw": [
+        "expansion",
+        "extension",
+        "fuel",
+        "hilo"
+      ],
+      "rare": [
+        "expansion",
+        "extension"
+      ]
+    },
+    {
+      "used": "2026-08-04",
+      "title": "Moonlake Therapeutics raises USD 230 million in public offering",
+      "link": "https://www.startupticker.ch/en/news/moonlake-therapeutics-raises-usd-230-million-in-public-offering",
+      "coverage_url": null,
+      "norm": "moonlake therapeutics raises usd 230 million in public offering",
+      "kw": [
+        "moonlake",
+        "offering",
+        "public",
+        "therapeutics"
+      ],
+      "rare": [
+        "moonlake",
+        "offering",
+        "public",
+        "therapeutics"
+      ]
+    },
+    {
+      "used": "2026-08-04",
+      "title": "Using future data to better predict Switzerland's rail energy demand",
+      "link": "https://actu.epfl.ch/news/using-future-data-to-better-predict-switzerland-s",
+      "coverage_url": null,
+      "norm": "using future data to better predict switzerlands rail energy demand",
+      "kw": [
+        "better",
+        "data",
+        "demand",
+        "energy",
+        "future",
+        "predict",
+        "rail",
+        "switzerlands",
+        "using"
+      ],
+      "rare": [
+        "better",
+        "demand",
+        "energy",
+        "future",
+        "predict",
+        "switzerlands",
+        "using"
+      ]
+    },
+    {
+      "used": "2026-08-04",
       "title": "In AI arms race, Swiss neutrality is double-edged sword - SWI swissinfo.ch",
       "link": "https://www.swissinfo.ch/eng/foreign-affairs/swiss-neutrality-is-double-edged-sword-in-ai-arms-race/91784797",
       "coverage_url": null,
@@ -189,52 +293,6 @@
         "blocks",
         "lipid",
         "switch"
-      ]
-    },
-    {
-      "used": "2026-08-04",
-      "title": "Four Swiss medtechs mark commercial, regulatory and clinical milestones",
-      "link": "https://www.startupticker.ch/en/news/four-swiss-medtechs-mark-commercial-regulatory-and-clinical-milestones",
-      "coverage_url": null,
-      "norm": "four swiss medtechs mark commercial regulatory and clinical milestones",
-      "kw": [
-        "clinical",
-        "commercial",
-        "four",
-        "mark",
-        "medtechs",
-        "milestones",
-        "regulatory"
-      ],
-      "rare": [
-        "clinical",
-        "commercial",
-        "medtechs",
-        "milestones",
-        "regulatory"
-      ]
-    },
-    {
-      "used": "2026-08-04",
-      "title": "Humboldt AI lanciert KI-Tool für den CV-Check im Schweizer Arbeitsmarkt",
-      "link": "https://www.startupticker.ch/en/news/humboldt-ai-lanciert-ki-tool-fuer-den-cv-check-im-schweizer-arbeitsmarkt",
-      "coverage_url": null,
-      "norm": "humboldt ai lanciert kitool fr den cvcheck im schweizer arbeitsmarkt",
-      "kw": [
-        "arbeitsmarkt",
-        "cvcheck",
-        "humboldt",
-        "kitool",
-        "lanciert",
-        "schweizer"
-      ],
-      "rare": [
-        "arbeitsmarkt",
-        "cvcheck",
-        "humboldt",
-        "kitool",
-        "lanciert",
-        "schweizer"
       ]
     }
   ]

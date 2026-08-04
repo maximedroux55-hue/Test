@@ -1,5 +1,5 @@
 # Climb Ventures LinkedIn plan for the week
-_Generated 04 August 2026. 4 posts, one per day, from Swiss DeepTech news of the last 10 days. Written by Claude in Max's voice. Schedule each for 08:00 on its day. Review and edit before posting._
+_Generated 04 August 2026. 7 posts, one per day, from Swiss DeepTech news of the last 21 days. Written by Claude in Max's voice. Schedule each for 08:00 on its day. Review and edit before posting._
 
 ## Publish with Claude Cowork
 Paste this into Cowork to schedule the whole week in one go (it reads the structured file `digest/posts.json` next to this one):
@@ -27,72 +27,119 @@ The posts themselves are below, for review before you run it.
 ## Post 1 — schedule for Wednesday 05 August at 08:00
 
 ```
-🇨🇭 Swiss neutrality cuts both ways in AI race
+🇨🇭 Swiss biotech pushes in-vivo gene editing forward
 
-@SWI swissinfo.ch reports that Switzerland's neutral stance is becoming both an asset and a liability as the US and China split the AI world into blocs. Neutrality attracts trust and data-sensitive workloads, but it also complicates access to compute, chips and defence-adjacent research partnerships.
+@Immitra Bio is developing an in-vivo gene editing platform, aiming to correct disease at its genetic source inside the body rather than in a lab dish. Fresh funding will advance the platform, according to @Venturelab Swiss.
 
 Why it matters:
-🌐 Trust is a real commercial asset in AI infrastructure
-⚠️ Export controls do not respect diplomatic positioning
-🇨🇭 Swiss labs need allies for compute and chips
+🧬 In-vivo editing removes the cost barrier of cell manufacturing
+🔬 Platform approach means one technology, many disease targets
+🇨🇭 Swiss life sciences moving from tools to therapeutics
 
-Neutrality buys credibility, but credibility alone does not deliver GPUs.
-
-https://www.swissinfo.ch/eng/foreign-affairs/swiss-neutrality-is-double-edged-sword-in-ai-arms-race/91784797
+Switzerland's biotech depth is starting to show up in platforms, not just single molecules.
+https://www.venturelab.swiss/Immitra-Bio-raises-CHF-24-million-to-advance-invivo-gene-editing-platform
 ```
-🖼️ **Article image:** https://www.swissinfo.ch/content/wp-content/uploads/sites/13/2026/07/662478390_highres.jpg?ver=e0a2b121&fit=1200,800
+🖼️ **Article image:** https://www.venturelab.swiss/demandit/files/M_BB941CC4DCEF687AD98/dms/Image/immitra_bio.jpg
 
 ## Post 2 — schedule for Thursday 06 August at 08:00
 
 ```
-🇨🇭 Swiss researchers find lipid switch blocking anthrax
+🇨🇭 Swiss space firm raises $70M for satellites
 
-A study led by @EPFL researchers shows how a reversible fat-based modification controls CMG2, the protein that binds collagen VI to maintain the extracellular matrix and also serves as the entry route for anthrax toxin into cells. The same switch links tissue health, a rare genetic disease and infection.
+@SWISSto12, the Renens-based maker of 3D-printed radio frequency payloads and small geostationary satellites, has raised USD 70 million to scale production and meet growing multi-orbit demand, reports @Greater Geneva Bern area (GGBa).
 
 Why it matters:
-🧬 One protein connects rare disease and toxin entry
-🛡️ Blocking entry is a different path from antibiotics
-🇨🇭 Swiss basic biology feeding future therapeutic targets
+🛰️ Multi-orbit demand is outpacing legacy satellite manufacturing capacity
+🖨️ 3D-printed RF hardware cuts mass, cost and lead times
+🇨🇭 A Swiss firm competing in geostationary telecom satellites
 
-The most valuable Swiss pipelines still start as curiosity-driven cell biology.
-
-https://actu.epfl.ch/news/a-lipid-switch-that-blocks-anthrax
+Switzerland rarely gets credited for space hardware, and that is exactly why this one matters.
+https://ggba.swiss/en/swissto12-raises-usd-70-million-to-meet-growing-multi-orbit-satellite-demand/
 ```
-🖼️ **Article image:** none found, grab one from the article page.
+🖼️ **Article image:** https://ggba.swiss/app/uploads/2026/07/HummingSat-Swissto12-1180x811-1.jpg
 
 ## Post 3 — schedule for Friday 07 August at 08:00
 
 ```
-🇨🇭 Four Swiss medtechs clear commercial and clinical milestones
+🇨🇭 Swiss insurtech Hilo raises $19M for US push
 
-@Arcoris bio signed a distribution deal bringing its biomarker-detection kits to Europe and North America, @Hi-D Imaging secured expanded FDA clearance for AI-driven heart-valve planning, @ABILITY Neurotech completed a first-in-human brain-computer interface procedure, and @Alivion published supporting platform data, according to @Startupticker.
+@Hilo has closed a Series B extension of $19 million, taking total funding past $119 million. New backing came from @Dell Family Office, the investment office of Michael Dell, alongside existing investors, as the company enters the US market.
 
 Why it matters:
-🏥 Regulatory clearance is the real currency in medtech
-🧠 First-in-human moves BCI from lab to clinic
-🇨🇭 Four milestones in one week signals depth, not luck
+💵 Total funding above $119M signals sustained investor conviction
+🇺🇸 US entry is the real test of the model
+🇨🇭 Swiss insurtech attracting American technology capital
 
-Swiss medtech rarely makes noise, then quietly clears the hardest gates at once.
-
-https://www.startupticker.ch/en/news/four-swiss-medtechs-mark-commercial-regulatory-and-clinical-milestones
+When a Dell family office writes into a Swiss round, the geography argument gets weaker every year.
+https://www.startupticker.ch/en/news/hilo-closes-series-b-extension-round-to-fuel-us-expansion
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
 ## Post 4 — schedule for Saturday 08 August at 08:00
 
 ```
-🇨🇭 Swiss AI tool audits CVs for hiring
+🇨🇭 Swiss biotech raises $230M on Nasdaq
 
-@Humboldt AI, based in St. Gallen, has built an AI platform that analyses and optimises CVs for the Swiss labour market. Since launching in January 2026 it has been used by several thousand people, with first pilot projects running with institutional partners in Switzerland and Liechtenstein.
+@MoonLake Therapeutics, the Nasdaq-listed Swiss biotech, has completed a public offering totalling USD 230 million after the exercise of option shares added a further USD 30 million this week.
 
 Why it matters:
-📄 Local labour-market context beats generic global CV tools
-🤝 Institutional pilots validate faster than consumer downloads
-🇨🇭 Swiss and Liechtenstein partners as a first proving ground
+📈 Public markets still fund Swiss clinical-stage biotech at scale
+💊 Option shares exercised in full signals strong demand
+🇨🇭 A Swiss company raising serious money on US exchanges
 
-Small domestic markets can be an advantage when the product depends on local nuance.
+The Swiss biotech story increasingly ends on Nasdaq, and that is a feature, not a leak.
+https://www.startupticker.ch/en/news/moonlake-therapeutics-raises-usd-230-million-in-public-offering
+```
+🖼️ **Article image:** none found, grab one from the article page.
 
-https://www.startupticker.ch/en/news/humboldt-ai-lanciert-ki-tool-fuer-den-cv-check-im-schweizer-arbeitsmarkt
+## Post 5 — schedule for Sunday 09 August at 08:00
+
+```
+🇨🇭 Swiss AI cuts rail forecast errors by 80%
+
+Researchers at @EPFL, working with @SBB, have built an AI model that forecasts next-day electricity demand across Switzerland's rail network, reducing major prediction errors by up to 80%. Demand shifts with passenger flows, weather and daily operational changes.
+
+Why it matters:
+⚡ Better forecasts cut costly energy procurement and balancing risk
+🚆 Applied AI on infrastructure, not chatbots
+🇨🇭 A national operator co-developing models with a Swiss university
+
+The most valuable AI in Switzerland may quietly sit inside utilities and railways.
+https://actu.epfl.ch/news/using-future-data-to-better-predict-switzerland-s
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## Post 6 — schedule for Monday 10 August at 08:00
+
+```
+🇨🇭 Swiss neutrality tested by the AI arms race
+
+@SWI swissinfo.ch reports that Switzerland's neutrality cuts both ways in the global AI race: it opens doors as a trusted host for governance and data, while limiting access to the defence-linked alliances and compute partnerships now shaping frontier AI.
+
+Why it matters:
+🤝 Trusted-third-party status is a genuine commercial asset
+🚧 Export controls and alliances increasingly gate compute access
+🇨🇭 Swiss AI must win on sovereignty and trust
+
+Neutrality is a positioning strategy now, and Switzerland will have to work it deliberately.
+https://www.swissinfo.ch/eng/foreign-affairs/swiss-neutrality-is-double-edged-sword-in-ai-arms-race/91784797
+```
+🖼️ **Article image:** https://www.swissinfo.ch/content/wp-content/uploads/sites/13/2026/07/662478390_highres.jpg?ver=e0a2b121&fit=1200,800
+
+## Post 7 — schedule for Tuesday 11 August at 08:00
+
+```
+🇨🇭 Swiss researchers find lipid switch blocking anthrax
+
+A study led by @EPFL shows how a reversible fat-based modification controls CMG2, a protein that binds collagen VI to maintain the extracellular matrix and also serves as the entry route for anthrax toxin into cells.
+
+Why it matters:
+🧫 One mechanism links tissue health, a rare disease and toxin entry
+🛡️ Blocking the switch could stop anthrax at the cell door
+🇨🇭 Swiss basic science producing tractable drug targets
+
+Fundamental cell biology remains the pipeline that Swiss therapeutics quietly draws from a decade later.
+https://actu.epfl.ch/news/a-lipid-switch-that-blocks-anthrax
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
