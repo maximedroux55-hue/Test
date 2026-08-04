@@ -29,14 +29,14 @@ The posts themselves are below, for review before you run it.
 ```
 🇨🇭 Swiss neutrality cuts both ways in AI race
 
-@SWI swissinfo.ch reports that Switzerland's neutral stance is becoming both an asset and a liability as AI turns geopolitical. Neutrality attracts trust, data and researchers, but it also complicates access to the alliances, chips and compute deals shaping the frontier.
+@SWI swissinfo.ch reports that Switzerland's neutral stance is becoming both an asset and a liability as AI turns geopolitical. Neutrality attracts trust, data and researchers, but it also leaves the country outside the compute alliances and export blocs now shaping frontier model development.
 
 Why it matters:
-🌐 Trusted-neutral positioning is a real commercial differentiator for AI
-⚠️ Export controls and alliances increasingly decide compute access
-🇨🇭 Swiss AI sovereignty depends on choices made now, not later
+🌍 AI capability is being redrawn along geopolitical lines
+🔌 Compute access increasingly depends on who your allies are
+🇨🇭 Swiss trust is a real asset, if paired with infrastructure
 
-Neutrality only pays off if it is backed by domestic compute, talent and capital.
+Neutrality buys credibility, but only sovereign compute turns credibility into leverage.
 
 https://www.swissinfo.ch/eng/foreign-affairs/swiss-neutrality-is-double-edged-sword-in-ai-arms-race/91784797
 ```
@@ -47,32 +47,32 @@ https://www.swissinfo.ch/eng/foreign-affairs/swiss-neutrality-is-double-edged-sw
 ```
 🇨🇭 Swiss researchers find lipid switch blocking anthrax
 
-A study led by @EPFL researchers shows how a reversible fat-based modification controls CMG2, the protein that binds collagen VI to maintain tissue structure and also serves as the entry gate for anthrax toxin. The switch decides whether the protein reaches the cell surface at all.
+A study led by @EPFL researchers shows how a reversible fat-based modification controls CMG2, the protein that binds collagen VI to maintain the extracellular matrix and that anthrax toxin hijacks to enter cells. The switch decides whether CMG2 reaches the cell surface at all.
 
 Why it matters:
-🧬 One protein links a rare genetic disease and anthrax
-🔬 Reversible lipid modifications emerge as druggable control points
-🇨🇭 Swiss basic biology feeding future therapeutic targets
+🧬 One protein links tissue health, a rare disease and toxin entry
+🛡️ Blocking the switch could block anthrax at the door
+🇨🇭 Swiss basic biology still feeds future therapeutic pipelines
 
-Fundamental cell biology remains the least glamorous and most durable input into Swiss biotech.
+Mechanism-level discovery is slow to monetise and impossible to shortcut.
 
 https://actu.epfl.ch/news/a-lipid-switch-that-blocks-anthrax
 ```
-🖼️ **Article image:** https://actu.epfl.ch/image/165737/1440x810.jpg
+🖼️ **Article image:** none found, grab one from the article page.
 
 ## Post 3 — schedule for Friday 07 August at 08:00
 
 ```
-🇨🇭 Four Swiss medtechs hit milestones in one week
+🇨🇭 Four Swiss medtechs clear commercial and clinical bars
 
-@Arcoris bio signed a distribution deal bringing its biomarker-detection kits to Europe and North America, @Hi-D Imaging won expanded FDA clearance for AI-driven heart-valve planning, @ABILITY Neurotech completed a first-in-human brain-computer interface procedure, and @Alivion published supporting platform data.
+@Arcoris bio signed a distribution deal taking its biomarker-detection kits into Europe and North America, @Hi-D Imaging won expanded FDA clearance for AI-driven heart-valve planning, and @ABILITY Neurotech completed the first-in-human procedure for its brain-computer interface. @Alivion published supporting platform data, per @Startupticker.
 
 Why it matters:
-🏥 Regulatory clearance is the real gate in medtech
-🧠 First-in-human moves BCI from lab to clinic
-🇨🇭 Four Swiss companies crossing commercial thresholds simultaneously
+🏥 Regulatory clearance, not demos, is the real medtech milestone
+🧠 First-in-human BCI puts Switzerland on the neurotech map
+🇨🇭 Four milestones in one week signals sector depth
 
-Medtech progress in Switzerland shows up as milestones, not megarounds, and that is the point.
+Swiss medtech rarely makes noise, then quietly clears the hardest gates in the industry.
 
 https://www.startupticker.ch/en/news/four-swiss-medtechs-mark-commercial-regulatory-and-clinical-milestones
 ```
@@ -81,16 +81,16 @@ https://www.startupticker.ch/en/news/four-swiss-medtechs-mark-commercial-regulat
 ## Post 4 — schedule for Saturday 08 August at 08:00
 
 ```
-🇨🇭 Swiss AI tool audits CVs for job market
+🇨🇭 Swiss AI tool audits CVs for job seekers
 
-@Humboldt AI, a St. Gallen startup, has built an AI system that analyses and optimises CVs for the Swiss labour market. Since launching in January 2026 it has been used by several thousand people, with first pilot projects running with institutional partners in Switzerland and Liechtenstein.
+@Humboldt AI, a St. Gallen startup, has built an AI solution that optimises CVs for the Swiss labour market. Since launching in January 2026, several thousand people have used the platform, and first pilot projects are running with institutional partners in Switzerland and Liechtenstein.
 
 Why it matters:
-📄 Applied AI with immediate, measurable user value
-🤝 Institutional pilots signal move beyond consumer traction
-🇨🇭 St. Gallen adding to Switzerland's applied AI map
+📄 Hiring friction is a measurable cost in tight labour markets
+🤝 Institutional pilots beat consumer downloads as a signal
+🇨🇭 Six months from launch to cross-border pilots
 
-Six months from launch to institutional pilots is the kind of pace software should set.
+Applied AI wins in Switzerland when it solves a local process nobody else bothered to model.
 
 https://www.startupticker.ch/en/news/humboldt-ai-lanciert-ki-tool-fuer-den-cv-check-im-schweizer-arbeitsmarkt
 ```
@@ -99,16 +99,16 @@ https://www.startupticker.ch/en/news/humboldt-ai-lanciert-ki-tool-fuer-den-cv-ch
 ## Post 5 — schedule for Sunday 09 August at 08:00
 
 ```
-🇨🇭 Swiss proptech AssetOS wins blue-chip real estate clients
+🇨🇭 Swiss proptech AssetOS grows with blue-chip clients
 
-@AssetOS, an @HSG spin-off, runs an AI platform that helps professional property investors capture, analyse and audit income-generating assets. Founded in late 2024 and live since summer 2025, it already counts @Implenia and @Avadis among its customers.
+@AssetOS, a spin-off from @HSG, has built an AI platform that helps professional real estate investors capture, analyse and audit income-producing properties. Founded in late 2024 and live since summer 2025, it already counts @Implenia and @Avadis among its customers, reports @Startupticker.
 
 Why it matters:
 🏢 Real estate underwriting is still largely manual work
 📈 Named enterprise clients within a year of go-live
-🇨🇭 HSG spin-offs converting research into commercial software fast
+🇨🇭 University spin-offs increasingly target unglamorous, high-value workflows
 
-Selling to conservative Swiss institutions early is the hardest validation a young platform can get.
+Selling to conservative Swiss institutions this fast is the hardest validation a young software company can get.
 
 https://www.startupticker.ch/en/news/proptech-assetos-auf-wachstumskurs
 ```
@@ -117,16 +117,16 @@ https://www.startupticker.ch/en/news/proptech-assetos-auf-wachstumskurs
 ## Post 6 — schedule for Monday 10 August at 08:00
 
 ```
-🇨🇭 Swiss firm switches on Nordics' largest battery
+🇨🇭 Swiss firm switches on largest Nordic battery
 
-@Delta Capacity has brought a 70 MW / 160 MWh battery energy storage system into commercial operation in Ånge, central Sweden. The company says it is the largest battery storage project currently running in the Nordics.
+@Delta Capacity has brought a 70 MW / 160 MWh battery energy storage system in Ånge, central Sweden, into commercial operation. The company says it is the largest battery storage project currently running in the Nordics, per @Startupticker.
 
 Why it matters:
-🔋 160 MWh of flexibility supporting a volatile grid
-🇸🇪 Swiss operator building infrastructure in Northern Europe
-🇨🇭 Swiss energy expertise exported as built assets, not slides
+🔋 Grid-scale storage is the bottleneck for renewable build-out
+⚡ 70 MW of flexibility in a constrained Nordic grid
+🇨🇭 Swiss energy operators exporting infrastructure, not just software
 
-Energy storage rewards companies that finish projects, and this one is already delivering power.
+Building physical assets abroad is slower than shipping code, and far harder for competitors to displace.
 
 https://www.startupticker.ch/en/news/delta-capacity-completes-swedish-battery-project
 ```
@@ -135,18 +135,19 @@ https://www.startupticker.ch/en/news/delta-capacity-completes-swedish-battery-pr
 ## Post 7 — schedule for Tuesday 11 August at 08:00
 
 ```
-🇨🇭 Swiss solar fuels firm wins German scale-up funding
+🇨🇭 Swiss solar fuel plant wins German backing
 
-@Synhelion has been selected as one of nine sustainable key-technology projects under North Rhine-Westphalia's Produktives.NRW programme, which carries around EUR 90 million in total funding. The money supports the next scaling step for its commercial solar fuel demonstration plant.
+@Synhelion has been selected for the North Rhine-Westphalia programme Produktives.NRW, one of nine sustainable key-technology projects sharing around 90 million euros. The support takes the cleantech company, which turns concentrated solar heat into synthetic fuels, into its next scaling step: a commercial demonstration plant.
 
 Why it matters:
-☀️ Solar heat converted into drop-in liquid fuels
-🏭 Public funding de-risks the first commercial-scale plant
-🇨🇭 Swiss cleantech scaling with German industrial support
+☀️ Solar heat replaces fossil inputs in fuel synthesis
+✈️ Aviation needs drop-in fuels, not new engines
+🇨🇭 Swiss cleantech scaling on German industrial funding
 
-Switzerland invents the process, neighbouring industrial regions pay to build it: a familiar and workable division of labour.
+When foreign states co-finance your first commercial plant, the technology has stopped being a thesis.
 
-https://www.startupticker.ch/en/news/synhelion-erhaelt-foerdermittel-fuer-kommerzielle-demo-anlage
+https://synhelion.com/news/synhelion-selected-for-german-funding-to-build-commercial-synthetic-fuel-plant
 ```
 🖼️ **Article image:** none found, grab one from the article page.
+🔗 **Links to the original source.**
 

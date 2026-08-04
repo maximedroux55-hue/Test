@@ -14,7 +14,7 @@
       "date": "2026-08-05",
       "schedule_for": "Wednesday 05 August",
       "time": "08:00",
-      "text": "🇨🇭 Swiss neutrality cuts both ways in AI race\n\n@SWI swissinfo.ch reports that Switzerland's neutral stance is becoming both an asset and a liability as AI turns geopolitical. Neutrality attracts trust, data and researchers, but it also complicates access to the alliances, chips and compute deals shaping the frontier.\n\nWhy it matters:\n🌐 Trusted-neutral positioning is a real commercial differentiator for AI\n⚠️ Export controls and alliances increasingly decide compute access\n🇨🇭 Swiss AI sovereignty depends on choices made now, not later\n\nNeutrality only pays off if it is backed by domestic compute, talent and capital.\n\nhttps://www.swissinfo.ch/eng/foreign-affairs/swiss-neutrality-is-double-edged-sword-in-ai-arms-race/91784797",
+      "text": "🇨🇭 Swiss neutrality cuts both ways in AI race\n\n@SWI swissinfo.ch reports that Switzerland's neutral stance is becoming both an asset and a liability as AI turns geopolitical. Neutrality attracts trust, data and researchers, but it also leaves the country outside the compute alliances and export blocs now shaping frontier model development.\n\nWhy it matters:\n🌍 AI capability is being redrawn along geopolitical lines\n🔌 Compute access increasingly depends on who your allies are\n🇨🇭 Swiss trust is a real asset, if paired with infrastructure\n\nNeutrality buys credibility, but only sovereign compute turns credibility into leverage.\n\nhttps://www.swissinfo.ch/eng/foreign-affairs/swiss-neutrality-is-double-edged-sword-in-ai-arms-race/91784797",
       "image": "https://www.swissinfo.ch/content/wp-content/uploads/sites/13/2026/07/662478390_highres.jpg?ver=e0a2b121&fit=1200,800",
       "link": "https://www.swissinfo.ch/eng/foreign-affairs/swiss-neutrality-is-double-edged-sword-in-ai-arms-race/91784797",
       "publisher": "SWI swissinfo.ch",
@@ -31,8 +31,8 @@
       "date": "2026-08-06",
       "schedule_for": "Thursday 06 August",
       "time": "08:00",
-      "text": "🇨🇭 Swiss researchers find lipid switch blocking anthrax\n\nA study led by @EPFL researchers shows how a reversible fat-based modification controls CMG2, the protein that binds collagen VI to maintain tissue structure and also serves as the entry gate for anthrax toxin. The switch decides whether the protein reaches the cell surface at all.\n\nWhy it matters:\n🧬 One protein links a rare genetic disease and anthrax\n🔬 Reversible lipid modifications emerge as druggable control points\n🇨🇭 Swiss basic biology feeding future therapeutic targets\n\nFundamental cell biology remains the least glamorous and most durable input into Swiss biotech.\n\nhttps://actu.epfl.ch/news/a-lipid-switch-that-blocks-anthrax",
-      "image": "https://actu.epfl.ch/image/165737/1440x810.jpg",
+      "text": "🇨🇭 Swiss researchers find lipid switch blocking anthrax\n\nA study led by @EPFL researchers shows how a reversible fat-based modification controls CMG2, the protein that binds collagen VI to maintain the extracellular matrix and that anthrax toxin hijacks to enter cells. The switch decides whether CMG2 reaches the cell surface at all.\n\nWhy it matters:\n🧬 One protein links tissue health, a rare disease and toxin entry\n🛡️ Blocking the switch could block anthrax at the door\n🇨🇭 Swiss basic biology still feeds future therapeutic pipelines\n\nMechanism-level discovery is slow to monetise and impossible to shortcut.\n\nhttps://actu.epfl.ch/news/a-lipid-switch-that-blocks-anthrax",
+      "image": null,
       "link": "https://actu.epfl.ch/news/a-lipid-switch-that-blocks-anthrax",
       "publisher": "EPFL News",
       "primary_source": null,
@@ -48,7 +48,7 @@
       "date": "2026-08-07",
       "schedule_for": "Friday 07 August",
       "time": "08:00",
-      "text": "🇨🇭 Four Swiss medtechs hit milestones in one week\n\n@Arcoris bio signed a distribution deal bringing its biomarker-detection kits to Europe and North America, @Hi-D Imaging won expanded FDA clearance for AI-driven heart-valve planning, @ABILITY Neurotech completed a first-in-human brain-computer interface procedure, and @Alivion published supporting platform data.\n\nWhy it matters:\n🏥 Regulatory clearance is the real gate in medtech\n🧠 First-in-human moves BCI from lab to clinic\n🇨🇭 Four Swiss companies crossing commercial thresholds simultaneously\n\nMedtech progress in Switzerland shows up as milestones, not megarounds, and that is the point.\n\nhttps://www.startupticker.ch/en/news/four-swiss-medtechs-mark-commercial-regulatory-and-clinical-milestones",
+      "text": "🇨🇭 Four Swiss medtechs clear commercial and clinical bars\n\n@Arcoris bio signed a distribution deal taking its biomarker-detection kits into Europe and North America, @Hi-D Imaging won expanded FDA clearance for AI-driven heart-valve planning, and @ABILITY Neurotech completed the first-in-human procedure for its brain-computer interface. @Alivion published supporting platform data, per @Startupticker.\n\nWhy it matters:\n🏥 Regulatory clearance, not demos, is the real medtech milestone\n🧠 First-in-human BCI puts Switzerland on the neurotech map\n🇨🇭 Four milestones in one week signals sector depth\n\nSwiss medtech rarely makes noise, then quietly clears the hardest gates in the industry.\n\nhttps://www.startupticker.ch/en/news/four-swiss-medtechs-mark-commercial-regulatory-and-clinical-milestones",
       "image": null,
       "link": "https://www.startupticker.ch/en/news/four-swiss-medtechs-mark-commercial-regulatory-and-clinical-milestones",
       "publisher": "Startupticker",
@@ -65,7 +65,7 @@
       "date": "2026-08-08",
       "schedule_for": "Saturday 08 August",
       "time": "08:00",
-      "text": "🇨🇭 Swiss AI tool audits CVs for job market\n\n@Humboldt AI, a St. Gallen startup, has built an AI system that analyses and optimises CVs for the Swiss labour market. Since launching in January 2026 it has been used by several thousand people, with first pilot projects running with institutional partners in Switzerland and Liechtenstein.\n\nWhy it matters:\n📄 Applied AI with immediate, measurable user value\n🤝 Institutional pilots signal move beyond consumer traction\n🇨🇭 St. Gallen adding to Switzerland's applied AI map\n\nSix months from launch to institutional pilots is the kind of pace software should set.\n\nhttps://www.startupticker.ch/en/news/humboldt-ai-lanciert-ki-tool-fuer-den-cv-check-im-schweizer-arbeitsmarkt",
+      "text": "🇨🇭 Swiss AI tool audits CVs for job seekers\n\n@Humboldt AI, a St. Gallen startup, has built an AI solution that optimises CVs for the Swiss labour market. Since launching in January 2026, several thousand people have used the platform, and first pilot projects are running with institutional partners in Switzerland and Liechtenstein.\n\nWhy it matters:\n📄 Hiring friction is a measurable cost in tight labour markets\n🤝 Institutional pilots beat consumer downloads as a signal\n🇨🇭 Six months from launch to cross-border pilots\n\nApplied AI wins in Switzerland when it solves a local process nobody else bothered to model.\n\nhttps://www.startupticker.ch/en/news/humboldt-ai-lanciert-ki-tool-fuer-den-cv-check-im-schweizer-arbeitsmarkt",
       "image": null,
       "link": "https://www.startupticker.ch/en/news/humboldt-ai-lanciert-ki-tool-fuer-den-cv-check-im-schweizer-arbeitsmarkt",
       "publisher": "Startupticker",
@@ -82,7 +82,7 @@
       "date": "2026-08-09",
       "schedule_for": "Sunday 09 August",
       "time": "08:00",
-      "text": "🇨🇭 Swiss proptech AssetOS wins blue-chip real estate clients\n\n@AssetOS, an @HSG spin-off, runs an AI platform that helps professional property investors capture, analyse and audit income-generating assets. Founded in late 2024 and live since summer 2025, it already counts @Implenia and @Avadis among its customers.\n\nWhy it matters:\n🏢 Real estate underwriting is still largely manual work\n📈 Named enterprise clients within a year of go-live\n🇨🇭 HSG spin-offs converting research into commercial software fast\n\nSelling to conservative Swiss institutions early is the hardest validation a young platform can get.\n\nhttps://www.startupticker.ch/en/news/proptech-assetos-auf-wachstumskurs",
+      "text": "🇨🇭 Swiss proptech AssetOS grows with blue-chip clients\n\n@AssetOS, a spin-off from @HSG, has built an AI platform that helps professional real estate investors capture, analyse and audit income-producing properties. Founded in late 2024 and live since summer 2025, it already counts @Implenia and @Avadis among its customers, reports @Startupticker.\n\nWhy it matters:\n🏢 Real estate underwriting is still largely manual work\n📈 Named enterprise clients within a year of go-live\n🇨🇭 University spin-offs increasingly target unglamorous, high-value workflows\n\nSelling to conservative Swiss institutions this fast is the hardest validation a young software company can get.\n\nhttps://www.startupticker.ch/en/news/proptech-assetos-auf-wachstumskurs",
       "image": null,
       "link": "https://www.startupticker.ch/en/news/proptech-assetos-auf-wachstumskurs",
       "publisher": "Startupticker",
@@ -90,7 +90,9 @@
       "coverage_url": null
     },
     {
-      "claims": [],
+      "claims": [
+        "the company is Delta Capacity"
+      ],
       "verified": false,
       "verified_source": "",
       "needs_check": false,
@@ -99,7 +101,7 @@
       "date": "2026-08-10",
       "schedule_for": "Monday 10 August",
       "time": "08:00",
-      "text": "🇨🇭 Swiss firm switches on Nordics' largest battery\n\n@Delta Capacity has brought a 70 MW / 160 MWh battery energy storage system into commercial operation in Ånge, central Sweden. The company says it is the largest battery storage project currently running in the Nordics.\n\nWhy it matters:\n🔋 160 MWh of flexibility supporting a volatile grid\n🇸🇪 Swiss operator building infrastructure in Northern Europe\n🇨🇭 Swiss energy expertise exported as built assets, not slides\n\nEnergy storage rewards companies that finish projects, and this one is already delivering power.\n\nhttps://www.startupticker.ch/en/news/delta-capacity-completes-swedish-battery-project",
+      "text": "🇨🇭 Swiss firm switches on largest Nordic battery\n\n@Delta Capacity has brought a 70 MW / 160 MWh battery energy storage system in Ånge, central Sweden, into commercial operation. The company says it is the largest battery storage project currently running in the Nordics, per @Startupticker.\n\nWhy it matters:\n🔋 Grid-scale storage is the bottleneck for renewable build-out\n⚡ 70 MW of flexibility in a constrained Nordic grid\n🇨🇭 Swiss energy operators exporting infrastructure, not just software\n\nBuilding physical assets abroad is slower than shipping code, and far harder for competitors to displace.\n\nhttps://www.startupticker.ch/en/news/delta-capacity-completes-swedish-battery-project",
       "image": null,
       "link": "https://www.startupticker.ch/en/news/delta-capacity-completes-swedish-battery-project",
       "publisher": "Startupticker",
@@ -108,22 +110,22 @@
     },
     {
       "claims": [
-        "the post states EUR 90 m: is that money received rather than a ceiling or a target, and has the round closed"
+        "the company is Synhelion"
       ],
       "verified": false,
       "verified_source": "",
-      "needs_check": true,
+      "needs_check": false,
       "index": 7,
       "weekday": "Tuesday",
       "date": "2026-08-11",
       "schedule_for": "Tuesday 11 August",
       "time": "08:00",
-      "text": "🇨🇭 Swiss solar fuels firm wins German scale-up funding\n\n@Synhelion has been selected as one of nine sustainable key-technology projects under North Rhine-Westphalia's Produktives.NRW programme, which carries around EUR 90 million in total funding. The money supports the next scaling step for its commercial solar fuel demonstration plant.\n\nWhy it matters:\n☀️ Solar heat converted into drop-in liquid fuels\n🏭 Public funding de-risks the first commercial-scale plant\n🇨🇭 Swiss cleantech scaling with German industrial support\n\nSwitzerland invents the process, neighbouring industrial regions pay to build it: a familiar and workable division of labour.\n\nhttps://www.startupticker.ch/en/news/synhelion-erhaelt-foerdermittel-fuer-kommerzielle-demo-anlage",
+      "text": "🇨🇭 Swiss solar fuel plant wins German backing\n\n@Synhelion has been selected for the North Rhine-Westphalia programme Produktives.NRW, one of nine sustainable key-technology projects sharing around 90 million euros. The support takes the cleantech company, which turns concentrated solar heat into synthetic fuels, into its next scaling step: a commercial demonstration plant.\n\nWhy it matters:\n☀️ Solar heat replaces fossil inputs in fuel synthesis\n✈️ Aviation needs drop-in fuels, not new engines\n🇨🇭 Swiss cleantech scaling on German industrial funding\n\nWhen foreign states co-finance your first commercial plant, the technology has stopped being a thesis.\n\nhttps://synhelion.com/news/synhelion-selected-for-german-funding-to-build-commercial-synthetic-fuel-plant",
       "image": null,
-      "link": "https://www.startupticker.ch/en/news/synhelion-erhaelt-foerdermittel-fuer-kommerzielle-demo-anlage",
+      "link": "https://synhelion.com/news/synhelion-selected-for-german-funding-to-build-commercial-synthetic-fuel-plant",
       "publisher": "Startupticker",
       "primary_source": "https://synhelion.com/",
-      "coverage_url": null
+      "coverage_url": "https://www.startupticker.ch/en/news/synhelion-erhaelt-foerdermittel-fuer-kommerzielle-demo-anlage"
     }
   ]
 }
