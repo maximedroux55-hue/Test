@@ -435,12 +435,12 @@ def test_the_row_links_to_startupticker_when_there_is_one():
                    "startupticker_url":
                        "https://www.startupticker.ch/en/news/gr3n-series-b"}}
     page = scraper.render_archive_html(known)
-    hrefs = _re.findall(r'<td class="co"><a href="([^"]+)"', page)
+    hrefs = _re.findall(r'<td class="co"[^>]*><a href="([^"]+)"', page)
     assert hrefs and "startupticker.ch" in hrefs[0], hrefs
     # Without one, the row keeps the link it has.
     known["a"].pop("startupticker_url")
     page = scraper.render_archive_html(known)
-    hrefs = _re.findall(r'<td class="co"><a href="([^"]+)"', page)
+    hrefs = _re.findall(r'<td class="co"[^>]*><a href="([^"]+)"', page)
     assert hrefs and "techfundingnews" in hrefs[0], hrefs
 
 
@@ -461,7 +461,7 @@ def test_the_page_reads_on_a_phone():
     # An unknown fact is marked as empty so a phone can drop it.
     thin = {"k": {"company": "Co", "amount": "CHF 5M", "stage": "Seed",
                   "category": "AI", "title": "Co raises", "link": "https://x.ch",
-                  "published": "2026-07-01"}}
+                  "location": "Zurich", "published": "2026-07-01"}}
     assert 'class="fnd empty"' in scraper.render_archive_html(thin)
 
 
