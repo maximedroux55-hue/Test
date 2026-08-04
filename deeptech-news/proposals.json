@@ -27,4 +27,29 @@
       "ZuriQ"
     ]
   }
+}, {
+  "post_index": 3,
+  "scheduled_for": "2026-08-07T08:00",
+  "status": "held_not_scheduled",
+  "publisher": "Startupticker",
+  "claim": "the company is Humboldt AI",
+  "post_says": "@Humboldt AI, based in St. Gallen, has built an AI platform that checks and optimises CVs for the Swiss labour market.",
+  "source_says": "Gegründet wurde Humboldt AI, eine Marke der Raetica Innovation Labs GmbH, 2026 von Thomas Bigliel und Kathrin Neumüller.",
+  "source_url": "https://www.startupticker.ch/en/news/humboldt-ai-lanciert-ki-tool-fuer-den-cv-check-im-schweizer-arbeitsmarkt",
+  "corroboration": [
+    {
+      "note": "Startupticker files the article under the legal entity, not the brand.",
+      "detail": "Article's 'More news about' record reads 'Raetica Innovation Labs GmbH'.",
+      "url": "https://www.startupticker.ch/en/news/humboldt-ai-lanciert-ki-tool-fuer-den-cv-check-im-schweizer-arbeitsmarkt"
+    },
+    {
+      "note": "Primary source carries no announcement.",
+      "detail": "humboldt-ai.ch homepage shows no release for this launch.",
+      "url": "https://humboldt-ai.ch/"
+    }
+  ],
+  "problem": "Humboldt AI is a brand, not the company. The post names and tags it as the company, so the @mention would point at the wrong entity.",
+  "proposed_fix": "Either tag the legal entity — Raetica Innovation Labs GmbH — or reword to 'Humboldt AI, a brand of Raetica Innovation Labs GmbH'.",
+  "other_claims_checked": "Clear. St. Gallen base, January 2026 launch, several thousand users, and first institutional pilots in Switzerland and Liechtenstein all match the source.",
+  "checked_on": "2026-08-04"
 }
