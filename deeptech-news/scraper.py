@@ -576,12 +576,23 @@ def render_archive_html(known: dict, now: dt.datetime | None = None) -> str:
     today = now.date()
     seen_dates = sorted({(s.get("first_seen") or "").strip()
                          for s in stories if s.get("first_seen")})
-    newest = seen_dates[-1] if seen_dates else ""
-    fresh = [s for s in stories if (s.get("first_seen") or "").strip() == newest]
+    # The day the record was created is not an addition. The archive was
+    # rebuilt from scratch on 3 August, so every round in it carried that
+    # morning's date and all 21 rows came up marked new. Nothing is new when
+    # everything is. The earliest date present is the baseline load, and only
+    # what arrived after it counts as added.
+    baseline = seen_dates[0] if seen_dates else ""
+
+    def entered(story) -> str:
+        seen = (story.get("first_seen") or "").strip()
+        return "" if not seen or seen == baseline else seen
+
+    additions = [s for s in stories if entered(s)]
+    newest = max((entered(s) for s in additions), default="")
+    fresh = [s for s in additions if entered(s) == newest]
     week_ago = (today - dt.timedelta(days=7)).isoformat()
     month_ago = (today - dt.timedelta(days=30)).isoformat()
-    added_week = sum(1 for s in stories
-                     if (s.get("first_seen") or "") >= week_ago)
+    added_week = sum(1 for s in additions if entered(s) >= week_ago)
     if newest == today.isoformat():
         added_line = (f"{len(fresh)} round{'' if len(fresh) == 1 else 's'} "
                       f"added today")
@@ -589,6 +600,11 @@ def render_archive_html(known: dict, now: dt.datetime | None = None) -> str:
         when = dt.date.fromisoformat(newest).strftime("%d %B")
         added_line = (f"last additions {when}: {len(fresh)} "
                       f"round{'' if len(fresh) == 1 else 's'}")
+    elif baseline:
+        when = dt.date.fromisoformat(baseline).strftime("%d %B")
+        added_line = (f"all {len(stories)} rounds loaded together when the "
+                      f"record was built on {when}, so nothing is marked new "
+                      f"yet")
     else:
         added_line = "nothing added yet"
 
@@ -627,7 +643,7 @@ def render_archive_html(known: dict, now: dt.datetime | None = None) -> str:
     rows = []
     for s in stories:
         tag = ' <span class="tag posted">posted</span>' if s.get("posted") else ""
-        first_seen = (s.get("first_seen") or "").strip()
+        first_seen = entered(s)
         if newest and first_seen == newest:
             tag += (f' <span class="tag fresh" title="Added by the run of '
                     f'{html.escape(newest)}">new</span>')

@@ -674,32 +674,45 @@ def test_the_page_says_when_it_ran_and_what_it_added():
                 "description": f"{company} is a Swiss quantum startup",
                 "link": f"https://www.startupticker.ch/en/news/{key}"}
 
-    known = {
-        "a": deal("a", "Alpha", "2026-08-04"),
-        "b": deal("b", "Beta", "2026-08-04", "CHF 20M"),
-        "c": deal("c", "Gamma", "2026-07-20", "CHF 30M"),
-    }
     now = dt.datetime(2026, 8, 4, 6, 30)
-    page = scraper.render_archive_html(known, now=now)
+
+    # The day the record was built is not an addition. The archive was rebuilt
+    # on 3 August, every round in it carried that morning's date, and the page
+    # came up with all 21 rows marked new. Nothing is new when everything is.
+    loaded = {
+        "a": deal("a", "Alpha", "2026-08-03"),
+        "b": deal("b", "Beta", "2026-08-03", "CHF 20M"),
+        "c": deal("c", "Gamma", "2026-08-03", "CHF 30M"),
+    }
+    page = scraper.render_archive_html(loaded, now=now)
 
     # When it ran, in Max's time and in words rather than a bare stamp.
     assert "Refreshed 04 August 2026 at 06:30" in page
-    # What that run added, both as a sentence and as a tile.
+    assert 'class="tag fresh"' not in page
+    assert "loaded together when the record was built on 03 August" in page
+    assert "<b>0</b><span>added today</span>" in page
+    assert 'value="new">Just added (0)' in page
+    # And the baseline rows are not reachable through the date filters either.
+    assert 'data-added="2026-08-03"' not in page
+
+    # What arrives after the load is a real addition, and is marked.
+    known = dict(loaded)
+    known["a"] = deal("a", "Alpha", "2026-08-04")
+    known["b"] = deal("b", "Beta", "2026-08-04", "CHF 20M")
+    page = scraper.render_archive_html(known, now=now)
     assert "2 rounds added today" in page
     assert "<b>2</b><span>added today</span>" in page
-    # And which rows they are, markable and filterable.
     assert page.count('class="tag fresh"') == 2
     assert 'data-added="2026-08-04"' in page
-    assert 'data-added="2026-07-20"' in page
     assert 'value="new">Just added (2)' in page
 
     # A quiet run says when the last additions were rather than showing
     # nothing, so silence is never mistaken for a broken job.
-    quiet = {"c": known["c"]}
-    page = scraper.render_archive_html(quiet, now=now)
-    assert "last additions 20 July: 1 round" in page
+    later = dt.datetime(2026, 8, 9, 6, 30)
+    page = scraper.render_archive_html(known, now=later)
+    assert "last additions 04 August: 2 rounds" in page
     assert "<b>0</b><span>added today</span>" in page
-    assert 'class="tag fresh"' in page  # still marked, as the newest batch
+    assert page.count('class="tag fresh"') == 2  # still the newest batch
 
     # A second outlet covering an old round this morning does not make the
     # round new: the merged row keeps the earliest date it was seen.
