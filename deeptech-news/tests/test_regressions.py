@@ -781,7 +781,12 @@ def test_a_run_does_not_land_on_a_week_being_posted():
     assert scraper.week_still_running("/nonexistent", dt.date(2026, 8, 5)) is False
 
     # Only the schedule may skip. Running it by hand always rebuilds.
-    with open("/home/user/Test/.github/workflows/news-digest.yml",
+    # Found from this file, not from an absolute path: the runner checks the
+    # repository out somewhere else entirely, and a hardcoded /home/user path
+    # failed the whole run rather than the one assertion.
+    root = os.path.dirname(os.path.dirname(os.path.dirname(
+        os.path.abspath(__file__))))
+    with open(os.path.join(root, ".github", "workflows", "news-digest.yml"),
               encoding="utf-8") as f:
         flow = f.read()
     assert "github.event_name == 'schedule' && '--skip-if-week-planned'" in flow
