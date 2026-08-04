@@ -662,9 +662,36 @@ def test_the_picture_comes_from_the_story_not_the_page():
     assert images._content_image(chrome, "https://x.ch") is None
 
 
+def test_short_week_skips_the_weekend():
+    """Fewer than seven posts go out on working days, weekend left blank."""
+    import datetime as dt
+    import linkedin
+
+    # Wednesday 5 August 2026. Five posts run Thursday, Friday, then Monday on.
+    wednesday = dt.date(2026, 8, 5)
+    days = linkedin.schedule_days(wednesday, 5)
+    assert [d.strftime("%a") for d in days] == \
+        ["Thu", "Fri", "Mon", "Tue", "Wed"], days
+    assert days[0] == dt.date(2026, 8, 6)
+    assert days[2] == dt.date(2026, 8, 10)
+
+    # A full week has nowhere else to put the seventh, so it fills every day.
+    week = linkedin.schedule_days(wednesday, 7)
+    assert [d.strftime("%a") for d in week] == \
+        ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue", "Wed"], week
+
+    # A run landing on a Friday still starts on the next working day.
+    friday = linkedin.schedule_days(dt.date(2026, 8, 7), 2)
+    assert [d.strftime("%a") for d in friday] == ["Mon", "Tue"], friday
+
+    # One post, and no post at all, both behave.
+    assert len(linkedin.schedule_days(wednesday, 1)) == 1
+    assert linkedin.schedule_days(wednesday, 0) == []
+
+
 # Locking the count means a test appended below the runner, where it would
 # never execute, shows up as a failure rather than as silence. That happened.
-EXPECTED = 44
+EXPECTED = 45
 
 
 if __name__ == "__main__":

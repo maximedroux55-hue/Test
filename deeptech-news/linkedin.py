@@ -309,13 +309,33 @@ def _claims_in(text: str, art: dict) -> list:
     return claims
 
 
+def schedule_days(today, count: int, full_week: int = 7) -> list:
+    """Dates to post on, one per post, starting the day after the run.
+
+    A full week of posts fills every day, weekend included, because there is
+    nowhere else to put the seventh. A short week is spread over working days
+    only and the weekend is left blank: a quiet Saturday reads as a pause, a
+    thin Saturday reads as a thin week.
+    """
+    import datetime as dt
+
+    days, day = [], today
+    while len(days) < count:
+        day += dt.timedelta(days=1)
+        if count < full_week and day.weekday() >= 5:
+            continue
+        days.append(day)
+    return days
+
+
 def build_posts(articles: list, days: int, top: int = 7):
     """Build the week's posts once. Returns (records, mode).
 
     Each record is a self-contained dict ready for both the human-readable
     Markdown and the machine-readable posts.json, so the AI writer runs only
     once per digest. Posts are dated one per day starting the day after the run
-    (a Wednesday run plans Thursday through the next Wednesday).
+    (a Wednesday run plans Thursday through the next Wednesday). Short weeks
+    skip the weekend, see schedule_days.
     """
     import datetime as dt
     from ai_writer import generate_posts
@@ -340,8 +360,9 @@ def build_posts(articles: list, days: int, top: int = 7):
     from ai_writer import has_figure
 
     records = []
+    when = schedule_days(today, len(picks), full_week=top)
     for i, (text, art) in enumerate(zip(texts, picks)):
-        day = today + dt.timedelta(days=i + 1)
+        day = when[i]
         company = art.get("company", "")
         checked = trust.verification(company) if company else {}
         risky = bool(has_figure(text)) and not checked
@@ -380,10 +401,12 @@ def render_markdown(records: list, mode: str, days: int) -> str:
     import datetime as dt
 
     today = dt.date.today()
+    spread = ("one per day" if len(records) >= 7
+              else "one per working day, weekend left blank")
     parts = [
         "# Climb Ventures LinkedIn plan for the week",
-        f"_Generated {today.strftime('%d %B %Y')}. {len(records)} posts, one per "
-        f"day, from Swiss DeepTech news of the last {days} days. {mode} "
+        f"_Generated {today.strftime('%d %B %Y')}. {len(records)} posts, {spread}, "
+        f"from Swiss DeepTech news of the last {days} days. {mode} "
         f"Schedule each for {POST_TIME} on its day. Review and edit before posting._",
         "",
         "## Publish with Claude Cowork",
