@@ -1086,7 +1086,10 @@ def main() -> None:
         if len(picks) < args.posts:
             print(
                 f"Only {len(picks)} unused stories available for {args.posts} "
-                f"posts. Widen --days for more.",
+                f"posts"
+                + (f", after skipping {capped} that would have exceeded "
+                   f"{args.max_per_domain} links on one site" if capped else "")
+                + ". Widen --days for more.",
                 file=sys.stderr,
             )
         print(

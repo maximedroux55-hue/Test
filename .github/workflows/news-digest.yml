@@ -14,13 +14,16 @@ on:
     inputs:
       days:
         description: "How many days back to look"
-        default: "10"
+        # Two links per site is a hard cap, so the week needs more candidates
+        # than posts. At ten days the pool ran dry and a seven post week came
+        # out as four.
+        default: "21"
       min_score:
         description: "Minimum relevance score"
         default: "4"
       limit:
         description: "Maximum number of stories to consider"
-        default: "25"
+        default: "60"
       posts:
         description: "Number of LinkedIn posts to write (one per day)"
         default: "7"
@@ -66,9 +69,9 @@ jobs:
         run: |
           cd deeptech-news
           python scraper.py \
-            --days "${{ github.event.inputs.days || '10' }}" \
+            --days "${{ github.event.inputs.days || '21' }}" \
             --min-score "${{ github.event.inputs.min_score || '4' }}" \
-            --limit "${{ github.event.inputs.limit || '25' }}" \
+            --limit "${{ github.event.inputs.limit || '60' }}" \
             --posts "${{ github.event.inputs.posts || '7' }}" \
             --posts-only
 
