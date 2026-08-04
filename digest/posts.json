@@ -6,23 +6,24 @@
   "posts": [
     {
       "claims": [
-        "the company is Immitra Bio"
+        "the company is Immitra Bio",
+        "the post calls it a pre-seed: is that the right name for this transaction"
       ],
-      "link_note": "found https://immitrabio.com/index.html#platform, not an announcement page",
+      "link_note": "the company's own announcement",
       "verified": false,
       "verified_source": "",
-      "needs_check": false,
+      "needs_check": true,
       "index": 1,
       "weekday": "Wednesday",
       "date": "2026-08-05",
       "schedule_for": "Wednesday 05 August",
       "time": "08:00",
-      "text": "🇨🇭 Swiss biotech pushes in-vivo gene editing forward\n\n@Immitra Bio is developing an in-vivo gene editing platform, aiming to correct disease at its genetic source inside the body rather than in a lab dish. Fresh funding will advance the platform, according to @Venturelab Swiss.\n\nWhy it matters:\n🧬 In-vivo editing removes the cost barrier of cell manufacturing\n🔬 Platform approach means one technology, many disease targets\n🇨🇭 Swiss life sciences moving from tools to therapeutics\n\nSwitzerland's biotech depth is starting to show up in platforms, not just single molecules.\nhttps://www.venturelab.swiss/Immitra-Bio-raises-CHF-24-million-to-advance-invivo-gene-editing-platform",
+      "text": "🇨🇭 Swiss biotech pushes in-vivo gene editing forward\n\n@Immitra Bio is developing an in-vivo gene editing platform, aiming to correct disease at its genetic source inside the body rather than in a lab dish. The company has closed a pre-seed round to advance the technology toward preclinical validation.\n\nWhy it matters:\n🧬 In-vivo editing removes the cost barrier of cell manufacturing\n🔬 Platform approach can address multiple indications, not one\n🇨🇭 Swiss life sciences keep producing platform companies, not single assets\n\nGene editing done inside the patient is the hard version of the problem, and that is where the value sits.\n\nhttps://immitrabio.com/press/2026/20260721_pre-seed_announcement.html",
       "image": "https://www.venturelab.swiss/demandit/files/M_BB941CC4DCEF687AD98/dms/Image/immitra_bio.jpg",
-      "link": "https://www.venturelab.swiss/Immitra-Bio-raises-CHF-24-million-to-advance-invivo-gene-editing-platform",
+      "link": "https://immitrabio.com/press/2026/20260721_pre-seed_announcement.html",
       "publisher": "Venturelab Swiss",
       "primary_source": null,
-      "coverage_url": null
+      "coverage_url": "https://www.venturelab.swiss/Immitra-Bio-raises-CHF-24-million-to-advance-invivo-gene-editing-platform"
     },
     {
       "claims": [
@@ -30,7 +31,7 @@
         "the post states $70M: is that money received rather than a ceiling or a target, and has the round closed",
         "the post states USD 70 m: is that money received rather than a ceiling or a target, and has the round closed"
       ],
-      "link_note": "found https://swissto12.com/products/satcom/, not an announcement page",
+      "link_note": "the company's own announcement",
       "verified": true,
       "verified_source": "spacenews.com — https://spacenews.com/swissto12-raises-70-million-to-accelerate-small-geo-satellite-production/",
       "needs_check": false,
@@ -39,21 +40,21 @@
       "date": "2026-08-06",
       "schedule_for": "Thursday 06 August",
       "time": "08:00",
-      "text": "🇨🇭 Swiss space firm raises $70M for satellites\n\n@SWISSto12, the Renens-based maker of 3D-printed radio frequency payloads and small geostationary satellites, has raised USD 70 million to scale production and meet growing multi-orbit demand, reports @Greater Geneva Bern area (GGBa).\n\nWhy it matters:\n🛰️ Multi-orbit demand is outpacing legacy satellite manufacturing capacity\n🖨️ 3D-printed RF hardware cuts mass, cost and lead times\n🇨🇭 A Swiss firm competing in geostationary telecom satellites\n\nSwitzerland rarely gets credited for space hardware, and that is exactly why this one matters.\nhttps://ggba.swiss/en/swissto12-raises-usd-70-million-to-meet-growing-multi-orbit-satellite-demand/",
+      "text": "🇨🇭 Swiss space firm raises $70M to build satellites\n\n@SWISSto12, the Lausanne-based satellite manufacturer, has raised USD 70 million to scale production of its 3D-printed radio frequency payloads and small geostationary satellites. Its HummingSat platform already counts @ESA and commercial operators among its backers and customers.\n\nWhy it matters:\n🛰️ 3D-printed RF hardware cuts satellite mass and lead times\n💰 $70M funds industrial scale-up, not another prototype\n🇨🇭 Switzerland now hosts a full satellite prime contractor\n\nAdditive manufacturing turned a niche RF specialist into a European space prime in under a decade.\n\nhttps://swissto12.com/swissto12-ceo-emile-de-rijk-wins-via-satellites-2024-satellite-executive-of-the-year-award/",
       "image": "https://ggba.swiss/app/uploads/2026/07/HummingSat-Swissto12-1180x811-1.jpg",
-      "link": "https://ggba.swiss/en/swissto12-raises-usd-70-million-to-meet-growing-multi-orbit-satellite-demand/",
+      "link": "https://swissto12.com/swissto12-ceo-emile-de-rijk-wins-via-satellites-2024-satellite-executive-of-the-year-award/",
       "publisher": "Greater Geneva Bern area (GGBa)",
       "primary_source": "https://swissto12.com/",
-      "coverage_url": null
+      "coverage_url": "https://ggba.swiss/en/swissto12-raises-usd-70-million-to-meet-growing-multi-orbit-satellite-demand/"
     },
     {
       "claims": [
         "the company is Hilo",
-        "the post states $19M: is that money received rather than a ceiling or a target, and has the round closed",
         "the post states $19 m: is that money received rather than a ceiling or a target, and has the round closed",
         "the post states $119 m: is that money received rather than a ceiling or a target, and has the round closed",
         "the post states $119M: is that money received rather than a ceiling or a target, and has the round closed",
-        "the post calls it a series b: is that the right name for this transaction"
+        "the post calls it a series b: is that the right name for this transaction",
+        "the post calls it a seed: is that the right name for this transaction"
       ],
       "link_note": "no announcement found for Hilo at hilo.com",
       "verified": true,
@@ -64,7 +65,7 @@
       "date": "2026-08-07",
       "schedule_for": "Friday 07 August",
       "time": "08:00",
-      "text": "🇨🇭 Swiss insurtech Hilo raises $19M for US push\n\n@Hilo has closed a Series B extension of $19 million, taking total funding past $119 million. New backing came from @Dell Family Office, the investment office of Michael Dell, alongside existing investors, as the company enters the US market.\n\nWhy it matters:\n💵 Total funding above $119M signals sustained investor conviction\n🇺🇸 US entry is the real test of the model\n🇨🇭 Swiss insurtech attracting American technology capital\n\nWhen a Dell family office writes into a Swiss round, the geography argument gets weaker every year.\nhttps://www.startupticker.ch/en/news/hilo-closes-series-b-extension-round-to-fuel-us-expansion",
+      "text": "🇨🇭 Swiss health tech lands Michael Dell's family office\n\n@Hilo has closed a Series B extension of $19 million, taking total funding past $119 million. New investor @Dell Family Office, the investment vehicle of Michael Dell, joined existing backers as the company pushes into the US market.\n\nWhy it matters:\n💵 $119M raised signals conviction well beyond a seed story\n🇺🇸 US entry is the real test of clinical-grade hardware\n🇨🇭 Swiss medtech attracting top-tier American technology capital\n\nWhen US family offices cross the Atlantic for a Swiss company, the product usually speaks for itself.\n\nhttps://www.startupticker.ch/en/news/hilo-closes-series-b-extension-round-to-fuel-us-expansion",
       "image": null,
       "link": "https://www.startupticker.ch/en/news/hilo-closes-series-b-extension-round-to-fuel-us-expansion",
       "publisher": "Startupticker",
@@ -87,7 +88,7 @@
       "date": "2026-08-08",
       "schedule_for": "Saturday 08 August",
       "time": "08:00",
-      "text": "🇨🇭 Swiss biotech raises $230M on Nasdaq\n\n@MoonLake Therapeutics, the Nasdaq-listed Swiss biotech, has completed a public offering totalling USD 230 million after the exercise of option shares added a further USD 30 million this week.\n\nWhy it matters:\n📈 Public markets still fund Swiss clinical-stage biotech at scale\n💊 Option shares exercised in full signals strong demand\n🇨🇭 A Swiss company raising serious money on US exchanges\n\nThe Swiss biotech story increasingly ends on Nasdaq, and that is a feature, not a leak.\nhttps://www.startupticker.ch/en/news/moonlake-therapeutics-raises-usd-230-million-in-public-offering",
+      "text": "🇨🇭 Swiss biotech raises $230M on Nasdaq\n\n@MoonLake Therapeutics, the Nasdaq-listed Swiss biotech, has raised USD 230 million in a public offering, including USD 30 million from the exercise of option shares completed this week. The proceeds extend funding for its inflammatory disease pipeline.\n\nWhy it matters:\n📈 Public markets still fund Swiss clinical-stage biotech at scale\n💊 $230M buys runway through data-heavy trial phases\n🇨🇭 A Swiss company financing itself on US capital markets\n\nThe Nasdaq route remains the most reliable path for Swiss biotech to reach late-stage capital.\n\nhttps://www.startupticker.ch/en/news/moonlake-therapeutics-raises-usd-230-million-in-public-offering",
       "image": null,
       "link": "https://www.startupticker.ch/en/news/moonlake-therapeutics-raises-usd-230-million-in-public-offering",
       "publisher": "Startupticker",
@@ -105,7 +106,7 @@
       "date": "2026-08-09",
       "schedule_for": "Sunday 09 August",
       "time": "08:00",
-      "text": "🇨🇭 Swiss AI cuts rail forecast errors by 80%\n\nResearchers at @EPFL, working with @SBB, have built an AI model that forecasts next-day electricity demand across Switzerland's rail network, reducing major prediction errors by up to 80%. Demand shifts with passenger flows, weather and daily operational changes.\n\nWhy it matters:\n⚡ Better forecasts cut costly energy procurement and balancing risk\n🚆 Applied AI on infrastructure, not chatbots\n🇨🇭 A national operator co-developing models with a Swiss university\n\nThe most valuable AI in Switzerland may quietly sit inside utilities and railways.\nhttps://actu.epfl.ch/news/using-future-data-to-better-predict-switzerland-s",
+      "text": "🇨🇭 Swiss AI cuts rail forecasting errors by 80%\n\nResearchers at @EPFL, working with @SBB, have built an AI model that improves next-day electricity demand forecasts across the Swiss rail network. Large prediction errors fall by up to 80%, addressing a problem shaped by passenger flows, weather and shifting operations.\n\nWhy it matters:\n⚡ Better forecasts mean lower balancing costs and grid risk\n🚄 Rail is one of Switzerland's largest single electricity consumers\n🇨🇭 University and operator collaboration turning research into infrastructure\n\nThe most valuable AI in Switzerland may end up running quietly behind train timetables.\n\nhttps://actu.epfl.ch/news/using-future-data-to-better-predict-switzerland-s",
       "image": null,
       "link": "https://actu.epfl.ch/news/using-future-data-to-better-predict-switzerland-s",
       "publisher": "EPFL News",
@@ -123,7 +124,7 @@
       "date": "2026-08-10",
       "schedule_for": "Monday 10 August",
       "time": "08:00",
-      "text": "🇨🇭 Swiss neutrality tested by the AI arms race\n\n@SWI swissinfo.ch reports that Switzerland's neutrality cuts both ways in the global AI race: it opens doors as a trusted host for governance and data, while limiting access to the defence-linked alliances and compute partnerships now shaping frontier AI.\n\nWhy it matters:\n🤝 Trusted-third-party status is a genuine commercial asset\n🚧 Export controls and alliances increasingly gate compute access\n🇨🇭 Swiss AI must win on sovereignty and trust\n\nNeutrality is a positioning strategy now, and Switzerland will have to work it deliberately.\nhttps://www.swissinfo.ch/eng/foreign-affairs/swiss-neutrality-is-double-edged-sword-in-ai-arms-race/91784797",
+      "text": "🇨🇭 Swiss neutrality cuts both ways in AI\n\n@SWI swissinfo.ch reports that Switzerland's neutrality is both an asset and a liability in the global AI race: attractive as trusted ground for governance and data, yet exposed as compute, chips and talent concentrate in US and Chinese hands.\n\nWhy it matters:\n🌐 Neutral ground is a genuine advantage in AI governance\n🖥️ Compute dependency limits sovereign options regardless of diplomacy\n🇨🇭 Swiss AI credibility rests on ETH and EPFL research depth\n\nNeutrality buys trust, but only sovereign infrastructure turns that trust into leverage.\n\nhttps://www.swissinfo.ch/eng/foreign-affairs/swiss-neutrality-is-double-edged-sword-in-ai-arms-race/91784797",
       "image": "https://www.swissinfo.ch/content/wp-content/uploads/sites/13/2026/07/662478390_highres.jpg?ver=e0a2b121&fit=1200,800",
       "link": "https://www.swissinfo.ch/eng/foreign-affairs/swiss-neutrality-is-double-edged-sword-in-ai-arms-race/91784797",
       "publisher": "SWI swissinfo.ch",
@@ -141,7 +142,7 @@
       "date": "2026-08-11",
       "schedule_for": "Tuesday 11 August",
       "time": "08:00",
-      "text": "🇨🇭 Swiss researchers find lipid switch blocking anthrax\n\nA study led by @EPFL shows how a reversible fat-based modification controls CMG2, a protein that binds collagen VI to maintain the extracellular matrix and also serves as the entry route for anthrax toxin into cells.\n\nWhy it matters:\n🧫 One mechanism links tissue health, a rare disease and toxin entry\n🛡️ Blocking the switch could stop anthrax at the cell door\n🇨🇭 Swiss basic science producing tractable drug targets\n\nFundamental cell biology remains the pipeline that Swiss therapeutics quietly draws from a decade later.\nhttps://actu.epfl.ch/news/a-lipid-switch-that-blocks-anthrax",
+      "text": "🇨🇭 Swiss researchers find lipid switch blocking anthrax\n\nA study led by @EPFL shows how a reversible fat-based modification controls CMG2, a protein that binds collagen VI to maintain the extracellular matrix and also serves as the entry route for anthrax toxin into cells. The same switch links to a rare genetic disease.\n\nWhy it matters:\n🧫 One protein connects tissue health, rare disease and toxin entry\n🛡️ Blocking cell entry is a drug strategy without antibiotics\n🇨🇭 Swiss fundamental biology still generating therapeutic starting points\n\nBasic cell biology keeps producing the unglamorous discoveries that later become drug targets.\n\nhttps://actu.epfl.ch/news/a-lipid-switch-that-blocks-anthrax",
       "image": null,
       "link": "https://actu.epfl.ch/news/a-lipid-switch-that-blocks-anthrax",
       "publisher": "EPFL News",
