@@ -388,6 +388,12 @@ def merge_deals(stories: list) -> list:
         # Only when every letter is lower, so SWISSto12 is left alone.
         if name.islower():
             deal["company"] = name[:1].upper() + name[1:]
+        # When the round entered the database, which is the earliest of its
+        # write-ups. Taking the preferred outlet's date instead would make a
+        # round look new because a second outlet covered it this morning.
+        seen = [s.get("first_seen") for s in by_key[key] if s.get("first_seen")]
+        if seen:
+            deal["first_seen"] = min(seen)
         out.append(deal)
     return out
 
@@ -520,7 +526,16 @@ def _investor_line(story: dict) -> str:
     return ", ".join(names)
 
 
-def render_archive_html(known: dict) -> str:
+def _zurich_now() -> dt.datetime:
+    """Now, in Max's time. The runner is on UTC, which is not where he reads."""
+    try:
+        from zoneinfo import ZoneInfo
+        return dt.datetime.now(ZoneInfo("Europe/Zurich"))
+    except Exception:
+        return dt.datetime.now(dt.timezone.utc)
+
+
+def render_archive_html(known: dict, now: dt.datetime | None = None) -> str:
     """A browsable page of the financing rounds found, newest first.
 
     Nine rigid columns left a hole wherever a fact was missing, and articles
@@ -528,7 +543,12 @@ def render_archive_html(known: dict) -> str:
     blank. The columns here are the ones that are almost always known, and
     everything else sits under the company name and only appears when it is
     actually there, so a missing fact costs a phrase rather than a gap.
+
+    The page also says when it last ran and what that run added, because a
+    database you cannot date is one you cannot trust: without it there is no
+    way to tell a quiet week from a broken job.
     """
+    now = now or _zurich_now()
     everything = sorted(
         known.values(),
         key=lambda e: (e.get("published") or e.get("first_seen") or "",
@@ -548,6 +568,29 @@ def render_archive_html(known: dict) -> str:
     announced = sum(1 for s in stories if not is_closed(s))
     tracked = money.compact(
         sum(money.in_chf(s.get("amount", "")) for s in counted(stories)))
+
+    # What the most recent run that found anything actually added. Keyed on the
+    # newest first_seen present rather than on today, so a quiet run says "the
+    # last additions were on the 2nd" instead of silently showing nothing new.
+    refreshed = now.strftime("%d %B %Y at %H:%M")
+    today = now.date()
+    seen_dates = sorted({(s.get("first_seen") or "").strip()
+                         for s in stories if s.get("first_seen")})
+    newest = seen_dates[-1] if seen_dates else ""
+    fresh = [s for s in stories if (s.get("first_seen") or "").strip() == newest]
+    week_ago = (today - dt.timedelta(days=7)).isoformat()
+    month_ago = (today - dt.timedelta(days=30)).isoformat()
+    added_week = sum(1 for s in stories
+                     if (s.get("first_seen") or "") >= week_ago)
+    if newest == today.isoformat():
+        added_line = (f"{len(fresh)} round{'' if len(fresh) == 1 else 's'} "
+                      f"added today")
+    elif newest:
+        when = dt.date.fromisoformat(newest).strftime("%d %B")
+        added_line = (f"last additions {when}: {len(fresh)} "
+                      f"round{'' if len(fresh) == 1 else 's'}")
+    else:
+        added_line = "nothing added yet"
 
     def options(field: str) -> str:
         """The values actually present, so no filter leads to an empty table."""
@@ -584,6 +627,10 @@ def render_archive_html(known: dict) -> str:
     rows = []
     for s in stories:
         tag = ' <span class="tag posted">posted</span>' if s.get("posted") else ""
+        first_seen = (s.get("first_seen") or "").strip()
+        if newest and first_seen == newest:
+            tag += (f' <span class="tag fresh" title="Added by the run of '
+                    f'{html.escape(newest)}">new</span>')
         company = html.escape(s.get("company") or "") or html.escape(
             (s.get("title") or "")[:40])
         # Startupticker where there is one, whatever the round was found on.
@@ -659,6 +706,7 @@ def render_archive_html(known: dict) -> str:
             f'data-sector="{html.escape(category_text)}" '
             f'data-stage="{html.escape(stage_text)}" '
             f'data-hq="{html.escape(location_text)}" '
+            f'data-added="{html.escape(first_seen)}" '
             f'data-date="{html.escape(date_text)}">'
             f'<td class="co" data-label="Company">'
             f'<a href="{link}" target="_blank" rel="noopener" '
@@ -721,6 +769,13 @@ def render_archive_html(known: dict) -> str:
   .tag.posted {{ background:var(--green); color:#fff; border-radius:6px;
                 padding:0.05rem 0.4rem; font-size:0.7rem; font-weight:700;
                 vertical-align:middle; }}
+  .tag.fresh {{ background:#1b2430; color:#fff; border-radius:6px;
+               padding:0.05rem 0.4rem; font-size:0.7rem; font-weight:700;
+               vertical-align:middle; letter-spacing:0.02em; }}
+  .refreshed {{ color:var(--soft); font-size:0.83rem; margin:0 0 1rem;
+               background:#fff; border:1px solid var(--line); border-radius:12px;
+               padding:0.6rem 0.9rem; }}
+  .refreshed b {{ color:var(--ink); }}
   .cat {{ background:#eef4f0; color:#2f6b46; border-radius:6px;
          padding:0.1rem 0.45rem; font-size:0.76rem; font-weight:600;
          white-space:nowrap; }}
@@ -797,8 +852,12 @@ def render_archive_html(known: dict) -> str:
   outlets covered the same one, their facts are combined.
   <a href="/reports/">Monthly reports &rarr;</a>
   <span title="Kept in archive.json, which is the raw record">{foreign} foreign-headquartered rounds and {hidden} non-financing stories are held back.</span></p>
+  <p class="refreshed"><b>Refreshed {refreshed}</b> &middot; {added_line} &middot;
+  {added_week} in the last 7 days. The database runs every morning, so a day with
+  nothing new means the news was quiet, not that it stopped.</p>
   <div class="stats">
     <div class="stat"><b>{len(stories)}</b><span>rounds</span></div>
+    <div class="stat"><b>{len(fresh) if newest == today.isoformat() else 0}</b><span>added today</span></div>
     <div class="stat"><b>{tracked or "&ndash;"}</b><span>tracked</span></div>
     <div class="stat"><b>{placed}</b><span>with a city</span></div>
     <div class="stat"><b>{announced}</b><span>announced, uncounted</span></div>
@@ -808,6 +867,12 @@ def render_archive_html(known: dict) -> str:
   </div>
   <div class="controls">
     <input type="text" id="q" placeholder="Search company, investor, founder..." oninput="filter()">
+    <select id="added" onchange="filter()">
+      <option value="">Added any time</option>
+      <option value="new">Just added ({len(fresh)})</option>
+      <option value="week">Added in the last 7 days</option>
+      <option value="month">Added in the last 30 days</option>
+    </select>
     <select id="sector" onchange="filter()"><option value="">Every sector</option>{options("category")}</select>
     <select id="stage" onchange="filter()"><option value="">Every stage</option>{stage_options}</select>
     <select id="hq" onchange="filter()"><option value="">Everywhere</option>{options("location")}</select>
@@ -845,11 +910,25 @@ def render_archive_html(known: dict) -> str:
 
   var PAGE = 12, shown_upto = PAGE;
 
+  // When each round entered the database, versus when the round happened. The
+  // Date column is the news date; this is the "what changed since I last
+  // looked" question, and the two are not the same.
+  var NEWEST = "{newest}", WEEK_AGO = "{week_ago}", MONTH_AGO = "{month_ago}";
+
+  function isAdded(seen, mode) {{
+    if (!mode) return true;
+    if (!seen) return false;
+    if (mode === 'new') return seen === NEWEST;
+    if (mode === 'week') return seen >= WEEK_AGO;
+    if (mode === 'month') return seen >= MONTH_AGO;
+    return true;
+  }}
+
   function filter(reset) {{
     if (reset !== false) shown_upto = PAGE;
     var q = val('q').toLowerCase();
     var sector = val('sector'), stage = val('stage'), hq = val('hq');
-    var from = val('from'), to = val('to');
+    var from = val('from'), to = val('to'), added = val('added');
     var rows = document.querySelectorAll('#rows tr');
     var shown = 0, total = 0;
     for (var i = 0; i < rows.length; i++) {{
@@ -860,7 +939,8 @@ def render_archive_html(known: dict) -> str:
         && (!stage || row.getAttribute('data-stage') === stage)
         && (!hq || row.getAttribute('data-hq') === hq)
         && (!from || (date && date >= from))
-        && (!to || (date && date <= to));
+        && (!to || (date && date <= to))
+        && isAdded(row.getAttribute('data-added') || '', added);
       if (ok) {{
         shown++;
         total += parseInt(row.getAttribute('data-chf') || '0', 10);
@@ -890,7 +970,7 @@ def render_archive_html(known: dict) -> str:
   }}
 
   function clearAll() {{
-    ['q', 'sector', 'stage', 'hq', 'from', 'to'].forEach(function (id) {{
+    ['q', 'added', 'sector', 'stage', 'hq', 'from', 'to'].forEach(function (id) {{
       document.getElementById(id).value = '';
     }});
     filter();

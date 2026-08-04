@@ -662,6 +662,56 @@ def test_the_picture_comes_from_the_story_not_the_page():
     assert images._content_image(chrome, "https://x.ch") is None
 
 
+def test_the_page_says_when_it_ran_and_what_it_added():
+    """A database you cannot date is one you cannot trust."""
+    import datetime as dt
+
+    def deal(key, company, seen, amount="CHF 10M"):
+        return {"key": key, "company": company, "first_seen": seen,
+                "published": "2026-08-01", "stage": "Seed", "amount": amount,
+                "category": "Quantum", "location": "Zurich",
+                "title": f"{company} raises {amount}",
+                "description": f"{company} is a Swiss quantum startup",
+                "link": f"https://www.startupticker.ch/en/news/{key}"}
+
+    known = {
+        "a": deal("a", "Alpha", "2026-08-04"),
+        "b": deal("b", "Beta", "2026-08-04", "CHF 20M"),
+        "c": deal("c", "Gamma", "2026-07-20", "CHF 30M"),
+    }
+    now = dt.datetime(2026, 8, 4, 6, 30)
+    page = scraper.render_archive_html(known, now=now)
+
+    # When it ran, in Max's time and in words rather than a bare stamp.
+    assert "Refreshed 04 August 2026 at 06:30" in page
+    # What that run added, both as a sentence and as a tile.
+    assert "2 rounds added today" in page
+    assert "<b>2</b><span>added today</span>" in page
+    # And which rows they are, markable and filterable.
+    assert page.count('class="tag fresh"') == 2
+    assert 'data-added="2026-08-04"' in page
+    assert 'data-added="2026-07-20"' in page
+    assert 'value="new">Just added (2)' in page
+
+    # A quiet run says when the last additions were rather than showing
+    # nothing, so silence is never mistaken for a broken job.
+    quiet = {"c": known["c"]}
+    page = scraper.render_archive_html(quiet, now=now)
+    assert "last additions 20 July: 1 round" in page
+    assert "<b>0</b><span>added today</span>" in page
+    assert 'class="tag fresh"' in page  # still marked, as the newest batch
+
+    # A second outlet covering an old round this morning does not make the
+    # round new: the merged row keeps the earliest date it was seen.
+    twice = [dict(known["c"], key="c1", first_seen="2026-07-20",
+                  publisher="Startupticker"),
+             dict(known["c"], key="c2", first_seen="2026-08-04",
+                  publisher="The Quantum Insider")]
+    merged = scraper.merge_deals(twice)
+    assert len(merged) == 1
+    assert merged[0]["first_seen"] == "2026-07-20"
+
+
 def test_one_outlet_never_runs_two_days_running():
     """Three Startupticker links went out on three consecutive days."""
     from relevance import adjacent_repeats, space_out
@@ -732,7 +782,7 @@ def test_short_week_skips_the_weekend():
 
 # Locking the count means a test appended below the runner, where it would
 # never execute, shows up as a failure rather than as silence. That happened.
-EXPECTED = 46
+EXPECTED = 47
 
 
 if __name__ == "__main__":
