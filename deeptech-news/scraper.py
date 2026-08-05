@@ -762,6 +762,17 @@ def render_archive_html(known: dict, now: dt.datetime | None = None) -> str:
     rows = []
     for s in stories:
         tag = ' <span class="tag posted">posted</span>' if s.get("posted") else ""
+        # How many outlets wrote this round up. Coverage, not verification:
+        # three papers rewriting one press release is one source repeated, and
+        # both Terra Quantum and MoonLake were wrong in every outlet at once.
+        # Kept away from the verified badge so the two never read as the same
+        # claim.
+        outlets = [p for p in (s.get("sources") or []) if p]
+        if len(outlets) > 1:
+            tag += (f' <span class="tag sources" title="Covered by '
+                    f'{html.escape(", ".join(outlets))}. Coverage, not a '
+                    f'check against a primary source.">{len(outlets)} '
+                    f'sources</span>')
         first_seen = entered(s)
         if newest and first_seen == newest:
             tag += (f' <span class="tag fresh" title="Added by the run of '
@@ -908,6 +919,9 @@ def render_archive_html(known: dict, now: dt.datetime | None = None) -> str:
   .tag.posted {{ background:var(--green); color:#fff; border-radius:6px;
                 padding:0.05rem 0.4rem; font-size:0.7rem; font-weight:700;
                 vertical-align:middle; }}
+  .tag.sources {{ background:#eef3f8; color:#4a6b8a; border:1px solid #dde6ef;
+                 border-radius:6px; padding:0.05rem 0.4rem; font-size:0.7rem;
+                 font-weight:700; vertical-align:middle; }}
   .tag.fresh {{ background:#1b2430; color:#fff; border-radius:6px;
                padding:0.05rem 0.4rem; font-size:0.7rem; font-weight:700;
                vertical-align:middle; letter-spacing:0.02em; }}

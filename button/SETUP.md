@@ -35,3 +35,25 @@ demand. It works through a tiny free Cloudflare Worker that holds a GitHub key.
 
 Paste that `…workers.dev` URL back in the chat. Claude wires the button on
 maxime-droux.com/plan to it. From then on, one tap regenerates the week's posts.
+
+## 4. Updating it to save facts typed into the database page
+
+The **+** beside a company on maxime-droux.com/digest/archive.html lets you type
+in a fact the scraper could not find. Saving it writes to corrections.json, and
+the Worker does the writing, so the page never carries a key.
+
+That needs one more permission than the run button, because it writes a file
+rather than starting a job.
+
+1. **Give the token file access.** github.com → avatar → **Settings** →
+   **Developer settings** → **Personal access tokens** → **Fine-grained tokens**
+   → click **news button** → **Repository permissions** → set
+   **Contents: Read and write** (keep Actions: Read and write) →
+   **Update token** at the bottom.
+   The token value does not change, so Cloudflare needs no new secret.
+2. **Update the Worker code.** dash.cloudflare.com → **Workers & Pages** →
+   **md-news-button** → **Edit code**. Select everything in the editor, delete
+   it, paste the current `button/worker.js` from this repo, then **Deploy**.
+
+Nothing else changes: same Worker, same URL, same secret. The run button keeps
+working, and `POST /correction` is the new endpoint the database page uses.

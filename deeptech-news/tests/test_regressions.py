@@ -635,6 +635,35 @@ def test_a_product_page_is_not_an_announcement():
     assert found == "https://immitrabio.com/news/immitra-bio-raises-chf-2-4m-pre-seed"
 
 
+def test_coverage_is_not_verification():
+    """Three outlets rewriting one release is one source, not three checks."""
+    import datetime as dt
+
+    def write_up(publisher):
+        return {"company": "Exclaim Robotics", "amount": "USD 4.95M",
+                "stage": "Pre-seed", "location": "Zurich", "category": "Robotics",
+                "publisher": publisher, "first_seen": "2026-08-05",
+                "published": "2026-08-05", "description": "Data centre robots",
+                "title": "Exclaim Robotics raises USD 4.95 million",
+                "link": f"https://{publisher.lower()}.ch/exclaim"}
+
+    known = {p: write_up(p) for p in ("Startupticker", "AIInsider", "EUStartups")}
+    page = scraper.render_archive_html(known, now=dt.datetime(2026, 8, 5, 9, 0))
+
+    # One row, marked with how many outlets carried it.
+    assert page.count("3 sources") == 1
+    assert 'class="tag sources"' in page
+    # And it is not the verified badge: nothing here was read against a
+    # primary source, so nothing claims it was.
+    assert 'class="checked"' not in page
+    assert "Coverage, not a check against a primary source" in page
+
+    # A single write-up gets no mark at all: "1 source" is noise.
+    one = scraper.render_archive_html({"a": write_up("Startupticker")},
+                                      now=dt.datetime(2026, 8, 5, 9, 0))
+    assert "tag sources" not in one
+
+
 def test_an_empty_week_is_never_published():
     """A filter rejecting everything would wipe the plan page and look quiet."""
     import inspect
@@ -1179,7 +1208,7 @@ def test_short_week_skips_the_weekend():
 
 # Locking the count means a test appended below the runner, where it would
 # never execute, shows up as a failure rather than as silence. That happened.
-EXPECTED = 57
+EXPECTED = 58
 
 
 if __name__ == "__main__":
