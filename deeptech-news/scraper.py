@@ -928,7 +928,8 @@ def render_news_html(known: dict, now: dt.datetime | None = None) -> str:
            background:#fff; border:1px solid var(--line); border-radius:10px;
            padding:0.58rem 0.9rem; cursor:pointer; }}
   .clear:hover {{ color:var(--green); border-color:var(--green); }}
-  .live {{ color:var(--soft); font-size:0.82rem; white-space:nowrap; }}
+  .live {{ color:var(--soft); font-size:0.82rem; white-space:nowrap;
+          margin-left:auto; padding-left:0.4rem; }}
   ul {{ list-style:none; background:#fff; border:1px solid var(--line);
        border-radius:14px; overflow:hidden; }}
   li {{ padding:0.8rem 1rem; border-bottom:1px solid var(--line); }}
@@ -1313,9 +1314,10 @@ def render_archive_html(known: dict, now: dt.datetime | None = None,
             f'data-date="{html.escape(date_text)}">'
             f'<td class="co" data-label="Company">'
             f'<a href="{link}" target="_blank" rel="noopener" '
-            f'title="{hover}">{company}</a>{tag}'
+            f'title="{hover}">{company}</a>'
+            f'<span class="marks">{tag}'
             f'<button type="button" class="fix" onclick="openFix(this)" '
-            f'title="Add or correct a fact on this round">+</button></td>'
+            f'title="Add or correct a fact on this round">+</button></span></td>'
             + cell(s.get("description") or s.get("title", ""), "desc",
                    label="What it does")
             + category
@@ -1354,23 +1356,37 @@ def render_archive_html(known: dict, now: dt.datetime | None = None,
   input {{ width:100%; padding:0.7rem 0.9rem; border:1px solid var(--line);
           border-radius:10px; font-size:1rem; margin-bottom:1rem; }}
   .box {{ background:#fff; border:1px solid var(--line); border-radius:14px; overflow-x:auto; }}
+  /* Ten columns budgeted to fit a laptop. Before this the table was 1571px
+     wide inside a 1406px page, so HQ and Date, the two columns a Swiss
+     database exists for, sat off the right edge behind a scrollbar. */
   table {{ width:100%; border-collapse:collapse; font-size:0.85rem;
-          min-width:1180px; }}
-  th, td {{ text-align:left; padding:0.6rem 0.7rem; border-bottom:1px solid var(--line);
-           vertical-align:top; }}
+          table-layout:fixed; min-width:1120px; }}
+  th, td {{ text-align:left; padding:0.55rem 0.6rem; border-bottom:1px solid var(--line);
+           vertical-align:top; overflow-wrap:break-word; }}
   th {{ color:var(--soft); font-size:0.72rem; text-transform:uppercase;
-       letter-spacing:0.04em; white-space:nowrap; position:sticky; top:0;
+       letter-spacing:0.04em; position:sticky; top:0;
        background:#fff; z-index:1; }}
   tr:last-child td {{ border-bottom:none; }}
-  td.co {{ font-weight:600; min-width:9rem; }}
-  td.desc {{ color:var(--soft); min-width:15rem; max-width:20rem; }}
-  td.inv {{ color:var(--soft); min-width:12rem; max-width:17rem; }}
-  td.fnd {{ color:var(--soft); min-width:9rem; max-width:12rem; }}
-  td.org {{ color:var(--soft); white-space:nowrap; }}
-  td.amt {{ color:var(--ink); font-weight:600; white-space:nowrap; }}
-  td.loc, td.d {{ color:var(--soft); white-space:nowrap; }}
+  tbody tr:hover {{ background:var(--bg); }}
+  /* Widths, in order: company, what it does, sector, stage, raised,
+     investors, founders, spin-off, HQ, date. */
+  col.c-co {{ width:12.5%; }}  col.c-desc {{ width:17.5%; }}
+  col.c-sec {{ width:7%; }}    col.c-stage {{ width:8.5%; }}
+  col.c-amt {{ width:8.5%; }}  col.c-inv {{ width:15.5%; }}
+  col.c-fnd {{ width:11%; }}   col.c-org {{ width:6.5%; }}
+  col.c-loc {{ width:6%; }}    col.c-date {{ width:7%; }}
+  td.co {{ font-weight:600; }}
+  td.desc, td.inv, td.fnd, td.org {{ color:var(--soft); }}
+  td.amt {{ color:var(--ink); font-weight:600; }}
+  td.loc, td.d {{ color:var(--soft); }}
+  td.d {{ white-space:nowrap; font-variant-numeric:tabular-nums; }}
   a {{ color:var(--ink); text-decoration:none; }} a:hover {{ color:var(--green); }}
   .nd {{ color:var(--faint); font-weight:400; font-size:0.82rem; }}
+  /* The marks sit on their own line under the name and never break a phrase:
+     "2 sources" was wrapping to "2" and "sources". */
+  td.co .marks {{ display:flex; flex-wrap:wrap; gap:0.25rem; align-items:center;
+                 margin-top:0.25rem; }}
+  td.co .marks > * {{ white-space:nowrap; }}
   .tag.posted {{ background:var(--green); color:#fff; border-radius:6px;
                 padding:0.05rem 0.4rem; font-size:0.7rem; font-weight:700;
                 vertical-align:middle; }}
@@ -1389,11 +1405,13 @@ def render_archive_html(known: dict, now: dt.datetime | None = None,
   .refreshed b {{ color:var(--ink); }}
 
   /* Typing in a fact the scraper could not find. */
-  .fix {{ margin-left:0.4rem; font-family:inherit; font-size:0.78rem;
+  .fix {{ font-family:inherit; font-size:0.78rem; opacity:0.45;
          font-weight:700; line-height:1; color:var(--soft); background:#fff;
          border:1px solid var(--line); border-radius:6px; padding:0.15rem 0.4rem;
          cursor:pointer; vertical-align:middle; }}
-  .fix:hover {{ color:var(--green); border-color:var(--green); }}
+  tr:hover .fix, .fix:focus-visible {{ opacity:1; }}
+  .fix:hover {{ color:var(--green); border-color:var(--green); opacity:1; }}
+  @media (max-width:760px) {{ .fix {{ opacity:1; }} }}
   .sheet {{ position:fixed; inset:0; background:rgba(27,36,48,0.45);
            display:flex; align-items:flex-end; justify-content:center;
            z-index:20; }}
@@ -1530,6 +1548,11 @@ def render_archive_html(known: dict, now: dt.datetime | None = None,
     <span class="live" id="count"></span>
   </div>
   <div class="box"><table>
+    <colgroup>
+      <col class="c-co"><col class="c-desc"><col class="c-sec"><col class="c-stage">
+      <col class="c-amt"><col class="c-inv"><col class="c-fnd"><col class="c-org">
+      <col class="c-loc"><col class="c-date">
+    </colgroup>
     <thead><tr>
       <th onclick="sortBy(0,'text')">Company</th>
       <th onclick="sortBy(1,'text')">What it does</th>
