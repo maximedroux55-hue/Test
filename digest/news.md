@@ -9,8 +9,8 @@ _Generated 05 August 2026, covering the last 14 days. 22 stories._
    Startupticker · 28 Jul 2026 · relevance 21
 4. **[Exclaim Robotics raises USD 4.95 million for data centre repair robots](https://www.startupticker.ch/en/news/exclaim-robotics-raises-eur-4-29-million-for-data-centre-repair-robots)**  
    Startupticker · 05 Aug 2026 · relevance 19
-5. **[Toronto startup Terminal raises $20-million to become the ‘Switzerland’ of telematics trade - The Globe and Mail](https://news.google.com/rss/articles/CBMirgFBVV95cUxNZ2xWZE5LaFdFdW1GRW1mTXBJUE5ZX2dWN3BTSWJ2WjU1S1dHQ0E5MGhRNDRFZlZ4dzVOYW4zMGhDMU8xd2VaRVlzY0hTN3JJd3BOX3kyeTkyWHFDNlpEMXdZR1pTWThqVXp2Wi1ZZlpXLTdtM0xxRGFRZG04WHl0ZEpuNG80T01JaFZxRTZZNEpQZ1RsSDRUamxpRmtGdjdWS2pGeGhzbFhXWlQwUnc?oc=5)**  
-   The Globe and Mail · 29 Jul 2026 · relevance 19
+5. **[Toronto startup Terminal raises $20-million to become the ‘Switzerland’ of telematics trade - theglobeandmail.com](https://news.google.com/rss/articles/CBMirgFBVV95cUxNZ2xWZE5LaFdFdW1GRW1mTXBJUE5ZX2dWN3BTSWJ2WjU1S1dHQ0E5MGhRNDRFZlZ4dzVOYW4zMGhDMU8xd2VaRVlzY0hTN3JJd3BOX3kyeTkyWHFDNlpEMXdZR1pTWThqVXp2Wi1ZZlpXLTdtM0xxRGFRZG04WHl0ZEpuNG80T01JaFZxRTZZNEpQZ1RsSDRUamxpRmtGdjdWS2pGeGhzbFhXWlQwUnc?oc=5)**  
+   theglobeandmail.com · 29 Jul 2026 · relevance 19
 6. **[CHF 150,000 from Venture Kick to scale autonomous fresh food deployments](https://www.startupticker.ch/en/news/chf-150-000-from-venture-kick-to-scale-autonomous-fresh-food-deployments)**  
    Startupticker · 24 Jul 2026 · relevance 19
 7. **[Ahead Health raises USD 10 million and opens first markets outside Switzerland](https://www.startupticker.ch/en/news/ahead-health-raises-usd-10-million-and-opens-first-markets-outside-switzerland)**  

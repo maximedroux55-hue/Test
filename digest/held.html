@@ -95,7 +95,9 @@
   .field input:focus { outline:none; }
   .field.missing { border-style:dashed; }
   .field.missing span { color:var(--faint); }
-  .sheetacts { display:flex; gap:0.5rem; flex-wrap:wrap; margin:0.9rem 0 0.6rem; }
+  .sheetacts { display:flex; gap:0.5rem; flex-wrap:wrap; margin:0.9rem 0 0.6rem;
+               position:sticky; bottom:0; background:var(--bg); padding:0.7rem 0;
+               border-top:1px solid var(--line); z-index:2; }
   .btn { font-family:inherit; font-size:0.88rem; font-weight:600; color:#fff;
          background:var(--ink); border:1px solid var(--ink); border-radius:10px;
          padding:0.6rem 0.9rem; cursor:pointer; text-decoration:none;
@@ -193,7 +195,7 @@
 <div class="wrap">
   <h1>Held back<span class="dot">.</span></h1>
   <p class="sub">Rounds kept off the database because the headquarters on record is not in Switzerland. A seat abroad is not always a foreign company, so nothing here is thrown away: correct the HQ with the <b>+</b> and the round joins the database on the next run. 1 more were ruled out by name in corrections.json. <a href="/digest/archive.html">&larr; Back to the database</a></p>
-  <p class="refreshed"><b>Refreshed 05 August 2026 at 22:03</b> &middot; 1 round added today &middot;
+  <p class="refreshed"><b>Refreshed 05 August 2026 at 22:13</b> &middot; 1 round added today &middot;
   1 in the last 7 days. The database runs every morning, so a day with
   nothing new means the news was quiet, not that it stopped.</p>
   <div class="stats">
@@ -268,10 +270,10 @@
   <div class="sheetbox">
     <h2 id="sheettitle"></h2>
     <p class="sheetnote">Type what is missing, or correct what is wrong. Emptying a
-    box that has a value clears it. Nothing changes here until you paste the file
-    into GitHub, and the next run picks it up.</p>
+    box that has a value clears it. Tap <b>Save</b> and the page shows it after the
+    next run, tomorrow morning.</p>
     <div id="fields"></div>
-    <p class="sheetnote">Built from corrections.json as it stood at 05 August 2026 at 22:03.
+    <p class="sheetnote">Built from corrections.json as it stood at 05 August 2026 at 22:13.
     If you have edited it since, edit it on GitHub instead of pasting over it.</p>
     <div class="sheetacts">
       <button type="button" class="btn" id="savebtn" onclick="saveFix()">Save</button>
@@ -311,7 +313,11 @@
   var editing = null;
 
   function openFix(btn) {
-    var row = btn.parentNode.parentNode;
+    // closest, never a fixed number of parentNode hops: wrapping this button
+    // in a span for the desktop layout moved it one level down and the panel
+    // silently opened with no company and every field blank.
+    var row = btn.closest('tr');
+    if (!row) return;
     editing = {
       company: row.getAttribute('data-company') || '',
       facts: JSON.parse(row.getAttribute('data-facts') || '{}')
