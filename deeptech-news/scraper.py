@@ -676,6 +676,64 @@ def week_still_running(outdir: str, today: dt.date | None = None) -> bool:
     return False
 
 
+# Words that only appear in a German, French or Italian headline. Ambiguous
+# ones are left out on purpose: "die", "per" and "con" are English too, and a
+# false reading here sends the wrong copy of a story to the page.
+_NOT_ENGLISH = re.compile(
+    r"\b(der|das|und|f(?:ü|u)r|erh(?:ä|a)lt|millionen|franken|unternehmen|"
+    r"sammelt|sichert|lanciert|gr(?:ü|u)ndet|schweizer|schweiz|"
+    r"pour|avec|dans|une|ses|leur|millions|l(?:è|e)ve|suisse|soci(?:é|e)t(?:é|e)|"
+    r"entreprise|veut|cha(?:î|i)ne|d(?:é|e)veloppe|"
+    r"milioni|raccoglie|azienda|svizzera)\b",
+    re.IGNORECASE,
+)
+
+
+def _in_english(story: dict) -> bool:
+    """Is this the English write-up?
+
+    Startupticker publishes the same piece at /en/ and /de/, and a French trade
+    title covers the same round again. The address says so outright where the
+    outlet has language paths; where it does not, the headline does.
+    """
+    # Google News appends " - Publisher" to a headline, and the publisher can
+    # be Italian while the article is English: "Switzerland confirms its
+    # leading position in deep tech - Università della Svizzera italiana".
+    title = re.sub(r"\s+[-|]\s+[^-|]+$", "", story.get("title") or "").strip()
+    # The headline decides, not the address. Startupticker files German pieces
+    # under /en/, so the path alone called "Humboldt AI lanciert KI-Tool für
+    # den CV-Check" English.
+    if _NOT_ENGLISH.search(title):
+        return False
+    link = (story.get("link") or "").lower()
+    if "/en/" in link or "/eng/" in link:
+        return True
+    return not re.search(r"/(de|fr|it)/", link)
+
+
+def _news_rank(story: dict) -> tuple:
+    """Which copy of a story survives deduplication. Lower is better.
+
+    Startupticker in English first, because it covers the beat and writes it
+    plainly; then anything else in English; then the rest. Within a tier the
+    higher-scoring story wins, as before.
+    """
+    from urllib.parse import urlsplit
+
+    host = urlsplit(story.get("link") or "").netloc.lower()
+    host = host[4:] if host.startswith("www.") else host
+    english = _in_english(story)
+    if host == "startupticker.ch" and english:
+        tier = 0
+    elif english:
+        tier = 1
+    elif host == "startupticker.ch":
+        tier = 2
+    else:
+        tier = 3
+    return (-tier, story.get("score") or 0)
+
+
 def render_news_html(known: dict, now: dt.datetime | None = None) -> str:
     """Everything Swiss the tracker has ever seen, not only the money.
 
@@ -690,6 +748,27 @@ def render_news_html(known: dict, now: dt.datetime | None = None) -> str:
     stories = [s for s in known.values()
                if plausibly_swiss(s)
                and not _corrections.is_blocked(s.get("company", ""))]
+    # One entry per story. Exclaim Robotics was on here three times, once in
+    # French, which is a reading list of the same news repeated.
+    before = len(stories)
+    stories = deduplicate(stories, key=_news_rank)
+    # Two write-ups of one round can be worded far enough apart to survive the
+    # headline check: "Exclaim Robotics raises USD 4.95 million" and "Swiss
+    # Startup Exclaim Robotics Emerges From Stealth With Nearly $5M". Same
+    # company, same money, one story. Same rule as the database uses.
+    kept, seen = [], []
+    for story in stories:
+        stem = _company_stem(story.get("company", "")) if _is_round(story) else ""
+        if stem:
+            chf = money.in_chf(story.get("amount", "")) or 0
+            _, size = money.parse(story.get("amount", ""))
+            if any(other == stem and (_same_size(c, chf) or (size and z == size))
+                   for other, c, z in seen):
+                continue
+            seen.append((stem, chf, size))
+        kept.append(story)
+    stories = kept
+    merged = before - len(stories)
     stories.sort(key=lambda e: (e.get("published") or e.get("first_seen") or "",
                                 e.get("score") or 0),
                  reverse=True)
@@ -801,7 +880,9 @@ def render_news_html(known: dict, now: dt.datetime | None = None) -> str:
   round, in <a href="/digest/archive.html">the database &rarr;</a></p>
   <p class="refreshed"><b>Refreshed {now.strftime('%d %B %Y at %H:%M')}</b>
   &middot; {len(stories)} stories on record, back to
-  {dt.date.fromisoformat(first_date).strftime('%d %B %Y') if first_date else 'the first run'}.</p>
+  {dt.date.fromisoformat(first_date).strftime('%d %B %Y') if first_date else 'the first run'}.
+  {merged} further write-ups of the same stories were folded in, keeping
+  Startupticker's English version where there was one.</p>
   <div class="controls">
     <input type="text" id="q" placeholder="Search headline, company, outlet..." oninput="filter()">
     <select id="sector" onchange="filter()"><option value="">Every sector</option>{options}</select>

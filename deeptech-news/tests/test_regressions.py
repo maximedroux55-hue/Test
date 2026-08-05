@@ -724,6 +724,75 @@ def test_the_news_page_carries_more_than_the_money():
                                "score": 999}) == "Startupticker · sent in"
 
 
+def test_one_story_one_entry_preferring_startupticker_in_english():
+    """Exclaim Robotics was on the news page three times, once in French."""
+    import datetime as dt
+
+    def copy(publisher, title, link, score=8, amount="USD 4.95M"):
+        return {"company": "Exclaim Robotics", "amount": amount, "stage": "Pre-seed",
+                "location": "Zurich", "category": "Robotics", "score": score,
+                "publisher": publisher, "published": "2026-08-05",
+                "first_seen": "2026-08-05", "description": "Data centre robots",
+                "title": title, "link": link}
+
+    known = {
+        "fr": copy("L'Usine Digitale",
+                   "Avec ses robots mobiles, la start-up suisse Exclaim Robotics "
+                   "veut automatiser la maintenance des data centers",
+                   "https://usine-digitale.fr/exclaim", score=9),
+        "en": copy("Startupticker",
+                   "Exclaim Robotics raises USD 4.95 million for data centre "
+                   "repair robots",
+                   "https://www.startupticker.ch/en/news/exclaim"),
+        # Worded far enough apart to survive the headline check, so the round
+        # identity has to catch it, and in euros so the currency must not fool it.
+        "eu": copy("EU-Startups",
+                   "Zurich-based Exclaim Robotics exits stealth with EUR 4.29 "
+                   "million to build robots",
+                   "https://eu-startups.com/exclaim", amount="EUR 4.29M"),
+    }
+    page = scraper.render_news_html(known, now=dt.datetime(2026, 8, 5, 9, 0))
+    assert page.count("<li data-") == 1
+    # Startupticker in English wins even though the French piece scored higher.
+    assert "raises USD 4.95 million" in page
+    assert "L&#x27;Usine" not in page and "EU-Startups" not in page
+
+    # The headline decides the language, not the address: Startupticker files
+    # German pieces under /en/.
+    assert scraper._in_english({
+        "title": "Humboldt AI lanciert KI-Tool für den CV-Check",
+        "link": "https://www.startupticker.ch/en/news/humboldt"}) is False
+    # And a Google News publisher suffix must not make an English headline
+    # read as Italian.
+    assert scraper._in_english({
+        "title": "Switzerland confirms its leading position in deep tech - "
+                 "Università della Svizzera italiana",
+        "link": "https://usi.ch/news"}) is True
+    assert scraper._in_english({
+        "title": "Exclaim Robotics raises USD 4.95 million",
+        "link": "https://www.startupticker.ch/en/news/exclaim"}) is True
+
+    # The order of preference, as tiers: Startupticker English, then English.
+    st_en = {"link": "https://www.startupticker.ch/en/news/x", "title": "A raises",
+             "score": 1}
+    other_en = {"link": "https://sifted.eu/x", "title": "A raises", "score": 9}
+    st_de = {"link": "https://www.startupticker.ch/de/news/x",
+             "title": "A erhält Millionen", "score": 9}
+    assert scraper._news_rank(st_en) > scraper._news_rank(other_en)
+    assert scraper._news_rank(other_en) > scraper._news_rank(st_de)
+
+    # A story with no English version anywhere is kept as it stands: this
+    # picks the best copy, it does not delete news.
+    only_german = {"g": {"company": "SeasON Energy", "amount": "", "score": 6,
+                         "category": "Cleantech", "location": "Zurich",
+                         "published": "2026-08-02", "first_seen": "2026-08-02",
+                         "title": "SeasON Energy erhält Millionenfinanzierung",
+                         "description": "Speicher",
+                         "link": "https://www.startupticker.ch/de/news/season"}}
+    page = scraper.render_news_html(only_german, now=dt.datetime(2026, 8, 5, 9, 0))
+    assert page.count("<li data-") == 1
+
+
 def test_what_is_held_back_stays_reviewable():
     """A seat abroad is a judgement call, so it is not deleted, just moved."""
     import datetime as dt
@@ -1393,7 +1462,7 @@ def test_short_week_skips_the_weekend():
 
 # Locking the count means a test appended below the runner, where it would
 # never execute, shows up as a failure rather than as silence. That happened.
-EXPECTED = 63
+EXPECTED = 64
 
 
 if __name__ == "__main__":

@@ -374,11 +374,13 @@ def adjacent_repeats(articles: list, host_of=None) -> int:
     return sum(1 for a, b in zip(hosts, hosts[1:]) if a == b)
 
 
-def deduplicate(articles: list) -> list:
+def deduplicate(articles: list, key=None) -> list:
     """Remove near-duplicate stories (same event reported by several outlets).
 
-    Keeps the highest-scoring version of each story. `articles` is a list of
-    dicts with at least 'title' and 'score'.
+    Keeps one version of each story: the highest-scoring one by default, or
+    whichever `key` ranks highest. The news page passes a key that prefers
+    Startupticker in English, then anything else in English, because the same
+    round turns up in three languages and a reading page wants one of them.
     """
     # How many headlines each word appears in. A word used by only one or two
     # stories is a name (a company, a product), not general vocabulary.
@@ -395,7 +397,7 @@ def deduplicate(articles: list) -> list:
         }
 
     kept = []
-    for art in sorted(articles, key=lambda a: a["score"], reverse=True):
+    for art in sorted(articles, key=key or (lambda a: a["score"]), reverse=True):
         if not any(_same_story(art, existing) for existing in kept):
             kept.append(art)
     return kept
