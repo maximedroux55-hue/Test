@@ -442,6 +442,30 @@ _ALREADY_LISTED = re.compile(
 )
 
 
+# A note on the amount is printed in front of the figure, so it has to be a
+# qualification: "up to USD 190M" says something "amount USD 10M" does not.
+_EMPTY_NOTE = {"amount", "amount raised", "total", "round", "funding", "raised",
+               "n/a", "none", "unknown", "not specified", "undisclosed"}
+
+
+def useful_note(note: str) -> str:
+    """A note that qualifies the figure, or nothing.
+
+    The reader wrote "amount" as the note on Ahead Health's seed, and the page
+    printed "amount USD 10M" where it means to print "up to USD 10M". A note
+    that says nothing is worse than no note: it reads like a hedge on a figure
+    that has none.
+    """
+    text = (note or "").strip().strip(".,;:").strip()
+    if not text or text.lower() in _EMPTY_NOTE:
+        return ""
+    # One bare word is a label, not a condition. "up to" and "gross" are the
+    # shortest real ones, and both are longer than this once written out.
+    if len(text) < 4:
+        return ""
+    return text
+
+
 def sane_amount(amount: str, text: str) -> str:
     """Check a figure against the words it came from.
 
@@ -781,7 +805,7 @@ def _extract_batch(articles: list, model: str | None = None):
                     "website": item.get("website", "").strip(),
                     "location": item.get("location", "").strip(),
                     "status": item.get("status", "").strip(),
-                    "amount_note": item.get("amount_note", "").strip(),
+                    "amount_note": useful_note(item.get("amount_note", "")),
                 }
                 clean_record(out[i])
         return out

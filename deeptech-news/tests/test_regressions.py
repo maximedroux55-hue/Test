@@ -635,6 +635,77 @@ def test_a_product_page_is_not_an_announcement():
     assert found == "https://immitrabio.com/news/immitra-bio-raises-chf-2-4m-pre-seed"
 
 
+def test_a_round_is_dated_by_the_round_not_by_the_write_up():
+    """GR3N closed on 5 June and sat second on a page sorted newest first."""
+    import datetime as dt
+
+    def write_up(publisher, published):
+        entry = {"company": "GR3N", "amount": "EUR 15.5M", "stage": "Series B",
+                 "location": "Chiasso", "category": "Cleantech",
+                 "publisher": publisher, "first_seen": "2026-08-03",
+                 "description": "PET recycling", "title": "GR3N closes 15.5M",
+                 "link": f"https://{publisher}/gr3n"}
+        if published:
+            entry["published"] = published
+        return entry
+
+    known = {
+        # One write-up carries no date at all, which is what broke it: the
+        # sort fell back to the day the tool found the story.
+        "a": write_up("startupticker.ch", None),
+        "b": write_up("techfundingnews.com", "2026-06-05"),
+        "c": {"company": "Newer SA", "amount": "CHF 5M", "stage": "Seed",
+              "location": "Zurich", "category": "Quantum",
+              "published": "2026-08-01", "first_seen": "2026-08-01",
+              "description": "Newer", "title": "Newer raises",
+              "link": "https://startupticker.ch/newer"},
+    }
+    page = scraper.render_archive_html(known, now=dt.datetime(2026, 8, 5, 9, 0))
+    rows = re.findall(r"<tr data-chf.*?</tr>", page, re.S)
+    order = [re.search(r'data-company="([^"]*)"', r).group(1) for r in rows]
+    assert order == ["Newer SA", "GR3N"], order
+    # The merged round keeps the earliest date any outlet gave it.
+    assert 'data-date="2026-06-05"' in page
+
+    # A note that says nothing is not printed in front of the figure. The
+    # reader wrote "amount" on a seed and the page read "amount USD 10M".
+    from extract import useful_note
+    for junk in ("amount", "Amount", "total", "n/a", "", "  ", "..."):
+        assert useful_note(junk) == "", junk
+    for real in ("up to", "gross proceeds", "Series B extension"):
+        assert useful_note(real) == real, real
+
+
+def test_a_foreign_seat_is_shown_not_hidden():
+    """A company can be run from Switzerland and registered elsewhere."""
+    import datetime as dt
+
+    def row(company, location):
+        return {"company": company, "amount": "CHF 5M", "stage": "Seed",
+                "location": location, "category": "Quantum",
+                "published": "2026-08-01", "first_seen": "2026-08-01",
+                "description": f"{company} does things",
+                "title": f"{company} raises CHF 5M",
+                "link": "https://startupticker.ch/x"}
+
+    known = {"a": row("Swiss SA", "Zurich"), "b": row("Abroad SA", "Leipzig, DE")}
+    page = scraper.render_archive_html(known, now=dt.datetime(2026, 8, 5, 9, 0))
+
+    # Both rows are on the page now, where the foreign one used to be dropped.
+    assert page.count("<tr data-chf") == 2
+    assert 'data-swiss="1"' in page and 'data-swiss="0"' in page
+    # The foreign one is marked, and says where.
+    assert page.count('class="tag abroad"') == 1
+    assert "Leipzig, DE" in page
+    # There is a way in and a way out, and the page opens on Swiss.
+    assert 'id="scope"' in page
+    assert '<option value="swiss" selected>' in page
+    for choice in ('value="all"', 'value="foreign"'):
+        assert choice in page, choice
+    # The headline count stays Swiss: the database is Swiss DeepTech.
+    assert "<b>1</b><span>rounds</span>" in page
+
+
 def test_coverage_is_not_verification():
     """Three outlets rewriting one release is one source, not three checks."""
     import datetime as dt
@@ -1213,7 +1284,7 @@ def test_short_week_skips_the_weekend():
 
 # Locking the count means a test appended below the runner, where it would
 # never execute, shows up as a failure rather than as silence. That happened.
-EXPECTED = 58
+EXPECTED = 60
 
 
 if __name__ == "__main__":

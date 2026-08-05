@@ -662,18 +662,27 @@ def render_archive_html(known: dict, now: dt.datetime | None = None) -> str:
         reverse=True,
     )
     rounds = merge_deals([s for s in everything if _is_round(s)])
-    # Swiss DeepTech, so a foreign company that happened to make Swiss news is
-    # not a row here. It stays in archive.json, which is the raw record.
-    stories = [s for s in rounds if _is_swiss(s)]
-    foreign = len(rounds) - len(stories)
+    # Sort the rounds, not the write-ups. GR3N closed on 5 June and sat second
+    # on the page, because one of its two write-ups carried no date at all and
+    # fell back to the day the tool found it. The round has one date; the
+    # merged row is the only thing that knows it.
+    rounds.sort(key=lambda e: (e.get("published") or e.get("first_seen") or "",
+                               e.get("score") or 0),
+                reverse=True)
+    # Swiss DeepTech, so the page opens on Swiss companies. A foreign company
+    # that raised out of a Swiss office is a judgement call rather than a fact,
+    # so those rows are here too, marked, behind a filter.
+    stories = rounds
+    swiss = [s for s in rounds if _is_swiss(s)]
+    foreign = len(rounds) - len(swiss)
     hidden = len(everything) - len(rounds)
-    posted = sum(1 for s in stories if s.get("posted"))
-    with_investors = sum(1 for s in stories if _investor_line(s))
-    with_founders = sum(1 for s in stories if (s.get("founders") or "").strip())
-    placed = sum(1 for s in stories if (s.get("location") or "").strip())
-    announced = sum(1 for s in stories if not is_closed(s))
+    posted = sum(1 for s in swiss if s.get("posted"))
+    with_investors = sum(1 for s in swiss if _investor_line(s))
+    with_founders = sum(1 for s in swiss if (s.get("founders") or "").strip())
+    placed = sum(1 for s in swiss if (s.get("location") or "").strip())
+    announced = sum(1 for s in swiss if not is_closed(s))
     tracked = money.compact(
-        sum(money.in_chf(s.get("amount", "")) for s in counted(stories)))
+        sum(money.in_chf(s.get("amount", "")) for s in counted(swiss)))
 
     # What the most recent run that found anything actually added. Keyed on the
     # newest first_seen present rather than on today, so a quiet run says "the
@@ -708,7 +717,7 @@ def render_archive_html(known: dict, now: dt.datetime | None = None) -> str:
                       f"round{'' if len(fresh) == 1 else 's'}")
     elif baseline:
         when = dt.date.fromisoformat(baseline).strftime("%d %B")
-        added_line = (f"all {len(stories)} rounds loaded together when the "
+        added_line = (f"all {len(swiss)} rounds loaded together when the "
                       f"record was built on {when}, so nothing is marked new "
                       f"yet")
     else:
@@ -767,6 +776,12 @@ def render_archive_html(known: dict, now: dt.datetime | None = None) -> str:
         # both Terra Quantum and MoonLake were wrong in every outlet at once.
         # Kept away from the verified badge so the two never read as the same
         # claim.
+        if not _is_swiss(s):
+            where = (s.get("location") or "").strip() or "not Switzerland"
+            tag += (f' <span class="tag abroad" title="Headquarters recorded '
+                    f'as {html.escape(where)}. Shown because a foreign seat '
+                    f'does not always mean a foreign company.">foreign '
+                    f'HQ</span>')
         outlets = [p for p in (s.get("sources") or []) if p]
         if len(outlets) > 1:
             tag += (f' <span class="tag sources" title="Covered by '
@@ -823,7 +838,8 @@ def render_archive_html(known: dict, now: dt.datetime | None = None) -> str:
                          '<span class="nd">&middot;</span></td>')
 
         amount_text = (s.get("amount") or "").strip()
-        note = (s.get("amount_note") or "").strip()
+        from extract import useful_note
+        note = useful_note(s.get("amount_note") or "")
         if amount_text and note:
             # "up to USD 190M" is a different claim from "USD 190M".
             shown = (f'{html.escape(note.split(",")[0])} '
@@ -854,6 +870,7 @@ def render_archive_html(known: dict, now: dt.datetime | None = None) -> str:
             f'data-hq="{html.escape(location_text)}" '
             f'data-added="{html.escape(first_seen)}" '
             f'data-company="{html.escape(s.get("company") or "")}" '
+            f'data-swiss="{"1" if _is_swiss(s) else "0"}" '
             f'data-facts="{html.escape(_json.dumps({k: (s.get(k) or "").strip() for k, _ in _FIXABLE}))}" '
             f'data-date="{html.escape(date_text)}">'
             f'<td class="co" data-label="Company">'
@@ -919,6 +936,9 @@ def render_archive_html(known: dict, now: dt.datetime | None = None) -> str:
   .tag.posted {{ background:var(--green); color:#fff; border-radius:6px;
                 padding:0.05rem 0.4rem; font-size:0.7rem; font-weight:700;
                 vertical-align:middle; }}
+  .tag.abroad {{ background:#f3f0ea; color:#8a6d3b; border:1px solid #e6ddcc;
+                border-radius:6px; padding:0.05rem 0.4rem; font-size:0.7rem;
+                font-weight:700; vertical-align:middle; }}
   .tag.sources {{ background:#eef3f8; color:#4a6b8a; border:1px solid #dde6ef;
                  border-radius:6px; padding:0.05rem 0.4rem; font-size:0.7rem;
                  font-weight:700; vertical-align:middle; }}
@@ -1044,12 +1064,13 @@ def render_archive_html(known: dict, now: dt.datetime | None = None) -> str:
   <p class="sub">Swiss companies only, newest first. One row per round: where several
   outlets covered the same one, their facts are combined.
   <a href="/reports/">Monthly reports &rarr;</a>
-  <span title="Kept in archive.json, which is the raw record">{foreign} foreign-headquartered rounds and {hidden} non-financing stories are held back.</span></p>
+  <span title="Kept in archive.json, which is the raw record">{hidden} non-financing stories are held back.</span>
+  {foreign} rounds have a headquarters recorded outside Switzerland; the filter brings them in.</p>
   <p class="refreshed"><b>Refreshed {refreshed}</b> &middot; {added_line} &middot;
   {added_week} in the last 7 days. The database runs every morning, so a day with
   nothing new means the news was quiet, not that it stopped.</p>
   <div class="stats">
-    <div class="stat"><b>{len(stories)}</b><span>rounds</span></div>
+    <div class="stat"><b>{len(swiss)}</b><span>rounds</span></div>
     <div class="stat"><b>{len(fresh) if newest == today.isoformat() else 0}</b><span>added today</span></div>
     <div class="stat"><b>{tracked or "&ndash;"}</b><span>tracked</span></div>
     <div class="stat"><b>{placed}</b><span>with a city</span></div>
@@ -1060,6 +1081,11 @@ def render_archive_html(known: dict, now: dt.datetime | None = None) -> str:
   </div>
   <div class="controls">
     <input type="text" id="q" placeholder="Search company, investor, founder..." oninput="filter()">
+    <select id="scope" onchange="filter()">
+      <option value="swiss" selected>Swiss HQ</option>
+      <option value="all">Swiss and foreign HQ</option>
+      <option value="foreign">Foreign HQ only ({foreign})</option>
+    </select>
     <select id="added" onchange="filter()">
       <option value="">Added any time</option>
       <option value="new">Just added ({len(fresh)})</option>
@@ -1285,6 +1311,15 @@ def render_archive_html(known: dict, now: dt.datetime | None = None) -> str:
     setTimeout(function () {{ btn.textContent = said; }}, 1500);
   }}
 
+  // The page is Swiss DeepTech, so it opens on Swiss headquarters. A seat
+  // abroad is not always a foreign company, which is why the others are one
+  // dropdown away rather than deleted.
+  function inScope(isSwiss, scope) {{
+    if (scope === 'all') return true;
+    if (scope === 'foreign') return !isSwiss;
+    return isSwiss;
+  }}
+
   function isAdded(seen, mode) {{
     if (!mode) return true;
     if (!seen) return false;
@@ -1299,6 +1334,7 @@ def render_archive_html(known: dict, now: dt.datetime | None = None) -> str:
     var q = val('q').toLowerCase();
     var sector = val('sector'), stage = val('stage'), hq = val('hq');
     var from = val('from'), to = val('to'), added = val('added');
+    var scope = val('scope');
     var rows = document.querySelectorAll('#rows tr');
     var shown = 0, total = 0;
     for (var i = 0; i < rows.length; i++) {{
@@ -1310,7 +1346,8 @@ def render_archive_html(known: dict, now: dt.datetime | None = None) -> str:
         && (!hq || row.getAttribute('data-hq') === hq)
         && (!from || (date && date >= from))
         && (!to || (date && date <= to))
-        && isAdded(row.getAttribute('data-added') || '', added);
+        && isAdded(row.getAttribute('data-added') || '', added)
+        && inScope(row.getAttribute('data-swiss') === '1', scope);
       if (ok) {{
         shown++;
         total += parseInt(row.getAttribute('data-chf') || '0', 10);
@@ -1343,6 +1380,8 @@ def render_archive_html(known: dict, now: dt.datetime | None = None) -> str:
     ['q', 'added', 'sector', 'stage', 'hq', 'from', 'to'].forEach(function (id) {{
       document.getElementById(id).value = '';
     }});
+    // Clear returns to the Swiss view, which is what the page is.
+    document.getElementById('scope').value = 'swiss';
     filter();
   }}
 
