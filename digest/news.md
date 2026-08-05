@@ -1,5 +1,5 @@
 # Swiss DeepTech news digest
-_Generated 05 August 2026, covering the last 14 days. 23 stories._
+_Generated 05 August 2026, covering the last 14 days. 22 stories._
 
 1. **[GR3N closes a €15.5M Series B round](https://www.startupticker.ch/en/news/gr3n-closes-a-15-5m-series-b-round)**  
    startupticker.ch · sent in
@@ -9,18 +9,18 @@ _Generated 05 August 2026, covering the last 14 days. 23 stories._
    Startupticker · 28 Jul 2026 · relevance 21
 4. **[Exclaim Robotics raises USD 4.95 million for data centre repair robots](https://www.startupticker.ch/en/news/exclaim-robotics-raises-eur-4-29-million-for-data-centre-repair-robots)**  
    Startupticker · 05 Aug 2026 · relevance 19
-5. **[Swiss preventive health startup Ahead Health raises $10M for Germany and Netherlands launch - Tech Funding News](https://news.google.com/rss/articles/CBMikwFBVV95cUxNV2JqQ2R5UlVCcDhrYk12TU9NWHVGQU9XOWZia0U1Wi0zeDg1NDdIN3lMRlAxMS1wN0pwaDZ0QWN4TTBObDVfWmtSOTBzSUNDWlRPUDRfM0RFeHZCNHBlM3k0al91c2VTRnpCVlhHc29XaTJOZGs2M0NpX2RiTjA3ZlFUUjd0SEVQMWs2Z1d1ZEp6VTA?oc=5)**  
-   Tech Funding News · 30 Jul 2026 · relevance 19
-6. **[Toronto startup Terminal raises $20-million to become the ‘Switzerland’ of telematics trade - The Globe and Mail](https://news.google.com/rss/articles/CBMirgFBVV95cUxNZ2xWZE5LaFdFdW1GRW1mTXBJUE5ZX2dWN3BTSWJ2WjU1S1dHQ0E5MGhRNDRFZlZ4dzVOYW4zMGhDMU8xd2VaRVlzY0hTN3JJd3BOX3kyeTkyWHFDNlpEMXdZR1pTWThqVXp2Wi1ZZlpXLTdtM0xxRGFRZG04WHl0ZEpuNG80T01JaFZxRTZZNEpQZ1RsSDRUamxpRmtGdjdWS2pGeGhzbFhXWlQwUnc?oc=5)**  
+5. **[Toronto startup Terminal raises $20-million to become the ‘Switzerland’ of telematics trade - The Globe and Mail](https://news.google.com/rss/articles/CBMirgFBVV95cUxNZ2xWZE5LaFdFdW1GRW1mTXBJUE5ZX2dWN3BTSWJ2WjU1S1dHQ0E5MGhRNDRFZlZ4dzVOYW4zMGhDMU8xd2VaRVlzY0hTN3JJd3BOX3kyeTkyWHFDNlpEMXdZR1pTWThqVXp2Wi1ZZlpXLTdtM0xxRGFRZG04WHl0ZEpuNG80T01JaFZxRTZZNEpQZ1RsSDRUamxpRmtGdjdWS2pGeGhzbFhXWlQwUnc?oc=5)**  
    The Globe and Mail · 29 Jul 2026 · relevance 19
-7. **[CHF 150,000 from Venture Kick to scale autonomous fresh food deployments](https://www.startupticker.ch/en/news/chf-150-000-from-venture-kick-to-scale-autonomous-fresh-food-deployments)**  
+6. **[CHF 150,000 from Venture Kick to scale autonomous fresh food deployments](https://www.startupticker.ch/en/news/chf-150-000-from-venture-kick-to-scale-autonomous-fresh-food-deployments)**  
    Startupticker · 24 Jul 2026 · relevance 19
+7. **[Ahead Health raises USD 10 million and opens first markets outside Switzerland](https://www.startupticker.ch/en/news/ahead-health-raises-usd-10-million-and-opens-first-markets-outside-switzerland)**  
+   Startupticker · 29 Jul 2026 · relevance 18
 8. **[Medyria raises CHF 3.5 million](https://www.startupticker.ch/en/news/medyria-raises-chf-3-5-million)**  
    Startupticker · 24 Jul 2026 · relevance 18
 9. **[Global AI Funding Increases More than 3-Fold YoY Led by Billion-Dollar Rounds](https://fintechnews.ch/aifintech/global-ai-funding-increases-more-than-3-fold-yoy-led-by-billion-dollar-rounds/84811/)**  
    Fintechnews Switzerland · 05 Aug 2026 · relevance 13
-10. **[Swiss Startup Exclaim Robotics Emerges From Stealth With Nearly $5M in Funding for AI Data Center Robotics - theaiinsider.tech](https://news.google.com/rss/articles/CBMi2wFBVV95cUxPNGNPcER4NW85WU1JUERkSUMxZzcwMWlwc3c1Q2lKWnFpTUNXQ1BRVkRzdVdLRFFUSVUzd1kySXQzZU1URlllRVlocGhpd0VucmxkOElKdkMtaVZUelRNU1hqNERPU0NhOGNrREg1bFVad2F3eHZYSTNLeVhUci1zUHBuS0VlaUt3NkxlMjZDLVdySXlYTjNrdUI4MHpuOG9pTGVGX1hoQm9RanRBeXhubDhBUWktQkdiUnRlZDJ4bXhNSDI3VTlleTZROWNrbllyV0drOG5UMmUwdVk?oc=5)**  
-   theaiinsider.tech · 04 Aug 2026 · relevance 13
+10. **[Swiss Startup Exclaim Robotics Emerges From Stealth With Nearly $5M in Funding for AI Data Center Robotics - AI Insider](https://news.google.com/rss/articles/CBMi2wFBVV95cUxPNGNPcER4NW85WU1JUERkSUMxZzcwMWlwc3c1Q2lKWnFpTUNXQ1BRVkRzdVdLRFFUSVUzd1kySXQzZU1URlllRVlocGhpd0VucmxkOElKdkMtaVZUelRNU1hqNERPU0NhOGNrREg1bFVad2F3eHZYSTNLeVhUci1zUHBuS0VlaUt3NkxlMjZDLVdySXlYTjNrdUI4MHpuOG9pTGVGX1hoQm9RanRBeXhubDhBUWktQkdiUnRlZDJ4bXhNSDI3VTlleTZROWNrbllyV0drOG5UMmUwdVk?oc=5)**  
+   AI Insider · 04 Aug 2026 · relevance 13
 11. **[Swiss startup AI Infrastructure Capital AG launches with €16 million to tackle AI compute bottleneck - EU-Startups](https://news.google.com/rss/articles/CBMi0wFBVV95cUxQSjZ3RkVCUFNxaHEwR0lCVGRfTXhxa0JTUUxzcHNyR0oxTDFkeEhUQzNrX0VHYXhwRUFFbXlyX3pIdHNiUFpPLVBlVllQQ2t0R3V3Zy04WTNfeW9ncGctNF9VNExyMENuMmQyV1lyYk9YVlJFQW1tNEYyaE4xN19zVDBjX0x1dkdZTWRVNTR2SU5GOGo2WmVIejdrajdVNEtza25hR1o2YkhxUmcxaXlCVnlTSFhOaC1RalptREgzSGMzWVhkSUF6dE1McGRNT2VZSTZj?oc=5)**  
    EU-Startups · 30 Jul 2026 · relevance 12
 12. **[Four Swiss medtechs mark commercial, regulatory and clinical milestones - Startupticker.ch](https://news.google.com/rss/articles/CBMiqwFBVV95cUxQQ3FrWVRDSkp0OUhkRmdfVVBack9kZEdSY1RfRXNKdHJrRzlzODVFWTNqQ0ZBdWdpVS1hRWk2YnlyLVdHVzcwMjNzVy1lOHVQQlRZTmFaLXhhNnFHZFBYTVppM3ZEUFNJZmx3bXp5bWFTRk9aVWZGMW5QcGZWbmU1V2prNUVYYld3Ykd2bk1TaGlqMm1SN2RBRFQ0S1pPTm54Wkp6VVM2emt2YmM?oc=5)**  
@@ -45,5 +45,3 @@ _Generated 05 August 2026, covering the last 14 days. 23 stories._
    Startupticker · 30 Jul 2026 · relevance 6
 22. **[MoleSense and Impli selcted for SPRIND Challenge on Continuous Hormone Monitoring](https://www.startupticker.ch/en/news/molesense-and-impli-selcted-for-sprind-challenge-on-continuous-hormone-monitoring)**  
    Startupticker · 24 Jul 2026 · relevance 6
-23. **[England, the Middle East and India: Three start-ups are expanding with their digital solutions](https://www.startupticker.ch/en/news/england-the-middle-east-and-india-three-start-ups-are-expanding-with-their-digital-solutions)**  
-   Startupticker · 22 Jul 2026 · relevance 6

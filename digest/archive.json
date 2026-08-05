@@ -341,7 +341,7 @@
       "read": true,
       "company": "Terminal Technologies Inc",
       "description": "Software platform standardizing telematics data from commercial vehicle devices",
-      "category": "Software",
+      "category": "Logistics",
       "stage": "Seed",
       "amount": "USD 20M",
       "total_raised": "",
@@ -450,7 +450,7 @@
       "company": "Medyria",
       "description": "Blood-flow-velocity sensor microcatheters for coronary diagnostics",
       "category": "MedTech",
-      "stage": "",
+      "stage": "Series B",
       "amount": "CHF 3.5M",
       "total_raised": "",
       "valuation": "",
@@ -474,7 +474,8 @@
         "founded": "the article",
         "use_of_funds": "the article",
         "location": "the company's own site",
-        "status": "the article"
+        "status": "the article",
+        "stage": "Max"
       },
       "read": true,
       "status": "closed",
@@ -592,9 +593,9 @@
       "runs": [
         "2026-08-05"
       ],
-      "title": "Swiss Startup Exclaim Robotics Emerges From Stealth With Nearly $5M in Funding for AI Data Center Robotics - theaiinsider.tech",
+      "title": "Swiss Startup Exclaim Robotics Emerges From Stealth With Nearly $5M in Funding for AI Data Center Robotics - AI Insider",
       "link": "https://theaiinsider.tech/2026/08/04/swiss-startup-exclaim-robotics-emerges-from-stealth-with-nearly-5m-in-funding-for-ai-data-center-robotics/",
-      "publisher": "theaiinsider.tech",
+      "publisher": "AI Insider",
       "published": "2026-08-04",
       "score": 13,
       "last_seen": "2026-08-05",
@@ -622,7 +623,7 @@
       "amount_note": "",
       "verified": "",
       "verified_source": "",
-      "startupticker_url": "",
+      "startupticker_url": "https://www.startupticker.ch/en/news/exclaim-robotics-raises-eur-4-29-million-for-data-centre-repair-robots",
       "provenance": {
         "company": "the article",
         "description": "the article",
@@ -654,9 +655,9 @@
       "last_seen": "2026-08-05",
       "posted": true,
       "company": "AI Infrastructure Capital AG",
-      "description": "Buys NVIDIA GPU servers, runs them on renewable power, rents compute",
+      "description": "Buys NVIDIA GPU servers, hosts on renewable power, rents compute long-term",
       "category": "AI",
-      "stage": "",
+      "stage": "Seed",
       "amount": "EUR 16M",
       "total_raised": "",
       "valuation": "",
@@ -666,7 +667,7 @@
       "spinoff_origin": "",
       "founded": "2026",
       "employees": "",
-      "use_of_funds": "Buy NVIDIA servers, operate them in Iceland",
+      "use_of_funds": "Buy NVIDIA servers operated in Iceland",
       "customers": "",
       "website": "",
       "location": "Pfäffikon",
@@ -683,11 +684,12 @@
         "use_of_funds": "the article",
         "location": "the article",
         "status": "the article",
-        "amount_note": "the article"
+        "amount_note": "the article",
+        "stage": "Max"
       },
       "read": true,
       "status": "closed",
-      "amount_note": "around",
+      "amount_note": "around €16 million",
       "verified": "",
       "verified_source": "",
       "startupticker_url": ""
@@ -728,7 +730,7 @@
       "amount_note": "",
       "verified": "",
       "verified_source": "",
-      "startupticker_url": "",
+      "startupticker_url": "https://www.startupticker.ch/en/news/exclaim-robotics-raises-eur-4-29-million-for-data-centre-repair-robots",
       "provenance": {
         "company": "the article",
         "description": "the article",
@@ -1572,7 +1574,7 @@
       "company": "AI Infrastructure Capital",
       "description": "Buys AI servers, operates them in Iceland, leases compute",
       "category": "AI",
-      "stage": "",
+      "stage": "Seed",
       "amount": "USD 16M",
       "total_raised": "",
       "valuation": "",
@@ -1604,7 +1606,8 @@
         "use_of_funds": "the article",
         "location": "the article",
         "status": "the article",
-        "amount_note": "the article"
+        "amount_note": "the article",
+        "stage": "Max"
       }
     },
     {
@@ -1737,7 +1740,7 @@
       "company": "Alivion",
       "description": "Handheld breath-analysis device measuring metabolic markers",
       "category": "MedTech",
-      "stage": "",
+      "stage": "Series A",
       "amount": "EUR 4M",
       "total_raised": "",
       "valuation": "",
@@ -1765,7 +1768,8 @@
         "employees": "the article",
         "use_of_funds": "the article",
         "location": "the article",
-        "status": "the article"
+        "status": "the article",
+        "stage": "Max"
       },
       "read": true,
       "status": "closed",
