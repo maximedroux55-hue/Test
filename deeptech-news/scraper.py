@@ -1209,7 +1209,9 @@ def render_archive_html(known: dict, now: dt.datetime | None = None,
 
     rows = []
     for s in stories:
-        tag = ' <span class="tag posted">posted</span>' if s.get("posted") else ""
+        # Whether a round became a LinkedIn post is a fact about the posting
+        # side, not about the round. It has no place on the database page.
+        tag = ""
         # How many outlets wrote this round up. Coverage, not verification:
         # three papers rewriting one press release is one source repeated, and
         # both Terra Quantum and MoonLake were wrong in every outlet at once.
@@ -1476,6 +1478,11 @@ def render_archive_html(known: dict, now: dt.datetime | None = None,
            background:#fff; border:1px solid var(--line); border-radius:10px;
            padding:0.58rem 0.9rem; cursor:pointer; }}
   .clear:hover {{ color:var(--green); border-color:var(--green); }}
+  /* On a phone the tiles and six controls pushed the first round 900px down an
+     844px screen: you landed on a database and saw no data. The filters fold
+     behind one button, and the tiles scroll sideways instead of stacking. */
+  .morefilters {{ display:none; }}
+  .morefilters[aria-expanded="true"] {{ color:var(--green); border-color:var(--green); }}
   th {{ cursor:pointer; user-select:none; }}
   th:hover {{ color:var(--green); }}
   th.up::after {{ content:" \\2191"; color:var(--green); }}
@@ -1513,6 +1520,12 @@ def render_archive_html(known: dict, now: dt.datetime | None = None,
     .stat {{ min-width:0; flex:1 1 30%; padding:0.5rem 0.6rem; }}
     .stat b {{ font-size:1.1rem; }}
     .controls select, .controls input, .dates, .clear {{ flex:1 1 45%; }}
+    .searchrow input[type=text] {{ flex:1 1 100%; margin-bottom:0; }}
+    .morefilters {{ display:inline-block; flex:0 0 auto; }}
+    #filterbits[hidden] {{ display:none; }}
+    .stats {{ display:flex; flex-wrap:nowrap; overflow-x:auto; gap:0.4rem;
+             scroll-snap-type:x mandatory; padding-bottom:0.25rem; }}
+    .stat {{ flex:0 0 auto; min-width:8rem; scroll-snap-align:start; }}
   }}
 </style></head><body>
 <div class="wrap">
@@ -1529,10 +1542,14 @@ def render_archive_html(known: dict, now: dt.datetime | None = None,
     <div class="stat"><b>{announced}</b><span>announced, uncounted</span></div>
     <div class="stat"><b>{with_investors}</b><span>with investors</span></div>
     <div class="stat"><b>{with_founders}</b><span>with founders</span></div>
-    <div class="stat"><b>{posted}</b><span>posted</span></div>
   </div>
-  <div class="controls">
+  <div class="controls searchrow">
     <input type="text" id="q" placeholder="Search company, investor, founder..." oninput="filter()">
+    <button type="button" class="clear morefilters" id="togglefilters"
+            onclick="toggleFilters()" aria-expanded="false" aria-controls="filterbits">Filters</button>
+    <span class="live" id="count"></span>
+  </div>
+  <div class="controls" id="filterbits">
     <select id="added" onchange="filter()">
       <option value="">Added any time</option>
       <option value="new">Just added ({len(fresh)})</option>
@@ -1545,7 +1562,6 @@ def render_archive_html(known: dict, now: dt.datetime | None = None,
     <label class="dates">from <input type="date" id="from" value="" min="{first_date}" max="{last_date}" onchange="filter()"></label>
     <label class="dates">to <input type="date" id="to" value="" min="{first_date}" max="{last_date}" onchange="filter()"></label>
     <button type="button" class="clear" onclick="clearAll()">Clear</button>
-    <span class="live" id="count"></span>
   </div>
   <div class="box"><table>
     <colgroup>
@@ -1809,6 +1825,20 @@ def render_archive_html(known: dict, now: dt.datetime | None = None,
         + (total ? ' &middot; ' + (total >= 1e9 ? (total / 1e9).toFixed(1) + 'B'
                                                 : Math.round(total / 1e6) + 'M') + ' CHF' : '');
     }}
+  }}
+
+  // Phone only: the filter block starts folded so the data is on screen.
+  function toggleFilters() {{
+    var bits=document.getElementById('filterbits');
+    var btn=document.getElementById('togglefilters');
+    var open=bits.hasAttribute('hidden');
+    if (open) bits.removeAttribute('hidden'); else bits.setAttribute('hidden','');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.textContent = open ? 'Hide filters' : 'Filters';
+  }}
+
+  if (window.matchMedia('(max-width: 760px)').matches) {{
+    document.getElementById('filterbits').setAttribute('hidden','');
   }}
 
   function showMore() {{
