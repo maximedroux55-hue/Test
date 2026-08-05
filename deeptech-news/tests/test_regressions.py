@@ -262,6 +262,42 @@ def test_two_rounds_for_one_company_stay_apart():
         {"company": "Acme", "amount": "CHF 20M", "stage": "Series A"},
     ])
     assert len(merged) == 2
+    # Not so loose that a real second round folds into the first.
+    assert len(scraper.merge_deals([
+        {"company": "Bar", "amount": "CHF 10M", "stage": "Seed"},
+        {"company": "Bar", "amount": "CHF 12M", "stage": "Series A"},
+    ])) == 2
+
+
+def test_one_round_quoted_in_two_currencies_is_one_row():
+    """Exclaim Robotics was on the page twice, and in the total twice."""
+    # The same pre-seed, written up three times: dollars in two papers, euros
+    # in the third. Keyed on the raw number they looked like separate rounds.
+    merged = scraper.merge_deals([
+        {"company": "Exclaim Robotics", "amount": "USD 4.95M",
+         "stage": "Pre-seed", "location": "Zurich", "publisher": "Startupticker",
+         "title": "Exclaim Robotics raises USD 4.95 million"},
+        {"company": "Exclaim Robotics", "amount": "EUR 4.29M",
+         "stage": "Pre-seed", "location": "Zurich", "publisher": "EU-Startups",
+         "title": "Zurich-based Exclaim Robotics exits stealth"},
+        {"company": "Exclaim Robotics", "amount": "USD 4.95M",
+         "stage": "Pre-seed", "location": "Zurich", "publisher": "AI Insider",
+         "title": "Swiss Startup Exclaim Robotics Emerges From Stealth"},
+    ])
+    assert len(merged) == 1, [m["amount"] for m in merged]
+    # The preferred outlet still sets the figure, and every outlet is credited.
+    assert merged[0]["amount"] == "USD 4.95M"
+    assert set(merged[0]["sources"]) == {"Startupticker", "EU-Startups",
+                                         "AI Insider"}
+    # And the money is counted once, not twice.
+    assert len(scraper.counted(merged)) == 1
+
+    # The tolerance is about conversion drift, not about size: a figure that
+    # differs by a fifth is a different round.
+    assert scraper._same_size(3_960_000, 3_989_700) is True
+    assert scraper._same_size(10_000_000, 12_000_000) is False
+    assert scraper._same_size(0, 0) is True
+    assert scraper._same_size(0, 5_000_000) is False
 
 
 # ------------------------------------------------------------------ trust ----
@@ -1143,7 +1179,7 @@ def test_short_week_skips_the_weekend():
 
 # Locking the count means a test appended below the runner, where it would
 # never execute, shows up as a failure rather than as silence. That happened.
-EXPECTED = 56
+EXPECTED = 57
 
 
 if __name__ == "__main__":

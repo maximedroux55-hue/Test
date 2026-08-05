@@ -322,6 +322,21 @@ def _source_rank(story: dict) -> int:
     return len(_PREFERRED_SOURCES)
 
 
+def _same_size(a: float, b: float, tolerance: float = 0.05) -> bool:
+    """Two figures close enough to be the same round.
+
+    Not equality, because the francs come from fixed indicative rates and the
+    outlets converted at their own: USD 4.95M and EUR 4.29M are the same money
+    quoted twice, 0.7 per cent apart once converted. Kept tight, because a seed
+    and the Series A after it are multiples apart, never five per cent.
+    """
+    if a == b:
+        return True
+    if not a or not b:
+        return False
+    return abs(a - b) <= tolerance * max(a, b)
+
+
 def merge_deals(stories: list) -> list:
     """One row per round, not one row per article.
 
@@ -344,10 +359,16 @@ def merge_deals(stories: list) -> list:
         if not stem:
             continue
         # Amount pins the round: two rounds for one company in a year are
-        # different deals and must not collapse into one.
-        _, value = money.parse(story.get("amount", ""))
-        key = (stem, int(value))
-        if key not in by_key:
+        # different deals and must not collapse into one. Compared in francs,
+        # because the same round is written up in different currencies:
+        # Exclaim Robotics raised "USD 4.95M" in one paper and "EUR 4.29M" in
+        # another, which as raw numbers looked like two rounds and put the
+        # company on the page twice, counting the money twice with it.
+        chf = money.in_chf(story.get("amount", "")) or 0
+        key = next((k for k in order
+                    if k[0] == stem and _same_size(k[1], chf)), None)
+        if key is None:
+            key = (stem, chf)
             by_key[key] = []
             order.append(key)
         by_key[key].append(story)
