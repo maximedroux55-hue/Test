@@ -2,15 +2,15 @@
 _Generated 05 August 2026, covering the last 14 days. 23 stories._
 
 1. **[GR3N closes a €15.5M Series B round](https://www.startupticker.ch/en/news/gr3n-closes-a-15-5m-series-b-round)**  
-   startupticker.ch · n/a · relevance 999
+   startupticker.ch · sent in
 2. **[Exclusive: ETH Zurich spinout ZuriQ raises $25.5m seed - Sifted](https://news.google.com/rss/articles/CBMiZkFVX3lxTE4zOVBuNE5sb2dhcWY3NThySXFITnNPWkJsTndFSGRzZGR6NzBhNlV5N05XbWJ4VXU0T1V3NDMxMzRaLW1OSmVJNURVN0Y5ZjJsMkZaREJ6MkQ2RzdvWWV1U2FqalN1UQ?oc=5)**  
    Sifted · 28 Jul 2026 · relevance 27
-3. **[Swiss preventive health startup Ahead Health raises $10M for Germany and Netherlands launch - techfundingnews.com](https://news.google.com/rss/articles/CBMikwFBVV95cUxNV2JqQ2R5UlVCcDhrYk12TU9NWHVGQU9XOWZia0U1Wi0zeDg1NDdIN3lMRlAxMS1wN0pwaDZ0QWN4TTBObDVfWmtSOTBzSUNDWlRPUDRfM0RFeHZCNHBlM3k0al91c2VTRnpCVlhHc29XaTJOZGs2M0NpX2RiTjA3ZlFUUjd0SEVQMWs2Z1d1ZEp6VTA?oc=5)**  
-   techfundingnews.com · 30 Jul 2026 · relevance 21
-4. **[Valuemize raises seven-figure pre-seed for product cost software](https://www.startupticker.ch/en/news/valuemize-raises-seven-figure-pre-seed-for-product-cost-software)**  
+3. **[Valuemize raises seven-figure pre-seed for product cost software](https://www.startupticker.ch/en/news/valuemize-raises-seven-figure-pre-seed-for-product-cost-software)**  
    Startupticker · 28 Jul 2026 · relevance 21
-5. **[Exclaim Robotics raises USD 4.95 million for data centre repair robots](https://www.startupticker.ch/en/news/exclaim-robotics-raises-eur-4-29-million-for-data-centre-repair-robots)**  
+4. **[Exclaim Robotics raises USD 4.95 million for data centre repair robots](https://www.startupticker.ch/en/news/exclaim-robotics-raises-eur-4-29-million-for-data-centre-repair-robots)**  
    Startupticker · 05 Aug 2026 · relevance 19
+5. **[Swiss preventive health startup Ahead Health raises $10M for Germany and Netherlands launch - Tech Funding News](https://news.google.com/rss/articles/CBMikwFBVV95cUxNV2JqQ2R5UlVCcDhrYk12TU9NWHVGQU9XOWZia0U1Wi0zeDg1NDdIN3lMRlAxMS1wN0pwaDZ0QWN4TTBObDVfWmtSOTBzSUNDWlRPUDRfM0RFeHZCNHBlM3k0al91c2VTRnpCVlhHc29XaTJOZGs2M0NpX2RiTjA3ZlFUUjd0SEVQMWs2Z1d1ZEp6VTA?oc=5)**  
+   Tech Funding News · 30 Jul 2026 · relevance 19
 6. **[Toronto startup Terminal raises $20-million to become the ‘Switzerland’ of telematics trade - The Globe and Mail](https://news.google.com/rss/articles/CBMirgFBVV95cUxNZ2xWZE5LaFdFdW1GRW1mTXBJUE5ZX2dWN3BTSWJ2WjU1S1dHQ0E5MGhRNDRFZlZ4dzVOYW4zMGhDMU8xd2VaRVlzY0hTN3JJd3BOX3kyeTkyWHFDNlpEMXdZR1pTWThqVXp2Wi1ZZlpXLTdtM0xxRGFRZG04WHl0ZEpuNG80T01JaFZxRTZZNEpQZ1RsSDRUamxpRmtGdjdWS2pGeGhzbFhXWlQwUnc?oc=5)**  
    The Globe and Mail · 29 Jul 2026 · relevance 19
 7. **[CHF 150,000 from Venture Kick to scale autonomous fresh food deployments](https://www.startupticker.ch/en/news/chf-150-000-from-venture-kick-to-scale-autonomous-fresh-food-deployments)**  
