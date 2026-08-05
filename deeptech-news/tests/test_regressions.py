@@ -676,8 +676,8 @@ def test_a_round_is_dated_by_the_round_not_by_the_write_up():
         assert useful_note(real) == real, real
 
 
-def test_a_foreign_seat_is_shown_not_hidden():
-    """A company can be run from Switzerland and registered elsewhere."""
+def test_what_is_held_back_stays_reviewable():
+    """A seat abroad is a judgement call, so it is not deleted, just moved."""
     import datetime as dt
 
     def row(company, location):
@@ -689,21 +689,82 @@ def test_a_foreign_seat_is_shown_not_hidden():
                 "link": "https://startupticker.ch/x"}
 
     known = {"a": row("Swiss SA", "Zurich"), "b": row("Abroad SA", "Leipzig, DE")}
-    page = scraper.render_archive_html(known, now=dt.datetime(2026, 8, 5, 9, 0))
+    now = dt.datetime(2026, 8, 5, 9, 0)
 
-    # Both rows are on the page now, where the foreign one used to be dropped.
-    assert page.count("<tr data-chf") == 2
-    assert 'data-swiss="1"' in page and 'data-swiss="0"' in page
-    # The foreign one is marked, and says where.
-    assert page.count('class="tag abroad"') == 1
-    assert "Leipzig, DE" in page
-    # There is a way in and a way out, and the page opens on Swiss.
-    assert 'id="scope"' in page
-    assert '<option value="swiss" selected>' in page
-    for choice in ('value="all"', 'value="foreign"'):
-        assert choice in page, choice
-    # The headline count stays Swiss: the database is Swiss DeepTech.
-    assert "<b>1</b><span>rounds</span>" in page
+    # The database is Swiss DeepTech and says so: one row, and a way through.
+    page = scraper.render_archive_html(known, now=now)
+    assert page.count("<tr data-chf") == 1
+    assert "Swiss SA" in page and "Abroad SA" not in page
+    assert "held.html" in page and "1 rounds held back" in page
+
+    # The held page carries the other one, with the same editing panel, so a
+    # wrong headquarters can be corrected and the round joins the database.
+    held = scraper.render_archive_html(known, now=now, only="held")
+    assert held.count("<tr data-chf") == 1
+    assert "Abroad SA" in held and "Swiss SA" not in held
+    assert "<title>Held back</title>" in held
+    assert 'class="fix"' in held          # the + panel is there too
+    assert "archive.html" in held         # and a way back
+
+    # Pfäffikon is in Switzerland. AI Infrastructure Capital read as foreign
+    # for want of its town being on the list.
+    assert scraper._is_swiss({"location": "Pfäffikon"}) is True
+    for town in ("Rotkreuz", "Baar", "Chur", "Allschwil", "Meyrin"):
+        assert scraper._is_swiss({"location": town}) is True, town
+    assert scraper._is_swiss({"location": "Leipzig, DE"}) is False
+
+
+def test_a_company_ruled_out_by_hand_leaves_both_pages():
+    """Terminal Technologies is in Toronto and was Swiss news by metaphor only."""
+    import datetime as dt
+    import json
+    import tempfile
+
+    import corrections
+
+    with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as f:
+        json.dump({"companies": {}, "blocked": ["Terminal Technologies"]}, f)
+        path = f.name
+    try:
+        assert corrections.is_blocked("Terminal Technologies Inc", path) is True
+        assert corrections.is_blocked("ZuriQ", path) is False
+        # An empty or missing list blocks nothing.
+        assert corrections.blocked("/nonexistent.json") == set()
+    finally:
+        os.unlink(path)
+
+    # The real file blocks it, and it is off the database and off the held
+    # page: removing the name from corrections.json puts it back.
+    assert corrections.is_blocked("Terminal Technologies Inc") is True
+    known = {"a": {"company": "Terminal Technologies Inc", "amount": "USD 20M",
+                   "stage": "Seed", "location": "Toronto, CA",
+                   "category": "AI", "published": "2026-07-29",
+                   "first_seen": "2026-08-04", "description": "Telematics",
+                   "title": "Toronto startup Terminal raises $20-million",
+                   "link": "https://theglobeandmail.com/x"}}
+    now = dt.datetime(2026, 8, 5, 9, 0)
+    for page in (scraper.render_archive_html(known, now=now),
+                 scraper.render_archive_html(known, now=now, only="held")):
+        assert page.count("<tr data-chf") == 0
+
+
+def test_one_figure_two_currency_labels_is_one_round():
+    """AI Infrastructure Capital was EUR 16M in one paper and USD 16M in another."""
+    merged = scraper.merge_deals([
+        {"company": "AI Infrastructure Capital AG", "amount": "EUR 16M",
+         "publisher": "EU-Startups", "location": "Pfäffikon"},
+        {"company": "AI Infrastructure Capital", "amount": "USD 16M",
+         "publisher": "Startupticker", "location": "Pfäffikon"},
+    ])
+    # In francs those are 14 per cent apart, outside the conversion tolerance,
+    # so only the bare figure matching catches it.
+    assert len(merged) == 1, [m["amount"] for m in merged]
+    assert set(merged[0]["sources"]) == {"EU-Startups", "Startupticker"}
+    # And it must not merge a genuinely different round of a different size.
+    assert len(scraper.merge_deals([
+        {"company": "Bar", "amount": "CHF 16M"},
+        {"company": "Bar", "amount": "CHF 160M"},
+    ])) == 2
 
 
 def test_coverage_is_not_verification():
@@ -1284,7 +1345,7 @@ def test_short_week_skips_the_weekend():
 
 # Locking the count means a test appended below the runner, where it would
 # never execute, shows up as a failure rather than as silence. That happened.
-EXPECTED = 60
+EXPECTED = 62
 
 
 if __name__ == "__main__":

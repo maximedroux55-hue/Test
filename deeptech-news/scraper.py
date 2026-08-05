@@ -350,7 +350,7 @@ def merge_deals(stories: list) -> list:
     lists of investors and founders, where the longer answer is the fuller one
     whoever wrote it.
     """
-    groups, order = {}, []
+    groups, order, sizes = {}, [], {}
     # Group first, then merge each round's write-ups in order of preference, so
     # the outlet trusted most is the one that sets the values and the link.
     by_key = {}
@@ -365,11 +365,20 @@ def merge_deals(stories: list) -> list:
         # another, which as raw numbers looked like two rounds and put the
         # company on the page twice, counting the money twice with it.
         chf = money.in_chf(story.get("amount", "")) or 0
+        # AI Infrastructure Capital's round was written up as EUR 16M by one
+        # outlet and USD 16M by another. In francs those are 14 per cent apart,
+        # so they read as two rounds and the company appeared twice. The same
+        # figure under two currency labels is one round and a disagreement
+        # about the label, so the bare magnitude counts as a match too.
+        _, size = money.parse(story.get("amount", ""))
         key = next((k for k in order
-                    if k[0] == stem and _same_size(k[1], chf)), None)
+                    if k[0] == stem
+                    and (_same_size(sizes[k][0], chf)
+                         or (size and sizes[k][1] == size))), None)
         if key is None:
             key = (stem, chf)
             by_key[key] = []
+            sizes[key] = (chf, size)
             order.append(key)
         by_key[key].append(story)
 
@@ -462,7 +471,19 @@ _SWISS_HOME = re.compile(
     r"lugano|sion|fribourg|neuch(?:â|a)tel|winterthur|zug|st\.?\s*gallen|"
     r"renens|schlieren|d(?:ü|u)bendorf|biel|bienne|lucerne|luzern|thun|"
     r"yverdon|villigen|chiasso|glattbrugg|vaud|valais|ticino|switzerland|"
-    r"lugano|martigny|monthey|nyon|morges|vevey|montreux|aarau|baden|olten",
+    r"lugano|martigny|monthey|nyon|morges|vevey|montreux|aarau|baden|olten|"
+    # AI Infrastructure Capital sits in Pfäffikon and read as foreign for want
+    # of its town being on this list. A missing name here is a Swiss company
+    # quietly dropped from a Swiss database, so the list is generous.
+    r"pf(?:ä|a)ffikon|rotkreuz|rapperswil|w(?:ä|a)denswil|horgen|k(?:ü|u)snacht|"
+    r"baar|cham|risch|steinhausen|hünenberg|allschwil|muttenz|reinach|pratteln|"
+    r"kloten|opfikon|wallisellen|r(?:ü|u)schlikon|regensdorf|uster|"
+    r"chur|solothurn|schaffhausen|frauenfeld|kreuzlingen|arbon|"
+    r"sierre|sion|monthey|delémont|delemont|la\s+chaux-de-fonds|le\s+locle|"
+    r"ecublens|(?:plan-les-ouates|meyrin|carouge|lancy|onex|versoix|vernier)|"
+    r"bulle|marly|granges|epalinges|st-sulpice|saint-sulpice|crissier|"
+    r"schwyz|obwalden|nidwalden|appenzell|glarus|graub(?:ü|u)nden|thurgau|"
+    r"aargau|basel-land|baselland|jura|uri|z(?:ü|u)g",
     re.IGNORECASE,
 )
 
@@ -641,7 +662,8 @@ def _zurich_now() -> dt.datetime:
         return dt.datetime.now(dt.timezone.utc)
 
 
-def render_archive_html(known: dict, now: dt.datetime | None = None) -> str:
+def render_archive_html(known: dict, now: dt.datetime | None = None,
+                        only: str = "swiss") -> str:
     """A browsable page of the financing rounds found, newest first.
 
     Nine rigid columns left a hole wherever a fact was missing, and articles
@@ -669,20 +691,28 @@ def render_archive_html(known: dict, now: dt.datetime | None = None) -> str:
     rounds.sort(key=lambda e: (e.get("published") or e.get("first_seen") or "",
                                e.get("score") or 0),
                 reverse=True)
-    # Swiss DeepTech, so the page opens on Swiss companies. A foreign company
-    # that raised out of a Swiss office is a judgement call rather than a fact,
-    # so those rows are here too, marked, behind a filter.
-    stories = rounds
+    # Ruled out by hand: Swiss news, not a Swiss company. Off both pages, and
+    # back on both the moment the name leaves corrections.json.
+    import corrections as _corrections
+    ruled_out = [s for s in rounds if _corrections.is_blocked(s.get("company", ""))]
+    rounds = [s for s in rounds if s not in ruled_out]
+
+    # The database is Swiss DeepTech and says so, so the main page carries only
+    # Swiss rounds. The rest are not deleted: a seat abroad is sometimes a
+    # Swiss company registered elsewhere, and that is Max's call to make. They
+    # live on their own page with the same editing panel, one link away.
     swiss = [s for s in rounds if _is_swiss(s)]
-    foreign = len(rounds) - len(swiss)
-    hidden = len(everything) - len(rounds)
-    posted = sum(1 for s in swiss if s.get("posted"))
-    with_investors = sum(1 for s in swiss if _investor_line(s))
-    with_founders = sum(1 for s in swiss if (s.get("founders") or "").strip())
-    placed = sum(1 for s in swiss if (s.get("location") or "").strip())
-    announced = sum(1 for s in swiss if not is_closed(s))
+    held = [s for s in rounds if not _is_swiss(s)]
+    stories = held if only == "held" else swiss
+    foreign = len(held)
+    hidden = len(everything) - len(rounds) - len(ruled_out)
+    posted = sum(1 for s in stories if s.get("posted"))
+    with_investors = sum(1 for s in stories if _investor_line(s))
+    with_founders = sum(1 for s in stories if (s.get("founders") or "").strip())
+    placed = sum(1 for s in stories if (s.get("location") or "").strip())
+    announced = sum(1 for s in stories if not is_closed(s))
     tracked = money.compact(
-        sum(money.in_chf(s.get("amount", "")) for s in counted(swiss)))
+        sum(money.in_chf(s.get("amount", "")) for s in counted(stories)))
 
     # What the most recent run that found anything actually added. Keyed on the
     # newest first_seen present rather than on today, so a quiet run says "the
@@ -717,11 +747,33 @@ def render_archive_html(known: dict, now: dt.datetime | None = None) -> str:
                       f"round{'' if len(fresh) == 1 else 's'}")
     elif baseline:
         when = dt.date.fromisoformat(baseline).strftime("%d %B")
-        added_line = (f"all {len(swiss)} rounds loaded together when the "
+        added_line = (f"all {len(stories)} rounds loaded together when the "
                       f"record was built on {when}, so nothing is marked new "
                       f"yet")
     else:
         added_line = "nothing added yet"
+
+    if only == "held":
+        heading = "Held back"
+        blurb = (
+            'Rounds kept off the database because the headquarters on record is '
+            'not in Switzerland. A seat abroad is not always a foreign company, '
+            'so nothing here is thrown away: correct the HQ with the '
+            '<b>+</b> and the round joins the database on the next run. '
+            f'{len(ruled_out)} more were ruled out by name in corrections.json. '
+            '<a href="/digest/archive.html">&larr; Back to the database</a>'
+        )
+    else:
+        heading = "Swiss DeepTech rounds"
+        blurb = (
+            'Swiss companies only, newest first. One row per round: where several '
+            'outlets covered the same one, their facts are combined. '
+            '<a href="/reports/">Monthly reports &rarr;</a> '
+            f'<span title="Kept in archive.json, which is the raw record">{hidden} '
+            'non-financing stories are held back.</span> '
+            f'<a href="/digest/held.html">{foreign} rounds held back for a '
+            'foreign headquarters &rarr;</a>'
+        )
 
     def options(field: str) -> str:
         """The values actually present, so no filter leads to an empty table."""
@@ -897,7 +949,7 @@ def render_archive_html(known: dict, now: dt.datetime | None = None) -> str:
     return f"""<!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Swiss DeepTech rounds</title><meta name="robots" content="noindex">
+<title>{heading}</title><meta name="robots" content="noindex">
 <style>
   :root {{ --green:#46b96a; --ink:#1b2430; --soft:#5b6472; --faint:#9aa3ad;
           --line:#e6eae8; --bg:#f6f8f7; }}
@@ -1060,17 +1112,13 @@ def render_archive_html(known: dict, now: dt.datetime | None = None) -> str:
   }}
 </style></head><body>
 <div class="wrap">
-  <h1>Swiss DeepTech rounds<span class="dot">.</span></h1>
-  <p class="sub">Swiss companies only, newest first. One row per round: where several
-  outlets covered the same one, their facts are combined.
-  <a href="/reports/">Monthly reports &rarr;</a>
-  <span title="Kept in archive.json, which is the raw record">{hidden} non-financing stories are held back.</span>
-  {foreign} rounds have a headquarters recorded outside Switzerland; the filter brings them in.</p>
+  <h1>{heading}<span class="dot">.</span></h1>
+  <p class="sub">{blurb}</p>
   <p class="refreshed"><b>Refreshed {refreshed}</b> &middot; {added_line} &middot;
   {added_week} in the last 7 days. The database runs every morning, so a day with
   nothing new means the news was quiet, not that it stopped.</p>
   <div class="stats">
-    <div class="stat"><b>{len(swiss)}</b><span>rounds</span></div>
+    <div class="stat"><b>{len(stories)}</b><span>rounds</span></div>
     <div class="stat"><b>{len(fresh) if newest == today.isoformat() else 0}</b><span>added today</span></div>
     <div class="stat"><b>{tracked or "&ndash;"}</b><span>tracked</span></div>
     <div class="stat"><b>{placed}</b><span>with a city</span></div>
@@ -1081,11 +1129,6 @@ def render_archive_html(known: dict, now: dt.datetime | None = None) -> str:
   </div>
   <div class="controls">
     <input type="text" id="q" placeholder="Search company, investor, founder..." oninput="filter()">
-    <select id="scope" onchange="filter()">
-      <option value="swiss" selected>Swiss HQ</option>
-      <option value="all">Swiss and foreign HQ</option>
-      <option value="foreign">Foreign HQ only ({foreign})</option>
-    </select>
     <select id="added" onchange="filter()">
       <option value="">Added any time</option>
       <option value="new">Just added ({len(fresh)})</option>
@@ -1311,15 +1354,6 @@ def render_archive_html(known: dict, now: dt.datetime | None = None) -> str:
     setTimeout(function () {{ btn.textContent = said; }}, 1500);
   }}
 
-  // The page is Swiss DeepTech, so it opens on Swiss headquarters. A seat
-  // abroad is not always a foreign company, which is why the others are one
-  // dropdown away rather than deleted.
-  function inScope(isSwiss, scope) {{
-    if (scope === 'all') return true;
-    if (scope === 'foreign') return !isSwiss;
-    return isSwiss;
-  }}
-
   function isAdded(seen, mode) {{
     if (!mode) return true;
     if (!seen) return false;
@@ -1334,7 +1368,6 @@ def render_archive_html(known: dict, now: dt.datetime | None = None) -> str:
     var q = val('q').toLowerCase();
     var sector = val('sector'), stage = val('stage'), hq = val('hq');
     var from = val('from'), to = val('to'), added = val('added');
-    var scope = val('scope');
     var rows = document.querySelectorAll('#rows tr');
     var shown = 0, total = 0;
     for (var i = 0; i < rows.length; i++) {{
@@ -1346,8 +1379,7 @@ def render_archive_html(known: dict, now: dt.datetime | None = None) -> str:
         && (!hq || row.getAttribute('data-hq') === hq)
         && (!from || (date && date >= from))
         && (!to || (date && date <= to))
-        && isAdded(row.getAttribute('data-added') || '', added)
-        && inScope(row.getAttribute('data-swiss') === '1', scope);
+        && isAdded(row.getAttribute('data-added') || '', added);
       if (ok) {{
         shown++;
         total += parseInt(row.getAttribute('data-chf') || '0', 10);
@@ -1380,8 +1412,6 @@ def render_archive_html(known: dict, now: dt.datetime | None = None) -> str:
     ['q', 'added', 'sector', 'stage', 'hq', 'from', 'to'].forEach(function (id) {{
       document.getElementById(id).value = '';
     }});
-    // Clear returns to the Swiss view, which is what the page is.
-    document.getElementById('scope').value = 'swiss';
     filter();
   }}
 
@@ -1909,6 +1939,11 @@ def build_archive(articles: list, picks: list, args) -> None:
     _report_coverage(known)
     with open(os.path.join(args.outdir, "archive.html"), "w", encoding="utf-8") as f:
         f.write(render_archive_html(known))
+    # What the database left out for a foreign headquarters, with the same
+    # editing panel: a seat abroad is a judgement call, so it is reviewable
+    # rather than invisible.
+    with open(os.path.join(args.outdir, "held.html"), "w", encoding="utf-8") as f:
+        f.write(render_archive_html(known, only="held"))
 
     # A month's rounds are worth a page of their own: the table says what
     # happened, the report says what it amounts to.

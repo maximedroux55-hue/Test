@@ -105,6 +105,8 @@ jobs:
 
             mkdir -p digest reports
             cp deeptech-news/output/archive.html digest/archive.html
+            # The rounds kept out for a foreign headquarters, reviewable.
+            cp deeptech-news/output/held.html    digest/held.html
             # The news listing is published here, daily, not by the weekly
             # posts job: a page dated last Wednesday reads as a dead site.
             cp deeptech-news/output/digest-*.html digest/index.html
@@ -118,6 +120,7 @@ jobs:
             cp deeptech-news/output/reports/*.html reports/ 2>/dev/null || true
 
             git add digest/index.html digest/news.md digest/archive.html \
+                    digest/held.html \
                     digest/archive.json digest/verify.json \
                     digest/review.html reports
             git commit -m "Update the deal database" || { echo "No changes to publish."; exit 0; }

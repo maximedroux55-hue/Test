@@ -55,6 +55,33 @@ def load(path: str = PATH) -> dict:
     return out
 
 
+def blocked(path: str = PATH) -> set:
+    """Companies Max has ruled out of the database, as name stems.
+
+    Some rounds are Swiss news without being Swiss companies: Terminal
+    Technologies is in Toronto and turned up only because a headline called it
+    the "Switzerland" of telematics. A filter cannot settle that; he can. The
+    list is in corrections.json so removing a name puts the round back.
+    """
+    try:
+        with open(path, encoding="utf-8") as f:
+            raw = json.load(f)
+    except Exception:
+        return set()
+    names = raw.get("blocked", []) if isinstance(raw, dict) else []
+    return {_stem(n) for n in names if isinstance(n, str) and n.strip()}
+
+
+def is_blocked(company: str, path: str = PATH) -> bool:
+    """Has this company been ruled out by hand?"""
+    stem = _stem(company)
+    if not stem:
+        return False
+    out = blocked(path)
+    return stem in out or any(
+        len(k) >= 4 and (stem.startswith(k) or k.startswith(stem)) for k in out)
+
+
 def _match(stem: str, fixes: dict) -> dict:
     """Find the correction for a company name, allowing for how names vary."""
     if stem in fixes:

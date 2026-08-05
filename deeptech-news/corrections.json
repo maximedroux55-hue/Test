@@ -82,5 +82,9 @@
     "Exclaim Robotics": {
       "website": "https://exclaimrobotics.com/"
     }
-  }
+  },
+  "blocked": [
+    "Terminal Technologies"
+  ],
+  "note_blocked": "Companies ruled out by hand: Swiss news, but not Swiss companies. Remove a name here and its round returns to the database on the next run."
 }
