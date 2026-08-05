@@ -1433,7 +1433,9 @@ def render_archive_html(known: dict, now: dt.datetime | None = None,
   .field input:focus {{ outline:none; }}
   .field.missing {{ border-style:dashed; }}
   .field.missing span {{ color:var(--faint); }}
-  .sheetacts {{ display:flex; gap:0.5rem; flex-wrap:wrap; margin:0.9rem 0 0.6rem; }}
+  .sheetacts {{ display:flex; gap:0.5rem; flex-wrap:wrap; margin:0.9rem 0 0.6rem;
+               position:sticky; bottom:0; background:var(--bg); padding:0.7rem 0;
+               border-top:1px solid var(--line); z-index:2; }}
   .btn {{ font-family:inherit; font-size:0.88rem; font-weight:600; color:#fff;
          background:var(--ink); border:1px solid var(--ink); border-radius:10px;
          padding:0.6rem 0.9rem; cursor:pointer; text-decoration:none;
@@ -1601,8 +1603,8 @@ def render_archive_html(known: dict, now: dt.datetime | None = None,
   <div class="sheetbox">
     <h2 id="sheettitle"></h2>
     <p class="sheetnote">Type what is missing, or correct what is wrong. Emptying a
-    box that has a value clears it. Nothing changes here until you paste the file
-    into GitHub, and the next run picks it up.</p>
+    box that has a value clears it. Tap <b>Save</b> and the page shows it after the
+    next run, tomorrow morning.</p>
     <div id="fields"></div>
     <p class="sheetnote">Built from corrections.json as it stood at {refreshed}.
     If you have edited it since, edit it on GitHub instead of pasting over it.</p>
@@ -1644,7 +1646,11 @@ def render_archive_html(known: dict, now: dt.datetime | None = None,
   var editing = null;
 
   function openFix(btn) {{
-    var row = btn.parentNode.parentNode;
+    // closest, never a fixed number of parentNode hops: wrapping this button
+    // in a span for the desktop layout moved it one level down and the panel
+    // silently opened with no company and every field blank.
+    var row = btn.closest('tr');
+    if (!row) return;
     editing = {{
       company: row.getAttribute('data-company') || '',
       facts: JSON.parse(row.getAttribute('data-facts') || '{{}}')

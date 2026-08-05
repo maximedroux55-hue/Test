@@ -1358,6 +1358,17 @@ def test_a_missing_fact_can_be_typed_in():
     assert facts["investors"] == "360 Capital, VP Textile"
     assert facts["location"] == "Chiasso"
 
+    # The panel finds its row by closest(), never by counting parents. Wrapping
+    # the + button in a span for the desktop layout moved it one level deeper,
+    # and the panel opened with no company and every field blank, on every
+    # device, silently.
+    assert "closest('tr')" in page
+    assert "btn.parentNode.parentNode" not in page
+    # And the button really does sit deeper than the row, which is why.
+    row = re.search(r"<tr data-chf.*?</tr>", page, re.S).group(0)
+    assert re.search(r'<span class="marks">.*?class="fix"', row, re.S), \
+        "the + button is expected inside the marks span"
+
     # The panel hands back a whole file rather than a fragment to splice in,
     # so the current corrections have to be embedded and parseable.
     embedded = json.loads(re.search(
