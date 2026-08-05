@@ -159,7 +159,25 @@ def collect(days: int, min_score: int, backfill_months: int = 0,
 
 
 def _fmt_date(d: dt.datetime | None) -> str:
-    return d.strftime("%d %b %Y") if d else "n/a"
+    return d.strftime("%d %b %Y") if d else ""
+
+
+# submissions.py stamps a story Max sent in with this, so it outranks anything
+# the scoring found. It is a marker, not a measurement, and printing it as
+# "relevance 999" beside a story with no date looked like a broken row.
+SUBMITTED = 999
+
+
+def _rank(article: dict) -> str:
+    """How a story earned its place, in words rather than a raw number."""
+    score = article.get("score") or 0
+    return "sent in" if score >= SUBMITTED else f"relevance {score}"
+
+
+def _meta_line(a: dict, sep: str = " · ") -> str:
+    """Publisher, date and rank, skipping whatever is not known."""
+    parts = [a.get("publisher") or "", _fmt_date(a.get("date")), _rank(a)]
+    return sep.join(p for p in parts if p)
 
 
 def to_markdown(articles: list[dict], days: int) -> str:
@@ -172,7 +190,7 @@ def to_markdown(articles: list[dict], days: int) -> str:
     for i, a in enumerate(articles, 1):
         lines.append(
             f"{i}. **[{a['title']}]({a['link']})**  "
-            f"\n   {a['publisher']} · {_fmt_date(a['date'])} · relevance {a['score']}"
+            f"\n   {_meta_line(a)}"
         )
     if not articles:
         lines.append("_No relevant stories found in this window._")
@@ -186,8 +204,7 @@ def to_html(articles: list[dict], days: int) -> str:
         rows.append(
             f'<li><a href="{html.escape(a["link"])}" target="_blank" rel="noopener">'
             f'{html.escape(a["title"])}</a>'
-            f'<div class="meta">{html.escape(a["publisher"])} · {_fmt_date(a["date"])} '
-            f'· <span class="score">relevance {a["score"]}</span></div></li>'
+            f'<div class="meta">{html.escape(_meta_line(a))}</div></li>'
         )
     body = "\n".join(rows) or "<p>No relevant stories found in this window.</p>"
     return f"""<!DOCTYPE html>
@@ -546,6 +563,12 @@ def plausibly_swiss(story: dict) -> bool:
     """
     from urllib.parse import urlsplit
 
+    # A headquarters on record settles it, whoever published the story. A Swiss
+    # outlet writing up global funding led by Anthropic in San Francisco is
+    # Swiss journalism, not Swiss DeepTech.
+    if (story.get("location") or "").strip():
+        return _is_swiss(story)
+
     host = urlsplit(story.get("link") or "").netloc.lower()
     if host.endswith(".ch") or host.endswith(".swiss"):
         return True
@@ -651,6 +674,188 @@ def week_still_running(outdir: str, today: dt.date | None = None) -> bool:
               f"rebuild anyway.", file=sys.stderr)
         return True
     return False
+
+
+def render_news_html(known: dict, now: dt.datetime | None = None) -> str:
+    """Everything Swiss the tracker has ever seen, not only the money.
+
+    The database answers "which rounds closed". This answers "what happened":
+    a grant, a professor's result, a spin-off, a product launch and a Series B
+    all count as Swiss DeepTech news, and only the last of them is a round.
+    Nothing here is filtered for being a financing story.
+    """
+    import corrections as _corrections
+
+    now = now or _zurich_now()
+    stories = [s for s in known.values()
+               if plausibly_swiss(s)
+               and not _corrections.is_blocked(s.get("company", ""))]
+    stories.sort(key=lambda e: (e.get("published") or e.get("first_seen") or "",
+                                e.get("score") or 0),
+                 reverse=True)
+
+    def when(s):
+        return (s.get("published") or s.get("first_seen") or "").strip()
+
+    sectors = sorted({(s.get("category") or "").strip()
+                      for s in stories if s.get("category")})
+    dates = sorted(d for d in (when(s) for s in stories) if d)
+    first_date, last_date = (dates[0], dates[-1]) if dates else ("", "")
+    rounds = sum(1 for s in stories if _is_round(s))
+
+    items = []
+    for s in stories:
+        date = when(s)
+        title = (s.get("title") or "").strip() or "(untitled)"
+        category = (s.get("category") or "").strip()
+        company = (s.get("company") or "").strip()
+        marks = ""
+        if s.get("posted"):
+            marks += ' <span class="tag posted">posted</span>'
+        if _is_round(s):
+            marks += ' <span class="tag round">round</span>'
+        if (s.get("score") or 0) >= SUBMITTED:
+            marks += ' <span class="tag sent">sent in</span>'
+        shown = dt.date.fromisoformat(date).strftime("%d %b %Y") if date else ""
+        items.append(
+            f'<li data-sector="{html.escape(category)}" '
+            f'data-date="{html.escape(date)}">'
+            f'<a href="{html.escape(s.get("link", ""))}" target="_blank" '
+            f'rel="noopener">{html.escape(title)}</a>{marks}'
+            f'<div class="meta">{html.escape(shown)}'
+            + (f' &middot; {html.escape(s.get("publisher") or "")}'
+               if s.get("publisher") else "")
+            + (f' &middot; <span class="cat">{html.escape(category)}</span>'
+               if category else "")
+            + (f' &middot; {html.escape(company)}' if company else "")
+            + '</div></li>'
+        )
+    body = "\n".join(items) or (
+        '<li class="nd">Nothing recorded yet. The next run will fill this in.</li>')
+    options = "".join(f'<option value="{html.escape(v)}">{html.escape(v)}</option>'
+                      for v in sectors)
+    return f"""<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Swiss DeepTech news</title><meta name="robots" content="noindex">
+<style>
+  :root {{ --green:#46b96a; --ink:#1b2430; --soft:#5b6472; --faint:#9aa3ad;
+          --line:#e6eae8; --bg:#f6f8f7; }}
+  * {{ box-sizing:border-box; margin:0; padding:0; }}
+  body {{ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+         background:var(--bg); color:var(--ink); line-height:1.5; }}
+  .wrap {{ max-width:900px; margin:0 auto; padding:2rem 1rem 4rem; }}
+  h1 {{ font-size:1.6rem; letter-spacing:-0.02em; }} h1 .dot {{ color:var(--green); }}
+  .sub {{ color:var(--soft); margin:0.4rem 0 1rem; font-size:0.9rem; }}
+  .refreshed {{ color:var(--soft); font-size:0.83rem; margin:0 0 1rem;
+               background:#fff; border:1px solid var(--line); border-radius:12px;
+               padding:0.6rem 0.9rem; }}
+  .refreshed b {{ color:var(--ink); }}
+  .controls {{ display:flex; gap:0.6rem; align-items:center; margin-bottom:1rem;
+              flex-wrap:wrap; }}
+  .controls input[type=text] {{ flex:1 1 14rem; min-width:11rem; padding:0.7rem 0.9rem;
+    border:1px solid var(--line); border-radius:10px; font-size:1rem; }}
+  .controls select, .controls input[type=date] {{ font-size:0.85rem;
+    padding:0.55rem 0.6rem; border:1px solid var(--line); border-radius:10px;
+    background:#fff; color:var(--ink); font-family:inherit; }}
+  .dates {{ display:flex; align-items:center; gap:0.35rem; font-size:0.8rem;
+           color:var(--soft); background:#fff; border:1px solid var(--line);
+           border-radius:10px; padding:0 0 0 0.6rem; white-space:nowrap; }}
+  .dates input[type=date] {{ border:none; padding:0.55rem 0.4rem; }}
+  .clear {{ font-size:0.85rem; font-family:inherit; color:var(--soft);
+           background:#fff; border:1px solid var(--line); border-radius:10px;
+           padding:0.58rem 0.9rem; cursor:pointer; }}
+  .clear:hover {{ color:var(--green); border-color:var(--green); }}
+  .live {{ color:var(--soft); font-size:0.82rem; white-space:nowrap; }}
+  ul {{ list-style:none; background:#fff; border:1px solid var(--line);
+       border-radius:14px; overflow:hidden; }}
+  li {{ padding:0.8rem 1rem; border-bottom:1px solid var(--line); }}
+  li:last-child {{ border-bottom:none; }}
+  li a {{ color:var(--ink); text-decoration:none; font-weight:600; }}
+  li a:hover {{ color:var(--green); }}
+  .meta {{ color:var(--soft); font-size:0.82rem; margin-top:0.2rem; }}
+  .cat {{ background:#eef4f0; color:#2f6b46; border-radius:6px;
+         padding:0.05rem 0.4rem; font-size:0.74rem; font-weight:600; }}
+  .tag {{ border-radius:6px; padding:0.05rem 0.4rem; font-size:0.68rem;
+         font-weight:700; vertical-align:middle; margin-left:0.3rem; }}
+  .tag.posted {{ background:var(--green); color:#fff; }}
+  .tag.round {{ background:#eef3f8; color:#4a6b8a; border:1px solid #dde6ef; }}
+  .tag.sent {{ background:#1b2430; color:#fff; }}
+  .nd {{ color:var(--faint); }}
+  .more {{ display:block; width:100%; margin-top:1rem; font-family:inherit;
+          font-size:0.9rem; font-weight:600; color:var(--ink); background:#fff;
+          border:1px solid var(--line); border-radius:12px; padding:0.8rem;
+          cursor:pointer; }}
+  .more:hover {{ border-color:var(--green); color:var(--green); }}
+  a.back {{ color:var(--soft); }} a.back:hover {{ color:var(--green); }}
+  @media (max-width: 760px) {{
+    .wrap {{ padding:1.5rem 0.85rem 3rem; }}
+    .controls select, .controls input, .dates, .clear {{ flex:1 1 45%; }}
+  }}
+</style></head><body>
+<div class="wrap">
+  <h1>Swiss DeepTech news<span class="dot">.</span></h1>
+  <p class="sub">Everything the tracker has found and judged Swiss, newest first:
+  rounds, grants, research results, spin-offs and launches alike. {rounds} of
+  these {len(stories)} report a financing round; those are merged, one row per
+  round, in <a href="/digest/archive.html">the database &rarr;</a></p>
+  <p class="refreshed"><b>Refreshed {now.strftime('%d %B %Y at %H:%M')}</b>
+  &middot; {len(stories)} stories on record, back to
+  {dt.date.fromisoformat(first_date).strftime('%d %B %Y') if first_date else 'the first run'}.</p>
+  <div class="controls">
+    <input type="text" id="q" placeholder="Search headline, company, outlet..." oninput="filter()">
+    <select id="sector" onchange="filter()"><option value="">Every sector</option>{options}</select>
+    <label class="dates">from <input type="date" id="from" value="" min="{first_date}" max="{last_date}" onchange="filter()"></label>
+    <label class="dates">to <input type="date" id="to" value="" min="{first_date}" max="{last_date}" onchange="filter()"></label>
+    <button type="button" class="clear" onclick="clearAll()">Clear</button>
+    <span class="live" id="count"></span>
+  </div>
+  <ul id="rows">
+{body}
+  </ul>
+  <button type="button" class="more" id="more" onclick="showMore()" hidden></button>
+</div>
+<script>
+  function val(id) {{ return document.getElementById(id).value; }}
+  var PAGE = 25, shown_upto = PAGE;
+
+  function filter(reset) {{
+    if (reset !== false) shown_upto = PAGE;
+    var q = val('q').toLowerCase(), sector = val('sector');
+    var from = val('from'), to = val('to');
+    var rows = document.querySelectorAll('#rows li');
+    var shown = 0;
+    for (var i = 0; i < rows.length; i++) {{
+      var row = rows[i];
+      var date = row.getAttribute('data-date') || '';
+      var ok = row.innerText.toLowerCase().indexOf(q) > -1
+        && (!sector || row.getAttribute('data-sector') === sector)
+        && (!from || (date && date >= from))
+        && (!to || (date && date <= to));
+      if (ok) shown++;
+      row.style.display = (ok && shown <= shown_upto) ? '' : 'none';
+    }}
+    var more = document.getElementById('more');
+    var left = shown - shown_upto;
+    more.hidden = left <= 0;
+    more.textContent = 'Show ' + Math.min(left, PAGE) + ' more of ' + shown;
+    document.getElementById('count').textContent =
+      shown + ' stor' + (shown === 1 ? 'y' : 'ies');
+  }}
+
+  function showMore() {{ shown_upto += PAGE; filter(false); return false; }}
+
+  function clearAll() {{
+    ['q', 'sector', 'from', 'to'].forEach(function (id) {{
+      document.getElementById(id).value = '';
+    }});
+    filter();
+  }}
+
+  filter();
+</script>
+</body></html>
+"""
 
 
 def _zurich_now() -> dt.datetime:
@@ -771,6 +976,7 @@ def render_archive_html(known: dict, now: dt.datetime | None = None,
             '<a href="/reports/">Monthly reports &rarr;</a> '
             f'<span title="Kept in archive.json, which is the raw record">{hidden} '
             'non-financing stories are held back.</span> '
+            f'<a href="/digest/all.html">All Swiss news &rarr;</a> '
             f'<a href="/digest/held.html">{foreign} rounds held back for a '
             'foreign headquarters &rarr;</a>'
         )
@@ -1944,6 +2150,9 @@ def build_archive(articles: list, picks: list, args) -> None:
     # rather than invisible.
     with open(os.path.join(args.outdir, "held.html"), "w", encoding="utf-8") as f:
         f.write(render_archive_html(known, only="held"))
+    # Everything Swiss, not only the financings: grants, research, launches.
+    with open(os.path.join(args.outdir, "news.html"), "w", encoding="utf-8") as f:
+        f.write(render_news_html(known))
 
     # A month's rounds are worth a page of their own: the table says what
     # happened, the report says what it amounts to.

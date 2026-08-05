@@ -676,6 +676,54 @@ def test_a_round_is_dated_by_the_round_not_by_the_write_up():
         assert useful_note(real) == real, real
 
 
+def test_the_news_page_carries_more_than_the_money():
+    """The database answers which rounds closed; this answers what happened."""
+    import datetime as dt
+
+    known = {
+        "a": {"company": "ZuriQ", "amount": "USD 25.5M", "stage": "Seed",
+              "location": "Zurich", "category": "Quantum",
+              "published": "2026-08-01", "title": "ZuriQ raises $25.5m seed",
+              "link": "https://startupticker.ch/zuriq", "score": 8},
+        # A grant with no figure and a research result are not rounds, and were
+        # therefore invisible: the database is the wrong page to look for them.
+        "b": {"company": "Synhelion", "amount": "", "stage": "Grant",
+              "location": "Zurich", "category": "Cleantech",
+              "published": "2026-07-30", "title": "Synhelion erhält Fördermittel",
+              "link": "https://startupticker.ch/synhelion", "score": 6},
+        "c": {"company": "", "category": "Research", "published": "2026-07-28",
+              "title": "EPFL researchers find a lipid switch blocking anthrax",
+              "link": "https://actu.epfl.ch/anthrax", "score": 8},
+        # And a foreign company covered by a Swiss outlet is not Swiss news.
+        "d": {"company": "Anthropic", "amount": "USD 65.8B", "stage": "Series D",
+              "location": "San Francisco, US", "category": "AI",
+              "published": "2026-08-01", "title": "Global AI funding triples",
+              "link": "https://fintechnews.ch/global-ai-funding", "score": 5},
+    }
+    page = scraper.render_news_html(known, now=dt.datetime(2026, 8, 5, 9, 0))
+
+    assert page.count("<li data-") == 3, "the foreign round should be left out"
+    for kept in ("ZuriQ", "Synhelion", "lipid switch"):
+        assert kept in page, kept
+    assert "Anthropic" not in page
+    # A recorded headquarters settles it whoever published the story.
+    assert scraper.plausibly_swiss(known["d"]) is False
+    assert scraper.plausibly_swiss(known["b"]) is True
+
+    # The round is marked as one, so the two pages stay legible together.
+    assert page.count('class="tag round"') == 1
+    assert "the database" in page
+
+    # A story Max sent in is marked as sent, not scored: the marker is 999 and
+    # printing "relevance 999" beside a dateless row looked like a broken page.
+    sent = dict(known["a"], score=scraper.SUBMITTED)
+    assert scraper._rank(sent) == "sent in"
+    assert scraper._rank({"score": 8}) == "relevance 8"
+    # And a story with no date shows no date rather than the word n/a.
+    assert scraper._meta_line({"publisher": "Startupticker", "date": None,
+                               "score": 999}) == "Startupticker · sent in"
+
+
 def test_what_is_held_back_stays_reviewable():
     """A seat abroad is a judgement call, so it is not deleted, just moved."""
     import datetime as dt
@@ -1345,7 +1393,7 @@ def test_short_week_skips_the_weekend():
 
 # Locking the count means a test appended below the runner, where it would
 # never execute, shows up as a failure rather than as silence. That happened.
-EXPECTED = 62
+EXPECTED = 63
 
 
 if __name__ == "__main__":
