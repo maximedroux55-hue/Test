@@ -1,6 +1,6 @@
 {
   "note": "Every story this tool has seen. Appended to on each run.",
-  "total": 109,
+  "total": 110,
   "posted": 7,
   "stories": [
     {
@@ -223,11 +223,11 @@
         "2026-08-04",
         "2026-08-05"
       ],
-      "title": "Swiss preventive health startup Ahead Health raises $10M for Germany and Netherlands launch - Tech Funding News",
+      "title": "Swiss preventive health startup Ahead Health raises $10M for Germany and Netherlands launch - techfundingnews.com",
       "link": "https://techfundingnews.com/ahead-health-10m-funding-preventive-care-germany-netherlands/",
-      "publisher": "Tech Funding News",
+      "publisher": "techfundingnews.com",
       "published": "2026-07-30",
-      "score": 19,
+      "score": 21,
       "last_seen": "2026-08-05",
       "posted": true,
       "company": "Ahead Health",
@@ -330,9 +330,9 @@
         "2026-08-04",
         "2026-08-05"
       ],
-      "title": "Toronto startup Terminal raises $20-million to become the ‘Switzerland’ of telematics trade - theglobeandmail.com",
+      "title": "Toronto startup Terminal raises $20-million to become the ‘Switzerland’ of telematics trade - The Globe and Mail",
       "link": "https://www.theglobeandmail.com/business/article-toronto-startup-terminal-raises-20-million-telematics-trade/",
-      "publisher": "theglobeandmail.com",
+      "publisher": "The Globe and Mail",
       "published": "2026-07-29",
       "score": 19,
       "last_seen": "2026-08-05",
@@ -407,7 +407,7 @@
       "employees": "",
       "use_of_funds": "Build prototypes, acquire hardware, grow engineering team",
       "customers": "",
-      "website": "",
+      "website": "https://exclaimrobotics.com/",
       "location": "Zurich",
       "legal_seat": "",
       "status": "closed",
@@ -427,7 +427,8 @@
         "founded": "the article",
         "use_of_funds": "the article",
         "location": "the article",
-        "status": "the article"
+        "status": "the article",
+        "website": "Max"
       }
     },
     {
@@ -460,7 +461,7 @@
       "employees": "",
       "use_of_funds": "FDA clearance and US launch of PyCath",
       "customers": "",
-      "website": "",
+      "website": "medyria.com",
       "location": "Winterthur",
       "legal_seat": "",
       "provenance": {
@@ -471,7 +472,7 @@
         "founders": "the article",
         "founded": "the article",
         "use_of_funds": "the article",
-        "location": "the article",
+        "location": "the company's own site",
         "status": "the article"
       },
       "read": true,
@@ -613,7 +614,7 @@
       "employees": "",
       "use_of_funds": "Workspace, robot arms, engineering hiring",
       "customers": "",
-      "website": "",
+      "website": "https://exclaimrobotics.com/",
       "location": "Zurich",
       "legal_seat": "",
       "status": "closed",
@@ -632,7 +633,8 @@
         "founders": "the article",
         "use_of_funds": "the article",
         "location": "the article",
-        "status": "the article"
+        "status": "the article",
+        "website": "Max"
       }
     },
     {
@@ -663,7 +665,7 @@
       "spinoff_origin": "",
       "founded": "2026",
       "employees": "",
-      "use_of_funds": "Buy NVIDIA-based servers operated in Iceland",
+      "use_of_funds": "Buy NVIDIA servers, operate in Iceland",
       "customers": "",
       "website": "",
       "location": "Pfäffikon",
@@ -718,7 +720,7 @@
       "employees": "",
       "use_of_funds": "Build prototypes, acquire hardware, grow engineering team",
       "customers": "",
-      "website": "",
+      "website": "https://exclaimrobotics.com/",
       "location": "Zurich",
       "legal_seat": "",
       "status": "closed",
@@ -738,7 +740,53 @@
         "founded": "the article",
         "use_of_funds": "the article",
         "location": "the article",
-        "status": "the article"
+        "status": "the article",
+        "website": "Max"
+      }
+    },
+    {
+      "key": "usine-digitale.fr/intelligence-artificielle/robotique/avec-ses-robots-mobiles-la-start-up-suisse-exclaim-robotics-veut-automatiser-la-maintenance-des-data-centers-pour-lia.v3o5ngkrsnarnep7jyu77hddlq.html",
+      "first_seen": "2026-08-05",
+      "runs": [
+        "2026-08-05"
+      ],
+      "title": "Avec ses robots mobiles, la start-up suisse Exclaim Robotics veut automatiser la maintenance des data centers pour l’IA - L'Usine Digitale",
+      "link": "https://www.usine-digitale.fr/intelligence-artificielle/robotique/avec-ses-robots-mobiles-la-start-up-suisse-exclaim-robotics-veut-automatiser-la-maintenance-des-data-centers-pour-lia.V3O5NGKRSNARNEP7JYU77HDDLQ.html",
+      "publisher": "L'Usine Digitale",
+      "published": "2026-08-05",
+      "score": 12,
+      "last_seen": "2026-08-05",
+      "posted": false,
+      "read": true,
+      "company": "Exclaim Robotics",
+      "description": "Mobile robots automating data center maintenance for AI",
+      "category": "Robotics",
+      "stage": "",
+      "amount": "",
+      "total_raised": "",
+      "valuation": "",
+      "lead_investor": "",
+      "investors": "",
+      "founders": "",
+      "spinoff_origin": "",
+      "founded": "",
+      "employees": "",
+      "use_of_funds": "",
+      "customers": "",
+      "website": "https://exclaimrobotics.com/",
+      "location": "",
+      "legal_seat": "",
+      "status": "closed",
+      "amount_note": "",
+      "verified": "",
+      "verified_source": "",
+      "startupticker_url": "",
+      "provenance": {
+        "company": "the article",
+        "description": "the article",
+        "category": "the article",
+        "status": "the article",
+        "website": "Max"
       }
     },
     {
