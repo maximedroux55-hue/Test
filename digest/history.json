@@ -253,6 +253,92 @@
         "proptech",
         "wachstumskurs"
       ]
+    },
+    {
+      "used": "2026-08-05",
+      "title": "Exclaim Robotics raises USD 4.95 million for data centre repair robots",
+      "link": "https://www.startupticker.ch/en/news/exclaim-robotics-raises-eur-4-29-million-for-data-centre-repair-robots",
+      "coverage_url": null,
+      "norm": "exclaim robotics raises usd 495 million for data centre repair robots",
+      "kw": [
+        "centre",
+        "data",
+        "exclaim",
+        "repair",
+        "robotics",
+        "robots"
+      ],
+      "rare": [
+        "centre",
+        "repair",
+        "robots"
+      ]
+    },
+    {
+      "used": "2026-08-05",
+      "title": "Swiss Startup Exclaim Robotics Emerges From Stealth With Nearly $5M in Funding for AI Data Center Robotics - AI Insider",
+      "link": "https://theaiinsider.tech/2026/08/04/swiss-startup-exclaim-robotics-emerges-from-stealth-with-nearly-5m-in-funding-for-ai-data-center-robotics/",
+      "coverage_url": null,
+      "norm": "swiss startup exclaim robotics emerges from stealth with nearly 5m in funding for ai data center robotics",
+      "kw": [
+        "center",
+        "data",
+        "emerges",
+        "exclaim",
+        "nearly",
+        "robotics",
+        "stealth"
+      ],
+      "rare": [
+        "center",
+        "emerges",
+        "nearly",
+        "stealth"
+      ]
+    },
+    {
+      "used": "2026-08-05",
+      "title": "Delta Capacity completes Swedish battery project",
+      "link": "https://www.startupticker.ch/en/news/delta-capacity-completes-swedish-battery-project",
+      "coverage_url": null,
+      "norm": "delta capacity completes swedish battery project",
+      "kw": [
+        "battery",
+        "capacity",
+        "completes",
+        "delta",
+        "project",
+        "swedish"
+      ],
+      "rare": [
+        "battery",
+        "capacity",
+        "completes",
+        "delta",
+        "project",
+        "swedish"
+      ]
+    },
+    {
+      "used": "2026-08-05",
+      "title": "Synhelion erhält Fördermittel für kommerzielle Demo-Anlage",
+      "link": "https://www.startupticker.ch/en/news/synhelion-erhaelt-foerdermittel-fuer-kommerzielle-demo-anlage",
+      "coverage_url": null,
+      "norm": "synhelion erhlt frdermittel fr kommerzielle demoanlage",
+      "kw": [
+        "demoanlage",
+        "erhlt",
+        "frdermittel",
+        "kommerzielle",
+        "synhelion"
+      ],
+      "rare": [
+        "demoanlage",
+        "erhlt",
+        "frdermittel",
+        "kommerzielle",
+        "synhelion"
+      ]
     }
   ]
 }

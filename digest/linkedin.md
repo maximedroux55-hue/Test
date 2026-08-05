@@ -1,5 +1,5 @@
 # Climb Ventures LinkedIn plan for the week
-_Generated 04 August 2026. 5 posts, one per working day, weekend left blank, from Swiss DeepTech news of the last 10 days. Written by Claude in Max's voice. Schedule each for 08:00 on its day. Review and edit before posting._
+_Generated 05 August 2026. 4 posts, one per working day, weekend left blank, from Swiss DeepTech news of the last 10 days. Written by Claude in Max's voice. Schedule each for 08:00 on its day. Review and edit before posting._
 
 ## Publish with Claude Cowork
 Paste this into Cowork to schedule the whole week in one go (it reads the structured file `digest/posts.json` next to this one):
@@ -41,93 +41,75 @@ Report what was scheduled and what was held.
 
 The posts themselves are below, for review before you run it.
 
-## Post 1 — schedule for Wednesday 05 August at 08:00
+## Post 1 — schedule for Thursday 06 August at 08:00
 
 ```
-🇨🇭 Swiss medtechs clear regulatory and clinical hurdles
+🇨🇭 Swiss robots take on data centre repairs
 
-@ABILITY Neurotech has completed the first-in-human procedure for its brain-computer interface, while Hi-D Imaging won expanded FDA clearance for AI-driven heart-valve planning. Arcoris bio signed a distribution deal covering Europe and North America, and Alivion published supporting platform data, per Startupticker.
+@Exclaim Robotics, based in Zurich, has emerged from stealth to build autonomous mobile robots that handle routine repair and maintenance work inside AI data centres. The team is now building its first prototypes and hiring engineers.
 
 Why it matters:
-🧠 First-in-human data is the hardest milestone to fake
-🇺🇸 FDA clearance opens the largest medtech market fast
-🇨🇭 Four Swiss companies crossing thresholds in a single week
+🤖 Data centre maintenance is labour-constrained and growing fast
+⚡ AI buildout creates hardware failures faster than technicians can fix
+🇨🇭 Zurich robotics talent aimed at global infrastructure demand
 
-Milestones, not announcements, are what separate Swiss medtech from the noise.
+Robotics finds its market where scale breaks human process, and AI infrastructure is exactly that.
 
-https://www.startupticker.ch/en/news/four-swiss-medtechs-mark-commercial-regulatory-and-clinical-milestones
+https://www.startupticker.ch/en/news/exclaim-robotics-raises-eur-4-29-million-for-data-centre-repair-robots
 ```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/bilder/immunoMUSE-Amplify-scaled-e1779091337103-small.jpg
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/DSCF6850-srgb-fulljpg.jpg
 
-## Post 2 — schedule for Thursday 06 August at 08:00
+## Post 2 — schedule for Friday 07 August at 08:00
 
 ```
-🇨🇭 Swiss neutrality cuts both ways in AI
+🇨🇭 Swiss robotics startup exits stealth for data centres
 
-@SWI swissinfo.ch argues that Switzerland's neutrality is a double-edged sword in the global AI race: trusted ground for data, governance and multilateral talks, but a country outside the US and China compute blocs and the EU's regulatory bloc.
+@Exclaim Robotics has come out of stealth with autonomous robots designed for AI data centre operations, according to AI Insider. The Zurich company targets the repetitive physical work that keeps racks running as compute capacity expands worldwide.
 
 Why it matters:
-🤝 Neutral ground attracts governance bodies and sensitive data workloads
-⚡ Compute access still depends on foreign chips and clouds
-🇨🇭 Swiss AI credibility rests on trust, not scale
+🏗️ AI compute growth outpaces available service technicians
+🔧 Physical automation moves from factories into digital infrastructure
+🇨🇭 Swiss engineering entering a hyperscale hardware market
 
-Neutrality is an asset only if the underlying compute and talent stay domestic.
+The less glamorous layer of the AI stack may prove the most defensible place to build.
 
-https://www.swissinfo.ch/eng/foreign-affairs/swiss-neutrality-is-double-edged-sword-in-ai-arms-race/91784797
-```
-🖼️ **Article image:** https://www.swissinfo.ch/content/wp-content/uploads/sites/13/2026/07/662478390_highres.jpg?ver=e0a2b121&fit=1200,800
-
-## Post 3 — schedule for Friday 07 August at 08:00
-
-```
-🇨🇭 Swiss AI tool audits CVs at scale
-
-@Humboldt AI, based in St. Gallen, has built an AI platform that reviews and optimises CVs for the Swiss labour market. Since launching in January 2026 it has been used by several thousand people, with first pilot projects running with institutional partners in Switzerland and Liechtenstein.
-
-Why it matters:
-📄 Hiring documents remain a stubbornly manual, local problem
-🏛️ Institutional pilots signal demand beyond consumer users
-🇨🇭 Swiss and Liechtenstein market knowledge is the differentiator
-
-Applied AI wins locally first, where labour market rules are anything but generic.
-
-https://www.startupticker.ch/en/news/humboldt-ai-lanciert-ki-tool-fuer-den-cv-check-im-schweizer-arbeitsmarkt
-```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Humboldt%20AI%20gratis%20CV%20Check%20Preview.png
-
-## Post 4 — schedule for Monday 10 August at 08:00
-
-```
-🇨🇭 Swiss researchers find lipid switch blocking anthrax
-
-A study led by @EPFL shows how a reversible fat-based modification controls CMG2, a protein that binds collagen VI to maintain the extracellular matrix. The same switch governs a rare genetic disease and the route anthrax toxin uses to enter cells.
-
-Why it matters:
-🧬 One protein links tissue health, rare disease and toxins
-🔬 Reversible modifications are attractive, tunable drug targets
-🇨🇭 Swiss basic biology feeding future therapeutic pipelines
-
-The most valuable Swiss science often starts as a mechanism nobody was looking to monetise.
-
-https://actu.epfl.ch/news/a-lipid-switch-that-blocks-anthrax
+https://theaiinsider.tech/2026/08/04/swiss-startup-exclaim-robotics-emerges-from-stealth-with-nearly-5m-in-funding-for-ai-data-center-robotics/
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## Post 5 — schedule for Tuesday 11 August at 08:00
+## Post 3 — schedule for Monday 10 August at 08:00
 
 ```
-🇨🇭 Swiss proptech signs Implenia and Avadis
+🇨🇭 Swiss firm switches on Nordics' largest battery
 
-@AssetOS, an HSG spin-off, has built an AI platform helping professional real estate investors capture, analyse and audit income-producing properties. Founded in late 2024 and live since summer 2025, it already counts Implenia and Avadis among its customers.
+@Delta Capacity has brought a 70 MW / 160 MWh battery energy storage system into commercial operation in Ånge, central Sweden. The company says it is the largest battery storage project currently running in the Nordics.
 
 Why it matters:
-🏢 Blue-chip real estate names validate the workflow early
-⏱️ Twelve months from go-live to reference clients
-🇨🇭 Swiss university spin-off selling into a conservative industry
+🔋 160 MWh of flexibility for a volatile power market
+🌍 Swiss developers exporting grid infrastructure across Europe
+🇨🇭 From engineering plans to commercial operation, not pilots
 
-Selling software to Swiss real estate is slow work, which is exactly why early logos count.
+Energy storage rewards execution, and this one moved from drawing board to live asset.
 
-https://www.startupticker.ch/en/news/proptech-assetos-auf-wachstumskurs
+https://www.startupticker.ch/en/news/delta-capacity-completes-swedish-battery-project
 ```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/AssetOS%20Lo%CC%88sung.jpg
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Sungrow_Delta_AngeBESS.jpg
+
+## Post 4 — schedule for Tuesday 11 August at 08:00
+
+```
+🇨🇭 Swiss solar fuels project wins German backing
+
+@Synhelion, the ETH Zurich spin-off producing fuel from concentrated solar heat, has been selected among nine sustainable key-technology projects under North Rhine-Westphalia's Produktives.NRW programme, which allocates around 90 million euros in total. The support funds its next scaling step toward a commercial demonstration plant.
+
+Why it matters:
+☀️ Solar heat replaces fossil inputs in fuel production
+✈️ Aviation needs drop-in fuels, not new engines
+🇨🇭 Swiss cleantech scaling with German industrial funding
+
+When foreign governments co-finance your factory, the technology has left the lab for good.
+
+https://www.startupticker.ch/en/news/synhelion-erhaelt-foerdermittel-fuer-kommerzielle-demo-anlage
+```
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/synhelions-industrial-scale-plant-dawn.jpg
 
