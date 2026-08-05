@@ -3,7 +3,7 @@
   "note": "Rounds worth checking against a primary source.",
   "how_to_report": "For each round below, find the primary source: the company's own release, the filing, or the outlet that reported it first. Check the four things that have actually been wrong. Has the transaction closed, or is it announced, in progress, or subject to approval? Is the label right, where a first listing is an IPO, an already listed company selling shares is a Follow-on, a merger with a listed shell is a De-SPAC, and a purchase is an Acquisition rather than a round? Is the figure money received, or a ceiling, a gross, or a target? And did the named investors take part in THIS round, rather than an earlier one?\n\nReport back as entries for corrections.json, keyed on the company name, setting only the fields that are wrong. Add \"verified\" with today's date and \"verified_source\" naming what you read. An empty string clears a wrong value. For example:\n\n  \"Prem\": {\n    \"status\": \"announced\",\n    \"amount_note\": \"raising, expected to close in Q3\",\n    \"investors\": \"\",\n    \"verified\": \"2026-08-03\",\n    \"verified_source\": \"Bloomberg, 18 June 2026\"\n  }\n\nWhere a round checks out, still send back \"verified\" and \"verified_source\" so it is not queued again. Say plainly when a primary source cannot be found: an unverifiable round should stay unverified rather than be marked correct.",
   "corrections_file": "deeptech-news/corrections.json",
-  "count": 5,
+  "count": 6,
   "rounds": [
     {
       "company": "Terra Quantum",
@@ -54,6 +54,28 @@
       "last_verified": "2026-08-03"
     },
     {
+      "company": "AI Infrastructure Capital",
+      "as_recorded": {
+        "stage": "",
+        "amount": "USD 16M",
+        "amount_note": "approximately",
+        "status": "closed",
+        "investors": "VALYOU-Anlagestiftung, Valyou investment foundation",
+        "date": "2026-08-04",
+        "hq": "Pfäffikon"
+      },
+      "check": [
+        "CHF 12.8M is large enough that an error moves the totals",
+        "the figure carries a condition (approximately): is it the amount actually raised"
+      ],
+      "sources": [
+        "Startupticker",
+        "EU-Startups"
+      ],
+      "link": "https://www.startupticker.ch/en/news/ai-infrastructure-capital-startet-mit-16-millionen-us-dollar",
+      "last_verified": ""
+    },
+    {
       "company": "Ahead Health",
       "as_recorded": {
         "stage": "Seed",
@@ -69,7 +91,7 @@
       ],
       "sources": [
         "Startupticker",
-        "Tech Funding News"
+        "techfundingnews.com"
       ],
       "link": "https://www.startupticker.ch/en/news/ahead-health-raises-usd-10-million-and-opens-first-markets-outside-switzerland",
       "last_verified": ""

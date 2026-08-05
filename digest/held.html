@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Held back</title><meta name="robots" content="noindex">
+<style>
+  :root { --green:#46b96a; --ink:#1b2430; --soft:#5b6472; --faint:#9aa3ad;
+          --line:#e6eae8; --bg:#f6f8f7; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+         background:var(--bg); color:var(--ink); line-height:1.5; }
+  .wrap { max-width:1500px; margin:0 auto; padding:2rem 1rem 4rem; }
+  h1 { font-size:1.6rem; letter-spacing:-0.02em; } h1 .dot { color:var(--green); }
+  .sub { color:var(--soft); margin:0.4rem 0 1rem; font-size:0.9rem; }
+  .stats { display:flex; flex-wrap:wrap; gap:0.6rem; margin:0 0 1rem; }
+  .stat { background:#fff; border:1px solid var(--line); border-radius:12px;
+          padding:0.55rem 0.9rem; flex:1 1 auto; min-width:110px; }
+  .stat b { display:block; font-size:1.25rem; letter-spacing:-0.02em; }
+  .stat span { color:var(--soft); font-size:0.74rem; text-transform:uppercase;
+               letter-spacing:0.04em; }
+  input { width:100%; padding:0.7rem 0.9rem; border:1px solid var(--line);
+          border-radius:10px; font-size:1rem; margin-bottom:1rem; }
+  .box { background:#fff; border:1px solid var(--line); border-radius:14px; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:0.85rem;
+          min-width:1180px; }
+  th, td { text-align:left; padding:0.6rem 0.7rem; border-bottom:1px solid var(--line);
+           vertical-align:top; }
+  th { color:var(--soft); font-size:0.72rem; text-transform:uppercase;
+       letter-spacing:0.04em; white-space:nowrap; position:sticky; top:0;
+       background:#fff; z-index:1; }
+  tr:last-child td { border-bottom:none; }
+  td.co { font-weight:600; min-width:9rem; }
+  td.desc { color:var(--soft); min-width:15rem; max-width:20rem; }
+  td.inv { color:var(--soft); min-width:12rem; max-width:17rem; }
+  td.fnd { color:var(--soft); min-width:9rem; max-width:12rem; }
+  td.org { color:var(--soft); white-space:nowrap; }
+  td.amt { color:var(--ink); font-weight:600; white-space:nowrap; }
+  td.loc, td.d { color:var(--soft); white-space:nowrap; }
+  a { color:var(--ink); text-decoration:none; } a:hover { color:var(--green); }
+  .nd { color:var(--faint); font-weight:400; font-size:0.82rem; }
+  .tag.posted { background:var(--green); color:#fff; border-radius:6px;
+                padding:0.05rem 0.4rem; font-size:0.7rem; font-weight:700;
+                vertical-align:middle; }
+  .tag.abroad { background:#f3f0ea; color:#8a6d3b; border:1px solid #e6ddcc;
+                border-radius:6px; padding:0.05rem 0.4rem; font-size:0.7rem;
+                font-weight:700; vertical-align:middle; }
+  .tag.sources { background:#eef3f8; color:#4a6b8a; border:1px solid #dde6ef;
+                 border-radius:6px; padding:0.05rem 0.4rem; font-size:0.7rem;
+                 font-weight:700; vertical-align:middle; }
+  .tag.fresh { background:#1b2430; color:#fff; border-radius:6px;
+               padding:0.05rem 0.4rem; font-size:0.7rem; font-weight:700;
+               vertical-align:middle; letter-spacing:0.02em; }
+  .refreshed { color:var(--soft); font-size:0.83rem; margin:0 0 1rem;
+               background:#fff; border:1px solid var(--line); border-radius:12px;
+               padding:0.6rem 0.9rem; }
+  .refreshed b { color:var(--ink); }
+
+  /* Typing in a fact the scraper could not find. */
+  .fix { margin-left:0.4rem; font-family:inherit; font-size:0.78rem;
+         font-weight:700; line-height:1; color:var(--soft); background:#fff;
+         border:1px solid var(--line); border-radius:6px; padding:0.15rem 0.4rem;
+         cursor:pointer; vertical-align:middle; }
+  .fix:hover { color:var(--green); border-color:var(--green); }
+  .sheet { position:fixed; inset:0; background:rgba(27,36,48,0.45);
+           display:flex; align-items:flex-end; justify-content:center;
+           z-index:20; }
+  .sheet[hidden] { display:none; }
+  .sheetbox { background:var(--bg); width:100%; max-width:620px;
+              max-height:92vh; overflow-y:auto; border-radius:18px 18px 0 0;
+              padding:1.2rem 1.1rem 1.6rem; }
+  .sheetbox h2 { font-size:1.25rem; letter-spacing:-0.02em; }
+  .sheetnote { color:var(--soft); font-size:0.8rem; margin:0.4rem 0 0.9rem; }
+  .field { display:flex; align-items:center; gap:0.6rem; background:#fff;
+           border:1px solid var(--line); border-radius:10px; padding:0.4rem 0.7rem;
+           margin-bottom:0.4rem; }
+  .field span { flex:0 0 7.5rem; color:var(--soft); font-size:0.72rem;
+                text-transform:uppercase; letter-spacing:0.04em; }
+  .field input { flex:1 1 auto; border:none; padding:0.3rem 0; margin:0;
+                 font-size:0.92rem; background:none; }
+  .field input:focus { outline:none; }
+  .field.missing { border-style:dashed; }
+  .field.missing span { color:var(--faint); }
+  .sheetacts { display:flex; gap:0.5rem; flex-wrap:wrap; margin:0.9rem 0 0.6rem; }
+  .btn { font-family:inherit; font-size:0.88rem; font-weight:600; color:#fff;
+         background:var(--ink); border:1px solid var(--ink); border-radius:10px;
+         padding:0.6rem 0.9rem; cursor:pointer; text-decoration:none;
+         display:inline-block; }
+  .btn:hover { background:var(--green); border-color:var(--green); color:#fff; }
+  .btn:disabled { background:#fff; color:var(--faint); border-color:var(--line);
+                  cursor:default; }
+  .fallback { margin-top:0.5rem; }
+  .fallback summary { color:var(--soft); font-size:0.8rem; cursor:pointer;
+                      padding:0.35rem 0; }
+  #out { width:100%; height:8rem; font-family:ui-monospace,Menlo,Consolas,monospace;
+         font-size:0.72rem; color:var(--soft); border:1px solid var(--line);
+         border-radius:10px; padding:0.6rem; background:#fff; }
+  .cat { background:#eef4f0; color:#2f6b46; border-radius:6px;
+         padding:0.1rem 0.45rem; font-size:0.76rem; font-weight:600;
+         white-space:nowrap; }
+  .stage { border:1px solid var(--line); border-radius:6px; padding:0.1rem 0.45rem;
+           font-size:0.76rem; font-weight:600; white-space:nowrap; }
+  .total { display:block; color:var(--soft); font-size:0.72rem; font-weight:500; }
+  .pending { display:block; margin-top:0.2rem; background:#fdf3e3; color:#8a6d3b;
+             border-radius:5px; padding:0.02rem 0.3rem; font-size:0.66rem;
+             font-weight:700; text-transform:uppercase; letter-spacing:0.03em; }
+  .checked { display:block; margin-top:0.2rem; color:#2f6b46; background:#eef4f0;
+             border-radius:5px; padding:0.02rem 0.3rem; font-size:0.66rem;
+             font-weight:700; text-transform:uppercase; letter-spacing:0.03em; }
+  .nondil { display:block; margin-top:0.2rem; color:#4a6b8a; background:#eef3f8;
+            border-radius:5px; padding:0.02rem 0.3rem; font-size:0.66rem;
+            font-weight:700; text-transform:uppercase; letter-spacing:0.03em; }
+  .foreign { background:#f3f0ea; color:#8a6d3b; border-radius:5px;
+             padding:0.02rem 0.3rem; font-size:0.68rem; font-weight:700; }
+  .controls { display:flex; gap:0.6rem; align-items:center; margin-bottom:1rem;
+              flex-wrap:wrap; }
+  .controls input[type=text] { flex:1 1 14rem; margin:0; min-width:11rem; }
+  .controls select, .controls input[type=date] { font-size:0.85rem;
+    padding:0.55rem 0.6rem; border:1px solid var(--line); border-radius:10px;
+    background:#fff; color:var(--ink); font-family:inherit; }
+  .dates { display:flex; align-items:center; gap:0.35rem; font-size:0.8rem;
+           color:var(--soft); background:#fff; border:1px solid var(--line);
+           border-radius:10px; padding:0 0 0 0.6rem; white-space:nowrap; }
+  .dates input[type=date] { border:none; padding:0.55rem 0.4rem; }
+  .clear { font-size:0.85rem; font-family:inherit; color:var(--soft);
+           background:#fff; border:1px solid var(--line); border-radius:10px;
+           padding:0.58rem 0.9rem; cursor:pointer; }
+  .clear:hover { color:var(--green); border-color:var(--green); }
+  th { cursor:pointer; user-select:none; }
+  th:hover { color:var(--green); }
+  th.up::after { content:" \2191"; color:var(--green); }
+  th.down::after { content:" \2193"; color:var(--green); }
+  .note { color:var(--faint); font-size:0.76rem; margin-top:0.8rem; }
+  .live { color:var(--soft); font-size:0.82rem; white-space:nowrap; }
+  .more { display:block; width:100%; margin-top:1rem; font-family:inherit;
+          font-size:0.9rem; font-weight:600; color:var(--ink); background:#fff;
+          border:1px solid var(--line); border-radius:12px; padding:0.8rem;
+          cursor:pointer; }
+  .more:hover { border-color:var(--green); color:var(--green); }
+
+  /* A ten column table does not fit a phone, so each round becomes a card and
+     every value carries its own label. Empty facts are dropped rather than
+     shown as a dot, which on a narrow screen is just a wasted line. */
+  @media (max-width: 760px) {
+    .wrap { padding:1.5rem 0.85rem 3rem; }
+    .box { border:none; background:none; border-radius:0; }
+    table, tbody, tr, td { display:block; width:100%; }
+    table { min-width:0; }
+    thead { display:none; }
+    tr { background:#fff; border:1px solid var(--line); border-radius:14px;
+         padding:0.85rem 1rem; margin-bottom:0.7rem; }
+    td { border:none; padding:0.12rem 0; display:flex; gap:0.6rem;
+         align-items:baseline; }
+    td.empty { display:none; }
+    td::before { content:attr(data-label); flex:0 0 5.4rem; color:var(--faint);
+                 font-size:0.68rem; text-transform:uppercase;
+                 letter-spacing:0.04em; padding-top:0.15rem; }
+    td.co { font-size:1.05rem; margin-bottom:0.1rem; }
+    td.co::before, td.desc::before { display:none; }
+    td.desc { color:var(--soft); margin-bottom:0.5rem; }
+    td.amt { font-size:1rem; }
+    .stats { gap:0.4rem; }
+    .stat { min-width:0; flex:1 1 30%; padding:0.5rem 0.6rem; }
+    .stat b { font-size:1.1rem; }
+    .controls select, .controls input, .dates, .clear { flex:1 1 45%; }
+  }
+</style></head><body>
+<div class="wrap">
+  <h1>Held back<span class="dot">.</span></h1>
+  <p class="sub">Rounds kept off the database because the headquarters on record is not in Switzerland. A seat abroad is not always a foreign company, so nothing here is thrown away: correct the HQ with the <b>+</b> and the round joins the database on the next run. 1 more were ruled out by name in corrections.json. <a href="/digest/archive.html">&larr; Back to the database</a></p>
+  <p class="refreshed"><b>Refreshed 05 August 2026 at 12:42</b> &middot; 1 round added today &middot;
+  1 in the last 7 days. The database runs every morning, so a day with
+  nothing new means the news was quiet, not that it stopped.</p>
+  <div class="stats">
+    <div class="stat"><b>6</b><span>rounds</span></div>
+    <div class="stat"><b>1</b><span>added today</span></div>
+    <div class="stat"><b>CHF 52.9B</b><span>tracked</span></div>
+    <div class="stat"><b>3</b><span>with a city</span></div>
+    <div class="stat"><b>0</b><span>announced, uncounted</span></div>
+    <div class="stat"><b>3</b><span>with investors</span></div>
+    <div class="stat"><b>4</b><span>with founders</span></div>
+    <div class="stat"><b>0</b><span>posted</span></div>
+  </div>
+  <div class="controls">
+    <input type="text" id="q" placeholder="Search company, investor, founder..." oninput="filter()">
+    <select id="added" onchange="filter()">
+      <option value="">Added any time</option>
+      <option value="new">Just added (1)</option>
+      <option value="week">Added in the last 7 days</option>
+      <option value="month">Added in the last 30 days</option>
+    </select>
+    <select id="sector" onchange="filter()"><option value="">Every sector</option><option value="AI">AI</option><option value="Materials">Materials</option><option value="Pharma">Pharma</option><option value="Research">Research</option><option value="Software">Software</option></select>
+    <select id="stage" onchange="filter()"><option value="">Every stage</option><option value="Seed">Seed</option><option value="Series A">Series A</option><option value="Series D">Series D</option><option value="Grant">Grant</option></select>
+    <select id="hq" onchange="filter()"><option value="">Everywhere</option><option value="Copenhagen, DK">Copenhagen, DK</option><option value="Leipzig, DE">Leipzig, DE</option><option value="San Francisco, US">San Francisco, US</option></select>
+    <label class="dates">from <input type="date" id="from" value="" min="2026-06-03" max="2026-08-05" onchange="filter()"></label>
+    <label class="dates">to <input type="date" id="to" value="" min="2026-06-03" max="2026-08-05" onchange="filter()"></label>
+    <button type="button" class="clear" onclick="clearAll()">Clear</button>
+    <span class="live" id="count"></span>
+  </div>
+  <div class="box"><table>
+    <thead><tr>
+      <th onclick="sortBy(0,'text')">Company</th>
+      <th onclick="sortBy(1,'text')">What it does</th>
+      <th onclick="sortBy(2,'text')">Sector</th>
+      <th onclick="sortBy(3,'text')">Stage</th>
+      <th onclick="sortBy(4,'chf')">Raised</th>
+      <th onclick="sortBy(5,'text')">Investors</th>
+      <th onclick="sortBy(6,'text')">Founders</th>
+      <th onclick="sortBy(7,'text')">Spin-off</th>
+      <th onclick="sortBy(8,'text')">HQ</th>
+      <th onclick="sortBy(9,'date')">Date</th>
+    </tr></thead>
+    <tbody id="rows">
+<tr data-chf="52640000000" data-sector="AI" data-stage="Series D" data-hq="San Francisco, US" data-added="2026-08-05" data-company="Anthropic" data-swiss="0" data-facts="{&quot;description&quot;: &quot;Developer of Claude AI models and coding assistant Claude Code&quot;, &quot;category&quot;: &quot;AI&quot;, &quot;stage&quot;: &quot;Series D&quot;, &quot;amount&quot;: &quot;USD 65.8B&quot;, &quot;amount_note&quot;: &quot;also cited as US$65 billion Series H&quot;, &quot;lead_investor&quot;: &quot;&quot;, &quot;investors&quot;: &quot;&quot;, &quot;founders&quot;: &quot;&quot;, &quot;spinoff_origin&quot;: &quot;&quot;, &quot;location&quot;: &quot;San Francisco, US&quot;, &quot;legal_seat&quot;: &quot;&quot;, &quot;website&quot;: &quot;anthropic.com&quot;, &quot;founded&quot;: &quot;2021&quot;, &quot;employees&quot;: &quot;&quot;, &quot;total_raised&quot;: &quot;&quot;, &quot;valuation&quot;: &quot;&quot;, &quot;use_of_funds&quot;: &quot;&quot;}" data-date="2026-08-05"><td class="co" data-label="Company"><a href="https://fintechnews.ch/aifintech/global-ai-funding-increases-more-than-3-fold-yoy-led-by-billion-dollar-rounds/84811/" target="_blank" rel="noopener" title="Founded: 2021 · Source: Fintechnews Switzerland">Anthropic</a> <span class="tag abroad" title="Headquarters recorded as San Francisco, US. Shown because a foreign seat does not always mean a foreign company.">foreign HQ</span> <span class="tag fresh" title="Added by the run of 2026-08-05">new</span><button type="button" class="fix" onclick="openFix(this)" title="Add or correct a fact on this round">+</button></td><td class="desc" data-label="What it does">Developer of Claude AI models and coding assistant Claude Code</td><td data-label="Sector"><span class="cat">AI</span></td><td data-label="Stage"><span class="stage">Series D</span></td><td class="amt" data-label="Raised" title="also cited as US$65 billion Series H. Not counted in the total.">also cited as US$65 billion Series H USD 65.8B</td><td class="inv empty" data-label="Investors"><span class="nd">&middot;</span></td><td class="fnd empty" data-label="Founders"><span class="nd">&middot;</span></td><td class="org empty" data-label="Spin-off"><span class="nd">&middot;</span></td><td class="loc" data-label="HQ" title="Source: the article">San Francisco, US</td><td class="d" data-label="Date">2026-08-05</td></tr>
+<tr data-chf="3720000" data-sector="Software" data-stage="Grant" data-hq="Leipzig, DE" data-added="" data-company="Prodlane" data-swiss="0" data-facts="{&quot;description&quot;: &quot;SaaS platform for AI-based traceable industrial project documentation&quot;, &quot;category&quot;: &quot;Software&quot;, &quot;stage&quot;: &quot;Grant&quot;, &quot;amount&quot;: &quot;EUR 4M&quot;, &quot;amount_note&quot;: &quot;up to&quot;, &quot;lead_investor&quot;: &quot;TGFS Technologiegr\u00fcnderfonds Sachsen&quot;, &quot;investors&quot;: &quot;TGFS Technologiegr\u00fcnderfonds Sachsen, SBG - S\u00e4chsische Beteiligungsgesellschaft&quot;, &quot;founders&quot;: &quot;Carolin Maier, Moritz von Hammerstein, Mathias Jakob&quot;, &quot;spinoff_origin&quot;: &quot;University of St. Gallen&quot;, &quot;location&quot;: &quot;Leipzig, DE&quot;, &quot;legal_seat&quot;: &quot;&quot;, &quot;website&quot;: &quot;molesense.ch&quot;, &quot;founded&quot;: &quot;2021&quot;, &quot;employees&quot;: &quot;15&quot;, &quot;total_raised&quot;: &quot;&quot;, &quot;valuation&quot;: &quot;&quot;, &quot;use_of_funds&quot;: &quot;Expand development, sales and marketing teams; DACH growth&quot;}" data-date="2026-07-24"><td class="co" data-label="Company"><a href="https://www.startupticker.ch/en/news/molesense-and-impli-selcted-for-sprind-challenge-on-continuous-hormone-monitoring" target="_blank" rel="noopener" title="Founded: 2021 · Staff: 15 · Use of funds: Expand development, sales and marketing teams; DACH growth · Source: Startupticker, SWI swissinfo.ch">Prodlane</a> <span class="tag abroad" title="Headquarters recorded as Leipzig, DE. Shown because a foreign seat does not always mean a foreign company.">foreign HQ</span> <span class="tag sources" title="Covered by Startupticker, SWI swissinfo.ch. Coverage, not a check against a primary source.">2 sources</span><button type="button" class="fix" onclick="openFix(this)" title="Add or correct a fact on this round">+</button></td><td class="desc" data-label="What it does">SaaS platform for AI-based traceable industrial project documentation</td><td data-label="Sector"><span class="cat">Software</span></td><td data-label="Stage"><span class="stage">Grant</span><span class="nondil" title="Public or foundation money, not an equity round.">non-dilutive</span></td><td class="amt" data-label="Raised" title="up to. Not counted in the total.">up to EUR 4M</td><td class="inv" data-label="Investors">TGFS Technologiegründerfonds Sachsen, SBG - Sächsische Beteiligungsgesellschaft</td><td class="fnd" data-label="Founders">Carolin Maier, Moritz von Hammerstein, Mathias Jakob</td><td class="org" data-label="Spin-off">University of St. Gallen</td><td class="loc" data-label="HQ" title="Source: the article">Leipzig, DE</td><td class="d" data-label="Date">2026-07-24</td></tr>
+<tr data-chf="16000000" data-sector="AI" data-stage="Seed" data-hq="" data-added="" data-company="SkyPilot" data-swiss="0" data-facts="{&quot;description&quot;: &quot;Platform for running AI workloads across any cloud or GPU provider&quot;, &quot;category&quot;: &quot;AI&quot;, &quot;stage&quot;: &quot;Seed&quot;, &quot;amount&quot;: &quot;USD 20M&quot;, &quot;amount_note&quot;: &quot;&quot;, &quot;lead_investor&quot;: &quot;Lux Capital&quot;, &quot;investors&quot;: &quot;Lux Capital, Coatue, Amplify Partners&quot;, &quot;founders&quot;: &quot;Ion Stoica, Zongheng Yang&quot;, &quot;spinoff_origin&quot;: &quot;&quot;, &quot;location&quot;: &quot;&quot;, &quot;legal_seat&quot;: &quot;&quot;, &quot;website&quot;: &quot;&quot;, &quot;founded&quot;: &quot;&quot;, &quot;employees&quot;: &quot;&quot;, &quot;total_raised&quot;: &quot;&quot;, &quot;valuation&quot;: &quot;&quot;, &quot;use_of_funds&quot;: &quot;&quot;}" data-date="2026-07-21"><td class="co" data-label="Company"><a href="https://fortune.com/2026/07/21/skypilot-from-databricks-cofounder-raises-20m-to-be-the-switzerland-of-ai-compute/" target="_blank" rel="noopener" title="Source: Fortune">SkyPilot</a> <span class="tag abroad" title="Headquarters recorded as not Switzerland. Shown because a foreign seat does not always mean a foreign company.">foreign HQ</span><button type="button" class="fix" onclick="openFix(this)" title="Add or correct a fact on this round">+</button></td><td class="desc" data-label="What it does">Platform for running AI workloads across any cloud or GPU provider</td><td data-label="Sector"><span class="cat">AI</span></td><td data-label="Stage"><span class="stage">Seed</span></td><td class="amt" data-label="Raised" title="CHF 16M">USD 20M</td><td class="inv" data-label="Investors">Lux Capital, Coatue, Amplify Partners</td><td class="fnd" data-label="Founders">Ion Stoica, Zongheng Yang</td><td class="org empty" data-label="Spin-off"><span class="nd">&middot;</span></td><td class="loc" data-label="HQ"><span class="nd" title="Swiss company, city not found yet">CH</span></td><td class="d" data-label="Date">2026-07-21</td></tr>
+<tr data-chf="150000000" data-sector="Materials" data-stage="Grant" data-hq="" data-added="" data-company="Foldcast" data-swiss="0" data-facts="{&quot;description&quot;: &quot;Recyclable digitally fabricated paper formwork reducing concrete use&quot;, &quot;category&quot;: &quot;Materials&quot;, &quot;stage&quot;: &quot;Grant&quot;, &quot;amount&quot;: &quot;CHF 150M&quot;, &quot;amount_note&quot;: &quot;&quot;, &quot;lead_investor&quot;: &quot;&quot;, &quot;investors&quot;: &quot;Gebert R\u00fcf Stiftung, InnoBooster&quot;, &quot;founders&quot;: &quot;Ena Lloret-Fritschi, Fabio Amicarelli&quot;, &quot;spinoff_origin&quot;: &quot;USI Academy of Architecture&quot;, &quot;location&quot;: &quot;&quot;, &quot;legal_seat&quot;: &quot;&quot;, &quot;website&quot;: &quot;subatron.com&quot;, &quot;founded&quot;: &quot;&quot;, &quot;employees&quot;: &quot;&quot;, &quot;total_raised&quot;: &quot;&quot;, &quot;valuation&quot;: &quot;&quot;, &quot;use_of_funds&quot;: &quot;Prefabricated fa\u00e7ade system, industrial readiness, market entry&quot;}" data-date="2026-07-01"><td class="co" data-label="Company"><a href="https://www.startupticker.ch/en/news/innobooster-backs-three-deep-tech-startups-with-chf-450-000" target="_blank" rel="noopener" title="Use of funds: Prefabricated façade system, industrial readiness, market entry · Source: Startupticker.ch">Foldcast</a> <span class="tag abroad" title="Headquarters recorded as not Switzerland. Shown because a foreign seat does not always mean a foreign company.">foreign HQ</span><button type="button" class="fix" onclick="openFix(this)" title="Add or correct a fact on this round">+</button></td><td class="desc" data-label="What it does">Recyclable digitally fabricated paper formwork reducing concrete use</td><td data-label="Sector"><span class="cat">Materials</span></td><td data-label="Stage"><span class="stage">Grant</span><span class="nondil" title="Public or foundation money, not an equity round.">non-dilutive</span></td><td class="amt" data-label="Raised" title="CHF 150M">CHF 150M</td><td class="inv" data-label="Investors">Gebert Rüf Stiftung, InnoBooster</td><td class="fnd" data-label="Founders">Ena Lloret-Fritschi, Fabio Amicarelli</td><td class="org" data-label="Spin-off">USI Academy of Architecture</td><td class="loc" data-label="HQ"><span class="nd" title="Swiss company, city not found yet">CH</span></td><td class="d" data-label="Date">2026-07-01</td></tr>
+<tr data-chf="0" data-sector="Research" data-stage="Series A" data-hq="" data-added="" data-company="Deep Tech Nation Switzerland" data-swiss="0" data-facts="{&quot;description&quot;: &quot;Report ranking Switzerland first for deep tech VC share&quot;, &quot;category&quot;: &quot;Research&quot;, &quot;stage&quot;: &quot;Series A&quot;, &quot;amount&quot;: &quot;&quot;, &quot;amount_note&quot;: &quot;&quot;, &quot;lead_investor&quot;: &quot;&quot;, &quot;investors&quot;: &quot;&quot;, &quot;founders&quot;: &quot;&quot;, &quot;spinoff_origin&quot;: &quot;&quot;, &quot;location&quot;: &quot;&quot;, &quot;legal_seat&quot;: &quot;&quot;, &quot;website&quot;: &quot;&quot;, &quot;founded&quot;: &quot;&quot;, &quot;employees&quot;: &quot;&quot;, &quot;total_raised&quot;: &quot;&quot;, &quot;valuation&quot;: &quot;&quot;, &quot;use_of_funds&quot;: &quot;&quot;}" data-date="2026-06-17"><td class="co" data-label="Company"><a href="https://www.startupticker.ch/en/news/switzerland-extends-its-lead-as-deep-tech-hub" target="_blank" rel="noopener" title="Source: Startupticker.ch">Deep Tech Nation Switzerland</a> <span class="tag abroad" title="Headquarters recorded as not Switzerland. Shown because a foreign seat does not always mean a foreign company.">foreign HQ</span><button type="button" class="fix" onclick="openFix(this)" title="Add or correct a fact on this round">+</button></td><td class="desc" data-label="What it does">Report ranking Switzerland first for deep tech VC share</td><td data-label="Sector"><span class="cat">Research</span></td><td data-label="Stage"><span class="stage">Series A</span></td><td class="amt" data-label="Raised"><span class="nd">undisclosed</span></td><td class="inv empty" data-label="Investors"><span class="nd">&middot;</span></td><td class="fnd empty" data-label="Founders"><span class="nd">&middot;</span></td><td class="org empty" data-label="Spin-off"><span class="nd">&middot;</span></td><td class="loc" data-label="HQ"><span class="nd" title="Swiss company, city not found yet">CH</span></td><td class="d" data-label="Date">2026-06-17</td></tr>
+<tr data-chf="83700000" data-sector="Pharma" data-stage="Series A" data-hq="Copenhagen, DK" data-added="" data-company="Orbis Medicines" data-swiss="0" data-facts="{&quot;description&quot;: &quot;Membrane-permeable cyclic peptide drug discovery platform&quot;, &quot;category&quot;: &quot;Pharma&quot;, &quot;stage&quot;: &quot;Series A&quot;, &quot;amount&quot;: &quot;EUR 90M&quot;, &quot;amount_note&quot;: &quot;&quot;, &quot;lead_investor&quot;: &quot;&quot;, &quot;investors&quot;: &quot;&quot;, &quot;founders&quot;: &quot;Christian Heinis&quot;, &quot;spinoff_origin&quot;: &quot;EPFL&quot;, &quot;location&quot;: &quot;Copenhagen, DK&quot;, &quot;legal_seat&quot;: &quot;&quot;, &quot;website&quot;: &quot;orbismedicines.com&quot;, &quot;founded&quot;: &quot;&quot;, &quot;employees&quot;: &quot;&quot;, &quot;total_raised&quot;: &quot;&quot;, &quot;valuation&quot;: &quot;&quot;, &quot;use_of_funds&quot;: &quot;Develop and apply technology for drug discovery&quot;}" data-date="2026-06-03"><td class="co" data-label="Company"><a href="https://actu.epfl.ch/news/new-peptides-slip-into-cells-to-block-hard-to-targ" target="_blank" rel="noopener" title="Use of funds: Develop and apply technology for drug discovery · Source: EPFL News">Orbis Medicines</a> <span class="tag abroad" title="Headquarters recorded as Copenhagen, DK. Shown because a foreign seat does not always mean a foreign company.">foreign HQ</span><button type="button" class="fix" onclick="openFix(this)" title="Add or correct a fact on this round">+</button></td><td class="desc" data-label="What it does">Membrane-permeable cyclic peptide drug discovery platform</td><td data-label="Sector"><span class="cat">Pharma</span></td><td data-label="Stage"><span class="stage">Series A</span></td><td class="amt" data-label="Raised" title="CHF 83.7M">EUR 90M</td><td class="inv empty" data-label="Investors"><span class="nd">&middot;</span></td><td class="fnd" data-label="Founders">Christian Heinis</td><td class="org" data-label="Spin-off">EPFL</td><td class="loc" data-label="HQ" title="Source: the company&#x27;s own site">Copenhagen, DK</td><td class="d" data-label="Date">2026-06-03</td></tr>
+    </tbody>
+  </table></div>
+  <button type="button" class="more" id="more" onclick="showMore()" hidden></button>
+  <p class="note"><b>Missing a fact?</b> Tap the <b>+</b> beside a company to type it in
+  yourself. What you write goes into corrections.json, which is applied after every
+  automatic lookup and always wins, so it survives every future run rather than being
+  overwritten the next morning.</p>
+  <p class="note">An announced transaction is marked and its figure is excluded from
+  every total: a ceiling on a deal that has not closed, quoted gross and before
+  redemptions, is not capital raised. Amounts are shown as the article wrote them. The franc figure beside a
+  foreign currency, and the total above, are converted at fixed indicative rates and are
+  meant for scale rather than accounting. Hover a headquarters to see where it came from.</p>
+</div>
+
+<div class="sheet" id="sheet" hidden>
+  <div class="sheetbox">
+    <h2 id="sheettitle"></h2>
+    <p class="sheetnote">Type what is missing, or correct what is wrong. Emptying a
+    box that has a value clears it. Nothing changes here until you paste the file
+    into GitHub, and the next run picks it up.</p>
+    <div id="fields"></div>
+    <p class="sheetnote">Built from corrections.json as it stood at 05 August 2026 at 12:42.
+    If you have edited it since, edit it on GitHub instead of pasting over it.</p>
+    <div class="sheetacts">
+      <button type="button" class="btn" id="savebtn" onclick="saveFix()">Save</button>
+      <button type="button" class="clear" onclick="closeFix()">Close</button>
+    </div>
+    <p class="sheetnote" id="saidwhat">Saved straight to the corrections file. The
+    page updates on the next run, tomorrow morning.</p>
+    <details class="fallback">
+      <summary>Save did not work?</summary>
+      <p class="sheetnote">Copy the file and paste it into GitHub by hand. Select
+      everything in the box there, paste, then <b>Commit changes</b>.</p>
+      <div class="sheetacts">
+        <button type="button" class="btn" id="copybtn" onclick="copyFile()">1. Copy the updated file</button>
+        <a class="btn" href="https://github.com/maximedroux55-hue/Test/edit/claude/questions-9a5egd/deeptech-news/corrections.json" target="_blank" rel="noopener">2. Open the file on GitHub</a>
+      </div>
+      <textarea id="out" readonly></textarea>
+    </details>
+  </div>
+</div>
+<script type="application/json" id="corrections">{"note": "Max's corrections, and what Cowork verified against primary sources. Applied after every automatic lookup and always win. Set only the fields that are wrong; an empty string clears a value. 'verified' and 'verified_source' keep a round out of the checking queue in verify.json.", "companies": {"Synhelion": {"location": "Zurich"}, "Hilo": {"location": "Neuch\u00e2tel", "verified": "2026-08-03", "verified_source": "startupticker.ch \u2014 https://www.startupticker.ch/en/news/hilo-closes-series-b-extension-round-to-fuel-us-expansion", "verified_quote": "Hilo secured a Series B extension round, totaling $19 million in new funding and bringing its total funding to date to over $119 million. The round included new investment from Dell Family Office", "verified_by": "automated weekly check", "amount_note": "Series B extension", "total_raised": "USD 119M"}, "SWISSto12": {"location": "Renens", "stage": "Series C", "verified": "2026-08-03", "verified_source": "spacenews.com \u2014 https://spacenews.com/swissto12-raises-70-million-to-accelerate-small-geo-satellite-production/", "verified_quote": "Swissto12 said it has raised $70 million in fresh funding", "verified_by": "automated weekly check"}, "Talentir": {"location": ""}, "Foldcast": {"location": ""}, "Prem": {"stage": "Series A", "status": "announced", "amount_note": "raising, expected to close in Q3", "investors": "", "lead_investor": "", "verified": "2026-08-03", "verified_source": "Bloomberg, via Cowork fact-check"}, "GR3N": {"stage": "Series B", "investors": "360 Capital, VP Textile", "lead_investor": "360 Capital", "verified": "2026-08-03", "verified_source": "Startupticker and 360 Capital, via Cowork fact-check"}, "MoonLake": {"stage": "Follow-on", "amount_note": "USD 200M base closed 25 June, USD 30M over-allotment closed 14 July", "verified": "2026-08-03", "verified_source": "Nasdaq MLTX filings, Form S-3 shelf, via Cowork fact-check"}, "Terra Quantum": {"stage": "De-SPAC", "status": "announced", "amount_note": "up to, assuming no redemptions, gross proceeds", "verified": "2026-08-03", "verified_source": "prnewswire.com \u2014 https://www.prnewswire.com/news-releases/terra-quantum-and-axiom-intelligence-acquisition-corp-1-announce-definitive-business-combination-agreement-at-a-3-5-billion-equity-valuation-302781704.html", "verified_quote": "Based on the funds in the trust account at the time of the IPO, the transaction is expected to deliver up to approximately $190 million of gross proceeds to the combined company, assuming no redemptions by Axiom's public stockholders, and without taking into account transaction expenses.", "verified_by": "automated weekly check"}, "CCRAFT": {"stage": "Series B", "investors": "QBIT Capital, Z\u00fcrcher Kantonalbank, Apprecia Capital, Spacewalk, Blue Wonder Ventures", "lead_investor": "QBIT Capital", "verified": "2026-08-03", "verified_source": "CCRAFT release, via Max"}, "ZuriQ": {"verified": "2026-08-03", "verified_source": "startupticker.ch \u2014 https://www.startupticker.ch/en/news/quantonation-leads-usd-25-5-million-seed-round-for-eth-spin-off-zuriq", "verified_quote": "The USD 25.5 million seed round was led by Quantonation with participation from Forward.one, Extantia, Firgun Ventures and all previous investors.", "verified_by": "automated weekly check"}, "Nanoflex Robotics": {"verified": "2026-08-03", "verified_source": "venturelab.swiss \u2014 https://www.venturelab.swiss/Nanoflex-Robotics-awarded-EUR-125-Million-from-the-EIC-Accelerator", "verified_quote": "The funding package includes a EUR 2.5 million grant and a EUR 10 million equity investment from the EIC Fund.", "amount_note": "Blended: EUR 2.5M grant plus EUR 10M equity investment from the EIC Fund", "location": "Glattbrugg", "verified_by": "automated weekly check"}, "Exclaim Robotics": {"website": "https://exclaimrobotics.com/"}}, "blocked": ["Terminal Technologies"], "note_blocked": "Companies ruled out by hand: Swiss news, but not Swiss companies. Remove a name here and its round returns to the database on the next run."}</script>
+<script>
+  function val(id) { return document.getElementById(id).value; }
+
+  var PAGE = 12, shown_upto = PAGE;
+
+  // When each round entered the database, versus when the round happened. The
+  // Date column is the news date; this is the "what changed since I last
+  // looked" question, and the two are not the same.
+  var NEWEST = "2026-08-05", WEEK_AGO = "2026-07-29", MONTH_AGO = "2026-07-06";
+
+  // ------------------------------------------------ typing in a missing fact
+  // The scraper will never get everything: GR3N's founder was in no article it
+  // could read. Rather than leaving the gap, the row hands Max the file with
+  // his answer already merged in, so the only manual step is a paste.
+  var FIELDS = [["description", "What it does"], ["category", "Sector"], ["stage", "Stage"], ["amount", "Raised"], ["amount_note", "Note on the amount"], ["lead_investor", "Lead investor"], ["investors", "Investors"], ["founders", "Founders"], ["spinoff_origin", "Spin-off from"], ["location", "HQ"], ["legal_seat", "Registered in"], ["website", "Website"], ["founded", "Founded"], ["employees", "Staff"], ["total_raised", "Total raised"], ["valuation", "Valuation"], ["use_of_funds", "Use of funds"]];
+  var CORRECTIONS = JSON.parse(document.getElementById('corrections').textContent);
+  var editing = null;
+
+  function openFix(btn) {
+    var row = btn.parentNode.parentNode;
+    editing = {
+      company: row.getAttribute('data-company') || '',
+      facts: JSON.parse(row.getAttribute('data-facts') || '{}')
+    };
+    document.getElementById('sheettitle').textContent = editing.company;
+    var box = document.getElementById('fields');
+    box.innerHTML = '';
+    for (var i = 0; i < FIELDS.length; i++) {
+      var key = FIELDS[i][0], label = FIELDS[i][1];
+      var was = editing.facts[key] || '';
+      var line = document.createElement('label');
+      line.className = 'field' + (was ? '' : ' missing');
+      var name = document.createElement('span');
+      name.textContent = label;
+      var input = document.createElement('input');
+      input.type = 'text';
+      input.id = 'f_' + key;
+      input.value = was;
+      input.placeholder = was ? '' : 'not known';
+      input.oninput = build;
+      line.appendChild(name);
+      line.appendChild(input);
+      box.appendChild(line);
+    }
+    build();
+    document.getElementById('sheet').hidden = false;
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeFix() {
+    document.getElementById('sheet').hidden = true;
+    document.body.style.overflow = '';
+    editing = null;
+  }
+
+  function build() {
+    if (!editing) return '';
+    var file = JSON.parse(JSON.stringify(CORRECTIONS));
+    if (!file.companies) file.companies = {};
+    var entry = {};
+    var existing = file.companies[editing.company];
+    if (existing) {
+      for (var k in existing) entry[k] = existing[k];
+    }
+    var touched = 0;
+    for (var i = 0; i < FIELDS.length; i++) {
+      var key = FIELDS[i][0];
+      var input = document.getElementById('f_' + key);
+      if (!input) continue;
+      var now = input.value.trim(), was = editing.facts[key] || '';
+      // Only what he actually changed. An empty box that was always empty is
+      // not an instruction; one he cleared himself is, and clears the value.
+      if (now !== was) { entry[key] = now; touched++; }
+    }
+    file.companies[editing.company] = entry;
+    var text = JSON.stringify(file, null, 2);
+    document.getElementById('out').value = text;
+    var btn = document.getElementById('copybtn');
+    btn.disabled = !touched;
+    btn.textContent = touched
+      ? '1. Copy the updated file (' + touched + ' change' + (touched === 1 ? '' : 's') + ')'
+      : '1. Copy the updated file';
+    var save = document.getElementById('savebtn');
+    save.disabled = !touched;
+    save.textContent = touched
+      ? 'Save ' + touched + ' change' + (touched === 1 ? '' : 's')
+      : 'Save';
+    changed = {};
+    for (var j = 0; j < FIELDS.length; j++) {
+      var f = FIELDS[j][0];
+      var box = document.getElementById('f_' + f);
+      if (box && box.value.trim() !== (editing.facts[f] || '')) {
+        changed[f] = box.value.trim();
+      }
+    }
+    return text;
+  }
+
+  // One tap instead of copy, open GitHub, paste, commit. The key lives in the
+  // Worker, never on this page.
+  var SAVE_URL = "https://md-news-button.maxime-droux55.workers.dev/correction";
+  var changed = {};
+
+  function saveFix() {
+    if (!editing || !Object.keys(changed).length) return;
+    var btn = document.getElementById('savebtn');
+    var said = document.getElementById('saidwhat');
+    btn.disabled = true;
+    btn.textContent = 'Saving...';
+    fetch(SAVE_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ company: editing.company, fields: changed })
+    })
+      .then(function (r) { return r.json().catch(function () { return {}; }); })
+      .then(function (out) {
+        if (out && out.ok) {
+          btn.textContent = 'Saved';
+          said.textContent = 'Saved: ' + (out.fields || []).join(', ')
+            + '. The page shows it after tomorrow morning\u2019s run.';
+        } else {
+          btn.disabled = false;
+          btn.textContent = 'Save failed, try again';
+          said.textContent = 'Could not save'
+            + (out && out.error ? ': ' + out.error : '')
+            + '. Use the fallback below and nothing is lost.';
+          var fb = document.querySelector('.fallback');
+          if (fb) fb.open = true;
+        }
+      })
+      .catch(function (err) {
+        btn.disabled = false;
+        btn.textContent = 'Save failed, try again';
+        said.textContent = 'Could not reach the saver (' + err + '). Use the '
+          + 'fallback below and nothing is lost.';
+        var fb = document.querySelector('.fallback');
+        if (fb) fb.open = true;
+      });
+  }
+
+  function copyFile() {
+    var out = document.getElementById('out');
+    out.select();
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(out.value);
+    } else {
+      document.execCommand('copy');
+    }
+    var btn = document.getElementById('copybtn');
+    var said = btn.textContent;
+    btn.textContent = 'Copied';
+    setTimeout(function () { btn.textContent = said; }, 1500);
+  }
+
+  function isAdded(seen, mode) {
+    if (!mode) return true;
+    if (!seen) return false;
+    if (mode === 'new') return seen === NEWEST;
+    if (mode === 'week') return seen >= WEEK_AGO;
+    if (mode === 'month') return seen >= MONTH_AGO;
+    return true;
+  }
+
+  function filter(reset) {
+    if (reset !== false) shown_upto = PAGE;
+    var q = val('q').toLowerCase();
+    var sector = val('sector'), stage = val('stage'), hq = val('hq');
+    var from = val('from'), to = val('to'), added = val('added');
+    var rows = document.querySelectorAll('#rows tr');
+    var shown = 0, total = 0;
+    for (var i = 0; i < rows.length; i++) {
+      var row = rows[i];
+      var date = row.getAttribute('data-date') || '';
+      var ok = row.innerText.toLowerCase().indexOf(q) > -1
+        && (!sector || row.getAttribute('data-sector') === sector)
+        && (!stage || row.getAttribute('data-stage') === stage)
+        && (!hq || row.getAttribute('data-hq') === hq)
+        && (!from || (date && date >= from))
+        && (!to || (date && date <= to))
+        && isAdded(row.getAttribute('data-added') || '', added);
+      if (ok) {
+        shown++;
+        total += parseInt(row.getAttribute('data-chf') || '0', 10);
+      }
+      // Matching decides whether a round counts; paging decides whether it is
+      // on screen yet. The count and the total always describe every match.
+      row.style.display = (ok && shown <= shown_upto) ? '' : 'none';
+    }
+    var more = document.getElementById('more');
+    if (more) {
+      var left = shown - shown_upto;
+      more.hidden = left <= 0;
+      more.textContent = 'Show ' + Math.min(left, PAGE) + ' more of ' + shown;
+    }
+    var box = document.getElementById('count');
+    if (box) {
+      box.innerHTML = shown + ' round' + (shown === 1 ? '' : 's')
+        + (total ? ' &middot; ' + (total >= 1e9 ? (total / 1e9).toFixed(1) + 'B'
+                                                : Math.round(total / 1e6) + 'M') + ' CHF' : '');
+    }
+  }
+
+  function showMore() {
+    shown_upto += PAGE;
+    filter(false);
+    return false;
+  }
+
+  function clearAll() {
+    ['q', 'added', 'sector', 'stage', 'hq', 'from', 'to'].forEach(function (id) {
+      document.getElementById(id).value = '';
+    });
+    filter();
+  }
+
+  // Sorting keeps whatever is filtered: the two are independent.
+  var sortState = { column: -1, descending: true };
+  function sortBy(index, kind) {
+    var body = document.getElementById('rows');
+    var rows = Array.prototype.slice.call(body.querySelectorAll('tr'));
+    sortState.descending = sortState.column === index ? !sortState.descending : true;
+    sortState.column = index;
+    var sign = sortState.descending ? -1 : 1;
+    rows.sort(function (a, b) {
+      var x, y;
+      if (kind === 'chf') {
+        x = parseInt(a.getAttribute('data-chf') || '0', 10);
+        y = parseInt(b.getAttribute('data-chf') || '0', 10);
+      } else if (kind === 'date') {
+        x = a.getAttribute('data-date') || '';
+        y = b.getAttribute('data-date') || '';
+      } else {
+        x = (a.cells[index].innerText || '').trim().toLowerCase();
+        y = (b.cells[index].innerText || '').trim().toLowerCase();
+        // An empty cell belongs at the bottom whichever way the sort runs.
+        if (x === '\u00b7') x = sign > 0 ? '\uffff' : '';
+        if (y === '\u00b7') y = sign > 0 ? '\uffff' : '';
+      }
+      return x < y ? -sign : x > y ? sign : 0;
+    });
+    rows.forEach(function (row) { body.appendChild(row); });
+    filter(false);
+    var heads = document.querySelectorAll('thead th');
+    for (var i = 0; i < heads.length; i++) {
+      heads[i].classList.remove('up', 'down');
+    }
+    heads[index].classList.add(sortState.descending ? 'down' : 'up');
+  }
+  filter();
+</script>
+</body></html>
