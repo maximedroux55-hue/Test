@@ -34,6 +34,13 @@ export default {
     if (request.method === "OPTIONS") {
       return new Response(null, { headers: cors });
     }
+
+    // Open this in a browser to see what is wrong without writing anything.
+    // Deliberately allowed without an Origin, because the address bar sends
+    // none. It reveals only whether the key works, never the key.
+    if (new URL(request.url).pathname.replace(/\/+$/, "") === "/health") {
+      return health(env, cors);
+    }
     if (request.method !== "POST") {
       return json({ ok: false, error: "use POST" }, 405, cors);
     }
@@ -114,9 +121,15 @@ async function saveCorrection(request, env, cors) {
     "Content-Type": "application/json",
   };
 
-  const read = await fetch(`${api}?ref=${encodeURIComponent(REF)}`, { headers });
+  // The branch name contains a slash. Encoding it as %2F makes GitHub look for
+  // a branch literally called "claude%2Fquestions-9a5egd" and answer 404, so
+  // the ref goes in as it is.
+  const read = await fetch(`${api}?ref=${REF}`, { headers });
   if (!read.ok) {
-    return json({ ok: false, error: `could not read the file (${read.status})` },
+    const why = read.status === 404
+      ? "404: the key cannot see the file. Add Contents: Read and write to the token."
+      : `${read.status}`;
+    return json({ ok: false, error: `could not read corrections.json (${why})` },
                 502, cors);
   }
   const meta = await read.json();
@@ -151,6 +164,37 @@ async function saveCorrection(request, env, cors) {
                 502, cors);
   }
   return json({ ok: true, company, fields: Object.keys(wanted) }, 200, cors);
+}
+
+// What is wrong, in one page, without changing anything.
+async function health(env, cors) {
+  const out = {
+    worker: "md-news-button",
+    version: "2026-08-05 (saves corrections)",
+    has_token: Boolean(env.GITHUB_TOKEN),
+  };
+  if (!env.GITHUB_TOKEN) {
+    out.verdict = "No GITHUB_TOKEN secret on this Worker.";
+    return json(out, 200, cors);
+  }
+  const read = await fetch(
+    `https://api.github.com/repos/${REPO}/contents/${CORRECTIONS}?ref=${REF}`,
+    {
+      headers: {
+        Authorization: `Bearer ${env.GITHUB_TOKEN}`,
+        Accept: "application/vnd.github+json",
+        "User-Agent": "md-news-button",
+      },
+    }
+  );
+  out.can_read_corrections = read.ok;
+  out.github_status = read.status;
+  out.verdict = read.ok
+    ? "Ready. Saving from the database page will work."
+    : read.status === 404
+      ? "The key cannot see corrections.json. Give the token Contents: Read and write."
+      : `GitHub answered ${read.status}.`;
+  return json(out, 200, cors);
 }
 
 function json(obj, status, cors) {
