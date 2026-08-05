@@ -711,6 +711,82 @@ def _in_english(story: dict) -> bool:
     return not re.search(r"/(de|fr|it)/", link)
 
 
+# What kind of news this is, in the order the tests are applied. First match
+# wins, so the specific patterns sit above the general ones. Written in the
+# three languages Swiss outlets publish in, because the page carries all three.
+_KINDS = (
+    ("Appointment", r"professor|professur|appoint|nomination|named\s+(?:new|as)|"
+                    r"steps\s+down|joins\s+as|emeritus|rector|rektor|"
+                    r"ernannt|berufen|nomm(?:é|e)|succ(?:è|e)de"),
+    ("Grant", r"\bgrant\b|granted\b|f(?:ö|o)rdermittel|f(?:ö|o)rderung|"
+              r"innosuisse|venture\s?kick|eic\s+accelerator|snsf|"
+              r"subvention|bourse|prix\b|award(?:ed)?\b"),
+    ("Acquisition", r"acqui(?:re|red|sition)|takeover|buys\b|merger|"
+                    r"(?:ü|u)bernimmt|(?:ü|u)bernahme|rachat|rach(?:è|e)te"),
+    # A round the reader failed to pin down still reads as a round in the
+    # headline: "SeasON Energy erhält Millionenfinanzierung" had no figure the
+    # extractor could use, and landed in General.
+    ("Round", r"raises?\b|raised\b|funding\s+round|finanzierung|"
+              r"l(?:è|e)ve\s+des\s+fonds|closes?\s+a\s+.{0,20}round|"
+              r"pre-?seed|seed\s+round|series\s+[a-e]\b"),
+    ("Expansion", r"expands?\b|expansion|new\s+(?:plant|site|factory|office)|"
+                  r"opens?\s+(?:a\s+)?(?:plant|site|factory|office|hub)|"
+                  r"production\s+at|erweitert|s'implante"),
+    ("Regulatory", r"fda\b|ce\s+mark|clearance|approval|authoris|authoriz|"
+                   r"zulassung|homologation|first-in-human"),
+    ("Award", r"prize|winner|wins\b|crowns|laureate|preis|gewinnt|"
+              r"laur(?:é|e)at|remporte"),
+    ("Policy", r"neutrality|sovereign|regulation|parliament|kantonsparlament|"
+               r"government|bundesrat|federal\s+council|export\s+ban|"
+               r"strategy|policy|politique|gesetz|loi\b"),
+    ("Partnership", r"partner(?:s|ship)|teams?\s+up|collaborat|joint\s+venture|"
+                    r"kooperation|partenariat"),
+    ("Launch", r"launch|unveil|introduc|lanciert|lance\b|ships?\b|"
+               r"brings?\b|rolls?\s+out|goes\s+live"),
+    ("Research", r"research|scientist|stud(?:y|ies)|discover|finds?\b|"
+                 r"reveals?\b|identif|detect|breakthrough|"
+                 r"forscher|studie|chercheur|(?:é|e)tude"),
+)
+
+
+def _kind(story: dict) -> str:
+    """One word for what happened, so the page can be read and filtered by it.
+
+    A financing round, a grant, a professor's appointment and a lake-water
+    discovery are all Swiss DeepTech news and all read the same in a list. The
+    label is what tells them apart at a glance.
+    """
+    stage = (story.get("stage") or "").strip().lower()
+    if stage == "grant":
+        return "Grant"
+    if stage == "acquisition":
+        return "Acquisition"
+    if stage == "partnership":
+        return "Partnership"
+    if _is_round(story):
+        return "Round"
+    # The headline only. The description is written by the reader, and one
+    # stray word in it ("an article on Switzerland as an AI research hub")
+    # filed an opinion piece under Research.
+    text = re.sub(r"\s+[-|]\s+[^-|]+$", "", story.get("title") or "")
+    for label, pattern in _KINDS:
+        if re.search(pattern, text, re.IGNORECASE):
+            return label
+    # A lab's own newsroom is publishing research whether or not the headline
+    # says so: "A lipid switch that blocks anthrax" carries no keyword at all.
+    from urllib.parse import urlsplit
+    host = urlsplit(story.get("link") or "").netloc.lower()
+    if any(host.endswith(d) for d in _LABS):
+        return "Research"
+    return "General"
+
+
+# Newsrooms that only ever publish research: their institution is the signal.
+_LABS = ("epfl.ch", "ethz.ch", "empa.ch", "psi.ch", "csem.ch", "idiap.ch",
+         "unibas.ch", "unige.ch", "uzh.ch", "unil.ch", "unibe.ch", "usi.ch",
+         "wsl.ch", "eawag.ch", "agroscope.admin.ch", "zurich.ibm.com")
+
+
 def _news_rank(story: dict) -> tuple:
     """Which copy of a story survives deduplication. Lower is better.
 
@@ -778,6 +854,12 @@ def render_news_html(known: dict, now: dt.datetime | None = None) -> str:
 
     sectors = sorted({(s.get("category") or "").strip()
                       for s in stories if s.get("category")})
+    _kind_order = ["Round", "Grant", "Award", "Acquisition", "Partnership",
+                   "Regulatory", "Launch", "Expansion", "Research", "Policy",
+                   "Appointment", "General"]
+    present = {_kind(s) for s in stories}
+    kinds = [k for k in _kind_order if k in present]
+    counts = {k: sum(1 for s in stories if _kind(s) == k) for k in kinds}
     dates = sorted(d for d in (when(s) for s in stories) if d)
     first_date, last_date = (dates[0], dates[-1]) if dates else ("", "")
     rounds = sum(1 for s in stories if _is_round(s))
@@ -788,16 +870,14 @@ def render_news_html(known: dict, now: dt.datetime | None = None) -> str:
         title = (s.get("title") or "").strip() or "(untitled)"
         category = (s.get("category") or "").strip()
         company = (s.get("company") or "").strip()
-        marks = ""
-        if s.get("posted"):
-            marks += ' <span class="tag posted">posted</span>'
-        if _is_round(s):
-            marks += ' <span class="tag round">round</span>'
+        kind = _kind(s)
+        marks = (f' <span class="tag kind k{kind.lower()}">{kind}</span>')
         if (s.get("score") or 0) >= SUBMITTED:
             marks += ' <span class="tag sent">sent in</span>'
         shown = dt.date.fromisoformat(date).strftime("%d %b %Y") if date else ""
         items.append(
             f'<li data-sector="{html.escape(category)}" '
+            f'data-kind="{html.escape(kind)}" '
             f'data-date="{html.escape(date)}">'
             f'<a href="{html.escape(s.get("link", ""))}" target="_blank" '
             f'rel="noopener">{html.escape(title)}</a>{marks}'
@@ -813,6 +893,9 @@ def render_news_html(known: dict, now: dt.datetime | None = None) -> str:
         '<li class="nd">Nothing recorded yet. The next run will fill this in.</li>')
     options = "".join(f'<option value="{html.escape(v)}">{html.escape(v)}</option>'
                       for v in sectors)
+    kind_options = "".join(
+        f'<option value="{html.escape(k)}">{html.escape(k)} ({counts[k]})</option>'
+        for k in kinds)
     return f"""<!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -860,6 +943,20 @@ def render_news_html(known: dict, now: dt.datetime | None = None) -> str:
   .tag.posted {{ background:var(--green); color:#fff; }}
   .tag.round {{ background:#eef3f8; color:#4a6b8a; border:1px solid #dde6ef; }}
   .tag.sent {{ background:#1b2430; color:#fff; }}
+  /* One colour per kind of news, so the list can be skimmed rather than read. */
+  .tag.kind {{ border:1px solid transparent; }}
+  .kround {{ background:#e8f3ec; color:#2f6b46; border-color:#cfe5d8; }}
+  .kgrant {{ background:#eef3f8; color:#3f6187; border-color:#dbe6f0; }}
+  .kacquisition {{ background:#f6ecef; color:#8a4a5e; border-color:#ecd8de; }}
+  .kpartnership {{ background:#f1eff8; color:#5b4b8a; border-color:#e0dbef; }}
+  .kregulatory {{ background:#fdf3e3; color:#8a6d3b; border-color:#f0e2c8; }}
+  .klaunch {{ background:#eaf4f6; color:#2f6a75; border-color:#d5e7ea; }}
+  .kresearch {{ background:#f2f1ec; color:#6a6552; border-color:#e4e2d8; }}
+  .kappointment {{ background:#f4f0ea; color:#7a5c3e; border-color:#e8ddcd; }}
+  .kaward {{ background:#fdf1f3; color:#8a4a5e; border-color:#f2dde2; }}
+  .kexpansion {{ background:#eef4f0; color:#3f6b53; border-color:#dbe8e0; }}
+  .kpolicy {{ background:#eef1f6; color:#4a5878; border-color:#dde3ee; }}
+  .kgeneral {{ background:#f1f3f2; color:#5b6472; border-color:#e3e7e5; }}
   .nd {{ color:var(--faint); }}
   .more {{ display:block; width:100%; margin-top:1rem; font-family:inherit;
           font-size:0.9rem; font-weight:600; color:var(--ink); background:#fff;
@@ -885,6 +982,7 @@ def render_news_html(known: dict, now: dt.datetime | None = None) -> str:
   Startupticker's English version where there was one.</p>
   <div class="controls">
     <input type="text" id="q" placeholder="Search headline, company, outlet..." oninput="filter()">
+    <select id="kind" onchange="filter()"><option value="">Every kind</option>{kind_options}</select>
     <select id="sector" onchange="filter()"><option value="">Every sector</option>{options}</select>
     <label class="dates">from <input type="date" id="from" value="" min="{first_date}" max="{last_date}" onchange="filter()"></label>
     <label class="dates">to <input type="date" id="to" value="" min="{first_date}" max="{last_date}" onchange="filter()"></label>
@@ -902,7 +1000,7 @@ def render_news_html(known: dict, now: dt.datetime | None = None) -> str:
 
   function filter(reset) {{
     if (reset !== false) shown_upto = PAGE;
-    var q = val('q').toLowerCase(), sector = val('sector');
+    var q = val('q').toLowerCase(), sector = val('sector'), kind = val('kind');
     var from = val('from'), to = val('to');
     var rows = document.querySelectorAll('#rows li');
     var shown = 0;
@@ -911,6 +1009,7 @@ def render_news_html(known: dict, now: dt.datetime | None = None) -> str:
       var date = row.getAttribute('data-date') || '';
       var ok = row.innerText.toLowerCase().indexOf(q) > -1
         && (!sector || row.getAttribute('data-sector') === sector)
+        && (!kind || row.getAttribute('data-kind') === kind)
         && (!from || (date && date >= from))
         && (!to || (date && date <= to));
       if (ok) shown++;
@@ -927,7 +1026,7 @@ def render_news_html(known: dict, now: dt.datetime | None = None) -> str:
   function showMore() {{ shown_upto += PAGE; filter(false); return false; }}
 
   function clearAll() {{
-    ['q', 'sector', 'from', 'to'].forEach(function (id) {{
+    ['q', 'kind', 'sector', 'from', 'to'].forEach(function (id) {{
       document.getElementById(id).value = '';
     }});
     filter();

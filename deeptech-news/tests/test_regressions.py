@@ -710,8 +710,8 @@ def test_the_news_page_carries_more_than_the_money():
     assert scraper.plausibly_swiss(known["d"]) is False
     assert scraper.plausibly_swiss(known["b"]) is True
 
-    # The round is marked as one, so the two pages stay legible together.
-    assert page.count('class="tag round"') == 1
+    # The round is labelled as one, so the two pages stay legible together.
+    assert page.count('data-kind="Round"') == 1
     assert "the database" in page
 
     # A story Max sent in is marked as sent, not scored: the marker is 999 and
@@ -722,6 +722,61 @@ def test_the_news_page_carries_more_than_the_money():
     # And a story with no date shows no date rather than the word n/a.
     assert scraper._meta_line({"publisher": "Startupticker", "date": None,
                                "score": 999}) == "Startupticker · sent in"
+
+
+def test_the_news_page_says_what_kind_of_news_each_story_is():
+    """A round, a grant and a professor's appointment read alike in a list."""
+    import datetime as dt
+
+    def story(title, link="https://startupticker.ch/x", **extra):
+        return dict({"title": title, "link": link, "company": "Foo",
+                     "description": "", "amount": "", "stage": "",
+                     "category": "Quantum"}, **extra)
+
+    cases = [
+        ("Exclaim Robotics raises USD 4.95 million", {"amount": "USD 4.95M",
+         "stage": "Pre-seed", "category": "Robotics"}, "Round"),
+        # A round the reader could not pin down still reads as one.
+        ("SeasON Energy erhält Millionenfinanzierung", {}, "Round"),
+        ("Synhelion erhält Fördermittel", {"stage": "Grant"}, "Grant"),
+        ("Tech4Trust Crowns AURIGIN.AI as Grand Prize Winner", {}, "Award"),
+        ("Qnami acquired by Quantum Design", {}, "Acquisition"),
+        ("Nordfen brings drone simulation to Latvia",
+         {"stage": "Partnership"}, "Partnership"),
+        ("Hi-D Imaging wins expanded FDA clearance", {}, "Regulatory"),
+        ("In AI arms race, Swiss neutrality is double-edged sword", {}, "Policy"),
+        ("Humboldt AI lanciert KI-Tool für den CV-Check", {}, "Launch"),
+        ("Hitachi Energy expands power semiconductor production at Swiss site",
+         {}, "Expansion"),
+        ("ETH names new professor of quantum engineering", {}, "Appointment"),
+        ("A tiny pore identifies cyanobacteria toxins in lake water", {},
+         "Research"),
+        # No keyword at all, but a laboratory's own newsroom publishes research.
+        ("A lipid switch that blocks anthrax",
+         {"link": "https://actu.epfl.ch/news/anthrax"}, "Research"),
+        ("Swiss Stocks Climb As AI Chip Fever Lifts Micron", {}, "General"),
+    ]
+    for title, extra, expected in cases:
+        assert scraper._kind(story(title, **extra)) == expected, \
+            f"{title!r} read as {scraper._kind(story(title, **extra))}"
+
+    # The description is written by the reader and is not evidence: one stray
+    # word in it filed an opinion piece under Research.
+    opinion = story("In AI arms race, Swiss neutrality is double-edged sword",
+                    description="Article on Switzerland as an AI research hub")
+    assert scraper._kind(opinion) == "Policy"
+
+    # A Google News publisher suffix must not decide the kind either.
+    assert scraper._kind(story(
+        "Switzerland confirms its lead in deep tech - Research Institute")) \
+        == "General"
+
+    # The page shows the label and offers it as a filter, with counts.
+    known = {str(i): story(t, **e) for i, (t, e, _) in enumerate(cases)}
+    page = scraper.render_news_html(known, now=dt.datetime(2026, 8, 5, 9, 0))
+    assert 'id="kind"' in page
+    assert 'data-kind="Round"' in page and 'data-kind="Research"' in page
+    assert re.search(r'<option value="Round">Round \(\d+\)</option>', page)
 
 
 def test_one_story_one_entry_preferring_startupticker_in_english():
@@ -1462,7 +1517,7 @@ def test_short_week_skips_the_weekend():
 
 # Locking the count means a test appended below the runner, where it would
 # never execute, shows up as a failure rather than as silence. That happened.
-EXPECTED = 64
+EXPECTED = 65
 
 
 if __name__ == "__main__":
