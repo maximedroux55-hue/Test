@@ -27,6 +27,9 @@ on:
       posts:
         description: "Number of LinkedIn posts to write (one per day)"
         default: "7"
+      force:
+        description: "Rebuild even if this week's plan is still being posted"
+        default: "false"
   schedule:
     # 06:00 UTC every Wednesday (about 08:00 in Switzerland).
     - cron: "0 6 * * 3"
@@ -73,7 +76,7 @@ jobs:
             --min-score "${{ github.event.inputs.min_score || '4' }}" \
             --limit "${{ github.event.inputs.limit || '60' }}" \
             --posts "${{ github.event.inputs.posts || '7' }}" \
-            ${{ github.event_name == 'schedule' && '--skip-if-week-planned' || '' }} \
+            ${{ github.event.inputs.force != 'true' && '--skip-if-week-planned' || '' }} \
             --posts-only
 
       - name: Upload digest (Markdown + HTML)
