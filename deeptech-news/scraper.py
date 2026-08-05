@@ -597,6 +597,11 @@ _FIXABLE = [
 CORRECTIONS_EDIT_URL = ("https://github.com/maximedroux55-hue/Test/edit/"
                         "claude/questions-9a5egd/deeptech-news/corrections.json")
 
+# The Worker that commits a fact typed into the page. It holds the GitHub key
+# as a secret, so the page never carries one. Same Worker as the run button.
+CORRECTIONS_SAVE_URL = ("https://md-news-button.maxime-droux55.workers.dev/"
+                        "correction")
+
 
 def week_still_running(outdir: str, today: dt.date | None = None) -> bool:
     """Is the plan on disk still being posted?
@@ -944,6 +949,9 @@ def render_archive_html(known: dict, now: dt.datetime | None = None) -> str:
   .btn:hover {{ background:var(--green); border-color:var(--green); color:#fff; }}
   .btn:disabled {{ background:#fff; color:var(--faint); border-color:var(--line);
                   cursor:default; }}
+  .fallback {{ margin-top:0.5rem; }}
+  .fallback summary {{ color:var(--soft); font-size:0.8rem; cursor:pointer;
+                      padding:0.35rem 0; }}
   #out {{ width:100%; height:8rem; font-family:ui-monospace,Menlo,Consolas,monospace;
          font-size:0.72rem; color:var(--soft); border:1px solid var(--line);
          border-radius:10px; padding:0.6rem; background:#fff; }}
@@ -1091,13 +1099,21 @@ def render_archive_html(known: dict, now: dt.datetime | None = None) -> str:
     <p class="sheetnote">Built from corrections.json as it stood at {refreshed}.
     If you have edited it since, edit it on GitHub instead of pasting over it.</p>
     <div class="sheetacts">
-      <button type="button" class="btn" id="copybtn" onclick="copyFile()">1. Copy the updated file</button>
-      <a class="btn" href="{CORRECTIONS_EDIT_URL}" target="_blank" rel="noopener">2. Open the file on GitHub</a>
+      <button type="button" class="btn" id="savebtn" onclick="saveFix()">Save</button>
       <button type="button" class="clear" onclick="closeFix()">Close</button>
     </div>
-    <p class="sheetnote">On GitHub: select everything in the box, paste, then
-    <b>Commit changes</b>. The database picks it up on the next run.</p>
-    <textarea id="out" readonly></textarea>
+    <p class="sheetnote" id="saidwhat">Saved straight to the corrections file. The
+    page updates on the next run, tomorrow morning.</p>
+    <details class="fallback">
+      <summary>Save did not work?</summary>
+      <p class="sheetnote">Copy the file and paste it into GitHub by hand. Select
+      everything in the box there, paste, then <b>Commit changes</b>.</p>
+      <div class="sheetacts">
+        <button type="button" class="btn" id="copybtn" onclick="copyFile()">1. Copy the updated file</button>
+        <a class="btn" href="{CORRECTIONS_EDIT_URL}" target="_blank" rel="noopener">2. Open the file on GitHub</a>
+      </div>
+      <textarea id="out" readonly></textarea>
+    </details>
   </div>
 </div>
 <script type="application/json" id="corrections">{_json.dumps(current_fixes)}</script>
@@ -1183,7 +1199,62 @@ def render_archive_html(known: dict, now: dt.datetime | None = None) -> str:
     btn.textContent = touched
       ? '1. Copy the updated file (' + touched + ' change' + (touched === 1 ? '' : 's') + ')'
       : '1. Copy the updated file';
+    var save = document.getElementById('savebtn');
+    save.disabled = !touched;
+    save.textContent = touched
+      ? 'Save ' + touched + ' change' + (touched === 1 ? '' : 's')
+      : 'Save';
+    changed = {{}};
+    for (var j = 0; j < FIELDS.length; j++) {{
+      var f = FIELDS[j][0];
+      var box = document.getElementById('f_' + f);
+      if (box && box.value.trim() !== (editing.facts[f] || '')) {{
+        changed[f] = box.value.trim();
+      }}
+    }}
     return text;
+  }}
+
+  // One tap instead of copy, open GitHub, paste, commit. The key lives in the
+  // Worker, never on this page.
+  var SAVE_URL = "{CORRECTIONS_SAVE_URL}";
+  var changed = {{}};
+
+  function saveFix() {{
+    if (!editing || !Object.keys(changed).length) return;
+    var btn = document.getElementById('savebtn');
+    var said = document.getElementById('saidwhat');
+    btn.disabled = true;
+    btn.textContent = 'Saving...';
+    fetch(SAVE_URL, {{
+      method: 'POST',
+      headers: {{ 'Content-Type': 'application/json' }},
+      body: JSON.stringify({{ company: editing.company, fields: changed }})
+    }})
+      .then(function (r) {{ return r.json().catch(function () {{ return {{}}; }}); }})
+      .then(function (out) {{
+        if (out && out.ok) {{
+          btn.textContent = 'Saved';
+          said.textContent = 'Saved: ' + (out.fields || []).join(', ')
+            + '. The page shows it after tomorrow morning\\u2019s run.';
+        }} else {{
+          btn.disabled = false;
+          btn.textContent = 'Save failed, try again';
+          said.textContent = 'Could not save'
+            + (out && out.error ? ': ' + out.error : '')
+            + '. Use the fallback below and nothing is lost.';
+          var fb = document.querySelector('.fallback');
+          if (fb) fb.open = true;
+        }}
+      }})
+      .catch(function (err) {{
+        btn.disabled = false;
+        btn.textContent = 'Save failed, try again';
+        said.textContent = 'Could not reach the saver (' + err + '). Use the '
+          + 'fallback below and nothing is lost.';
+        var fb = document.querySelector('.fallback');
+        if (fb) fb.open = true;
+      }});
   }}
 
   function copyFile() {{
@@ -1375,10 +1446,14 @@ def main() -> None:
     if args.format in ("digest", "both"):
         md_path = os.path.join(args.outdir, f"digest-{stamp}.md")
         html_path = os.path.join(args.outdir, f"digest-{stamp}.html")
+        # The archive keeps every write-up of a round on purpose, because each
+        # outlet knows something the others left out. A reading page does not:
+        # the same story three times is not three stories.
+        listing = deduplicate(list(articles)) if args.archive_only else articles
         with open(md_path, "w", encoding="utf-8") as f:
-            f.write(to_markdown(articles, args.days))
+            f.write(to_markdown(listing, args.days))
         with open(html_path, "w", encoding="utf-8") as f:
-            f.write(to_html(articles, args.days))
+            f.write(to_html(listing, args.days))
         print(f"Wrote {md_path}", file=sys.stderr)
         print(f"Wrote {html_path}", file=sys.stderr)
 

@@ -105,8 +105,9 @@ jobs:
 
             mkdir -p digest plan
             cp deeptech-news/output/linkedin-*.md digest/linkedin.md
-            cp deeptech-news/output/digest-*.md   digest/news.md
-            cp deeptech-news/output/digest-*.html digest/index.html
+            # digest/index.html and digest/news.md belong to the daily database
+            # job, so they refresh every morning rather than once a week. Two
+            # jobs writing one file is the thing this split exists to avoid.
             cp deeptech-news/output/posts.json    digest/posts.json
             cp /tmp/carry/history.json digest/history.json 2>/dev/null || true
             # The phone-friendly weekly plan, served at maxime-droux.com/plan

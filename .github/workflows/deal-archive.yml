@@ -105,6 +105,10 @@ jobs:
 
             mkdir -p digest reports
             cp deeptech-news/output/archive.html digest/archive.html
+            # The news listing is published here, daily, not by the weekly
+            # posts job: a page dated last Wednesday reads as a dead site.
+            cp deeptech-news/output/digest-*.html digest/index.html
+            cp deeptech-news/output/digest-*.md   digest/news.md
             # What Cowork should check against primary sources.
             cp deeptech-news/output/verify.json  digest/verify.json 2>/dev/null || true
             # Proposed corrections, to read before accepting any of them.
@@ -113,7 +117,8 @@ jobs:
             # One report per month, served at maxime-droux.com/reports/
             cp deeptech-news/output/reports/*.html reports/ 2>/dev/null || true
 
-            git add digest/archive.html digest/archive.json digest/verify.json \
+            git add digest/index.html digest/news.md digest/archive.html \
+                    digest/archive.json digest/verify.json \
                     digest/review.html reports
             git commit -m "Update the deal database" || { echo "No changes to publish."; exit 0; }
             if git push origin HEAD:${GITHUB_REF_NAME}; then
