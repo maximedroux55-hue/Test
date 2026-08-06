@@ -1,5 +1,5 @@
 # Swiss DeepTech news digest
-_Generated 05 August 2026, covering the last 14 days. 22 stories._
+_Generated 06 August 2026, covering the last 14 days. 22 stories._
 
 1. **[GR3N closes a €15.5M Series B round](https://www.startupticker.ch/en/news/gr3n-closes-a-15-5m-series-b-round)**  
    startupticker.ch · sent in
@@ -9,8 +9,8 @@ _Generated 05 August 2026, covering the last 14 days. 22 stories._
    Startupticker · 28 Jul 2026 · relevance 21
 4. **[Exclaim Robotics raises USD 4.95 million for data centre repair robots](https://www.startupticker.ch/en/news/exclaim-robotics-raises-eur-4-29-million-for-data-centre-repair-robots)**  
    Startupticker · 05 Aug 2026 · relevance 19
-5. **[Toronto startup Terminal raises $20-million to become the ‘Switzerland’ of telematics trade - theglobeandmail.com](https://news.google.com/rss/articles/CBMirgFBVV95cUxNZ2xWZE5LaFdFdW1GRW1mTXBJUE5ZX2dWN3BTSWJ2WjU1S1dHQ0E5MGhRNDRFZlZ4dzVOYW4zMGhDMU8xd2VaRVlzY0hTN3JJd3BOX3kyeTkyWHFDNlpEMXdZR1pTWThqVXp2Wi1ZZlpXLTdtM0xxRGFRZG04WHl0ZEpuNG80T01JaFZxRTZZNEpQZ1RsSDRUamxpRmtGdjdWS2pGeGhzbFhXWlQwUnc?oc=5)**  
-   theglobeandmail.com · 29 Jul 2026 · relevance 19
+5. **[Toronto startup Terminal raises $20-million to become the ‘Switzerland’ of telematics trade - The Globe and Mail](https://news.google.com/rss/articles/CBMirgFBVV95cUxNZ2xWZE5LaFdFdW1GRW1mTXBJUE5ZX2dWN3BTSWJ2WjU1S1dHQ0E5MGhRNDRFZlZ4dzVOYW4zMGhDMU8xd2VaRVlzY0hTN3JJd3BOX3kyeTkyWHFDNlpEMXdZR1pTWThqVXp2Wi1ZZlpXLTdtM0xxRGFRZG04WHl0ZEpuNG80T01JaFZxRTZZNEpQZ1RsSDRUamxpRmtGdjdWS2pGeGhzbFhXWlQwUnc?oc=5)**  
+   The Globe and Mail · 29 Jul 2026 · relevance 19
 6. **[CHF 150,000 from Venture Kick to scale autonomous fresh food deployments](https://www.startupticker.ch/en/news/chf-150-000-from-venture-kick-to-scale-autonomous-fresh-food-deployments)**  
    Startupticker · 24 Jul 2026 · relevance 19
 7. **[Ahead Health raises USD 10 million and opens first markets outside Switzerland](https://www.startupticker.ch/en/news/ahead-health-raises-usd-10-million-and-opens-first-markets-outside-switzerland)**  
@@ -37,11 +37,11 @@ _Generated 05 August 2026, covering the last 14 days. 22 stories._
    EPFL News · 28 Jul 2026 · relevance 8
 18. **[Humboldt AI lanciert KI-Tool für den CV-Check im Schweizer Arbeitsmarkt](https://www.startupticker.ch/en/news/humboldt-ai-lanciert-ki-tool-fuer-den-cv-check-im-schweizer-arbeitsmarkt)**  
    Startupticker · 27 Jul 2026 · relevance 8
-19. **[SeasON Energy erhält Millionenfinanzierung für saisonale Energiespeicherung](https://www.startupticker.ch/en/news/cleantech-season-energy-erhaelt-millionenfinanzierung-fuer-saisonale-energiespeicherung)**  
-   Startupticker · 23 Jul 2026 · relevance 8
-20. **[PropTech AssetOS auf Wachstumskurs](https://www.startupticker.ch/en/news/proptech-assetos-auf-wachstumskurs)**  
+19. **[PropTech AssetOS auf Wachstumskurs](https://www.startupticker.ch/en/news/proptech-assetos-auf-wachstumskurs)**  
    Startupticker · 30 Jul 2026 · relevance 7
-21. **[Delta Capacity completes Swedish battery project](https://www.startupticker.ch/en/news/delta-capacity-completes-swedish-battery-project)**  
+20. **[Delta Capacity completes Swedish battery project](https://www.startupticker.ch/en/news/delta-capacity-completes-swedish-battery-project)**  
    Startupticker · 30 Jul 2026 · relevance 6
-22. **[MoleSense and Impli selcted for SPRIND Challenge on Continuous Hormone Monitoring](https://www.startupticker.ch/en/news/molesense-and-impli-selcted-for-sprind-challenge-on-continuous-hormone-monitoring)**  
+21. **[MoleSense and Impli selcted for SPRIND Challenge on Continuous Hormone Monitoring](https://www.startupticker.ch/en/news/molesense-and-impli-selcted-for-sprind-challenge-on-continuous-hormone-monitoring)**  
    Startupticker · 24 Jul 2026 · relevance 6
+22. **[Synhelion erhält Fördermittel für kommerzielle Demo-Anlage](https://www.startupticker.ch/en/news/synhelion-erhaelt-foerdermittel-fuer-kommerzielle-demo-anlage)**  
+   Startupticker · 31 Jul 2026 · relevance 4
