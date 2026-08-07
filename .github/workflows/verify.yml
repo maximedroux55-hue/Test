@@ -10,8 +10,9 @@ name: Weekly verification pass
 # overrules the pipeline, without Max moving it there.
 on:
   schedule:
-    # 05:00 UTC on Mondays, an hour after the database run.
-    - cron: "0 5 * * 1"
+    # 04:52 UTC on Mondays, an hour and a quarter after the database run.
+    # Off the hour for the same reason as the other two: the queue.
+    - cron: "52 4 * * 1"
   workflow_dispatch:
     inputs:
       limit:

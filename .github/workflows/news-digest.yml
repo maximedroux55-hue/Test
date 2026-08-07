@@ -31,8 +31,10 @@ on:
         description: "Rebuild even if this week's plan is still being posted"
         default: "false"
   schedule:
-    # 06:00 UTC every Wednesday (about 08:00 in Switzerland).
-    - cron: "0 6 * * 3"
+    # 05:41 UTC every Wednesday, so the week's plan is on the page by about
+    # 08:00 in Switzerland rather than starting then. Off the hour on purpose:
+    # GitHub's scheduled-run queue is at its worst at round hours.
+    - cron: "41 5 * * 3"
 
 permissions:
   contents: write

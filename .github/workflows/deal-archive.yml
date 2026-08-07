@@ -30,8 +30,17 @@ on:
         description: "Also walk the news archive back this many months (0 = off)"
         default: "0"
   schedule:
-    # 04:00 UTC daily, well before the Wednesday post run at 06:00.
-    - cron: "0 4 * * *"
+    # 03:37 UTC daily: 05:37 in Switzerland in summer, 04:37 in winter, since
+    # cron is UTC and does not follow the clock change.
+    #
+    # Not on the hour, and deliberately so. GitHub queues scheduled runs on
+    # shared runners and the queue is longest at round hours, when everyone
+    # else's crons fire too. Runs at "0 4" were starting close to noon UTC,
+    # which put the page on screen in the early afternoon rather than before
+    # breakfast. An odd minute is the one lever the schedule gives us.
+    #
+    # It still has to land well before the Wednesday post run.
+    - cron: "37 3 * * *"
 
 permissions:
   contents: write
