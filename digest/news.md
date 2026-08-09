@@ -1,16 +1,16 @@
 # Swiss DeepTech news digest
-_Generated 08 August 2026, covering the last 14 days. 21 stories._
+_Generated 09 August 2026, covering the last 14 days. 21 stories._
 
 1. **[GR3N closes a €15.5M Series B round](https://www.startupticker.ch/en/news/gr3n-closes-a-15-5m-series-b-round)**  
    startupticker.ch · sent in
-2. **[Quantonation leads USD 25.5 million seed round for ETH spin-off ZuriQ - Startupticker.ch](https://news.google.com/rss/articles/CBMiqgFBVV95cUxQXzJ6NVZUcHc5TnVTR2d2TXhwNWlyMlpVZzhIcUJRNmlYcTlJRktsSkprRjVRZzNTVS1CYzlwZ2V4SjhSRGEzbmlsNU52YVI2UHBMeGVlWXN1OFRvTlhfSmRIXzFJNmhrQkpmTEhJMXJHUC02RnRST19vbWJ0ak9adzVXNlZXOC1vTGMzMlpndDdOT3lhWGdYYVNubTNBU2VqV1otdWIyQlVjUQ?oc=5)**  
-   Startupticker.ch · 28 Jul 2026 · relevance 24
+2. **[Quantonation leads USD 25.5 million seed round for ETH spin-off ZuriQ](https://www.startupticker.ch/en/news/quantonation-leads-usd-25-5-million-seed-round-for-eth-spin-off-zuriq)**  
+   Startupticker · 28 Jul 2026 · relevance 24
 3. **[Valuemize raises seven-figure pre-seed for product cost software](https://www.startupticker.ch/en/news/valuemize-raises-seven-figure-pre-seed-for-product-cost-software)**  
    Startupticker · 28 Jul 2026 · relevance 21
 4. **[Exclaim Robotics raises USD 4.95 million for data centre repair robots](https://www.startupticker.ch/en/news/exclaim-robotics-raises-eur-4-29-million-for-data-centre-repair-robots)**  
    Startupticker · 05 Aug 2026 · relevance 19
-5. **[Toronto startup Terminal raises $20-million to become the ‘Switzerland’ of telematics trade - The Globe and Mail](https://news.google.com/rss/articles/CBMirgFBVV95cUxNZ2xWZE5LaFdFdW1GRW1mTXBJUE5ZX2dWN3BTSWJ2WjU1S1dHQ0E5MGhRNDRFZlZ4dzVOYW4zMGhDMU8xd2VaRVlzY0hTN3JJd3BOX3kyeTkyWHFDNlpEMXdZR1pTWThqVXp2Wi1ZZlpXLTdtM0xxRGFRZG04WHl0ZEpuNG80T01JaFZxRTZZNEpQZ1RsSDRUamxpRmtGdjdWS2pGeGhzbFhXWlQwUnc?oc=5)**  
-   The Globe and Mail · 29 Jul 2026 · relevance 19
+5. **[Toronto startup Terminal raises $20-million to become the ‘Switzerland’ of telematics trade - theglobeandmail.com](https://news.google.com/rss/articles/CBMirgFBVV95cUxNZ2xWZE5LaFdFdW1GRW1mTXBJUE5ZX2dWN3BTSWJ2WjU1S1dHQ0E5MGhRNDRFZlZ4dzVOYW4zMGhDMU8xd2VaRVlzY0hTN3JJd3BOX3kyeTkyWHFDNlpEMXdZR1pTWThqVXp2Wi1ZZlpXLTdtM0xxRGFRZG04WHl0ZEpuNG80T01JaFZxRTZZNEpQZ1RsSDRUamxpRmtGdjdWS2pGeGhzbFhXWlQwUnc?oc=5)**  
+   theglobeandmail.com · 29 Jul 2026 · relevance 19
 6. **[Ahead Health raises USD 10 million and opens first markets outside Switzerland](https://www.startupticker.ch/en/news/ahead-health-raises-usd-10-million-and-opens-first-markets-outside-switzerland)**  
    Startupticker · 29 Jul 2026 · relevance 18
 7. **[Global AI Funding Increases More than 3-Fold YoY Led by Billion-Dollar Rounds](https://fintechnews.ch/aifintech/global-ai-funding-increases-more-than-3-fold-yoy-led-by-billion-dollar-rounds/84811/)**  
