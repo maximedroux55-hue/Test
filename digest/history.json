@@ -339,6 +339,128 @@
         "kommerzielle",
         "synhelion"
       ]
+    },
+    {
+      "used": "2026-08-10",
+      "title": "Terra Quantum partners with Apex.AI on quantum-safe security",
+      "link": "https://www.startupticker.ch/en/news/terra-quantum-partners-with-apex-ai-on-quantum-safe-security",
+      "coverage_url": null,
+      "norm": "terra quantum partners with apexai on quantumsafe security",
+      "kw": [
+        "apexai",
+        "partners",
+        "quantum",
+        "quantumsafe",
+        "security",
+        "terra"
+      ],
+      "rare": [
+        "apexai",
+        "partners",
+        "quantum",
+        "quantumsafe",
+        "security",
+        "terra"
+      ],
+      "uncommon": [
+        "apexai",
+        "partners",
+        "quantum",
+        "quantumsafe",
+        "security",
+        "terra"
+      ]
+    },
+    {
+      "used": "2026-08-10",
+      "title": "AI model maps tumor tissue to improve cancer care",
+      "link": "https://actu.epfl.ch/news/ai-model-maps-tumor-tissue-to-improve-cancer-care",
+      "coverage_url": null,
+      "norm": "ai model maps tumor tissue to improve cancer care",
+      "kw": [
+        "cancer",
+        "care",
+        "improve",
+        "maps",
+        "model",
+        "tissue",
+        "tumor"
+      ],
+      "rare": [
+        "cancer",
+        "improve",
+        "model",
+        "tissue",
+        "tumor"
+      ],
+      "uncommon": [
+        "cancer",
+        "improve",
+        "model",
+        "tissue",
+        "tumor"
+      ]
+    },
+    {
+      "used": "2026-08-10",
+      "title": "Three Swiss biotechs widen their reach into pharma, paediatrics and lung disease",
+      "link": "https://www.startupticker.ch/en/news/three-swiss-biotechs-widen-their-reach-into-pharma-paediatrics-and-lung-disease",
+      "coverage_url": null,
+      "norm": "three swiss biotechs widen their reach into pharma paediatrics and lung disease",
+      "kw": [
+        "biotechs",
+        "disease",
+        "lung",
+        "paediatrics",
+        "pharma",
+        "reach",
+        "their",
+        "three",
+        "widen"
+      ],
+      "rare": [
+        "biotechs",
+        "disease",
+        "paediatrics",
+        "pharma",
+        "reach",
+        "their",
+        "three",
+        "widen"
+      ],
+      "uncommon": [
+        "biotechs",
+        "disease",
+        "paediatrics",
+        "pharma",
+        "reach",
+        "their",
+        "three",
+        "widen"
+      ]
+    },
+    {
+      "used": "2026-08-10",
+      "title": "When the brain edits its own movies",
+      "link": "https://actu.epfl.ch/news/when-the-brain-edits-its-own-movies",
+      "coverage_url": null,
+      "norm": "when the brain edits its own movies",
+      "kw": [
+        "brain",
+        "edits",
+        "movies",
+        "when"
+      ],
+      "rare": [
+        "brain",
+        "edits",
+        "movies"
+      ],
+      "uncommon": [
+        "brain",
+        "edits",
+        "movies"
+      ]
     }
   ]
 }
