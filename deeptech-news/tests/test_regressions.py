@@ -1526,9 +1526,50 @@ def test_short_week_skips_the_weekend():
     assert linkedin.schedule_days(wednesday, 0) == []
 
 
+def test_a_well_covered_round_is_still_one_story():
+    """Four write-ups of one round must not become four posts.
+
+    The rare-name check calls a word a name when at most three headlines use
+    it, which quietly gave up on the stories carried by the most outlets.
+    Exclaim Robotics ran in Startupticker, AI Insider, EU-Startups and L'Usine
+    Digitale, so "exclaim" was in four headlines, no longer rare, and two of
+    the four survived into the week's plan on consecutive days.
+    """
+    from relevance import deduplicate
+
+    exclaim = [
+        "Exclaim Robotics raises USD 4.95 million for data centre repair robots",
+        "Swiss Startup Exclaim Robotics Emerges From Stealth With Nearly $5M "
+        "in Funding for AI Data Center Robotics",
+        "Zurich-based Exclaim Robotics exits stealth with EUR 4.29 million to "
+        "build robots for AI data centre maintenance",
+        "Avec ses robots mobiles, la start-up suisse Exclaim Robotics veut "
+        "automatiser la maintenance des data centers",
+    ]
+    # Two other companies in the same field. They share "robotics" or "robots"
+    # with Exclaim and with each other, and must stay apart: one field word in
+    # common is not one story.
+    others = [
+        "Nanoflex Robotics awarded EUR 12.5 million from the EIC Accelerator",
+        "IERA Award 2026 goes to flying warehouse robots by Verity",
+        "Synhelion wins German backing for a commercial demonstration plant",
+        "Delta Capacity completes Swedish battery project",
+    ]
+    pool = [{"title": t, "score": 20 - i, "link": f"https://x{i}.example/a"}
+            for i, t in enumerate(exclaim + others)]
+
+    kept = [a["title"] for a in deduplicate(pool)]
+    left = [t for t in kept if "exclaim" in t.lower()]
+    assert len(left) == 1, left
+
+    # And nothing else was swallowed on the way: sharing one field word is not
+    # the same story.
+    assert len(kept) == 1 + len(others), kept
+
+
 # Locking the count means a test appended below the runner, where it would
 # never execute, shows up as a failure rather than as silence. That happened.
-EXPECTED = 65
+EXPECTED = 66
 
 
 if __name__ == "__main__":

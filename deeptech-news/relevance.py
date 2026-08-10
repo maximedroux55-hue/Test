@@ -263,6 +263,13 @@ _STOP = {
     "seed", "series", "funding", "million", "billion", "francs", "franc",
     "chf", "usd", "eur", "swiss", "switzerland", "lands", "secures", "closes",
     "gets", "wins", "news", "technology", "tech", "new", "its", "after",
+    # The feeds are German, French and Italian as well as English, and the
+    # same generic words there were being read as company names. "suisse"
+    # appearing in three headlines was enough to file a piece about a robotics
+    # round with an opinion column, because both were French.
+    "suisse", "suisses", "schweiz", "schweizer", "schweizerische", "svizzera",
+    "svizzero", "millionen", "millions", "milioni", "franken", "finanzierung",
+    "millionenfinanzierung", "runde", "erhaelt", "erhält", "raccoglie",
 }
 
 
@@ -279,9 +286,17 @@ def _keywords(title: str) -> set:
     return {w for w in words if len(w) >= 4 and w not in _STOP and not w.isdigit()}
 
 
+# A word in no more than this many headlines is still name-like, even when
+# several outlets carried the same round. Deliberately flat rather than a share
+# of the pool: a small run must read a name the same way a large one does.
+# Field words sit well above it, "quantum" and "energy" being in double figures
+# across a fortnight, so widening it further changed nothing in testing.
+_LOOSE = 8
+
+
 def _same_story(a: dict, b: dict) -> bool:
-    # Three signals, any one is enough: near-identical text, a strong overlap
-    # of distinctive keywords, or a shared rare name.
+    # Four signals, any one is enough: near-identical text, a shared rare name,
+    # two shared name-like words, or a strong overlap of distinctive keywords.
     if SequenceMatcher(None, a["_norm"], b["_norm"]).ratio() > 0.80:
         return True
     # A rare name shared by two headlines is almost always the same company,
@@ -290,6 +305,16 @@ def _same_story(a: dict, b: dict) -> bool:
     # spin-off ZuriQ" and "ETH Zurich spinout ZuriQ raises $25.5m seed", which
     # share too few words to look alike but are plainly one story.
     if a["_rare"] & b["_rare"]:
+        return True
+    # The rare-name test above switches itself off exactly when a story is
+    # covered most: a word carried by four write-ups is no longer rare by the
+    # strict count, so Exclaim Robotics, written up by Startupticker, AI
+    # Insider, EU-Startups and L'Usine Digitale, read as four separate stories
+    # and took two of the week's seven post slots. Loosening that count on its
+    # own merges different companies that share one field word, so the looser
+    # band needs two shared words rather than one: "exclaim" and "robotics"
+    # together, where Nanoflex Robotics shares only "robotics".
+    if len(a.get("_uncommon", set()) & b.get("_uncommon", set())) >= 2:
         return True
     ka, kb = a["_kw"], b["_kw"]
     if not ka or not kb:
@@ -394,6 +419,9 @@ def deduplicate(articles: list, key=None) -> list:
         art["_kw"] = _keywords(art["title"])
         art["_rare"] = {
             w for w in art["_kw"] if len(w) >= 5 and freq.get(w, 0) <= 3
+        }
+        art["_uncommon"] = {
+            w for w in art["_kw"] if len(w) >= 5 and freq.get(w, 0) <= _LOOSE
         }
 
     kept = []

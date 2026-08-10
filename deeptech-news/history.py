@@ -61,6 +61,9 @@ def _as_story(entry: dict) -> dict:
         "_norm": entry.get("norm", ""),
         "_kw": set(entry.get("kw", [])),
         "_rare": set(entry.get("rare", [])),
+        # Entries written before the looser band existed fall back to the
+        # strict one, which can only under-match, never merge two companies.
+        "_uncommon": set(entry.get("uncommon") or entry.get("rare", [])),
     }
 
 
@@ -92,6 +95,7 @@ def filter_seen(articles: list, history: list, today: dt.date | None = None) -> 
             "_norm": art.get("_norm") or _normalize(art.get("title", "")),
             "_kw": art.get("_kw") or _keywords(art.get("title", "")),
             "_rare": art.get("_rare") or set(),
+            "_uncommon": art.get("_uncommon") or set(),
         }
         if any(_same_story(probe, old) for old in lookalikes):
             continue
@@ -112,6 +116,7 @@ def record(history: list, articles: list, today: dt.date | None = None) -> list:
             "norm": art.get("_norm") or _normalize(art.get("title", "")),
             "kw": sorted(art.get("_kw") or _keywords(art.get("title", ""))),
             "rare": sorted(art.get("_rare") or set()),
+            "uncommon": sorted(art.get("_uncommon") or set()),
         })
     return kept[-MAX_ENTRIES:]
 
