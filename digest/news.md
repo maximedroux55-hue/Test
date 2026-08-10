@@ -1,5 +1,5 @@
 # Swiss DeepTech news digest
-_Generated 09 August 2026, covering the last 14 days. 21 stories._
+_Generated 10 August 2026, covering the last 14 days. 21 stories._
 
 1. **[GR3N closes a €15.5M Series B round](https://www.startupticker.ch/en/news/gr3n-closes-a-15-5m-series-b-round)**  
    startupticker.ch · sent in
@@ -33,8 +33,8 @@ _Generated 09 August 2026, covering the last 14 days. 21 stories._
    SWI swissinfo.ch · 30 Jul 2026 · relevance 8
 16. **[A lipid switch that blocks anthrax](https://actu.epfl.ch/news/a-lipid-switch-that-blocks-anthrax)**  
    EPFL News · 28 Jul 2026 · relevance 8
-17. **[Humboldt AI lanciert KI-Tool für den CV-Check im Schweizer Arbeitsmarkt](https://www.startupticker.ch/en/news/humboldt-ai-lanciert-ki-tool-fuer-den-cv-check-im-schweizer-arbeitsmarkt)**  
-   Startupticker · 27 Jul 2026 · relevance 8
+17. **[AI model maps tumor tissue to improve cancer care](https://actu.epfl.ch/news/ai-model-maps-tumor-tissue-to-improve-cancer-care)**  
+   EPFL News · 10 Aug 2026 · relevance 7
 18. **[PropTech AssetOS auf Wachstumskurs](https://www.startupticker.ch/en/news/proptech-assetos-auf-wachstumskurs)**  
    Startupticker · 30 Jul 2026 · relevance 7
 19. **[When the brain edits its own movies](https://actu.epfl.ch/news/when-the-brain-edits-its-own-movies)**  
