@@ -12,9 +12,47 @@
       "accepted": false
     }
   },
-  "proposals": {},
-  "last_run": "2026-08-03",
-  "could_not_verify": [],
+  "proposals": {
+    "Prem": {
+      "verified": "2026-08-10",
+      "verified_source": "siliconangle.com",
+      "verified_quote": "Prem SA is raising $100 million in Series A funding at a valuation of at least $500 million, Bloomberg reported today . The round is expected to close in the third quarter.",
+      "source_url": "https://siliconangle.com/2026/06/18/prem-seeks-100m-series-export-bans-boost-sovereign-ai-demand/",
+      "verified_by": "automated weekly check"
+    },
+    "Ahead Health": {
+      "verified": "2026-08-10",
+      "verified_source": "startupticker.ch",
+      "verified_quote": "This follows a USD 6 million seed round led by RTP Global in January 2026, in which Tiny.VC, Pareto 20 and a group of angel investors also took part.",
+      "source_url": "https://www.startupticker.ch/en/news/ahead-health-raises-usd-10-million-and-opens-first-markets-outside-switzerland",
+      "verified_by": "automated weekly check",
+      "stage": "Series A",
+      "investors": "3VC, RTP Global",
+      "lead_investor": "3VC",
+      "location": "Zurich"
+    },
+    "Immitra Bio": {
+      "verified": "2026-08-10",
+      "verified_source": "venturelab.swiss",
+      "verified_quote": "Geneva-based Immitra Bio has secured an upsized CHF 2.4 million pre-seed financing round to accelerate the development of its scalable in-vivo gene editing platform and lead therapeutic candidate, IB-003, a potential one-time curative treatment for an inherited anemia.",
+      "source_url": "https://www.venturelab.swiss/Immitra-Bio-raises-CHF-24-million-to-advance-invivo-gene-editing-platform",
+      "verified_by": "automated weekly check",
+      "lead_investor": "Backbone Ventures",
+      "location": "Geneva"
+    },
+    "Valuemize": {
+      "verified": "2026-08-10",
+      "verified_source": "startupticker.ch",
+      "verified_quote": "Zurich-based valuemize has closed a seven-figure pre-seed round with participation from a consortium of VC offices and angel investors.",
+      "source_url": "https://www.startupticker.ch/en/news/valuemize-raises-seven-figure-pre-seed-for-product-cost-software",
+      "verified_by": "automated weekly check"
+    }
+  },
+  "last_run": "2026-08-10",
+  "could_not_verify": [
+    "Terra Quantum",
+    "AI Infrastructure Capital"
+  ],
   "withdrawn": {
     "Prem": "The pass read QueryAI's release, a different company in South Dakota, because the name check was a substring and 'prem' sits inside 'premises'. Withdrawn, and the check now requires the name as a word near the top of the page."
   },
