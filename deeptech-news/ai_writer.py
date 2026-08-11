@@ -237,7 +237,12 @@ def generate_posts(articles: list, days: int, model: str | None = None):
         client = anthropic.Anthropic()
         response = client.messages.create(
             model=model,
-            max_tokens=8000,
+            # Every post is written in one call, so the ceiling has to scale
+            # with how many are asked for. A post runs about 350 tokens; at a
+            # flat 8000 a shortlist of fifteen would have been cut off
+            # mid-sentence and the whole run would have fallen back to
+            # templates. 800 each, and never below the old figure.
+            max_tokens=max(8000, 800 * len(articles)),
             system=SYSTEM_PROMPT,
             output_config={
                 "effort": "low",

@@ -365,7 +365,7 @@ def article_image(url: str, timeout: int = 12) -> str | None:
     )
 
 
-def enrich_articles(articles: list) -> None:
+def enrich_articles(articles: list, workers: int = 8) -> None:
     """Resolve each article's real URL, lead image, and primary source.
 
     For Google News items the link is a redirect, so we first resolve it back to
@@ -373,10 +373,31 @@ def enrich_articles(articles: list) -> None:
     page worth linking to). Then, from a single fetch of that page, we take the
     lead image (feed image wins if the feed gave one) and the story's primary
     source: the company's own site or release behind the coverage.
+
+    Articles are enriched in parallel. Each one costs up to four fetches with
+    timeouts of twelve and fifteen seconds, so a serial pass over a shortlist's
+    worth of candidates ran for twenty five minutes, nearly all of it waiting on
+    sockets. Nothing here is shared between articles: each call reads one dict
+    and writes only that dict, so the work parallelises without a lock.
     """
+    from concurrent.futures import ThreadPoolExecutor
+
+    if not articles:
+        return
+    with ThreadPoolExecutor(max_workers=min(workers, len(articles))) as pool:
+        # Draining the iterator is what raises anything the workers threw.
+        # An executor holds exceptions in its futures and says nothing until
+        # the results are read, so a silent map() would hide a broken fetch.
+        # _enrich_one catches its own, so this should stay quiet.
+        for _ in pool.map(_enrich_one, articles):
+            pass
+
+
+def _enrich_one(a: dict) -> None:
+    """Everything one article needs from the network. Touches only `a`."""
     from google_news import is_google_news_url, resolve_url
 
-    for a in articles:
+    try:
         link = a.get("link", "")
         if is_google_news_url(link):
             real = resolve_url(link)
@@ -464,6 +485,14 @@ def enrich_articles(articles: list) -> None:
             # opened.
             a["image_note"] = (f"could not open {_domain(link)}"
                                if not a["image"] else "")
+    except Exception as exc:
+        # One unreachable host is not a failed run. The article keeps whatever
+        # the feed gave it and the note says why there is nothing more.
+        import sys
+        a.setdefault("image", a.get("image_feed"))
+        a["image_note"] = a.get("image_note") or f"could not read the page: {exc}"
+        print(f"  enrichment failed for {(a.get('title') or '')[:60]}: {exc}",
+              file=sys.stderr)
 
 
 # Kept for compatibility with older callers.

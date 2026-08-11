@@ -1586,9 +1586,58 @@ def test_a_well_covered_round_is_still_one_story():
     assert len(kept) == 1 + len(others), kept
 
 
+def test_the_run_does_not_spend_its_time_waiting_on_sockets():
+    """Enrichment is parallel, and the writer's ceiling scales with the list.
+
+    Both broke on the same change. Fifteen stories instead of seven meant
+    fifteen page fetches instead of seven, each up to four requests at twelve
+    and fifteen second timeouts, run one after another: a build that took three
+    minutes took twenty five, almost all of it idle. And one call writes every
+    post, so a flat 8000 token ceiling that fitted seven would have truncated
+    fifteen and dropped the whole run back to template drafts.
+    """
+    import inspect
+    import time
+    import ai_writer
+    import images
+
+    # The ceiling follows the length of the list.
+    source = inspect.getsource(ai_writer.generate_posts)
+    assert "max_tokens=max(8000, 800 * len(articles))" in source, \
+        "the writer's token ceiling stopped scaling with the shortlist"
+
+    # And enrichment actually runs in parallel: ten articles that each take a
+    # tenth of a second must not take a whole second between them.
+    calls = []
+    real = images._enrich_one
+
+    def slow(a):
+        calls.append(a)
+        time.sleep(0.1)
+
+    images._enrich_one = slow
+    try:
+        batch = [{"link": f"https://e{i}.ch/a"} for i in range(10)]
+        started = time.monotonic()
+        images.enrich_articles(batch)
+        took = time.monotonic() - started
+    finally:
+        images._enrich_one = real
+
+    assert len(calls) == 10, f"enriched {len(calls)} of 10 articles"
+    assert took < 0.5, f"ten articles took {took:.2f}s, so they ran one by one"
+
+    # An article whose page cannot be read costs that article, not the run.
+    # Checked on the source rather than by calling it, because proving it takes
+    # a dead host and a test may not touch the network.
+    guard = inspect.getsource(images._enrich_one)
+    assert "except Exception as exc" in guard, \
+        "one unreachable host would now take the whole run down"
+
+
 # Locking the count means a test appended below the runner, where it would
 # never execute, shows up as a failure rather than as silence. That happened.
-EXPECTED = 66
+EXPECTED = 67
 
 
 if __name__ == "__main__":
