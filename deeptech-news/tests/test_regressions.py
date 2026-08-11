@@ -1721,9 +1721,80 @@ def test_no_source_is_kept_that_never_delivered():
         assert who in queries, f"nothing covers {who} since its feed was dropped"
 
 
+def test_a_crunchbase_export_becomes_rounds():
+    """A month of Swiss rounds dropped in as CSV reaches the database.
+
+    The feeds miss what no newsroom writes up. One month's export carried a USD
+    152M Series B announced that morning and a USD 30M BARDA grant to Basilea,
+    and neither had reached the database, because grant bodies announce on
+    their own sites and no feed carries them.
+    """
+    import tempfile
+    import submissions
+
+    header = ("Transaction Name,Transaction Name URL,Organization Name,"
+              "Organization Name URL,Funding Type,Money Raised,"
+              "Money Raised Currency,Money Raised (in USD),Announced Date,"
+              "Funding Stage,Organization Industries,Organization Location,"
+              "Organization Website,Total Funding Amount,"
+              "Total Funding Amount Currency,Total Funding Amount (in USD),"
+              "Number of Funding Rounds,Lead Investors")
+    rows = [
+        # A real round.
+        'Series B - Vaderis,https://cb.com/a,Vaderis Therapeutics,https://cb.com/o,'
+        'Series B,152000000,USD,152000000,2026-08-11,Early Stage Venture,'
+        '"Biotechnology, Life Science","Basel, Basel-Stadt, Switzerland, Europe",'
+        'https://vaderis.com/,170598980,USD,170598980,2,"Goldman Sachs, TCG"',
+        # A grant no feed carries.
+        'Grant - Basilea,https://cb.com/b,Basilea Pharmaceutica,https://cb.com/o2,'
+        'Grant,30000000,USD,30000000,2026-07-29,,"Biotechnology, Pharmaceutical",'
+        '"Basel, Basel-Stadt, Switzerland, Europe",http://basilea.com,'
+        '233987223,USD,233987223,11,BARDA',
+        # Not Climb material: a listed group's post-IPO debt.
+        'Post-IPO Debt - SIG,https://cb.com/c,SIG Group,https://cb.com/o3,'
+        'Post-IPO Debt,270000000,USD,270000000,2026-08-03,,Manufacturing,'
+        '"Neuhausen, Schaffhausen, Switzerland, Europe",http://sig.biz,'
+        '951985330,USD,951985330,2,',
+        # The same round under two names, which is how Crunchbase files it.
+        'Series B - Hilo,https://cb.com/d,Hilo,https://cb.com/o4,Series B,'
+        '19000000,USD,19000000,2026-07-21,Early Stage Venture,'
+        '"Health Care, Medical Device","Neuchatel, Neuchatel, Switzerland, Europe",'
+        'https://hilo.com,120675083,USD,120675083,7,DFO Management',
+        'Series B - Hilo by Aktiia,https://cb.com/e,Hilo by Aktiia,https://cb.com/o5,'
+        'Series B,19000000,USD,19000000,2026-07-22,Early Stage Venture,'
+        '"Wearables, Health Care","Neuchatel, Neuchatel, Switzerland, Europe",'
+        'https://aktiia.com,61000000,USD,61000000,3,Dell Family Office',
+    ]
+    box = tempfile.mkdtemp()
+    with open(os.path.join(box, "export.csv"), "w", encoding="utf-8") as f:
+        f.write(header + "\n" + "\n".join(rows) + "\n")
+
+    got = submissions.csv_rows(box)
+    names = {r["company"] for r in got}
+
+    # The buyout is out, the round and the grant are in.
+    assert "SIG Group" not in names, "a post-IPO debt reached the database"
+    assert "Vaderis Therapeutics" in names and "Basilea Pharmaceutica" in names
+
+    # One round, not two, however Crunchbase spells the company.
+    hilo = [r for r in got if "hilo" in r["company"].lower()]
+    assert len(hilo) == 1, [r["company"] for r in hilo]
+    # And the merge kept what only the duplicate knew.
+    assert hilo[0]["lead_investor"], "the surviving row lost its lead investor"
+
+    money = {r["company"]: r["amount"] for r in got}
+    assert money["Vaderis Therapeutics"] == "USD 152M", money
+    assert money["Basilea Pharmaceutica"] == "USD 30M", money
+    stages = {r["company"]: r["stage"] for r in got}
+    assert stages["Basilea Pharmaceutica"] == "Grant", stages
+
+    # No export at all is not an error.
+    assert submissions.csv_rows(tempfile.mkdtemp()) == []
+
+
 # Locking the count means a test appended below the runner, where it would
 # never execute, shows up as a failure rather than as silence. That happened.
-EXPECTED = 69
+EXPECTED = 70
 
 
 if __name__ == "__main__":
