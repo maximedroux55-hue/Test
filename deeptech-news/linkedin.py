@@ -234,8 +234,10 @@ def build_post(article: dict, index: int) -> str:
 # Cowork + Chrome workflow off the structured posts.json, so the whole week gets
 # scheduled from one prompt.
 COWORK_PROMPT = (
-    "Open https://maxime-droux.com/digest/posts.json and schedule this week's "
-    "posts.\n\n"
+    "Open https://maxime-droux.com/digest/posts.json and schedule the posts "
+    "listed at the end of this message, and only those. The file holds the "
+    "shortlist; the list below says which of them I picked and when each one "
+    "goes out. Match them by `index`. Ignore every other post in the file.\n\n"
     "For each post, in order:\n"
     "- Type the `text` straight through, once, with real keystrokes. Never "
     "insert\n"
@@ -252,9 +254,9 @@ COWORK_PROMPT = (
     "  render the official name: that is expected and fine, do not fight it, "
     "do not\n"
     "  restart the post, do not rewrite it.\n"
-    "- Schedule at `time` on `date`. If no link preview appears, schedule it "
-    "anyway:\n"
-    "  do not hunt for an image.\n\n"
+    "- Schedule it at the date and time given for it in the list below. If no "
+    "link\n"
+    "  preview appears, schedule it anyway: do not hunt for an image.\n\n"
     "Two attempts per post, then stop. If a post is not scheduled after two "
     "tries,\n"
     "leave it, move to the next one, and list it at the end. Never start a "
@@ -413,20 +415,48 @@ def schedule_days(today, count: int, full_week: int = 7) -> list:
     return days
 
 
-def build_posts(articles: list, days: int, top: int = 7):
-    """Build the week's posts once. Returns (records, mode).
+def _published(art: dict):
+    """The date the story was published, for ordering. Undated sorts last."""
+    import datetime as dt
+
+    when = art.get("date")
+    if isinstance(when, dt.datetime):
+        return when.date()
+    if isinstance(when, dt.date):
+        return when
+    if isinstance(when, str) and when[:10]:
+        try:
+            return dt.date.fromisoformat(when[:10])
+        except ValueError:
+            pass
+    return None
+
+
+def build_posts(articles: list, days: int, top: int = 15):
+    """Build the shortlist once. Returns (records, mode).
 
     Each record is a self-contained dict ready for both the human-readable
     Markdown and the machine-readable posts.json, so the AI writer runs only
-    once per digest. Posts are dated one per day starting the day after the run
-    (a Wednesday run plans Thursday through the next Wednesday). Short weeks
-    skip the weekend, see schedule_days.
+    once per digest.
+
+    The list is a shortlist, not a rota. Nothing is assigned a day here: the
+    stories are ordered newest published first and Max picks the ones worth
+    posting, which is what a wider net makes necessary. Before, seven stories
+    were chosen for him and handed a day each; a run that turned up eleven good
+    ones had to throw four away, and a thin week padded the rota.
     """
     import datetime as dt
     from ai_writer import generate_posts
 
     today = dt.date.today()
-    picks = articles[:top]
+    # Newest first. Relevance decided which stories are here; the date decides
+    # what he reads first, because a round from yesterday is worth more of his
+    # attention than one from last week.
+    picks = sorted(
+        articles[:top],
+        key=lambda a: (_published(a) or dt.date.min),
+        reverse=True,
+    )
 
     ai_posts = generate_posts(picks, days)
     if ai_posts:
@@ -446,9 +476,7 @@ def build_posts(articles: list, days: int, top: int = 7):
 
     records = []
     settled_total = 0
-    when = schedule_days(today, len(picks), full_week=top)
     for i, (text, art) in enumerate(zip(texts, picks)):
-        day = when[i]
         company = art.get("company", "")
         # One @ per post, on the subject company. Five mentions meant five
         # dropdowns to fight in LinkedIn, and two of them could not be tagged.
@@ -470,7 +498,10 @@ def build_posts(articles: list, days: int, top: int = 7):
             "verified_source": checked.get("source", ""),
             "needs_check": risky,
             "index": i + 1,
-            "date": day.isoformat(),
+            "published": (_published(art) or today).isoformat(),
+            "published_label": (_published(art) or today).strftime("%d %B"),
+            "undated": _published(art) is None,
+            "kind": art.get("kind") or "News",
             "time": POST_TIME,
             "text": text,
             "link": art.get("link"),
@@ -482,8 +513,6 @@ def build_posts(articles: list, days: int, top: int = 7):
             # For the plan Max reads, not for the browser session.
             "link_note": art.get("link_note", ""),
             "image_note": art.get("image_note", ""),
-            "weekday": day.strftime("%A"),
-            "schedule_for": day.strftime("%A %d %B"),
             "image": art.get("image"),
             "primary_source": art.get("primary_source"),
             "coverage_url": art.get("coverage_url"),
@@ -496,8 +525,7 @@ def build_posts(articles: list, days: int, top: int = 7):
 
 # What a browser session actually uses. Everything else on a record is for the
 # plan Max reads, and reading it in Cowork is paying to skip it.
-_FOR_COWORK = ("index", "date", "time", "text", "link", "mention",
-               "needs_check", "claims")
+_FOR_COWORK = ("index", "text", "link", "mention", "needs_check", "claims")
 
 
 def for_cowork(records: list) -> list:
@@ -514,33 +542,33 @@ def _mention_hint(text: str, company: str) -> dict:
 
 
 def render_markdown(records: list, mode: str, days: int) -> str:
-    """Render the human-readable weekly plan, with the Cowork handoff on top."""
+    """Render the human-readable shortlist, with the Cowork handoff on top."""
     import datetime as dt
 
     today = dt.date.today()
-    spread = ("one per day" if len(records) >= 7
-              else "one per working day, weekend left blank")
     parts = [
-        "# Climb Ventures LinkedIn plan for the week",
-        f"_Generated {today.strftime('%d %B %Y')}. {len(records)} posts, {spread}, "
-        f"from Swiss DeepTech news of the last {days} days. {mode} "
-        f"Schedule each for {POST_TIME} on its day. Review and edit before posting._",
+        "# Climb Ventures Swiss DeepTech shortlist",
+        f"_Generated {today.strftime('%d %B %Y')}. {len(records)} stories from "
+        f"the last {days} days, newest published first. {mode} Pick the ones "
+        f"worth posting; the page at maxime-droux.com/plan builds the Cowork "
+        f"instruction from your picks. Review and edit before posting._",
         "",
         "## Publish with Claude Cowork",
-        "Paste this into Cowork to schedule the whole week in one go (it reads the "
-        "structured file `digest/posts.json` next to this one):",
+        "The instruction below schedules whichever posts you name at the end of "
+        "it (it reads the structured file `digest/posts.json` next to this one). "
+        "The web page writes that list for you:",
         "",
         "```",
         COWORK_PROMPT,
         "```",
         "",
-        "The posts themselves are below, for review before you run it.",
+        "The stories themselves are below.",
         "",
     ]
     for r in records:
-        parts.append(
-            f"## Post {r['index']} — schedule for {r['schedule_for']} at {r['time']}\n"
-        )
+        when = ("date unknown" if r.get("undated")
+                else f"published {r['published_label']}")
+        parts.append(f"## {r['index']}. {r.get('kind', 'News')} — {when}\n")
         parts.append("```")
         parts.append(r["text"])
         parts.append("```")
@@ -565,10 +593,12 @@ def render_plan_html(records: list, mode: str, days: int) -> str:
     any device with no GitHub login.
     """
     import datetime as dt
+    import json as _json
 
     today = dt.date.today().strftime("%d %B %Y")
-    spread = ("one per day" if len(records) >= 7
-              else "one per working day, weekend left blank")
+    # The prompt travels into the page as a JS string literal. json.dumps is
+    # what makes its newlines and backticks survive that trip intact.
+    prompt_js = _json.dumps(COWORK_PROMPT)
 
     def esc(s: str) -> str:
         return html.escape(s or "")
@@ -596,11 +626,14 @@ def render_plan_html(records: list, mode: str, days: int) -> str:
             main_label = f"Original source: {host}"
         else:
             main_label = f"Article: {r['publisher'] or 'link'}"
+        when = ("date unknown" if r.get("undated")
+                else f"Published {esc(r['published_label'])}")
         cards.append(
-            f"""      <article class="card">
+            f"""      <article class="card" data-index="{r['index']}">
         <div class="cardhead">
-          <span class="num">Post {r['index']}</span>
-          <span class="when">{esc(r['schedule_for'])} &middot; {esc(r['time'])}</span>
+          <label class="pick"><input type="checkbox" class="tick"> <span class="num">{r['index']}</span></label>
+          <span class="kind">{esc(r.get('kind') or 'News')}</span>
+          <span class="when">{when}</span>
           {'<span class="flag">check this figure</span>' if r.get('needs_check') else ('<span class="ok">verified</span>' if r.get('verified') else '')}
         </div>
         <div class="posttext">
@@ -612,12 +645,12 @@ def render_plan_html(records: list, mode: str, days: int) -> str:
         {primary}
       </article>"""
         )
-    body = "\n".join(cards) or "<p>No stories to turn into posts this week.</p>"
+    body = "\n".join(cards) or "<p>No stories on the shortlist this run.</p>"
 
     return f"""<!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Climb LinkedIn plan for the week</title>
+<title>Swiss DeepTech shortlist</title>
 <meta name="robots" content="noindex">
 <style>
   :root {{ --green:#46b96a; --ink:#1b2430; --soft:#5b6472; --line:#e6eae8; --bg:#f6f8f7; }}
@@ -642,16 +675,37 @@ def render_plan_html(records: list, mode: str, days: int) -> str:
   .cowork p {{ font-size:0.85rem; color:var(--soft); margin-bottom:0.6rem; }}
   .card {{ background:#fff; border:1px solid var(--line); border-radius:14px;
           padding:1rem; margin-bottom:1rem; }}
-  .cardhead {{ display:flex; justify-content:space-between; align-items:baseline;
-              gap:0.5rem; margin-bottom:0.6rem; }}
+  /* Wraps rather than squeezes. On a phone the date and the warning badge do
+     not both fit beside the label, and splitting "Published 05 August" across
+     two lines to make them fit reads as a broken card. */
+  .cardhead {{ display:flex; justify-content:space-between; align-items:center;
+              flex-wrap:wrap; gap:0.4rem 0.5rem; margin-bottom:0.6rem; }}
   .num {{ color:var(--green); font-weight:800; }}
   .flag {{ background:#fdf3e3; color:#8a6d3b; border-radius:6px;
           padding:0.05rem 0.45rem; font-size:0.7rem; font-weight:700;
-          text-transform:uppercase; letter-spacing:0.03em; }}
+          text-transform:uppercase; letter-spacing:0.03em; white-space:nowrap; }}
   .ok {{ background:#eef4f0; color:#2f6b46; border-radius:6px;
         padding:0.05rem 0.45rem; font-size:0.7rem; font-weight:700;
-        text-transform:uppercase; letter-spacing:0.03em; }}
-  .when {{ color:var(--soft); font-size:0.82rem; text-align:right; }}
+        text-transform:uppercase; letter-spacing:0.03em; white-space:nowrap; }}
+  .when {{ color:var(--soft); font-size:0.82rem; margin-left:auto;
+          text-align:right; white-space:nowrap; }}
+  .pick {{ display:inline-flex; align-items:center; gap:0.4rem; cursor:pointer; }}
+  .pick input {{ width:1.15rem; height:1.15rem; accent-color:var(--green); cursor:pointer; }}
+  .kind {{ background:var(--bg); color:var(--soft); border:1px solid var(--line);
+          border-radius:6px; padding:0.05rem 0.45rem; font-size:0.7rem;
+          font-weight:700; text-transform:uppercase; letter-spacing:0.03em; }}
+  .card.chosen {{ border-color:var(--green); box-shadow:0 0 0 1px var(--green); }}
+  /* The selection bar sits above everything and never leaves the screen, so
+     the count and the button are one tap away from any card in a list of 15. */
+  .bar {{ position:sticky; bottom:0; z-index:5; margin:1rem -1rem 0;
+         padding:0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom));
+         background:#fff; border-top:1px solid var(--line);
+         display:flex; align-items:center; gap:0.75rem; }}
+  .bar .count {{ font-size:0.85rem; color:var(--soft); flex:1; }}
+  .bar button {{ background:var(--green); color:#fff; border:0; border-radius:10px;
+                padding:0.6rem 0.9rem; font-size:0.88rem; font-weight:700;
+                cursor:pointer; }}
+  .bar button:disabled {{ opacity:0.45; cursor:default; }}
   .posttext {{ position:relative; }}
   pre.post {{ white-space:pre-wrap; word-wrap:break-word; font:inherit;
              background:var(--bg); border:1px solid var(--line); border-radius:10px;
@@ -671,24 +725,29 @@ def render_plan_html(records: list, mode: str, days: int) -> str:
   footer {{ color:var(--soft); font-size:0.78rem; margin-top:2rem; }}
 </style></head><body>
 <div class="wrap">
-  <h1>This week on LinkedIn<span class="dot">.</span></h1>
-  <p class="sub">Generated {today} &middot; {len(records)} posts, {spread} &middot; {esc(mode)}</p>
+  <h1>Swiss DeepTech shortlist<span class="dot">.</span></h1>
+  <p class="sub">Generated {today} &middot; {len(records)} stories from the last {days} days,
+     newest published first &middot; {esc(mode)}</p>
 
   <div class="runbox">
-    <button id="runbtn" class="runbtn">&#8635; Generate this week's posts now</button>
+    <button id="runbtn" class="runbtn">&#8635; Build a fresh shortlist now</button>
     <p id="runstatus" class="runstatus"></p>
   </div>
 
   <div class="cowork">
     <h2>Publish with Claude Cowork</h2>
-    <p>Copy this into Cowork to schedule the whole week in one go:</p>
-    <div class="posttext">
-      <button class="copy" onclick="copyText(this)">Copy</button>
-      <pre class="post">{esc(COWORK_PROMPT)}</pre>
-    </div>
+    <p>Tick the ones worth posting, then use the button at the bottom of the page.
+       It copies the instruction with only your picks in it, one per working day
+       starting tomorrow at {POST_TIME}.</p>
   </div>
 
 {body}
+
+  <div class="bar">
+    <span class="count" id="count">Nothing picked yet</span>
+    <button id="clearbtn" type="button">Clear</button>
+    <button id="copybtn" type="button" disabled>Copy for Cowork</button>
+  </div>
 
   <footer>Review each post before publishing. Times are Swiss local.</footer>
 </div>
@@ -700,6 +759,63 @@ def render_plan_html(records: list, mode: str, days: int) -> str:
       setTimeout(function() {{ btn.textContent = old; }}, 1500);
     }});
   }}
+
+  // Picking. The order of the ticks decides the running order, and the days
+  // are working days from tomorrow: a post on a Saturday reads as nobody home.
+  var PROMPT = {prompt_js};
+  var TIME = "{POST_TIME}";
+  var cards = [].slice.call(document.querySelectorAll('.card'));
+
+  function chosen() {{
+    return cards.filter(function (c) {{ return c.querySelector('.tick').checked; }});
+  }}
+
+  function workingDays(n) {{
+    var out = [], d = new Date();
+    d.setHours(12, 0, 0, 0);
+    while (out.length < n) {{
+      d.setDate(d.getDate() + 1);
+      if (d.getDay() === 0 || d.getDay() === 6) continue;
+      out.push(d.toLocaleDateString('en-GB',
+        {{ weekday: 'long', day: '2-digit', month: 'long' }}));
+    }}
+    return out;
+  }}
+
+  function refresh() {{
+    var picked = chosen();
+    cards.forEach(function (c) {{
+      c.classList.toggle('chosen', c.querySelector('.tick').checked);
+    }});
+    document.getElementById('count').textContent = picked.length
+      ? picked.length + (picked.length === 1 ? ' story picked' : ' stories picked')
+      : 'Nothing picked yet';
+    document.getElementById('copybtn').disabled = picked.length === 0;
+  }}
+
+  function instruction() {{
+    var picked = chosen(), days = workingDays(picked.length), lines = [];
+    picked.forEach(function (c, i) {{
+      lines.push('- post ' + c.dataset.index + ' on ' + days[i] + ' at ' + TIME);
+    }});
+    return PROMPT + '\\n\\nSchedule these, in this order:\\n' + lines.join('\\n') + '\\n';
+  }}
+
+  cards.forEach(function (c) {{
+    c.querySelector('.tick').addEventListener('change', refresh);
+  }});
+  document.getElementById('clearbtn').addEventListener('click', function () {{
+    cards.forEach(function (c) {{ c.querySelector('.tick').checked = false; }});
+    refresh();
+  }});
+  document.getElementById('copybtn').addEventListener('click', function () {{
+    var btn = this;
+    navigator.clipboard.writeText(instruction()).then(function () {{
+      var old = btn.textContent; btn.textContent = 'Copied';
+      setTimeout(function () {{ btn.textContent = old; }}, 1600);
+    }});
+  }});
+  refresh();
 
   var RUN_URL = "{RUN_URL}";
   var runBtn = document.getElementById('runbtn');

@@ -7,8 +7,8 @@ name: Swiss DeepTech news digest
 #
 # Two ways to run:
 #  1. Manually: the button on maxime-droux.com, or Actions -> Run workflow.
-#  2. Automatically: every Wednesday morning, producing 7 posts for the week
-#     so they can all be scheduled in one session.
+#  2. Automatically: every Wednesday morning, producing a shortlist of 15
+#     stories, newest published first, to pick from.
 on:
   workflow_dispatch:
     inputs:
@@ -19,16 +19,20 @@ on:
         # both stand and the week is however long the news made it.
         default: "10"
       min_score:
+        # Three, not four. Four was tuned when the list was seven funding
+        # rounds; a discovery carries no deal words and so scores lower than a
+        # round of the same importance. Appointments, listicles, market reports
+        # and court news are held out by the noise rules, not by this number.
         description: "Minimum relevance score"
-        default: "4"
+        default: "3"
       limit:
         description: "Maximum number of stories to consider"
-        default: "60"
+        default: "90"
       posts:
-        description: "Number of LinkedIn posts to write (one per day)"
-        default: "7"
+        description: "Length of the shortlist to draft"
+        default: "15"
       force:
-        description: "Rebuild even if this week's plan is still being posted"
+        description: "Rebuild even if the shortlist on disk is still current"
         default: "false"
   schedule:
     # 05:41 UTC every Wednesday, so the week's plan is on the page by about
@@ -66,7 +70,7 @@ jobs:
           cd deeptech-news
           python tests/test_regressions.py
 
-      - name: Write the week's posts
+      - name: Build the shortlist
         env:
           # Optional: add a repo secret named ANTHROPIC_API_KEY to get
           # AI-written LinkedIn posts. Without it, template drafts are used.
@@ -75,9 +79,9 @@ jobs:
           cd deeptech-news
           python scraper.py \
             --days "${{ github.event.inputs.days || '10' }}" \
-            --min-score "${{ github.event.inputs.min_score || '4' }}" \
-            --limit "${{ github.event.inputs.limit || '60' }}" \
-            --posts "${{ github.event.inputs.posts || '7' }}" \
+            --min-score "${{ github.event.inputs.min_score || '3' }}" \
+            --limit "${{ github.event.inputs.limit || '90' }}" \
+            --posts "${{ github.event.inputs.posts || '15' }}" \
             ${{ github.event.inputs.force != 'true' && '--skip-if-week-planned' || '' }} \
             --posts-only
 

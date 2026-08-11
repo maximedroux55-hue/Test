@@ -14,12 +14,14 @@
 
 const { chromium } = require('/opt/node22/lib/node_modules/playwright');
 const path = require('path');
+const fs = require('fs');
 
 const OUT = path.resolve(__dirname, '..', 'output');
 const PAGES = [
   { file: 'archive.html', name: 'database', editable: true },
   { file: 'held.html',    name: 'held back', editable: true },
   { file: 'news.html',    name: 'all Swiss news', editable: false },
+  { file: 'plan.html',    name: 'shortlist', editable: false, picker: true },
 ];
 const WIDTHS = [
   { w: 390,  h: 844, label: 'phone' },
@@ -35,7 +37,15 @@ function check(cond, where, what) {
 (async () => {
   const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium' });
 
-  for (const page of PAGES) {
+  // The database job writes archive, held and news; the posts job writes the
+  // shortlist. One run's output directory never holds all four, so a page that
+  // this run did not build is skipped out loud rather than failed.
+  const built = PAGES.filter(p => fs.existsSync(path.join(OUT, p.file)));
+  const missing = PAGES.filter(p => !built.includes(p)).map(p => p.file);
+  if (missing.length) console.log(`not built by this run, skipped: ${missing.join(', ')}`);
+  if (!built.length) { console.error('FAILED\n  no pages to check at all'); process.exit(1); }
+
+  for (const page of built) {
     for (const size of WIDTHS) {
       const where = `${page.name} @ ${size.label}`;
       const tab = await browser.newPage({ viewport: { width: size.w, height: size.h } });
@@ -53,7 +63,7 @@ function check(cond, where, what) {
 
       // Something has to be on the page.
       const rows = await tab.evaluate(
-        () => document.querySelectorAll('#rows tr, #rows li').length);
+        () => document.querySelectorAll('#rows tr, #rows li, .card').length);
       check(rows > 0, where, 'no rows rendered at all');
 
       // Filtering has to actually filter.
@@ -100,6 +110,42 @@ function check(cond, where, what) {
         }
       }
 
+      // The shortlist: ticking cards has to build an instruction naming those
+      // cards and no others, on working days only.
+      if (page.picker) {
+        check(await tab.evaluate(() => document.getElementById('copybtn').disabled),
+              where, 'Copy is enabled before anything is picked');
+        const want = await tab.evaluate(() => {
+          var all = [].slice.call(document.querySelectorAll('.card'));
+          // Two cards that are not the first, so a leak is visible.
+          return all.slice(1).filter((_, i) => i % 2 === 0).slice(0, 2)
+                    .map(c => c.dataset.index);
+        });
+        for (const n of want) await tab.click(`.card[data-index="${n}"] .tick`);
+        const state = await tab.evaluate(() => ({
+          off: document.getElementById('copybtn').disabled,
+          lit: document.querySelectorAll('.card.chosen').length,
+          text: instruction(),
+          all: [].slice.call(document.querySelectorAll('.card'))
+                 .map(c => c.dataset.index),
+        }));
+        check(!state.off, where, 'Copy stayed disabled after picking');
+        check(state.lit === want.length, where,
+              `${state.lit} cards highlighted, expected ${want.length}`);
+        for (const n of want)
+          check(state.text.includes(`- post ${n} on `), where,
+                `picked post ${n} is missing from the instruction`);
+        for (const n of state.all.filter(n => !want.includes(n)))
+          check(!state.text.includes(`- post ${n} on `), where,
+                `post ${n} was not picked but reached the instruction`);
+        check(!/(Saturday|Sunday)/.test(state.text), where,
+              'a picked post was scheduled on a weekend');
+        await tab.click('#clearbtn');
+        check(await tab.evaluate(
+                () => document.querySelectorAll('.card.chosen').length) === 0,
+              where, 'Clear left cards highlighted');
+      }
+
       check(errors.length === 0, where, `console errors: ${errors.join(' | ')}`);
       await tab.close();
     }
@@ -111,5 +157,5 @@ function check(cond, where, what) {
     console.error('FAILED\n  ' + problems.join('\n  '));
     process.exit(1);
   }
-  console.log(`all pages pass, ${PAGES.length} pages x ${WIDTHS.length} widths`);
+  console.log(`all pages pass, ${built.length} pages x ${WIDTHS.length} widths`);
 })();

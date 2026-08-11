@@ -1106,8 +1106,12 @@ def test_a_third_link_only_when_the_week_is_short():
                           source)
         return int(found.group(1)) if found else None
 
-    assert shipped("--max-per-domain") == 2, "the normal cap moved"
-    assert shipped("--max-per-domain-hard") == 5, "the short-week cap moved"
+    # The list is fifteen now, not seven, so the caps that fill it moved with
+    # it. Five and eight keep the same shape: no outlet owns the list, and a
+    # thin fortnight still fills rather than shipping half a page.
+    assert shipped("--posts") == 15, "the shortlist length moved"
+    assert shipped("--max-per-domain") == 5, "the normal cap moved"
+    assert shipped("--max-per-domain-hard") == 8, "the short-list cap moved"
 
 
 def test_the_picture_comes_from_the_story_not_the_page():
@@ -1202,6 +1206,16 @@ def test_a_run_does_not_land_on_a_week_being_posted():
     # No plan at all is not a live week.
     assert scraper.week_still_running("/nonexistent", dt.date(2026, 8, 5)) is False
 
+    # A shortlist carries no day per post, so its age is what counts. Six days
+    # is the life: rebuilding sooner would record the stories Max has not
+    # picked yet as used, and they would never come back.
+    shortlist = tempfile.mkdtemp()
+    with open(os.path.join(shortlist, "posts.json"), "w", encoding="utf-8") as f:
+        json.dump({"generated": "2026-08-05", "posts": [{"index": 1}]}, f)
+    assert scraper.week_still_running(shortlist, dt.date(2026, 8, 5)) is True
+    assert scraper.week_still_running(shortlist, dt.date(2026, 8, 10)) is True
+    assert scraper.week_still_running(shortlist, dt.date(2026, 8, 11)) is False
+
     # A live week is protected from every trigger, not only the schedule. The
     # page button dispatches the workflow too, and so would a stale Cloudflare
     # Worker posting to an endpoint it does not know: either would have
@@ -1223,18 +1237,20 @@ def test_cowork_reads_only_what_it_uses():
     """Every field a scheduling session does not use is paid for and skipped."""
     import linkedin
 
-    record = {"index": 1, "date": "2026-08-05", "time": "08:00", "text": "x",
+    record = {"index": 1, "published": "2026-08-05", "time": "08:00",
+              "published_label": "05 August", "kind": "Round", "text": "x",
               "link": "https://e.ch", "mention": {"type": "A", "expect": "A"},
               "needs_check": False, "claims": [], "settled": ["a"],
-              "weekday": "Wednesday", "schedule_for": "Wednesday 05 August",
               "image": "https://e.ch/x.jpg", "publisher": "E",
               "link_note": "-", "image_note": "", "primary_source": None,
               "coverage_url": None, "verified": False, "verified_source": ""}
     slim = linkedin.for_cowork([record])[0]
-    assert set(slim) == {"index", "date", "time", "text", "link", "mention",
+    # No date and no time: the shortlist has no rota, and the day each picked
+    # post goes out is written into the instruction when Max copies it.
+    assert set(slim) == {"index", "text", "link", "mention",
                          "needs_check", "claims"}
-    # The plan Max reads keeps everything; only the machine file is trimmed.
-    assert record.get("schedule_for") == "Wednesday 05 August"
+    # The page Max reads keeps everything; only the machine file is trimmed.
+    assert record.get("published_label") == "05 August"
 
     # The mention is a check, not a guess at the first dropdown row.
     hint = linkedin._mention_hint("@Humboldt AI launched a tool.", "Humboldt AI")
@@ -1246,6 +1262,9 @@ def test_cowork_reads_only_what_it_uses():
     assert "do not edit any file or commit" in prompt
     assert "proposals.json" not in prompt
     assert "already scheduled" in prompt
+    # And it must schedule only what Max picked, never the whole file.
+    assert "and only those" in prompt
+    assert "Ignore every other post in the file" in prompt
     # Worst case has to be bounded. A post that will not go through can
     # otherwise be retried until the session is out of money.
     assert "Two attempts per post" in prompt

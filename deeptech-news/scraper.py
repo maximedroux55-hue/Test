@@ -647,31 +647,52 @@ CORRECTIONS_SAVE_URL = ("https://md-news-button.maxime-droux55.workers.dev/"
                         "correction")
 
 
-def week_still_running(outdir: str, today: dt.date | None = None) -> bool:
-    """Is the plan on disk still being posted?
+# How long a shortlist is treated as still in use. A run that overwrites one
+# Max has not finished with does not just replace a page: it records every
+# story on it as used, so the ones he had not picked yet are gone for good.
+SHORTLIST_LIFE = dt.timedelta(days=6)
 
-    True while any post in it is dated today or later. A scheduled run that
-    fires into a live week overwrites the plan being worked through, and worse,
-    records its own picks as used: five good stories spent on a plan nobody
-    posts. Running by hand still forces a rebuild.
+
+def week_still_running(outdir: str, today: dt.date | None = None) -> bool:
+    """Is the shortlist on disk still the one being worked through?
+
+    The old rule read the last scheduled date, which worked while every story
+    was handed a day. A shortlist has no days: Max picks from it and the days
+    are decided when he copies the instruction. So the question became how old
+    the list is, and anything inside SHORTLIST_LIFE is treated as live.
+
+    Running by hand still forces a rebuild.
     """
     import json as _json
 
     today = today or _zurich_now().date()
     try:
         with open(os.path.join(outdir, "posts.json"), encoding="utf-8") as f:
-            posts = _json.load(f).get("posts", [])
+            saved = _json.load(f)
     except Exception:
         return False
-    dates = [(p.get("date") or "").strip() for p in posts if p.get("date")]
-    if not dates:
+
+    # A file written before the shortlist existed still carries a day per post.
+    # Read it the old way rather than rebuilding over a week being posted.
+    dates = [(p.get("date") or "").strip()
+             for p in saved.get("posts", []) if p.get("date")]
+    if dates and max(dates) >= today.isoformat():
+        print(f"The plan on disk runs to {max(dates)} and is still being "
+              f"posted. Leaving it alone. Run it by hand to rebuild anyway.",
+              file=sys.stderr)
+        return True
+
+    made = (saved.get("generated") or "").strip()
+    try:
+        made_on = dt.date.fromisoformat(made[:10])
+    except ValueError:
         return False
-    last = max(dates)
-    if last >= today.isoformat():
-        print(f"The plan on disk runs to {last} and is still being posted. "
-              f"Leaving it alone: a new one now would overwrite it and spend "
-              f"this week's stories on a plan nobody posts. Run it by hand to "
-              f"rebuild anyway.", file=sys.stderr)
+    if today - made_on < SHORTLIST_LIFE:
+        print(f"The shortlist on disk was built on {made_on.isoformat()} and "
+              f"is still current. Leaving it alone: rebuilding now would "
+              f"record every story on it as used, including the ones not "
+              f"picked yet. Run it by hand to rebuild anyway.",
+              file=sys.stderr)
         return True
     return False
 
@@ -1907,20 +1928,22 @@ def main() -> None:
     ap.add_argument("--outdir", default="output", help="Output directory (default ./output)")
     ap.add_argument("--format", choices=["digest", "linkedin", "both"], default="both",
                     help="What to produce: ranked digest, LinkedIn drafts, or both (default both)")
-    ap.add_argument("--posts", type=int, default=7,
-                    help="Number of LinkedIn drafts to write, one per day (default 7)")
-    ap.add_argument("--max-per-source", type=int, default=2,
-                    help="Max posts from any single outlet, for variety (default 2)")
-    ap.add_argument("--max-per-domain", type=int, default=2,
-                    help="Max posts linking to any one site, counted on the "
-                         "link the post carries (default 2)")
-    ap.add_argument("--max-per-domain-hard", type=int, default=5,
-                    help="What one site may reach when the week would "
-                         "otherwise be short (default 5). Startupticker "
-                         "writes about two thirds of Swiss DeepTech news, so "
-                         "a full week is not reachable on two links from it. "
-                         "The soft cap of two still governs any week that can "
-                         "fill itself without borrowing.")
+    ap.add_argument("--posts", type=int, default=15,
+                    help="Length of the shortlist to draft (default 15). Not a "
+                         "rota: nothing is assigned a day, Max picks from it.")
+    ap.add_argument("--max-per-source", type=int, default=5,
+                    help="Max drafts from any single outlet, for variety "
+                         "(default 5)")
+    ap.add_argument("--max-per-domain", type=int, default=5,
+                    help="Max drafts linking to any one site, counted on the "
+                         "link the draft carries (default 5)")
+    ap.add_argument("--max-per-domain-hard", type=int, default=8,
+                    help="What one site may reach when the shortlist would "
+                         "otherwise be short (default 8). Startupticker writes "
+                         "about two thirds of Swiss DeepTech news, so a list of "
+                         "fifteen is not reachable on five links from it. The "
+                         "soft cap still governs any run that can fill itself "
+                         "without borrowing.")
     ap.add_argument("--history", default="../digest/history.json",
                     help="Record of stories already posted, so none repeats")
     ap.add_argument("--archive", default="../digest/archive.json",
@@ -2058,9 +2081,9 @@ def main() -> None:
                 per_domain[host] = per_domain.get(host, 0) + 1
                 picks.append(art)
 
-        # The cap is two, and a short week is worse than a third link from one
-        # outlet. Only what the week is actually missing is taken back, and
-        # never past the hard limit.
+        # A short list is worse than one more link from a busy outlet. Only
+        # what the list is actually missing is taken back, and never past the
+        # hard limit.
         borrowed = 0
         for host, art in overflow:
             if len(picks) >= args.posts:
@@ -2072,10 +2095,10 @@ def main() -> None:
             borrowed += 1
         if borrowed:
             print(
-                f"The week was {borrowed} post{'s' if borrowed > 1 else ''} "
-                f"short, so {borrowed} slot{'s' if borrowed > 1 else ''} went "
-                f"to a site already at {args.max_per_domain}, up to "
-                f"{args.max_per_domain_hard}.",
+                f"The shortlist was {borrowed} "
+                f"{'stories' if borrowed > 1 else 'story'} short, so "
+                f"{borrowed} went to a site already at "
+                f"{args.max_per_domain}, up to {args.max_per_domain_hard}.",
                 file=sys.stderr,
             )
         if capped:
@@ -2110,42 +2133,45 @@ def main() -> None:
             # the published plan alone and raises the alarm, where writing an
             # empty file would wipe the page and look like silence.
             sys.exit(
-                "No posts to publish. Something upstream is wrong: the feeds "
+                "Nothing to shortlist. Something upstream is wrong: the feeds "
                 "returned nothing usable, or a filter is rejecting everything. "
                 "The published plan is untouched. Check the log above for what "
                 "was dropped and why."
             )
         if len(picks) < args.posts:
             print(
-                f"Only {len(picks)} unused stories available for {args.posts} "
-                f"posts"
+                f"Only {len(picks)} unused stories available for a shortlist "
+                f"of {args.posts}"
                 + (f", after skipping {capped} that would have exceeded "
                    f"{args.max_per_domain} links on one site" if capped else "")
-                + ". Ten days is the window and it stands: a short week "
-                  "means the news was thin, not that the tool failed.",
+                + ". The window stands: a short list means the news was thin, "
+                  "not that the tool failed.",
                 file=sys.stderr,
             )
         print(
-            f"Picked {len(picks)} posts across "
+            f"Shortlisted {len(picks)} stories across "
             f"{len({p['publisher'] for p in picks})} outlets "
             f"(max {args.max_per_source} each).",
             file=sys.stderr,
         )
 
-        # The overflow picks arrive at the end of the list, so a week with three
-        # links from one site reads as three days of that site in a row. Space
-        # them before the days are handed out.
-        from relevance import adjacent_repeats, space_out
+        # What happened, in one word, so a list of fifteen can be read at a
+        # glance: a round, a discovery and a grant do not look alike on the page
+        # any more. Same labels as the news page.
+        for art in picks:
+            art["kind"] = _kind(art)
+        seen_kinds = {}
+        for art in picks:
+            seen_kinds[art["kind"]] = seen_kinds.get(art["kind"], 0) + 1
+        print("  shortlist: "
+              + ", ".join(f"{k} {n}" for k, n in
+                          sorted(seen_kinds.items(), key=lambda kv: -kv[1])),
+              file=sys.stderr)
 
-        picks = space_out(picks)
-        repeats = adjacent_repeats(picks)
-        if repeats:
-            print(
-                f"{repeats} pair{'s' if repeats > 1 else ''} of consecutive "
-                f"posts still share an outlet: too few outlets this week to "
-                f"space them all.",
-                file=sys.stderr,
-            )
+        # No outlet spacing any more. It existed so that three Startupticker
+        # links did not land on three consecutive days; a shortlist ordered by
+        # publication date has no days to land on, and reordering it by outlet
+        # would fight the ordering Max asked for.
 
         # Build once, then write the human plan (Markdown), the phone-friendly
         # web page (HTML, served at maxime-droux.com/plan), and the
