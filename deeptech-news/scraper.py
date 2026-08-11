@@ -72,10 +72,18 @@ def _publisher(entry, source_label: str) -> str:
     return "Google News"
 
 
-# How long any one feed may take before the run gives up on it. Long enough
-# for a slow institutional server, short enough that a silent one costs the
-# run seconds rather than minutes.
-FEED_TIMEOUT = 20
+# How long any one feed may take before the run gives up on it.
+#
+# Twenty was too mean. Startupticker took longer than that on a bad evening and
+# was skipped, which is most of Swiss DeepTech news gone in one line, and the
+# run ended with nothing to shortlist. The feeds are fetched in parallel now,
+# so a generous limit costs nothing: the run waits for the slowest feed, not
+# for the sum of them. Forty five still guards against the real failure, which
+# was a server holding a connection open for four and a half minutes.
+FEED_TIMEOUT = 45
+
+# How many feeds to fetch at once.
+FEED_WORKERS = 8
 
 
 def collect(days: int, min_score: int, backfill_months: int = 0,
@@ -107,16 +115,31 @@ def collect(days: int, min_score: int, backfill_months: int = 0,
     import socket
     socket.setdefaulttimeout(FEED_TIMEOUT)
 
-    for source_label, url in feeds:
+    # Fetch every feed at once, then read them one at a time. The fetching is
+    # all waiting and parallelises cleanly; the reading below shares `articles`
+    # and `seen_links` and stays where it is. Serially, thirty feeds at up to
+    # forty five seconds each is a run that could spend twenty minutes before
+    # scoring a single story.
+    from concurrent.futures import ThreadPoolExecutor
+
+    def _read(feed):
+        label, url = feed
         try:
-            parsed = feedparser.parse(url, agent=browser_ua)
+            return label, url, feedparser.parse(url, agent=browser_ua), None
         except Exception as exc:
             # feedparser reports most network trouble by setting bozo, which is
             # what the check below reads. It does not catch everything: a
             # RemoteDisconnected escaped it and took the run down with it, on a
             # feed that had simply been throttled. No single feed is worth the
             # run, so any failure here is one skipped source.
-            print(f"  ! skipped ({type(exc).__name__}): {source_label} {url}",
+            return label, url, None, type(exc).__name__
+
+    with ThreadPoolExecutor(max_workers=min(FEED_WORKERS, len(feeds) or 1)) as pool:
+        fetched = list(pool.map(_read, feeds))
+
+    for source_label, url, parsed, failure in fetched:
+        if failure:
+            print(f"  ! skipped ({failure}): {source_label} {url}",
                   file=sys.stderr)
             continue
         if parsed.bozo and not parsed.entries:

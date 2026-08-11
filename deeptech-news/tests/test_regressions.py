@@ -1651,15 +1651,19 @@ def test_one_bad_feed_does_not_cost_the_run():
     source = inspect.getsource(sc.collect)
     assert "socket.setdefaulttimeout(FEED_TIMEOUT)" in source, \
         "a silent feed can hold the run open again"
-    assert sc.FEED_TIMEOUT <= 30, "the feed timeout is too long to be a guard"
+    # Generous, because the feeds are fetched in parallel and the run waits for
+    # the slowest rather than the sum. Twenty was mean enough to skip
+    # Startupticker on a slow evening, which is most of the news in one line,
+    # and the run ended with nothing to shortlist.
+    assert 30 <= sc.FEED_TIMEOUT <= 60, \
+        "the feed timeout is either too mean to trust or too long to guard"
+    assert "ThreadPoolExecutor" in source, \
+        "the feeds are fetched one at a time again, so the timeout costs the run"
 
-    # The parse itself is guarded, and the guard skips rather than re-raises.
-    parse = source.split("for source_label, url in feeds:", 1)[1]
-    body = parse.split("for entry in parsed.entries:", 1)[0]
-    assert "try:" in body and "except Exception" in body, \
-        "feedparser.parse is unguarded again"
-    assert body.count("continue") >= 2, \
-        "a failed feed must be skipped, not allowed to fall through"
+    # The parse itself is guarded, and the guard reports rather than re-raises.
+    assert "except Exception as exc:" in source, "feedparser.parse is unguarded again"
+    assert "return label, url, None, type(exc).__name__" in source, \
+        "a failed feed must come back as a skip, not as an exception"
 
     # And a real one: a feed whose fetch raises must leave the others alone.
     real = sc.feedparser.parse
