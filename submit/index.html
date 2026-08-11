@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add rounds | Maxime Droux</title>
+<meta name="robots" content="noindex">
+<style>
+  :root { --green:#46b96a; --ink:#1b2430; --soft:#5b6472; --line:#e6eae8; --bg:#f6f8f7;
+          --warn:#8a6d3b; --warnbg:#fdf3e3; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+         background:var(--bg); color:var(--ink); line-height:1.55; }
+  .wrap { max-width:720px; margin:0 auto; padding:2rem 1rem 4rem; }
+  h1 { font-size:1.6rem; letter-spacing:-0.02em; }
+  h1 .dot { color:var(--green); }
+  .sub { color:var(--soft); margin:0.4rem 0 1.5rem; font-size:0.9rem; }
+  .card { background:#fff; border:1px solid var(--line); border-radius:14px;
+          padding:1.1rem; margin-bottom:1rem; }
+  .card h2 { font-size:1rem; margin-bottom:0.5rem; }
+  .card p { font-size:0.88rem; color:var(--soft); }
+  .card p + p { margin-top:0.5rem; }
+  /* The drop zone is the whole point of the page, so it is the biggest thing
+     on it and works as a tap target on a phone, not only as a drag target. */
+  /* A label is inline by default, which collapses the dashed border to a box
+     the size of the text and spills the rest across the page. */
+  .drop { display:block; border:2px dashed var(--line); border-radius:14px;
+          background:#fff; padding:2.2rem 1rem; margin-bottom:1rem;
+          text-align:center; cursor:pointer;
+          transition:border-color .15s ease, background .15s ease; }
+  .drop:hover, .drop.over { border-color:var(--green); background:#fbfefc; }
+  .drop strong { display:block; font-size:1.05rem; margin-bottom:0.3rem; }
+  .drop span { color:var(--soft); font-size:0.87rem; }
+  input[type=file] { display:none; }
+  table { width:100%; border-collapse:collapse; font-size:0.85rem; margin-top:0.8rem; }
+  th, td { text-align:left; padding:0.4rem 0.5rem; border-bottom:1px solid var(--line); }
+  th { color:var(--soft); font-weight:600; font-size:0.75rem;
+       text-transform:uppercase; letter-spacing:0.04em; }
+  td.num { text-align:right; white-space:nowrap; }
+  .tag { border-radius:6px; padding:0.05rem 0.45rem; font-size:0.7rem;
+         font-weight:700; text-transform:uppercase; letter-spacing:0.03em;
+         background:var(--bg); color:var(--soft); border:1px solid var(--line); }
+  .out { background:var(--warnbg); color:var(--warn); border-color:transparent; }
+  .scroll { overflow-x:auto; }
+  .actions { display:flex; gap:0.6rem; align-items:center; margin-top:1rem; }
+  button { background:var(--green); color:#fff; border:0; border-radius:10px;
+           padding:0.7rem 1.1rem; font-size:0.95rem; font-weight:700; cursor:pointer; }
+  button:disabled { opacity:0.45; cursor:default; }
+  button.ghost { background:#fff; color:var(--soft); border:1px solid var(--line); }
+  .status { font-size:0.87rem; color:var(--soft); }
+  .status.bad { color:#a33; }
+  .status.good { color:#2f6b46; font-weight:600; }
+  code { font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+         font-size:0.86em; background:var(--bg); padding:0.05em 0.35em; border-radius:5px; }
+  footer { color:var(--soft); font-size:0.78rem; margin-top:2rem; }
+  a { color:var(--green); }
+</style></head><body>
+<div class="wrap">
+  <h1>Add rounds<span class="dot">.</span></h1>
+  <p class="sub">Drop a Crunchbase funding-rounds export here. It is checked in your
+     browser first, so you see exactly what would be added before anything is saved.</p>
+
+  <div class="card">
+    <h2>What this does</h2>
+    <p>The tracker only knows what its sources carry, and no newsroom writes up an
+       Innosuisse or Venture Kick award. An export fills that gap.</p>
+    <p>Buyouts, debt and equity crowdfunding are left out. Everything else becomes a
+       round and joins the same merge as the rest, so a round already on record gains
+       the export's facts rather than appearing twice.</p>
+    <p>The file is saved into the repository and re-read on <em>every</em> run, so it
+       keeps working rather than being a one-off import.</p>
+  </div>
+
+  <label class="drop" id="drop">
+    <input type="file" id="file" accept=".csv,text/csv">
+    <strong>Choose a file, or drop one here</strong>
+    <span>A <code>.csv</code> export from Crunchbase</span>
+  </label>
+
+  <div id="preview"></div>
+
+  <footer>Saved to <code>deeptech-news/submissions/</code> on the site's repository.
+    Nothing is uploaded until you press Save.</footer>
+</div>
+<script>
+  var SAVE_URL = "https://md-news-button.maxime-droux55.workers.dev/submission";
+
+  // The same set the importer skips, so the page cannot promise something the
+  // pipeline will then drop.
+  var NOT_VENTURE = ["post-ipo debt", "post-ipo equity", "private equity",
+                     "debt financing", "equity crowdfunding", "secondary market"];
+
+  var chosen = null;
+
+  // A CSV reader that respects quotes, because the industries column is a
+  // quoted list with commas in it and a naive split shifts every later column.
+  function parseCsv(text) {
+    var rows = [], row = [], field = "", quoted = false;
+    for (var i = 0; i < text.length; i++) {
+      var c = text[i];
+      if (quoted) {
+        if (c === '"' && text[i + 1] === '"') { field += '"'; i++; }
+        else if (c === '"') { quoted = false; }
+        else { field += c; }
+      } else if (c === '"') { quoted = true; }
+      else if (c === ",") { row.push(field); field = ""; }
+      else if (c === "\n") { row.push(field); rows.push(row); row = []; field = ""; }
+      else if (c !== "\r") { field += c; }
+    }
+    if (field.length || row.length) { row.push(field); rows.push(row); }
+    return rows.filter(function (r) { return r.length > 1 || (r[0] || "").trim(); });
+  }
+
+  function money(amount, currency) {
+    var v = parseFloat(amount);
+    if (!v || v <= 0) return "";
+    var cur = (currency || "USD").toUpperCase();
+    if (v >= 1e6) return cur + " " + (v / 1e6).toFixed(2).replace(/\.?0+$/, "") + "M";
+    return cur + " " + Math.round(v / 1000) + "k";
+  }
+
+  // The same collapse the importer does, so the count on this page is the count
+  // that lands. Crunchbase filed one Neuchatel Series B under both "Hilo" and
+  // "Hilo by Aktiia", same USD 19M, a day apart: same money and one name inside
+  // the other means one deal.
+  function oneRoundPerDeal(entries) {
+    var kept = [];
+    entries.slice().sort(function (a, b) {
+      return a.company.length - b.company.length;
+    }).forEach(function (e) {
+      var mine = e.company.toLowerCase().replace(/[^a-z0-9]/g, "");
+      var twin = kept.filter(function (k) {
+        var theirs = k.company.toLowerCase().replace(/[^a-z0-9]/g, "");
+        return e.usd && k.usd === e.usd &&
+               (mine.indexOf(theirs) >= 0 || theirs.indexOf(mine) >= 0);
+      })[0];
+      if (twin) {
+        if (!twin.amount && e.amount) twin.amount = e.amount;
+        if (!twin.where && e.where) twin.where = e.where;
+        return;
+      }
+      kept.push(e);
+    });
+    return kept;
+  }
+
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"]/g,
+      function (c) { return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]; });
+  }
+
+  function show(html) { document.getElementById("preview").innerHTML = html; }
+
+  function read(file) {
+    if (!file) return;
+    if (!/\.csv$/i.test(file.name)) {
+      show('<div class="card"><p class="status bad">That is not a .csv file.</p></div>');
+      return;
+    }
+    var reader = new FileReader();
+    reader.onload = function () { inspect(file.name, String(reader.result)); };
+    reader.onerror = function () {
+      show('<div class="card"><p class="status bad">Could not read the file.</p></div>');
+    };
+    reader.readAsText(file);
+  }
+
+  function inspect(name, text) {
+    var rows = parseCsv(text);
+    if (rows.length < 2) {
+      show('<div class="card"><p class="status bad">That file has no rows in it.</p></div>');
+      return;
+    }
+    var head = rows[0].map(function (h) { return h.trim(); });
+    var need = ["Organization Name", "Funding Type", "Announced Date"];
+    var missing = need.filter(function (c) { return head.indexOf(c) < 0; });
+    if (missing.length) {
+      show('<div class="card"><p class="status bad">This does not look like a ' +
+           'Crunchbase funding-rounds export. Missing column: ' +
+           esc(missing[0]) + '.</p></div>');
+      return;
+    }
+    var at = {};
+    head.forEach(function (h, i) { at[h] = i; });
+
+    var keep = [], drop = [];
+    rows.slice(1).forEach(function (r) {
+      var company = (r[at["Organization Name"]] || "").trim();
+      if (!company) return;
+      var kind = (r[at["Funding Type"]] || "").trim();
+      var entry = {
+        company: company,
+        kind: kind,
+        when: (r[at["Announced Date"]] || "").trim(),
+        amount: money(r[at["Money Raised"]], r[at["Money Raised Currency"]]),
+        where: ((r[at["Organization Location"]] || "").split(",")[0] || "").trim(),
+        usd: (r[at["Money Raised (in USD)"]] || "").trim(),
+      };
+      (NOT_VENTURE.indexOf(kind.toLowerCase()) >= 0 ? drop : keep).push(entry);
+    });
+
+    keep = oneRoundPerDeal(keep);
+
+    if (!keep.length) {
+      show('<div class="card"><p class="status bad">Nothing in this file would be ' +
+           'added: all ' + drop.length + ' rows are buyouts, debt or crowdfunding.</p></div>');
+      return;
+    }
+
+    keep.sort(function (a, b) { return (b.when || "").localeCompare(a.when || ""); });
+
+    var html = '<div class="card"><h2>' + keep.length + ' round' +
+      (keep.length === 1 ? "" : "s") + ' would be added</h2>';
+    if (drop.length) {
+      html += '<p>' + drop.length + ' left out as buyouts, debt or crowdfunding: ' +
+              esc(drop.map(function (d) { return d.company; }).join(", ")) + '.</p>';
+    }
+    html += '<div class="scroll"><table><tr><th>Date</th><th>Kind</th>' +
+            '<th>Amount</th><th>Company</th><th>Where</th></tr>';
+    keep.forEach(function (k) {
+      html += '<tr><td>' + esc(k.when) + '</td><td><span class="tag">' +
+              esc(k.kind) + '</span></td><td class="num">' +
+              esc(k.amount || "undisclosed") + '</td><td>' + esc(k.company) +
+              '</td><td>' + esc(k.where) + '</td></tr>';
+    });
+    html += '</table></div>';
+    html += '<div class="actions"><button id="save">Save to the tracker</button>' +
+            '<button class="ghost" id="cancel">Cancel</button>' +
+            '<span class="status" id="status"></span></div></div>';
+    show(html);
+
+    chosen = { name: name, text: text };
+    document.getElementById("cancel").addEventListener("click", function () {
+      chosen = null; show(""); document.getElementById("file").value = "";
+    });
+    document.getElementById("save").addEventListener("click", save);
+  }
+
+  function save() {
+    if (!chosen) return;
+    var btn = document.getElementById("save");
+    var status = document.getElementById("status");
+    btn.disabled = true;
+    status.className = "status";
+    status.textContent = "Saving...";
+    fetch(SAVE_URL, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ name: chosen.name, csv: chosen.text }),
+    })
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (d && d.ok) {
+          status.className = "status good";
+          status.textContent = (d.replaced ? "Replaced " : "Saved as ") +
+            d.path.split("/").pop() + ". It is read on the next run.";
+        } else {
+          status.className = "status bad";
+          status.textContent = "Could not save" +
+            (d && d.error ? ": " + d.error : ".") + " Try again in a moment.";
+          btn.disabled = false;
+        }
+      })
+      .catch(function () {
+        status.className = "status bad";
+        status.textContent = "Network error. Try again in a moment.";
+        btn.disabled = false;
+      });
+  }
+
+  var drop = document.getElementById("drop");
+  document.getElementById("file").addEventListener("change", function (e) {
+    read(e.target.files[0]);
+  });
+  ["dragenter", "dragover"].forEach(function (name) {
+    drop.addEventListener(name, function (e) {
+      e.preventDefault(); drop.classList.add("over");
+    });
+  });
+  ["dragleave", "drop"].forEach(function (name) {
+    drop.addEventListener(name, function (e) {
+      e.preventDefault(); drop.classList.remove("over");
+    });
+  });
+  drop.addEventListener("drop", function (e) {
+    read(e.dataTransfer.files && e.dataTransfer.files[0]);
+  });
+</script>
+</body></html>

@@ -56,4 +56,23 @@ rather than starting a job.
    it, paste the current `button/worker.js` from this repo, then **Deploy**.
 
 Nothing else changes: same Worker, same URL, same secret. The run button keeps
-working, and `POST /correction` is the new endpoint the database page uses.
+working, `POST /correction` is what the database page uses, and
+`POST /submission` is what the upload page at maxime-droux.com/submit uses.
+
+## Uploading a Crunchbase export
+
+`POST /submission` writes a `.csv` into `deeptech-news/submissions/`, which the
+scraper reads on every run. It is deliberately narrow:
+
+- Only `.csv`, and only a funding-rounds export: the header must carry
+  `Organization Name`, `Funding Type` and `Announced Date`, or it is refused.
+  A file that is read on every run and quietly produces nothing is worse than
+  one rejected at the door.
+- The filename is rebuilt rather than trusted, and always lands in
+  `deeptech-news/submissions/`. A name off a browser can carry `../` and would
+  otherwise choose where in the repository the file goes.
+- 256 KB ceiling. A month of Swiss rounds is about 10 KB.
+- Uploading twice on one day replaces that day's file rather than failing.
+
+Same Origin allowlist as everything else, so the endpoint only answers requests
+from maxime-droux.com.

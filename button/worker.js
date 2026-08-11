@@ -59,6 +59,14 @@ export default {
       return saveCorrection(request, env, cors);
     }
 
+    // A Crunchbase export, uploaded from the page rather than committed by
+    // hand. Same job as /correction: the page holds no key, the Worker writes
+    // the file. Without this, adding a month of rounds means a GitHub login and
+    // a commit, which is not a thing to do from a phone.
+    if (new URL(request.url).pathname.replace(/\/+$/, "") === "/submission") {
+      return saveSubmission(request, env, cors);
+    }
+
     const resp = await fetch(
       `https://api.github.com/repos/${REPO}/actions/workflows/${WORKFLOW}/dispatches`,
       {
@@ -166,11 +174,97 @@ async function saveCorrection(request, env, cors) {
   return json({ ok: true, company, fields: Object.keys(wanted) }, 200, cors);
 }
 
+const SUBMISSIONS = "deeptech-news/submissions";
+
+// A Crunchbase export of a month of Swiss rounds is about 10 KB. A quarter of a
+// megabyte is far above anything real and well under what the Contents API will
+// take, so a mistake fails here rather than halfway through a commit.
+const MAX_UPLOAD = 256 * 1024;
+
+async function saveSubmission(request, env, cors) {
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    return json({ ok: false, error: "expected JSON" }, 400, cors);
+  }
+
+  // The name is rebuilt rather than trusted. A filename off a browser can carry
+  // ../ and would otherwise decide where in the repo this lands.
+  const stem = String(body.name || "export")
+    .replace(/\.csv$/i, "")
+    .replace(/[^A-Za-z0-9._-]+/g, "-")
+    .replace(/^[-.]+|[-.]+$/g, "")
+    .slice(0, 60) || "export";
+  const stamp = new Date().toISOString().slice(0, 10);
+  const path = `${SUBMISSIONS}/${stamp}-${stem}.csv`;
+
+  const text = String(body.csv || "");
+  if (!text.trim()) {
+    return json({ ok: false, error: "empty file" }, 400, cors);
+  }
+  if (text.length > MAX_UPLOAD) {
+    return json({ ok: false, error: "file too large" }, 413, cors);
+  }
+  // Only a funding-rounds export. Anything else would be read on every run and
+  // quietly produce nothing, which is worse than refusing it here.
+  const header = text.slice(0, 2000).split(/\r?\n/)[0] || "";
+  for (const column of ["Organization Name", "Funding Type", "Announced Date"]) {
+    if (!header.includes(column)) {
+      return json({
+        ok: false,
+        error: `this does not look like a Crunchbase funding-rounds export: ` +
+               `no "${column}" column`,
+      }, 400, cors);
+    }
+  }
+
+  const api = `https://api.github.com/repos/${REPO}/contents/${path}`;
+  const headers = {
+    Authorization: `Bearer ${env.GITHUB_TOKEN}`,
+    Accept: "application/vnd.github+json",
+    "User-Agent": "md-news-button",
+    "Content-Type": "application/json",
+  };
+
+  // Uploading the same day twice replaces that day's file rather than failing.
+  let sha;
+  const existing = await fetch(`${api}?ref=${REF}`, { headers });
+  if (existing.ok) {
+    sha = (await existing.json()).sha;
+  }
+
+  const bytes = new TextEncoder().encode(text);
+  let binary = "";
+  // String.fromCharCode(...bytes) blows the argument limit on a file this size,
+  // so it goes in chunks.
+  for (let i = 0; i < bytes.length; i += 0x8000) {
+    binary += String.fromCharCode.apply(null, bytes.subarray(i, i + 0x8000));
+  }
+
+  const write = await fetch(api, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify({
+      message: `Add ${path.split("/").pop()} from the submissions page`,
+      content: btoa(binary),
+      ...(sha ? { sha } : {}),
+      branch: REF,
+    }),
+  });
+  if (!write.ok) {
+    const detail = await write.text();
+    return json({ ok: false, status: write.status, error: detail.slice(0, 300) },
+                502, cors);
+  }
+  return json({ ok: true, path, replaced: Boolean(sha) }, 200, cors);
+}
+
 // What is wrong, in one page, without changing anything.
 async function health(env, cors) {
   const out = {
     worker: "md-news-button",
-    version: "2026-08-05 (saves corrections)",
+    version: "2026-08-11 (saves corrections and uploads)",
     has_token: Boolean(env.GITHUB_TOKEN),
   };
   if (!env.GITHUB_TOKEN) {
