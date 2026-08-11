@@ -1,0 +1,43 @@
+name: Check the news sources
+
+# What each of the 62 sources actually returns, with its HTTP status.
+#
+# The run logs "unreachable" for a moved URL, a server refusing the request and
+# a feed that is simply empty, which is three different repairs under one word.
+# Twelve direct feeds had been failing every run for weeks: Empa, PSI, CSEM,
+# IDIAP, IBM Research Zurich, the universities, Venturelab, Swiss Biotech.
+# Those are where discoveries and grants come from, so half of that side of the
+# pipeline was dark and nothing said so.
+#
+# It writes nothing. Read the log.
+on:
+  workflow_dispatch:
+  schedule:
+    # 04:23 UTC on the first of the month. Feeds move quietly; this is the
+    # thing that notices.
+    - cron: "23 4 1 * *"
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r deeptech-news/requirements.txt
+
+      # Fails when a direct feed is down, so the monthly run sends an email
+      # rather than passing quietly with half the sources dark.
+      - name: Probe every source
+        run: |
+          cd deeptech-news
+          python scraper.py --check-feeds

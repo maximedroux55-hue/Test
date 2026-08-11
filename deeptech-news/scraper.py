@@ -1966,6 +1966,79 @@ def render_archive_html(known: dict, now: dt.datetime | None = None,
 """
 
 
+def check_feeds() -> int:
+    """Probe every source and say what each one actually returns.
+
+    The run only ever said "unreachable", which covers a moved URL, a server
+    refusing the request and a feed that is simply empty. Twelve of the direct
+    feeds had been failing every run for weeks under that one word, and they
+    are the institutional ones: Empa, PSI, CSEM, the universities. Those are
+    where discoveries and grants come from, so half of that side of the
+    pipeline was dark and nothing said so.
+
+    Returns 1 when any direct feed is failing, so a scheduled check can raise
+    its hand rather than pass quietly.
+    """
+    import socket
+    import urllib.error
+    import urllib.request
+    from concurrent.futures import ThreadPoolExecutor
+
+    socket.setdefaulttimeout(FEED_TIMEOUT)
+    browser_ua = (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+        "(KHTML, like Gecko) Chrome/126.0 Safari/537.36"
+    )
+
+    def probe(feed):
+        label, url = feed
+        google = "news.google" in url
+        # The HTTP status first, because "404" and "403" need different fixes
+        # and feedparser reports both as bozo.
+        status = ""
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": browser_ua})
+            with urllib.request.urlopen(req, timeout=FEED_TIMEOUT) as resp:
+                status = str(resp.status)
+        except urllib.error.HTTPError as exc:
+            status = f"HTTP {exc.code}"
+        except Exception as exc:
+            status = type(exc).__name__
+        try:
+            parsed = feedparser.parse(url, agent=browser_ua)
+            items = len(parsed.entries)
+        except Exception as exc:
+            return label, url, google, status, -1, type(exc).__name__
+        return label, url, google, status, items, ""
+
+    feeds = list(all_feeds(14))
+    with ThreadPoolExecutor(max_workers=FEED_WORKERS) as pool:
+        results = list(pool.map(probe, feeds))
+
+    direct = [r for r in results if not r[2]]
+    google = [r for r in results if r[2]]
+    broken = []
+
+    for group, rows in (("Direct feeds", direct), ("Google News", google)):
+        print(f"\n{group}", file=sys.stderr)
+        for label, url, _g, status, items, err in rows:
+            mark = "ok " if items > 0 else "DEAD"
+            if items <= 0:
+                broken.append((label, url, status, err))
+            note = f"{items} items" if items >= 0 else f"raised {err}"
+            print(f"  {mark} {status:<16} {note:<12} {label}", file=sys.stderr)
+            if items <= 0:
+                print(f"       {url}", file=sys.stderr)
+
+    dead_direct = [b for b in broken
+                   if not any(b[1] == r[1] and r[2] for r in results)]
+    print(f"\n{len(direct) - sum(1 for r in direct if r[4] > 0)} of {len(direct)} "
+          f"direct feeds and "
+          f"{len(google) - sum(1 for r in google if r[4] > 0)} of {len(google)} "
+          f"Google News feeds returned nothing.", file=sys.stderr)
+    return 1 if dead_direct else 0
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description="Swiss DeepTech news aggregator")
     ap.add_argument("--days", type=int, default=7, help="How many days back to look (default 7)")
@@ -2007,6 +2080,9 @@ def main() -> None:
     ap.add_argument("--posts-only", action="store_true",
                     help="Only write the posts: do not read articles in full and "
                          "do not touch the archive.")
+    ap.add_argument("--check-feeds", action="store_true",
+                    help="Probe every source and report what each one returns, "
+                         "then exit. Writes nothing.")
     ap.add_argument("--reread", action="store_true",
                     help="Read every story again, even ones the database has "
                          "already read. Use after changing how articles are read.")
@@ -2015,6 +2091,8 @@ def main() -> None:
                          "months back. Feeds carry only recent items, so this is "
                          "the only way to build history. Use with --archive-only.")
     args = ap.parse_args()
+    if args.check_feeds:
+        sys.exit(check_feeds())
     if args.archive_only and args.posts_only:
         sys.exit("Pick one of --archive-only and --posts-only, not both.")
 
