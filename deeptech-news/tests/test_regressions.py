@@ -1792,9 +1792,91 @@ def test_a_crunchbase_export_becomes_rounds():
     assert submissions.csv_rows(tempfile.mkdtemp()) == []
 
 
+def test_the_shortlist_can_reach_the_database():
+    """A round on record must be offerable even when no feed returned it today.
+
+    The shortlist only ever saw what the feeds carried in the last few minutes.
+    Basilea's USD 30M from BARDA came in through a Crunchbase export, no
+    newsroom wrote it up, and no run would ever have offered it. Meanwhile the
+    database keeps every write-up of a round on purpose, so Exclaim Robotics is
+    four rows there and has to be one card here.
+    """
+    import datetime as dt
+    import json
+    import tempfile
+
+    today = scraper._zurich_now().date()
+    recent = (today - dt.timedelta(days=3)).isoformat()
+    stale = (today - dt.timedelta(days=90)).isoformat()
+
+    box = tempfile.mkdtemp()
+    path = os.path.join(box, "archive.json")
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump({"stories": {
+            # A grant with no article behind it: the company's own site is the
+            # only address worth putting under a post.
+            "a": {"company": "Basilea", "published": recent, "location": "Basel",
+                  "stage": "Grant", "amount": "USD 30M", "website": "http://basilea.com",
+                  "link": "https://www.crunchbase.com/funding_round/basilea",
+                  "publisher": "Crunchbase export"},
+            # Four write-ups of one round, which is one card.
+            "b": {"company": "Exclaim Robotics", "published": recent, "location": "Zurich",
+                  "stage": "Pre-seed", "amount": "USD 4.95M",
+                  "link": "https://www.startupticker.ch/exclaim", "publisher": "Startupticker"},
+            "c": {"company": "Exclaim Robotics", "published": recent, "location": "Zurich",
+                  "stage": "Pre-seed", "link": "https://theaiinsider.tech/exclaim",
+                  "publisher": "AI Insider"},
+            "d": {"company": "Exclaim Robotics", "published": recent, "location": "Zurich",
+                  "link": "https://eu-startups.com/exclaim", "publisher": "EU-Startups"},
+            # Too old for the window.
+            "e": {"company": "Ancient", "published": stale, "location": "Bern",
+                  "link": "https://example.ch/old", "publisher": "X"},
+            # Not Swiss.
+            "f": {"company": "Foreign", "published": recent, "location": "Toronto",
+                  "link": "https://example.com/tor", "publisher": "X"},
+            # No article and no website: nothing to link a post to.
+            "g": {"company": "Nowhere", "published": recent, "location": "Zug",
+                  "link": "https://www.crunchbase.com/funding_round/nowhere",
+                  "publisher": "Crunchbase export"},
+        }}, f)
+
+    got = scraper.from_database(path, 14, [])
+    names = [g["company"] for g in got]
+
+    assert "Basilea" in names, "a round with no article behind it never reaches the page"
+    assert names.count("Exclaim Robotics") == 1, names
+    assert "Ancient" not in names, "a round outside the window was offered"
+    assert "Foreign" not in names, "a round that is not Swiss was offered"
+    assert "Nowhere" not in names, "a post was built with nothing to link to"
+
+    # The grant links to the company, never to the paywall it came from.
+    basilea = next(g for g in got if g["company"] == "Basilea")
+    assert basilea["link"] == "http://basilea.com", basilea["link"]
+    assert "crunchbase" not in basilea["link"]
+
+    # Of four write-ups, the one that says most survives.
+    exclaim = next(g for g in got if g["company"] == "Exclaim Robotics")
+    assert exclaim["amount"] == "USD 4.95M", exclaim
+
+    # Anything the feeds already returned this run is not offered twice.
+    # The second entry is a story straight off a feed: a headline, no company
+    # yet, because that is worked out after this runs. Matching on links alone
+    # would offer a different write-up of the same round.
+    again = scraper.from_database(path, 14, [
+        {"company": "Basilea"},
+        {"title": "Exclaim Robotics raises USD 4.95 million for repair robots",
+         "link": "https://www.startupticker.ch/exclaim"},
+    ])
+    assert "Basilea" not in [g["company"] for g in again]
+    assert "Exclaim Robotics" not in [g["company"] for g in again]
+
+    # A missing database is not an error.
+    assert scraper.from_database("/nonexistent/archive.json", 14, []) == []
+
+
 # Locking the count means a test appended below the runner, where it would
 # never execute, shows up as a failure rather than as silence. That happened.
-EXPECTED = 70
+EXPECTED = 71
 
 
 if __name__ == "__main__":

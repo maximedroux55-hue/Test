@@ -177,10 +177,13 @@ def csv_rows(directory: str = DIR) -> list:
                     p.strip() for p in
                     (entry.get("Organization Industries") or "").split(",")[:2]
                     if p.strip()),
-                "location": ", ".join(
-                    p.strip() for p in
-                    (entry.get("Organization Location") or "").split(",")[:2]
-                    if p.strip()),
+                # The city alone. Crunchbase writes "Basel, Basel-Stadt,
+                # Switzerland, Europe", and the field only accepts a city
+                # optionally followed by a two-letter country code, so keeping
+                # the canton made the whole value invalid and it was stored
+                # blank. Six rounds arrived with no location at all that way,
+                # and the Swiss filter reads this field.
+                "location": (entry.get("Organization Location") or "").split(",")[0].strip(),
                 "website": (entry.get("Organization Website") or "").strip(),
                 "published": (entry.get("Announced Date") or "").strip(),
                 "link": (entry.get("Transaction Name URL") or "").strip(),

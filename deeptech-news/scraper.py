@@ -1966,6 +1966,120 @@ def render_archive_html(known: dict, now: dt.datetime | None = None,
 """
 
 
+def from_database(path: str, days: int, already: list) -> list:
+    """Rounds on record that the feeds did not return this run.
+
+    The shortlist used to see only what the feeds carried in the last few
+    minutes, so a round the database had known for a week could not reach the
+    page. Basilea's USD 30M from BARDA is the case that proves it: a Crunchbase
+    export put it in the database, no newsroom ever wrote it up, and no run
+    would ever have offered it.
+
+    Only rounds inside the same window, only Swiss ones, and never a link Max
+    cannot post: a Crunchbase page is a paywall, so those fall back to the
+    company's own site and are dropped when there is no site either.
+    """
+    import json as _json
+    from urllib.parse import urlsplit
+
+    try:
+        with open(path, encoding="utf-8") as f:
+            stored = _json.load(f).get("stories", {})
+    except Exception:
+        return []
+    rows = list(stored.values()) if isinstance(stored, dict) else list(stored)
+    if not rows:
+        return []
+
+    cutoff = (_zurich_now().date() - dt.timedelta(days=days)).isoformat()
+    have = {(a.get("link") or "").strip() for a in already}
+    # A story straight off a feed has a headline and no company yet: that is
+    # worked out later, after this runs. Matching on links alone would then
+    # offer a second write-up of a round the feeds already returned, which is
+    # the duplicate this whole top-up must not create.
+    from extract import _company_from_headline
+    for a in already:
+        name = a.get("company") or _company_from_headline(a.get("title", ""))
+        if name:
+            have.add(re.sub(r"[^a-z0-9]", "", name.lower()))
+
+    out = []
+    for row in rows:
+        company = (row.get("company") or "").strip()
+        if not company:
+            continue
+        published = (row.get("published") or "")[:10]
+        if not published or published < cutoff:
+            continue
+        if not _is_swiss(row):
+            continue
+        key = re.sub(r"[^a-z0-9]", "", company.lower())
+        link = (row.get("link") or "").strip()
+        if link in have or key in have:
+            continue
+
+        host = urlsplit(link).netloc.lower()
+        if not link or "crunchbase.com" in host:
+            # A record with no readable article behind it. The company's own
+            # site is the only address worth putting under a post.
+            link = (row.get("website") or "").strip()
+            if not link:
+                continue
+
+        amount = (row.get("amount") or "").strip()
+        stage = (row.get("stage") or "round").strip()
+        out.append({
+            "title": row.get("title") or (
+                f"{company} raises {amount}" if amount
+                else f"{company} closes a {stage.lower()}"),
+            "link": link,
+            "publisher": row.get("publisher") or "the database",
+            "date": dt.datetime.fromisoformat(published).replace(
+                tzinfo=dt.timezone.utc),
+            # Below a story the feeds carried today, above the floor. It is
+            # real and unposted, but it is not this morning's news.
+            "score": 8,
+            "summary": row.get("description") or "",
+            "image_feed": None,
+            "company": company,
+            "location": row.get("location") or "",
+            "amount": amount,
+            "stage": stage,
+            "lead_investor": row.get("lead_investor") or "",
+            "from_database": True,
+        })
+
+    # The database keeps every write-up of a round on purpose, so each outlet
+    # can contribute what the others left out. A shortlist wants one of them:
+    # Exclaim Robotics is four rows there and must be one card here. Keep the
+    # row that says most, preferring a real article over a company homepage.
+    best = {}
+    for row in out:
+        key = re.sub(r"[^a-z0-9]", "", row["company"].lower())
+        rival = best.get(key)
+        if rival is None or _fuller(row, rival):
+            best[key] = row
+    out = list(best.values())
+
+    if out:
+        print(f"Adding {len(out)} rounds the database knows and the feeds did "
+              f"not return this run.", file=sys.stderr)
+    return out
+
+
+def _fuller(row: dict, rival: dict) -> bool:
+    """Is `row` the better single record of a round than `rival`?"""
+    def rank(r):
+        return (
+            bool(r.get("amount")),
+            # A company homepage says nothing about the news; an article does.
+            r.get("publisher") not in ("the database", "Crunchbase export"),
+            bool(r.get("summary")),
+            r.get("date"),
+        )
+    return rank(row) > rank(rival)
+
+
 def check_feeds() -> int:
     """Probe every source and say what each one actually returns.
 
@@ -2142,6 +2256,13 @@ def main() -> None:
         from relevance import diversify
         from linkedin import (build_posts, for_cowork, render_markdown,
                               render_plan_html, COWORK_PROMPT)
+
+        # The database knows things the feeds did not carry this run: rounds
+        # from a Crunchbase export, rounds found on an earlier day, grants no
+        # newsroom wrote up. Basilea's USD 30M from BARDA sat in the database
+        # and could not reach the page, because the shortlist only ever saw
+        # what the feeds returned in the last few minutes.
+        articles = articles + from_database(args.archive, args.days, articles)
 
         # Never post the same story twice, this week or in any earlier run.
         import history as history_mod
