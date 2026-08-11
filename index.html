@@ -117,6 +117,13 @@
     .lk-title { font-weight: 700; color: var(--ink); }
     .link-card:hover .lk-title { color: var(--green-dark); }
     .lk-desc { color: var(--ink-soft); font-size: 0.88rem; line-height: 1.5; }
+    .lk-desc code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.86em; background: var(--green-soft); color: var(--ink);
+      padding: 0.05em 0.35em; border-radius: 5px;
+    }
+    /* A card that leaves the site says so, quietly. */
+    .link-card[target] .lk-title::after { content: " \2197"; color: var(--ink-soft); }
 
     /* ---- Profile hero card ---- */
     .hero { padding: 3rem 0 1.5rem; }
@@ -356,9 +363,10 @@
       anyone with the address, so nothing sensitive belongs here.</p>
       <div class="links">
         <a class="link-card" href="/plan">
-          <span class="lk-title">This week&rsquo;s posts &rarr;</span>
-          <span class="lk-desc">Seven drafts, one per day, with copy buttons and a
-          button to generate a fresh set.</span>
+          <span class="lk-title">The shortlist &rarr;</span>
+          <span class="lk-desc">Fifteen Swiss stories with a draft post each,
+          newest published first, labelled by what happened. Tick the ones worth
+          posting and it writes the Cowork instruction from your picks alone.</span>
         </a>
         <a class="link-card" href="/digest/review.html">
           <span class="lk-title">Proposed corrections &rarr;</span>
@@ -374,6 +382,69 @@
           <span class="lk-title">Verification queue &rarr;</span>
           <span class="lk-desc">The rounds worth checking against a primary source,
           and why each one is queued. Machine readable.</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="card" id="feeding">
+      <span class="card-label">Feeding it</span>
+      <h2>What goes in</h2>
+      <p class="lead">The tracker only knows what its sources carry. These are the
+      ways round that, and the way to tell whether the sources are still alive.</p>
+      <div class="links">
+        <a class="link-card" href="https://github.com/maximedroux55-hue/Test/tree/claude/questions-9a5egd/deeptech-news/submissions" target="_blank" rel="noopener">
+          <span class="lk-title">Submissions</span>
+          <span class="lk-desc">Three ways to add what no feed carried. Paste an
+          address into <code>urls.txt</code> and it is read like any article.
+          Write a round straight into <code>rows.json</code> when there is no
+          article at all. Or drop a Crunchbase funding-rounds export in as CSV:
+          buyouts, debt and crowdfunding are left out, the rest become rounds.
+          Every one is re-applied on every run, so nothing is a one-off edit.</span>
+        </a>
+        <a class="link-card" href="https://github.com/maximedroux55-hue/Test/actions/workflows/feed-check.yml" target="_blank" rel="noopener">
+          <span class="lk-title">Source health</span>
+          <span class="lk-desc">Every source probed, with its HTTP status and how
+          many items it returned. Runs on the first of the month and fails loudly
+          when a source dies. This is what found seventeen feeds returning
+          nothing, fourteen of which had never delivered a single story.</span>
+        </a>
+        <a class="link-card" href="https://github.com/maximedroux55-hue/Test/actions" target="_blank" rel="noopener">
+          <span class="lk-title">Runs and logs</span>
+          <span class="lk-desc">The database rebuilds daily at 03:37 UTC, the
+          shortlist every Wednesday, the verification pass on Mondays. What each
+          run kept, dropped and why is in its log.</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="card" id="rawdata">
+      <span class="card-label">Raw data</span>
+      <h2>The files behind the pages</h2>
+      <p class="lead">Everything above is rendered from these. Useful when you want
+      the numbers rather than the layout.</p>
+      <div class="links">
+        <a class="link-card" href="/digest/archive.json">
+          <span class="lk-title">The database &rarr;</span>
+          <span class="lk-desc">Every round on record with its fields and, for each
+          field, where the value came from. Cumulative, never rebuilt from
+          scratch.</span>
+        </a>
+        <a class="link-card" href="/digest/posts.json">
+          <span class="lk-title">What Cowork reads &rarr;</span>
+          <span class="lk-desc">The shortlist stripped to what a scheduling session
+          needs: the text, the link, the one @mention and anything still to
+          check. Nothing it would pay to read and skip.</span>
+        </a>
+        <a class="link-card" href="/digest/history.json">
+          <span class="lk-title">Already posted &rarr;</span>
+          <span class="lk-desc">What has gone out, so no story is offered twice.
+          This is why a shortlist is short after a busy week rather than
+          padded.</span>
+        </a>
+        <a class="link-card" href="/digest/linkedin.md">
+          <span class="lk-title">The shortlist as text &rarr;</span>
+          <span class="lk-desc">The same drafts in Markdown, for reading or
+          copying somewhere the web page will not go.</span>
         </a>
       </div>
     </section>
