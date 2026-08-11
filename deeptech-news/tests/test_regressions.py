@@ -1635,9 +1635,65 @@ def test_the_run_does_not_spend_its_time_waiting_on_sockets():
         "one unreachable host would now take the whole run down"
 
 
+def test_one_bad_feed_does_not_cost_the_run():
+    """A feed that hangs or drops the connection is skipped, not fatal.
+
+    feedparser reports most network trouble by setting bozo, and the loop reads
+    that. It does not catch everything: a throttled server closed the
+    connection without a response, feedparser let http.client.RemoteDisconnected
+    through, and a run that had produced nothing yet died on the spot. It had
+    also sat on that one socket for four and a half minutes first, because
+    feedparser has no timeout of its own.
+    """
+    import inspect
+    import scraper as sc
+
+    source = inspect.getsource(sc.collect)
+    assert "socket.setdefaulttimeout(FEED_TIMEOUT)" in source, \
+        "a silent feed can hold the run open again"
+    assert sc.FEED_TIMEOUT <= 30, "the feed timeout is too long to be a guard"
+
+    # The parse itself is guarded, and the guard skips rather than re-raises.
+    parse = source.split("for source_label, url in feeds:", 1)[1]
+    body = parse.split("for entry in parsed.entries:", 1)[0]
+    assert "try:" in body and "except Exception" in body, \
+        "feedparser.parse is unguarded again"
+    assert body.count("continue") >= 2, \
+        "a failed feed must be skipped, not allowed to fall through"
+
+    # And a real one: a feed whose fetch raises must leave the others alone.
+    real = sc.feedparser.parse
+    seen = []
+
+    class Fake:
+        bozo = False
+        entries = []
+
+    def flaky(url, **kw):
+        seen.append(url)
+        if "boom" in url:
+            import http.client
+            raise http.client.RemoteDisconnected("closed without response")
+        return Fake()
+
+    real_feeds = sc.all_feeds
+    sc.feedparser.parse = flaky
+    sc.all_feeds = lambda days: [("Good", "https://a.ch/f"),
+                                 ("Bad", "https://boom.ch/f"),
+                                 ("Also good", "https://b.ch/f")]
+    try:
+        got = sc.collect(7, 3)
+    finally:
+        sc.feedparser.parse = real
+        sc.all_feeds = real_feeds
+
+    assert got == [], f"expected no articles from empty feeds, got {len(got)}"
+    assert len(seen) == 3, f"stopped after {len(seen)} feeds instead of all 3"
+
+
 # Locking the count means a test appended below the runner, where it would
 # never execute, shows up as a failure rather than as silence. That happened.
-EXPECTED = 67
+EXPECTED = 68
 
 
 if __name__ == "__main__":

@@ -72,6 +72,12 @@ def _publisher(entry, source_label: str) -> str:
     return "Google News"
 
 
+# How long any one feed may take before the run gives up on it. Long enough
+# for a slow institutional server, short enough that a silent one costs the
+# run seconds rather than minutes.
+FEED_TIMEOUT = 20
+
+
 def collect(days: int, min_score: int, backfill_months: int = 0,
             keep_all_coverage: bool = False) -> list[dict]:
     """Fetch all feeds and return a list of relevant, de-duplicated articles."""
@@ -94,8 +100,25 @@ def collect(days: int, min_score: int, backfill_months: int = 0,
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
         "(KHTML, like Gecko) Chrome/126.0 Safari/537.36"
     )
+    # feedparser has no timeout of its own, so a server that accepts the
+    # connection and then says nothing holds the whole run. One did: it sat
+    # there for four and a half minutes before dropping the connection, and the
+    # run had produced nothing at all by then.
+    import socket
+    socket.setdefaulttimeout(FEED_TIMEOUT)
+
     for source_label, url in feeds:
-        parsed = feedparser.parse(url, agent=browser_ua)
+        try:
+            parsed = feedparser.parse(url, agent=browser_ua)
+        except Exception as exc:
+            # feedparser reports most network trouble by setting bozo, which is
+            # what the check below reads. It does not catch everything: a
+            # RemoteDisconnected escaped it and took the run down with it, on a
+            # feed that had simply been throttled. No single feed is worth the
+            # run, so any failure here is one skipped source.
+            print(f"  ! skipped ({type(exc).__name__}): {source_label} {url}",
+                  file=sys.stderr)
+            continue
         if parsed.bozo and not parsed.entries:
             print(f"  ! skipped (unreachable): {source_label} {url}", file=sys.stderr)
             continue
