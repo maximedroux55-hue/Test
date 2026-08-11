@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 11 August 2026. 8 stories from the last 28 days, newest published first. Written by Claude in Max's voice. Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 11 August 2026. 4 stories from the last 14 days, newest published first. Written by Claude in Max's voice. Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -44,16 +44,16 @@ The stories themselves are below.
 ## 1. Round — published 11 August
 
 ```
-🇨🇭 Swiss biotech starts Phase 3 in rare vascular disease
+🇨🇭 Swiss biotech starts global Phase 3 in rare disease
 
-@Vaderis Therapeutics, a Basel-based clinical-stage biopharmaceutical company, has begun HEROIC, its global Phase 3 study of engasertib (VAD044) in patients with hereditary hemorrhagic telangiectasia. The company develops targeted therapies for rare vascular diseases, a field with almost no approved options.
+@Vaderis Therapeutics, a Basel-based clinical-stage biopharmaceutical company, develops targeted therapies for rare vascular diseases. It has now launched HEROIC, a global Phase 3 study of engasertib (VAD044) in patients with hereditary hemorrhagic telangiectasia, a bleeding disorder with no approved treatment.
 
 Why it matters:
-🩸 HHT patients still lack an approved targeted therapy
-🌍 Global Phase 3 puts a Basel program on the world stage
-🇨🇭 Swiss biotech clusters keep producing late-stage clinical assets
+🩸 HHT patients still have no approved targeted therapy
+🌍 Global Phase 3 puts a Swiss asset on registration path
+🇨🇭 Basel's rare-disease depth keeps producing late-stage candidates
 
-Rare disease programs reaching Phase 3 from Basel show the depth behind the region's reputation.
+Rare disease is where Swiss pharma clusters turn scientific patience into genuine clinical leadership.
 
 https://vaderis.com/vaderis-therapeutics-announces-oversubscribed-financing-and-initiation-of-the-global-phase-3-study/
 ```
@@ -63,16 +63,16 @@ https://vaderis.com/vaderis-therapeutics-announces-oversubscribed-financing-and-
 ## 2. Research — published 11 August
 
 ```
-🇨🇭 Swiss wound care startup begins German pivotal trial
+🇨🇭 Swiss powder targets chronic wounds in German trial
 
-@Cutempa Medical, a Basel MedTech startup, develops mineral-based products for chronic wounds. Since July 2026 its pivotal approval study for Curi01, a powdered wound exudate adsorbent, has been running in Germany with 280 patients across roughly 20 clinical sites.
+@Cutempa Medical, a Basel-based medtech startup, builds mineral-based products for chronic wound care. Since July 2026 its pivotal approval study for Curi01, a powdered wound exudate adsorbent, has been running in Germany with 280 patients across roughly 20 clinical sites, Startupticker reports.
 
 Why it matters:
 🩹 Chronic wounds remain a costly, underserved clinical burden
-📊 280 patients, 20 sites: a real regulatory pathway
-🇨🇭 Swiss MedTech testing in its largest neighbouring market
+📋 Pivotal 20-site study is the gate to market approval
+🇨🇭 Swiss materials science moving from bench to bedside
 
-Materials science applied to an unglamorous clinical problem is where Swiss MedTech quietly wins.
+A simple powder built on hard mineral chemistry is exactly the kind of unglamorous advance that scales.
 
 https://www.startupticker.ch/en/news/cutempa-medical-startet-klinische-studie-in-deutschland
 ```
@@ -81,16 +81,16 @@ https://www.startupticker.ch/en/news/cutempa-medical-startet-klinische-studie-in
 ## 3. General — published 11 August
 
 ```
-🇨🇭 Swiss pain biotech merges with US-listed Ensysce
+🇨🇭 Swiss pain biotech merges into US-listed player
 
-@Cy Biopharma, a Zug-based clinical-stage biotech working on neuroplastogenic therapies for severe chronic pain, has been acquired by Ensysce Biosciences in a stock-for-stock merger. Ensysce is developing a new class of novel opioids for severe pain.
+@Cy Biopharma, a Zug-based clinical-stage company working on neuroplastogenic therapies for severe chronic pain, has been acquired by Ensysce Biosciences in a stock-for-stock merger. Ensysce is developing a new class of novel opioids for severe pain, per Startupticker.
 
 Why it matters:
-💊 Two clinical pain programs combined under one listed vehicle
-🔁 Stock-for-stock structure preserves cash for the clinic
-🇨🇭 Swiss assets increasingly exit into US public markets
+💊 Combines two clinical-stage approaches to severe chronic pain
+📈 All-stock structure keeps cash for clinical programmes
+🇨🇭 Swiss assets increasingly exit via cross-border consolidation
 
-Mergers, not just funding rounds, are becoming a normal route for Swiss clinical-stage biotech.
+Mergers, not just IPOs, are becoming a credible endgame for Swiss clinical-stage science.
 
 https://www.startupticker.ch/en/news/cy-biopharma-merges-with-ensysce-biosciences
 ```
@@ -99,90 +99,18 @@ https://www.startupticker.ch/en/news/cy-biopharma-merges-with-ensysce-bioscience
 ## 4. General — published 10 August
 
 ```
-🇨🇭 Swiss longevity brand signs Olympic champion as investor
+🇨🇭 Swiss longevity startup signs Olympic gold medallist
 
-@AVEA, a Zug-based startup building science-backed longevity supplements, has brought on Iouri Podladtchikov, Olympic gold medallist and two-time halfpipe world champion, as both investor and brand ambassador. The company builds its formulations on recent published research in cellular ageing.
+@AVEA, based in Zug, develops science-backed longevity supplements grounded in current research. It has brought on Iouri Podladtchikov, Olympic halfpipe champion and two-time world champion, as both investor and brand ambassador, Startupticker reports.
 
 Why it matters:
-🏅 Athlete capital plus distribution reach in one signing
-🧬 Longevity consumer market rewards credible scientific backing
-🇨🇭 Swiss consumer science brands scaling beyond the lab
+🏂 Athlete capital doubles as distribution in consumer health
+🔬 Longevity claims still need clinical evidence to hold
+🇨🇭 Swiss consumer science building brands, not just molecules
 
-Science-led consumer brands need trust more than technology, and that is bought differently.
+Science-led consumer health lives or dies on credibility, and choosing who represents you is part of the R&D.
 
 https://www.startupticker.ch/en/news/olympic-champion-iouri-podladtchikov-joins-avea
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Iouri%20Podladtchikov%20joins%20AVEA.png
-
-## 5. Grant — published 24 July
-
-```
-🇨🇭 Swiss robot cooks fresh crêpes in 90 seconds
-
-@Maus Robotics, based in Basel, has secured CHF 150,000 from Venture Kick for autonomous robots that prepare fresh crêpes from raw ingredients in 90 seconds. The startup is opening its first long-term installations in Basel this summer.
-
-Why it matters:
-🤖 Raw ingredients, not reheated stock, is the hard part
-⏱️ 90-second cycle time makes unit economics plausible
-🇨🇭 Swiss robotics moving from factory floors to food service
-
-Food robotics only matters when the machine handles fresh inputs, and that is an engineering problem.
-
-https://www.startupticker.ch/en/news/chf-150-000-from-venture-kick-to-scale-autonomous-fresh-food-deployments
-```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/awards/Maus%20Robotics%20Founder.jpg
-
-## 6. Round — published 24 July
-
-```
-🇨🇭 Swiss catheter maker targets FDA clearance and US launch
-
-@Medyria, a Swiss catheter developer, has raised fresh funding to finance FDA clearance and a US commercial launch for its PyCath device. The company builds sensor-equipped catheters that give clinicians real-time data during vascular procedures.
-
-Why it matters:
-🫀 Sensing inside the catheter changes intraoperative decision-making
-🇺🇸 FDA clearance unlocks the largest MedTech market
-🇨🇭 Swiss precision engineering translating directly into medical devices
-
-For Swiss device companies, the US regulatory milestone is the real inflection point, not the round.
-
-https://www.startupticker.ch/en/news/medyria-raises-chf-3-5-million
-```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/bilder/medyria-pycath.png
-
-## 7. Research — published 20 July
-
-```
-🇨🇭 Swiss AI cuts rail forecast errors by 80%
-
-@EPFL researchers, working with SBB, have built an AI model that improves next-day electricity demand forecasts across Switzerland's rail network, reducing major prediction errors by up to 80%. Demand shifts with passenger flows, weather and constantly changing operations, making large errors operationally costly.
-
-Why it matters:
-⚡ Better forecasts cut both energy costs and operational risk
-🚆 Rail is one of Switzerland's largest single electricity consumers
-🇨🇭 Swiss research applied directly to national infrastructure
-
-The most valuable AI in Switzerland may end up being invisible, running behind public infrastructure.
-
-https://actu.epfl.ch/news/using-future-data-to-better-predict-switzerland-s
-```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 8. General — published 18 July
-
-```
-🇨🇭 Swiss AI measures bodies for custom-made bras
-
-@MYNE uses AI-based body scanning to produce made-to-measure bras, tested in Switzerland and reviewed by Watson. The system replaces standardised sizing, a persistent source of poor fit, with individual measurement taken from a phone.
-
-Why it matters:
-📐 Standard sizing fails a large share of customers
-📱 Phone-based scanning removes the in-store fitting step
-🇨🇭 Swiss computer vision applied to mass-market apparel
-
-Computer vision earns its keep when it solves a problem people already complain about daily.
-
-https://www.watson.ch/fr/suisse/societe/604942019-j-ai-teste-le-soutien-gorge-sur-mesure-de-myne-en-suisse
-```
-🖼️ **Article image:** none found, grab one from the article page.
 
