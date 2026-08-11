@@ -50,6 +50,23 @@ GOOGLE_NEWS_QUERIES = [
     "Swiss startup FDA clearance OR CE mark OR regulatory approval",
     "Swiss spin-off first customer OR contract OR partnership",
     "Swiss deeptech launches product OR pilot OR first-in-human",
+    # The institutions, because their own feeds never worked. Seventeen of the
+    # twenty three direct feeds returned nothing and fourteen had never
+    # delivered a single story: ETH, Empa, PSI, CSEM, IDIAP and all three
+    # universities were dark from the day they were added. Asking Google for
+    # them instead uses the transport that does work here, and it cannot 404
+    # when an institution redesigns its site.
+    "ETH Zurich research OR spin-off OR breakthrough",
+    "EPFL research OR spin-off OR breakthrough",
+    "Empa OR PSI OR CSEM OR Idiap Switzerland research",
+    "University of Zurich OR Basel OR Geneva OR Lausanne research breakthrough",
+    # The money that never reaches a newsroom. A Crunchbase export of one month
+    # of Swiss rounds carried a USD 30M BARDA grant to Basilea, an Innosuisse
+    # award and three Venture Kick awards, and not one of them had reached the
+    # database. Grant bodies announce on their own sites and the feeds missed
+    # every one.
+    "Innosuisse OR Venture Kick Swiss startup grant",
+    "Swiss National Science Foundation OR Horizon Europe OR ERC grant Switzerland",
 ]
 
 # Swiss editions of Google News. English is primary; adding the German and

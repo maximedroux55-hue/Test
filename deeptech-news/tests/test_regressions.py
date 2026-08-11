@@ -1695,9 +1695,35 @@ def test_one_bad_feed_does_not_cost_the_run():
     assert len(seen) == 3, f"stopped after {len(seen)} feeds instead of all 3"
 
 
+def test_no_source_is_kept_that_never_delivered():
+    """A feed that has never returned an item is not a source, it is a comment.
+
+    Seventeen of the twenty three direct feeds returned nothing, and fourteen
+    of those had never contributed a single story in the life of the database:
+    not one of 115 rows came from ETH, Empa, PSI, CSEM, IDIAP or any of the
+    three universities. The run said "unreachable" once per feed, in a log
+    nobody reads line by line, so the pipeline was really Startupticker plus
+    EPFL plus Google News and nothing said so.
+    """
+    import sources
+
+    live = {url for _, url in sources.DIRECT_FEEDS}
+    retired = {url for _, url in sources.RETIRED_FEEDS}
+    assert not (live & retired), \
+        f"a retired feed is back in the live list: {live & retired}"
+
+    # The institutions the dead feeds were meant to cover have to be covered
+    # somewhere, or removing them just loses the sources quietly.
+    import google_news
+    queries = " ".join(google_news.GOOGLE_NEWS_QUERIES).lower()
+    for who in ("eth zurich", "epfl", "empa", "psi", "csem", "idiap",
+                "university of zurich", "innosuisse", "venture kick"):
+        assert who in queries, f"nothing covers {who} since its feed was dropped"
+
+
 # Locking the count means a test appended below the runner, where it would
 # never execute, shows up as a failure rather than as silence. That happened.
-EXPECTED = 68
+EXPECTED = 69
 
 
 if __name__ == "__main__":

@@ -36,34 +36,53 @@ DIRECT_FEEDS = [
     # --- Swiss research and institutions ---
     ("Startupticker", "https://www.startupticker.ch/en/rss/news.rss"),
     ("EPFL News", "https://actu.epfl.ch/feeds/rss/mediacom/en/"),
-    ("ETH Zurich News", "https://ethz.ch/en/news-and-events/eth-news.rss.xml"),
-    ("Empa Research", "https://www.empa.ch/web/empa/rss"),
-    ("Idiap Research Institute", "https://www.idiap.ch/en/rss.xml"),
-    # Swiss startup funding and spinouts: the closest match to what Climb backs.
-    ("Venturelab", "https://www.venturelab.swiss/feed"),
-    ("CSEM", "https://www.csem.ch/en/feed/"),
-    ("IBM Research Zurich", "https://www.zurich.ibm.com/rss/news.xml"),
-    ("PSI (Paul Scherrer Institute)", "https://www.psi.ch/en/media-corner/rss.xml"),
-    ("University of Basel", "https://www.unibas.ch/en/News.rss"),
-    ("University of Zurich", "https://www.news.uzh.ch/en.rss.xml"),
-    ("University of Geneva", "https://www.unige.ch/campus/rss/"),
-    ("Swiss Biotech Association", "https://www.swissbiotech.org/feed/"),
 
     # --- Swiss press ---
-    ("SWI swissinfo (Business)", "https://www.swissinfo.ch/eng/business/rss"),
     ("Fintechnews Switzerland", "https://fintechnews.ch/feed/"),
-    ("SwissCognitive (AI)", "https://swisscognitive.ch/feed/"),
-
-    # --- Company press releases (newswires, filtered to Swiss deep tech) ---
-    ("Presseportal Switzerland", "https://www.presseportal.ch/rss/index.rss2"),
-    ("Business Wire (technology)", "https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkJeEFpRWQ4="),
-    ("GlobeNewswire (technology)", "https://www.globenewswire.com/RssFeed/subjectcode/22-Technology/feedTitle/GlobeNewswire%20-%20Technology"),
 
     # --- Europe-wide tech (filtered to Swiss deep tech by the relevance scorer) ---
     ("Tech.eu", "https://tech.eu/feed/"),
     ("EU-Startups", "https://www.eu-startups.com/feed/"),
     ("Silicon Canals", "https://siliconcanals.com/feed/"),
+]
+
+# Feeds removed on 11 August 2026, with what --check-feeds found. Kept here so
+# nobody adds them back from memory, and so the next person can try a corrected
+# URL knowing what the old one did.
+#
+# Seventeen of the twenty three direct feeds returned nothing. Fourteen of them
+# had never contributed a single story in the whole life of the database: not
+# one of 115 rows came from ETH, Empa, PSI, CSEM, IDIAP or any of the three
+# universities. This was never rot. The URLs were wrong from the day they were
+# added, and the run reported it as one word, "unreachable", in a log nobody
+# reads line by line.
+#
+# They are covered by Google News queries instead, which is the transport that
+# demonstrably works here and cannot 404 when an institution redesigns its site.
+RETIRED_FEEDS = [
+    # 404: the address does not exist.
+    ("ETH Zurich News", "https://ethz.ch/en/news-and-events/eth-news.rss.xml"),
+    ("Empa Research", "https://www.empa.ch/web/empa/rss"),
+    ("Idiap Research Institute", "https://www.idiap.ch/en/rss.xml"),
+    ("Venturelab", "https://www.venturelab.swiss/feed"),
+    ("CSEM", "https://www.csem.ch/en/feed/"),
+    ("PSI (Paul Scherrer Institute)", "https://www.psi.ch/en/media-corner/rss.xml"),
+    ("University of Basel", "https://www.unibas.ch/en/News.rss"),
+    ("University of Zurich", "https://www.news.uzh.ch/en.rss.xml"),
+    ("University of Geneva", "https://www.unige.ch/campus/rss/"),
+    ("Presseportal Switzerland", "https://www.presseportal.ch/rss/index.rss2"),
+    # 410: retired by the publisher, and not coming back.
+    ("SWI swissinfo (Business)", "https://www.swissinfo.ch/eng/business/rss"),
+    # 403: the server refuses us specifically.
+    ("Swiss Biotech Association", "https://www.swissbiotech.org/feed/"),
+    # 520: their server errors on every request.
     ("Tech Funding News", "https://techfundingnews.com/feed/"),
+    # Never answers at all.
+    ("GlobeNewswire (technology)", "https://www.globenewswire.com/RssFeed/subjectcode/22-Technology/feedTitle/GlobeNewswire%20-%20Technology"),
+    # 200 with an empty feed: the address is alive and carries no items.
+    ("IBM Research Zurich", "https://www.zurich.ibm.com/rss/news.xml"),
+    ("SwissCognitive (AI)", "https://swisscognitive.ch/feed/"),
+    ("Business Wire (technology)", "https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkJeEFpRWQ4="),
 ]
 
 
