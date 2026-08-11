@@ -3,7 +3,7 @@
   "note": "Rounds worth checking against a primary source.",
   "how_to_report": "For each round below, find the primary source: the company's own release, the filing, or the outlet that reported it first. Check the four things that have actually been wrong. Has the transaction closed, or is it announced, in progress, or subject to approval? Is the label right, where a first listing is an IPO, an already listed company selling shares is a Follow-on, a merger with a listed shell is a De-SPAC, and a purchase is an Acquisition rather than a round? Is the figure money received, or a ceiling, a gross, or a target? And did the named investors take part in THIS round, rather than an earlier one?\n\nReport back as entries for corrections.json, keyed on the company name, setting only the fields that are wrong. Add \"verified\" with today's date and \"verified_source\" naming what you read. An empty string clears a wrong value. For example:\n\n  \"Prem\": {\n    \"status\": \"announced\",\n    \"amount_note\": \"raising, expected to close in Q3\",\n    \"investors\": \"\",\n    \"verified\": \"2026-08-03\",\n    \"verified_source\": \"Bloomberg, 18 June 2026\"\n  }\n\nWhere a round checks out, still send back \"verified\" and \"verified_source\" so it is not queued again. Say plainly when a primary source cannot be found: an unverifiable round should stay unverified rather than be marked correct.",
   "corrections_file": "deeptech-news/corrections.json",
-  "count": 8,
+  "count": 9,
   "rounds": [
     {
       "company": "Terra Quantum",
@@ -75,6 +75,26 @@
       "last_verified": "2026-08-03"
     },
     {
+      "company": "Basilea Pharmaceutica",
+      "as_recorded": {
+        "stage": "Grant",
+        "amount": "USD 30M",
+        "amount_note": "",
+        "status": "closed",
+        "investors": "Biomedical Advanced Research and Development Authority (BARDA)",
+        "date": "2026-07-29",
+        "hq": "Basel"
+      },
+      "check": [
+        "CHF 24M is large enough that an error moves the totals"
+      ],
+      "sources": [
+        "Crunchbase export"
+      ],
+      "link": "https://www.crunchbase.com/funding_round/basilea-pharmaceutica-ltd-grant--01df92cd",
+      "last_verified": ""
+    },
+    {
       "company": "Cy Biopharma",
       "as_recorded": {
         "stage": "Series C",
@@ -136,8 +156,8 @@
       ],
       "sources": [
         "Startupticker",
-        "Tech Funding News",
-        "Crunchbase export"
+        "Crunchbase export",
+        "Tech Funding News"
       ],
       "link": "https://www.startupticker.ch/en/news/ahead-health-raises-usd-10-million-and-opens-first-markets-outside-switzerland",
       "last_verified": ""
