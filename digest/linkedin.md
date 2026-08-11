@@ -1,11 +1,11 @@
-# Climb Ventures LinkedIn plan for the week
-_Generated 10 August 2026. 4 posts, one per working day, weekend left blank, from Swiss DeepTech news of the last 10 days. Written by Claude in Max's voice. Schedule each for 08:00 on its day. Review and edit before posting._
+# Climb Ventures Swiss DeepTech shortlist
+_Generated 11 August 2026. 4 stories from the last 10 days, newest published first. Written by Claude in Max's voice. Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
-Paste this into Cowork to schedule the whole week in one go (it reads the structured file `digest/posts.json` next to this one):
+The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
 
 ```
-Open https://maxime-droux.com/digest/posts.json and schedule this week's posts.
+Open https://maxime-droux.com/digest/posts.json and schedule the posts listed at the end of this message, and only those. The file holds the shortlist; the list below says which of them I picked and when each one goes out. Match them by `index`. Ignore every other post in the file.
 
 For each post, in order:
 - Type the `text` straight through, once, with real keystrokes. Never insert
@@ -17,8 +17,8 @@ For each post, in order:
   it without the mention rather than tagging the wrong company. LinkedIn will
   render the official name: that is expected and fine, do not fight it, do not
   restart the post, do not rewrite it.
-- Schedule at `time` on `date`. If no link preview appears, schedule it anyway:
-  do not hunt for an image.
+- Schedule it at the date and time given for it in the list below. If no link
+  preview appears, schedule it anyway: do not hunt for an image.
 
 Two attempts per post, then stop. If a post is not scheduled after two tries,
 leave it, move to the next one, and list it at the end. Never start a third.
@@ -39,77 +39,74 @@ page you read it on, and I will record them.
 Report what was scheduled and what was held.
 ```
 
-The posts themselves are below, for review before you run it.
+The stories themselves are below.
 
-## Post 1 — schedule for Tuesday 11 August at 08:00
+## 1. Round — published 11 August
 
 ```
-🇨🇭 Swiss quantum firm secures software-defined systems
+🇨🇭 Swiss biotech starts global Phase 3 in rare disease
 
-@Terra Quantum, the St. Gallen-based quantum company, has demonstrated a quantum-safe security solution with California's Apex.AI. The target: long-lived, cloud-connected software-defined systems, vehicles and machines built to run for a decade or more, that must survive the migration to post-quantum cryptography.
+@Vaderis Therapeutics, a Basel-based clinical-stage biopharmaceutical company, develops targeted therapies for rare vascular diseases. It has now launched HEROIC, a global Phase 3 study of engasertib (VAD044) in patients with hereditary hemorrhagic telangiectasia, a bleeding disorder with no approved treatment.
 
 Why it matters:
-🔐 Long-lived hardware cannot be re-secured after deployment
-🚗 Software-defined vehicles inherit today's encryption for years
-🇨🇭 Swiss quantum expertise entering US industrial supply chains
+🩸 HHT patients still have no approved targeted therapy
+🌍 Global Phase 3 signals regulatory confidence in the asset
+🇨🇭 Basel remains Europe's densest hub for rare disease science
 
-Post-quantum security is becoming an engineering requirement rather than a research topic, and Swiss teams are already selling into it.
-
-https://www.startupticker.ch/en/news/terra-quantum-partners-with-apex-ai-on-quantum-safe-security
+Rare disease programmes reaching Phase 3 from Switzerland show how deep the local clinical bench really runs.
+https://vaderis.com/vaderis-therapeutics-announces-oversubscribed-financing-and-initiation-of-the-global-phase-3-study/
 ```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/symbolbilder/cloud-storage-background-business-network-design.jpg
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/symbolbilder/Blutkreislauf.jpg
+🔗 **Links to the original source.**
 
-## Post 2 — schedule for Wednesday 12 August at 08:00
+## 2. Research — published 11 August
 
 ```
-🇨🇭 Swiss AI model reads the tumor microenvironment
+🇨🇭 Swiss wound powder enters pivotal German trial
 
-Researchers at @EPFL have built an AI model that analyzes tumor tissue across many cancer types, using spatial proteomics to capture how immune cells, blood vessels and cancer cells are arranged. Two tumors with identical cell types can respond very differently to the same therapy.
+@Cutempa Medical, a Basel MedTech startup, builds mineral-based products for chronic wounds. Its lead product Curi01, a powdered wound exudate adsorbent, entered a pivotal approval study in Germany in July 2026, enrolling 280 patients across around 20 clinical centres.
 
 Why it matters:
-🧬 Architecture, not just cell type, drives treatment response
-📊 Spatial proteomics data is too complex for manual reading
-🇨🇭 Swiss academic AI moving toward clinical decision support
+🩹 Chronic wounds burden health systems across ageing Europe
+📈 280-patient pivotal trial is the gate to market approval
+🇨🇭 Swiss materials science translated into a simple clinical product
 
-The interesting frontier in oncology is no longer sequencing but interpreting how tissue is organised.
-
-https://actu.epfl.ch/news/ai-model-maps-tumor-tissue-to-improve-cancer-care
+The unglamorous problems, dressings and exudate, are often where materials expertise pays off fastest.
+https://www.startupticker.ch/en/news/cutempa-medical-startet-klinische-studie-in-deutschland
 ```
-🖼️ **Article image:** none found, grab one from the article page.
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/symbolbilder/Clinicaltrials.png
 
-## Post 3 — schedule for Thursday 13 August at 08:00
+## 3. General — published 11 August
 
 ```
-🇨🇭 Swiss biotechs push into pharma and paediatrics
+🇨🇭 Swiss pain biotech merges with US-listed Ensysce
 
-@SOPHiA GENETICS has signed its first companion diagnostics agreement with a pharmaceutical partner. In parallel, CRISPR Therapeutics won US approval for CASGEVY in children as young as two, and Pilatus Biosciences is moving its lead antibody into chronic lung disease.
+@Cy Biopharma, a Zug-based clinical-stage company working on neuroplastogenic therapies for severe chronic pain, has been acquired by Ensysce Biosciences in a stock-for-stock merger. Ensysce is developing a new class of novel opioids for severe pain, per Startupticker.
 
 Why it matters:
-🧪 Companion diagnostics ties genomics revenue to drug pipelines
-👶 Gene editing approval extends down to age two
-🇨🇭 Three Swiss biotechs expanding indications in the same week
+💊 Combines two distinct approaches to severe chronic pain
+📊 Stock-for-stock deal gives Swiss science public-market access
+🇨🇭 Zug biotech exiting via merger rather than a later round
 
-Swiss biotech maturity shows up less in fundraising rounds than in regulatory approvals and pharma contracts.
-
-https://www.startupticker.ch/en/news/three-swiss-biotechs-widen-their-reach-into-pharma-paediatrics-and-lung-disease
+Cross-border consolidation is becoming a realistic exit path for small Swiss clinical-stage teams.
+https://www.startupticker.ch/en/news/cy-biopharma-merges-with-ensysce-biosciences
 ```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/symbolbilder/pexels-googledeepmind-25626516.jpg
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/symbolbilder/Puzzlerhands.jpg
 
-## Post 4 — schedule for Friday 14 August at 08:00
+## 4. General — published 10 August
 
 ```
-🇨🇭 Swiss researchers map how awareness assembles itself
+🇨🇭 Olympic champion invests in Swiss longevity startup
 
-@EPFL neuroscientists have identified two successive patterns of brain activity that appear to separate unconscious visual processing from the formation of a conscious percept. The work builds on postdiction, the effect where later events reshape how we perceive earlier ones.
+@AVEA, a Zug-based startup building science-backed longevity supplements, has brought Iouri Podladtchikov on board as investor and brand ambassador. The Olympic gold medallist and two-time halfpipe world champion adds distribution reach to a company whose pitch rests on published research, Startupticker reports.
 
 Why it matters:
-🧠 Consciousness measured as sequence, not single moment
-👁️ Visual illusions expose the brain's short buffering window
-🇨🇭 Swiss fundamental neuroscience feeding future brain-machine interfaces
+🏂 Athlete credibility shortens trust-building in consumer health
+🔬 Longevity claims live or die on published evidence
+🇨🇭 Swiss consumer science competing on rigour, not marketing spend
 
-Foundational work like this rarely makes headlines, yet it defines the tools the next decade of neurotech will build on.
-
-https://actu.epfl.ch/news/when-the-brain-edits-its-own-movies
+Consumer longevity is one of the few Swiss deeptech niches where brand travels faster than the lab.
+https://www.startupticker.ch/en/news/olympic-champion-iouri-podladtchikov-joins-avea
 ```
-🖼️ **Article image:** none found, grab one from the article page.
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Iouri%20Podladtchikov%20joins%20AVEA.png
 

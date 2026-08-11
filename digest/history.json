@@ -461,6 +461,113 @@
         "edits",
         "movies"
       ]
+    },
+    {
+      "used": "2026-08-11",
+      "title": "Vaderis Therapeutics closes USD 152 million Series B Financing",
+      "link": "https://vaderis.com/vaderis-therapeutics-announces-oversubscribed-financing-and-initiation-of-the-global-phase-3-study/",
+      "coverage_url": "https://www.startupticker.ch/en/news/vaderis-therapeutics-closes-usd-152-million-series-b-financing",
+      "norm": "vaderis therapeutics closes usd 152 million series b financing",
+      "kw": [
+        "financing",
+        "therapeutics",
+        "vaderis"
+      ],
+      "rare": [
+        "financing",
+        "therapeutics",
+        "vaderis"
+      ],
+      "uncommon": [
+        "financing",
+        "therapeutics",
+        "vaderis"
+      ]
+    },
+    {
+      "used": "2026-08-11",
+      "title": "Cutempa Medical startet klinische Studie in Deutschland",
+      "link": "https://www.startupticker.ch/en/news/cutempa-medical-startet-klinische-studie-in-deutschland",
+      "coverage_url": null,
+      "norm": "cutempa medical startet klinische studie in deutschland",
+      "kw": [
+        "cutempa",
+        "deutschland",
+        "klinische",
+        "medical",
+        "startet",
+        "studie"
+      ],
+      "rare": [
+        "cutempa",
+        "deutschland",
+        "klinische",
+        "medical",
+        "startet",
+        "studie"
+      ],
+      "uncommon": [
+        "cutempa",
+        "deutschland",
+        "klinische",
+        "medical",
+        "startet",
+        "studie"
+      ]
+    },
+    {
+      "used": "2026-08-11",
+      "title": "Cy Biopharma merges with Ensysce Biosciences",
+      "link": "https://www.startupticker.ch/en/news/cy-biopharma-merges-with-ensysce-biosciences",
+      "coverage_url": null,
+      "norm": "cy biopharma merges with ensysce biosciences",
+      "kw": [
+        "biopharma",
+        "biosciences",
+        "ensysce",
+        "merges"
+      ],
+      "rare": [
+        "biopharma",
+        "biosciences",
+        "ensysce",
+        "merges"
+      ],
+      "uncommon": [
+        "biopharma",
+        "biosciences",
+        "ensysce",
+        "merges"
+      ]
+    },
+    {
+      "used": "2026-08-11",
+      "title": "Olympic Champion Iouri Podladtchikov joins AVEA",
+      "link": "https://www.startupticker.ch/en/news/olympic-champion-iouri-podladtchikov-joins-avea",
+      "coverage_url": null,
+      "norm": "olympic champion iouri podladtchikov joins avea",
+      "kw": [
+        "avea",
+        "champion",
+        "iouri",
+        "joins",
+        "olympic",
+        "podladtchikov"
+      ],
+      "rare": [
+        "champion",
+        "iouri",
+        "joins",
+        "olympic",
+        "podladtchikov"
+      ],
+      "uncommon": [
+        "champion",
+        "iouri",
+        "joins",
+        "olympic",
+        "podladtchikov"
+      ]
     }
   ]
 }

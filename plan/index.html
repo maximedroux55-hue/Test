@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Climb LinkedIn plan for the week</title>
+<title>Swiss DeepTech shortlist</title>
 <meta name="robots" content="noindex">
 <style>
   :root { --green:#46b96a; --ink:#1b2430; --soft:#5b6472; --line:#e6eae8; --bg:#f6f8f7; }
@@ -26,16 +26,37 @@
   .cowork p { font-size:0.85rem; color:var(--soft); margin-bottom:0.6rem; }
   .card { background:#fff; border:1px solid var(--line); border-radius:14px;
           padding:1rem; margin-bottom:1rem; }
-  .cardhead { display:flex; justify-content:space-between; align-items:baseline;
-              gap:0.5rem; margin-bottom:0.6rem; }
+  /* Wraps rather than squeezes. On a phone the date and the warning badge do
+     not both fit beside the label, and splitting "Published 05 August" across
+     two lines to make them fit reads as a broken card. */
+  .cardhead { display:flex; justify-content:space-between; align-items:center;
+              flex-wrap:wrap; gap:0.4rem 0.5rem; margin-bottom:0.6rem; }
   .num { color:var(--green); font-weight:800; }
   .flag { background:#fdf3e3; color:#8a6d3b; border-radius:6px;
           padding:0.05rem 0.45rem; font-size:0.7rem; font-weight:700;
-          text-transform:uppercase; letter-spacing:0.03em; }
+          text-transform:uppercase; letter-spacing:0.03em; white-space:nowrap; }
   .ok { background:#eef4f0; color:#2f6b46; border-radius:6px;
         padding:0.05rem 0.45rem; font-size:0.7rem; font-weight:700;
-        text-transform:uppercase; letter-spacing:0.03em; }
-  .when { color:var(--soft); font-size:0.82rem; text-align:right; }
+        text-transform:uppercase; letter-spacing:0.03em; white-space:nowrap; }
+  .when { color:var(--soft); font-size:0.82rem; margin-left:auto;
+          text-align:right; white-space:nowrap; }
+  .pick { display:inline-flex; align-items:center; gap:0.4rem; cursor:pointer; }
+  .pick input { width:1.15rem; height:1.15rem; accent-color:var(--green); cursor:pointer; }
+  .kind { background:var(--bg); color:var(--soft); border:1px solid var(--line);
+          border-radius:6px; padding:0.05rem 0.45rem; font-size:0.7rem;
+          font-weight:700; text-transform:uppercase; letter-spacing:0.03em; }
+  .card.chosen { border-color:var(--green); box-shadow:0 0 0 1px var(--green); }
+  /* The selection bar sits above everything and never leaves the screen, so
+     the count and the button are one tap away from any card in a list of 15. */
+  .bar { position:sticky; bottom:0; z-index:5; margin:1rem -1rem 0;
+         padding:0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom));
+         background:#fff; border-top:1px solid var(--line);
+         display:flex; align-items:center; gap:0.75rem; }
+  .bar .count { font-size:0.85rem; color:var(--soft); flex:1; }
+  .bar button { background:var(--green); color:#fff; border:0; border-radius:10px;
+                padding:0.6rem 0.9rem; font-size:0.88rem; font-weight:700;
+                cursor:pointer; }
+  .bar button:disabled { opacity:0.45; cursor:default; }
   .posttext { position:relative; }
   pre.post { white-space:pre-wrap; word-wrap:break-word; font:inherit;
              background:var(--bg); border:1px solid var(--line); border-radius:10px;
@@ -55,154 +76,128 @@
   footer { color:var(--soft); font-size:0.78rem; margin-top:2rem; }
 </style></head><body>
 <div class="wrap">
-  <h1>This week on LinkedIn<span class="dot">.</span></h1>
-  <p class="sub">Generated 10 August 2026 &middot; 4 posts, one per working day, weekend left blank &middot; Written by Claude in Max&#x27;s voice.</p>
+  <h1>Swiss DeepTech shortlist<span class="dot">.</span></h1>
+  <p class="sub">Generated 11 August 2026 &middot; 4 stories from the last 10 days,
+     newest published first &middot; Written by Claude in Max&#x27;s voice.</p>
 
   <div class="runbox">
-    <button id="runbtn" class="runbtn">&#8635; Generate this week's posts now</button>
+    <button id="runbtn" class="runbtn">&#8635; Build a fresh shortlist now</button>
     <p id="runstatus" class="runstatus"></p>
   </div>
 
   <div class="cowork">
     <h2>Publish with Claude Cowork</h2>
-    <p>Copy this into Cowork to schedule the whole week in one go:</p>
-    <div class="posttext">
-      <button class="copy" onclick="copyText(this)">Copy</button>
-      <pre class="post">Open https://maxime-droux.com/digest/posts.json and schedule this week&#x27;s posts.
-
-For each post, in order:
-- Type the `text` straight through, once, with real keystrokes. Never insert
-  text via JavaScript. It already ends with the article URL on its own line,
-  so do not add, move or retype the URL separately: typing it last is what makes
-  the link preview load the article photo.
-- Each post has exactly one @mention. Type `mention.type`, wait for the
-  dropdown, click the row matching `mention.expect`. If no row matches, post
-  it without the mention rather than tagging the wrong company. LinkedIn will
-  render the official name: that is expected and fine, do not fight it, do not
-  restart the post, do not rewrite it.
-- Schedule at `time` on `date`. If no link preview appears, schedule it anyway:
-  do not hunt for an image.
-
-Two attempts per post, then stop. If a post is not scheduled after two tries,
-leave it, move to the next one, and list it at the end. Never start a third.
-
-Before you start, open the scheduled-posts list once and note what is already
-there. Skip any post already scheduled: never schedule the same one twice.
-
-Verification:
-- Claims already settled against the article are not in the file. Check only
-  what `claims` still lists, and posts with needs_check: true (a figure nobody
-  has verified: confirm round closed / round name / amount received / investors
-  in THIS round). Both empty and false means schedule it, no research.
-
-Anything that fails: do not schedule it, and do not edit any file or commit
-anything. List the held posts at the end with the sentence you read and the
-page you read it on, and I will record them.
-
-Report what was scheduled and what was held.</pre>
-    </div>
+    <p>Tick the ones worth posting, then use the button at the bottom of the page.
+       It copies the instruction with only your picks in it, one per working day
+       starting tomorrow at 08:00.</p>
   </div>
 
-      <article class="card">
+      <article class="card" data-index="1">
         <div class="cardhead">
-          <span class="num">Post 1</span>
-          <span class="when">Tuesday 11 August &middot; 08:00</span>
-          <span class="ok">verified</span>
-        </div>
-        <div class="posttext">
-          <button class="copy" onclick="copyText(this)">Copy</button>
-          <pre class="post">🇨🇭 Swiss quantum firm secures software-defined systems
-
-@Terra Quantum, the St. Gallen-based quantum company, has demonstrated a quantum-safe security solution with California&#x27;s Apex.AI. The target: long-lived, cloud-connected software-defined systems, vehicles and machines built to run for a decade or more, that must survive the migration to post-quantum cryptography.
-
-Why it matters:
-🔐 Long-lived hardware cannot be re-secured after deployment
-🚗 Software-defined vehicles inherit today&#x27;s encryption for years
-🇨🇭 Swiss quantum expertise entering US industrial supply chains
-
-Post-quantum security is becoming an engineering requirement rather than a research topic, and Swiss teams are already selling into it.
-
-https://www.startupticker.ch/en/news/terra-quantum-partners-with-apex-ai-on-quantum-safe-security</pre>
-        </div>
-        <img class="shot" src="https://www.startupticker.ch/assets/images/symbolbilder/cloud-storage-background-business-network-design.jpg" alt="Article image" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('p'),{className:'noimg',textContent:'Image preview blocked. Cowork will grab it from the article page.'}))">
-        <a class="src" href="https://www.startupticker.ch/en/news/terra-quantum-partners-with-apex-ai-on-quantum-safe-security" target="_blank" rel="noopener">Article: Startupticker</a>
-        
-      </article>
-      <article class="card">
-        <div class="cardhead">
-          <span class="num">Post 2</span>
-          <span class="when">Wednesday 12 August &middot; 08:00</span>
+          <label class="pick"><input type="checkbox" class="tick"> <span class="num">1</span></label>
+          <span class="kind">Round</span>
+          <span class="when">Published 11 August</span>
           
         </div>
         <div class="posttext">
           <button class="copy" onclick="copyText(this)">Copy</button>
-          <pre class="post">🇨🇭 Swiss AI model reads the tumor microenvironment
+          <pre class="post">🇨🇭 Swiss biotech starts global Phase 3 in rare disease
 
-Researchers at @EPFL have built an AI model that analyzes tumor tissue across many cancer types, using spatial proteomics to capture how immune cells, blood vessels and cancer cells are arranged. Two tumors with identical cell types can respond very differently to the same therapy.
+@Vaderis Therapeutics, a Basel-based clinical-stage biopharmaceutical company, develops targeted therapies for rare vascular diseases. It has now launched HEROIC, a global Phase 3 study of engasertib (VAD044) in patients with hereditary hemorrhagic telangiectasia, a bleeding disorder with no approved treatment.
 
 Why it matters:
-🧬 Architecture, not just cell type, drives treatment response
-📊 Spatial proteomics data is too complex for manual reading
-🇨🇭 Swiss academic AI moving toward clinical decision support
+🩸 HHT patients still have no approved targeted therapy
+🌍 Global Phase 3 signals regulatory confidence in the asset
+🇨🇭 Basel remains Europe&#x27;s densest hub for rare disease science
 
-The interesting frontier in oncology is no longer sequencing but interpreting how tissue is organised.
-
-https://actu.epfl.ch/news/ai-model-maps-tumor-tissue-to-improve-cancer-care</pre>
+Rare disease programmes reaching Phase 3 from Switzerland show how deep the local clinical bench really runs.
+https://vaderis.com/vaderis-therapeutics-announces-oversubscribed-financing-and-initiation-of-the-global-phase-3-study/</pre>
         </div>
-        <p class="noimg">No preview image. Cowork will grab one from the article page when scheduling.</p>
-        <a class="src" href="https://actu.epfl.ch/news/ai-model-maps-tumor-tissue-to-improve-cancer-care" target="_blank" rel="noopener">Article: EPFL News</a>
+        <img class="shot" src="https://www.startupticker.ch/assets/images/symbolbilder/Blutkreislauf.jpg" alt="Article image" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('p'),{className:'noimg',textContent:'Image preview blocked. Cowork will grab it from the article page.'}))">
+        <a class="src" href="https://vaderis.com/vaderis-therapeutics-announces-oversubscribed-financing-and-initiation-of-the-global-phase-3-study/" target="_blank" rel="noopener">Original source: vaderis.com</a>
         
       </article>
-      <article class="card">
+      <article class="card" data-index="2">
         <div class="cardhead">
-          <span class="num">Post 3</span>
-          <span class="when">Thursday 13 August &middot; 08:00</span>
+          <label class="pick"><input type="checkbox" class="tick"> <span class="num">2</span></label>
+          <span class="kind">Research</span>
+          <span class="when">Published 11 August</span>
           
         </div>
         <div class="posttext">
           <button class="copy" onclick="copyText(this)">Copy</button>
-          <pre class="post">🇨🇭 Swiss biotechs push into pharma and paediatrics
+          <pre class="post">🇨🇭 Swiss wound powder enters pivotal German trial
 
-@SOPHiA GENETICS has signed its first companion diagnostics agreement with a pharmaceutical partner. In parallel, CRISPR Therapeutics won US approval for CASGEVY in children as young as two, and Pilatus Biosciences is moving its lead antibody into chronic lung disease.
+@Cutempa Medical, a Basel MedTech startup, builds mineral-based products for chronic wounds. Its lead product Curi01, a powdered wound exudate adsorbent, entered a pivotal approval study in Germany in July 2026, enrolling 280 patients across around 20 clinical centres.
 
 Why it matters:
-🧪 Companion diagnostics ties genomics revenue to drug pipelines
-👶 Gene editing approval extends down to age two
-🇨🇭 Three Swiss biotechs expanding indications in the same week
+🩹 Chronic wounds burden health systems across ageing Europe
+📈 280-patient pivotal trial is the gate to market approval
+🇨🇭 Swiss materials science translated into a simple clinical product
 
-Swiss biotech maturity shows up less in fundraising rounds than in regulatory approvals and pharma contracts.
-
-https://www.startupticker.ch/en/news/three-swiss-biotechs-widen-their-reach-into-pharma-paediatrics-and-lung-disease</pre>
+The unglamorous problems, dressings and exudate, are often where materials expertise pays off fastest.
+https://www.startupticker.ch/en/news/cutempa-medical-startet-klinische-studie-in-deutschland</pre>
         </div>
-        <img class="shot" src="https://www.startupticker.ch/assets/images/symbolbilder/pexels-googledeepmind-25626516.jpg" alt="Article image" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('p'),{className:'noimg',textContent:'Image preview blocked. Cowork will grab it from the article page.'}))">
-        <a class="src" href="https://www.startupticker.ch/en/news/three-swiss-biotechs-widen-their-reach-into-pharma-paediatrics-and-lung-disease" target="_blank" rel="noopener">Article: Startupticker</a>
+        <img class="shot" src="https://www.startupticker.ch/assets/images/symbolbilder/Clinicaltrials.png" alt="Article image" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('p'),{className:'noimg',textContent:'Image preview blocked. Cowork will grab it from the article page.'}))">
+        <a class="src" href="https://www.startupticker.ch/en/news/cutempa-medical-startet-klinische-studie-in-deutschland" target="_blank" rel="noopener">Article: Startupticker</a>
         
       </article>
-      <article class="card">
+      <article class="card" data-index="3">
         <div class="cardhead">
-          <span class="num">Post 4</span>
-          <span class="when">Friday 14 August &middot; 08:00</span>
+          <label class="pick"><input type="checkbox" class="tick"> <span class="num">3</span></label>
+          <span class="kind">General</span>
+          <span class="when">Published 11 August</span>
           
         </div>
         <div class="posttext">
           <button class="copy" onclick="copyText(this)">Copy</button>
-          <pre class="post">🇨🇭 Swiss researchers map how awareness assembles itself
+          <pre class="post">🇨🇭 Swiss pain biotech merges with US-listed Ensysce
 
-@EPFL neuroscientists have identified two successive patterns of brain activity that appear to separate unconscious visual processing from the formation of a conscious percept. The work builds on postdiction, the effect where later events reshape how we perceive earlier ones.
+@Cy Biopharma, a Zug-based clinical-stage company working on neuroplastogenic therapies for severe chronic pain, has been acquired by Ensysce Biosciences in a stock-for-stock merger. Ensysce is developing a new class of novel opioids for severe pain, per Startupticker.
 
 Why it matters:
-🧠 Consciousness measured as sequence, not single moment
-👁️ Visual illusions expose the brain&#x27;s short buffering window
-🇨🇭 Swiss fundamental neuroscience feeding future brain-machine interfaces
+💊 Combines two distinct approaches to severe chronic pain
+📊 Stock-for-stock deal gives Swiss science public-market access
+🇨🇭 Zug biotech exiting via merger rather than a later round
 
-Foundational work like this rarely makes headlines, yet it defines the tools the next decade of neurotech will build on.
-
-https://actu.epfl.ch/news/when-the-brain-edits-its-own-movies</pre>
+Cross-border consolidation is becoming a realistic exit path for small Swiss clinical-stage teams.
+https://www.startupticker.ch/en/news/cy-biopharma-merges-with-ensysce-biosciences</pre>
         </div>
-        <p class="noimg">No preview image. Cowork will grab one from the article page when scheduling.</p>
-        <a class="src" href="https://actu.epfl.ch/news/when-the-brain-edits-its-own-movies" target="_blank" rel="noopener">Article: EPFL News</a>
+        <img class="shot" src="https://www.startupticker.ch/assets/images/symbolbilder/Puzzlerhands.jpg" alt="Article image" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('p'),{className:'noimg',textContent:'Image preview blocked. Cowork will grab it from the article page.'}))">
+        <a class="src" href="https://www.startupticker.ch/en/news/cy-biopharma-merges-with-ensysce-biosciences" target="_blank" rel="noopener">Article: Startupticker</a>
         
       </article>
+      <article class="card" data-index="4">
+        <div class="cardhead">
+          <label class="pick"><input type="checkbox" class="tick"> <span class="num">4</span></label>
+          <span class="kind">General</span>
+          <span class="when">Published 10 August</span>
+          
+        </div>
+        <div class="posttext">
+          <button class="copy" onclick="copyText(this)">Copy</button>
+          <pre class="post">🇨🇭 Olympic champion invests in Swiss longevity startup
+
+@AVEA, a Zug-based startup building science-backed longevity supplements, has brought Iouri Podladtchikov on board as investor and brand ambassador. The Olympic gold medallist and two-time halfpipe world champion adds distribution reach to a company whose pitch rests on published research, Startupticker reports.
+
+Why it matters:
+🏂 Athlete credibility shortens trust-building in consumer health
+🔬 Longevity claims live or die on published evidence
+🇨🇭 Swiss consumer science competing on rigour, not marketing spend
+
+Consumer longevity is one of the few Swiss deeptech niches where brand travels faster than the lab.
+https://www.startupticker.ch/en/news/olympic-champion-iouri-podladtchikov-joins-avea</pre>
+        </div>
+        <img class="shot" src="https://www.startupticker.ch/assets/images/articles/Iouri%20Podladtchikov%20joins%20AVEA.png" alt="Article image" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('p'),{className:'noimg',textContent:'Image preview blocked. Cowork will grab it from the article page.'}))">
+        <a class="src" href="https://www.startupticker.ch/en/news/olympic-champion-iouri-podladtchikov-joins-avea" target="_blank" rel="noopener">Article: Startupticker</a>
+        
+      </article>
+
+  <div class="bar">
+    <span class="count" id="count">Nothing picked yet</span>
+    <button id="clearbtn" type="button">Clear</button>
+    <button id="copybtn" type="button" disabled>Copy for Cowork</button>
+  </div>
 
   <footer>Review each post before publishing. Times are Swiss local.</footer>
 </div>
@@ -214,6 +209,63 @@ https://actu.epfl.ch/news/when-the-brain-edits-its-own-movies</pre>
       setTimeout(function() { btn.textContent = old; }, 1500);
     });
   }
+
+  // Picking. The order of the ticks decides the running order, and the days
+  // are working days from tomorrow: a post on a Saturday reads as nobody home.
+  var PROMPT = "Open https://maxime-droux.com/digest/posts.json and schedule the posts listed at the end of this message, and only those. The file holds the shortlist; the list below says which of them I picked and when each one goes out. Match them by `index`. Ignore every other post in the file.\n\nFor each post, in order:\n- Type the `text` straight through, once, with real keystrokes. Never insert\n  text via JavaScript. It already ends with the article URL on its own line,\n  so do not add, move or retype the URL separately: typing it last is what makes\n  the link preview load the article photo.\n- Each post has exactly one @mention. Type `mention.type`, wait for the\n  dropdown, click the row matching `mention.expect`. If no row matches, post\n  it without the mention rather than tagging the wrong company. LinkedIn will\n  render the official name: that is expected and fine, do not fight it, do not\n  restart the post, do not rewrite it.\n- Schedule it at the date and time given for it in the list below. If no link\n  preview appears, schedule it anyway: do not hunt for an image.\n\nTwo attempts per post, then stop. If a post is not scheduled after two tries,\nleave it, move to the next one, and list it at the end. Never start a third.\n\nBefore you start, open the scheduled-posts list once and note what is already\nthere. Skip any post already scheduled: never schedule the same one twice.\n\nVerification:\n- Claims already settled against the article are not in the file. Check only\n  what `claims` still lists, and posts with needs_check: true (a figure nobody\n  has verified: confirm round closed / round name / amount received / investors\n  in THIS round). Both empty and false means schedule it, no research.\n\nAnything that fails: do not schedule it, and do not edit any file or commit\nanything. List the held posts at the end with the sentence you read and the\npage you read it on, and I will record them.\n\nReport what was scheduled and what was held.";
+  var TIME = "08:00";
+  var cards = [].slice.call(document.querySelectorAll('.card'));
+
+  function chosen() {
+    return cards.filter(function (c) { return c.querySelector('.tick').checked; });
+  }
+
+  function workingDays(n) {
+    var out = [], d = new Date();
+    d.setHours(12, 0, 0, 0);
+    while (out.length < n) {
+      d.setDate(d.getDate() + 1);
+      if (d.getDay() === 0 || d.getDay() === 6) continue;
+      out.push(d.toLocaleDateString('en-GB',
+        { weekday: 'long', day: '2-digit', month: 'long' }));
+    }
+    return out;
+  }
+
+  function refresh() {
+    var picked = chosen();
+    cards.forEach(function (c) {
+      c.classList.toggle('chosen', c.querySelector('.tick').checked);
+    });
+    document.getElementById('count').textContent = picked.length
+      ? picked.length + (picked.length === 1 ? ' story picked' : ' stories picked')
+      : 'Nothing picked yet';
+    document.getElementById('copybtn').disabled = picked.length === 0;
+  }
+
+  function instruction() {
+    var picked = chosen(), days = workingDays(picked.length), lines = [];
+    picked.forEach(function (c, i) {
+      lines.push('- post ' + c.dataset.index + ' on ' + days[i] + ' at ' + TIME);
+    });
+    return PROMPT + '\n\nSchedule these, in this order:\n' + lines.join('\n') + '\n';
+  }
+
+  cards.forEach(function (c) {
+    c.querySelector('.tick').addEventListener('change', refresh);
+  });
+  document.getElementById('clearbtn').addEventListener('click', function () {
+    cards.forEach(function (c) { c.querySelector('.tick').checked = false; });
+    refresh();
+  });
+  document.getElementById('copybtn').addEventListener('click', function () {
+    var btn = this;
+    navigator.clipboard.writeText(instruction()).then(function () {
+      var old = btn.textContent; btn.textContent = 'Copied';
+      setTimeout(function () { btn.textContent = old; }, 1600);
+    });
+  });
+  refresh();
 
   var RUN_URL = "https://md-news-button.maxime-droux55.workers.dev/";
   var runBtn = document.getElementById('runbtn');

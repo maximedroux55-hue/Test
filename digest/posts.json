@@ -1,57 +1,49 @@
 {
-  "generated": "2026-08-10",
+  "generated": "2026-08-11",
   "mode": "Written by Claude in Max's voice.",
   "note": "Times are local. Schedule each post at its time on its date.",
-  "cowork_prompt": "Open https://maxime-droux.com/digest/posts.json and schedule this week's posts.\n\nFor each post, in order:\n- Type the `text` straight through, once, with real keystrokes. Never insert\n  text via JavaScript. It already ends with the article URL on its own line,\n  so do not add, move or retype the URL separately: typing it last is what makes\n  the link preview load the article photo.\n- Each post has exactly one @mention. Type `mention.type`, wait for the\n  dropdown, click the row matching `mention.expect`. If no row matches, post\n  it without the mention rather than tagging the wrong company. LinkedIn will\n  render the official name: that is expected and fine, do not fight it, do not\n  restart the post, do not rewrite it.\n- Schedule at `time` on `date`. If no link preview appears, schedule it anyway:\n  do not hunt for an image.\n\nTwo attempts per post, then stop. If a post is not scheduled after two tries,\nleave it, move to the next one, and list it at the end. Never start a third.\n\nBefore you start, open the scheduled-posts list once and note what is already\nthere. Skip any post already scheduled: never schedule the same one twice.\n\nVerification:\n- Claims already settled against the article are not in the file. Check only\n  what `claims` still lists, and posts with needs_check: true (a figure nobody\n  has verified: confirm round closed / round name / amount received / investors\n  in THIS round). Both empty and false means schedule it, no research.\n\nAnything that fails: do not schedule it, and do not edit any file or commit\nanything. List the held posts at the end with the sentence you read and the\npage you read it on, and I will record them.\n\nReport what was scheduled and what was held.",
+  "cowork_prompt": "Open https://maxime-droux.com/digest/posts.json and schedule the posts listed at the end of this message, and only those. The file holds the shortlist; the list below says which of them I picked and when each one goes out. Match them by `index`. Ignore every other post in the file.\n\nFor each post, in order:\n- Type the `text` straight through, once, with real keystrokes. Never insert\n  text via JavaScript. It already ends with the article URL on its own line,\n  so do not add, move or retype the URL separately: typing it last is what makes\n  the link preview load the article photo.\n- Each post has exactly one @mention. Type `mention.type`, wait for the\n  dropdown, click the row matching `mention.expect`. If no row matches, post\n  it without the mention rather than tagging the wrong company. LinkedIn will\n  render the official name: that is expected and fine, do not fight it, do not\n  restart the post, do not rewrite it.\n- Schedule it at the date and time given for it in the list below. If no link\n  preview appears, schedule it anyway: do not hunt for an image.\n\nTwo attempts per post, then stop. If a post is not scheduled after two tries,\nleave it, move to the next one, and list it at the end. Never start a third.\n\nBefore you start, open the scheduled-posts list once and note what is already\nthere. Skip any post already scheduled: never schedule the same one twice.\n\nVerification:\n- Claims already settled against the article are not in the file. Check only\n  what `claims` still lists, and posts with needs_check: true (a figure nobody\n  has verified: confirm round closed / round name / amount received / investors\n  in THIS round). Both empty and false means schedule it, no research.\n\nAnything that fails: do not schedule it, and do not edit any file or commit\nanything. List the held posts at the end with the sentence you read and the\npage you read it on, and I will record them.\n\nReport what was scheduled and what was held.",
   "posts": [
     {
       "index": 1,
-      "date": "2026-08-11",
-      "time": "08:00",
-      "text": "🇨🇭 Swiss quantum firm secures software-defined systems\n\n@Terra Quantum, the St. Gallen-based quantum company, has demonstrated a quantum-safe security solution with California's Apex.AI. The target: long-lived, cloud-connected software-defined systems, vehicles and machines built to run for a decade or more, that must survive the migration to post-quantum cryptography.\n\nWhy it matters:\n🔐 Long-lived hardware cannot be re-secured after deployment\n🚗 Software-defined vehicles inherit today's encryption for years\n🇨🇭 Swiss quantum expertise entering US industrial supply chains\n\nPost-quantum security is becoming an engineering requirement rather than a research topic, and Swiss teams are already selling into it.\n\nhttps://www.startupticker.ch/en/news/terra-quantum-partners-with-apex-ai-on-quantum-safe-security",
-      "link": "https://www.startupticker.ch/en/news/terra-quantum-partners-with-apex-ai-on-quantum-safe-security",
+      "text": "🇨🇭 Swiss biotech starts global Phase 3 in rare disease\n\n@Vaderis Therapeutics, a Basel-based clinical-stage biopharmaceutical company, develops targeted therapies for rare vascular diseases. It has now launched HEROIC, a global Phase 3 study of engasertib (VAD044) in patients with hereditary hemorrhagic telangiectasia, a bleeding disorder with no approved treatment.\n\nWhy it matters:\n🩸 HHT patients still have no approved targeted therapy\n🌍 Global Phase 3 signals regulatory confidence in the asset\n🇨🇭 Basel remains Europe's densest hub for rare disease science\n\nRare disease programmes reaching Phase 3 from Switzerland show how deep the local clinical bench really runs.\nhttps://vaderis.com/vaderis-therapeutics-announces-oversubscribed-financing-and-initiation-of-the-global-phase-3-study/",
+      "link": "https://vaderis.com/vaderis-therapeutics-announces-oversubscribed-financing-and-initiation-of-the-global-phase-3-study/",
       "mention": {
-        "type": "Terra",
-        "expect": "Terra Quantum"
+        "type": "Vaderis",
+        "expect": "Vaderis Therapeutics"
       },
       "needs_check": false,
       "claims": []
     },
     {
       "index": 2,
-      "date": "2026-08-12",
-      "time": "08:00",
-      "text": "🇨🇭 Swiss AI model reads the tumor microenvironment\n\nResearchers at @EPFL have built an AI model that analyzes tumor tissue across many cancer types, using spatial proteomics to capture how immune cells, blood vessels and cancer cells are arranged. Two tumors with identical cell types can respond very differently to the same therapy.\n\nWhy it matters:\n🧬 Architecture, not just cell type, drives treatment response\n📊 Spatial proteomics data is too complex for manual reading\n🇨🇭 Swiss academic AI moving toward clinical decision support\n\nThe interesting frontier in oncology is no longer sequencing but interpreting how tissue is organised.\n\nhttps://actu.epfl.ch/news/ai-model-maps-tumor-tissue-to-improve-cancer-care",
-      "link": "https://actu.epfl.ch/news/ai-model-maps-tumor-tissue-to-improve-cancer-care",
+      "text": "🇨🇭 Swiss wound powder enters pivotal German trial\n\n@Cutempa Medical, a Basel MedTech startup, builds mineral-based products for chronic wounds. Its lead product Curi01, a powdered wound exudate adsorbent, entered a pivotal approval study in Germany in July 2026, enrolling 280 patients across around 20 clinical centres.\n\nWhy it matters:\n🩹 Chronic wounds burden health systems across ageing Europe\n📈 280-patient pivotal trial is the gate to market approval\n🇨🇭 Swiss materials science translated into a simple clinical product\n\nThe unglamorous problems, dressings and exudate, are often where materials expertise pays off fastest.\nhttps://www.startupticker.ch/en/news/cutempa-medical-startet-klinische-studie-in-deutschland",
+      "link": "https://www.startupticker.ch/en/news/cutempa-medical-startet-klinische-studie-in-deutschland",
       "mention": {
-        "type": "EPFL",
-        "expect": "EPFL"
+        "type": "Cutempa",
+        "expect": "Cutempa Medical"
       },
       "needs_check": false,
       "claims": []
     },
     {
       "index": 3,
-      "date": "2026-08-13",
-      "time": "08:00",
-      "text": "🇨🇭 Swiss biotechs push into pharma and paediatrics\n\n@SOPHiA GENETICS has signed its first companion diagnostics agreement with a pharmaceutical partner. In parallel, CRISPR Therapeutics won US approval for CASGEVY in children as young as two, and Pilatus Biosciences is moving its lead antibody into chronic lung disease.\n\nWhy it matters:\n🧪 Companion diagnostics ties genomics revenue to drug pipelines\n👶 Gene editing approval extends down to age two\n🇨🇭 Three Swiss biotechs expanding indications in the same week\n\nSwiss biotech maturity shows up less in fundraising rounds than in regulatory approvals and pharma contracts.\n\nhttps://www.startupticker.ch/en/news/three-swiss-biotechs-widen-their-reach-into-pharma-paediatrics-and-lung-disease",
-      "link": "https://www.startupticker.ch/en/news/three-swiss-biotechs-widen-their-reach-into-pharma-paediatrics-and-lung-disease",
+      "text": "🇨🇭 Swiss pain biotech merges with US-listed Ensysce\n\n@Cy Biopharma, a Zug-based clinical-stage company working on neuroplastogenic therapies for severe chronic pain, has been acquired by Ensysce Biosciences in a stock-for-stock merger. Ensysce is developing a new class of novel opioids for severe pain, per Startupticker.\n\nWhy it matters:\n💊 Combines two distinct approaches to severe chronic pain\n📊 Stock-for-stock deal gives Swiss science public-market access\n🇨🇭 Zug biotech exiting via merger rather than a later round\n\nCross-border consolidation is becoming a realistic exit path for small Swiss clinical-stage teams.\nhttps://www.startupticker.ch/en/news/cy-biopharma-merges-with-ensysce-biosciences",
+      "link": "https://www.startupticker.ch/en/news/cy-biopharma-merges-with-ensysce-biosciences",
       "mention": {
-        "type": "SOPHiA",
-        "expect": "SOPHiA"
+        "type": "Cy",
+        "expect": "Cy"
       },
       "needs_check": false,
       "claims": []
     },
     {
       "index": 4,
-      "date": "2026-08-14",
-      "time": "08:00",
-      "text": "🇨🇭 Swiss researchers map how awareness assembles itself\n\n@EPFL neuroscientists have identified two successive patterns of brain activity that appear to separate unconscious visual processing from the formation of a conscious percept. The work builds on postdiction, the effect where later events reshape how we perceive earlier ones.\n\nWhy it matters:\n🧠 Consciousness measured as sequence, not single moment\n👁️ Visual illusions expose the brain's short buffering window\n🇨🇭 Swiss fundamental neuroscience feeding future brain-machine interfaces\n\nFoundational work like this rarely makes headlines, yet it defines the tools the next decade of neurotech will build on.\n\nhttps://actu.epfl.ch/news/when-the-brain-edits-its-own-movies",
-      "link": "https://actu.epfl.ch/news/when-the-brain-edits-its-own-movies",
+      "text": "🇨🇭 Olympic champion invests in Swiss longevity startup\n\n@AVEA, a Zug-based startup building science-backed longevity supplements, has brought Iouri Podladtchikov on board as investor and brand ambassador. The Olympic gold medallist and two-time halfpipe world champion adds distribution reach to a company whose pitch rests on published research, Startupticker reports.\n\nWhy it matters:\n🏂 Athlete credibility shortens trust-building in consumer health\n🔬 Longevity claims live or die on published evidence\n🇨🇭 Swiss consumer science competing on rigour, not marketing spend\n\nConsumer longevity is one of the few Swiss deeptech niches where brand travels faster than the lab.\nhttps://www.startupticker.ch/en/news/olympic-champion-iouri-podladtchikov-joins-avea",
+      "link": "https://www.startupticker.ch/en/news/olympic-champion-iouri-podladtchikov-joins-avea",
       "mention": {
-        "type": "EPFL",
-        "expect": "EPFL"
+        "type": "AVEA",
+        "expect": "AVEA"
       },
       "needs_check": false,
       "claims": []
