@@ -761,6 +761,49 @@
       ],
       "rare": [],
       "uncommon": []
+    },
+    {
+      "used": "2026-08-12",
+      "title": "Startups boost growth by teaming up with large companies",
+      "link": "https://actu.epfl.ch/news/startups-boost-growth-by-teaming-up-with-large-com",
+      "coverage_url": null,
+      "norm": "startups boost growth by teaming up with large companies",
+      "kw": [
+        "boost",
+        "companies",
+        "growth",
+        "large",
+        "teaming"
+      ],
+      "rare": [
+        "boost",
+        "companies",
+        "growth",
+        "large",
+        "teaming"
+      ],
+      "uncommon": [
+        "boost",
+        "companies",
+        "growth",
+        "large",
+        "teaming"
+      ]
+    },
+    {
+      "used": "2026-08-12",
+      "title": "AI Infrastructure Capital startet mit 16 Millionen US-Dollar",
+      "link": "https://www.startupticker.ch/en/news/ai-infrastructure-capital-startet-mit-16-millionen-us-dollar",
+      "coverage_url": null,
+      "norm": "ai infrastructure capital startet mit 16 millionen usdollar",
+      "kw": [
+        "capital",
+        "infrastructure",
+        "startet",
+        "usdollar"
+      ],
+      "rare": [],
+      "uncommon": []
     }
   ]
 }
