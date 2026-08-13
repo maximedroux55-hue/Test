@@ -1,29 +1,53 @@
 {
-  "generated": "2026-08-12",
+  "generated": "2026-08-13",
   "mode": "Written by Claude in Max's voice.",
   "note": "Times are local. Schedule each post at its time on its date.",
   "cowork_prompt": "Open https://maxime-droux.com/digest/posts.json and schedule the posts listed at the end of this message, and only those. The file holds the shortlist; the list below says which of them I picked and when each one goes out. Match them by `index`. Ignore every other post in the file.\n\nFor each post, in order:\n- Type the `text` straight through, once, with real keystrokes. Never insert\n  text via JavaScript. It already ends with the article URL on its own line,\n  so do not add, move or retype the URL separately: typing it last is what makes\n  the link preview load the article photo.\n- Each post has exactly one @mention. Type `mention.type`, wait for the\n  dropdown, click the row matching `mention.expect`. If no row matches, post\n  it without the mention rather than tagging the wrong company. LinkedIn will\n  render the official name: that is expected and fine, do not fight it, do not\n  restart the post, do not rewrite it.\n- Schedule it at the date and time given for it in the list below. If no link\n  preview appears, schedule it anyway: do not hunt for an image.\n\nTwo attempts per post, then stop. If a post is not scheduled after two tries,\nleave it, move to the next one, and list it at the end. Never start a third.\n\nBefore you start, open the scheduled-posts list once and note what is already\nthere. Skip any post already scheduled: never schedule the same one twice.\n\nVerification:\n- Claims already settled against the article are not in the file. Check only\n  what `claims` still lists, and posts with needs_check: true (a figure nobody\n  has verified: confirm round closed / round name / amount received / investors\n  in THIS round). Both empty and false means schedule it, no research.\n\nAnything that fails: do not schedule it, and do not edit any file or commit\nanything. List the held posts at the end with the sentence you read and the\npage you read it on, and I will record them.\n\nReport what was scheduled and what was held.",
   "posts": [
     {
       "index": 1,
-      "text": "🇨🇭 Swiss spin-offs use corporates to skip years\n\n@EPFL creates around 30 spin-offs a year, part of nearly 250 Swiss startups founded annually, and over 90% are still trading after five years. The harder step is scale, and EPFL News reports that strategic partnerships with large corporates let founders leapfrog years of development, testing and market access.\n\nWhy it matters:\n🤝 Corporate partners buy time no funding round can\n📈 Survival is solved; scaling is the real bottleneck\n🇨🇭 Swiss labs produce companies that last, not just launches\n\nSurvival rates that high suggest the gap in Switzerland is commercial reach, not science.\n\nhttps://actu.epfl.ch/news/startups-boost-growth-by-teaming-up-with-large-com",
-      "link": "https://actu.epfl.ch/news/startups-boost-growth-by-teaming-up-with-large-com",
+      "text": "🇨🇭 EQT puts $17.5m into Swiss biotech\n\n@EQT has committed USD 17.5m to a Swiss biotech company, according to MedWatch. The Stockholm-based investor, one of Europe's largest, continues to route growth capital into Switzerland's life sciences base rather than the larger hubs in Boston or Cambridge.\n\nWhy it matters:\n💊 International growth capital keeps flowing to Swiss life sciences\n📈 Late-stage biotech funding remains scarce across Europe\n🇨🇭 Switzerland stays a first stop for foreign healthcare investors\n\nWhen the largest European funds shop in Switzerland, the science is doing the marketing.\nhttps://medwatch.com/News/Pharma___Biotech/article19541273.ece",
+      "link": "https://medwatch.com/News/Pharma___Biotech/article19541273.ece",
       "mention": {
-        "type": "EPFL",
-        "expect": "EPFL"
+        "type": "EQT",
+        "expect": "EQT"
+      },
+      "needs_check": true,
+      "claims": [
+        "the post states $17.5m: is that money received rather than a ceiling or a target, and has the round closed"
+      ]
+    },
+    {
+      "index": 2,
+      "text": "🇨🇭 Swiss AI reads portfolios for institutional investors\n\n@aisot Technologies, an ETH Zurich spin-off, has closed fresh funding for its AI-driven portfolio intelligence platform. The Zurich company builds forecasting and allocation tools for institutional investors, a segment where model accuracy is measured in basis points rather than demos.\n\nWhy it matters:\n🧠 Applied AI aimed at asset managers, not consumer hype\n🏦 Institutional buyers demand explainability and audit trails\n🇨🇭 ETH research feeding directly into Swiss financial infrastructure\n\nSwitzerland's edge in AI may come from finance, where trust is the product.\nhttps://www.startupticker.ch/en/news/fintech-aisot-technologies-sichert-sich-weitere-zwei-millionen-franken",
+      "link": "https://www.startupticker.ch/en/news/fintech-aisot-technologies-sichert-sich-weitere-zwei-millionen-franken",
+      "mention": {
+        "type": "aisot",
+        "expect": "Aisot Technologies"
       },
       "needs_check": false,
       "claims": []
     },
     {
-      "index": 2,
-      "text": "🇨🇭 Swiss firm leases AI compute from Iceland\n\n@AI Infrastructure Capital buys AI servers, operates them in Iceland and leases the compute to customers. The model pairs Swiss capital discipline with Icelandic geothermal power and natural cooling, two of the scarcest inputs in the AI build-out alongside the GPUs themselves.\n\nWhy it matters:\n⚡ Energy and cooling now decide where compute lands\n🧊 Iceland offers renewable power at stable industrial cost\n🇨🇭 Swiss players moving into AI infrastructure, not just applications\n\nThe AI race is quietly becoming an energy and real estate business, and Switzerland is positioning accordingly.\n\nhttps://www.startupticker.ch/en/news/ai-infrastructure-capital-startet-mit-16-millionen-us-dollar",
-      "link": "https://www.startupticker.ch/en/news/ai-infrastructure-capital-startet-mit-16-millionen-us-dollar",
+      "index": 3,
+      "text": "🇨🇭 Enterprise AI moves from pilots to production\n\n@Deloitte reports that 25% of surveyed organizations have pushed 40% or more of their AI experiments into production, with another 54% expecting to follow. Fintechnews Switzerland notes the shift matters most in regulated sectors, where deployment, not prototyping, is the hard part.\n\nWhy it matters:\n⚙️ Production AI exposes data, latency and compliance gaps\n📊 A quarter of firms have crossed the deployment threshold\n🇨🇭 Swiss banks and insurers face the strictest scaling bar\n\nThe pilot phase flattered everyone; production is where the engineering companies separate themselves.\nhttps://fintechnews.ch/aifintech/enterprises-move-ai-initiatives-to-production-and-scaling/84997/",
+      "link": "https://fintechnews.ch/aifintech/enterprises-move-ai-initiatives-to-production-and-scaling/84997/",
       "mention": {
-        "type": "AI",
-        "expect": "AI Infrastructure Capital"
+        "type": "Deloitte",
+        "expect": "Deloitte"
       },
       "needs_check": false,
+      "claims": []
+    },
+    {
+      "index": 4,
+      "text": "🇨🇭 Swiss start-up predicts flight prices with ML\n\n@Zerolook, a Swiss travel-tech start-up, has closed a pre-seed round for its B2B flight pricing API. The product uses machine learning to forecast how itinerary prices will move, giving agencies and platforms a data edge in one of the most volatile pricing markets in existence.\n\nWhy it matters:\n✈️ Airline pricing changes thousands of times per route daily\n🔌 API delivery means fast integration for travel platforms\n🇨🇭 Swiss teams targeting global B2B software from day one\n\nNarrow, data-heavy problems remain the most reliable entry point for small Swiss teams.\nhttps://www.startupticker.ch/en/news/travel-tech-start-up-zerolook-closes-usd-1-9-million-pre-seed-financing-round",
+      "link": "https://www.startupticker.ch/en/news/travel-tech-start-up-zerolook-closes-usd-1-9-million-pre-seed-financing-round",
+      "mention": {
+        "type": "Zerolook",
+        "expect": "Zerolook"
+      },
+      "needs_check": true,
       "claims": []
     }
   ]

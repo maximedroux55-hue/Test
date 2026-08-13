@@ -804,6 +804,97 @@
       ],
       "rare": [],
       "uncommon": []
+    },
+    {
+      "used": "2026-08-13",
+      "title": "EQT invests USD 17.5m in Swiss biotech company - medwatch.com",
+      "link": "https://medwatch.com/News/Pharma___Biotech/article19541273.ece",
+      "coverage_url": null,
+      "norm": "eqt invests usd 175m in swiss biotech company",
+      "kw": [
+        "175m",
+        "biotech",
+        "invests"
+      ],
+      "rare": [
+        "biotech",
+        "invests"
+      ],
+      "uncommon": [
+        "biotech",
+        "invests"
+      ]
+    },
+    {
+      "used": "2026-08-13",
+      "title": "Fintech Aisot Technologies sichert sich weitere zwei Millionen Franken",
+      "link": "https://www.startupticker.ch/en/news/fintech-aisot-technologies-sichert-sich-weitere-zwei-millionen-franken",
+      "coverage_url": null,
+      "norm": "fintech aisot technologies sichert sich weitere zwei millionen franken",
+      "kw": [
+        "aisot",
+        "fintech",
+        "sich",
+        "sichert",
+        "technologies",
+        "weitere",
+        "zwei"
+      ],
+      "rare": [
+        "aisot",
+        "fintech",
+        "sichert",
+        "technologies",
+        "weitere"
+      ],
+      "uncommon": [
+        "aisot",
+        "fintech",
+        "sichert",
+        "technologies",
+        "weitere"
+      ]
+    },
+    {
+      "used": "2026-08-13",
+      "title": "Enterprises Move AI Initiatives to Production and Scaling",
+      "link": "https://fintechnews.ch/aifintech/enterprises-move-ai-initiatives-to-production-and-scaling/84997/",
+      "coverage_url": null,
+      "norm": "enterprises move ai initiatives to production and scaling",
+      "kw": [
+        "enterprises",
+        "initiatives",
+        "move",
+        "production",
+        "scaling"
+      ],
+      "rare": [
+        "enterprises",
+        "initiatives",
+        "production",
+        "scaling"
+      ],
+      "uncommon": [
+        "enterprises",
+        "initiatives",
+        "production",
+        "scaling"
+      ]
+    },
+    {
+      "used": "2026-08-13",
+      "title": "Travel-tech start-up Zerolook closes USD 1.9 million pre-seed financing round",
+      "link": "https://www.startupticker.ch/en/news/travel-tech-start-up-zerolook-closes-usd-1-9-million-pre-seed-financing-round",
+      "coverage_url": null,
+      "norm": "traveltech startup zerolook closes usd 19 million preseed financing round",
+      "kw": [
+        "financing",
+        "preseed",
+        "traveltech",
+        "zerolook"
+      ],
+      "rare": [],
+      "uncommon": []
     }
   ]
 }

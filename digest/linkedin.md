@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 12 August 2026. 2 stories from the last 10 days, newest published first. Written by Claude in Max's voice. Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 13 August 2026. 4 stories from the last 10 days, newest published first. Written by Claude in Max's voice. Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -41,39 +41,71 @@ Report what was scheduled and what was held.
 
 The stories themselves are below.
 
-## 1. Research — published 12 August
+## 1. General — published 13 August
 
 ```
-🇨🇭 Swiss spin-offs use corporates to skip years
+🇨🇭 EQT puts $17.5m into Swiss biotech
 
-@EPFL creates around 30 spin-offs a year, part of nearly 250 Swiss startups founded annually, and over 90% are still trading after five years. The harder step is scale, and EPFL News reports that strategic partnerships with large corporates let founders leapfrog years of development, testing and market access.
+@EQT has committed USD 17.5m to a Swiss biotech company, according to MedWatch. The Stockholm-based investor, one of Europe's largest, continues to route growth capital into Switzerland's life sciences base rather than the larger hubs in Boston or Cambridge.
 
 Why it matters:
-🤝 Corporate partners buy time no funding round can
-📈 Survival is solved; scaling is the real bottleneck
-🇨🇭 Swiss labs produce companies that last, not just launches
+💊 International growth capital keeps flowing to Swiss life sciences
+📈 Late-stage biotech funding remains scarce across Europe
+🇨🇭 Switzerland stays a first stop for foreign healthcare investors
 
-Survival rates that high suggest the gap in Switzerland is commercial reach, not science.
-
-https://actu.epfl.ch/news/startups-boost-growth-by-teaming-up-with-large-com
+When the largest European funds shop in Switzerland, the science is doing the marketing.
+https://medwatch.com/News/Pharma___Biotech/article19541273.ece
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 2. Round — published 04 August
+## 2. General — published 13 August
 
 ```
-🇨🇭 Swiss firm leases AI compute from Iceland
+🇨🇭 Swiss AI reads portfolios for institutional investors
 
-@AI Infrastructure Capital buys AI servers, operates them in Iceland and leases the compute to customers. The model pairs Swiss capital discipline with Icelandic geothermal power and natural cooling, two of the scarcest inputs in the AI build-out alongside the GPUs themselves.
+@aisot Technologies, an ETH Zurich spin-off, has closed fresh funding for its AI-driven portfolio intelligence platform. The Zurich company builds forecasting and allocation tools for institutional investors, a segment where model accuracy is measured in basis points rather than demos.
 
 Why it matters:
-⚡ Energy and cooling now decide where compute lands
-🧊 Iceland offers renewable power at stable industrial cost
-🇨🇭 Swiss players moving into AI infrastructure, not just applications
+🧠 Applied AI aimed at asset managers, not consumer hype
+🏦 Institutional buyers demand explainability and audit trails
+🇨🇭 ETH research feeding directly into Swiss financial infrastructure
 
-The AI race is quietly becoming an energy and real estate business, and Switzerland is positioning accordingly.
-
-https://www.startupticker.ch/en/news/ai-infrastructure-capital-startet-mit-16-millionen-us-dollar
+Switzerland's edge in AI may come from finance, where trust is the product.
+https://www.startupticker.ch/en/news/fintech-aisot-technologies-sichert-sich-weitere-zwei-millionen-franken
 ```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/symbolbilder/KI%20Rechenzentrum.jpg
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/companies/aisotProduct.jpg
+
+## 3. General — published 13 August
+
+```
+🇨🇭 Enterprise AI moves from pilots to production
+
+@Deloitte reports that 25% of surveyed organizations have pushed 40% or more of their AI experiments into production, with another 54% expecting to follow. Fintechnews Switzerland notes the shift matters most in regulated sectors, where deployment, not prototyping, is the hard part.
+
+Why it matters:
+⚙️ Production AI exposes data, latency and compliance gaps
+📊 A quarter of firms have crossed the deployment threshold
+🇨🇭 Swiss banks and insurers face the strictest scaling bar
+
+The pilot phase flattered everyone; production is where the engineering companies separate themselves.
+https://fintechnews.ch/aifintech/enterprises-move-ai-initiatives-to-production-and-scaling/84997/
+```
+🖼️ **Article image:** https://fintechnews.ch/wp-content/uploads/2026/08/Enterprises-Move-AI-Initiatives-to-Production-and-Scaling.webp
+
+## 4. Round — published 12 August
+
+```
+🇨🇭 Swiss start-up predicts flight prices with ML
+
+@Zerolook, a Swiss travel-tech start-up, has closed a pre-seed round for its B2B flight pricing API. The product uses machine learning to forecast how itinerary prices will move, giving agencies and platforms a data edge in one of the most volatile pricing markets in existence.
+
+Why it matters:
+✈️ Airline pricing changes thousands of times per route daily
+🔌 API delivery means fast integration for travel platforms
+🇨🇭 Swiss teams targeting global B2B software from day one
+
+Narrow, data-heavy problems remain the most reliable entry point for small Swiss teams.
+https://www.startupticker.ch/en/news/travel-tech-start-up-zerolook-closes-usd-1-9-million-pre-seed-financing-round
+```
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/symbolbilder/Flughafenreisen.jpg
 
