@@ -506,97 +506,6 @@
       "uncommon": []
     },
     {
-      "used": "2026-08-13",
-      "title": "EQT invests USD 17.5m in Swiss biotech company - medwatch.com",
-      "link": "https://medwatch.com/News/Pharma___Biotech/article19541273.ece",
-      "coverage_url": null,
-      "norm": "eqt invests usd 175m in swiss biotech company",
-      "kw": [
-        "175m",
-        "biotech",
-        "invests"
-      ],
-      "rare": [
-        "biotech",
-        "invests"
-      ],
-      "uncommon": [
-        "biotech",
-        "invests"
-      ]
-    },
-    {
-      "used": "2026-08-13",
-      "title": "Fintech Aisot Technologies sichert sich weitere zwei Millionen Franken",
-      "link": "https://www.startupticker.ch/en/news/fintech-aisot-technologies-sichert-sich-weitere-zwei-millionen-franken",
-      "coverage_url": null,
-      "norm": "fintech aisot technologies sichert sich weitere zwei millionen franken",
-      "kw": [
-        "aisot",
-        "fintech",
-        "sich",
-        "sichert",
-        "technologies",
-        "weitere",
-        "zwei"
-      ],
-      "rare": [
-        "aisot",
-        "fintech",
-        "sichert",
-        "technologies",
-        "weitere"
-      ],
-      "uncommon": [
-        "aisot",
-        "fintech",
-        "sichert",
-        "technologies",
-        "weitere"
-      ]
-    },
-    {
-      "used": "2026-08-13",
-      "title": "Enterprises Move AI Initiatives to Production and Scaling",
-      "link": "https://fintechnews.ch/aifintech/enterprises-move-ai-initiatives-to-production-and-scaling/84997/",
-      "coverage_url": null,
-      "norm": "enterprises move ai initiatives to production and scaling",
-      "kw": [
-        "enterprises",
-        "initiatives",
-        "move",
-        "production",
-        "scaling"
-      ],
-      "rare": [
-        "enterprises",
-        "initiatives",
-        "production",
-        "scaling"
-      ],
-      "uncommon": [
-        "enterprises",
-        "initiatives",
-        "production",
-        "scaling"
-      ]
-    },
-    {
-      "used": "2026-08-13",
-      "title": "Travel-tech start-up Zerolook closes USD 1.9 million pre-seed financing round",
-      "link": "https://www.startupticker.ch/en/news/travel-tech-start-up-zerolook-closes-usd-1-9-million-pre-seed-financing-round",
-      "coverage_url": null,
-      "norm": "traveltech startup zerolook closes usd 19 million preseed financing round",
-      "kw": [
-        "financing",
-        "preseed",
-        "traveltech",
-        "zerolook"
-      ],
-      "rare": [],
-      "uncommon": []
-    },
-    {
       "used": "2026-08-12",
       "title": "Startups boost growth by teaming up with large companies",
       "link": "https://actu.epfl.ch/news/startups-boost-growth-by-teaming-up-with-large-com",
@@ -641,6 +550,74 @@
     },
     {
       "used": "2026-08-13",
+      "title": "Vaderis Therapeutics closes USD 152 million Series B Financing",
+      "link": "https://vaderis.com/vaderis-therapeutics-announces-oversubscribed-financing-and-initiation-of-the-global-phase-3-study/",
+      "coverage_url": "https://www.startupticker.ch/en/news/vaderis-therapeutics-closes-usd-152-million-series-b-financing",
+      "norm": "vaderis therapeutics closes usd 152 million series b financing",
+      "kw": [
+        "financing",
+        "therapeutics",
+        "vaderis"
+      ],
+      "rare": [
+        "financing",
+        "therapeutics",
+        "vaderis"
+      ],
+      "uncommon": [
+        "financing",
+        "therapeutics",
+        "vaderis"
+      ]
+    },
+    {
+      "used": "2026-08-13",
+      "title": "CHF 150,000 from Venture Kick to scale autonomous fresh food deployments",
+      "link": "https://www.startupticker.ch/en/news/chf-150-000-from-venture-kick-to-scale-autonomous-fresh-food-deployments",
+      "coverage_url": null,
+      "norm": "chf 150000 from venture kick to scale autonomous fresh food deployments",
+      "kw": [
+        "autonomous",
+        "deployments",
+        "food",
+        "fresh",
+        "kick",
+        "scale",
+        "venture"
+      ],
+      "rare": [
+        "autonomous",
+        "deployments",
+        "fresh",
+        "scale",
+        "venture"
+      ],
+      "uncommon": [
+        "autonomous",
+        "deployments",
+        "fresh",
+        "scale",
+        "venture"
+      ]
+    },
+    {
+      "used": "2026-08-13",
+      "title": "Medyria raises CHF 3.5 million",
+      "link": "https://www.startupticker.ch/en/news/medyria-raises-chf-3-5-million",
+      "coverage_url": null,
+      "norm": "medyria raises chf 35 million",
+      "kw": [
+        "medyria"
+      ],
+      "rare": [
+        "medyria"
+      ],
+      "uncommon": [
+        "medyria"
+      ]
+    },
+    {
+      "used": "2026-08-13",
       "title": "EQT invests USD 17.5m in Swiss biotech company - medwatch.com",
       "link": "https://medwatch.com/News/Pharma___Biotech/article19541273.ece",
       "coverage_url": null,
@@ -657,6 +634,83 @@
       "uncommon": [
         "biotech",
         "invests"
+      ]
+    },
+    {
+      "used": "2026-08-13",
+      "title": "Apertus 1.5: Building the next generation of open AI infrastructure - myScience Switzerland",
+      "link": "https://www.myscience.ch/fr/news/wire/apertus_1_5_building_the_next_generation_of_open_ai_infrastructure-2026-epfl",
+      "coverage_url": null,
+      "norm": "apertus 15 building the next generation of open ai infrastructure",
+      "kw": [
+        "apertus",
+        "building",
+        "generation",
+        "infrastructure",
+        "next",
+        "open"
+      ],
+      "rare": [
+        "apertus",
+        "building",
+        "generation"
+      ],
+      "uncommon": [
+        "apertus",
+        "building",
+        "generation",
+        "infrastructure"
+      ]
+    },
+    {
+      "used": "2026-08-13",
+      "title": "Cutempa Medical startet klinische Studie in Deutschland",
+      "link": "https://www.startupticker.ch/en/news/cutempa-medical-startet-klinische-studie-in-deutschland",
+      "coverage_url": null,
+      "norm": "cutempa medical startet klinische studie in deutschland",
+      "kw": [
+        "cutempa",
+        "deutschland",
+        "klinische",
+        "medical",
+        "startet",
+        "studie"
+      ],
+      "rare": [
+        "cutempa",
+        "deutschland",
+        "klinische",
+        "medical",
+        "startet",
+        "studie"
+      ],
+      "uncommon": [
+        "cutempa",
+        "deutschland",
+        "klinische",
+        "medical",
+        "startet",
+        "studie"
+      ]
+    },
+    {
+      "used": "2026-08-13",
+      "title": "EDCE Research day 2025 – photos ‒ EDCE - epfl.ch",
+      "link": "https://www.epfl.ch/education/phd/edce-civil-and-environmental-engineering/edce-research-day-2025-photos/",
+      "coverage_url": null,
+      "norm": "edce research day 2025 photos edce",
+      "kw": [
+        "edce",
+        "photos",
+        "research"
+      ],
+      "rare": [
+        "photos",
+        "research"
+      ],
+      "uncommon": [
+        "photos",
+        "research"
       ]
     },
     {
@@ -717,18 +771,108 @@
     },
     {
       "used": "2026-08-13",
-      "title": "Travel-tech start-up Zerolook closes USD 1.9 million pre-seed financing round",
-      "link": "https://www.startupticker.ch/en/news/travel-tech-start-up-zerolook-closes-usd-1-9-million-pre-seed-financing-round",
+      "title": "PrivacyBee raises an undisclosed round",
+      "link": "https://www.privacybee.io/",
       "coverage_url": null,
-      "norm": "traveltech startup zerolook closes usd 19 million preseed financing round",
+      "norm": "privacybee raises an undisclosed round",
       "kw": [
-        "financing",
-        "preseed",
-        "traveltech",
-        "zerolook"
+        "privacybee",
+        "undisclosed"
       ],
       "rare": [],
       "uncommon": []
+    },
+    {
+      "used": "2026-08-13",
+      "title": "Basilea Pharmaceutica raises USD 30M",
+      "link": "http://basilea.com",
+      "coverage_url": null,
+      "norm": "basilea pharmaceutica raises usd 30m",
+      "kw": [
+        "basilea",
+        "pharmaceutica"
+      ],
+      "rare": [],
+      "uncommon": []
+    },
+    {
+      "used": "2026-08-13",
+      "title": "Softbank prüft Übernahme der ETH-Spin-off-Firma Gravis Robotics - it boltwise",
+      "link": "https://www.it-boltwise.de/softbank-prueft-uebernahme-der-eth-spin-off-firma-gravis-robotics.html",
+      "coverage_url": null,
+      "norm": "softbank prft bernahme der ethspinofffirma gravis robotics",
+      "kw": [
+        "bernahme",
+        "ethspinofffirma",
+        "gravis",
+        "prft",
+        "robotics",
+        "softbank"
+      ],
+      "rare": [],
+      "uncommon": []
+    },
+    {
+      "used": "2026-08-13",
+      "title": "Apertus 1.5: Building the next generation of open AI infrastructure - myScience Switzerland",
+      "link": "https://www.myscience.ch/fr/news/wire/apertus_1_5_building_the_next_generation_of_open_ai_infrastructure-2026-epfl",
+      "coverage_url": null,
+      "norm": "apertus 15 building the next generation of open ai infrastructure",
+      "kw": [
+        "apertus",
+        "building",
+        "generation",
+        "infrastructure",
+        "next",
+        "open"
+      ],
+      "rare": [],
+      "uncommon": []
+    },
+    {
+      "used": "2026-08-13",
+      "title": "Information Services Group, Inc.: Swiss Firms Seek Managed Security as AI Risks Rise - FinanzNachrichten.de",
+      "link": "https://www.finanznachrichten.de/nachrichten-2026-07/69115006-information-services-group-inc-swiss-firms-seek-managed-security-as-ai-risks-rise-004.htm",
+      "coverage_url": null,
+      "norm": "information services group inc swiss firms seek managed security as ai risks rise",
+      "kw": [
+        "firms",
+        "group",
+        "information",
+        "managed",
+        "rise",
+        "risks",
+        "security",
+        "seek",
+        "services"
+      ],
+      "rare": [],
+      "uncommon": []
+    },
+    {
+      "used": "2026-08-13",
+      "title": "Cy Biopharma merges with Ensysce Biosciences",
+      "link": "https://www.startupticker.ch/en/news/cy-biopharma-merges-with-ensysce-biosciences",
+      "coverage_url": null,
+      "norm": "cy biopharma merges with ensysce biosciences",
+      "kw": [
+        "biopharma",
+        "biosciences",
+        "ensysce",
+        "merges"
+      ],
+      "rare": [
+        "biopharma",
+        "biosciences",
+        "ensysce",
+        "merges"
+      ],
+      "uncommon": [
+        "biopharma",
+        "biosciences",
+        "ensysce",
+        "merges"
+      ]
     }
   ]
 }

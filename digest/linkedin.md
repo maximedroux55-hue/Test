@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 13 August 2026. 4 stories from the last 10 days, newest published first. Written by Claude in Max's voice. Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 13 August 2026. 15 stories from the last 21 days, newest published first. Written by Claude in Max's voice. Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -44,16 +44,17 @@ The stories themselves are below.
 ## 1. General — published 13 August
 
 ```
-🇨🇭 EQT puts $17.5m into Swiss biotech
+🇨🇭 Swiss biotech lands $17.5M from EQT
 
-@EQT has committed USD 17.5m to a Swiss biotech company, according to MedWatch. The Stockholm-based investor, one of Europe's largest, continues to route growth capital into Switzerland's life sciences base rather than the larger hubs in Boston or Cambridge.
+EQT has invested USD 17.5 million in a Swiss biotech company, according to MedWatch. The cheque puts one of Europe's largest private capital houses behind Swiss life sciences at a moment when growth funding for clinical assets remains tight across the continent.
 
 Why it matters:
-💊 International growth capital keeps flowing to Swiss life sciences
-📈 Late-stage biotech funding remains scarce across Europe
-🇨🇭 Switzerland stays a first stop for foreign healthcare investors
+💊 Large international funds keep returning to Swiss biotech
+📈 Growth capital is the scarce ingredient, not science
+🇨🇭 Switzerland's pharma cluster still sets the European benchmark
 
-When the largest European funds shop in Switzerland, the science is doing the marketing.
+When global capital shops for biotech in Europe, the shortlist keeps starting in Switzerland.
+
 https://medwatch.com/News/Pharma___Biotech/article19541273.ece
 ```
 🖼️ **Article image:** none found, grab one from the article page.
@@ -63,14 +64,15 @@ https://medwatch.com/News/Pharma___Biotech/article19541273.ece
 ```
 🇨🇭 Swiss AI reads portfolios for institutional investors
 
-@aisot Technologies, an ETH Zurich spin-off, has closed fresh funding for its AI-driven portfolio intelligence platform. The Zurich company builds forecasting and allocation tools for institutional investors, a segment where model accuracy is measured in basis points rather than demos.
+@Aisot Technologies, an ETH Zurich spin-off, has closed a seed extension. The Zurich company builds AI-driven portfolio intelligence for institutional investors, turning forecasting models into signals that asset managers can actually run against live books.
 
 Why it matters:
-🧠 Applied AI aimed at asset managers, not consumer hype
-🏦 Institutional buyers demand explainability and audit trails
-🇨🇭 ETH research feeding directly into Swiss financial infrastructure
+🧠 Machine learning moving from research desks into allocation decisions
+🏦 Institutional buyers demand explainability, not black-box predictions
+🇨🇭 Zurich pairs quant talent with the world's largest asset pools
 
-Switzerland's edge in AI may come from finance, where trust is the product.
+Fintech built next to the clients it serves has a shorter road to revenue.
+
 https://www.startupticker.ch/en/news/fintech-aisot-technologies-sichert-sich-weitere-zwei-millionen-franken
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/companies/aisotProduct.jpg
@@ -78,34 +80,235 @@ https://www.startupticker.ch/en/news/fintech-aisot-technologies-sichert-sich-wei
 ## 3. General — published 13 August
 
 ```
-🇨🇭 Enterprise AI moves from pilots to production
+🇨🇭 Swiss finance shifts AI from pilots to production
 
-@Deloitte reports that 25% of surveyed organizations have pushed 40% or more of their AI experiments into production, with another 54% expecting to follow. Fintechnews Switzerland notes the shift matters most in regulated sectors, where deployment, not prototyping, is the hard part.
+A Deloitte survey covered by @Fintechnews Switzerland finds 25% of organisations have moved 40% or more of their AI experiments into production, with a further 54% expecting to follow. The experimentation phase is closing; deployment economics now decide who benefits.
 
 Why it matters:
-⚙️ Production AI exposes data, latency and compliance gaps
-📊 A quarter of firms have crossed the deployment threshold
-🇨🇭 Swiss banks and insurers face the strictest scaling bar
+⚙️ Production AI rewards infrastructure, not demos
+📊 Only a quarter have crossed the deployment threshold so far
+🇨🇭 Swiss banks face strict governance before any model ships
 
-The pilot phase flattered everyone; production is where the engineering companies separate themselves.
+The hard part was never the model, it was everything wrapped around it.
+
 https://fintechnews.ch/aifintech/enterprises-move-ai-initiatives-to-production-and-scaling/84997/
 ```
 🖼️ **Article image:** https://fintechnews.ch/wp-content/uploads/2026/08/Enterprises-Move-AI-Initiatives-to-Production-and-Scaling.webp
 
-## 4. Round — published 12 August
+## 4. Round — published 11 August
 
 ```
-🇨🇭 Swiss start-up predicts flight prices with ML
+🇨🇭 Swiss biopharma starts global Phase 3 in HHT
 
-@Zerolook, a Swiss travel-tech start-up, has closed a pre-seed round for its B2B flight pricing API. The product uses machine learning to forecast how itinerary prices will move, giving agencies and platforms a data edge in one of the most volatile pricing markets in existence.
+@Vaderis Therapeutics, based in Basel, has closed an oversubscribed financing and launched HEROIC, a global Phase 3 study of engasertib in patients with hereditary hemorrhagic telangiectasia. The clinical-stage company develops targeted therapies for rare vascular diseases with no approved treatment.
 
 Why it matters:
-✈️ Airline pricing changes thousands of times per route daily
-🔌 API delivery means fast integration for travel platforms
-🇨🇭 Swiss teams targeting global B2B software from day one
+🩸 HHT patients still have no approved targeted therapy
+🌍 Global Phase 3 run from a Basel base
+🇨🇭 Rare disease programmes suit Switzerland's clinical density
 
-Narrow, data-heavy problems remain the most reliable entry point for small Swiss teams.
-https://www.startupticker.ch/en/news/travel-tech-start-up-zerolook-closes-usd-1-9-million-pre-seed-financing-round
+Getting a rare disease asset to Phase 3 is where most European biotechs stop.
+
+https://vaderis.com/vaderis-therapeutics-announces-oversubscribed-financing-and-initiation-of-the-global-phase-3-study/
 ```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/symbolbilder/Flughafenreisen.jpg
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/symbolbilder/Blutkreislauf.jpg
+🔗 **Links to the original source.**
+
+## 5. Research — published 11 August
+
+```
+🇨🇭 Swiss wound powder enters pivotal German trial
+
+@Cutempa Medical, a Basel medtech startup, develops mineral-based products for chronic wounds. Its pivotal approval study for Curi01, a powdered wound exudate adsorbent, began in Germany in July 2026 with 280 patients across roughly 20 clinical centres.
+
+Why it matters:
+🩹 Chronic wounds remain one of healthcare's costliest blind spots
+🧪 280 patients across 20 sites is a serious regulatory bet
+🇨🇭 Basel medtech using Germany as first market gateway
+
+Materials science quietly solving a clinical problem nobody markets is a very Swiss move.
+
+https://www.startupticker.ch/en/news/cutempa-medical-startet-klinische-studie-in-deutschland
+```
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/symbolbilder/Clinicaltrials.png
+
+## 6. General — published 11 August
+
+```
+🇨🇭 Swiss pain biotech merges into US-listed peer
+
+@Cy Biopharma, the Zug-based clinical-stage company working on neuroplastogenic therapies for severe chronic pain, has been acquired by Ensysce Biosciences in a stock-for-stock merger. Ensysce is developing a new class of novel opioids for severe pain.
+
+Why it matters:
+🧬 Two chronic pain pipelines combined under one listed vehicle
+🤝 Stock-for-stock keeps cash for clinical work
+🇨🇭 Zug science reaching US public markets without relocating first
+
+Mergers, not just IPOs, are how small Swiss biotechs find their next stage.
+
+https://www.startupticker.ch/en/news/cy-biopharma-merges-with-ensysce-biosciences
+```
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/symbolbilder/Puzzlerhands.jpg
+
+## 7. Round — published 01 August
+
+```
+🇨🇭 Swiss privacy startup raises fresh capital
+
+@PrivacyBee has closed a new funding round. The company works on data privacy tooling, a market being reshaped as AI systems ingest personal data faster than compliance teams can map where it sits or who holds it.
+
+Why it matters:
+🔐 AI adoption is multiplying personal data exposure surfaces
+📜 Regulation keeps tightening on both sides of the Atlantic
+🇨🇭 Swiss jurisdiction remains a genuine selling point in privacy
+
+Privacy is one of the few categories where being Swiss is itself product positioning.
+
+https://www.privacybee.io/
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 8. Grant — published 29 July
+
+```
+🇨🇭 Swiss anti-infectives specialist secures new funding
+
+@Basilea Pharmaceutica, the Basel-listed biopharmaceutical company, has raised new capital. Basilea focuses on anti-infectives, treatments for severe bacterial and fungal infections, an area most large pharma exited despite rising antimicrobial resistance.
+
+Why it matters:
+🦠 Antimicrobial resistance is a market big pharma abandoned
+🏥 Hospital anti-infectives carry durable, defensible demand
+🇨🇭 Basel keeps depth in unglamorous but essential therapeutics
+
+Sticking with a category others walked away from is how you end up owning it.
+
+http://basilea.com
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 9. Research — published 27 July
+
+```
+🇨🇭 Swiss doctoral research day showcases civil engineering
+
+@EPFL has published images from the EDCE Research Day, the annual gathering of its doctoral programme in civil and environmental engineering. The event puts PhD work on infrastructure, materials and environmental systems in front of peers and industry.
+
+Why it matters:
+🏗️ Civil engineering research feeds construction's slowest-moving problems
+🎓 Doctoral pipelines are where spin-offs originate years early
+🇨🇭 EPFL keeps building the talent base behind Swiss deeptech
+
+The companies that raise rounds in 2030 are presenting posters today.
+
+https://www.epfl.ch/education/phd/edce-civil-and-environmental-engineering/edce-research-day-2025-photos/
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 10. Acquisition — published 27 July
+
+```
+🇨🇭 Softbank eyes ETH robotics spin-off Gravis
+
+Softbank is reportedly examining an acquisition of @Gravis Robotics, an ETH Zurich spin-off whose autonomous platform converts earthmoving machines into robots. The technology retrofits existing excavators rather than replacing them, targeting a construction sector short on skilled operators.
+
+Why it matters:
+🚜 Retrofit beats replacement in capital-heavy construction fleets
+🤖 Labour shortages make autonomy an economic necessity
+🇨🇭 ETH robotics research attracting the largest global acquirers
+
+When Softbank comes looking in Zurich, the robotics cluster has stopped being a secret.
+
+https://www.it-boltwise.de/softbank-prueft-uebernahme-der-eth-spin-off-firma-gravis-robotics.html
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 11. Grant — published 24 July
+
+```
+🇨🇭 Swiss robot cooks fresh crêpes in 90 seconds
+
+@Maus Robotics, based in Basel, has won CHF 150,000 from Venture Kick for autonomous robots that prepare fresh crêpes from raw ingredients in 90 seconds. The company opens its first long-term installations in Basel this summer.
+
+Why it matters:
+🥞 Raw ingredients, not reheated packs, is the technical difference
+⏱️ 90 seconds per unit sets the throughput economics
+🇨🇭 Swiss food robotics moving from prototype to permanent sites
+
+Hardware that has to work in front of a hungry customer leaves nowhere to hide.
+
+https://www.startupticker.ch/en/news/chf-150-000-from-venture-kick-to-scale-autonomous-fresh-food-deployments
+```
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/awards/Maus%20Robotics%20Founder.jpg
+
+## 12. Round — published 24 July
+
+```
+🇨🇭 Swiss catheter maker targets FDA clearance
+
+@Medyria has raised new funding to finance FDA clearance and a US launch for PyCath. The Swiss developer builds sensor-equipped catheters that give clinicians real-time flow data during vascular procedures, where today's guidance often relies on imaging alone.
+
+Why it matters:
+🫀 Real-time flow data reduces guesswork in vascular intervention
+🇺🇸 FDA clearance unlocks the largest medtech market
+🇨🇭 Swiss precision engineering translating directly into device margins
+
+For Swiss medtech, the regulatory milestone is the product launch that actually counts.
+
+https://www.startupticker.ch/en/news/medyria-raises-chf-3-5-million
+```
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/bilder/medyria-pycath.png
+
+## 13. General — published 24 July
+
+```
+🇨🇭 Swiss open AI model reaches version 1.5
+
+@EPFL, with ETH Zurich and the Swiss National Supercomputing Centre, has released Apertus 1.5, the next iteration of Switzerland's fully open large language model. Weights, data and training recipe are public, trained on the Alps supercomputer.
+
+Why it matters:
+🔓 Fully open weights and data, not just open access
+🖥️ Sovereign compute on Alps underpins the whole effort
+🇨🇭 Switzerland building AI infrastructure it actually controls
+
+Open models funded by public research are a strategic asset, not an academic exercise.
+
+https://www.myscience.ch/fr/news/wire/apertus_1_5_building_the_next_generation_of_open_ai_infrastructure-2026-epfl
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 14. General — published 24 July
+
+```
+🇨🇭 Swiss open AI infrastructure gets its next layer
+
+The @Apertus programme is extending beyond models into open AI infrastructure: the tooling, data pipelines and compute stack that let others build on public research rather than rented foreign APIs. Everything is released openly for Swiss institutions and companies.
+
+Why it matters:
+🧱 Infrastructure, not models, decides who can actually build
+🔍 Transparency makes regulated-sector adoption plausible
+🇨🇭 Reduces Swiss dependence on foreign AI providers
+
+Countries that own their AI stack will negotiate from a very different position.
+
+https://www.myscience.ch/fr/news/wire/apertus_1_5_building_the_next_generation_of_open_ai_infrastructure-2026-epfl
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 15. General — published 24 July
+
+```
+🇨🇭 Swiss firms buy managed security as AI risk grows
+
+@Information Services Group has published its provider report on the Swiss cybersecurity market, finding companies increasingly outsourcing to managed security services as AI expands the attack surface. Talent scarcity and regulatory pressure are pushing defence out of internal teams.
+
+Why it matters:
+🛡️ AI adoption widens attack surfaces faster than teams grow
+📉 Security talent shortage makes in-house defence unrealistic
+🇨🇭 Data residency rules favour Swiss-hosted security providers
+
+Every wave of AI deployment creates a matching wave of security demand.
+
+https://www.finanznachrichten.de/nachrichten-2026-07/69115006-information-services-group-inc-swiss-firms-seek-managed-security-as-ai-risks-rise-004.htm
+```
+🖼️ **Article image:** none found, grab one from the article page.
 
