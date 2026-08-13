@@ -2214,7 +2214,13 @@ def main() -> None:
     # than nothing: it writes over a plan already being posted, and it marks
     # five fresh stories as used, so they can never be posted at all. The
     # schedule passes this flag; running it by hand never does.
-    if args.skip_if_week_planned and week_still_running(args.outdir):
+    # Against the published shortlist, not the build directory. output/ is
+    # generated and never committed, so on a fresh checkout it is empty and the
+    # guard found nothing to protect: it has been answering "go ahead" on every
+    # scheduled run since it was written. A shortlist of fifteen was rebuilt
+    # twice within two days and each rebuild recorded its stories as used.
+    if args.skip_if_week_planned and week_still_running(
+            os.path.dirname(args.history) or "."):
         sys.exit(0)
 
     print(f"Fetching Swiss DeepTech news (last {args.days} days)...", file=sys.stderr)

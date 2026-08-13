@@ -1206,6 +1206,18 @@ def test_a_run_does_not_land_on_a_week_being_posted():
     # No plan at all is not a live week.
     assert scraper.week_still_running("/nonexistent", dt.date(2026, 8, 5)) is False
 
+    # The guard has to read the published shortlist, not the build directory.
+    # output/ is generated and never committed, so on a fresh checkout it is
+    # empty and the guard found nothing to protect: it answered "go ahead" on
+    # every scheduled run since it was written, and a shortlist of fifteen was
+    # rebuilt twice inside two days, each rebuild recording its stories as used.
+    import inspect
+    main_src = inspect.getsource(scraper.main)
+    assert "week_still_running(args.outdir)" not in main_src, \
+        "the guard is reading the build directory again, where nothing persists"
+    assert "os.path.dirname(args.history)" in main_src, \
+        "the guard must read the shortlist that is actually published"
+
     # A shortlist carries no day per post, so its age is what counts. Six days
     # is the life: rebuilding sooner would record the stories Max has not
     # picked yet as used, and they would never come back.
