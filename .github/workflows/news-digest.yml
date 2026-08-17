@@ -7,8 +7,8 @@ name: Swiss DeepTech news digest
 #
 # Two ways to run:
 #  1. Manually: the button on maxime-droux.com, or Actions -> Run workflow.
-#  2. Automatically: every Wednesday morning, producing a shortlist of 15
-#     stories, newest published first, to pick from.
+#  2. Automatically: every morning, producing a shortlist of 15 stories,
+#     newest published first, to pick from.
 on:
   workflow_dispatch:
     inputs:
@@ -35,10 +35,15 @@ on:
         description: "Rebuild even if the shortlist on disk is still current"
         default: "false"
   schedule:
-    # 05:41 UTC every Wednesday, so the week's plan is on the page by about
-    # 08:00 in Switzerland rather than starting then. Off the hour on purpose:
-    # GitHub's scheduled-run queue is at its worst at round hours.
-    - cron: "41 5 * * 3"
+    # 04:23 UTC daily, three quarters of an hour after the database run that
+    # feeds it, so the shortlist is on the page by about 06:30 in Switzerland.
+    #
+    # Weekly was right when this was a rota of seven posts, one per day. It is a
+    # shortlist now, read like a news page, and a news page four days old is a
+    # dead page: it sat at 13 August until the 17th and nothing was wrong.
+    # Rebuilding daily is only safe because drafting a story no longer spends
+    # it, see below.
+    - cron: "23 4 * * *"
 
 permissions:
   contents: write
@@ -82,7 +87,6 @@ jobs:
             --min-score "${{ github.event.inputs.min_score || '3' }}" \
             --limit "${{ github.event.inputs.limit || '90' }}" \
             --posts "${{ github.event.inputs.posts || '15' }}" \
-            ${{ github.event.inputs.force != 'true' && '--skip-if-week-planned' || '' }} \
             --posts-only
 
       - name: Upload digest (Markdown + HTML)

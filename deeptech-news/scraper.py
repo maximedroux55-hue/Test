@@ -2454,9 +2454,18 @@ def main() -> None:
             json.dump(payload, f, ensure_ascii=False, indent=2)
         print(f"Wrote {json_path}", file=sys.stderr)
 
-        # Remember what went out, so a later run never repeats it.
-        history_mod.save(args.history, history_mod.record(past, picks))
-        print(f"Recorded {len(picks)} stories in {args.history}", file=sys.stderr)
+        # Drafting a story is not posting it. This used to record all fifteen
+        # as used the moment the page was built, so merely looking at the
+        # shortlist spent it: five test runs on one evening emptied the pool and
+        # the next scheduled run found four stories. Nothing had gone out.
+        #
+        # History still keeps anything genuinely posted out of later runs. What
+        # feeds it is Max picking, not the page being generated, and until the
+        # page can report a pick the Cowork prompt carries the guard: it reads
+        # the scheduled list first and skips whatever is already there.
+        print(f"Drafted {len(picks)} stories. None recorded as used: that "
+              f"happens when one is actually scheduled, not when it is drafted.",
+              file=sys.stderr)
 
     if not args.posts_only:
         # The database is a separate job from the weekly posts. It reads the

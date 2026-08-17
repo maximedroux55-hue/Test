@@ -1229,9 +1229,14 @@ def test_a_run_does_not_land_on_a_week_being_posted():
     assert scraper.week_still_running(shortlist, dt.date(2026, 8, 11)) is False
 
     # A live week is protected from every trigger, not only the schedule. The
-    # page button dispatches the workflow too, and so would a stale Cloudflare
-    # Worker posting to an endpoint it does not know: either would have
-    # overwritten a week already posted. Only an explicit force rebuilds.
+    # The scheduled run no longer passes this flag, and that is deliberate.
+    # The guard existed because rebuilding recorded every story on the page as
+    # used, so a run landing mid-week cost stories nobody had posted. Drafting
+    # spends nothing now, the page rebuilds every morning, and a shortlist that
+    # refuses to refresh is the failure rather than the protection: it sat at 13
+    # August until the 17th and nothing was wrong. The flag and the guard stay
+    # available for a run made by hand.
+    #
     # Found from this file, not from an absolute path: the runner checks the
     # repository out somewhere else entirely, and a hardcoded /home/user path
     # failed the whole run rather than the one assertion.
@@ -1240,8 +1245,8 @@ def test_a_run_does_not_land_on_a_week_being_posted():
     with open(os.path.join(root, ".github", "workflows", "news-digest.yml"),
               encoding="utf-8") as f:
         flow = f.read()
-    assert "github.event.inputs.force != 'true' && '--skip-if-week-planned'" \
-        in flow
+    assert "--skip-if-week-planned" not in flow, \
+        "the daily rebuild is being blocked by a guard it no longer needs"
     assert "force:" in flow, "there must be a way to rebuild on purpose"
 
 
@@ -1886,9 +1891,42 @@ def test_the_shortlist_can_reach_the_database():
     assert scraper.from_database("/nonexistent/archive.json", 14, []) == []
 
 
+def test_drafting_a_story_does_not_spend_it():
+    """Building the page must not mark its stories as posted.
+
+    Every run used to record all fifteen picks as used the moment the page was
+    written, so merely generating a shortlist spent it. Five test runs on one
+    evening emptied the pool, and the scheduled run two days later found four
+    stories with nothing having gone out. The page rebuilds daily now, which
+    would burn the whole pool inside a week under the old behaviour.
+    """
+    import inspect
+
+    source = inspect.getsource(scraper.main)
+    assert "history_mod.save(" not in source, \
+        "generating the shortlist writes to history again, so drafting spends a story"
+    # Reading history is still right: a story genuinely posted stays out.
+    assert "history_mod.filter_seen(" in source, \
+        "the shortlist stopped excluding what has already been posted"
+
+    # And the prompt still carries the guard that replaces it.
+    import linkedin
+    assert "already scheduled" in linkedin.COWORK_PROMPT
+    assert "never schedule the same one" in linkedin.COWORK_PROMPT
+
+    # The schedule has to match: a shortlist read like a news page cannot sit
+    # for four days, which is what a weekly cron did to it.
+    from pathlib import Path
+    flow = Path(__file__).resolve().parents[2] / ".github/workflows/news-digest.yml"
+    text = flow.read_text(encoding="utf-8")
+    cron = re.search(r'- cron: "([^"]+)"', text).group(1)
+    assert cron.split()[-1] == "*", f"the shortlist is on a weekly cron again: {cron}"
+    assert cron.split()[2] == "*", f"the shortlist does not run every day: {cron}"
+
+
 # Locking the count means a test appended below the runner, where it would
 # never execute, shows up as a failure rather than as silence. That happened.
-EXPECTED = 71
+EXPECTED = 72
 
 
 if __name__ == "__main__":
