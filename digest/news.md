@@ -1,5 +1,5 @@
 # Swiss DeepTech news digest
-_Generated 17 August 2026, covering the last 14 days. 27 stories._
+_Generated 18 August 2026, covering the last 14 days. 27 stories._
 
 1. **[GR3N closes a €15.5M Series B round](https://www.startupticker.ch/en/news/gr3n-closes-a-15-5m-series-b-round)**  
    startupticker.ch · sent in
@@ -7,8 +7,8 @@ _Generated 17 August 2026, covering the last 14 days. 27 stories._
    Alternatives Watch · 13 Aug 2026 · relevance 36
 3. **[ETH Zurich Spin-Off Aisot Technologies Raises CHF 2 Million](https://fintechnews.ch/funding/aisot-technologies-funding/85031/)**  
    Fintechnews Switzerland · 14 Aug 2026 · relevance 32
-4. **[Swiss biotech Vaderis raises $152M to take first HHT-specific therapy into Phase 3 - European Biotechnology Magazine](https://news.google.com/rss/articles/CBMiyAFBVV95cUxPVDFJR2tWNUhKdDI3Q1hLaDFYcjJXNFdsVnVrWU5FQUR3WjRfTW5FS3J3RkF4MlpLamlBMnZVdVp3OVZEaHFOVTludDlpWnR4dlluMmZGZzdJbHRFMzJqVDd2MHdlNV9NbWxnbW9DOHQ5ZWVpRW8xam5lc3RPYmpkQW1OaS1NdDlhdnNqM0xQcXVYTmh1dFoyUW5BTXo4ZHlUcHpTTUotYXJZc2R3cTlhV3RPRnFZcUpIMFJNVG1ndkRRUThQRl9BWQ?oc=5)**  
-   European Biotechnology Magazine · 12 Aug 2026 · relevance 22
+4. **[Swiss biotech Vaderis raises $152M to take first HHT-specific therapy into Phase 3 - european-biotechnology.com](https://news.google.com/rss/articles/CBMiyAFBVV95cUxPVDFJR2tWNUhKdDI3Q1hLaDFYcjJXNFdsVnVrWU5FQUR3WjRfTW5FS3J3RkF4MlpLamlBMnZVdVp3OVZEaHFOVTludDlpWnR4dlluMmZGZzdJbHRFMzJqVDd2MHdlNV9NbWxnbW9DOHQ5ZWVpRW8xam5lc3RPYmpkQW1OaS1NdDlhdnNqM0xQcXVYTmh1dFoyUW5BTXo4ZHlUcHpTTUotYXJZc2R3cTlhV3RPRnFZcUpIMFJNVG1ndkRRUThQRl9BWQ?oc=5)**  
+   european-biotechnology.com · 12 Aug 2026 · relevance 22
 5. **[Gravis Robotics Raises $200M for Construction Autonomy](https://www.startupticker.ch/en/news/gravis-robotics-raises-200m-for-construction-autonomy)**  
    Startupticker · 17 Aug 2026 · relevance 20
 6. **[Exclaim Robotics raises USD 4.95 million for data centre repair robots](https://www.startupticker.ch/en/news/exclaim-robotics-raises-eur-4-29-million-for-data-centre-repair-robots)**  
