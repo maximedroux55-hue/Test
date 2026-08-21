@@ -1,12 +1,25 @@
 {
-  "generated": "2026-08-20",
+  "generated": "2026-08-21",
   "mode": "Written by Claude in Max's voice.",
   "note": "Times are local. Schedule each post at its time on its date.",
   "cowork_prompt": "Open https://maxime-droux.com/digest/posts.json and schedule the posts listed at the end of this message, and only those. The file holds the shortlist; the list below says which of them I picked and when each one goes out. Match them by `index`. Ignore every other post in the file.\n\nFor each post, in order:\n- Type the `text` straight through, once, with real keystrokes. Never insert\n  text via JavaScript. It already ends with the article URL on its own line,\n  so do not add, move or retype the URL separately: typing it last is what makes\n  the link preview load the article photo.\n- Each post has exactly one @mention. Type `mention.type`, wait for the\n  dropdown, click the row matching `mention.expect`. If no row matches, post\n  it without the mention rather than tagging the wrong company. LinkedIn will\n  render the official name: that is expected and fine, do not fight it, do not\n  restart the post, do not rewrite it.\n- Schedule it at the date and time given for it in the list below. If no link\n  preview appears, schedule it anyway: do not hunt for an image.\n\nTwo attempts per post, then stop. If a post is not scheduled after two tries,\nleave it, move to the next one, and list it at the end. Never start a third.\n\nBefore you start, open the scheduled-posts list once and note what is already\nthere. Skip any post already scheduled: never schedule the same one twice.\n\nVerification:\n- Claims already settled against the article are not in the file. Check only\n  what `claims` still lists, and posts with needs_check: true (a figure nobody\n  has verified: confirm round closed / round name / amount received / investors\n  in THIS round). Both empty and false means schedule it, no research.\n\nAnything that fails: do not schedule it, and do not edit any file or commit\nanything. List the held posts at the end with the sentence you read and the\npage you read it on, and I will record them.\n\nReport what was scheduled and what was held.",
   "posts": [
     {
       "index": 1,
-      "text": "🇨🇭 Swiss spin-off targets food cravings with neuroscience\n\n@Bewe, a University of Fribourg spin-off, is developing a digital intervention grounded in neuroscience to reduce unhealthy food cravings. Biopôle SA has awarded the company its Pre-Clinical Top-Up, extending a long-standing relationship between the Lausanne campus and the team.\n\nWhy it matters:\n🧠 Behavioural neuroscience turned into a scalable digital therapeutic\n🍫 Cravings sit upstream of obesity and metabolic disease\n🇨🇭 Swiss campus infrastructure carrying spin-offs into pre-clinical work\n\nSupport structures, not just cheques, are what move Swiss health science from lab bench to patient.\nhttps://www.startupticker.ch/en/news/bewe-awarded-biopole-pre-clinical-top-up",
+      "text": "🇨🇭 Swiss platform raises seed for energy communities\n\n@UpGrid, which runs a platform for managing local energy communities, has closed a seed round of just under EUR 1 million, reported by Startupticker. Investors include Jürg Schwarzenbach's vehicle Marcaro, Gründerfonds Ruhr, Climate Founders, Swisspreneur and several angels. The money goes to hiring and product.\n\nWhy it matters:\n⚡ Local energy communities need software before they need hardware\n💶 Cross-border investor mix signals demand beyond Switzerland\n🇨🇭 Swiss grid complexity makes a strong first test market\n\nThe energy transition will be won as much in scheduling code as in generation capacity.\nhttps://www.startupticker.ch/en/news/frisches-geld-und-starkes-wachstum-fuer-upgrid",
+      "link": "https://www.startupticker.ch/en/news/frisches-geld-und-starkes-wachstum-fuer-upgrid",
+      "mention": {
+        "type": "UpGrid",
+        "expect": "UpGrid"
+      },
+      "needs_check": true,
+      "claims": [
+        "the post states EUR 1 m: is that money received rather than a ceiling or a target, and has the round closed"
+      ]
+    },
+    {
+      "index": 2,
+      "text": "🇨🇭 Swiss spin-off targets food cravings with neuroscience\n\n@Bewe, a University of Fribourg spin-off, has been awarded the Pre-Clinical Top-Up by Biopôle SA, extending a long-standing relationship with the Lausanne campus. The company is developing a neuroscience-based digital intervention aimed at unhealthy food cravings rather than at weight itself.\n\nWhy it matters:\n🧠 Attacks metabolic disease at the behavioural root cause\n🏥 Campus support de-risks the pre-clinical stage for founders\n🇨🇭 Swiss life-science infrastructure now backs digital therapeutics too\n\nDigital therapeutics only earn trust when they go through the same evidence path as drugs.\nhttps://www.startupticker.ch/en/news/bewe-awarded-biopole-pre-clinical-top-up",
       "link": "https://www.startupticker.ch/en/news/bewe-awarded-biopole-pre-clinical-top-up",
       "mention": {
         "type": "Bewe",
@@ -16,8 +29,8 @@
       "claims": []
     },
     {
-      "index": 2,
-      "text": "🇨🇭 Swiss study shows AI agents talked into breaking rules\n\n@EPFL researchers found the sharpest safety risk for agentic AI is not a single malicious prompt but a carefully orchestrated multi-turn conversation. As agents browse, send emails and call external tools on a user's behalf, each extra capability widens the attack surface.\n\nWhy it matters:\n🤖 Agents act in the world, so failures have real consequences\n💬 Multi-turn manipulation slips past single-prompt safety filters\n🇨🇭 Swiss labs setting the evaluation standards others will adopt\n\nSafety research is becoming a product requirement, and Switzerland is early to treat it that way.\nhttps://actu.epfl.ch/news/how-attackers-persuade-ai-agents-to-break-the-rule",
+      "index": 3,
+      "text": "🇨🇭 Swiss study shows how AI agents get manipulated\n\n@EPFL researchers found that the biggest safety risk in agentic AI is not a single malicious prompt but carefully orchestrated multi-turn conversations. As assistants gain the ability to browse, send emails and use external tools, attackers can steer them across a dialogue into breaking their own rules.\n\nWhy it matters:\n🤖 Agents acting on tools raise the cost of failure\n🔐 Single-prompt filters miss slow, conversational attacks\n🇨🇭 Swiss labs shaping the safety layer enterprises will demand\n\nSecurity research usually trails deployment, and this time it is arriving early enough to matter.\nhttps://actu.epfl.ch/news/how-attackers-persuade-ai-agents-to-break-the-rule",
       "link": "https://actu.epfl.ch/news/how-attackers-persuade-ai-agents-to-break-the-rule",
       "mention": {
         "type": "EPFL",
@@ -27,8 +40,27 @@
       "claims": []
     },
     {
-      "index": 3,
-      "text": "🇨🇭 Swiss researchers map how cells read DNA\n\n@EPFL scientists helped complete the largest map yet of human gene regulation, showing how transcription factors bind DNA and how chemical marks can change the meaning of those instructions. The same genome, read differently, is what separates a brain cell from an immune cell.\n\nWhy it matters:\n🧬 Reference maps become the substrate for future drug discovery\n🔬 Chemical marks add a layer standard sequencing misses\n🇨🇭 Swiss groups anchored in the largest genomics consortia\n\nFoundational biology rarely makes headlines, yet it decides which therapeutics are possible a decade later.\nhttps://actu.epfl.ch/news/cracking-the-code-of-gene-regulation",
+      "index": 4,
+      "text": "🇨🇭 Swiss academy tackles sensitive research partnerships\n\nThe Swiss Academy of Sciences (@SCNAT) is running a workshop on navigating global research partnerships in politically and ethically sensitive contexts. The topic is unglamorous and increasingly unavoidable: who Swiss institutions collaborate with, under what safeguards, and where the line sits.\n\nWhy it matters:\n🌍 Research collaboration is now a geopolitical decision, not an administrative one\n⚖️ Clear rules protect both partners and institutional reputation\n🇨🇭 Swiss neutrality only works when paired with explicit standards\n\nGovernance of science is becoming as strategic as the science itself.\nhttps://scnat.ch/fr/events/uuid/i/2005c1a4-a0b6-5176-b97b-e1f14d2dae83-Navigating_Global_Research_Partnerships_in_Politically_and_Ethically_Sensitive_Contexts",
+      "link": "https://scnat.ch/fr/events/uuid/i/2005c1a4-a0b6-5176-b97b-e1f14d2dae83-Navigating_Global_Research_Partnerships_in_Politically_and_Ethically_Sensitive_Contexts",
+      "mention": {
+        "type": "SCNAT",
+        "expect": "SCNAT"
+      },
+      "needs_check": false,
+      "claims": []
+    },
+    {
+      "index": 5,
+      "text": "🇨🇭 Ten Swiss cleantech startups head to Munich\n\nVenturelab has selected ten cleantech startups for the Swiss National Startup Team 2026, an investor roadshow in Munich. The programme puts early Swiss climate and energy teams in front of German capital, historically one of the deepest pools for industrial technology in Europe.\n\nWhy it matters:\n🌱 Cleantech needs industrial buyers as much as investors\n🚄 Munich is the shortest route to German capital\n🇨🇭 Swiss climate startups exporting before scaling at home\n\nThe bottleneck for Swiss cleantech is rarely science, it is access to growth-stage money.\nhttps://www.venturelab.swiss/Swiss-National-Startup-Team-2026-Ten-breakthrough-cleantech-startups-selected-for-Munich-investor-roadshow",
+      "link": "https://www.venturelab.swiss/Swiss-National-Startup-Team-2026-Ten-breakthrough-cleantech-startups-selected-for-Munich-investor-roadshow",
+      "mention": {},
+      "needs_check": false,
+      "claims": []
+    },
+    {
+      "index": 6,
+      "text": "🇨🇭 Swiss researchers map how cells read DNA\n\n@EPFL researchers helped complete the largest map yet of how human cells interpret their genetic instructions, showing how chemical marks on DNA can change the meaning of a sequence for the transcription factors that bind it. The same genome, read differently, is what separates a brain cell from an immune cell.\n\nWhy it matters:\n🧬 Foundational data for gene therapy and drug targeting\n🔬 Chemical marks rewrite the rules of sequence binding\n🇨🇭 Swiss labs contributing to reference datasets the field will build on\n\nPlatform biology starts with maps, and whoever draws them shapes the next decade of therapeutics.\nhttps://actu.epfl.ch/news/cracking-the-code-of-gene-regulation",
       "link": "https://actu.epfl.ch/news/cracking-the-code-of-gene-regulation",
       "mention": {
         "type": "EPFL",
@@ -38,8 +70,8 @@
       "claims": []
     },
     {
-      "index": 4,
-      "text": "🇨🇭 Swiss carbon calculator doubles its SME customers\n\n@Zelsius, a spin-off of Hochschule Luzern, has expanded its emissions tracking and carbon accounting platform to additional sectors after a year of intensive use and testing. The company doubled its customer count and now generates six-figure revenue, mostly from recurring annual contracts.\n\nWhy it matters:\n📊 Carbon reporting is shifting from voluntary to contractual for SMEs\n🔁 Recurring revenue signals the product is genuinely used\n🇨🇭 Swiss universities of applied sciences producing commercial software, not just papers\n\nRevenue quality tells you more about a climate startup than its emissions narrative.\nhttps://www.startupticker.ch/en/news/co2-rechner-von-zelsius-gewinnt-an-reichweite",
+      "index": 7,
+      "text": "🇨🇭 Swiss carbon calculator doubles its customer base\n\n@Zelsius, a spin-off of Hochschule Luzern, has extended its emissions accounting platform for SMEs into additional sectors after a year of intensive testing. The company doubled its customer count and now generates six-figure revenue, most of it from recurring annual contracts.\n\nWhy it matters:\n📊 SMEs face reporting duties without the in-house teams\n🔁 Recurring revenue proves the tool is used, not bought\n🇨🇭 Swiss universities producing software businesses, not just hardware\n\nA spin-off reaching real recurring revenue before a headline round is the healthier sequence.\nhttps://www.startupticker.ch/en/news/co2-rechner-von-zelsius-gewinnt-an-reichweite",
       "link": "https://www.startupticker.ch/en/news/co2-rechner-von-zelsius-gewinnt-an-reichweite",
       "mention": {
         "type": "Zelsius",
@@ -49,18 +81,18 @@
       "claims": []
     },
     {
-      "index": 5,
-      "text": "🇨🇭 Swiss cleantech ten head to Munich investors\n\nVenturelab has selected ten cleantech startups for the Swiss National Startup Team 2026, sending them on an investor roadshow in Munich. The programme puts early Swiss climate and energy ventures in front of German capital at the stage where cross-border introductions are hardest to arrange.\n\nWhy it matters:\n🌍 Swiss cleantech needs European capital to reach industrial scale\n🤝 Curated roadshows beat cold outreach for deeptech founders\n🇨🇭 Swiss selection processes have become a credible quality signal\n\nAccess to the right rooms is still one of the scarcest resources in European deeptech.\nhttps://www.venturelab.swiss/Swiss-National-Startup-Team-2026-Ten-breakthrough-cleantech-startups-selected-for-Munich-investor-roadshow",
-      "link": "https://www.venturelab.swiss/Swiss-National-Startup-Team-2026-Ten-breakthrough-cleantech-startups-selected-for-Munich-investor-roadshow",
+      "index": 8,
+      "text": "🇨🇭 Venture Leaders Cleantech picks ten Swiss teams\n\nVenturelab has named the Venture Leaders Cleantech 2026 cohort: ten startups heading to Munich to meet investors. The programme has spent years functioning as a filter, sending selected Swiss deeptech teams abroad at the moment they need international capital and industrial partners.\n\nWhy it matters:\n🏭 Cleantech scales through industrial partners, not marketing\n🤝 Curated cohorts shorten investor diligence considerably\n🇨🇭 Swiss selection standards travel well across borders\n\nExport programmes work because Switzerland is too small a market to prove climate technology alone.\nhttps://www.venturelab.swiss/Venture-Leaders-Cleantech-2026-10-breakthrough-cleantech-startups-selected-for-Munich-investor-roadshow",
+      "link": "https://www.venturelab.swiss/Venture-Leaders-Cleantech-2026-10-breakthrough-cleantech-startups-selected-for-Munich-investor-roadshow",
       "mention": {},
       "needs_check": false,
       "claims": [
-        "the company is Swiss National Startup Team 2026"
+        "the company is Venture Leaders Cleantech 2026"
       ]
     },
     {
-      "index": 6,
-      "text": "🇨🇭 Swiss robotics firm scales construction autonomy worldwide\n\n@Gravis Robotics, an ETH Zurich spin-off, builds autonomy systems that let heavy construction machinery operate on its own. Its technology is already deployed alongside global infrastructure leaders across four continents and has been proven on diverse real-world machines and job sites.\n\nWhy it matters:\n🏗️ Construction productivity has barely moved in decades\n🌐 Deployments on four continents de-risk the technology claim\n🇨🇭 Swiss robotics research converting directly into industrial hardware\n\nZurich robotics keeps proving that the hard part is field reliability, not the demo.\nhttps://www.startupticker.ch/en/news/gravis-robotics-raises-200m-for-construction-autonomy",
+      "index": 9,
+      "text": "🇨🇭 Swiss robotics spin-off lands SoftBank backing\n\n@Gravis Robotics, an ETH Zurich spin-off, has announced an investment from SoftBank Investment Advisers to scale construction autonomy. Its systems are already deployed with global infrastructure players across four continents and proven on diverse real-world machinery and job sites.\n\nWhy it matters:\n🚜 Construction remains one of the least automated large industries\n🌍 Field deployments on four continents beat lab demos\n🇨🇭 Swiss robotics attracting the largest global growth investors\n\nWhen a Zurich robotics lab becomes a global infrastructure supplier, the moat was always the field data.\nhttps://www.startupticker.ch/en/news/gravis-robotics-raises-200m-for-construction-autonomy",
       "link": "https://www.startupticker.ch/en/news/gravis-robotics-raises-200m-for-construction-autonomy",
       "mention": {
         "type": "Gravis",
@@ -70,8 +102,8 @@
       "claims": []
     },
     {
-      "index": 7,
-      "text": "🇨🇭 Swiss graphene device measures a fractional charge\n\n@EPFL researchers have built a graphene device capable of measuring the fractional electric charges carried by quasiparticles, collective quantum objects that behave as if they hold only part of an electron's charge. The measurement requires extreme conditions and exceptional instrument sensitivity.\n\nWhy it matters:\n⚛️ Fractional charges underpin proposals for topological quantum computing\n📐 Measurement capability is the bottleneck in exotic quantum matter\n🇨🇭 Swiss labs building the instruments before the applications exist\n\nInstrumentation leadership tends to convert into industrial leadership one generation later.\nhttps://actu.epfl.ch/news/how-do-you-measure-one-third-of-an-electron",
+      "index": 10,
+      "text": "🇨🇭 Swiss device measures a third of an electron\n\n@EPFL researchers have built a graphene device capable of measuring the fractional electric charges carried by quasiparticles, collective quantum objects that behave as though they hold only part of an electron's charge. The work turns one of physics' strangest phenomena into something directly measurable.\n\nWhy it matters:\n⚛️ Fractional charges underpin proposals for topological quantum computing\n📐 Graphene sensing pushes measurement into new precision territory\n🇨🇭 Swiss condensed-matter physics staying at the global frontier\n\nMetrology is where fundamental physics quietly becomes engineering, and Switzerland has always been strong there.\nhttps://actu.epfl.ch/news/how-do-you-measure-one-third-of-an-electron",
       "link": "https://actu.epfl.ch/news/how-do-you-measure-one-third-of-an-electron",
       "mention": {
         "type": "EPFL",
@@ -81,9 +113,9 @@
       "claims": []
     },
     {
-      "index": 8,
-      "text": "🇨🇭 Swiss supercomputer gains trapped-ion quantum access\n\n@EPFL has integrated Quantinuum trapped-ion cloud QPU access into its SCITAS high-performance computing platform. Researchers can now run hybrid workloads that combine classical supercomputing with quantum processors from a single environment, without negotiating separate vendor arrangements.\n\nWhy it matters:\n🖥️ Hybrid quantum-classical workflows are where near-term value sits\n🔗 Shared access lowers the entry cost for research groups\n🇨🇭 Swiss institutions building quantum capability into existing infrastructure\n\nMaking quantum hardware ordinary to use is how a research base turns into an industry.\nhttps://www.epfl.ch/research/domains/quantum-center/",
-      "link": "https://www.epfl.ch/research/domains/quantum-center/",
+      "index": 11,
+      "text": "🇨🇭 Swiss supercomputer gains trapped-ion quantum access\n\n@EPFL has integrated Quantinuum trapped-ion cloud access into its SCITAS high-performance computing platform, according to Quantum Computing Report. Researchers can now run quantum workloads alongside classical HPC jobs from the same environment, rather than treating the two as separate worlds.\n\nWhy it matters:\n🔗 Hybrid quantum-classical workflows are how real applications will run\n🧪 Campus-wide access widens the pool of quantum users\n🇨🇭 Swiss universities building quantum infrastructure ahead of demand\n\nAccess, not hardware ownership, is what will decide where quantum talent concentrates.\nhttps://quantumcomputingreport.com/epfl-integrates-quantinuum-trapped-ion-cloud-access-into-scitas-hpc-platform/",
+      "link": "https://quantumcomputingreport.com/epfl-integrates-quantinuum-trapped-ion-cloud-access-into-scitas-hpc-platform/",
       "mention": {
         "type": "EPFL",
         "expect": "EPFL"
@@ -92,19 +124,8 @@
       "claims": []
     },
     {
-      "index": 9,
-      "text": "🇨🇭 Swiss self-driving labs pioneer attracts Bruker\n\n@Atinary Technologies, the Swiss pioneer of Self-Driving Labs and AI-driven R&D, has taken a minority strategic investment from Bruker Corporation alongside an expanded collaboration. Its software guides experimentation across pharmaceuticals, chemicals, energy and materials, pairing lab automation with AI-directed experiment design.\n\nWhy it matters:\n🧪 Instrument makers now compete on software, not only hardware\n⚙️ AI-guided experimentation compresses discovery cycles measurably\n🇨🇭 Swiss startups selling into global analytical instrument leaders\n\nWhen an incumbent buys into a startup's software layer, it usually means the workflow already works.\nhttps://www.startupticker.ch/en/news/bruker-makes-minority-investment-in-atinary",
-      "link": "https://www.startupticker.ch/en/news/bruker-makes-minority-investment-in-atinary",
-      "mention": {
-        "type": "Atinary",
-        "expect": "Atinary"
-      },
-      "needs_check": false,
-      "claims": []
-    },
-    {
-      "index": 10,
-      "text": "🇨🇭 Swiss engineers build drones propelled by sound\n\n@EPFL engineers have designed acoustic cavities that convert sound waves into thrust, using Helmholtz resonance to propel small robots and ultralight aerial vehicles. The approach removes on-board actuators and electronics entirely, cutting weight at the scale where every milligram limits flight.\n\nWhy it matters:\n🔊 Resonance replaces motors, batteries and control electronics\n🪶 Weight is the binding constraint in micro-aerial robotics\n🇨🇭 Swiss robotics repeatedly solving problems by removing components\n\nElegance in engineering usually shows up as fewer parts, not more.\nhttps://actu.epfl.ch/news/these-tiny-drones-are-powered-by-sound-2",
+      "index": 12,
+      "text": "🇨🇭 Swiss tiny drones fly on sound waves\n\n@EPFL engineers have designed acoustic cavities that turn sound waves into thrust, propelling small robots and ultralight aerial vehicles with no on-board actuators or electronics. The principle is Helmholtz resonance, the same effect as blowing across a bottle neck, applied to propulsion.\n\nWhy it matters:\n🔊 Removing on-board electronics slashes weight and failure points\n🐝 Enables robots at scales where motors simply do not fit\n🇨🇭 Swiss microrobotics keeps finding physics others overlooked\n\nThe most interesting robotics advances lately come from deleting components rather than adding them.\nhttps://actu.epfl.ch/news/these-tiny-drones-are-powered-by-sound-2",
       "link": "https://actu.epfl.ch/news/these-tiny-drones-are-powered-by-sound-2",
       "mention": {
         "type": "EPFL",
@@ -114,55 +135,36 @@
       "claims": []
     },
     {
-      "index": 11,
-      "text": "🇨🇭 Swiss fintech watches AI and stablecoins converge\n\n@Fintech Schweiz reports that financial institutions are adopting stablecoins to modernise payments, improve liquidity and cut transaction costs, while scaling generative and agentic AI in parallel. A Forrester Consulting study argues the two capabilities are set to combine rather than develop separately.\n\nWhy it matters:\n💸 Programmable money plus autonomous agents changes settlement economics\n🏦 Banks are treating stablecoins as infrastructure, not speculation\n🇨🇭 Swiss regulatory clarity makes the country a natural testbed\n\nSwitzerland's advantage in digital finance has always been rules that arrived early and stayed stable.\nhttps://fintechnews.ch/aifintech/ai-stablecoin-convergence-set-to-transform-payments-and-banking/85013/",
-      "link": "https://fintechnews.ch/aifintech/ai-stablecoin-convergence-set-to-transform-payments-and-banking/85013/",
-      "mention": {
-        "type": "Fintech",
-        "expect": "Fintech"
-      },
-      "needs_check": false,
-      "claims": []
-    },
-    {
-      "index": 12,
-      "text": "🇨🇭 Swiss quantum access opens to research teams\n\nThe EPFL Quantum Center has brought Quantinuum trapped-ion cloud QPU access into the SCITAS HPC platform, letting researchers pair classical compute with quantum processors in one workflow. Trapped-ion systems offer high fidelity, which suits algorithm development more than raw qubit counts.\n\nWhy it matters:\n🔬 Researchers test on real hardware instead of simulators\n🧮 Trapped ions favour fidelity over headline qubit numbers\n🇨🇭 Swiss quantum talent pipeline gains hands-on machine time\n\nAccess to real machines is what separates a quantum research base from a quantum ecosystem.\nhttps://www.epfl.ch/research/domains/quantum-center/",
-      "link": "https://www.epfl.ch/research/domains/quantum-center/",
-      "mention": {},
-      "needs_check": false,
-      "claims": []
-    },
-    {
       "index": 13,
-      "text": "🇨🇭 Swiss drones spray crops without GPS\n\n@SUIND has raised fresh capital for its autonomous agricultural spraying platform, which navigates and treats fields without relying on GPS. That matters under tree canopies and in orchards, where satellite signals degrade and conventional autonomous machinery loses its position.\n\nWhy it matters:\n🚁 GPS-free navigation unlocks orchards and canopy-covered fields\n🌾 Targeted spraying cuts chemical use and operator exposure\n🇨🇭 Swiss autonomy expertise finding a market in agriculture\n\nThe hardest robotics markets are the ones where the environment refuses to cooperate.\nhttps://www.startupticker.ch/en/news/fresh-capital-for-suind-s-autonomous-spraying-platform",
-      "link": "https://www.startupticker.ch/en/news/fresh-capital-for-suind-s-autonomous-spraying-platform",
+      "text": "🇨🇭 Swiss campus links quantum hardware to HPC\n\n@EPFL is integrating trapped-ion QPU access from Quantinuum into its SCITAS high-performance computing environment, giving researchers a single route to both classical and quantum resources. It is infrastructure work rather than a breakthrough, and it is what turns quantum from demonstration into daily tooling.\n\nWhy it matters:\n🖥️ Shared infrastructure lowers the entry cost for every research group\n⚛️ Trapped ions offer high fidelity for algorithm work\n🇨🇭 Swiss quantum ecosystem building the plumbing early\n\nEcosystems are built by the unglamorous integration work long before the applications arrive.\nhttps://www.epfl.ch/research/domains/quantum-center/",
+      "link": "https://www.epfl.ch/research/domains/quantum-center/",
       "mention": {
-        "type": "SUIND",
-        "expect": "SUIND"
+        "type": "EPFL",
+        "expect": "EPFL"
       },
       "needs_check": false,
       "claims": []
     },
     {
       "index": 14,
-      "text": "🇨🇭 Swiss startup predicts flight prices for businesses\n\n@Zerolook has closed a pre-seed round for its B2B flight pricing API, which uses machine learning to forecast how itinerary prices will move. Travel sellers and corporate booking platforms can use those predictions to time purchases rather than guess.\n\nWhy it matters:\n✈️ Airfare pricing is volatile, opaque and expensively mistimed\n🔌 An API sells into existing booking stacks without replacing them\n🇨🇭 Swiss machine learning applied to an unglamorous, large market\n\nApplied ML wins where the data is messy and the savings are measurable.\nhttps://www.startupticker.ch/en/news/travel-tech-start-up-zerolook-closes-usd-1-9-million-pre-seed-financing-round",
+      "text": "🇨🇭 Swiss self-driving lab platform gains Bruker backing\n\n@Atinary Technologies has announced a strategic collaboration with Bruker, which is taking a minority stake. Atinary's agentic AI platform, SDLabs, optimises R&D experiments and drives self-driving laboratories, closing the loop between instrument data and the next experiment to run.\n\nWhy it matters:\n🧪 Instrument makers need software to sell autonomous labs\n🤖 Agentic AI cuts experimental cycles from months to days\n🇨🇭 Swiss AI meeting a global scientific instruments leader\n\nStrategic investors buying into Swiss software usually means the technology already survived their own labs.\nhttps://atinary.com/news/bruker-announces-strategic-collaboration-with-atinary-technologies-to-advance-self-driving-laboratories/",
+      "link": "https://atinary.com/news/bruker-announces-strategic-collaboration-with-atinary-technologies-to-advance-self-driving-laboratories/",
+      "mention": {
+        "type": "Atinary",
+        "expect": "Atinary Technologies"
+      },
+      "needs_check": false,
+      "claims": []
+    },
+    {
+      "index": 15,
+      "text": "🇨🇭 Swiss startup predicts flight prices with machine learning\n\n@Zerolook has closed a pre-seed round, Startupticker reports. The company sells a B2B flight pricing API that uses machine learning to forecast how itinerary prices will move, aimed at travel platforms and corporate buyers who currently plan around volatile fares.\n\nWhy it matters:\n✈️ Airfare pricing is a forecasting problem with clear economic value\n🔌 API distribution scales faster than a consumer travel brand\n🇨🇭 Swiss applied ML finding revenue in unglamorous industries\n\nNot every deeptech story is a lab: applied machine learning on messy commercial data still counts.\nhttps://www.startupticker.ch/en/news/travel-tech-start-up-zerolook-closes-usd-1-9-million-pre-seed-financing-round",
       "link": "https://www.startupticker.ch/en/news/travel-tech-start-up-zerolook-closes-usd-1-9-million-pre-seed-financing-round",
       "mention": {
         "type": "Zerolook",
         "expect": "Zerolook"
       },
       "needs_check": true,
-      "claims": []
-    },
-    {
-      "index": 15,
-      "text": "🇨🇭 Swiss longevity firm signs Olympic champion\n\n@AVEA, based in Zug, develops science-backed longevity supplements built on current research. Olympic gold medallist and two-time halfpipe world champion Iouri Podladtchikov has joined the company as both investor and brand ambassador, aligning capital with distribution rather than separating them.\n\nWhy it matters:\n🥇 Athlete investors bring reach that paid marketing rarely matches\n🧬 Longevity is moving from claims toward research-backed formulation\n🇨🇭 Swiss consumer health brands leaning on scientific credibility\n\nIn consumer science, credibility is the product, and it is borrowed as often as it is built.\nhttps://www.startupticker.ch/en/news/olympic-champion-iouri-podladtchikov-joins-avea",
-      "link": "https://www.startupticker.ch/en/news/olympic-champion-iouri-podladtchikov-joins-avea",
-      "mention": {
-        "type": "AVEA",
-        "expect": "AVEA"
-      },
-      "needs_check": false,
       "claims": []
     }
   ]
