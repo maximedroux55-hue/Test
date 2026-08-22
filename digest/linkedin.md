@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 21 August 2026. 15 stories from the last 10 days, newest published first. Written by Claude in Max's voice. Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 22 August 2026. 15 stories from the last 10 days, newest published first. Written by Claude in Max's voice. Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -41,260 +41,275 @@ Report what was scheduled and what was held.
 
 The stories themselves are below.
 
-## 1. General — published 20 August
+## 1. General — published 21 August
 
 ```
-🇨🇭 Swiss platform raises seed for energy communities
+🇨🇭 Swiss AI platform reads IT logs smarter
 
-@UpGrid, which runs a platform for managing local energy communities, has closed a seed round of just under EUR 1 million, reported by Startupticker. Investors include Jürg Schwarzenbach's vehicle Marcaro, Gründerfonds Ruhr, Climate Founders, Swisspreneur and several angels. The money goes to hiring and product.
+@Logmind, an EPFL spin-off led by Ketevani Zaridze, has launched a new generation of its AI platform for IT operational intelligence. Since its 2025 round the company has added customers across several industries and hired a Chief Commercial Officer.
+
+Why it matters:
+📊 Log data is the largest untapped signal in IT
+🧭 A commercial hire signals a shift from research to sales
+🇨🇭 EPFL software spin-offs increasingly sell into regulated enterprises
+
+Hiring a commercial lead is often the clearest sign a deeptech product is ready.
+
+https://www.startupticker.ch/en/news/traction-and-a-new-ai-platform-for-logmind
+```
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Logmind.png
+
+## 2. Research — published 21 August
+
+```
+🇨🇭 Swiss glaciers lose 40% of their volume
+
+EPFL researchers describe what is disappearing with Switzerland's ice: not only a water and energy reserve but ecosystems only now being documented. According to GLAMOS, over 1,100 small Swiss glaciers have vanished since the early 1970s, and remaining volume is down 40% since 2000.
+
+Why it matters:
+💧 Glacial melt reshapes hydropower planning for decades ahead
+🔬 Newly described ecosystems vanish before they are studied
+🇨🇭 Switzerland is the live laboratory for alpine climate science
+
+The country losing its ice fastest is also the one best equipped to measure it.
+
+https://actu.epfl.ch/news/retreating-glaciers-are-taking-entire-worlds-with
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 3. General — published 20 August
+
+```
+🇨🇭 Swiss platform raises €1M for energy communities
+
+@UpGrid, which operates a management platform for local energy communities, has closed a seed round of just under €1 million to expand its team and develop the product. Investors include Marcaro (Jürg Schwarzenbach), Gründerfonds Ruhr, Climate Founders, Swisspreneur and several angels.
 
 Why it matters:
 ⚡ Local energy communities need software before they need hardware
-💶 Cross-border investor mix signals demand beyond Switzerland
-🇨🇭 Swiss grid complexity makes a strong first test market
+🌍 German and Swiss investors backing the same grid layer
+🇨🇭 Swiss regulation on energy sharing creates an early home market
 
-The energy transition will be won as much in scheduling code as in generation capacity.
+Regulatory change, not technology, is what opens this market first.
+
 https://www.startupticker.ch/en/news/frisches-geld-und-starkes-wachstum-fuer-upgrid
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/UpGrid_Team.jpg
 
-## 2. Grant — published 19 August
+## 4. Research — published 19 August
 
 ```
-🇨🇭 Swiss spin-off targets food cravings with neuroscience
+🇨🇭 Swiss lab models cities as living systems
 
-@Bewe, a University of Fribourg spin-off, has been awarded the Pre-Clinical Top-Up by Biopôle SA, extending a long-standing relationship with the Lausanne campus. The company is developing a neuroscience-based digital intervention aimed at unhealthy food cravings rather than at weight itself.
+The Laboratory of Urban and Environmental Systems at @EPFL studies how cities and their environments interact, from resource flows to infrastructure design. It sits inside one of Europe's densest concentrations of urban and environmental engineering research.
 
 Why it matters:
-🧠 Attacks metabolic disease at the behavioural root cause
-🏥 Campus support de-risks the pre-clinical stage for founders
-🇨🇭 Swiss life-science infrastructure now backs digital therapeutics too
+🏙️ Urban systems research feeds directly into infrastructure decisions
+🔁 Cross-disciplinary labs are where spin-offs quietly originate
+🇨🇭 Switzerland treats urban planning as an engineering discipline
 
-Digital therapeutics only earn trust when they go through the same evidence path as drugs.
+Much of tomorrow's climate infrastructure starts in labs no one has heard of yet.
+
+https://www.epfl.ch/labs/urbes/
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 5. Grant — published 19 August
+
+```
+🇨🇭 Swiss spin-off targets food cravings digitally
+
+@Bewe, a University of Fribourg spin-off, has been awarded the Biopôle Pre-Clinical Top-Up, extending a long-standing relationship with the Lausanne campus. The company develops a neuroscience-based digital intervention aimed at unhealthy food cravings.
+
+Why it matters:
+🧠 Digital therapeutics need clinical evidence, not just an app
+🍫 Craving control addresses a root driver of metabolic disease
+🇨🇭 Biopôle keeps early Swiss health ventures close to clinics
+
+Digital health earns its place only when it is tested like a drug.
+
 https://www.startupticker.ch/en/news/bewe-awarded-biopole-pre-clinical-top-up
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Bewe%20founders%20Biopo%CC%82le.jpg
 
-## 3. Research — published 19 August
+## 6. Research — published 19 August
 
 ```
-🇨🇭 Swiss study shows how AI agents get manipulated
+🇨🇭 Swiss study shows AI agents talked into breaking rules
 
-@EPFL researchers found that the biggest safety risk in agentic AI is not a single malicious prompt but carefully orchestrated multi-turn conversations. As assistants gain the ability to browse, send emails and use external tools, attackers can steer them across a dialogue into breaking their own rules.
+A new study from @EPFL finds the biggest safety risk in agentic AI is not a single malicious prompt but carefully orchestrated multi-turn conversations. As agents browse, send emails and use external tools, these sequences can steer them past their own guardrails.
 
 Why it matters:
-🤖 Agents acting on tools raise the cost of failure
-🔐 Single-prompt filters miss slow, conversational attacks
-🇨🇭 Swiss labs shaping the safety layer enterprises will demand
+🛡️ Single-prompt filters miss conversation-level attacks entirely
+🤖 Agents with tool access turn errors into real actions
+🇨🇭 Swiss research is setting the agenda on AI safety testing
 
-Security research usually trails deployment, and this time it is arriving early enough to matter.
-https://actu.epfl.ch/news/how-attackers-persuade-ai-agents-to-break-the-rule
+Agent security will become a product category before most companies budget for it.
+
+https://actu.epfl.ch/news/how-would-attackers-persuade-ai-agents-to-break-the-rule
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 4. Partnership — published 19 August
-
-```
-🇨🇭 Swiss academy tackles sensitive research partnerships
-
-The Swiss Academy of Sciences (@SCNAT) is running a workshop on navigating global research partnerships in politically and ethically sensitive contexts. The topic is unglamorous and increasingly unavoidable: who Swiss institutions collaborate with, under what safeguards, and where the line sits.
-
-Why it matters:
-🌍 Research collaboration is now a geopolitical decision, not an administrative one
-⚖️ Clear rules protect both partners and institutional reputation
-🇨🇭 Swiss neutrality only works when paired with explicit standards
-
-Governance of science is becoming as strategic as the science itself.
-https://scnat.ch/fr/events/uuid/i/2005c1a4-a0b6-5176-b97b-e1f14d2dae83-Navigating_Global_Research_Partnerships_in_Politically_and_Ethically_Sensitive_Contexts
-```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 5. Research — published 18 August
+## 7. Research — published 18 August
 
 ```
 🇨🇭 Ten Swiss cleantech startups head to Munich
 
-Venturelab has selected ten cleantech startups for the Swiss National Startup Team 2026, an investor roadshow in Munich. The programme puts early Swiss climate and energy teams in front of German capital, historically one of the deepest pools for industrial technology in Europe.
+Venturelab has selected ten cleantech companies for the Swiss National Startup Team 2026, which takes them on an investor roadshow to Munich. The programme puts early Swiss climate and energy ventures in front of German capital at seed and Series A stage.
 
 Why it matters:
-🌱 Cleantech needs industrial buyers as much as investors
-🚄 Munich is the shortest route to German capital
-🇨🇭 Swiss climate startups exporting before scaling at home
+🌍 Munich is the closest large pool of industrial climate capital
+🤝 Curated roadshows shorten the fundraising cycle materially
+🇨🇭 Swiss cleantech pipeline is now deep enough to select from
 
-The bottleneck for Swiss cleantech is rarely science, it is access to growth-stage money.
+Proximity to German industry may matter more to these founders than proximity to Zurich.
+
 https://www.venturelab.swiss/Swiss-National-Startup-Team-2026-Ten-breakthrough-cleantech-startups-selected-for-Munich-investor-roadshow
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 6. Policy — published 18 August
+## 8. Policy — published 18 August
 
 ```
 🇨🇭 Swiss researchers map how cells read DNA
 
-@EPFL researchers helped complete the largest map yet of how human cells interpret their genetic instructions, showing how chemical marks on DNA can change the meaning of a sequence for the transcription factors that bind it. The same genome, read differently, is what separates a brain cell from an immune cell.
+Researchers at @EPFL helped complete the largest map yet of human gene regulation, showing how transcription factors bind DNA and how chemical marks can change the meaning of genetic instructions. The same genome, read differently, is what separates a brain cell from an immune cell.
 
 Why it matters:
-🧬 Foundational data for gene therapy and drug targeting
-🔬 Chemical marks rewrite the rules of sequence binding
-🇨🇭 Swiss labs contributing to reference datasets the field will build on
+🧬 Regulation errors underlie a large share of disease
+🗺️ Reference maps become the foundation for drug discovery tools
+🇨🇭 Swiss labs keep contributing to the largest global biology datasets
 
-Platform biology starts with maps, and whoever draws them shapes the next decade of therapeutics.
+Foundational maps rarely make headlines, but the therapeutics built on them do.
+
 https://actu.epfl.ch/news/cracking-the-code-of-gene-regulation
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 7. Award — published 18 August
+## 9. Award — published 18 August
 
 ```
-🇨🇭 Swiss carbon calculator doubles its customer base
+🇨🇭 Swiss carbon calculator doubles its customers
 
-@Zelsius, a spin-off of Hochschule Luzern, has extended its emissions accounting platform for SMEs into additional sectors after a year of intensive testing. The company doubled its customer count and now generates six-figure revenue, most of it from recurring annual contracts.
+@Zelsius, a spin-off of Hochschule Luzern, has extended its emissions accounting platform to additional industries after a year of intensive use and testing. The company doubled its customer base and now generates six-figure revenue, most of it recurring annual subscriptions.
 
 Why it matters:
-📊 SMEs face reporting duties without the in-house teams
-🔁 Recurring revenue proves the tool is used, not bought
-🇨🇭 Swiss universities producing software businesses, not just hardware
+📈 Recurring revenue proves reporting is now a standing cost
+🏭 SMEs need carbon accounting built for their scale
+🇨🇭 Swiss universities of applied sciences produce commercial software early
 
-A spin-off reaching real recurring revenue before a headline round is the healthier sequence.
+Revenue quality matters more than revenue size at this stage.
+
 https://www.startupticker.ch/en/news/co2-rechner-von-zelsius-gewinnt-an-reichweite
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/symbolbilder/renewable%20energy_CO2.jpg
 
-## 8. Research — published 18 August
+## 10. Research — published 18 August
 
 ```
-🇨🇭 Venture Leaders Cleantech picks ten Swiss teams
+🇨🇭 Swiss cleantech selected for German roadshow
 
-Venturelab has named the Venture Leaders Cleantech 2026 cohort: ten startups heading to Munich to meet investors. The programme has spent years functioning as a filter, sending selected Swiss deeptech teams abroad at the moment they need international capital and industrial partners.
+Venturelab has named the Swiss National Startup Team 2026: ten cleantech companies heading to Munich to meet investors. The cohort spans energy, materials and industrial decarbonisation, sectors where Swiss research strength meets German manufacturing demand.
 
 Why it matters:
-🏭 Cleantech scales through industrial partners, not marketing
-🤝 Curated cohorts shorten investor diligence considerably
-🇨🇭 Swiss selection standards travel well across borders
+⚙️ Industrial buyers and investors often sit in the same room
+🚀 Export markets decide the fate of Swiss climate hardware
+🇨🇭 A national selection process signals real cohort depth
 
-Export programmes work because Switzerland is too small a market to prove climate technology alone.
-https://www.venturelab.swiss/Venture-Leaders-Cleantech-2026-10-breakthrough-cleantech-startups-selected-for-Munich-investor-roadshow
+Swiss cleantech companies grow up abroad, and the earlier that starts the better.
+
+https://www.venturelab.swiss/Swiss-National-Startup-Team-2026-Ten-breakthrough-cleantech-startups-selected-for-Munich-investor-roadshow
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 9. Round — published 17 August
+## 11. Round — published 17 August
 
 ```
-🇨🇭 Swiss robotics spin-off lands SoftBank backing
+🇨🇭 Swiss construction robotics lands SoftBank backing
 
-@Gravis Robotics, an ETH Zurich spin-off, has announced an investment from SoftBank Investment Advisers to scale construction autonomy. Its systems are already deployed with global infrastructure players across four continents and proven on diverse real-world machinery and job sites.
+@Gravis Robotics, an ETH Zurich spin-off, has announced an investment from SoftBank Investment Advisers, reported as the largest Series A in construction robotics. Its autonomy systems are already deployed with global infrastructure players across four continents and proven on diverse real-world machinery and sites.
 
 Why it matters:
-🚜 Construction remains one of the least automated large industries
-🌍 Field deployments on four continents beat lab demos
-🇨🇭 Swiss robotics attracting the largest global growth investors
+🚜 Autonomy retrofitted onto existing machines beats building new ones
+🌐 Deployments on four continents de-risk the scaling story
+🇨🇭 ETH robotics remains Switzerland's most exportable asset
 
-When a Zurich robotics lab becomes a global infrastructure supplier, the moat was always the field data.
+When global capital writes cheques this size, it is buying field-proven autonomy, not a demo.
+
 https://www.startupticker.ch/en/news/gravis-robotics-raises-200m-for-construction-autonomy
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/GravisRyanLukeJohns.jpg
 
-## 10. Research — published 17 August
+## 12. Research — published 17 August
 
 ```
 🇨🇭 Swiss device measures a third of an electron
 
-@EPFL researchers have built a graphene device capable of measuring the fractional electric charges carried by quasiparticles, collective quantum objects that behave as though they hold only part of an electron's charge. The work turns one of physics' strangest phenomena into something directly measurable.
+Researchers at @EPFL have built a graphene device capable of measuring the fractional electric charges carried by quasiparticles, collective states that behave as if they hold only part of an electron's charge. The measurement requires extreme conditions and extraordinary precision.
 
 Why it matters:
 ⚛️ Fractional charges underpin proposals for topological quantum computing
-📐 Graphene sensing pushes measurement into new precision territory
-🇨🇭 Swiss condensed-matter physics staying at the global frontier
+📐 Graphene sensing pushes measurement into new precision regimes
+🇨🇭 Swiss physics keeps building the instruments others need
 
-Metrology is where fundamental physics quietly becomes engineering, and Switzerland has always been strong there.
+Measurement capability usually arrives before the technology it eventually enables.
+
 https://actu.epfl.ch/news/how-do-you-measure-one-third-of-an-electron
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 11. General — published 14 August
+## 13. Research — published 14 August
 
 ```
 🇨🇭 Swiss supercomputer gains trapped-ion quantum access
 
-@EPFL has integrated Quantinuum trapped-ion cloud access into its SCITAS high-performance computing platform, according to Quantum Computing Report. Researchers can now run quantum workloads alongside classical HPC jobs from the same environment, rather than treating the two as separate worlds.
+@EPFL has integrated Quantinuum trapped-ion cloud access into its SCITAS high-performance computing platform, giving researchers a direct path from classical HPC jobs to quantum hardware. Trapped ions remain among the highest-fidelity qubit technologies available today.
 
 Why it matters:
-🔗 Hybrid quantum-classical workflows are how real applications will run
-🧪 Campus-wide access widens the pool of quantum users
-🇨🇭 Swiss universities building quantum infrastructure ahead of demand
+🔗 Hybrid HPC and quantum workflows are the practical near term
+🧪 Researchers gain hardware access without building a lab
+🇨🇭 Swiss institutions are wiring quantum into everyday computing
 
-Access, not hardware ownership, is what will decide where quantum talent concentrates.
-https://quantumcomputingreport.com/epfl-integrates-quantinuum-trapped-ion-cloud-access-into-scitas-hpc-platform/
-```
-🖼️ **Article image:** none found, grab one from the article page.
+Access, not ownership, is how quantum expertise spreads through a research base.
 
-## 12. Research — published 14 August
-
-```
-🇨🇭 Swiss tiny drones fly on sound waves
-
-@EPFL engineers have designed acoustic cavities that turn sound waves into thrust, propelling small robots and ultralight aerial vehicles with no on-board actuators or electronics. The principle is Helmholtz resonance, the same effect as blowing across a bottle neck, applied to propulsion.
-
-Why it matters:
-🔊 Removing on-board electronics slashes weight and failure points
-🐝 Enables robots at scales where motors simply do not fit
-🇨🇭 Swiss microrobotics keeps finding physics others overlooked
-
-The most interesting robotics advances lately come from deleting components rather than adding them.
-https://actu.epfl.ch/news/these-tiny-drones-are-powered-by-sound-2
-```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 13. Partnership — published 14 August
-
-```
-🇨🇭 Swiss campus links quantum hardware to HPC
-
-@EPFL is integrating trapped-ion QPU access from Quantinuum into its SCITAS high-performance computing environment, giving researchers a single route to both classical and quantum resources. It is infrastructure work rather than a breakthrough, and it is what turns quantum from demonstration into daily tooling.
-
-Why it matters:
-🖥️ Shared infrastructure lowers the entry cost for every research group
-⚛️ Trapped ions offer high fidelity for algorithm work
-🇨🇭 Swiss quantum ecosystem building the plumbing early
-
-Ecosystems are built by the unglamorous integration work long before the applications arrive.
 https://www.epfl.ch/research/domains/quantum-center/
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 🔗 **Links to the original source.**
 
-## 14. General — published 14 August
+## 14. Research — published 14 August
 
 ```
-🇨🇭 Swiss self-driving lab platform gains Bruker backing
+🇨🇭 Swiss drones fly powered by sound
 
-@Atinary Technologies has announced a strategic collaboration with Bruker, which is taking a minority stake. Atinary's agentic AI platform, SDLabs, optimises R&D experiments and drives self-driving laboratories, closing the loop between instrument data and the next experiment to run.
+Engineers at @EPFL have designed acoustic cavities that convert sound waves into thrust, propelling small robots and ultralight aerial vehicles with no on-board actuators or electronics. The principle is Helmholtz resonance, the same effect as blowing across a bottle neck.
 
 Why it matters:
-🧪 Instrument makers need software to sell autonomous labs
-🤖 Agentic AI cuts experimental cycles from months to days
-🇨🇭 Swiss AI meeting a global scientific instruments leader
+🔊 Removing actuators removes the main weight and failure point
+🐝 Opens a path to robots at insect scale
+🇨🇭 Swiss robotics keeps finding propulsion where others see noise
 
-Strategic investors buying into Swiss software usually means the technology already survived their own labs.
-https://atinary.com/news/bruker-announces-strategic-collaboration-with-atinary-technologies-to-advance-self-driving-laboratories/
+Stripping electronics out of a robot is a harder engineering feat than adding them.
+
+https://actu.epfl.ch/news/these-tiny-drones-are-powered-by-sound-2
 ```
-🖼️ **Article image:** https://atinary.com/wp-content/uploads/2026/08/Atinary-Bruker-Strategic-Collaboration.webp
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 15. Partnership — published 14 August
+
+```
+🇨🇭 Swiss researchers get quantum on demand
+
+@EPFL has connected Quantinuum's trapped-ion quantum computers to its SCITAS computing platform, letting research groups submit quantum workloads alongside their classical jobs. The move lowers the barrier for teams testing algorithms on real hardware rather than simulators.
+
+Why it matters:
+🖥️ Simulators stop being enough beyond a few dozen qubits
+📚 Broad access accelerates the training of quantum talent
+🇨🇭 Switzerland is positioning as a quantum user, not just a builder
+
+The countries that train quantum users first will host the companies that follow.
+
+https://www.epfl.ch/research/domains/quantum-center/
+```
+🖼️ **Article image:** none found, grab one from the article page.
 🔗 **Links to the original source.**
-
-## 15. Round — published 12 August
-
-```
-🇨🇭 Swiss startup predicts flight prices with machine learning
-
-@Zerolook has closed a pre-seed round, Startupticker reports. The company sells a B2B flight pricing API that uses machine learning to forecast how itinerary prices will move, aimed at travel platforms and corporate buyers who currently plan around volatile fares.
-
-Why it matters:
-✈️ Airfare pricing is a forecasting problem with clear economic value
-🔌 API distribution scales faster than a consumer travel brand
-🇨🇭 Swiss applied ML finding revenue in unglamorous industries
-
-Not every deeptech story is a lab: applied machine learning on messy commercial data still counts.
-https://www.startupticker.ch/en/news/travel-tech-start-up-zerolook-closes-usd-1-9-million-pre-seed-financing-round
-```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/symbolbilder/Flughafenreisen.jpg
 
