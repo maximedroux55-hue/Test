@@ -385,19 +385,62 @@ def _source_rank(story: dict) -> int:
     return len(_PREFERRED_SOURCES)
 
 
-def _same_size(a: float, b: float, tolerance: float = 0.05) -> bool:
+def _same_size(a: float, b: float, tolerance: float = 0.08) -> bool:
     """Two figures close enough to be the same round.
 
     Not equality, because the francs come from fixed indicative rates and the
     outlets converted at their own: USD 4.95M and EUR 4.29M are the same money
-    quoted twice, 0.7 per cent apart once converted. Kept tight, because a seed
-    and the Series A after it are multiples apart, never five per cent.
+    quoted twice, 0.7 per cent apart once converted.
+
+    Five per cent was too tight for rounding rather than conversion. Immitra
+    Bio's pre-seed is CHF 2.25M in the Crunchbase export and CHF 2.4M in both
+    write-ups, one figure exact and one rounded, 6.7 per cent apart, and the
+    company sat on the page twice. Eight is still nowhere near a real second
+    round: a seed and the Series A after it are multiples apart. Raising it
+    further changes nothing on the record, so eight is where it stops.
     """
     if a == b:
         return True
     if not a or not b:
         return False
     return abs(a - b) <= tolerance * max(a, b)
+
+
+# How far apart two write-ups of one round can be dated. Outlets pick a story
+# up over several days, and a Crunchbase export dates it on the announcement
+# while a paper dates it on publication. Two genuine rounds for one company are
+# months apart, so a fortnight is wide enough to catch the coverage and far too
+# narrow to swallow the next round.
+SAME_ROUND_DAYS = 14
+
+
+def _story_day(story: dict):
+    """The day a story belongs to, from whichever date it carries."""
+    when = story.get("date")
+    if isinstance(when, dt.datetime):
+        return when.date()
+    if isinstance(when, dt.date):
+        return when
+    for field in ("published", "date"):
+        text = story.get(field)
+        if isinstance(text, str) and text[:10]:
+            try:
+                return dt.date.fromisoformat(text[:10])
+            except ValueError:
+                pass
+    return None
+
+
+def _near_in_time(when, known_day) -> bool:
+    """Close enough in time to be coverage of one event.
+
+    Used only for a story that states no figure, where the date is all there is
+    to go on. An undated story matches nothing: guessing from the company name
+    alone is how two separate EPFL research items would become one row.
+    """
+    if when is None or known_day is None:
+        return False
+    return abs((when - known_day).days) <= SAME_ROUND_DAYS
 
 
 def merge_deals(stories: list) -> list:
@@ -413,11 +456,17 @@ def merge_deals(stories: list) -> list:
     lists of investors and founders, where the longer answer is the fuller one
     whoever wrote it.
     """
-    groups, order, sizes = {}, [], {}
+    groups, order, sizes, days = {}, [], {}, {}
     # Group first, then merge each round's write-ups in order of preference, so
     # the outlet trusted most is the one that sets the values and the link.
     by_key = {}
-    for story in stories:
+    # Stories that state a figure are grouped first, and the ones that do not
+    # are attached afterwards. Otherwise the result depends on reading order:
+    # Alternatives Watch wrote up Vaderis without the figure and happened to be
+    # read first, so it opened a group of its own that the three write-ups
+    # carrying USD 152M could never join, and the company sat on the page twice.
+    for story in sorted(stories,
+                        key=lambda s: not (money.in_chf(s.get("amount", "")) or 0)):
         stem = _company_stem(story.get("company", ""))
         if not stem:
             continue
@@ -434,15 +483,34 @@ def merge_deals(stories: list) -> list:
         # figure under two currency labels is one round and a disagreement
         # about the label, so the bare magnitude counts as a match too.
         _, size = money.parse(story.get("amount", ""))
-        key = next((k for k in order
-                    if k[0] == stem
-                    and (_same_size(sizes[k][0], chf)
-                         or (size and sizes[k][1] == size))), None)
+        when = _story_day(story)
+        # A story that states a figure is matched on the figure. One that does
+        # not is matched on the date, because there is nothing else to go on.
+        #
+        # Amount pins a round, so a write-up with no amount had nothing to pin
+        # to and became a row of its own: Tech.eu on Gravis Robotics, L'Usine
+        # Digitale on Exclaim, Alternatives Watch on Vaderis, each sitting on
+        # the page beside the round it was describing. Two rounds for one
+        # company are months apart, never inside a fortnight, so the date is a
+        # safe substitute. It also keeps SoftBank eyeing Gravis in July apart
+        # from the round three weeks later, which sharing a company name and no
+        # figure would otherwise have folded together.
+        def joins(k):
+            if k[0] != stem:
+                return False
+            if chf or size:
+                return _same_size(sizes[k][0], chf) or (size and sizes[k][1] == size)
+            return _near_in_time(when, days[k])
+
+        key = next((k for k in order if joins(k)), None)
         if key is None:
             key = (stem, chf)
             by_key[key] = []
             sizes[key] = (chf, size)
+            days[key] = when
             order.append(key)
+        elif days.get(key) is None and when is not None:
+            days[key] = when
         by_key[key].append(story)
 
     for key in order:

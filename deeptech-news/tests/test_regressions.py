@@ -1924,9 +1924,86 @@ def test_drafting_a_story_does_not_spend_it():
     assert cron.split()[2] == "*", f"the shortlist does not run every day: {cron}"
 
 
+def test_a_write_up_without_a_figure_is_not_a_second_round():
+    """One round, however many outlets covered it and whatever each left out.
+
+    The amount pins a round, so a write-up that never states the figure had
+    nothing to pin to and became a row of its own. Tech.eu on Gravis Robotics,
+    L'Usine Digitale on Exclaim, Alternatives Watch on Vaderis: each sat on the
+    page beside the round it was describing.
+    """
+    import datetime as dt
+
+    def piece(company, amount, day, publisher):
+        return {"company": company, "amount": amount, "publisher": publisher,
+                "link": f"https://{publisher}.example/{company}-{day}".lower(),
+                "stage": "Series A", "date": dt.date(2026, 8, day)}
+
+    rows = merge = scraper.merge_deals([
+        piece("Gravis Robotics", "USD 200M", 17, "Startupticker"),
+        piece("Gravis Robotics", "EUR 172M", 17, "EU-Startups"),
+        piece("Gravis Robotics", "", 17, "Tech-eu"),
+    ])
+    assert len(rows) == 1, [r.get("amount") for r in rows]
+
+    # Order must not decide the answer. The silent write-up read first used to
+    # open a group the figures could never join.
+    rows = scraper.merge_deals([
+        piece("Vaderis Therapeutics", "", 13, "AlternativesWatch"),
+        piece("Vaderis Therapeutics", "USD 152M", 11, "Startupticker"),
+        piece("Vaderis Therapeutics", "USD 152M", 12, "EuropeanBiotech"),
+    ])
+    assert len(rows) == 1, [r.get("publisher") for r in rows]
+
+    # A genuinely different figure stays a different round.
+    rows = scraper.merge_deals([
+        piece("Vaderis Therapeutics", "USD 152M", 11, "Startupticker"),
+        piece("Vaderis Therapeutics", "USD 17.5M", 13, "medwatch"),
+    ])
+    assert len(rows) == 2, [r.get("amount") for r in rows]
+
+    # Rounding, not conversion: the same round exact in one source and rounded
+    # in another. CHF 2.25M against CHF 2.4M is 6.7 per cent apart and used to
+    # put Immitra Bio on the page twice.
+    rows = scraper.merge_deals([
+        piece("Immitra Bio", "CHF 2.25M", 21, "Crunchbase"),
+        piece("Immitra Bio", "CHF 2.4M", 21, "Startupticker"),
+    ])
+    assert len(rows) == 1, [r.get("amount") for r in rows]
+
+    # Two silent stories a fortnight apart are two events, not one. The real
+    # case is EPFL, which publishes research all summer under one name: those
+    # items are weeks apart and must stay apart. Two silent stories on
+    # consecutive days are the same event covered twice, and do merge.
+    def quiet(day):
+        return {"company": "EPFL", "amount": "", "link": f"https://e.ch/{day}",
+                "date": dt.date(2026, 8, day)}
+
+    assert len(scraper.merge_deals([quiet(1), quiet(2)])) == 1
+    assert len(scraper.merge_deals([quiet(1), quiet(28)])) == 2, \
+        "research items a month apart were folded into one row"
+
+    # And a story with no date at all matches nothing: the company name on its
+    # own is not evidence.
+    rows = scraper.merge_deals([
+        {"company": "EPFL", "amount": "", "link": "https://e.ch/x"},
+        {"company": "EPFL", "amount": "", "link": "https://e.ch/y"},
+    ])
+    assert len(rows) == 2, "two undated stories merged on the company name alone"
+
+    # And a silent piece months from the round is a different event: SoftBank
+    # was reported eyeing Gravis on 27 July, three weeks before the round.
+    rows = scraper.merge_deals([
+        piece("Gravis Robotics", "USD 200M", 17, "Startupticker"),
+        {"company": "Gravis Robotics", "amount": "", "link": "https://b.de/x",
+         "stage": "Acquisition", "date": dt.date(2026, 7, 6)},
+    ])
+    assert len(rows) == 2, "a story five weeks away was folded into the round"
+
+
 # Locking the count means a test appended below the runner, where it would
 # never execute, shows up as a failure rather than as silence. That happened.
-EXPECTED = 72
+EXPECTED = 73
 
 
 if __name__ == "__main__":
