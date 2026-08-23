@@ -1,5 +1,5 @@
 # Swiss DeepTech news digest
-_Generated 22 August 2026, covering the last 14 days. 31 stories._
+_Generated 23 August 2026, covering the last 14 days. 31 stories._
 
 1. **[GR3N closes a €15.5M Series B round](https://www.startupticker.ch/en/news/gr3n-closes-a-15-5m-series-b-round)**  
    startupticker.ch · sent in
