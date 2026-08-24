@@ -1,5 +1,5 @@
 # Swiss DeepTech news digest
-_Generated 23 August 2026, covering the last 14 days. 31 stories._
+_Generated 24 August 2026, covering the last 14 days. 30 stories._
 
 1. **[GR3N closes a €15.5M Series B round](https://www.startupticker.ch/en/news/gr3n-closes-a-15-5m-series-b-round)**  
    startupticker.ch · sent in
@@ -53,13 +53,11 @@ _Generated 23 August 2026, covering the last 14 days. 31 stories._
    Fintechnews Switzerland · 13 Aug 2026 · relevance 7
 26. **[Cy Biopharma merges with Ensysce Biosciences](https://www.startupticker.ch/en/news/cy-biopharma-merges-with-ensysce-biosciences)**  
    Startupticker · 11 Aug 2026 · relevance 7
-27. **[AI model maps tumor tissue to improve cancer care](https://actu.epfl.ch/news/ai-model-maps-tumor-tissue-to-improve-cancer-care)**  
-   EPFL News · 10 Aug 2026 · relevance 7
-28. **[Two medtechs advance with regulatory approvals - Startupticker.ch](https://news.google.com/rss/articles/CBMiiwFBVV95cUxPcGJoS3dzWTFxejRCOGJtdGlFZHctNERKLUVvYzE0d0lSMnNOR3JKYXpoSVpDWUJjYnBnSnlxZGJPVFJqOGplVGtvOUF5M2paMkxLcU9hM29qMDlxd3BYdlA2dFpObGtfVEFKc2pNNFdGaGExTXU3SUhvS1dtNDI1YkZEZXlPUjlicDg0?oc=5)**  
+27. **[Two medtechs advance with regulatory approvals - Startupticker.ch](https://news.google.com/rss/articles/CBMiiwFBVV95cUxPcGJoS3dzWTFxejRCOGJtdGlFZHctNERKLUVvYzE0d0lSMnNOR3JKYXpoSVpDWUJjYnBnSnlxZGJPVFJqOGplVGtvOUF5M2paMkxLcU9hM29qMDlxd3BYdlA2dFpObGtfVEFKc2pNNFdGaGExTXU3SUhvS1dtNDI1YkZEZXlPUjlicDg0?oc=5)**  
    Startupticker.ch · 17 Aug 2026 · relevance 6
-29. **[Three Swiss startups join DayOne's 2026 accelerator cohort](https://www.startupticker.ch/en/news/three-swiss-startups-join-dayone-s-2026-accelerator-cohort)**  
+28. **[Three Swiss startups join DayOne's 2026 accelerator cohort](https://www.startupticker.ch/en/news/three-swiss-startups-join-dayone-s-2026-accelerator-cohort)**  
    Startupticker · 20 Aug 2026 · relevance 5
-30. **[Infomaniak announces its plan to go public](https://www.startupticker.ch/en/news/infomaniak-announces-its-plan-to-go-public)**  
+29. **[Infomaniak announces its plan to go public](https://www.startupticker.ch/en/news/infomaniak-announces-its-plan-to-go-public)**  
    Startupticker · 12 Aug 2026 · relevance 5
-31. **[Olympic Champion Iouri Podladtchikov joins AVEA](https://www.startupticker.ch/en/news/olympic-champion-iouri-podladtchikov-joins-avea)**  
+30. **[Olympic Champion Iouri Podladtchikov joins AVEA](https://www.startupticker.ch/en/news/olympic-champion-iouri-podladtchikov-joins-avea)**  
    Startupticker · 10 Aug 2026 · relevance 5
