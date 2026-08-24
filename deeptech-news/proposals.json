@@ -14,10 +14,10 @@
   },
   "proposals": {
     "Prem": {
-      "verified": "2026-08-17",
-      "verified_source": "app.dealroom.co",
-      "verified_quote": "is raising $100 million in a Series A round, Bloomberg reported on June 18, 2026. The company is targeting a valuation of at least $500 million and expects to close the round in Q3 2026",
-      "source_url": "https://app.dealroom.co/news/note/swiss-ai-startup-prem-raises-100m-series-a-amid-sovereign-ai-boom",
+      "verified": "2026-08-24",
+      "verified_source": "siliconangle.com",
+      "verified_quote": "Prem SA is raising $100 million in Series A funding at a valuation of at least $500 million, Bloomberg reported today . The round is expected to close in the third quarter.",
+      "source_url": "https://siliconangle.com/2026/06/18/prem-seeks-100m-series-export-bans-boost-sovereign-ai-demand/",
       "verified_by": "automated weekly check"
     },
     "Ahead Health": {
@@ -48,47 +48,52 @@
       "verified_by": "automated weekly check"
     },
     "Terra Quantum": {
-      "verified": "2026-08-17",
-      "verified_source": "hpcwire.com",
-      "verified_quote": "The transaction is targeted to close in the second half of 2026, subject to, among other things: (i) approval by Axiom's stockholders",
-      "source_url": "https://www.hpcwire.com/off-the-wire/terra-quantum-to-go-public-through-3-5b-spac-deal-with-axiom/",
-      "verified_by": "automated weekly check"
+      "verified": "2026-08-24",
+      "verified_source": "prnewswire.com",
+      "verified_quote": "Terra Quantum AG (\"Terra Quantum\"), a leading quantum technology company, and Mountain Lake Acquisition Corp. II (\"MLAC II\") (Nasdaq: MLAA ), a special purpose acquisition company, today announced that they have signed a non-binding letter of intent (\"LOI\") to enter into a business combination that values Terra Quantum at $3.25 billion.",
+      "source_url": "https://www.prnewswire.com/news-releases/terra-quantum-ag-to-go-public-in-3-25-billion-spac-deal-302738169.html",
+      "verified_by": "automated weekly check",
+      "amount_note": "no proceeds amount stated in source; transaction values Terra Quantum at USD 3.25B",
+      "investors": "Mountain Lake Acquisition Corp. II",
+      "lead_investor": "Mountain Lake Acquisition Corp. II",
+      "location": "St. Gallen"
     },
     "Vaderis Therapeutics": {
-      "verified": "2026-08-17",
+      "verified": "2026-08-24",
       "verified_source": "prnewswire.com",
-      "verified_quote": "$152 million Series B financing by private placement to select investors, co-led by Life Sciences at Goldman Sachs Alternatives and TCGX, with participation from Omega Funds, EQT Life Sciences, Perceptive Advisors, Kalehua Capital, and existing investors Medicxi and Droia",
+      "verified_quote": "BASEL, Switzerland and LINCOLNSHIRE, Ill. , Aug. 11, 2026 /PRNewswire/ -- Vaderis Therapeutics, a clinical-stage biopharmaceutical company focused on developing targeted therapies for rare vascular diseases, today announced the closing of a private $152 million Series B financing",
       "source_url": "https://www.prnewswire.com/news-releases/vaderis-therapeutics-announces-oversubscribed-152-million-series-b-financing-and-initiation-of-the-global-phase-3-heroic-study-of-engasertib-for-hereditary-hemorrhagic-telangiectasia-302845188.html",
       "verified_by": "automated weekly check",
       "stage": "Series B",
       "amount": "USD 152M",
-      "amount_note": "total Series B private placement proceeds; no per-investor breakdown disclosed in source",
-      "investors": "Goldman Sachs Alternatives (Life Sciences), TCGX, Omega Funds, EQT Life Sciences, Perceptive Advisors, Kalehua Capital, Medicxi, Droia",
+      "amount_note": "private placement Series B, closing announced",
+      "investors": "Life Sciences at Goldman Sachs Alternatives, TCGX, Omega Funds, EQT Life Sciences, Perceptive Advisors, Kalehua Capital, Medicxi, Droia",
       "lead_investor": "Life Sciences at Goldman Sachs Alternatives; TCGX (co-leads)",
-      "location": "Basel, Switzerland"
-    },
-    "Basilea Pharmaceutica": {
-      "verified": "2026-08-17",
-      "verified_source": "fiercebiotech.com",
-      "verified_quote": "Basilea already secured $29 million to develop its antifungals fosmanogepix and BAL2062, and the Swiss company announced this morning that it has confirmed it will also receive its next tranche of $39 million after hitting one of those undisclosed milestones.",
-      "source_url": "https://www.fiercebiotech.com/biotech/basilea-secures-39m-barda-part-long-term-antifungal-funding-plan",
-      "verified_by": "automated weekly check",
-      "amount": "USD 39M",
-      "amount_note": "Tranche of a BARDA agreement worth up to $268M over 12 years; $29M previously received",
-      "lead_investor": "Biomedical Advanced Research and Development Authority (BARDA)",
       "location": "Basel"
     },
+    "Basilea Pharmaceutica": {
+      "verified": "2026-08-24",
+      "verified_source": "manilatimes.net",
+      "verified_quote": "awarded USD 30 million in additional funding to Basilea after meeting its prespecified enrollment milestone",
+      "source_url": "https://www.manilatimes.net/2026/07/29/tmt-newswire/globenewswire/basilea-receives-usd-30-million-funding-under-existing-barda-agreement-for-advancing-phase-3-development-of-novel-antifungal-fosmanogepix/2393721",
+      "verified_by": "automated weekly check"
+    },
     "Cy Biopharma": {
-      "verified": "2026-08-17",
+      "verified": "2026-08-24",
       "verified_source": "startupticker.ch",
       "verified_quote": "Ensysce entered into a definitive agreement for a private placement financing, which is expected to result in gross proceeds to the Company of approximately $21.5 million at the initial close before deducting placement agent fees and other offering and transaction expenses",
       "source_url": "https://www.startupticker.ch/en/news/cy-biopharma-merges-with-ensysce-biosciences",
-      "verified_by": "automated weekly check",
-      "amount_note": "approximate gross proceeds expected at initial close, before placement agent fees and expenses; separate up to $38.6M follow-on tranche",
-      "location": "Zug"
+      "verified_by": "automated weekly check"
+    },
+    "Gravis Robotics": {
+      "verified": "2026-08-24",
+      "verified_source": "wsgr.com",
+      "verified_quote": "On August 17, 2026, Gravis Robotics, a company retrofitting construction machines with autonomous technology, announced their Series A financing, with SoftBank investing $200 million in the company.",
+      "source_url": "https://www.wsgr.com/en/insights/firm-advises-gravis-robotics-on-dollar200-million-series-a.html",
+      "verified_by": "automated weekly check"
     }
   },
-  "last_run": "2026-08-17",
+  "last_run": "2026-08-24",
   "could_not_verify": [
     "AI Infrastructure Capital"
   ],
