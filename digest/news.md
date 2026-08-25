@@ -1,5 +1,5 @@
 # Swiss DeepTech news digest
-_Generated 24 August 2026, covering the last 14 days. 30 stories._
+_Generated 25 August 2026, covering the last 14 days. 30 stories._
 
 1. **[GR3N closes a €15.5M Series B round](https://www.startupticker.ch/en/news/gr3n-closes-a-15-5m-series-b-round)**  
    startupticker.ch · sent in
@@ -25,39 +25,39 @@ _Generated 24 August 2026, covering the last 14 days. 30 stories._
    Startupticker · 21 Aug 2026 · relevance 10
 12. **[Swiss National Startup Team 2026: Ten breakthrough cleantech startups selected for Munich investor roadshow - Venturelab Swiss](https://news.google.com/rss/articles/CBMi0AFBVV95cUxORWp4RERZQ1ZJZnZGN01OS2F6c3JqcnltT0l4cVpoNGNJVmc4R0hHZ3pEQ1I5UlpjRWxmMTJZLVJCeWxSaUlqVHFMX0k1Z0JSUzJyYm8tSE82ZXFndTBiWHRDRmJ5QW9ySFdkRC1ySlBFb29MTVdTd3pKdTcxdmk5TnAyVndLcGtwSGJUNFBnUVg5QmhieDJJdnNoVjVvLWhQbHk2OTNsZUlJOGRGNnZla3VHR3g4V1RXcUdJT2dHZnlfdk4zU3RqRmxEa2NqM2pR?oc=5)**  
    Venturelab Swiss · 18 Aug 2026 · relevance 10
-13. **[Retreating glaciers are taking entire worlds with them](https://actu.epfl.ch/news/retreating-glaciers-are-taking-entire-worlds-with)**  
+13. **[Improving laser cutting with acoustics: The self-guiding laser - Swiss government](https://news.google.com/rss/articles/CBMiYkFVX3lxTFBVRWlZVHVLQWNubVYwTEJkMDZjQlF2dE45UmJhQzhHYm1ObTM3MUZQV0tvLXBKRFR2QktQUXl5NUQ3cXFOYUdoOExLUjlIQ3RXT3hTNmZCSUdxUDMwSzFuenR3?oc=5)**  
+   Swiss government · 13 Aug 2026 · relevance 10
+14. **[Retreating glaciers are taking entire worlds with them](https://actu.epfl.ch/news/retreating-glaciers-are-taking-entire-worlds-with)**  
    EPFL News · 21 Aug 2026 · relevance 9
-14. **[Startups boost growth by teaming up with large companies](https://actu.epfl.ch/news/startups-boost-growth-by-teaming-up-with-large-com)**  
+15. **[Startups boost growth by teaming up with large companies](https://actu.epfl.ch/news/startups-boost-growth-by-teaming-up-with-large-com)**  
    EPFL News · 12 Aug 2026 · relevance 9
-15. **[Laboratory of Urban and Environmental Systems - EPFL](https://news.google.com/rss/articles/CBMiRkFVX3lxTE9NOTBNT0R4QjF2Z1diNTAteWpCV0VPZm9jdktjSjR3T3A3NkozNHl4bk1sUkFweGpub2lJNEhYcFFJRW9vd2c?oc=5)**  
+16. **[Laboratory of Urban and Environmental Systems - EPFL](https://news.google.com/rss/articles/CBMiRkFVX3lxTE9NOTBNT0R4QjF2Z1diNTAteWpCV0VPZm9jdktjSjR3T3A3NkozNHl4bk1sUkFweGpub2lJNEhYcFFJRW9vd2c?oc=5)**  
    EPFL · 19 Aug 2026 · relevance 8
-16. **[Cracking the code of gene regulation](https://actu.epfl.ch/news/cracking-the-code-of-gene-regulation)**  
+17. **[Cracking the code of gene regulation](https://actu.epfl.ch/news/cracking-the-code-of-gene-regulation)**  
    EPFL News · 18 Aug 2026 · relevance 8
-17. **[How do you measure one third of an electron?](https://actu.epfl.ch/news/how-do-you-measure-one-third-of-an-electron)**  
+18. **[How do you measure one third of an electron?](https://actu.epfl.ch/news/how-do-you-measure-one-third-of-an-electron)**  
    EPFL News · 17 Aug 2026 · relevance 8
-18. **[Boehringer Ingelheim acquires equine health startup Evax](https://www.startupticker.ch/en/news/boehringer-ingelheim-acquires-equine-health-startup-evax)**  
+19. **[Boehringer Ingelheim acquires equine health startup Evax](https://www.startupticker.ch/en/news/boehringer-ingelheim-acquires-equine-health-startup-evax)**  
    Startupticker · 14 Aug 2026 · relevance 8
-19. **[These tiny drones are powered by sound](https://actu.epfl.ch/news/these-tiny-drones-are-powered-by-sound-2)**  
+20. **[These tiny drones are powered by sound](https://actu.epfl.ch/news/these-tiny-drones-are-powered-by-sound-2)**  
    EPFL News · 14 Aug 2026 · relevance 8
-20. **[Cutempa Medical startet klinische Studie in Deutschland](https://www.startupticker.ch/en/news/cutempa-medical-startet-klinische-studie-in-deutschland)**  
+21. **[Cutempa Medical startet klinische Studie in Deutschland](https://www.startupticker.ch/en/news/cutempa-medical-startet-klinische-studie-in-deutschland)**  
    Startupticker · 11 Aug 2026 · relevance 8
-21. **[Frisches Geld und starkes Wachstum für UpGrid](https://www.startupticker.ch/en/news/frisches-geld-und-starkes-wachstum-fuer-upgrid)**  
+22. **[Frisches Geld und starkes Wachstum für UpGrid](https://www.startupticker.ch/en/news/frisches-geld-und-starkes-wachstum-fuer-upgrid)**  
    Startupticker · 20 Aug 2026 · relevance 7
-22. **[Bewe awarded Biopôle Pre-Clinical Top-Up](https://www.startupticker.ch/en/news/bewe-awarded-biopole-pre-clinical-top-up)**  
+23. **[Bewe awarded Biopôle Pre-Clinical Top-Up](https://www.startupticker.ch/en/news/bewe-awarded-biopole-pre-clinical-top-up)**  
    Startupticker · 19 Aug 2026 · relevance 7
-23. **[How attackers persuade AI agents to break the rules](https://actu.epfl.ch/news/how-attackers-persuade-ai-agents-to-break-the-rule)**  
+24. **[How attackers persuade AI agents to break the rules](https://actu.epfl.ch/news/how-attackers-persuade-ai-agents-to-break-the-rule)**  
    EPFL News · 19 Aug 2026 · relevance 7
-24. **[CO2-Rechner von Zelsius gewinnt an Reichweite](https://www.startupticker.ch/en/news/co2-rechner-von-zelsius-gewinnt-an-reichweite)**  
+25. **[CO2-Rechner von Zelsius gewinnt an Reichweite](https://www.startupticker.ch/en/news/co2-rechner-von-zelsius-gewinnt-an-reichweite)**  
    Startupticker · 18 Aug 2026 · relevance 7
-25. **[Enterprises Move AI Initiatives to Production and Scaling](https://fintechnews.ch/aifintech/enterprises-move-ai-initiatives-to-production-and-scaling/84997/)**  
+26. **[Enterprises Move AI Initiatives to Production and Scaling](https://fintechnews.ch/aifintech/enterprises-move-ai-initiatives-to-production-and-scaling/84997/)**  
    Fintechnews Switzerland · 13 Aug 2026 · relevance 7
-26. **[Cy Biopharma merges with Ensysce Biosciences](https://www.startupticker.ch/en/news/cy-biopharma-merges-with-ensysce-biosciences)**  
+27. **[Cy Biopharma merges with Ensysce Biosciences](https://www.startupticker.ch/en/news/cy-biopharma-merges-with-ensysce-biosciences)**  
    Startupticker · 11 Aug 2026 · relevance 7
-27. **[Two medtechs advance with regulatory approvals - Startupticker.ch](https://news.google.com/rss/articles/CBMiiwFBVV95cUxPcGJoS3dzWTFxejRCOGJtdGlFZHctNERKLUVvYzE0d0lSMnNOR3JKYXpoSVpDWUJjYnBnSnlxZGJPVFJqOGplVGtvOUF5M2paMkxLcU9hM29qMDlxd3BYdlA2dFpObGtfVEFKc2pNNFdGaGExTXU3SUhvS1dtNDI1YkZEZXlPUjlicDg0?oc=5)**  
+28. **[Two medtechs advance with regulatory approvals - Startupticker.ch](https://news.google.com/rss/articles/CBMiiwFBVV95cUxPcGJoS3dzWTFxejRCOGJtdGlFZHctNERKLUVvYzE0d0lSMnNOR3JKYXpoSVpDWUJjYnBnSnlxZGJPVFJqOGplVGtvOUF5M2paMkxLcU9hM29qMDlxd3BYdlA2dFpObGtfVEFKc2pNNFdGaGExTXU3SUhvS1dtNDI1YkZEZXlPUjlicDg0?oc=5)**  
    Startupticker.ch · 17 Aug 2026 · relevance 6
-28. **[Three Swiss startups join DayOne's 2026 accelerator cohort](https://www.startupticker.ch/en/news/three-swiss-startups-join-dayone-s-2026-accelerator-cohort)**  
+29. **[Three Swiss startups join DayOne's 2026 accelerator cohort](https://www.startupticker.ch/en/news/three-swiss-startups-join-dayone-s-2026-accelerator-cohort)**  
    Startupticker · 20 Aug 2026 · relevance 5
-29. **[Infomaniak announces its plan to go public](https://www.startupticker.ch/en/news/infomaniak-announces-its-plan-to-go-public)**  
+30. **[Infomaniak announces its plan to go public](https://www.startupticker.ch/en/news/infomaniak-announces-its-plan-to-go-public)**  
    Startupticker · 12 Aug 2026 · relevance 5
-30. **[Olympic Champion Iouri Podladtchikov joins AVEA](https://www.startupticker.ch/en/news/olympic-champion-iouri-podladtchikov-joins-avea)**  
-   Startupticker · 10 Aug 2026 · relevance 5
