@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>People</title>
+<!-- Private page. It ships on a public site, so it is kept out of search
+     results and, more importantly, it never stores a single contact in the
+     repository: everything lives in this browser's IndexedDB. -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#46b96a">
+<style>
+  :root {
+    --green:#46b96a; --green-dark:#37a85b; --green-soft:rgba(70,185,106,0.12);
+    --ink:#1b2430; --soft:#5b6472; --line:#e6eae8; --bg:#f6f8f7; --card:#fff;
+    --danger:#c0453b;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","Inter",Roboto,Helvetica,Arial,sans-serif;
+  }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:var(--sans); background:var(--bg); color:var(--ink);
+         line-height:1.55; -webkit-font-smoothing:antialiased; }
+  .wrap { max-width:960px; margin:0 auto; padding:0 1rem; }
+  button, input, select, textarea { font-family:inherit; font-size:1rem; color:inherit; }
+
+  /* ---- Top bar ---- */
+  .topbar { background:rgba(246,248,247,0.92); backdrop-filter:saturate(150%) blur(8px);
+            border-bottom:1px solid var(--line); position:sticky; top:0; z-index:20; }
+  .topbar .wrap { display:flex; align-items:center; gap:0.6rem; height:64px; }
+  .wordmark { font-size:1.35rem; font-weight:800; letter-spacing:-0.03em; }
+  .wordmark .dot { color:var(--green); }
+  .count { color:var(--soft); font-size:0.85rem; margin-left:0.1rem; white-space:nowrap; }
+  .spacer { flex:1; }
+  .btn { border:1px solid var(--line); background:var(--card); color:var(--ink);
+         border-radius:10px; padding:0.5rem 0.85rem; font-size:0.88rem; font-weight:700;
+         cursor:pointer; transition:border-color 0.15s ease, color 0.15s ease; }
+  .btn:hover { border-color:var(--green); color:var(--green-dark); }
+  .btn.primary { background:var(--green); border-color:var(--green); color:#fff; }
+  .btn.primary:hover { background:var(--green-dark); border-color:var(--green-dark); color:#fff; }
+  .btn.ghost { border-color:transparent; background:transparent; color:var(--soft); }
+  .btn.danger { border-color:var(--line); color:var(--danger); }
+  .btn.danger:hover { border-color:var(--danger); color:var(--danger); }
+  .btn:disabled { opacity:0.45; cursor:default; }
+
+  /* ---- Menu ---- */
+  .menu-host { position:relative; }
+  .menu { position:absolute; right:0; top:calc(100% + 6px); background:var(--card);
+          border:1px solid var(--line); border-radius:12px; padding:0.35rem;
+          box-shadow:0 12px 30px rgba(27,36,48,0.12); min-width:220px; display:none; z-index:30; }
+  .menu.open { display:block; }
+  .menu button { display:block; width:100%; text-align:left; border:0; background:transparent;
+                 padding:0.55rem 0.65rem; border-radius:8px; font-size:0.88rem;
+                 font-weight:600; cursor:pointer; }
+  .menu button:hover { background:var(--bg); color:var(--green-dark); }
+  .menu .sep { height:1px; background:var(--line); margin:0.35rem 0.2rem; }
+  .menu .hint { padding:0.35rem 0.65rem 0.5rem; font-size:0.74rem; color:var(--soft); line-height:1.4; }
+
+  /* ---- Search and filters ---- */
+  .tools { padding:1.1rem 0 0.4rem; display:flex; gap:0.6rem; flex-wrap:wrap; align-items:center; }
+  .search { flex:1; min-width:200px; position:relative; }
+  .search input { width:100%; border:1px solid var(--line); background:var(--card);
+                  border-radius:12px; padding:0.7rem 2.2rem 0.7rem 0.9rem; font-size:0.95rem; }
+  .search input:focus { outline:none; border-color:var(--green);
+                        box-shadow:0 0 0 3px var(--green-soft); }
+  .search .slash { position:absolute; right:0.6rem; top:50%; transform:translateY(-50%);
+                   color:var(--soft); font-size:0.72rem; border:1px solid var(--line);
+                   border-radius:5px; padding:0 0.3rem; pointer-events:none; }
+  .search input:focus + .slash { display:none; }
+  select.sort { border:1px solid var(--line); background:var(--card); border-radius:12px;
+                padding:0.7rem 0.6rem; font-size:0.88rem; cursor:pointer; }
+  .tagbar { display:flex; gap:0.4rem; flex-wrap:wrap; padding:0.5rem 0 0.2rem; }
+  .chip { border:1px solid var(--line); background:var(--card); color:var(--soft);
+          border-radius:999px; padding:0.22rem 0.7rem; font-size:0.78rem; font-weight:700;
+          cursor:pointer; }
+  .chip:hover { border-color:var(--green); color:var(--green-dark); }
+  .chip.on { background:var(--green); border-color:var(--green); color:#fff; }
+
+  /* ---- Grid ---- */
+  .grid { display:grid; gap:0.7rem; padding:0.9rem 0 3rem;
+          grid-template-columns:repeat(auto-fill, minmax(238px, 1fr)); }
+  .person { background:var(--card); border:1px solid var(--line); border-radius:14px;
+            padding:0.9rem; text-align:left; cursor:pointer; display:flex; gap:0.75rem;
+            align-items:center; transition:border-color 0.15s ease, transform 0.15s ease; }
+  .person:hover { border-color:var(--green); transform:translateY(-1px); }
+  .avatar { width:52px; height:52px; border-radius:12px; flex:none; object-fit:cover;
+            background:var(--bg); display:flex; align-items:center; justify-content:center;
+            font-weight:800; font-size:1rem; color:#fff; letter-spacing:0.01em; }
+  .who { min-width:0; }
+  .nm { font-weight:700; letter-spacing:-0.01em; line-height:1.3;
+        overflow-wrap:anywhere;
+        display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+  .jb { font-size:0.82rem; color:var(--soft); line-height:1.35;
+        display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+  .empty { background:var(--card); border:1px dashed var(--line); border-radius:16px;
+           padding:2.5rem 1.5rem; text-align:center; color:var(--soft); margin:1rem 0 2rem; }
+  .empty h2 { color:var(--ink); font-size:1.1rem; margin-bottom:0.4rem; }
+  .empty p { font-size:0.9rem; max-width:32rem; margin:0 auto 1rem; }
+  .empty .row { display:flex; gap:0.5rem; justify-content:center; flex-wrap:wrap; }
+
+  /* ---- Modal ---- */
+  .veil { position:fixed; inset:0; background:rgba(27,36,48,0.45); z-index:40;
+          display:none; align-items:flex-start; justify-content:center;
+          padding:1.5rem 1rem 3rem; overflow-y:auto; }
+  .veil.open { display:flex; }
+  .sheet { background:var(--card); border-radius:18px; width:100%; max-width:560px;
+           box-shadow:0 24px 60px rgba(27,36,48,0.25); }
+  .sheet header { display:flex; align-items:center; gap:0.6rem; padding:1.1rem 1.2rem 0.6rem; }
+  .sheet header h2 { font-size:1.1rem; letter-spacing:-0.02em; flex:1; }
+  .sheet .body { padding:0.4rem 1.2rem 1.1rem; }
+  .sheet footer { display:flex; gap:0.5rem; align-items:center; padding:0.9rem 1.2rem 1.2rem;
+                  border-top:1px solid var(--line); margin-top:0.4rem; }
+
+  .photorow { display:flex; gap:0.9rem; align-items:center; margin-bottom:1rem; }
+  .photorow .avatar { width:76px; height:76px; border-radius:16px; font-size:1.35rem; }
+  .photorow .acts { display:flex; flex-direction:column; gap:0.35rem; align-items:flex-start; }
+  .photorow .note { font-size:0.75rem; color:var(--soft); }
+
+  .field { margin-bottom:0.75rem; }
+  .field label { display:block; font-size:0.75rem; font-weight:700; color:var(--soft);
+                 text-transform:uppercase; letter-spacing:0.04em; margin-bottom:0.25rem; }
+  .field input, .field textarea {
+    width:100%; border:1px solid var(--line); background:var(--bg); border-radius:10px;
+    padding:0.6rem 0.7rem; font-size:0.95rem; }
+  .field textarea { resize:vertical; min-height:72px; line-height:1.5; }
+  .field input:focus, .field textarea:focus {
+    outline:none; border-color:var(--green); background:var(--card);
+    box-shadow:0 0 0 3px var(--green-soft); }
+  .two { display:grid; gap:0.75rem; grid-template-columns:1fr 1fr; }
+  @media (max-width:520px) { .two { grid-template-columns:1fr; } }
+
+  /* ---- Toast ---- */
+  .toast { position:fixed; left:50%; bottom:1.2rem; transform:translateX(-50%);
+           background:var(--ink); color:#fff; border-radius:10px; padding:0.6rem 0.95rem;
+           font-size:0.85rem; font-weight:600; z-index:60; opacity:0;
+           transition:opacity 0.2s ease; pointer-events:none; max-width:90vw; }
+  .toast.show { opacity:1; }
+
+  .foot { color:var(--soft); font-size:0.78rem; line-height:1.5; padding:0 0 2.5rem;
+          border-top:1px solid var(--line); margin-top:0.5rem; padding-top:1rem; }
+  .foot b { color:var(--ink); }
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+  <span class="wordmark">People<span class="dot">.</span></span>
+  <span class="count" id="count"></span>
+  <span class="spacer"></span>
+  <button class="btn primary" id="add">Add</button>
+  <span class="menu-host">
+    <button class="btn" id="menuBtn" aria-label="More">•••</button>
+    <div class="menu" id="menu">
+      <button data-do="csv">Import CSV</button>
+      <button data-do="vcf">Import vCard (.vcf)</button>
+      <div class="sep"></div>
+      <button data-do="expJson">Export backup (JSON)</button>
+      <button data-do="expCsv">Export list (CSV)</button>
+      <button data-do="restore">Restore from backup</button>
+      <div class="sep"></div>
+      <button data-do="wipe" style="color:#c0453b">Erase everything</button>
+      <div class="hint" id="lastExport"></div>
+    </div>
+  </span>
+</div></div>
+
+<div class="wrap">
+  <div class="tools">
+    <span class="search">
+      <input id="q" type="search" placeholder="Search name, job, company, tag, note" autocomplete="off">
+      <span class="slash">/</span>
+    </span>
+    <select class="sort" id="sort">
+      <option value="first">Sort: first name</option>
+      <option value="last">Sort: last name</option>
+      <option value="company">Sort: company</option>
+      <option value="added">Sort: recently added</option>
+    </select>
+  </div>
+  <div class="tagbar" id="tagbar"></div>
+  <div class="grid" id="grid"></div>
+  <div class="empty" id="empty" style="display:none"></div>
+  <div class="foot">
+    <b>Everything here stays in this browser.</b> Contacts and photos are saved in this
+    device's local storage, never sent anywhere and never committed to the site.
+    Clearing your browser data for this domain deletes the directory, so export a JSON
+    backup now and then. Open the same backup on another device to carry the list over.
+  </div>
+</div>
+
+<div class="veil" id="veil"><div class="sheet">
+  <header>
+    <h2 id="sheetTitle">Add someone</h2>
+    <button class="btn ghost" id="close">Close</button>
+  </header>
+  <div class="body">
+    <div class="photorow">
+      <div id="pvAvatar" class="avatar"></div>
+      <div class="acts">
+        <button class="btn" id="pickPhoto">Choose photo</button>
+        <button class="btn ghost" id="dropPhoto" style="display:none">Remove photo</button>
+        <span class="note">Cropped square, kept small. JPEG, PNG or WebP.</span>
+      </div>
+    </div>
+    <div class="two">
+      <div class="field"><label for="f_first">First name</label><input id="f_first" autocomplete="off"></div>
+      <div class="field"><label for="f_last">Last name</label><input id="f_last" autocomplete="off"></div>
+    </div>
+    <div class="two">
+      <div class="field"><label for="f_job">Job</label><input id="f_job" autocomplete="off" placeholder="General Partner"></div>
+      <div class="field"><label for="f_company">Company</label><input id="f_company" autocomplete="off" placeholder="Climb Ventures"></div>
+    </div>
+    <div class="two">
+      <div class="field"><label for="f_email">Email</label><input id="f_email" type="email" autocomplete="off"></div>
+      <div class="field"><label for="f_phone">Phone</label><input id="f_phone" autocomplete="off"></div>
+    </div>
+    <div class="two">
+      <div class="field"><label for="f_location">Where</label><input id="f_location" autocomplete="off" placeholder="Geneva"></div>
+      <div class="field"><label for="f_linkedin">LinkedIn</label><input id="f_linkedin" autocomplete="off" placeholder="linkedin.com/in/..."></div>
+    </div>
+    <div class="field"><label for="f_tags">Tags</label>
+      <input id="f_tags" autocomplete="off" placeholder="talent.com, gotteron, lp, family">
+    </div>
+    <div class="field"><label for="f_notes">Notes</label>
+      <textarea id="f_notes" placeholder="How you know each other, last conversation, anything worth remembering."></textarea>
+    </div>
+  </div>
+  <footer>
+    <button class="btn danger" id="del" style="display:none">Delete</button>
+    <span class="spacer"></span>
+    <button class="btn" id="cancel">Cancel</button>
+    <button class="btn primary" id="save">Save</button>
+  </footer>
+</div></div>
+
+<input type="file" id="filePhoto" accept="image/*" style="display:none">
+<input type="file" id="fileCsv" accept=".csv,text/csv" style="display:none">
+<input type="file" id="fileVcf" accept=".vcf,text/vcard,text/directory" style="display:none">
+<input type="file" id="fileJson" accept=".json,application/json" style="display:none">
+<div class="toast" id="toast"></div>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ------------------------------------------------------------------ *
+   * Storage. IndexedDB rather than localStorage: photos are data URLs of
+   * a few tens of kB each, and a few hundred of them blow past the 5 MB
+   * localStorage ceiling long before the directory feels full.
+   * ------------------------------------------------------------------ */
+  var DB = "md-people", STORE = "people", VERSION = 1;
+  var dbp = null;
+
+  function db() {
+    if (dbp) return dbp;
+    dbp = new Promise(function (res, rej) {
+      var r = indexedDB.open(DB, VERSION);
+      r.onupgradeneeded = function () {
+        var d = r.result;
+        if (!d.objectStoreNames.contains(STORE)) d.createObjectStore(STORE, { keyPath: "id" });
+      };
+      r.onsuccess = function () { res(r.result); };
+      r.onerror = function () { rej(r.error); };
+    });
+    return dbp;
+  }
+
+  function run(mode, fn) {
+    return db().then(function (d) {
+      return new Promise(function (res, rej) {
+        var t = d.transaction(STORE, mode), out;
+        out = fn(t.objectStore(STORE));
+        t.oncomplete = function () { res(out && out.result !== undefined ? out.result : out); };
+        t.onerror = function () { rej(t.error); };
+        t.onabort = function () { rej(t.error); };
+      });
+    });
+  }
+
+  var loadAll = function () { return run("readonly", function (s) { return s.getAll(); }); };
+  var putOne  = function (p) { return run("readwrite", function (s) { s.put(p); }); };
+  var putMany = function (list) { return run("readwrite", function (s) { list.forEach(function (p) { s.put(p); }); }); };
+  var delOne  = function (id) { return run("readwrite", function (s) { s.delete(id); }); };
+  var clearAll = function () { return run("readwrite", function (s) { s.clear(); }); };
+
+  /* ------------------------------------------------------------------ *
+   * Small helpers
+   * ------------------------------------------------------------------ */
+  var $ = function (id) { return document.getElementById(id); };
+
+  function uid() {
+    return "p" + Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+  }
+
+  // Accent-insensitive: searching "Herve" has to find "Hervé", and half of
+  // this address book is French-speaking.
+  function fold(s) {
+    return (s || "").toString().normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+  }
+
+  function esc(s) {
+    return (s || "").replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
+  function toast(msg) {
+    var t = $("toast");
+    t.textContent = msg;
+    t.classList.add("show");
+    clearTimeout(toast._t);
+    toast._t = setTimeout(function () { t.classList.remove("show"); }, 2600);
+  }
+
+  function fullName(p) {
+    return [p.first, p.last].filter(Boolean).join(" ").trim() || p.company || "No name";
+  }
+
+  function initials(p) {
+    var a = (p.first || "").trim().charAt(0), b = (p.last || "").trim().charAt(0);
+    var s = (a + b).toUpperCase();
+    if (s) return s;
+    return (p.company || "?").trim().charAt(0).toUpperCase();
+  }
+
+  // Stable colour per person so a face-less card still reads as that person.
+  function hue(p) {
+    var s = fold(fullName(p)), h = 0, i;
+    for (i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) % 360;
+    return h;
+  }
+
+  function avatarHtml(p, cls) {
+    if (p.photo) {
+      return '<img class="avatar ' + (cls || "") + '" alt="" src="' + esc(p.photo) + '">';
+    }
+    return '<div class="avatar ' + (cls || "") + '" style="background:hsl(' + hue(p) +
+           ',42%,52%)">' + esc(initials(p)) + "</div>";
+  }
+
+  function subtitle(p) {
+    if (p.job && p.company) return p.job + " at " + p.company;
+    return p.job || p.company || "";
+  }
+
+  function tagList(v) {
+    if (Array.isArray(v)) v = v.join(",");
+    return (v || "").split(/[,;]/).map(function (t) { return t.trim(); })
+                    .filter(Boolean)
+                    .filter(function (t, i, a) { return a.indexOf(t) === i; });
+  }
+
+  /* ------------------------------------------------------------------ *
+   * Photos: centre-cropped square, downscaled, stored as a JPEG data URL.
+   * ------------------------------------------------------------------ */
+  function shrink(file, size) {
+    size = size || 480;
+    return new Promise(function (res, rej) {
+      var url = URL.createObjectURL(file);
+      var img = new Image();
+      img.onload = function () {
+        try {
+          var side = Math.min(img.naturalWidth, img.naturalHeight);
+          var c = document.createElement("canvas");
+          c.width = c.height = Math.min(size, side);
+          var g = c.getContext("2d");
+          g.drawImage(img, (img.naturalWidth - side) / 2, (img.naturalHeight - side) / 2,
+                      side, side, 0, 0, c.width, c.height);
+          res(c.toDataURL("image/jpeg", 0.85));
+        } catch (e) { rej(e); }
+        finally { URL.revokeObjectURL(url); }
+      };
+      img.onerror = function () { URL.revokeObjectURL(url); rej(new Error("unreadable")); };
+      img.src = url;
+    });
+  }
+
+  /* ------------------------------------------------------------------ *
+   * State and rendering
+   * ------------------------------------------------------------------ */
+  var people = [], query = "", activeTag = "", sortBy = "first", editing = null, draftPhoto = null;
+
+  function haystack(p) {
+    return fold([p.first, p.last, p.job, p.company, p.email, p.phone, p.location,
+                 p.linkedin, p.notes, (p.tags || []).join(" ")].join(" "));
+  }
+
+  function visible() {
+    var q = fold(query).trim();
+    var terms = q ? q.split(/\s+/) : [];
+    return people.filter(function (p) {
+      if (activeTag && (p.tags || []).indexOf(activeTag) === -1) return false;
+      if (!terms.length) return true;
+      var h = haystack(p);
+      return terms.every(function (t) { return h.indexOf(t) !== -1; });
+    }).sort(function (a, b) {
+      if (sortBy === "added") return (b.created || 0) - (a.created || 0);
+      var ka, kb;
+      if (sortBy === "last") { ka = fold(a.last || a.first); kb = fold(b.last || b.first); }
+      else if (sortBy === "company") { ka = fold(a.company); kb = fold(b.company); }
+      else { ka = fold(a.first || a.last); kb = fold(b.first || b.last); }
+      // Blank sort keys go last instead of forming a silent block at the top.
+      if (!ka && kb) return 1;
+      if (ka && !kb) return -1;
+      if (ka !== kb) return ka < kb ? -1 : 1;
+      return fold(fullName(a)) < fold(fullName(b)) ? -1 : 1;
+    });
+  }
+
+  function renderTags() {
+    var counts = {};
+    people.forEach(function (p) {
+      (p.tags || []).forEach(function (t) { counts[t] = (counts[t] || 0) + 1; });
+    });
+    var names = Object.keys(counts).sort(function (a, b) {
+      return counts[b] - counts[a] || (fold(a) < fold(b) ? -1 : 1);
+    });
+    $("tagbar").innerHTML = names.map(function (t) {
+      return '<button class="chip' + (t === activeTag ? " on" : "") + '" data-tag="' +
+             esc(t) + '">' + esc(t) + " " + counts[t] + "</button>";
+    }).join("");
+  }
+
+  function render() {
+    var list = visible();
+    $("count").textContent = people.length
+      ? (list.length === people.length
+           ? people.length + (people.length === 1 ? " person" : " people")
+           : list.length + " of " + people.length)
+      : "";
+    renderTags();
+
+    var grid = $("grid"), empty = $("empty");
+    if (!people.length) {
+      grid.innerHTML = "";
+      empty.style.display = "";
+      empty.innerHTML =
+        "<h2>Nobody here yet</h2>" +
+        "<p>Add people one at a time, or bring in a batch: a vCard export from your " +
+        "phone's contacts, or a CSV with columns like first name, last name, job, company.</p>" +
+        '<div class="row">' +
+        '<button class="btn primary" data-do="add">Add someone</button>' +
+        '<button class="btn" data-do="vcf">Import vCard</button>' +
+        '<button class="btn" data-do="csv">Import CSV</button>' +
+        "</div>";
+      return;
+    }
+    if (!list.length) {
+      grid.innerHTML = "";
+      empty.style.display = "";
+      empty.innerHTML = "<h2>No match</h2><p>Nothing here for that search or tag.</p>" +
+        '<div class="row"><button class="btn" data-do="clearFilters">Clear filters</button></div>';
+      return;
+    }
+    empty.style.display = "none";
+    grid.innerHTML = list.map(function (p) {
+      var sub = subtitle(p);
+      return '<div class="person" data-id="' + esc(p.id) + '" tabindex="0">' +
+             avatarHtml(p) +
+             '<div class="who"><div class="nm">' + esc(fullName(p)) + "</div>" +
+             (sub ? '<div class="jb">' + esc(sub) + "</div>" : "") +
+             "</div></div>";
+    }).join("");
+  }
+
+  /* ------------------------------------------------------------------ *
+   * Editor
+   * ------------------------------------------------------------------ */
+  var FIELDS = ["first", "last", "job", "company", "email", "phone", "location", "linkedin", "notes"];
+
+  function paintPhoto() {
+    var stub = { first: $("f_first").value, last: $("f_last").value,
+                 company: $("f_company").value, photo: draftPhoto };
+    var host = $("pvAvatar");
+    var fresh = document.createElement("div");
+    fresh.innerHTML = avatarHtml(stub);
+    var node = fresh.firstChild;
+    node.id = "pvAvatar";
+    host.parentNode.replaceChild(node, host);
+    $("dropPhoto").style.display = draftPhoto ? "" : "none";
+  }
+
+  function openEditor(p) {
+    editing = p || null;
+    draftPhoto = p ? (p.photo || null) : null;
+    $("sheetTitle").textContent = p ? "Edit person" : "Add someone";
+    FIELDS.forEach(function (f) { $("f_" + f).value = p ? (p[f] || "") : ""; });
+    $("f_tags").value = p ? (p.tags || []).join(", ") : (activeTag || "");
+    $("del").style.display = p ? "" : "none";
+    paintPhoto();
+    $("veil").classList.add("open");
+    setTimeout(function () { $("f_first").focus(); }, 30);
+  }
+
+  function closeEditor() {
+    $("veil").classList.remove("open");
+    editing = null;
+    draftPhoto = null;
+  }
+
+  function saveEditor() {
+    var p = editing || { id: uid(), created: Date.now() };
+    FIELDS.forEach(function (f) { p[f] = $("f_" + f).value.trim(); });
+    p.tags = tagList($("f_tags").value);
+    p.photo = draftPhoto || "";
+    p.updated = Date.now();
+    if (!p.first && !p.last && !p.company) { toast("A name or a company, at least."); return; }
+    putOne(p).then(function () {
+      var i = people.findIndex(function (x) { return x.id === p.id; });
+      if (i === -1) people.push(p); else people[i] = p;
+      closeEditor();
+      render();
+      toast("Saved");
+    }).catch(function (e) { toast("Could not save: " + e.message); });
+  }
+
+  function deleteEditing() {
+    if (!editing) return;
+    if (!confirm("Delete " + fullName(editing) + "?")) return;
+    var id = editing.id;
+    delOne(id).then(function () {
+      people = people.filter(function (p) { return p.id !== id; });
+      closeEditor();
+      render();
+      toast("Deleted");
+    });
+  }
+
+  /* ------------------------------------------------------------------ *
+   * CSV: parser handles quoted fields, embedded commas and newlines.
+   * ------------------------------------------------------------------ */
+  function parseCsv(text) {
+    var rows = [], row = [], cell = "", q = false, i, c;
+    text = text.replace(/^\ufeff/, "").replace(/\r\n?/g, "\n");
+    for (i = 0; i < text.length; i++) {
+      c = text[i];
+      if (q) {
+        if (c === '"') {
+          if (text[i + 1] === '"') { cell += '"'; i++; } else { q = false; }
+        } else { cell += c; }
+      } else if (c === '"') { q = true; }
+      else if (c === "," || c === ";" || c === "\t") { row.push(cell); cell = ""; }
+      else if (c === "\n") { row.push(cell); rows.push(row); row = []; cell = ""; }
+      else { cell += c; }
+    }
+    if (cell.length || row.length) { row.push(cell); rows.push(row); }
+    return rows.filter(function (r) { return r.some(function (v) { return v.trim(); }); });
+  }
+
+  // Header matching is deliberately loose: Google Contacts, Outlook, LinkedIn
+  // and a hand-made sheet all name these columns differently.
+  var HEADERS = [
+    ["first",    ["first name", "firstname", "given name", "prenom", "prénom", "first"]],
+    ["last",     ["last name", "lastname", "surname", "family name", "nom", "last"]],
+    ["job",      ["job", "job title", "title", "position", "role", "organization title", "fonction", "poste"]],
+    ["company",  ["company", "organisation", "organization", "employer", "organization name", "société", "societe", "entreprise"]],
+    ["email",    ["email", "e-mail", "email address", "e-mail 1 - value", "email 1 - value", "primary email"]],
+    ["phone",    ["phone", "mobile", "phone number", "phone 1 - value", "mobile phone", "téléphone", "telephone"]],
+    ["location", ["location", "city", "where", "ville", "country", "address"]],
+    ["linkedin", ["linkedin", "linkedin url", "profile url", "website"]],
+    ["tags",     ["tags", "labels", "group", "groups", "how i know them", "category", "labels(membership)"]],
+    ["notes",    ["notes", "note", "comment", "comments", "description"]],
+    ["photo",    ["photo", "photo url", "picture", "image", "avatar"]]
+  ];
+
+  function mapHeaders(head) {
+    var map = {};
+    head.forEach(function (raw, idx) {
+      var h = fold(raw).trim();
+      if (!h) return;
+      HEADERS.forEach(function (pair) {
+        if (map[pair[0]] !== undefined) return;
+        if (pair[1].some(function (alias) { return h === fold(alias); })) map[pair[0]] = idx;
+      });
+    });
+    // Second pass, looser: only for columns nothing claimed exactly.
+    head.forEach(function (raw, idx) {
+      var h = fold(raw).trim();
+      if (!h) return;
+      HEADERS.forEach(function (pair) {
+        if (map[pair[0]] !== undefined) return;
+        if (pair[1].some(function (alias) { return h.indexOf(fold(alias)) !== -1; })) map[pair[0]] = idx;
+      });
+    });
+    return map;
+  }
+
+  function importCsv(text) {
+    var rows = parseCsv(text);
+    if (rows.length < 2) { toast("That CSV has no rows."); return; }
+    var map = mapHeaders(rows[0]);
+    if (map.first === undefined && map.last === undefined && map.company === undefined) {
+      toast("No name column found in that CSV.");
+      return;
+    }
+    var get = function (r, k) { return map[k] === undefined ? "" : (r[map[k]] || "").trim(); };
+    var made = rows.slice(1).map(function (r) {
+      var p = { id: uid(), created: Date.now() };
+      ["first", "last", "job", "company", "email", "phone", "location", "linkedin", "notes"]
+        .forEach(function (k) { p[k] = get(r, k); });
+      p.tags = tagList(get(r, "tags"));
+      var ph = get(r, "photo");
+      p.photo = /^(https?:|data:image)/i.test(ph) ? ph : "";
+      p.updated = p.created;
+      return p;
+    }).filter(function (p) { return p.first || p.last || p.company; });
+    commitImport(made, "CSV");
+  }
+
+  /* ------------------------------------------------------------------ *
+   * vCard 2.1 / 3.0 / 4.0, the format every phone exports.
+   * ------------------------------------------------------------------ */
+  function unfold(text) {
+    return text.replace(/\r\n?/g, "\n").replace(/\n[ \t]/g, "");
+  }
+
+  function decodeQP(s) {
+    return s.replace(/=\n/g, "").replace(/=([0-9A-Fa-f]{2})/g, function (_, h) {
+      return String.fromCharCode(parseInt(h, 16));
+    });
+  }
+
+  function vcardValue(line) {
+    var i = line.indexOf(":");
+    if (i === -1) return { name: "", params: [], value: "" };
+    var left = line.slice(0, i), value = line.slice(i + 1);
+    var bits = left.split(";");
+    var params = bits.slice(1).map(function (b) { return b.toLowerCase(); });
+    if (params.some(function (p) { return p.indexOf("quoted-printable") !== -1; })) {
+      value = decodeQP(value);
+    }
+    return { name: bits[0].toUpperCase().replace(/^ITEM\d+\./, ""), params: params, value: value };
+  }
+
+  function unescapeV(v) {
+    return v.replace(/\\n/gi, "\n").replace(/\\,/g, ",").replace(/\\;/g, ";").replace(/\\\\/g, "\\");
+  }
+
+  function importVcf(text) {
+    var cards = unfold(text).split(/BEGIN:VCARD/i).slice(1);
+    var made = cards.map(function (card) {
+      var p = { id: uid(), created: Date.now(), tags: [] }, fn = "";
+      card.split("\n").forEach(function (line) {
+        if (!line.trim()) return;
+        var f = vcardValue(line);
+        var v = f.value;
+        if (f.name === "N") {
+          var parts = v.split(";");
+          p.last = unescapeV(parts[0] || "").trim();
+          p.first = unescapeV(parts[1] || "").trim();
+        } else if (f.name === "FN") { fn = unescapeV(v).trim(); }
+        else if (f.name === "TITLE") { p.job = unescapeV(v).trim(); }
+        else if (f.name === "ORG") { p.company = unescapeV(v.split(";")[0] || "").trim(); }
+        else if (f.name === "EMAIL" && !p.email) { p.email = v.trim(); }
+        else if (f.name === "TEL" && !p.phone) { p.phone = v.trim(); }
+        else if (f.name === "NOTE") { p.notes = unescapeV(v).trim(); }
+        else if (f.name === "ADR" && !p.location) {
+          var a = v.split(";").map(unescapeV);
+          p.location = [a[3], a[6]].filter(function (x) { return x && x.trim(); }).join(", ");
+        } else if (f.name === "URL" && /linkedin/i.test(v) && !p.linkedin) { p.linkedin = v.trim(); }
+        else if (f.name === "CATEGORIES") { p.tags = tagList(unescapeV(v)); }
+        else if (f.name === "PHOTO" && !p.photo) {
+          if (/^https?:/i.test(v)) { p.photo = v.trim(); }
+          else {
+            var b64 = v.replace(/\s+/g, "");
+            if (b64.indexOf("data:") === 0) { p.photo = b64; }
+            else if (b64.length > 32) {
+              var type = /jpeg|jpg/i.test(f.params.join(";")) ? "jpeg"
+                       : /png/i.test(f.params.join(";")) ? "png" : "jpeg";
+              p.photo = "data:image/" + type + ";base64," + b64;
+            }
+          }
+        }
+      });
+      // Some exports carry only FN. Split it so first and last stay usable.
+      if (!p.first && !p.last && fn) {
+        var bits = fn.split(/\s+/);
+        p.first = bits.shift() || "";
+        p.last = bits.join(" ");
+      }
+      p.updated = p.created;
+      return p;
+    }).filter(function (p) { return p.first || p.last || p.company; });
+    commitImport(made, "vCard");
+  }
+
+  /* ------------------------------------------------------------------ *
+   * Import commit. Merges on email first, then on full name, so
+   * re-importing a phone export updates people instead of doubling them.
+   * ------------------------------------------------------------------ */
+  function commitImport(made, label) {
+    if (!made.length) { toast("Nothing usable in that " + label + " file."); return; }
+    var byEmail = {}, byName = {};
+    people.forEach(function (p) {
+      if (p.email) byEmail[fold(p.email)] = p;
+      byName[fold(fullName(p))] = p;
+    });
+    var added = 0, merged = 0, write = [];
+    made.forEach(function (n) {
+      var hit = (n.email && byEmail[fold(n.email)]) || byName[fold(fullName(n))];
+      if (hit) {
+        ["first", "last", "job", "company", "email", "phone", "location", "linkedin", "notes", "photo"]
+          .forEach(function (k) { if (!hit[k] && n[k]) hit[k] = n[k]; });
+        hit.tags = tagList((hit.tags || []).concat(n.tags || []).join(","));
+        hit.updated = Date.now();
+        write.push(hit);
+        merged++;
+      } else {
+        people.push(n);
+        byName[fold(fullName(n))] = n;
+        if (n.email) byEmail[fold(n.email)] = n;
+        write.push(n);
+        added++;
+      }
+    });
+    putMany(write).then(function () {
+      render();
+      toast(added + " added, " + merged + " updated from " + label + ".");
+    }).catch(function (e) { toast("Import failed: " + e.message); });
+  }
+
+  /* ------------------------------------------------------------------ *
+   * Export
+   * ------------------------------------------------------------------ */
+  function download(name, mime, text) {
+    var blob = new Blob([text], { type: mime });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url; a.download = name;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(function () { URL.revokeObjectURL(url); }, 4000);
+  }
+
+  function stamp() {
+    var d = new Date(), p = function (n) { return (n < 10 ? "0" : "") + n; };
+    return d.getFullYear() + "-" + p(d.getMonth() + 1) + "-" + p(d.getDate());
+  }
+
+  function markExported() {
+    try { localStorage.setItem("md-people-export", String(Date.now())); } catch (e) {}
+    paintLastExport();
+  }
+
+  function paintLastExport() {
+    var el = $("lastExport"), v = null;
+    try { v = localStorage.getItem("md-people-export"); } catch (e) {}
+    if (!people.length) { el.textContent = ""; return; }
+    if (!v) { el.textContent = "No backup taken yet. This list lives only in this browser."; return; }
+    var days = Math.floor((Date.now() - Number(v)) / 86400000);
+    el.textContent = "Last backup " + (days < 1 ? "today" : days === 1 ? "yesterday" : days + " days ago") + ".";
+  }
+
+  function exportJson() {
+    if (!people.length) { toast("Nothing to export."); return; }
+    download("people-" + stamp() + ".json", "application/json",
+             JSON.stringify({ kind: "md-people", version: 1, exported: new Date().toISOString(), people: people }, null, 2));
+    markExported();
+  }
+
+  function exportCsv() {
+    if (!people.length) { toast("Nothing to export."); return; }
+    var cols = ["first", "last", "job", "company", "email", "phone", "location", "linkedin", "tags", "notes"];
+    var head = ["First name", "Last name", "Job", "Company", "Email", "Phone", "Where", "LinkedIn", "Tags", "Notes"];
+    var q = function (v) { return '"' + String(v === undefined || v === null ? "" : v).replace(/"/g, '""') + '"'; };
+    var body = visible().map(function (p) {
+      return cols.map(function (c) { return q(c === "tags" ? (p.tags || []).join(", ") : p[c]); }).join(",");
+    });
+    // Photos are left out on purpose: a CSV with base64 images is unusable
+    // in a spreadsheet. The JSON backup is the one that carries them.
+    download("people-" + stamp() + ".csv", "text/csv;charset=utf-8",
+             "\ufeff" + head.map(q).join(",") + "\n" + body.join("\n"));
+  }
+
+  function restoreJson(text) {
+    var data;
+    try { data = JSON.parse(text); } catch (e) { toast("That file is not valid JSON."); return; }
+    var list = Array.isArray(data) ? data : data && data.people;
+    if (!Array.isArray(list)) { toast("No people found in that backup."); return; }
+    var made = list.map(function (raw) {
+      var p = { id: raw.id || uid(), created: raw.created || Date.now() };
+      ["first", "last", "job", "company", "email", "phone", "location", "linkedin", "notes", "photo"]
+        .forEach(function (k) { p[k] = (raw[k] || "").toString(); });
+      p.tags = tagList(raw.tags);
+      p.updated = raw.updated || p.created;
+      return p;
+    }).filter(function (p) { return p.first || p.last || p.company; });
+    commitImport(made, "backup");
+  }
+
+  /* ------------------------------------------------------------------ *
+   * Wiring
+   * ------------------------------------------------------------------ */
+  function readFile(input, done) {
+    var f = input.files && input.files[0];
+    if (!f) return;
+    var r = new FileReader();
+    r.onload = function () { done(r.result); };
+    r.onerror = function () { toast("Could not read that file."); };
+    r.readAsText(f);
+    input.value = "";
+  }
+
+  var ACTIONS = {
+    add: function () { openEditor(null); },
+    csv: function () { $("fileCsv").click(); },
+    vcf: function () { $("fileVcf").click(); },
+    expJson: exportJson,
+    expCsv: exportCsv,
+    restore: function () { $("fileJson").click(); },
+    clearFilters: function () { query = ""; activeTag = ""; $("q").value = ""; render(); },
+    wipe: function () {
+      if (!people.length) { toast("Already empty."); return; }
+      if (!confirm("Erase all " + people.length + " people from this browser? Export a backup first if you want to keep them.")) return;
+      clearAll().then(function () { people = []; render(); toast("Erased"); });
+    }
+  };
+
+  document.addEventListener("click", function (e) {
+    var act = e.target.closest("[data-do]");
+    if (act && ACTIONS[act.getAttribute("data-do")]) {
+      $("menu").classList.remove("open");
+      ACTIONS[act.getAttribute("data-do")]();
+      return;
+    }
+    var chip = e.target.closest("[data-tag]");
+    if (chip) {
+      var t = chip.getAttribute("data-tag");
+      activeTag = activeTag === t ? "" : t;
+      render();
+      return;
+    }
+    var card = e.target.closest(".person");
+    if (card) {
+      var p = people.find(function (x) { return x.id === card.getAttribute("data-id"); });
+      if (p) openEditor(p);
+      return;
+    }
+    if (!e.target.closest(".menu-host")) $("menu").classList.remove("open");
+  });
+
+  $("grid").addEventListener("keydown", function (e) {
+    if (e.key !== "Enter" && e.key !== " ") return;
+    var card = e.target.closest(".person");
+    if (!card) return;
+    e.preventDefault();
+    card.click();
+  });
+
+  $("menuBtn").addEventListener("click", function () {
+    paintLastExport();
+    $("menu").classList.toggle("open");
+  });
+  $("add").addEventListener("click", function () { openEditor(null); });
+  $("close").addEventListener("click", closeEditor);
+  $("cancel").addEventListener("click", closeEditor);
+  $("save").addEventListener("click", saveEditor);
+  $("del").addEventListener("click", deleteEditing);
+  $("veil").addEventListener("click", function (e) { if (e.target === $("veil")) closeEditor(); });
+
+  $("pickPhoto").addEventListener("click", function () { $("filePhoto").click(); });
+  $("dropPhoto").addEventListener("click", function () { draftPhoto = null; paintPhoto(); });
+  $("filePhoto").addEventListener("change", function () {
+    var f = this.files && this.files[0];
+    this.value = "";
+    if (!f) return;
+    shrink(f).then(function (url) { draftPhoto = url; paintPhoto(); })
+      // Safari writes HEIC by default and other browsers cannot decode it.
+      .catch(function () { toast("Could not read that image. JPEG, PNG or WebP work best."); });
+  });
+  ["f_first", "f_last", "f_company"].forEach(function (id) {
+    $(id).addEventListener("input", function () { if (!draftPhoto) paintPhoto(); });
+  });
+
+  $("fileCsv").addEventListener("change", function () { readFile(this, importCsv); });
+  $("fileVcf").addEventListener("change", function () { readFile(this, importVcf); });
+  $("fileJson").addEventListener("change", function () { readFile(this, restoreJson); });
+
+  $("q").addEventListener("input", function () { query = this.value; render(); });
+  $("sort").addEventListener("change", function () { sortBy = this.value; render(); });
+
+  document.addEventListener("keydown", function (e) {
+    var typing = /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName);
+    if (e.key === "Escape") {
+      if ($("veil").classList.contains("open")) { closeEditor(); return; }
+      $("menu").classList.remove("open");
+      if (query) { query = ""; $("q").value = ""; render(); }
+      return;
+    }
+    if (typing) {
+      if (e.key === "Enter" && $("veil").classList.contains("open") && e.target.tagName !== "TEXTAREA") {
+        e.preventDefault();
+        saveEditor();
+      }
+      return;
+    }
+    if (e.key === "/") { e.preventDefault(); $("q").focus(); }
+    else if (e.key.toLowerCase() === "n") { e.preventDefault(); openEditor(null); }
+  });
+
+  /* ---- Boot ---- */
+  loadAll().then(function (list) {
+    people = (list || []).map(function (p) { p.tags = tagList(p.tags); return p; });
+    render();
+    paintLastExport();
+  }).catch(function (e) {
+    $("empty").style.display = "";
+    $("empty").innerHTML = "<h2>Storage unavailable</h2><p>This browser blocked local storage, " +
+      "so the directory cannot load. Private browsing windows often do this.</p>";
+  });
+})();
+</script>
+</body></html>
