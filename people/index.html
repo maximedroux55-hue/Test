@@ -79,6 +79,10 @@
             padding:0.9rem; text-align:left; cursor:pointer; display:flex; gap:0.75rem;
             align-items:center; transition:border-color 0.15s ease, transform 0.15s ease; }
   .person:hover { border-color:var(--green); transform:translateY(-1px); }
+  /* Drop target feedback. Dragging a photo straight onto a card is the
+     fastest way to put a face on someone already in the list. */
+  .person.drop { border-color:var(--green); box-shadow:0 0 0 3px var(--green-soft); }
+  .avatar.drop { box-shadow:0 0 0 3px var(--green-ring); }
   .avatar { width:52px; height:52px; border-radius:12px; flex:none; object-fit:cover;
             background:var(--bg); display:flex; align-items:center; justify-content:center;
             font-weight:800; font-size:1rem; color:#fff; letter-spacing:0.01em; }
@@ -129,7 +133,8 @@
   .toast { position:fixed; left:50%; bottom:1.2rem; transform:translateX(-50%);
            background:var(--ink); color:#fff; border-radius:10px; padding:0.6rem 0.95rem;
            font-size:0.85rem; font-weight:600; z-index:60; opacity:0;
-           transition:opacity 0.2s ease; pointer-events:none; max-width:90vw; }
+           transition:opacity 0.2s ease; pointer-events:none; max-width:90vw;
+           white-space:pre-line; text-align:center; line-height:1.45; }
   .toast.show { opacity:1; }
 
   .foot { color:var(--soft); font-size:0.78rem; line-height:1.5; padding:0 0 2.5rem;
@@ -147,6 +152,7 @@
   <span class="menu-host">
     <button class="btn" id="menuBtn" aria-label="More">•••</button>
     <div class="menu" id="menu">
+      <button data-do="photos">Add photos in bulk</button>
       <button data-do="csv">Import CSV</button>
       <button data-do="vcf">Import vCard (.vcf)</button>
       <div class="sep"></div>
@@ -195,7 +201,7 @@
       <div class="acts">
         <button class="btn" id="pickPhoto">Choose photo</button>
         <button class="btn ghost" id="dropPhoto" style="display:none">Remove photo</button>
-        <span class="note">Cropped square, kept small. JPEG, PNG or WebP.</span>
+        <span class="note">Drop an image on the square, or paste one. JPEG, PNG or WebP.</span>
       </div>
     </div>
     <div class="two">
@@ -230,6 +236,7 @@
 </div></div>
 
 <input type="file" id="filePhoto" accept="image/*" style="display:none">
+<input type="file" id="filePhotos" accept="image/*" multiple style="display:none">
 <input type="file" id="fileCsv" accept=".csv,text/csv" style="display:none">
 <input type="file" id="fileVcf" accept=".vcf,text/vcard,text/directory" style="display:none">
 <input type="file" id="fileJson" accept=".json,application/json" style="display:none">
@@ -369,6 +376,121 @@
       img.onerror = function () { URL.revokeObjectURL(url); rej(new Error("unreadable")); };
       img.src = url;
     });
+  }
+
+  function isImage(f) {
+    return f && (/^image\//.test(f.type) || /\.(jpe?g|png|webp|gif|bmp)$/i.test(f.name || ""));
+  }
+
+  // Puts a photo on someone already in the list, straight from a drop.
+  function attachPhoto(person, file) {
+    if (!isImage(file)) { toast("That is not an image."); return; }
+    shrink(file).then(function (url) {
+      person.photo = url;
+      person.updated = Date.now();
+      return putOne(person).then(function () {
+        render();
+        toast("Photo added to " + fullName(person));
+      });
+    }).catch(function () {
+      toast("Could not read that image. JPEG, PNG or WebP work best.");
+    });
+  }
+
+  /* ------------------------------------------------------------------ *
+   * Bulk photos. Matches a folder of images to people by filename, so a
+   * few hundred faces land in one go instead of one dialog at a time.
+   * ------------------------------------------------------------------ */
+  function slug(v) {
+    return fold(v).replace(/[^a-z0-9]+/g, " ").trim();
+  }
+
+  function nameKeys(p) {
+    var keys = [], f = slug(p.first), l = slug(p.last);
+    if (f && l) { keys.push(f + " " + l, l + " " + f); }
+    else if (f || l) { keys.push(f || l); }
+    if (p.email) {
+      var local = slug(p.email.split("@")[0]);
+      if (local) keys.push(local);
+    }
+    return keys;
+  }
+
+  function matchPerson(filename) {
+    var key = slug(filename.replace(/\.[a-z0-9]+$/i, ""));
+    if (!key) return null;
+    var exact = people.filter(function (p) {
+      return nameKeys(p).indexOf(key) !== -1;
+    });
+    if (exact.length === 1) return exact[0];
+    if (exact.length > 1) return "ambiguous";
+    // Looser pass: every part of the person's name appears in the filename.
+    // "IMG_2049 julien monney.jpg" and "monney_julien_2024.png" both land.
+    var words = key.split(" ");
+    var loose = people.filter(function (p) {
+      var f = slug(p.first), l = slug(p.last);
+      if (!f || !l) return false;
+      return words.indexOf(f) !== -1 && words.indexOf(l) !== -1;
+    });
+    if (loose.length === 1) return loose[0];
+    return loose.length > 1 ? "ambiguous" : null;
+  }
+
+  function bulkPhotos(files) {
+    if (!people.length) { toast("Add the people first, then their photos."); return; }
+    var list = Array.prototype.slice.call(files).filter(isImage);
+    if (!list.length) { toast("No images in that selection."); return; }
+
+    var matched = [], unmatched = [], ambiguous = 0, already = 0, taken = {};
+    list.forEach(function (f) {
+      var hit = matchPerson(f.name);
+      if (hit === "ambiguous") { ambiguous++; unmatched.push(f.name); return; }
+      if (!hit) { unmatched.push(f.name); return; }
+      if (hit.photo) { already++; return; }
+      // Two files for one person: the first one wins, the second is reported.
+      if (taken[hit.id]) { unmatched.push(f.name); return; }
+      taken[hit.id] = true;
+      matched.push({ person: hit, file: f });
+    });
+
+    if (!matched.length) {
+      toast("Nothing matched." +
+            (already ? "\n" + already + " already had a photo." : "") +
+            "\nName files after the person, like \"Julien Monney.jpg\".");
+      return;
+    }
+
+    // Sequential on purpose: decoding a few hundred photos at once is what
+    // makes a browser tab die.
+    var done = 0, failed = 0;
+    toast("Adding photos, 0 of " + matched.length + "...");
+    matched.reduce(function (chain, item) {
+      return chain.then(function () {
+        return shrink(item.file).then(function (url) {
+          item.person.photo = url;
+          item.person.updated = Date.now();
+        }).catch(function () { failed++; });
+      }).then(function () {
+        done++;
+        if (done % 5 === 0 || done === matched.length) {
+          toast("Adding photos, " + done + " of " + matched.length + "...");
+        }
+      });
+    }, Promise.resolve()).then(function () {
+      var write = matched.map(function (m) { return m.person; }).filter(function (p) { return p.photo; });
+      return putMany(write);
+    }).then(function () {
+      render();
+      var msg = (matched.length - failed) + " photo" + (matched.length - failed === 1 ? "" : "s") + " added.";
+      if (already) msg += "\n" + already + " already had one, left alone.";
+      if (failed) msg += "\n" + failed + " could not be read.";
+      if (unmatched.length) {
+        msg += "\n" + unmatched.length + " unmatched: " +
+               unmatched.slice(0, 3).join(", ") + (unmatched.length > 3 ? " and more" : "");
+        if (ambiguous) msg += " (" + ambiguous + " matched several people)";
+      }
+      toast(msg);
+    }).catch(function (e) { toast("Could not save the photos: " + e.message); });
   }
 
   /* ------------------------------------------------------------------ *
@@ -799,6 +921,7 @@
   var ACTIONS = {
     add: function () { openEditor(null); },
     csv: function () { $("fileCsv").click(); },
+    photos: function () { $("filePhotos").click(); },
     vcf: function () { $("fileVcf").click(); },
     expJson: exportJson,
     expCsv: exportCsv,
@@ -865,6 +988,75 @@
   });
   ["f_first", "f_last", "f_company"].forEach(function (id) {
     $(id).addEventListener("input", function () { if (!draftPhoto) paintPhoto(); });
+  });
+
+  $("filePhotos").addEventListener("change", function () {
+    var files = this.files;
+    if (files && files.length) bulkPhotos(files);
+    this.value = "";
+  });
+
+  /* ---- Drag and drop ---- */
+  function dragged(e) {
+    var dt = e.dataTransfer;
+    return dt && dt.files && dt.files.length ? dt.files[0] : null;
+  }
+
+  // The window default is to navigate to the dropped file, which would throw
+  // away the page. Everything below overrides that for the whole document.
+  ["dragenter", "dragover"].forEach(function (ev) {
+    document.addEventListener(ev, function (e) {
+      if (!e.dataTransfer || e.dataTransfer.types.indexOf("Files") === -1) return;
+      e.preventDefault();
+      e.dataTransfer.dropEffect = "copy";
+      var card = e.target.closest && e.target.closest(".person");
+      var slot = e.target.closest && e.target.closest("#pvAvatar");
+      document.querySelectorAll(".drop").forEach(function (n) { n.classList.remove("drop"); });
+      if (card) card.classList.add("drop");
+      else if (slot) slot.classList.add("drop");
+    });
+  });
+
+  document.addEventListener("dragleave", function (e) {
+    if (e.relatedTarget) return;
+    document.querySelectorAll(".drop").forEach(function (n) { n.classList.remove("drop"); });
+  });
+
+  document.addEventListener("drop", function (e) {
+    if (!e.dataTransfer || e.dataTransfer.types.indexOf("Files") === -1) return;
+    e.preventDefault();
+    document.querySelectorAll(".drop").forEach(function (n) { n.classList.remove("drop"); });
+    var files = e.dataTransfer.files;
+    var slot = e.target.closest && e.target.closest("#pvAvatar");
+    if (slot && $("veil").classList.contains("open")) {
+      var one = dragged(e);
+      if (!isImage(one)) { toast("That is not an image."); return; }
+      shrink(one).then(function (url) { draftPhoto = url; paintPhoto(); })
+        .catch(function () { toast("Could not read that image."); });
+      return;
+    }
+    if ($("veil").classList.contains("open")) return;
+    var card = e.target.closest && e.target.closest(".person");
+    if (card) {
+      var p = people.find(function (x) { return x.id === card.getAttribute("data-id"); });
+      if (p) attachPhoto(p, dragged(e));
+      return;
+    }
+    // Dropped on the page rather than on a card: treat it as a batch and
+    // match by filename, which is also how the menu item works.
+    if (files.length > 1 || (files.length === 1 && isImage(files[0]))) {
+      bulkPhotos(files);
+    }
+  });
+
+  /* ---- Paste an image into the open editor ---- */
+  document.addEventListener("paste", function (e) {
+    if (!$("veil").classList.contains("open")) return;
+    var items = e.clipboardData && e.clipboardData.files;
+    if (!items || !items.length || !isImage(items[0])) return;
+    e.preventDefault();
+    shrink(items[0]).then(function (url) { draftPhoto = url; paintPhoto(); toast("Photo pasted"); })
+      .catch(function () { toast("Could not read that image."); });
   });
 
   $("fileCsv").addEventListener("change", function () { readFile(this, importCsv); });
