@@ -1,12 +1,23 @@
 {
-  "generated": "2026-08-25",
+  "generated": "2026-08-26",
   "mode": "Written by Claude in Max's voice.",
   "note": "Times are local. Schedule each post at its time on its date.",
   "cowork_prompt": "Open https://maxime-droux.com/digest/posts.json and schedule the posts listed at the end of this message, and only those. The file holds the shortlist; the list below says which of them I picked and when each one goes out. Match them by `index`. Ignore every other post in the file.\n\nFor each post, in order:\n- Type the `text` straight through, once, with real keystrokes. Never insert\n  text via JavaScript. It already ends with the article URL on its own line,\n  so do not add, move or retype the URL separately: typing it last is what makes\n  the link preview load the article photo.\n- Each post has exactly one @mention. Type `mention.type`, wait for the\n  dropdown, click the row matching `mention.expect`. If no row matches, post\n  it without the mention rather than tagging the wrong company. LinkedIn will\n  render the official name: that is expected and fine, do not fight it, do not\n  restart the post, do not rewrite it.\n- Schedule it at the date and time given for it in the list below. If no link\n  preview appears, schedule it anyway: do not hunt for an image.\n\nTwo attempts per post, then stop. If a post is not scheduled after two tries,\nleave it, move to the next one, and list it at the end. Never start a third.\n\nBefore you start, open the scheduled-posts list once and note what is already\nthere. Skip any post already scheduled: never schedule the same one twice.\n\nVerification:\n- Claims already settled against the article are not in the file. Check only\n  what `claims` still lists, and posts with needs_check: true (a figure nobody\n  has verified: confirm round closed / round name / amount received / investors\n  in THIS round). Both empty and false means schedule it, no research.\n\nAnything that fails: do not schedule it, and do not edit any file or commit\nanything. List the held posts at the end with the sentence you read and the\npage you read it on, and I will record them.\n\nReport what was scheduled and what was held.",
   "posts": [
     {
       "index": 1,
-      "text": "🇨🇭 Swiss AI platform reads IT chaos\n\n@Logmind, an EPFL spin-off led by Ketevani Zaridze, has launched a new generation of its AI platform for IT operational intelligence. Since its 2025 round, the company has added customers across several industries and hired a Chief Commercial Officer, per Startupticker.\n\nWhy it matters:\n🧠 Log data is the least exploited asset in IT operations\n📈 A commercial hire signals a shift from research to revenue\n🇨🇭 Swiss software depth applied to unglamorous enterprise plumbing\n\nBuilding quietly for years, then hiring sales, is usually the sign a product finally works.\n\nhttps://www.startupticker.ch/en/news/traction-and-a-new-ai-platform-for-logmind",
+      "text": "🇨🇭 Swiss university builds data stewardship network for research\n\n@ETH Zürich is setting up a Data Stewardship Network to professionalise research data management across its departments. The idea is simple: give researchers dedicated stewards who handle storage, documentation and reuse, so datasets stay usable long after a project ends.\n\nWhy it matters:\n📊 Reusable data is the raw material of AI-era research\n🔬 Stewardship roles turn scattered files into institutional assets\n🇨🇭 Swiss labs treating data infrastructure as core, not admin\n\nThe spin-offs of the next decade will be built on datasets someone bothered to curate today.\n\nhttps://ethz.ch/staffnet/en/news-and-events/internal-news/archive/2026/08/data-stewardship-network-for-research-data-management.html",
+      "link": "https://ethz.ch/staffnet/en/news-and-events/internal-news/archive/2026/08/data-stewardship-network-for-research-data-management.html",
+      "mention": {
+        "type": "ETH",
+        "expect": "ETH Zurich"
+      },
+      "needs_check": false,
+      "claims": []
+    },
+    {
+      "index": 2,
+      "text": "🇨🇭 Swiss AI platform reads the machine logs\n\n@Logmind, an EPFL spinoff led by Ketevani Zaridze, has launched a new generation of its AI platform for IT operational intelligence. Since its 2025 round the team has added customers across several industries and hired a Chief Commercial Officer to push commercial expansion.\n\nWhy it matters:\n🧠 Log data is the largest untapped signal in IT\n📈 A CCO hire signals a shift from research to revenue\n🇨🇭 Swiss enterprise software competing on depth, not marketing spend\n\nDeeptech becomes a business the day a technical founder hires someone to sell.\n\nhttps://www.startupticker.ch/en/news/traction-and-a-new-ai-platform-for-logmind",
       "link": "https://www.startupticker.ch/en/news/traction-and-a-new-ai-platform-for-logmind",
       "mention": {
         "type": "Logmind",
@@ -16,16 +27,19 @@
       "claims": []
     },
     {
-      "index": 2,
-      "text": "🇨🇭 Swiss glaciers lose 40% in 25 years\n\nEPFL researchers report that over 1,100 small Swiss glaciers have vanished since the early 1970s, and remaining ice has lost 40% of its volume since 2000. Beyond water and energy, entire microbial and alpine ecosystems are disappearing before science has described them.\n\nWhy it matters:\n💧 Hydropower planning rests on a shrinking ice reserve\n🔬 Ecosystems are being lost before they are catalogued\n🇨🇭 Switzerland is the live laboratory for alpine climate change\n\nThe country losing its glaciers fastest will also build the tools to monitor them.\n\nhttps://actu.epfl.ch/news/retreating-glaciers-are-taking-entire-worlds-with",
+      "index": 3,
+      "text": "🇨🇭 Swiss glaciers lose 40% in 25 years\n\nResearchers at @EPFL describe what disappears with the ice: not just water and hydropower reserves, but entire ecosystems only now being catalogued. GLAMOS data shows over 1,100 small Swiss glaciers have vanished since the early 1970s, with remaining volume down 40% since 2000.\n\nWhy it matters:\n💧 Hydropower planning rests on a shrinking water buffer\n🦠 Glacial ecosystems are being lost before they are described\n🇨🇭 Switzerland is the live laboratory for alpine climate science\n\nThe country losing its glaciers fastest will also build the best tools to measure it.\n\nhttps://actu.epfl.ch/news/retreating-glaciers-are-taking-entire-worlds-with",
       "link": "https://actu.epfl.ch/news/retreating-glaciers-are-taking-entire-worlds-with",
-      "mention": {},
+      "mention": {
+        "type": "EPFL",
+        "expect": "EPFL"
+      },
       "needs_check": false,
       "claims": []
     },
     {
-      "index": 3,
-      "text": "🇨🇭 Swiss platform powers local energy communities\n\n@UpGrid has raised just under EUR 1 million in seed funding to manage local energy communities. Investors include Jürg Schwarzenbach's vehicle Marcaro, Gründerfonds Ruhr, Climate Founders, Swisspreneur and several angels, with the money going to team expansion and product development.\n\nWhy it matters:\n⚡ Energy communities need software before they need hardware\n🌍 German and Swiss markets open simultaneously for the platform\n🇨🇭 Swiss regulation on local electricity sharing creates real demand\n\nGrid decentralisation is becoming a software problem, and that favours small Swiss teams.\n\nhttps://www.startupticker.ch/en/news/frisches-geld-und-starkes-wachstum-fuer-upgrid",
+      "index": 4,
+      "text": "🇨🇭 Swiss platform raises €1M for energy communities\n\n@UpGrid, which operates a platform for managing local energy communities, has closed a seed round of just under €1 million. Investors include Jürg Schwarzenbach's vehicle Marcaro, Gründerfonds Ruhr, Climate Founders, Swisspreneur and several angels. The money goes to team expansion and product development.\n\nWhy it matters:\n⚡ Local energy communities need software before they need hardware\n🌍 German and Swiss backers together signal cross-border demand\n🇨🇭 Swiss climate tech scaling on modest, disciplined rounds\n\nThe grid transition will be won by whoever handles the accounting between neighbours.\n\nhttps://www.startupticker.ch/en/news/frisches-geld-und-starkes-wachstum-fuer-upgrid",
       "link": "https://www.startupticker.ch/en/news/frisches-geld-und-starkes-wachstum-fuer-upgrid",
       "mention": {
         "type": "UpGrid",
@@ -33,12 +47,13 @@
       },
       "needs_check": true,
       "claims": [
-        "the post states EUR 1 m: is that money received rather than a ceiling or a target, and has the round closed"
+        "the post states €1M: is that money received rather than a ceiling or a target, and has the round closed",
+        "the post states €1 m: is that money received rather than a ceiling or a target, and has the round closed"
       ]
     },
     {
-      "index": 4,
-      "text": "🇨🇭 Swiss lab models the climate of cities\n\nThe Laboratory of Urban and Environmental Systems at @EPFL studies urban climate, hydrology and sustainable city design, linking measurement of heat and water flows to how cities are actually built. Its work sits where climate science meets construction decisions.\n\nWhy it matters:\n🌡️ Urban heat is now an engineering constraint, not a forecast\n🏙️ City design decisions lock in emissions for decades\n🇨🇭 Swiss labs feed planning tools straight to cantons and cities\n\nThe next generation of climate startups will come out of labs like this one.\n\nhttps://www.epfl.ch/labs/urbes/",
+      "index": 5,
+      "text": "🇨🇭 Swiss lab models cities as living systems\n\nThe Laboratory of Urban and Environmental Systems at @EPFL studies how cities and their environments interact, combining urban planning, resource flows and environmental modelling in a single research programme. Its work feeds directly into how Swiss municipalities plan energy, water and land use.\n\nWhy it matters:\n🏙️ Cities are where climate targets are actually won or lost\n🔗 Systems modelling connects planning decisions to measurable outcomes\n🇨🇭 Swiss academia embedding research directly in municipal practice\n\nUrban modelling is unglamorous work that quietly determines which climate technologies get deployed.\n\nhttps://www.epfl.ch/labs/urbes/",
       "link": "https://www.epfl.ch/labs/urbes/",
       "mention": {
         "type": "EPFL",
@@ -48,8 +63,8 @@
       "claims": []
     },
     {
-      "index": 5,
-      "text": "🇨🇭 Swiss spin-off targets food cravings digitally\n\n@Bewe, a University of Fribourg spin-off, has been awarded the Pre-Clinical Top-Up by Biopôle SA, extending a long-standing relationship with the Lausanne campus. The company is developing a neuroscience-based digital intervention aimed at unhealthy food cravings.\n\nWhy it matters:\n🧠 Digital therapeutics attack metabolic disease upstream of drugs\n🏥 Campus support de-risks the pre-clinical stage\n🇨🇭 Swiss neuroscience translating into consumer-facing health products\n\nObesity care is dominated by pharmacology, which leaves room for behavioural tools built on solid science.\n\nhttps://www.startupticker.ch/en/news/bewe-awarded-biopole-pre-clinical-top-up",
+      "index": 6,
+      "text": "🇨🇭 Swiss spin-off targets food cravings digitally\n\n@Bewe, a University of Fribourg spin-off, has been awarded the Biopôle Pre-Clinical Top-Up, extending a long-standing relationship with the Lausanne campus. The company is developing a neuroscience-based digital intervention aimed at unhealthy food cravings, an area where pharmacological options dominate the conversation.\n\nWhy it matters:\n🧠 Digital therapeutics attacking a market currently owned by drugs\n🏥 Biopôle support bridges academic neuroscience and clinical validation\n🇨🇭 Swiss life sciences producing software, not only molecules\n\nMetabolic health is one field where a behavioural intervention could travel further than a prescription.\n\nhttps://www.startupticker.ch/en/news/bewe-awarded-biopole-pre-clinical-top-up",
       "link": "https://www.startupticker.ch/en/news/bewe-awarded-biopole-pre-clinical-top-up",
       "mention": {
         "type": "Bewe",
@@ -59,8 +74,8 @@
       "claims": []
     },
     {
-      "index": 6,
-      "text": "🇨🇭 Swiss study shows AI agents can be talked into breaking rules\n\nA new study from @EPFL finds the main safety risk with agentic AI is not a single malicious prompt but carefully orchestrated multi-turn conversations. As agents browse the web, use tools and send emails on users' behalf, attackers can steer them step by step.\n\nWhy it matters:\n🛡️ Single-prompt filters miss conversation-level attacks entirely\n🤖 Agents with tool access turn jailbreaks into real actions\n🇨🇭 Swiss research shaping the security layer for agentic AI\n\nEvery capability jump in AI creates a security market, and this one is barely built.\n\nhttps://actu.epfl.ch/news/how-do-you-measure-one-third-of-an-electron",
+      "index": 7,
+      "text": "🇨🇭 Swiss study shows how AI agents break\n\nA new study from @EPFL finds that the biggest safety risk in agentic AI is not a single malicious prompt but carefully orchestrated multi-turn conversations. As agents browse, send emails and call external tools on a user's behalf, attackers can steer them across several exchanges into breaking their own rules.\n\nWhy it matters:\n🛡️ Single-prompt filters miss attacks spread over many turns\n🤖 Agents with tool access turn a jailbreak into a real action\n🇨🇭 Swiss research setting the agenda on AI safety testing\n\nAgent security will become a product category before most companies realise they need it.\n\nhttps://actu.epfl.ch/news/how-attackers-persuade-ai-agents-to-break-the-rule",
       "link": "https://actu.epfl.ch/news/how-attackers-persuade-ai-agents-to-break-the-rule",
       "mention": {
         "type": "EPFL",
@@ -70,8 +85,8 @@
       "claims": []
     },
     {
-      "index": 7,
-      "text": "🇨🇭 Swiss research maps the city as a system\n\nThe Laboratory of Urban and Environmental Systems at EPFL works on urban climate, hydrology and sustainable city design, treating streets, buildings and water networks as one coupled system rather than separate disciplines.\n\nWhy it matters:\n🌧️ Stormwater and heat modelling now drive building codes\n📐 Systems thinking is what turns climate data into design\n🇨🇭 Swiss academic rigour applied to a global urbanisation problem\n\nCities are the largest deeptech market nobody calls deeptech.\n\nhttps://www.epfl.ch/labs/urbes/",
+      "index": 8,
+      "text": "🇨🇭 Swiss researchers map urban environmental systems\n\nThe Laboratory of Urban and Environmental Systems at EPFL works at the intersection of urban form, infrastructure and environmental performance, producing the models planners use to test scenarios before concrete is poured. Its output is methodology, openly published and reusable.\n\nWhy it matters:\n📐 Better models cut the cost of getting cities wrong\n♻️ Resource flows, not buildings, define urban emissions\n🇨🇭 Swiss labs exporting planning methods well beyond the country\n\nThe research that shapes procurement rules ends up mattering more than most product launches.\n\nhttps://www.epfl.ch/labs/urbes/",
       "link": "https://www.epfl.ch/labs/urbes/",
       "mention": {},
       "needs_check": false,
@@ -80,54 +95,62 @@
       ]
     },
     {
-      "index": 8,
-      "text": "🇨🇭 Swiss academy tackles sensitive research partnerships\n\nThe Swiss Academy of Sciences (SCNAT) is hosting a workshop on navigating global research partnerships in politically and ethically sensitive contexts, addressing how Swiss institutions collaborate abroad without compromising standards.\n\nWhy it matters:\n🌐 International collaboration is now a geopolitical decision\n⚖️ Ethical frameworks protect long-term scientific credibility\n🇨🇭 Swiss neutrality is an asset only if actively managed\n\nWho you do science with has become as strategic as what you research.\n\nhttps://scnat.ch/fr/events/uuid/i/2005c1a4-a0b6-5176-b97b-e1f14d2dae83-Navigating_Global_Research_Partnerships_in_Politically_and_Ethically_Sensitive_Contexts",
+      "index": 9,
+      "text": "🇨🇭 Swiss academies tackle sensitive research partnerships\n\n@SCNAT is convening a workshop on navigating global research partnerships in politically and ethically sensitive contexts. The session addresses how Swiss institutions structure collaborations abroad when geopolitics, export controls and research ethics collide, an issue that now touches almost every international consortium.\n\nWhy it matters:\n🌐 Research collaboration is increasingly a geopolitical decision\n⚖️ Clear frameworks protect partners on both sides\n🇨🇭 Swiss neutrality is an asset only if actively managed\n\nOpen science and national interest are no longer automatically aligned, and Switzerland is arguing it out early.\n\nhttps://scnat.ch/fr/events/uuid/i/2005c1a4-a0b6-5176-b97b-e1f14d2dae83-Navigating_Global_Research_Partnerships_in_Politically_and_Ethically_Sensitive_Contexts",
       "link": "https://scnat.ch/fr/events/uuid/i/2005c1a4-a0b6-5176-b97b-e1f14d2dae83-Navigating_Global_Research_Partnerships_in_Politically_and_Ethically_Sensitive_Contexts",
-      "mention": {},
+      "mention": {
+        "type": "SCNAT",
+        "expect": "SCNAT"
+      },
       "needs_check": false,
       "claims": []
     },
     {
-      "index": 9,
-      "text": "🇨🇭 Swiss cleantech team heads to Munich\n\nVenturelab has selected ten Swiss cleantech startups for the Swiss National Startup Team 2026, taking them on an investor roadshow in Munich. The programme puts early-stage climate and energy companies in front of German capital at the point where hardware needs scale-up money.\n\nWhy it matters:\n🔋 Cleantech hardware needs deeper pockets than Swiss rounds provide\n🤝 Munich is the closest large industrial capital pool\n🇨🇭 Swiss selection processes still act as strong quality filters\n\nSwiss cleantech founders raise better abroad when they arrive pre-validated at home.\n\nhttps://www.venturelab.swiss/Swiss-National-Startup-Team-2026-Ten-breakthrough-cleantech-startups-selected-for-Munich-investor-roadshow",
+      "index": 10,
+      "text": "🇨🇭 Swiss cleantech team heads to Munich investors\n\nVenturelab has selected ten cleantech startups for the Swiss National Startup Team 2026, sending them on an investor roadshow in Munich. The programme puts early-stage Swiss climate and energy companies in front of German capital, still the closest large pool of industrial investors.\n\nWhy it matters:\n🚀 Roadshows compress months of investor outreach into days\n🔋 Cleantech needs industrial partners as much as capital\n🇨🇭 Swiss startups fundraising abroad before the domestic round closes\n\nProximity to Germany's industrial base remains one of Switzerland's most underused advantages.\n\nhttps://www.venturelab.swiss/Swiss-National-Startup-Team-2026-Ten-breakthrough-cleantech-startups-selected-for-Munich-investor-roadshow",
       "link": "https://www.venturelab.swiss/Swiss-National-Startup-Team-2026-Ten-breakthrough-cleantech-startups-selected-for-Munich-investor-roadshow",
       "mention": {},
       "needs_check": false,
       "claims": []
     },
     {
-      "index": 10,
-      "text": "🇨🇭 Swiss researchers map how cells read DNA\n\n@EPFL researchers contributed to the largest map yet of human gene regulation, showing how transcription factors bind DNA and how chemical marks can change the meaning of genetic instructions. The same genome, read differently, produces a brain cell or an immune cell.\n\nWhy it matters:\n🧬 Regulation, not sequence, explains most disease biology\n🗺️ Reference maps become the substrate for drug discovery\n🇨🇭 Swiss labs anchored in the largest genomics consortia\n\nFoundational datasets rarely make headlines, but they decide which therapeutics become possible.\n\nhttps://actu.epfl.ch/news/cracking-the-code-of-gene-regulation",
+      "index": 11,
+      "text": "🇨🇭 Swiss researchers map how cells read DNA\n\nResearchers at @EPFL helped complete the largest map yet of human gene regulation, showing how transcription factors bind DNA and how chemical marks can change the meaning of those instructions. It explains why a brain cell and a muscle cell behave differently despite identical genomes.\n\nWhy it matters:\n🧬 Regulation, not sequence, explains most cell behaviour\n💊 Misregulated genes underpin cancer and developmental disease\n🇨🇭 Swiss groups anchoring the largest genomics consortia\n\nFoundational maps like this one quietly seed a decade of therapeutic startups.\n\nhttps://actu.epfl.ch/news/cracking-the-code-of-gene-regulation",
       "link": "https://actu.epfl.ch/news/cracking-the-code-of-gene-regulation",
       "mention": {
         "type": "EPFL",
         "expect": "EPFL"
       },
-      "needs_check": false,
-      "claims": []
+      "needs_check": true,
+      "claims": [
+        "the post calls it a seed: is that the right name for this transaction"
+      ]
     },
     {
-      "index": 11,
-      "text": "🇨🇭 Swiss carbon calculator doubles its customers\n\n@Zelsius, a spin-off from Hochschule Luzern, has extended its emissions accounting platform to additional industries after a year of intensive use and testing. Customer numbers have doubled and the company now generates six-figure revenue, mostly from recurring annual contracts.\n\nWhy it matters:\n📊 SMEs face reporting duties without in-house carbon expertise\n🔁 Recurring revenue proves the tool is used, not bought once\n🇨🇭 Swiss universities of applied sciences producing commercial software\n\nSix figures of recurring revenue says more about product fit than most seed announcements.\n\nhttps://www.startupticker.ch/en/news/co2-rechner-von-zelsius-gewinnt-an-reichweite",
+      "index": 12,
+      "text": "🇨🇭 Swiss CO2 calculator doubles its customer base\n\n@Zelsius, a spin-off of Hochschule Luzern, has extended its emissions tracking and carbon accounting platform to additional industries after a year of intensive use and testing. The company doubled its customer count and now generates six-figure revenue, most of it recurring annual subscriptions.\n\nWhy it matters:\n📉 SMEs need carbon reporting they can actually afford\n🔁 Recurring revenue proves the tool became part of operations\n🇨🇭 Swiss universities of applied sciences producing commercial software\n\nA six-figure recurring base built without a headline round is the least discussed form of traction.\n\nhttps://www.startupticker.ch/en/news/co2-rechner-von-zelsius-gewinnt-an-reichweite",
       "link": "https://www.startupticker.ch/en/news/co2-rechner-von-zelsius-gewinnt-an-reichweite",
       "mention": {
         "type": "Zelsius",
         "expect": "Zelsius"
       },
-      "needs_check": true,
-      "claims": []
-    },
-    {
-      "index": 12,
-      "text": "🇨🇭 Swiss cleantech founders pitch in Munich\n\nVenture Leaders Cleantech 2026 has selected ten Swiss cleantech startups for an investor roadshow in Munich, run by Venturelab. The cohort covers energy, materials and climate technologies at the stage where laboratory results have to meet industrial buyers.\n\nWhy it matters:\n🏭 German industry is the natural first customer for Swiss cleantech\n🚀 Roadshows compress months of investor outreach into days\n🇨🇭 Swiss cleantech pipeline is deeper than its funding market\n\nExport capability, not domestic demand, is what decides Swiss cleantech outcomes.\n\nhttps://www.venture-leaders.ch/meet-venture-leaders-cleantech-2026",
-      "link": "https://www.venture-leaders.ch/meet-venture-leaders-cleantech-2026",
-      "mention": {},
       "needs_check": false,
       "claims": []
     },
     {
       "index": 13,
-      "text": "🇨🇭 Swiss robotics brings autonomy to construction sites\n\n@Gravis Robotics, an ETH Zurich spin-off, is bringing autonomy to heavy construction machinery. Its systems are already deployed with global infrastructure players across four continents and have been proven on diverse real-world machines and sites, per Startupticker.\n\nWhy it matters:\n🚜 Construction is among the least automated large industries\n🌍 Deployments on four continents show the tech travels\n🇨🇭 Swiss robotics research converting into industrial products\n\nWhen ETH robotics leaves the lab, it tends to leave for the hardest environments first.\n\nhttps://www.startupticker.ch/en/news/gravis-robotics-raises-200m-for-construction-autonomy",
+      "text": "🇨🇭 Swiss programme sends ten cleantech founders abroad\n\n@Venture Leaders has named its Cleantech 2026 cohort: ten Swiss startups heading to Munich to meet investors. The Venture Leaders format takes founders out of the domestic ecosystem for a concentrated week of pitching, partner meetings and market feedback.\n\nWhy it matters:\n🌍 Early international exposure shortens the path to a lead investor\n🤝 Cohorts create founder networks that outlast the trip\n🇨🇭 Swiss cleantech pipeline deep enough to fill a full cohort\n\nEcosystems mature when their founders stop waiting for foreign capital to come to them.\n\nhttps://www.venture-leaders.ch/meet-venture-leaders-cleantech-2026",
+      "link": "https://www.venture-leaders.ch/meet-venture-leaders-cleantech-2026",
+      "mention": {
+        "type": "Venture",
+        "expect": "Venture Leaders Cleantech 2026"
+      },
+      "needs_check": false,
+      "claims": []
+    },
+    {
+      "index": 14,
+      "text": "🇨🇭 Swiss robotics spin-off lands SoftBank backing\n\n@Gravis Robotics, an ETH Zurich spin-off building autonomy for construction machinery, has announced a major investment from SoftBank Investment Advisers. Its systems are already deployed with global infrastructure leaders across four continents and proven on diverse real-world machines and sites.\n\nWhy it matters:\n🏗️ Construction remains one of the least automated large industries\n🌐 Deployments on four continents de-risk the scaling story\n🇨🇭 ETH robotics attracting the largest global growth investors\n\nWhen SoftBank writes a construction robotics cheque this size, it is validating Zurich as much as the company.\n\nhttps://www.startupticker.ch/en/news/gravis-robotics-raises-200m-for-construction-autonomy",
       "link": "https://www.startupticker.ch/en/news/gravis-robotics-raises-200m-for-construction-autonomy",
       "mention": {
         "type": "Gravis",
@@ -137,23 +160,12 @@
       "claims": []
     },
     {
-      "index": 14,
-      "text": "🇨🇭 Swiss device measures a third of an electron\n\n@EPFL researchers have built a graphene device that measures the fractional electric charges carried by quasiparticles, collective states that behave as if they hold only part of an electron's charge. The measurement targets some of the strangest objects in quantum physics.\n\nWhy it matters:\n⚛️ Fractional charges underpin proposals for topological quantum computing\n🔬 Graphene sensing pushes measurement into new regimes\n🇨🇭 Swiss quantum metrology keeps setting the instrument standard\n\nThe ability to measure something precisely usually arrives before the ability to use it.\n\nhttps://actu.epfl.ch/news/how-do-you-measure-one-third-of-an-electron",
+      "index": 15,
+      "text": "🇨🇭 Swiss device measures a third of an electron\n\nResearchers at @EPFL have built a graphene device capable of measuring the fractional electric charges carried by quasiparticles, collective states that behave as if they hold a fraction of an electron. These appear only under extreme conditions, and until now have been extraordinarily hard to quantify directly.\n\nWhy it matters:\n⚛️ Fractional charges underpin proposals for topological quantum computing\n🔬 Graphene sensing pushes measurement into previously inaccessible regimes\n🇨🇭 Swiss condensed matter physics operating at the global frontier\n\nMeasurement breakthroughs rarely make headlines, yet they decide which quantum architectures get built.\n\nhttps://actu.epfl.ch/news/how-do-you-measure-one-third-of-an-electron",
       "link": "https://actu.epfl.ch/news/how-do-you-measure-one-third-of-an-electron",
       "mention": {
         "type": "EPFL",
         "expect": "EPFL"
-      },
-      "needs_check": false,
-      "claims": []
-    },
-    {
-      "index": 15,
-      "text": "🇨🇭 Swiss surgical robot clears regulatory hurdle\n\nDEXTER, the compact mobile soft-tissue surgical robot from @Distalmotion, has advanced with a new regulatory approval, alongside a second Swiss medtech reported by Startupticker. Its design puts robotic assistance into standard operating rooms without dedicated infrastructure.\n\nWhy it matters:\n🏥 Compact form factor fits existing hospital operating rooms\n📋 Approvals, not demos, decide medtech commercial timelines\n🇨🇭 Swiss precision engineering competing in surgical robotics\n\nIn medtech the regulatory milestone is the real product launch.\n\nhttps://www.startupticker.ch/en/news/two-medtechs-advance-with-regulatory-approvals",
-      "link": "https://www.startupticker.ch/en/news/two-medtechs-advance-with-regulatory-approvals",
-      "mention": {
-        "type": "Distalmotion",
-        "expect": "Distalmotion"
       },
       "needs_check": false,
       "claims": []
