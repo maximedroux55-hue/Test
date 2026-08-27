@@ -71,6 +71,7 @@
           cursor:pointer; }
   .chip:hover { border-color:var(--green); color:var(--green-dark); }
   .chip.on { background:var(--green); border-color:var(--green); color:#fff; }
+  .chip.more { border-style:dashed; }
 
   /* ---- Grid ---- */
   .grid { display:grid; gap:0.7rem; padding:0.9rem 0 3rem;
@@ -335,10 +336,41 @@
 
   function avatarHtml(p, cls) {
     if (p.photo) {
-      return '<img class="avatar ' + (cls || "") + '" alt="" src="' + esc(p.photo) + '">';
+      // The tile carries the initials colour underneath, so a photo that is
+      // still downloading shows as that person's swatch rather than a hole.
+      return '<img class="avatar ' + (cls || "") + '" alt="" loading="lazy"' +
+             ' style="background:hsl(' + hue(p) + ',42%,52%)" src="' + esc(p.photo) + '">';
     }
     return '<div class="avatar ' + (cls || "") + '" style="background:hsl(' + hue(p) +
            ',42%,52%)">' + esc(initials(p)) + "</div>";
+  }
+
+  // A photo can be a remote URL (Attio, Gravatar, a CSV column) and remote URLs
+  // rot. Without this, a dead link leaves a broken-image glyph on the card;
+  // with it, the person falls back to their initials as if they had no photo.
+  function initialsNode(p, cls) {
+    var d = document.createElement("div");
+    d.className = "avatar " + (cls || "");
+    d.style.background = "hsl(" + hue(p) + ",42%,52%)";
+    d.textContent = initials(p);
+    return d;
+  }
+
+  function guardPhotos(root) {
+    root.querySelectorAll("img.avatar").forEach(function (img) {
+      var card = img.closest(".person");
+      var id = card && card.getAttribute("data-id");
+      var p = id ? people.find(function (x) { return x.id === id; }) : null;
+      var swap = function () {
+        var node = initialsNode(p || { first: "", last: "", company: "" });
+        node.className = img.className;
+        node.id = img.id;
+        if (img.parentNode) img.replaceWith(node);
+      };
+      // An image that already failed before this ran never fires error again.
+      if (img.complete && img.naturalWidth === 0) { swap(); return; }
+      img.addEventListener("error", swap, { once: true });
+    });
   }
 
   function subtitle(p) {
@@ -497,6 +529,7 @@
    * State and rendering
    * ------------------------------------------------------------------ */
   var people = [], query = "", activeTag = "", sortBy = "first", editing = null, draftPhoto = null;
+  var allTags = false, TAG_LIMIT = 12;
 
   function haystack(p) {
     return fold([p.first, p.last, p.job, p.company, p.email, p.phone, p.location,
@@ -533,10 +566,21 @@
     var names = Object.keys(counts).sort(function (a, b) {
       return counts[b] - counts[a] || (fold(a) < fold(b) ? -1 : 1);
     });
-    $("tagbar").innerHTML = names.map(function (t) {
+    // A directory imported from a CRM can carry 40+ tags. Four rows of chips
+    // push the people off the screen, so the rare ones hide behind one chip.
+    var shown = names, rest = 0;
+    if (!allTags && names.length > TAG_LIMIT) {
+      shown = names.slice(0, TAG_LIMIT);
+      if (activeTag && shown.indexOf(activeTag) === -1) shown.push(activeTag);
+      rest = names.length - shown.length;
+    }
+    var html = shown.map(function (t) {
       return '<button class="chip' + (t === activeTag ? " on" : "") + '" data-tag="' +
              esc(t) + '">' + esc(t) + " " + counts[t] + "</button>";
     }).join("");
+    if (rest > 0) html += '<button class="chip more" data-do="allTags">' + rest + " more</button>";
+    else if (allTags && names.length > TAG_LIMIT) html += '<button class="chip more" data-do="fewTags">Fewer</button>';
+    $("tagbar").innerHTML = html;
   }
 
   function render() {
@@ -579,6 +623,7 @@
              (sub ? '<div class="jb">' + esc(sub) + "</div>" : "") +
              "</div></div>";
     }).join("");
+    guardPhotos(grid);
   }
 
   /* ------------------------------------------------------------------ *
@@ -595,6 +640,13 @@
     var node = fresh.firstChild;
     node.id = "pvAvatar";
     host.parentNode.replaceChild(node, host);
+    if (node.tagName === "IMG") {
+      node.addEventListener("error", function () {
+        var back = initialsNode(stub);
+        back.id = "pvAvatar";
+        if (node.parentNode) node.replaceWith(back);
+      }, { once: true });
+    }
     $("dropPhoto").style.display = draftPhoto ? "" : "none";
   }
 
@@ -927,6 +979,8 @@
     expCsv: exportCsv,
     restore: function () { $("fileJson").click(); },
     clearFilters: function () { query = ""; activeTag = ""; $("q").value = ""; render(); },
+    allTags: function () { allTags = true; renderTags(); },
+    fewTags: function () { allTags = false; renderTags(); },
     wipe: function () {
       if (!people.length) { toast("Already empty."); return; }
       if (!confirm("Erase all " + people.length + " people from this browser? Export a backup first if you want to keep them.")) return;
