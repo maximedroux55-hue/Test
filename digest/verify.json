@@ -1,9 +1,9 @@
 {
-  "generated": "2026-08-26",
+  "generated": "2026-08-28",
   "note": "Rounds worth checking against a primary source.",
   "how_to_report": "For each round below, find the primary source: the company's own release, the filing, or the outlet that reported it first. Check the four things that have actually been wrong. Has the transaction closed, or is it announced, in progress, or subject to approval? Is the label right, where a first listing is an IPO, an already listed company selling shares is a Follow-on, a merger with a listed shell is a De-SPAC, and a purchase is an Acquisition rather than a round? Is the figure money received, or a ceiling, a gross, or a target? And did the named investors take part in THIS round, rather than an earlier one?\n\nReport back as entries for corrections.json, keyed on the company name, setting only the fields that are wrong. Add \"verified\" with today's date and \"verified_source\" naming what you read. An empty string clears a wrong value. For example:\n\n  \"Prem\": {\n    \"status\": \"announced\",\n    \"amount_note\": \"raising, expected to close in Q3\",\n    \"investors\": \"\",\n    \"verified\": \"2026-08-03\",\n    \"verified_source\": \"Bloomberg, 18 June 2026\"\n  }\n\nWhere a round checks out, still send back \"verified\" and \"verified_source\" so it is not queued again. Say plainly when a primary source cannot be found: an unverifiable round should stay unverified rather than be marked correct.",
   "corrections_file": "deeptech-news/corrections.json",
-  "count": 15,
+  "count": 17,
   "rounds": [
     {
       "company": "Gravis Robotics",
@@ -21,7 +21,7 @@
         "the figure carries a condition (sole investor): is it the amount actually raised"
       ],
       "sources": [
-        "Startupticker.ch",
+        "Startupticker",
         "ETH Zürich",
         "EU-Startups",
         "Tech.eu"
@@ -99,6 +99,26 @@
       ],
       "link": "https://www.bloomberg.com/news/articles/2026-06-18/swiss-ai-startup-prem-is-raising-100-million-series-a-round",
       "last_verified": "2026-08-03"
+    },
+    {
+      "company": "Adaptyv Biosystems",
+      "as_recorded": {
+        "stage": "Series A",
+        "amount": "USD 40M",
+        "amount_note": "",
+        "status": "closed",
+        "investors": "Highland Europe, Ace Ventures, ByFounders, Y Combinator",
+        "date": "2026-08-26",
+        "hq": "Lausanne"
+      },
+      "check": [
+        "CHF 32M is large enough that an error moves the totals"
+      ],
+      "sources": [
+        "Startupticker"
+      ],
+      "link": "https://www.startupticker.ch/en/news/adaptyv-raises-40m-to-build-automated-lab-for-agentic-biology",
+      "last_verified": ""
     },
     {
       "company": "Basilea Pharmaceutica",
@@ -229,6 +249,27 @@
         "Venturelab Swiss"
       ],
       "link": "https://www.startupticker.ch/en/news/chf-2-4m-pre-seed-funding-to-advance-immitrabio-scalable-in-vivo-gene-editing-platform-and-lead-asset",
+      "last_verified": ""
+    },
+    {
+      "company": "Addex Therapeutics",
+      "as_recorded": {
+        "stage": "Follow-on",
+        "amount": "USD 2.8M",
+        "amount_note": "up to, gross proceeds",
+        "status": "closed",
+        "investors": "H.C. Wainwright & Co",
+        "date": "2026-08-26",
+        "hq": "Geneva"
+      },
+      "check": [
+        "an exit or a public market transaction, where the label and the figure mean different things",
+        "the figure carries a condition (up to, gross proceeds): is it the amount actually raised"
+      ],
+      "sources": [
+        "Startupticker"
+      ],
+      "link": "https://www.startupticker.ch/en/news/addex-sells-shares-to-extend-runway-into-2027",
       "last_verified": ""
     },
     {
