@@ -1,5 +1,5 @@
 # Swiss DeepTech news digest
-_Generated 28 August 2026, covering the last 14 days. 27 stories._
+_Generated 29 August 2026, covering the last 14 days. 28 stories._
 
 1. **[GR3N closes a €15.5M Series B round](https://www.startupticker.ch/en/news/gr3n-closes-a-15-5m-series-b-round)**  
    startupticker.ch · sent in
@@ -47,11 +47,13 @@ _Generated 28 August 2026, covering the last 14 days. 27 stories._
    Startupticker · 19 Aug 2026 · relevance 6
 23. **[Two medtechs advance with regulatory approvals - Startupticker](https://news.google.com/rss/articles/CBMiiwFBVV95cUxPcGJoS3dzWTFxejRCOGJtdGlFZHctNERKLUVvYzE0d0lSMnNOR3JKYXpoSVpDWUJjYnBnSnlxZGJPVFJqOGplVGtvOUF5M2paMkxLcU9hM29qMDlxd3BYdlA2dFpObGtfVEFKc2pNNFdGaGExTXU3SUhvS1dtNDI1YkZEZXlPUjlicDg0?oc=5)**  
    Startupticker · 17 Aug 2026 · relevance 6
-24. **[Viso.ai reports strong early adoption](https://www.startupticker.ch/en/news/viso-ai-reports-strong-early-adoption)**  
+24. **[Productivity advice is built around doing more in less time, and the line most often quoted against it, that the dying wish they had worked less, comes not from decades of research but from one palliative carer’s account of the patients she personally nursed](https://siliconcanals.com/jcb-productivity-advice-is-built-around-doing-more-in-less-time-and-the-line-most-often-quoted-against-it-that-the-dying-wish-they-had-worked-less-comes-not-from-decades-of-research-but-from-one-palli/)**  
+   Silicon Canals · 28 Aug 2026 · relevance 5
+25. **[Viso.ai reports strong early adoption](https://www.startupticker.ch/en/news/viso-ai-reports-strong-early-adoption)**  
    Startupticker · 28 Aug 2026 · relevance 5
-25. **[vVARDIS drill-free treatment adopted by Bupa Dental Care](https://www.startupticker.ch/en/news/vvardis-drill-free-treatment-adopted-by-bupa-dental-care)**  
+26. **[vVARDIS drill-free treatment adopted by Bupa Dental Care](https://www.startupticker.ch/en/news/vvardis-drill-free-treatment-adopted-by-bupa-dental-care)**  
    Startupticker · 27 Aug 2026 · relevance 5
-26. **[Three Swiss startups join DayOne's 2026 accelerator cohort](https://www.startupticker.ch/en/news/three-swiss-startups-join-dayone-s-2026-accelerator-cohort)**  
+27. **[Three Swiss startups join DayOne's 2026 accelerator cohort](https://www.startupticker.ch/en/news/three-swiss-startups-join-dayone-s-2026-accelerator-cohort)**  
    Startupticker · 20 Aug 2026 · relevance 5
-27. **[Milestone wins drive Dyneo Growth and Expansion](https://www.startupticker.ch/en/news/milestone-wins-drive-dyneo-growth-and-expansion)**  
+28. **[Milestone wins drive Dyneo Growth and Expansion](https://www.startupticker.ch/en/news/milestone-wins-drive-dyneo-growth-and-expansion)**  
    Startupticker · 19 Aug 2026 · relevance 4
