@@ -1,12 +1,12 @@
 {
-  "generated": "2026-08-29",
+  "generated": "2026-08-30",
   "mode": "Written by Claude in Max's voice.",
   "note": "Times are local. Schedule each post at its time on its date.",
   "cowork_prompt": "Open https://maxime-droux.com/digest/posts.json and schedule the posts listed at the end of this message, and only those. The file holds the shortlist; the list below says which of them I picked and when each one goes out. Match them by `index`. Ignore every other post in the file.\n\nFor each post, in order:\n- Type the `text` straight through, once, with real keystrokes. Never insert\n  text via JavaScript. It already ends with the article URL on its own line,\n  so do not add, move or retype the URL separately: typing it last is what makes\n  the link preview load the article photo.\n- Each post has exactly one @mention. Type `mention.type`, wait for the\n  dropdown, click the row matching `mention.expect`. If no row matches, post\n  it without the mention rather than tagging the wrong company. LinkedIn will\n  render the official name: that is expected and fine, do not fight it, do not\n  restart the post, do not rewrite it.\n- Schedule it at the date and time given for it in the list below. If no link\n  preview appears, schedule it anyway: do not hunt for an image.\n\nTwo attempts per post, then stop. If a post is not scheduled after two tries,\nleave it, move to the next one, and list it at the end. Never start a third.\n\nBefore you start, open the scheduled-posts list once and note what is already\nthere. Skip any post already scheduled: never schedule the same one twice.\n\nVerification:\n- Claims already settled against the article are not in the file. Check only\n  what `claims` still lists, and posts with needs_check: true (a figure nobody\n  has verified: confirm round closed / round name / amount received / investors\n  in THIS round). Both empty and false means schedule it, no research.\n\nAnything that fails: do not schedule it, and do not edit any file or commit\nanything. List the held posts at the end with the sentence you read and the\npage you read it on, and I will record them.\n\nReport what was scheduled and what was held.",
   "posts": [
     {
       "index": 1,
-      "text": "🇨🇭 Swiss expertise explains Nepal's deadly flash flood\n\nEPFL professor Christophe Ancey, a specialist in natural disasters, analysed the flood that swept away hundreds of homes near the China border on 26 August. Initial assessments point to a partial glacier collapse, raising the question of whether a debris flow or glacial lake outburst of that scale could occur in Switzerland.\n\nWhy it matters:\n🌊 Alpine hazard science travels directly to Himalayan valleys\n🧊 Glacier collapse mechanisms remain poorly instrumented worldwide\n🇨🇭 Swiss mountain research underpins global early warning systems\n\nClimate risk is becoming an engineering discipline, and Switzerland has been training for it for a century.\n\nhttps://actu.epfl.ch/news/what-triggered-the-devastating-flash-flood-in-nepa",
+      "text": "🇨🇭 Swiss expertise decodes Nepal's deadly flash flood\n\nEPFL professor Christophe Ancey, a specialist in natural disasters, analysed the 26 August flood that swept away hundreds of homes in a Nepalese valley near the Tibetan border. Initial assessments point to a partial glacier collapse, raising the question of whether comparable events could occur in Switzerland.\n\nWhy it matters:\n🏔️ Glacial lake outburst floods are a growing Alpine risk\n🌊 Debris flow mechanics decide who gets warned in time\n🇨🇭 Swiss labs export mountain hazard science worldwide\n\nAlpine research earns its keep when a Swiss model explains a disaster 6,000 km away.\n\nhttps://actu.epfl.ch/news/what-triggered-the-devastating-flash-flood-in-nepa",
       "link": "https://actu.epfl.ch/news/what-triggered-the-devastating-flash-flood-in-nepa",
       "mention": {},
       "needs_check": false,
@@ -14,7 +14,7 @@
     },
     {
       "index": 2,
-      "text": "🇨🇭 Swiss platform builds vision apps in minutes\n\n@viso.ai has launched Viso Now, a platform that lets anyone assemble a working computer vision application without deep ML expertise. Early numbers: over 1,000 users, more than 3,500 applications created, and a median time to first application of under three minutes.\n\nWhy it matters:\n👁️ Computer vision moves from research project to self-service tool\n⏱️ Under three minutes to first working application\n🇨🇭 Swiss software abstracting away a stubborn engineering bottleneck\n\nAdoption speed, not model size, is what decides who owns industrial AI tooling.\n\nhttps://www.startupticker.ch/en/news/viso-ai-reports-strong-early-adoption",
+      "text": "🇨🇭 Swiss vision platform hits 3,500 apps built\n\n@viso.ai has launched Viso Now, a platform that lets anyone assemble a working computer vision application in minutes. Over 1,000 users have already created more than 3,500 applications, with a median time to first app of under three minutes.\n\nWhy it matters:\n👁️ Computer vision moves from specialist project to self-serve tool\n⏱️ Three minutes to first app removes the adoption barrier\n🇨🇭 Swiss software scaling on usage, not marketing spend\n\nAdoption speed is the only demo that matters in developer tooling.\n\nhttps://www.startupticker.ch/en/news/viso-ai-reports-strong-early-adoption",
       "link": "https://www.startupticker.ch/en/news/viso-ai-reports-strong-early-adoption",
       "mention": {
         "type": "viso.ai",
@@ -25,7 +25,7 @@
     },
     {
       "index": 3,
-      "text": "🇨🇭 Swiss drill-free dental treatment reaches 380 clinics\n\n@vVARDIS, the Zug-based medtech unicorn, will see its Curodont Repair treatment for early tooth decay offered across Bupa Dental Care's 380 UK practices. It is the company's second large-scale UK provider agreement this year, after a January deal with mydentist.\n\nWhy it matters:\n🦷 Non-invasive repair replaces drilling for early decay\n🇬🇧 Two national UK chains signed within eight months\n🇨🇭 Swiss biomaterials science scaling through existing clinical networks\n\nDistribution deals, not new science, are where Swiss medtech usually wins or stalls.\n\nhttps://www.startupticker.ch/en/news/vvardis-drill-free-treatment-adopted-by-bupa-dental-care",
+      "text": "🇨🇭 Swiss drill-free dental treatment reaches 380 UK clinics\n\n@vVARDIS, the Zug-based medtech unicorn, will see its Curodont Repair treatment for early decay offered across Bupa Dental Care's 380 UK practices. It is the company's second large-scale UK provider agreement this year, after a January deal with mydentist.\n\nWhy it matters:\n🦷 Non-invasive treatment displaces the drill in routine care\n🇬🇧 Two national chains signed in eight months\n🇨🇭 Swiss medtech proving distribution, not just science\n\nClinical innovation only counts once it is inside someone else's appointment book.\n\nhttps://www.startupticker.ch/en/news/vvardis-drill-free-treatment-adopted-by-bupa-dental-care",
       "link": "https://www.startupticker.ch/en/news/vvardis-drill-free-treatment-adopted-by-bupa-dental-care",
       "mention": {
         "type": "vVARDIS",
@@ -36,7 +36,7 @@
     },
     {
       "index": 4,
-      "text": "🇨🇭 Swiss startup automates the protein engineering lab\n\n@Adaptyv Biosystems, based at Biopôle in Lausanne, is building an automated laboratory for what it calls agentic biology. Its protein engineering platform combines synthetic biology, nanofluidics and machine learning to design and test proteins in closed loops rather than one experiment at a time.\n\nWhy it matters:\n🧬 Closed-loop labs turn biology into a data problem\n🤖 AI agents need physical experiments to be useful\n🇨🇭 Swiss hardware plus software at the wet-lab interface\n\nThe bottleneck in AI-driven biology is measurement, and that is an instrumentation game Switzerland knows.\n\nhttps://www.startupticker.ch/en/news/adaptyv-raises-40m-to-build-automated-lab-for-agentic-biology",
+      "text": "🇨🇭 Swiss startup automates the protein engineering lab\n\n@Adaptyv Biosystems, based at Biopôle in Lausanne, is building an automated laboratory for agentic biology. Its protein engineering platform combines synthetic biology, nanofluidics and machine learning, closing the loop between model predictions and physical experimental results.\n\nWhy it matters:\n🧬 Protein design needs wet-lab feedback at machine speed\n🤖 Automation turns AI models into testable biology\n🇨🇭 Swiss life science infrastructure moving up the value chain\n\nThe bottleneck in AI-driven biology is experiments, and Switzerland is good at building instruments.\n\nhttps://www.startupticker.ch/en/news/adaptyv-raises-40m-to-build-automated-lab-for-agentic-biology",
       "link": "https://www.startupticker.ch/en/news/adaptyv-raises-40m-to-build-automated-lab-for-agentic-biology",
       "mention": {
         "type": "Adaptyv",
@@ -47,7 +47,7 @@
     },
     {
       "index": 5,
-      "text": "🇨🇭 Swiss biotech extends cash runway into 2027\n\n@Addex Therapeutics, the Geneva-based clinical-stage biotech, raised gross proceeds of USD 2.8 million through its at-the-market programme with US investment bank H.C. Wainwright & Co. The company says the sale pushes its cash runway to the fourth quarter of 2027.\n\nWhy it matters:\n💊 Runway to Q4 2027 buys time for clinical readouts\n📈 At-the-market programmes give small caps incremental funding\n🇨🇭 Swiss listed biotech financing without a dilutive mega-round\n\nSurviving to the next data point is half the strategy in clinical-stage biotech.\n\nhttps://www.startupticker.ch/en/news/addex-sells-shares-to-extend-runway-into-2027",
+      "text": "🇨🇭 Swiss biotech Addex extends runway to 2027\n\n@Addex Therapeutics raised gross proceeds of USD 2.8 million through its at-the-market programme with US investment bank H.C. Wainwright & Co. The clinical-stage Geneva biotech says the sale pushes its cash runway to the fourth quarter of 2027.\n\nWhy it matters:\n💊 Clinical-stage biotech buys time to reach data\n📉 At-the-market facilities remain the pragmatic small-cap tool\n🇨🇭 Swiss listed biotech managing a tight funding market\n\nSurviving to the next readout is a strategy, not a compromise.\n\nhttps://www.startupticker.ch/en/news/addex-sells-shares-to-extend-runway-into-2027",
       "link": "https://www.startupticker.ch/en/news/addex-sells-shares-to-extend-runway-into-2027",
       "mention": {
         "type": "Addex",
@@ -60,7 +60,15 @@
     },
     {
       "index": 6,
-      "text": "🇨🇭 Swiss university builds data stewardship network\n\n@ETH Zürich has set up a Data Stewardship Network to support research data management across its departments, connecting the people responsible for how experimental data is stored, documented and shared. It is infrastructure work: unglamorous, and decisive for whether research results can be reused.\n\nWhy it matters:\n📊 Reusable data is the raw material of AI research\n🗂️ Stewardship roles professionalise what was informal practice\n🇨🇭 Swiss institutions treating data quality as core infrastructure\n\nThe next generation of spin-offs will be built on datasets someone curated properly years earlier.\n\nhttps://ethz.ch/staffnet/en/news-and-events/internal-news/archive/2026/08/data-stewardship-network-for-research-data-management.html",
+      "text": "🇨🇭 Swiss biotechs promote leaders from within\n\nThree Swiss biotechs, including one developing precision gene therapies for neurodegenerative disease, have filled senior roles internally rather than hiring externally. Startupticker reports the moves as a sign of maturing bench strength across the Swiss life science sector.\n\nWhy it matters:\n🧠 Gene therapy for neurodegeneration needs long institutional memory\n👥 Internal promotion signals depth, not scarcity\n🇨🇭 Swiss biotech growing its own senior talent pool\n\nTalent that stays long enough to be promoted is an underrated indicator of company health.\n\nhttps://www.startupticker.ch/en/news/three-swiss-biotechs-promote-from-within",
+      "link": "https://www.startupticker.ch/en/news/three-swiss-biotechs-promote-from-within",
+      "mention": {},
+      "needs_check": false,
+      "claims": []
+    },
+    {
+      "index": 7,
+      "text": "🇨🇭 ETH Zurich builds a data stewardship network\n\n@ETH Zürich has launched a Data Stewardship Network for research data management, connecting the specialists who curate, document and preserve research datasets across departments. The aim is consistent practice at an institution producing data across dozens of disciplines.\n\nWhy it matters:\n📊 Reusable research data is the raw material for AI\n🗂️ Stewardship roles turn compliance into scientific infrastructure\n🇨🇭 Swiss universities professionalising the unglamorous layer\n\nSpin-offs of the next decade will be built on data someone bothered to organise today.\n\nhttps://ethz.ch/staffnet/en/news-and-events/internal-news/archive/2026/08/data-stewardship-network-for-research-data-management.html",
       "link": "https://ethz.ch/staffnet/en/news-and-events/internal-news/archive/2026/08/data-stewardship-network-for-research-data-management.html",
       "mention": {
         "type": "ETH",
@@ -70,8 +78,8 @@
       "claims": []
     },
     {
-      "index": 7,
-      "text": "🇨🇭 Swiss AI platform reads machine logs for IT teams\n\n@Logmind, an EPFL spin-off led by Ketevani Zaridze, has launched a new generation of its AI platform for IT operational intelligence. Since its 2025 funding round the company has added customers across several industries and hired a Chief Commercial Officer to push commercial expansion.\n\nWhy it matters:\n🖥️ Log data is the least exploited signal in IT operations\n📣 A CCO hire signals the shift from product to sales\n🇨🇭 Swiss enterprise AI winning on reliability, not novelty\n\nGrowing headcount where it converts revenue is a sign of a company that has found its market.\n\nhttps://www.startupticker.ch/en/news/traction-and-a-new-ai-platform-for-logmind",
+      "index": 8,
+      "text": "🇨🇭 Swiss AI platform tackles IT log chaos\n\n@Logmind, an EPFL spin-off led by Ketevani Zaridze, has launched a new generation of its AI platform for IT operational intelligence. Since its 2025 round, the company has added customers across several industries and hired a Chief Commercial Officer.\n\nWhy it matters:\n🔍 Log analysis is where outages are caught early\n📈 Commercial hire signals a shift from product to scale\n🇨🇭 Swiss enterprise software winning on multi-industry proof\n\nHiring a commercial lead is often the clearest signal that a technical product is ready.\n\nhttps://www.startupticker.ch/en/news/traction-and-a-new-ai-platform-for-logmind",
       "link": "https://www.startupticker.ch/en/news/traction-and-a-new-ai-platform-for-logmind",
       "mention": {
         "type": "Logmind",
@@ -81,8 +89,8 @@
       "claims": []
     },
     {
-      "index": 8,
-      "text": "🇨🇭 Swiss glaciers are losing entire ecosystems\n\nTwo @EPFL researchers describe what disappears alongside the ice: according to Glacier Monitoring in Switzerland (GLAMOS), more than 1,100 small Swiss glaciers have vanished since the early 1970s, and remaining reserves have lost 40% of their volume since 2000. Glacial habitats are only now being catalogued.\n\nWhy it matters:\n🧊 40% of glacial volume gone in 25 years\n🔬 Species being documented as their habitat disappears\n🇨🇭 Swiss water and hydropower planning rests on this data\n\nMeasurement first, then technology: the Swiss climate story starts with people who count things carefully.\n\nhttps://actu.epfl.ch/news/retreating-glaciers-are-taking-entire-worlds-with",
+      "index": 9,
+      "text": "🇨🇭 Swiss glaciers lost 40% of volume\n\nTwo @EPFL researchers describe what disappearing ice actually costs. According to Glacier Monitoring in Switzerland, more than 1,100 small Swiss glaciers have vanished since the early 1970s, and remaining reserves have lost 40% of their volume in 25 years.\n\nWhy it matters:\n🧊 Water and hydropower reserves shrinking on a visible timeline\n🦠 Glacier ecosystems being catalogued as they disappear\n🇨🇭 Swiss monitoring data sets the global reference\n\nSwitzerland is running the world's best-documented natural experiment on its own doorstep.\n\nhttps://actu.epfl.ch/news/retreating-glaciers-are-taking-entire-worlds-with",
       "link": "https://actu.epfl.ch/news/retreating-glaciers-are-taking-entire-worlds-with",
       "mention": {
         "type": "EPFL",
@@ -92,8 +100,8 @@
       "claims": []
     },
     {
-      "index": 9,
-      "text": "🇨🇭 Swiss platform funds local energy community growth\n\n@UpGrid, which operates a management platform for local energy communities, has raised just under EUR 1 million in a seed round to expand its team and develop the platform. Investors include Marcaro (Jürg Schwarzenbach's vehicle), Gründerfonds Ruhr, Climate Founders, Swisspreneur and several angels.\n\nWhy it matters:\n⚡ Local energy communities need software to settle and bill\n🏘️ Regulation is opening the market across DACH countries\n🇨🇭 Swiss climate tech attracting German fund co-investment\n\nThe grid transition will be won by unglamorous software layers sitting between neighbours and meters.\n\nhttps://www.startupticker.ch/en/news/frisches-geld-und-starkes-wachstum-fuer-upgrid",
+      "index": 10,
+      "text": "🇨🇭 Swiss platform raises seed for energy communities\n\n@UpGrid, which operates a platform for managing local energy communities, has raised just under EUR 1 million in a seed round. Investors include Jürg Schwarzenbach's vehicle Marcaro, Gründerfonds Ruhr, Climate Founders, Swisspreneur and several angels, with proceeds going to hiring and product development.\n\nWhy it matters:\n⚡ Local energy communities need software to settle flows\n🌍 Cross-border investor mix opens the German market\n🇨🇭 Swiss climate tech raising lean, growing fast\n\nThe energy transition is increasingly a billing and coordination problem, and that is software.\n\nhttps://www.startupticker.ch/en/news/frisches-geld-und-starkes-wachstum-fuer-upgrid",
       "link": "https://www.startupticker.ch/en/news/frisches-geld-und-starkes-wachstum-fuer-upgrid",
       "mention": {
         "type": "UpGrid",
@@ -105,66 +113,12 @@
       ]
     },
     {
-      "index": 10,
-      "text": "🇨🇭 Ten Swiss cleantech startups head to Munich\n\nTen companies working on clean energy, sustainable materials, industrial decarbonisation and climate resilience have been selected for the Swiss National Startup Team 2026 by @Innosuisse. They travel to Munich in November for an investor roadshow aimed at expanding their international presence.\n\nWhy it matters:\n🌍 German industrial buyers are the natural first market\n🤝 Roadshows compress months of investor introductions into days\n🇨🇭 Swiss cleantech pipeline deep enough to field a national team\n\nSwitzerland builds excellent climate hardware; the constraint has always been reaching foreign customers early enough.\n\nhttps://www.startupticker.ch/en/news/10-cleantech-startups-selected-for-munich-investor-roadshow",
+      "index": 11,
+      "text": "🇨🇭 Ten Swiss cleantech startups head to Munich\n\nTen companies working on clean energy, sustainable materials, industrial decarbonisation and climate resilience have been selected for the Swiss National Startup Team 2026 by @Innosuisse. They travel to Munich in November for an investor roadshow aimed at international expansion.\n\nWhy it matters:\n🔋 Industrial decarbonisation is where Swiss engineering competes\n🤝 Munich puts founders in front of German industrial capital\n🇨🇭 Swiss cleantech pipeline deep enough to field a team\n\nProximity to Europe's industrial buyers matters more than any pitch deck.\n\nhttps://www.startupticker.ch/en/news/10-cleantech-startups-selected-for-munich-investor-roadshow",
       "link": "https://www.startupticker.ch/en/news/10-cleantech-startups-selected-for-munich-investor-roadshow",
       "mention": {
         "type": "Innosuisse.",
         "expect": "Innosuisse."
-      },
-      "needs_check": false,
-      "claims": []
-    },
-    {
-      "index": 11,
-      "text": "🇨🇭 Swiss lab models cities under climate stress\n\nThe Laboratory of Urban and Environmental Systems at @EPFL studies urban climate, hydrology and sustainable design, modelling how heat, water and built form interact. Its work feeds the design standards and planning decisions that determine how Swiss cities cope with hotter summers and heavier rainfall.\n\nWhy it matters:\n🏙️ Urban heat is becoming a public health variable\n💧 City hydrology models now drive infrastructure spending\n🇨🇭 Swiss research shaping planning rules, not just papers\n\nAdaptation technology will come out of labs that model the physical city, not the abstract climate.\n\nhttps://www.epfl.ch/labs/urbes/",
-      "link": "https://www.epfl.ch/labs/urbes/",
-      "mention": {
-        "type": "EPFL",
-        "expect": "EPFL"
-      },
-      "needs_check": false,
-      "claims": []
-    },
-    {
-      "index": 12,
-      "text": "🇨🇭 Swiss study shows how AI agents get jailbroken\n\nA new @EPFL study finds the largest safety risk for AI agents is not a single malicious prompt but carefully orchestrated multi-turn conversations. As agents gain the ability to browse, send emails and call external tools, persuasion across a dialogue becomes an attack surface that current filters largely miss.\n\nWhy it matters:\n🛡️ Single-prompt safety tests miss conversational attacks\n🤖 Tool access turns model errors into real-world actions\n🇨🇭 Swiss research setting the agenda on agent security\n\nAgent security is about to become a product category, and the research defining it is Swiss.\n\nhttps://actu.epfl.ch/news/how-attackers-persuade-ai-agents-to-break-the-rule",
-      "link": "https://actu.epfl.ch/news/how-attackers-persuade-ai-agents-to-break-the-rule",
-      "mention": {
-        "type": "EPFL",
-        "expect": "EPFL"
-      },
-      "needs_check": false,
-      "claims": []
-    },
-    {
-      "index": 13,
-      "text": "🇨🇭 Swiss lab links urban design to hydrology\n\nThe Laboratory of Urban and Environmental Systems at EPFL works on urban climate, hydrology and sustainable design, quantifying how buildings, surfaces and water systems shape a city's exposure to extremes. The output is tooling planners and engineers can actually apply.\n\nWhy it matters:\n🌡️ Design choices decide how hot a neighbourhood gets\n🌧️ Stormwater modelling is now core urban engineering\n🇨🇭 Swiss labs exporting methods to fast-growing cities abroad\n\nThe most exportable Swiss climate product may turn out to be method, not machinery.\n\nhttps://www.epfl.ch/labs/urbes/",
-      "link": "https://www.epfl.ch/labs/urbes/",
-      "mention": {},
-      "needs_check": false,
-      "claims": [
-        "the company is Laboratory of Urban and Environmental Systems (URBES)"
-      ]
-    },
-    {
-      "index": 14,
-      "text": "🇨🇭 Swiss academies tackle sensitive research partnerships\n\nThe Swiss Academy of Sciences (@SCNAT) is hosting a workshop on navigating global research partnerships in politically and ethically sensitive contexts, addressing how Swiss institutions collaborate abroad when geopolitics, export controls and research ethics collide.\n\nWhy it matters:\n🌐 Science collaboration is now a geopolitical decision\n⚖️ Ethical due diligence increasingly governs funding eligibility\n🇨🇭 Swiss neutrality is an asset only if actively managed\n\nOpen science and national security are pulling in opposite directions, and Switzerland has to hold both.\n\nhttps://scnat.ch/fr/events/uuid/i/2005c1a4-a0b6-5176-b97b-e1f14d2dae83-Navigating_Global_Research_Partnerships_in_Politically_and_Ethically_Sensitive_Contexts",
-      "link": "https://scnat.ch/fr/events/uuid/i/2005c1a4-a0b6-5176-b97b-e1f14d2dae83-Navigating_Global_Research_Partnerships_in_Politically_and_Ethically_Sensitive_Contexts",
-      "mention": {
-        "type": "SCNAT",
-        "expect": "SCNAT"
-      },
-      "needs_check": false,
-      "claims": []
-    },
-    {
-      "index": 15,
-      "text": "🇨🇭 Swiss spin-off targets food cravings with neuroscience\n\n@Bewe, a University of Fribourg spin-off, has been awarded the Pre-Clinical Top-Up by Biopôle SA, extending a long-standing relationship with the Lausanne campus. The company is developing a neuroscience-based digital intervention aimed at reducing unhealthy food cravings.\n\nWhy it matters:\n🧠 Digital therapeutics attacking a driver of metabolic disease\n🔬 Campus support carries companies through pre-clinical validation\n🇨🇭 Swiss universities converting behavioural neuroscience into products\n\nSwitzerland's cluster infrastructure is quietly doing what capital alone cannot: getting early science to evidence.\n\nhttps://www.startupticker.ch/en/news/bewe-awarded-biopole-pre-clinical-top-up",
-      "link": "https://www.startupticker.ch/en/news/bewe-awarded-biopole-pre-clinical-top-up",
-      "mention": {
-        "type": "Bewe",
-        "expect": "Bewe"
       },
       "needs_check": false,
       "claims": []
