@@ -1,12 +1,23 @@
 {
-  "generated": "2026-09-01",
+  "generated": "2026-09-02",
   "mode": "Written by Claude in Max's voice.",
   "note": "Times are local. Schedule each post at its time on its date.",
   "cowork_prompt": "Open https://maxime-droux.com/digest/posts.json and schedule the posts listed at the end of this message, and only those. The file holds the shortlist; the list below says which of them I picked and when each one goes out. Match them by `index`. Ignore every other post in the file.\n\nFor each post, in order:\n- Type the `text` straight through, once, with real keystrokes. Never insert\n  text via JavaScript. It already ends with the article URL on its own line,\n  so do not add, move or retype the URL separately: typing it last is what makes\n  the link preview load the article photo.\n- Each post has exactly one @mention. Type `mention.type`, wait for the\n  dropdown, click the row matching `mention.expect`. If no row matches, post\n  it without the mention rather than tagging the wrong company. LinkedIn will\n  render the official name: that is expected and fine, do not fight it, do not\n  restart the post, do not rewrite it.\n- Schedule it at the date and time given for it in the list below. If no link\n  preview appears, schedule it anyway: do not hunt for an image.\n\nTwo attempts per post, then stop. If a post is not scheduled after two tries,\nleave it, move to the next one, and list it at the end. Never start a third.\n\nBefore you start, open the scheduled-posts list once and note what is already\nthere. Skip any post already scheduled: never schedule the same one twice.\n\nVerification:\n- Claims already settled against the article are not in the file. Check only\n  what `claims` still lists, and posts with needs_check: true (a figure nobody\n  has verified: confirm round closed / round name / amount received / investors\n  in THIS round). Both empty and false means schedule it, no research.\n\nAnything that fails: do not schedule it, and do not edit any file or commit\nanything. List the held posts at the end with the sentence you read and the\npage you read it on, and I will record them.\n\nReport what was scheduled and what was held.",
   "posts": [
     {
       "index": 1,
-      "text": "🇨🇭 Swiss email security goes sovereign for Europe\n\n@xorlab, an ETH Zurich spin-off, is building a behavioral AI email security platform aimed at European enterprises that want their defenses hosted and governed on the continent. The system models normal communication patterns to catch targeted attacks that signature-based filters miss.\n\nWhy it matters:\n📧 Email remains the entry point for most enterprise breaches\n🛡️ Behavioral models catch attacks signatures never see\n🇨🇭 Swiss hosting turns data sovereignty into a commercial argument\n\nSovereignty stopped being a slogan the moment procurement teams started scoring it.\n\nhttps://www.startupticker.ch/en/news/xorlab-raises-eur-5-million-to-build-europe-s-sovereign-email-security-platform",
+      "text": "🇨🇭 Swiss researchers teach AI to doubt itself\n\nA team at @EPFL has built a framework that trains large language models to run Bayesian optimization, choosing which experiment to attempt next. Instead of testing every molecule or reaction, the system predicts promising options and quantifies how uncertain it is about them.\n\nWhy it matters:\n🧪 Cuts lab cycles by ranking experiments before they run\n🤖 Uncertainty, not confidence, is what makes AI usable in science\n🇨🇭 Swiss labs pushing AI into the physical experiment loop\n\nThe most valuable scientific AI may be the one that knows what it does not know.\n\nhttps://actu.epfl.ch/news/an-ai-capable-of-doubt-can-optimize-scientific-dis",
+      "link": "https://actu.epfl.ch/news/an-ai-capable-of-doubt-can-optimize-scientific-dis",
+      "mention": {
+        "type": "EPFL",
+        "expect": "EPFL"
+      },
+      "needs_check": false,
+      "claims": []
+    },
+    {
+      "index": 2,
+      "text": "🇨🇭 Swiss email security goes sovereign for Europe\n\n@xorlab, a Zurich-based spin-off, has raised fresh capital to build a European email security platform. Its behavioural AI models how each organisation actually communicates, then flags the messages that break the pattern, targeting enterprises that want their defences hosted and governed in Europe.\n\nWhy it matters:\n📧 Email remains the entry point for most enterprise breaches\n🛡️ Behavioural models catch attacks signature filters miss\n🇨🇭 Swiss data governance is becoming a commercial argument\n\nSovereignty has stopped being a slogan and started being a procurement requirement.\n\nhttps://www.startupticker.ch/en/news/xorlab-raises-eur-5-million-to-build-europe-s-sovereign-email-security-platform",
       "link": "https://www.startupticker.ch/en/news/xorlab-raises-eur-5-million-to-build-europe-s-sovereign-email-security-platform",
       "mention": {
         "type": "xorlab",
@@ -16,8 +27,8 @@
       "claims": []
     },
     {
-      "index": 2,
-      "text": "🇨🇭 Swiss bankers warn against post-Credit Suisse overcorrection\n\n@EFG International chief executive Giorgio Pradelli told the Financial Times that Switzerland's regulatory response to the Credit Suisse collapse risks going too far, and should weigh how tougher rules hit banks competing abroad. Pradelli becomes chair of the Swiss Bankers Association on 17 September.\n\nWhy it matters:\n⚖️ Capital rules set the cost base for cross-border banking\n🏦 Regtech demand rises whichever way the rules land\n🇨🇭 Switzerland is recalibrating its largest export industry\n\nRegulation is infrastructure: how Switzerland tunes it decides which financial technology gets built here.\n\nhttps://fintechnews.ch/regtech/swiss-banking-reforms/85202/",
+      "index": 3,
+      "text": "🇨🇭 Swiss bankers warn against post-CS overcorrection\n\nGiorgio Pradelli, chief executive of @EFG International and incoming chair of the Swiss Bankers Association, told the Financial Times that Switzerland's regulatory answer to the Credit Suisse collapse risks going too far, weighing on banks that compete in overseas markets.\n\nWhy it matters:\n🏦 Capital rules now shape where Swiss banks can compete\n⚖️ Post-crisis credibility and competitiveness pull in opposite directions\n🇨🇭 Swiss financial regulation sets the frame deeptech finance operates in\n\nHow Switzerland calibrates this will quietly decide how much risk its financial sector can still carry.\n\nhttps://fintechnews.ch/regtech/swiss-banking-reforms/85202/",
       "link": "https://fintechnews.ch/regtech/swiss-banking-reforms/85202/",
       "mention": {
         "type": "EFG",
@@ -27,8 +38,41 @@
       "claims": []
     },
     {
-      "index": 3,
-      "text": "🇨🇭 Swiss scientists decode Nepal's deadly flash flood\n\n@EPFL professor Christophe Ancey, a specialist in natural disasters, analysed the 26 August flood that destroyed hundreds of homes in a Nepalese valley near the Tibetan border. Early assessments point to a partial glacier collapse, raising the question of whether Alpine valleys face the same mechanism.\n\nWhy it matters:\n🏔️ Retreating glaciers create unstable lakes above inhabited valleys\n📊 Debris-flow modelling underpins early warning systems\n🇨🇭 Switzerland is a live laboratory for Alpine hazard science\n\nClimate risk research is one field where Swiss geography and Swiss expertise reinforce each other.\n\nhttps://actu.epfl.ch/news/what-triggered-the-devastating-flash-flood-in-nepa",
+      "index": 4,
+      "text": "🇨🇭 Swiss transistor shrinks high voltage to chip scale\n\nResearchers at @EPFL have demonstrated a gallium nitride high-voltage transistor built around a polarization superjunction, a design that handles large voltages on a device small enough to sit on a microchip. The approach targets power electronics in vehicles, grids and industrial converters.\n\nWhy it matters:\n⚡ Power conversion losses are a major electrification bottleneck\n🔬 Gallium nitride outperforms silicon at high voltage and frequency\n🇨🇭 Swiss semiconductor research feeding directly into industrial power\n\nElectrification will be won in the components nobody sees, and Switzerland keeps showing up there.\n\nhttps://actu.epfl.ch/news/new-transistor-brings-high-voltage-to-microchip--2",
+      "link": "https://actu.epfl.ch/news/new-transistor-brings-high-voltage-to-microchip--2",
+      "mention": {
+        "type": "EPFL",
+        "expect": "EPFL POWERlab"
+      },
+      "needs_check": false,
+      "claims": []
+    },
+    {
+      "index": 5,
+      "text": "🇨🇭 Swiss implant tackles preterm birth after surgery\n\n@KOVE Medical has secured funding for an implantable device that closes the fetal membrane after foetal surgery. Puncturing that membrane is a leading cause of premature rupture and preterm delivery, so sealing it addresses one of the main risks of an already delicate intervention.\n\nWhy it matters:\n👶 Preterm birth remains a leading cause of infant mortality\n🩺 Solves a complication created by the surgery itself\n🇨🇭 Swiss medtech aiming at small markets with outsized stakes\n\nSome of the best engineering problems are the ones a surgeon can describe in one sentence.\n\nhttps://www.eu-startups.com/2026/08/reducing-preterm-birth-risks-in-foetal-surgery-kove-medical-secures-e1-7-million/",
+      "link": "https://www.eu-startups.com/2026/08/reducing-preterm-birth-risks-in-foetal-surgery-kove-medical-secures-e1-7-million/",
+      "mention": {
+        "type": "KOVE",
+        "expect": "KOVE Medical"
+      },
+      "needs_check": false,
+      "claims": []
+    },
+    {
+      "index": 6,
+      "text": "🇨🇭 Swiss firms adopt AI broadly, not deeply\n\nA new review published by @Organisator finds AI adoption climbing across Swiss companies while depth of use lags: tools are in place, but few organisations have rebuilt processes or data foundations around them. The gap sits between pilots and production.\n\nWhy it matters:\n📊 Adoption rates flatter companies still stuck in pilots\n🏗️ Value comes from redesigned workflows, not added software\n🇨🇭 Swiss industrials hold the proprietary data models need\n\nThe competitive edge will go to whoever moves from experimenting with AI to depending on it.\n\nhttps://www.organisator.ch/en/operational-excellence/2026-08-28/ki-in-der-schweiz-adoption-steigt-tiefe-fehlt/",
+      "link": "https://www.organisator.ch/en/operational-excellence/2026-08-28/ki-in-der-schweiz-adoption-steigt-tiefe-fehlt/",
+      "mention": {
+        "type": "Organisator",
+        "expect": "Organisator"
+      },
+      "needs_check": false,
+      "claims": []
+    },
+    {
+      "index": 7,
+      "text": "🇨🇭 Swiss expert dissects Nepal's glacial flood\n\nAfter a flash flood destroyed hundreds of homes near the Nepal-Tibet border on 26 August, @EPFL professor Christophe Ancey explained the geophysics: initial assessments point to a partial glacier collapse, with debris flow mechanics amplifying the destruction downstream. He also assessed whether Alpine valleys face comparable risk.\n\nWhy it matters:\n🏔️ Retreating glaciers are creating new unstable water bodies\n📡 Early warning depends on modelling debris flows correctly\n🇨🇭 Swiss Alpine research doubles as global hazard expertise\n\nSwitzerland studies its own mountains so closely that the knowledge exports itself.\n\nhttps://actu.epfl.ch/news/what-triggered-the-devastating-flash-flood-in-nepa",
       "link": "https://actu.epfl.ch/news/what-triggered-the-devastating-flash-flood-in-nepa",
       "mention": {
         "type": "EPFL",
@@ -38,19 +82,16 @@
       "claims": []
     },
     {
-      "index": 4,
-      "text": "🇨🇭 Swiss computer vision platform hits 3,500 apps\n\n@viso.ai launched Viso Now, a platform that lets anyone build a working computer vision application in minutes. Over 1,000 users have already created more than 3,500 vision applications, with a median time to first application of under three minutes.\n\nWhy it matters:\n👁️ Computer vision moves from specialist projects to self-serve tooling\n⏱️ Three minutes to first app collapses the evaluation cycle\n🇨🇭 A Swiss company setting the usability bar in applied AI\n\nAdoption speed, not model novelty, is where applied AI companies now separate.\n\nhttps://www.startupticker.ch/en/news/viso-ai-reports-strong-early-adoption",
-      "link": "https://www.startupticker.ch/en/news/viso-ai-reports-strong-early-adoption",
-      "mention": {
-        "type": "viso.ai",
-        "expect": "viso.ai"
-      },
-      "needs_check": false,
+      "index": 8,
+      "text": "🇨🇭 Swiss startup automates the protein design lab\n\nAdaptyv, based in Lausanne, has raised a Series A to build an AI-native wet lab for protein engineering. Designs generated by models are expressed and tested on its automated platform, closing the loop between computational prediction and experimental validation that most protein AI still lacks.\n\nWhy it matters:\n🧬 Protein models are limited by scarce experimental data\n🤖 Automated testing turns validation into a data engine\n🇨🇭 Swiss biotech building infrastructure, not single molecules\n\nWhoever owns the measurement layer of biology ends up owning the models too.\n\nhttps://www.eu-startups.com/2026/08/lausanne-based-adaptyv-raises-e34-35-million-series-a-to-build-the-automated-lab-for-agentic-biology/",
+      "link": "https://www.eu-startups.com/2026/08/lausanne-based-adaptyv-raises-e34-35-million-series-a-to-build-the-automated-lab-for-agentic-biology/",
+      "mention": {},
+      "needs_check": true,
       "claims": []
     },
     {
-      "index": 5,
-      "text": "🇨🇭 Swiss drill-free dental treatment reaches 380 UK practices\n\n@vVARDIS, the Zug-based medtech unicorn, will see its Curodont Repair early-decay treatment offered across Bupa Dental Care's 380 UK practices. It is the second large-scale UK provider agreement this year, following a deal with mydentist in January.\n\nWhy it matters:\n🦷 Non-invasive repair replaces drilling for early-stage decay\n🇬🇧 Two national chains signed in eight months\n🇨🇭 Swiss peptide science scaling through distribution, not marketing\n\nClinical science only becomes a business when large providers put it in the standard protocol.\n\nhttps://www.startupticker.ch/en/news/vvardis-drill-free-treatment-adopted-by-bupa-dental-care",
+      "index": 9,
+      "text": "🇨🇭 Swiss drill-free dental treatment reaches 380 UK clinics\n\nBupa Dental Care will offer Curodont Repair, the non-invasive early-decay treatment developed by Zug-based @vVARDIS, across its 380 UK practices. It is the medtech unicorn's second large-scale UK provider agreement this year, after a deal with mydentist in January.\n\nWhy it matters:\n🦷 Treats early decay without drilling or filling\n📈 Two national chains signed in eight months\n🇨🇭 Swiss science converting into routine clinical practice abroad\n\nDistribution deals, not press releases, are what turn a Swiss unicorn into a real business.\n\nhttps://www.startupticker.ch/en/news/vvardis-drill-free-treatment-adopted-by-bupa-dental-care",
       "link": "https://www.startupticker.ch/en/news/vvardis-drill-free-treatment-adopted-by-bupa-dental-care",
       "mention": {
         "type": "vVARDIS",
@@ -60,8 +101,8 @@
       "claims": []
     },
     {
-      "index": 6,
-      "text": "🇨🇭 Swiss startup automates the protein design lab\n\n@Adaptyv, based in Lausanne, runs an AI-native wet lab that validates designed proteins experimentally rather than leaving them as predictions. The setup closes the loop between computational protein design and physical measurement, feeding real binding data back into the models.\n\nWhy it matters:\n🧬 AI protein design is bottlenecked by experimental validation\n🤖 Automated wet labs turn biology into an iterable loop\n🇨🇭 Lausanne building infrastructure the global biotech field needs\n\nThe companies selling shovels to the AI biology rush may outlast the ones panning.\n\nhttps://www.eu-startups.com/2026/08/lausanne-based-adaptyv-raises-e34-35-million-series-a-to-build-the-automated-lab-for-agentic-biology/",
+      "index": 10,
+      "text": "🇨🇭 Swiss startup pairs nanofluidics with machine learning\n\n@Adaptyv combines synthetic biology, nanofluidics and machine learning to test designed proteins at scale in Lausanne. Rather than sell a model, it runs the physical experiments that tell you which designs actually work, feeding results back into the next generation of predictions.\n\nWhy it matters:\n🔬 Nanofluidics compresses cost per protein measurement\n♻️ Every experiment improves the model behind it\n🇨🇭 Swiss engineering depth meeting computational biology\n\nSwiss deeptech is often strongest where software has to touch hardware to work.\n\nhttps://www.startupticker.ch/en/news/adaptyv-raises-40m-to-build-automated-lab-for-agentic-biology",
       "link": "https://www.eu-startups.com/2026/08/lausanne-based-adaptyv-raises-e34-35-million-series-a-to-build-the-automated-lab-for-agentic-biology/",
       "mention": {
         "type": "Adaptyv",
@@ -71,21 +112,16 @@
       "claims": []
     },
     {
-      "index": 7,
-      "text": "🇨🇭 Zug plans joint research centre with ETH\n\nThe Canton of Zug is preparing an investment in a joint learning and research centre with @ETH Zurich, pairing the university's engineering base with the canton's industrial and corporate cluster. The cantonal council will decide on the plan.\n\nWhy it matters:\n🏗️ Cantonal money is becoming a real deeptech funding channel\n🎓 Proximity between labs and industry shortens the transfer path\n🇨🇭 Zug adds hard research to its finance and crypto base\n\nSwitzerland's federal structure lets individual cantons compete on research infrastructure, and that competition is productive.\n\nhttps://www.swissinfo.ch/eng/research-frontiers/cantonal-council-plans-to-invest-55-million-in-eth-research-centre/91965595",
+      "index": 11,
+      "text": "🇨🇭 Zug bets public money on ETH research centre\n\nThe canton of Zug has approved investment in a joint learning and research centre with ETH Zürich, planting one of Europe's leading technical universities in a canton better known for commodities trading, crypto and corporate headquarters.\n\nWhy it matters:\n🎓 Research anchors talent far longer than tax rates do\n🏛️ Cantons now compete on science infrastructure, not just fiscal terms\n🇨🇭 Swiss university footprints spreading beyond Zurich and Lausanne\n\nSpin-outs follow campuses, which makes this a decade-long play rather than a budget line.\n\nhttps://www.swissinfo.ch/eng/research-frontiers/cantonal-council-plans-to-invest-55-million-in-eth-research-centre/91965595",
       "link": "https://www.swissinfo.ch/eng/research-frontiers/cantonal-council-plans-to-invest-55-million-in-eth-research-centre/91965595",
-      "mention": {
-        "type": "ETH",
-        "expect": "ETH Zurich learning and research centre Zug"
-      },
+      "mention": {},
       "needs_check": false,
-      "claims": [
-        "the company is ETH Zurich learning and research centre Zug"
-      ]
+      "claims": []
     },
     {
-      "index": 8,
-      "text": "🇨🇭 Swiss biotech extends cash runway into 2027\n\n@Addex Therapeutics raised gross proceeds of USD 2.8 million through its at-the-market programme with US investment bank H.C. Wainwright & Co. The clinical-stage biotech says the sale pushes its cash runway out to the fourth quarter of 2027.\n\nWhy it matters:\n💊 Runway is the binding constraint for clinical-stage biotech\n📈 At-the-market programmes give listed biotechs flexible access to capital\n🇨🇭 A Geneva-area biotech buying itself another year of data\n\nIn drug development, the only strategy that matters is staying solvent until the next readout.\n\nhttps://www.startupticker.ch/en/news/addex-sells-shares-to-extend-runway-into-2027",
+      "index": 12,
+      "text": "🇨🇭 Swiss biotech extends runway into late 2027\n\n@Addex Therapeutics raised gross proceeds of USD 2.8 million through its at-the-market programme with US investment bank H.C. Wainwright & Co. The Geneva-based clinical-stage biotech said the sale pushes its cash runway out to the fourth quarter of 2027.\n\nWhy it matters:\n💵 Small incremental raises can buy years of runway\n⏳ Clinical timelines outlast most financing windows\n🇨🇭 Swiss listed biotechs leaning on flexible market instruments\n\nSurviving to the next data readout is a strategy, not a compromise.\n\nhttps://www.startupticker.ch/en/news/addex-sells-shares-to-extend-runway-into-2027",
       "link": "https://www.startupticker.ch/en/news/addex-sells-shares-to-extend-runway-into-2027",
       "mention": {
         "type": "Addex",
@@ -97,47 +133,20 @@
       ]
     },
     {
-      "index": 9,
-      "text": "🇨🇭 Swiss lab merges nanofluidics and machine learning\n\n@Adaptyv operates an automated protein engineering platform that combines synthetic biology, nanofluidics and machine learning to test designed proteins at scale. Each experimental round produces measured data that improves the next generation of designs.\n\nWhy it matters:\n🔬 Nanofluidics cuts the cost per protein measured\n♻️ Measured results beat predicted ones for model training\n🇨🇭 Swiss hardware and software converging inside one instrument\n\nSwitzerland's advantage in biology increasingly looks like an engineering advantage in disguise.\n\nhttps://www.startupticker.ch/en/news/adaptyv-raises-40m-to-build-automated-lab-for-agentic-biology",
+      "index": 13,
+      "text": "🇨🇭 Swiss biotechs promote leaders from within\n\nThree Swiss biotechs have filled senior roles internally, among them teams working on precision gene therapies for neurodegenerative disease. Promoting insiders keeps hard-won programme knowledge in place at companies where a single development timeline can run longer than most executive tenures.\n\nWhy it matters:\n🧠 Gene therapy programmes punish leadership discontinuity\n👥 Internal promotion signals a deep Swiss talent bench\n🇨🇭 Swiss biotech clusters increasingly grow their own executives\n\nA sector matures when it stops importing every senior hire.\n\nhttps://www.startupticker.ch/en/news/three-swiss-biotechs-promote-from-within",
       "link": "https://www.startupticker.ch/en/news/adaptyv-raises-40m-to-build-automated-lab-for-agentic-biology",
-      "mention": {
-        "type": "Adaptyv",
-        "expect": "Adaptyv Biosystems"
-      },
-      "needs_check": false,
-      "claims": []
-    },
-    {
-      "index": 10,
-      "text": "🇨🇭 Swiss researchers debate how to judge research\n\n@ETH Zürich is convening a panel discussion in Bern on responsible research assessment, examining how scientists are evaluated beyond publication counts and journal rankings. The question shapes which projects get funded and which careers advance.\n\nWhy it matters:\n📚 Metrics decide what science actually gets pursued\n🧭 Narrow indicators push researchers away from long-horizon work\n🇨🇭 Swiss institutions rewriting the incentives behind their research output\n\nDeeptech pipelines start years earlier than any funding round, inside the rules academics are measured by.\n\nhttps://ethz.ch/staffnet/en/news-and-events/internal-news/archive/2026/08/responsible-research-assessment-in-focus-panel-discussion-in-bern.html",
-      "link": "https://ethz.ch/staffnet/en/news-and-events/internal-news/archive/2026/08/responsible-research-assessment-in-focus-panel-discussion-in-bern.html",
-      "mention": {
-        "type": "ETH",
-        "expect": "ETH Library"
-      },
-      "needs_check": false,
-      "claims": []
-    },
-    {
-      "index": 11,
-      "text": "🇨🇭 Swiss biotechs fill top roles from within\n\nAmong the Swiss biotechs promoting internally is Neurosterix, working on precision therapies for neurodegenerative disease. Choosing insiders over external hires keeps programme knowledge intact at companies whose value sits in years of accumulated experimental detail.\n\nWhy it matters:\n🧠 Neurodegeneration programmes run on decade-long institutional memory\n👥 Internal promotion signals bench strength, not just cost discipline\n🇨🇭 Switzerland's biotech talent pool is deep enough to promote from\n\nA sector that can grow its own leaders is a sector that has stopped being young.\n\nhttps://www.startupticker.ch/en/news/three-swiss-biotechs-promote-from-within",
-      "link": "https://www.startupticker.ch/en/news/three-swiss-biotechs-promote-from-within",
       "mention": {},
       "needs_check": false,
       "claims": []
     },
     {
-      "index": 12,
-      "text": "🇨🇭 Swiss university builds data stewardship network\n\n@ETH Zurich has launched a network connecting staff working on research data management, focused on making datasets findable, accessible, interoperable and reusable. The initiative treats data curation as a discipline rather than an afterthought at the end of a project.\n\nWhy it matters:\n🗂️ Reusable datasets are the raw material for AI-driven science\n🔗 FAIR practice cuts duplicated experimental work across labs\n🇨🇭 Swiss research infrastructure quietly compounding in value\n\nThe least glamorous work in science, well organised data, is what the next decade of models will run on.\n\nhttps://ethz.ch/staffnet/en/news-and-events/internal-news/archive/2026/08/data-stewardship-network-for-research-data-management.html",
-      "link": "https://ethz.ch/staffnet/en/news-and-events/internal-news/archive/2026/08/data-stewardship-network-for-research-data-management.html",
-      "mention": {
-        "type": "ETH",
-        "expect": "ETH Zurich Data Stewardship Network"
-      },
+      "index": 14,
+      "text": "🇨🇭 ETH Zurich builds network for research data\n\nETH Zürich has launched a Data Stewardship Network connecting staff across departments on research data management, from storage and metadata standards to reuse. It is unglamorous plumbing for an institution producing datasets that increasingly outlive the projects that generated them.\n\nWhy it matters:\n🗂️ Reproducibility depends on curation, not just experiments\n🤝 Cross-department standards make data usable beyond one lab\n🇨🇭 Swiss universities treating data as long-term infrastructure\n\nWell-governed research data is the quiet precondition for the AI everyone wants to build on it.\n\nhttps://ethz.ch/staffnet/en/news-and-events/internal-news/archive/2026/08/data-stewardship-network-for-research-data-management.html",
+      "link": "https://www.startupticker.ch/en/news/three-swiss-biotechs-promote-from-within",
+      "mention": {},
       "needs_check": false,
-      "claims": [
-        "the company is ETH Zurich Data Stewardship Network"
-      ]
+      "claims": []
     }
   ]
 }
