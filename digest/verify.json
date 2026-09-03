@@ -1,9 +1,9 @@
 {
-  "generated": "2026-09-02",
+  "generated": "2026-09-03",
   "note": "Rounds worth checking against a primary source.",
   "how_to_report": "For each round below, find the primary source: the company's own release, the filing, or the outlet that reported it first. Check the four things that have actually been wrong. Has the transaction closed, or is it announced, in progress, or subject to approval? Is the label right, where a first listing is an IPO, an already listed company selling shares is a Follow-on, a merger with a listed shell is a De-SPAC, and a purchase is an Acquisition rather than a round? Is the figure money received, or a ceiling, a gross, or a target? And did the named investors take part in THIS round, rather than an earlier one?\n\nReport back as entries for corrections.json, keyed on the company name, setting only the fields that are wrong. Add \"verified\" with today's date and \"verified_source\" naming what you read. An empty string clears a wrong value. For example:\n\n  \"Prem\": {\n    \"status\": \"announced\",\n    \"amount_note\": \"raising, expected to close in Q3\",\n    \"investors\": \"\",\n    \"verified\": \"2026-08-03\",\n    \"verified_source\": \"Bloomberg, 18 June 2026\"\n  }\n\nWhere a round checks out, still send back \"verified\" and \"verified_source\" so it is not queued again. Say plainly when a primary source cannot be found: an unverifiable round should stay unverified rather than be marked correct.",
   "corrections_file": "deeptech-news/corrections.json",
-  "count": 20,
+  "count": 21,
   "rounds": [
     {
       "company": "Gravis Robotics",
@@ -137,7 +137,7 @@
         "CHF 32M is large enough that an error moves the totals"
       ],
       "sources": [
-        "Startupticker"
+        "Startupticker.ch"
       ],
       "link": "https://www.startupticker.ch/en/news/adaptyv-raises-40m-to-build-automated-lab-for-agentic-biology",
       "last_verified": ""
@@ -147,19 +147,41 @@
       "as_recorded": {
         "stage": "Series A",
         "amount": "EUR 34.35M",
-        "amount_note": "",
+        "amount_note": "$40 million",
         "status": "closed",
         "investors": "Highland Europe, Ace Ventures, ByFounders, Y Combinator",
         "date": "2026-08-27",
         "hq": "Lausanne"
       },
       "check": [
-        "CHF 31.9M is large enough that an error moves the totals"
+        "CHF 31.9M is large enough that an error moves the totals",
+        "the figure carries a condition ($40 million): is it the amount actually raised"
       ],
       "sources": [
         "EU-Startups"
       ],
       "link": "https://www.eu-startups.com/2026/08/lausanne-based-adaptyv-raises-e34-35-million-series-a-to-build-the-automated-lab-for-agentic-biology/",
+      "last_verified": ""
+    },
+    {
+      "company": "NovaGo Therapeutics AG",
+      "as_recorded": {
+        "stage": "Series B",
+        "amount": "CHF 24M",
+        "amount_note": "USD 30M equivalent; includes non-dilutive funding complement",
+        "status": "closed",
+        "investors": "Neurimmune, Pureos Bioventures, Swiss Paraplegic Foundation, Wings for Life",
+        "date": "2026-09-02",
+        "hq": "Schlieren"
+      },
+      "check": [
+        "CHF 24M is large enough that an error moves the totals",
+        "the figure carries a condition (USD 30M equivalent; includes non-dilutive funding complement): is it the amount actually raised"
+      ],
+      "sources": [
+        "Startupticker"
+      ],
+      "link": "https://www.startupticker.ch/en/news/novago-secures-usd-30-million-to-advance-proof-of-concept-study-in-acute-spinal-cord-injury",
       "last_verified": ""
     },
     {
