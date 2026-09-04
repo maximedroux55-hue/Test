@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-03",
+  "generated": "2026-09-04",
   "note": "Rounds worth checking against a primary source.",
   "how_to_report": "For each round below, find the primary source: the company's own release, the filing, or the outlet that reported it first. Check the four things that have actually been wrong. Has the transaction closed, or is it announced, in progress, or subject to approval? Is the label right, where a first listing is an IPO, an already listed company selling shares is a Follow-on, a merger with a listed shell is a De-SPAC, and a purchase is an Acquisition rather than a round? Is the figure money received, or a ceiling, a gross, or a target? And did the named investors take part in THIS round, rather than an earlier one?\n\nReport back as entries for corrections.json, keyed on the company name, setting only the fields that are wrong. Add \"verified\" with today's date and \"verified_source\" naming what you read. An empty string clears a wrong value. For example:\n\n  \"Prem\": {\n    \"status\": \"announced\",\n    \"amount_note\": \"raising, expected to close in Q3\",\n    \"investors\": \"\",\n    \"verified\": \"2026-08-03\",\n    \"verified_source\": \"Bloomberg, 18 June 2026\"\n  }\n\nWhere a round checks out, still send back \"verified\" and \"verified_source\" so it is not queued again. Say plainly when a primary source cannot be found: an unverifiable round should stay unverified rather than be marked correct.",
   "corrections_file": "deeptech-news/corrections.json",
@@ -99,28 +99,6 @@
       ],
       "link": "https://www.bloomberg.com/news/articles/2026-06-18/swiss-ai-startup-prem-is-raising-100-million-series-a-round",
       "last_verified": "2026-08-03"
-    },
-    {
-      "company": "Tech Cluster Zug",
-      "as_recorded": {
-        "stage": "",
-        "amount": "CHF 55M",
-        "amount_note": "Phase 1 of CHF 110M total, pending approval",
-        "status": "announced",
-        "investors": "Canton of Zug, City of Zug, ETH Zurich",
-        "date": "2026-08-27",
-        "hq": "Zug"
-      },
-      "check": [
-        "recorded as announced rather than closed: has it closed since, and on what terms",
-        "CHF 55M is large enough that an error moves the totals",
-        "the figure carries a condition (Phase 1 of CHF 110M total, pending approval): is it the amount actually raised"
-      ],
-      "sources": [
-        "SWI swissinfo.ch"
-      ],
-      "link": "https://www.swissinfo.ch/eng/research-frontiers/cantonal-council-plans-to-invest-55-million-in-eth-research-centre/91965595",
-      "last_verified": ""
     },
     {
       "company": "Adaptyv Biosystems",
@@ -418,6 +396,26 @@
         "Startupticker"
       ],
       "link": "https://www.startupticker.ch/en/news/bewe-awarded-biopole-pre-clinical-top-up",
+      "last_verified": ""
+    },
+    {
+      "company": "Startup Launchpad AI Track powered by UBS",
+      "as_recorded": {
+        "stage": "Grant",
+        "amount": "CHF 160K",
+        "amount_note": "shared among four projects",
+        "status": "closed",
+        "investors": "UBS",
+        "date": "2026-09-04",
+        "hq": "Lausanne"
+      },
+      "check": [
+        "the figure carries a condition (shared among four projects): is it the amount actually raised"
+      ],
+      "sources": [
+        "Startupticker"
+      ],
+      "link": "https://www.startupticker.ch/en/news/2026-ai-track-powered-by-ubs-selects-four-trailblazers",
       "last_verified": ""
     },
     {
