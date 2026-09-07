@@ -14,9 +14,9 @@
   },
   "proposals": {
     "Prem": {
-      "verified": "2026-08-31",
+      "verified": "2026-09-07",
       "verified_source": "siliconangle.com",
-      "verified_quote": "Swiss artificial intelligence startup Prem SA is raising $100 million in Series A funding at a valuation of at least $500 million, Bloomberg reported today . The round is expected to close in the third quarter.",
+      "verified_quote": "Prem SA is raising $100 million in Series A funding at a valuation of at least $500 million, Bloomberg reported today . The round is expected to close in the third quarter.",
       "source_url": "https://siliconangle.com/2026/06/18/prem-seeks-100m-series-export-bans-boost-sovereign-ai-demand/",
       "verified_by": "automated weekly check"
     },
@@ -48,35 +48,29 @@
       "verified_by": "automated weekly check"
     },
     "Terra Quantum": {
-      "verified": "2026-08-31",
-      "verified_source": "eqs-news.com",
-      "verified_quote": "Terra Quantum AG (“Terra Quantum”), a leading quantum technology company, and Mountain Lake Acquisition Corp. II (“MLAC II”) (Nasdaq: MLAA), a special purpose acquisition company, today announced that they have signed a non-binding letter of intent (“LOI”) to enter into a business combination that values Terra Quantum at $3.25 billion.",
-      "source_url": "https://www.eqs-news.com/de/news/corporate/terra-quantum-ag-to-go-public-in-3-25-billion-spac-deal/5b3eacea-4961-44a5-87f7-2bb1ccefb009",
-      "verified_by": "automated weekly check",
-      "amount_note": "not stated in source; text cites a $3.25 billion valuation, not proceeds",
-      "investors": "Mountain Lake Acquisition Corp. II (Nasdaq: MLAA)",
-      "lead_investor": "Mountain Lake Acquisition Corp. II",
-      "location": "St. Gallen"
+      "verified": "2026-09-07",
+      "verified_source": "prnewswire.com",
+      "verified_quote": "The transaction is targeted to close in the second half of 2026, subject to, among other things: (i) approval by Axiom's stockholders",
+      "source_url": "https://www.prnewswire.com/news-releases/terra-quantum-and-axiom-intelligence-acquisition-corp-1-announce-definitive-business-combination-agreement-at-a-3-5-billion-equity-valuation-302781704.html",
+      "verified_by": "automated weekly check"
     },
     "Vaderis Therapeutics": {
-      "verified": "2026-08-31",
+      "verified": "2026-09-07",
       "verified_source": "prnewswire.com",
-      "verified_quote": "today announced the closing of a private $152 million Series B financing and initiation of HEROIC, the company's global Phase 3 clinical study evaluating engasertib (VAD044) in patients with hereditary hemorrhagic telangiectasia (HHT)",
+      "verified_quote": "today announced the closing of a private $152 million Series B financing",
       "source_url": "https://www.prnewswire.com/news-releases/vaderis-therapeutics-announces-oversubscribed-152-million-series-b-financing-and-initiation-of-the-global-phase-3-heroic-study-of-engasertib-for-hereditary-hemorrhagic-telangiectasia-302845188.html",
-      "verified_by": "automated weekly check",
-      "stage": "Series B",
-      "amount": "USD 152M",
-      "amount_note": "closed private placement proceeds as stated in release",
-      "investors": "Life Sciences at Goldman Sachs Alternatives, TCGX, Omega Funds, EQT Life Sciences, Perceptive Advisors, Kalehua Capital, Medicxi, Droia",
-      "lead_investor": "Life Sciences at Goldman Sachs Alternatives; TCGX (co-leads)",
-      "location": "Basel, Switzerland"
+      "verified_by": "automated weekly check"
     },
     "Basilea Pharmaceutica": {
-      "verified": "2026-08-24",
-      "verified_source": "manilatimes.net",
-      "verified_quote": "awarded USD 30 million in additional funding to Basilea after meeting its prespecified enrollment milestone",
-      "source_url": "https://www.manilatimes.net/2026/07/29/tmt-newswire/globenewswire/basilea-receives-usd-30-million-funding-under-existing-barda-agreement-for-advancing-phase-3-development-of-novel-antifungal-fosmanogepix/2393721",
-      "verified_by": "automated weekly check"
+      "verified": "2026-09-07",
+      "verified_source": "fiercebiotech.com",
+      "verified_quote": "Basilea already secured $29 million to develop its antifungals fosmanogepix and BAL2062, and the Swiss company announced this morning that it has confirmed it will also receive its next tranche of $39 million after hitting one of those undisclosed milestones.",
+      "source_url": "https://www.fiercebiotech.com/biotech/basilea-secures-39m-barda-part-long-term-antifungal-funding-plan",
+      "verified_by": "automated weekly check",
+      "amount": "USD 39M",
+      "amount_note": "Tranche under BARDA agreement of up to $268M total, milestone-dependent",
+      "lead_investor": "Biomedical Advanced Research and Development Authority (BARDA)",
+      "location": "Basel"
     },
     "Cy Biopharma": {
       "verified": "2026-08-31",
@@ -89,24 +83,42 @@
       "location": "Zug"
     },
     "Gravis Robotics": {
-      "verified": "2026-08-31",
+      "verified": "2026-09-07",
       "verified_source": "startupticker.ch",
       "verified_quote": "Today, Gravis Robotics has officially announed a $200M investment from SoftBank Investment Advisers, the largest ever Series A raised in construction robotics history.",
       "source_url": "https://www.startupticker.ch/en/news/gravis-robotics-raises-200m-for-construction-autonomy",
       "verified_by": "automated weekly check"
     },
     "Adaptyv Biosystems": {
-      "verified": "2026-08-31",
+      "verified": "2026-09-07",
       "verified_source": "startupticker.ch",
       "verified_quote": "The company has closed a Series A funding round of $40 million led by Highland Europe with existing investors Ace Ventures , ByFounders and Y Combinator doubling down.",
       "source_url": "https://www.startupticker.ch/en/news/adaptyv-raises-40m-to-build-automated-lab-for-agentic-biology",
       "verified_by": "automated weekly check"
+    },
+    "Adaptyv Bio": {
+      "verified": "2026-09-07",
+      "verified_source": "startupticker.ch",
+      "verified_quote": "This announcement comes after the company raised its $8 million seed round led by Ace Ventures earlier this year.",
+      "source_url": "https://www.startupticker.ch/en/news/adaptyv-leaves-the-beta-phase-following-its-8m-seed-round",
+      "verified_by": "automated weekly check",
+      "stage": "Seed",
+      "amount": "USD 8M",
+      "amount_note": "$8 million seed round",
+      "investors": "Ace Ventures, ByFounders, Founderful, LongGame, angels",
+      "lead_investor": "Ace Ventures",
+      "location": "Lausanne"
+    },
+    "NovaGo Therapeutics AG": {
+      "verified": "2026-09-07",
+      "verified_source": "prnewswire.com",
+      "verified_quote": "today announced the successful completion of a CHF 24 million (USD 30 million) Series B financing round",
+      "source_url": "https://www.prnewswire.com/news-releases/novago-therapeutics-closes-usd-30-million-series-b-financing-to-advance-proof-of-concept-study-in-acute-spinal-cord-injury-302866193.html",
+      "verified_by": "automated weekly check"
     }
   },
-  "last_run": "2026-08-31",
-  "could_not_verify": [
-    "Basilea Pharmaceutica"
-  ],
+  "last_run": "2026-09-07",
+  "could_not_verify": [],
   "withdrawn": {
     "Prem": "The pass read QueryAI's release, a different company in South Dakota, because the name check was a substring and 'prem' sits inside 'premises'. Withdrawn, and the check now requires the name as a word near the top of the page."
   },
