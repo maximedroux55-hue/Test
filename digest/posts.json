@@ -1,23 +1,23 @@
 {
-  "generated": "2026-09-07",
+  "generated": "2026-09-08",
   "mode": "Written by Claude in Max's voice.",
   "note": "Times are local. Schedule each post at its time on its date.",
   "cowork_prompt": "Open https://maxime-droux.com/digest/posts.json and schedule the posts listed at the end of this message, and only those. The file holds the shortlist; the list below says which of them I picked and when each one goes out. Match them by `index`. Ignore every other post in the file.\n\nFor each post, in order:\n- Type the `text` straight through, once, with real keystrokes. Never insert\n  text via JavaScript. It already ends with the article URL on its own line,\n  so do not add, move or retype the URL separately: typing it last is what makes\n  the link preview load the article photo.\n- Each post has exactly one @mention. Type `mention.type`, wait for the\n  dropdown, click the row matching `mention.expect`. If no row matches, post\n  it without the mention rather than tagging the wrong company. LinkedIn will\n  render the official name: that is expected and fine, do not fight it, do not\n  restart the post, do not rewrite it.\n- Schedule it at the date and time given for it in the list below. If no link\n  preview appears, schedule it anyway: do not hunt for an image.\n\nTwo attempts per post, then stop. If a post is not scheduled after two tries,\nleave it, move to the next one, and list it at the end. Never start a third.\n\nBefore you start, open the scheduled-posts list once and note what is already\nthere. Skip any post already scheduled: never schedule the same one twice.\n\nVerification:\n- Claims already settled against the article are not in the file. Check only\n  what `claims` still lists, and posts with needs_check: true (a figure nobody\n  has verified: confirm round closed / round name / amount received / investors\n  in THIS round). Both empty and false means schedule it, no research.\n\nAnything that fails: do not schedule it, and do not edit any file or commit\nanything. List the held posts at the end with the sentence you read and the\npage you read it on, and I will record them.\n\nReport what was scheduled and what was held.",
   "posts": [
     {
       "index": 1,
-      "text": "🇨🇭 Swiss AI takes over waste-to-energy plant operations\n\n@Jaipur Robotics is building an AI operating system for waste plants, using computer vision and automation to run combustion and material handling. The Swiss company is now expanding into new regions and deepening its product across more waste-to-energy and industrial sites.\n\nWhy it matters:\n♻️ Waste plants remain among the least digitised industrial assets\n👁️ Computer vision turns messy feedstock into usable control data\n🇨🇭 Swiss software targeting heavy infrastructure rather than consumer apps\n\nThe least glamorous industries often hold the largest gains from applied AI.\n\nhttps://www.eu-startups.com/2026/09/swiss-startup-jaipur-robotics-raises-e4-3-million-to-expand-its-ai-operating-system-across-more-waste-to-energy-and-industrial-plants/",
-      "link": "https://www.eu-startups.com/2026/09/swiss-startup-jaipur-robotics-raises-e4-3-million-to-expand-its-ai-operating-system-across-more-waste-to-energy-and-industrial-plants/",
+      "text": "🇨🇭 Swiss microscopy captures living cells in one shot\n\nA team at @EPFL has developed a fluorescence microscopy technique that produces super-resolution images from a single camera exposure. Existing methods stack hundreds or thousands of frames, which fails when samples move fast. The new approach targets rapid movements inside living cells.\n\nWhy it matters:\n🔬 Single-exposure imaging removes the motion blur problem\n⏱️ Opens fast intracellular processes to routine observation\n🇨🇭 Swiss optics research feeding directly into life science tools\n\nInstrumentation breakthroughs rarely make headlines, yet they decide what biology can even ask next.\n\nhttps://actu.epfl.ch/news/super-resolution-imaging-reveals-details-inside--2",
+      "link": "https://actu.epfl.ch/news/super-resolution-imaging-reveals-details-inside--2",
       "mention": {
-        "type": "Jaipur",
-        "expect": "Jaipur Robotics"
+        "type": "EPFL",
+        "expect": "EPFL"
       },
       "needs_check": false,
       "claims": []
     },
     {
       "index": 2,
-      "text": "🇨🇭 Swiss engines rethink how satellites move in orbit\n\n@Stellar Alpina, based in Zurich, is developing rotating detonation rocket engines that shrink propulsion size and complexity while raising performance. The startup has secured CHF 150,000 from Venture Kick to build a new generation of compact engines for moving spacecraft once in orbit.\n\nWhy it matters:\n🚀 Detonation cycles promise more thrust from less hardware\n🛰️ Orbital mobility is becoming a market of its own\n🇨🇭 Swiss space hardware advancing on modest early-stage grants\n\nHard propulsion physics is exactly where a small, precise engineering culture can compete.\n\nhttps://www.startupticker.ch/en/news/stellar-alpina-s-innovation-opens-new-possibilities-for-orbital-mobility",
+      "text": "🇨🇭 Swiss startup builds rotating detonation rocket engines\n\n@Stellar Alpina, a Zurich-based robotics startup, has secured CHF 150,000 from Venture Kick to develop compact rotating detonation rocket engines. RDREs cut the size and complexity of propulsion systems while raising performance, aimed at moving spacecraft once they reach orbit.\n\nWhy it matters:\n🚀 In-orbit mobility is a fast-growing bottleneck for satellite operators\n⚙️ Detonation engines promise more thrust from smaller hardware\n🇨🇭 Swiss precision engineering finding a niche in space propulsion\n\nSwitzerland keeps entering space through components rather than launchers, and that has always been the smarter door.\n\nhttps://www.startupticker.ch/en/news/stellar-alpina-s-innovation-opens-new-possibilities-for-orbital-mobility",
       "link": "https://www.startupticker.ch/en/news/stellar-alpina-s-innovation-opens-new-possibilities-for-orbital-mobility",
       "mention": {
         "type": "Stellar",
@@ -28,9 +28,12 @@
     },
     {
       "index": 3,
-      "text": "🇨🇭 Swiss AI grants back four new EPFL projects\n\nThe Startup Launchpad AI Track powered by UBS, the first Swiss grant program dedicated to AI, has selected four EPFL projects to share CHF 160,000. It follows six inaugural grantees in 2025, and all four teams are expected to incorporate in the coming months.\n\nWhy it matters:\n🧪 Grant capital bridges the gap between lab and company\n🏦 Corporate money is funding AI at the earliest stage\n🇨🇭 EPFL keeps converting research output into incorporated startups\n\nSmall cheques placed before incorporation shape which deeptech companies exist at all.\n\nhttps://www.startupticker.ch/en/news/2026-ai-track-powered-by-ubs-selects-four-trailblazers",
+      "text": "🇨🇭 Swiss AI grant program picks four EPFL projects\n\nThe Startup Launchpad AI Track powered by UBS, the first Swiss grant program dedicated to AI, has selected four @EPFL projects to share CHF 160,000. It follows six inaugural grantees in 2025, and all four teams are expected to incorporate in the coming months.\n\nWhy it matters:\n💰 Early non-dilutive capital shortens the lab-to-company gap\n🏦 Corporate banking money backing pre-incorporation AI research\n🇨🇭 Second cohort signals the program is becoming permanent infrastructure\n\nSmall grants at the incorporation moment shape more Swiss companies than any later round does.\n\nhttps://www.startupticker.ch/en/news/2026-ai-track-powered-by-ubs-selects-four-trailblazers",
       "link": "https://www.startupticker.ch/en/news/2026-ai-track-powered-by-ubs-selects-four-trailblazers",
-      "mention": {},
+      "mention": {
+        "type": "EPFL",
+        "expect": "EPFL"
+      },
       "needs_check": true,
       "claims": [
         "the post states CHF 160,000.: is that money received rather than a ceiling or a target, and has the round closed"
@@ -38,18 +41,18 @@
     },
     {
       "index": 4,
-      "text": "🇨🇭 Swiss bank tests AI agents for KYC\n\n@Incore Bank, based in Zurich, has completed a proof of concept using agentic AI for client onboarding. Working with Kyndryl and Google Cloud, it tested whether agents built on Gemini models could accelerate Know Your Customer checks while keeping risk decisions explainable and under human oversight.\n\nWhy it matters:\n🤖 Onboarding is banking's most labour-heavy compliance bottleneck\n🔍 Explainability decides whether regulators accept agentic systems\n🇨🇭 Swiss banks piloting AI where audit trails matter most\n\nCompliance may prove the first place agentic AI earns its keep in finance.\n\nhttps://fintechnews.ch/regtech/incore-bank-agentic-ai-kyc-pilot/85325/",
+      "text": "🇨🇭 Swiss bank tests AI agents for KYC\n\n@incore Bank, based in Zurich, has completed a proof of concept applying agentic AI to customer onboarding. Working with Kyndryl and Google Cloud, it tested whether agents built on Gemini models could accelerate Know Your Customer checks while keeping risk decisions explainable and under human oversight.\n\nWhy it matters:\n🤖 Onboarding remains one of banking's heaviest manual cost centres\n🔍 Explainability, not speed, is the regulatory hurdle\n🇨🇭 Swiss banks piloting agentic AI inside compliance workflows\n\nThe interesting test is not whether agents are fast, but whether supervisors accept their reasoning.\n\nhttps://fintechnews.ch/regtech/incore-bank-agentic-ai-kyc-pilot/85325/",
       "link": "https://fintechnews.ch/regtech/incore-bank-agentic-ai-kyc-pilot/85325/",
       "mention": {
-        "type": "Incore",
-        "expect": "Incore"
+        "type": "incore",
+        "expect": "incore"
       },
       "needs_check": false,
       "claims": []
     },
     {
       "index": 5,
-      "text": "🇨🇭 Swiss fellowships target the next AI researchers\n\nThe @EPFL AI Center, together with the Swiss AI Initiative, has opened postdoctoral fellowships for 2026-2027, funding AI research inside one of Europe's strongest computer science ecosystems. The programme places early-career researchers alongside national AI infrastructure and model-building efforts.\n\nWhy it matters:\n🧠 Postdocs are the talent layer future spin-offs are built on\n🌍 Competition for AI researchers is now global and expensive\n🇨🇭 Switzerland funding sovereign AI capability, not just adoption\n\nTalent pipelines are slow investments, and they decide the next decade of deeptech.\n\nhttps://www.epfl.ch/research/funding/epfl-programmes/ai-center/",
+      "text": "🇨🇭 Swiss AI center opens postdoctoral fellowships for 2026\n\nThe @EPFL AI Center, together with the Swiss AI Initiative, has opened postdoctoral fellowships for 2026 to 2027. The programme funds researchers working across the AI stack, from foundational models to applications, inside one of Europe's densest concentrations of machine learning talent.\n\nWhy it matters:\n🧠 Postdocs are the pipeline founders and research leads come from\n🌍 Competes directly with US labs for early-career researchers\n🇨🇭 Swiss AI Initiative building depth rather than headline hires\n\nRetaining postdocs is the quiet variable that decides which countries still have AI companies in a decade.\n\nhttps://www.epfl.ch/research/funding/epfl-programmes/ai-center/",
       "link": "https://www.epfl.ch/research/funding/epfl-programmes/ai-center/",
       "mention": {
         "type": "EPFL",
@@ -60,9 +63,12 @@
     },
     {
       "index": 6,
-      "text": "🇨🇭 Swiss lab merges spintronics with quantum research\n\nA researcher at the Paul Scherrer Institute has received a major grant to combine spintronics with quantum science, exploring how electron spin can carry and process information. The work sits at the intersection of materials physics and future computing architectures.\n\nWhy it matters:\n🧲 Spin-based devices promise computing at far lower energy\n⚛️ Quantum materials research feeds tomorrow's hardware industry\n🇨🇭 PSI remains a European anchor for advanced materials physics\n\nThe hardware breakthroughs of the 2030s are being funded in Swiss labs today.\n\nhttps://www.admin.ch/en/newnsb/U6UeJA33Fa4O",
+      "text": "🇨🇭 Swiss researcher wins grant for quantum spintronics\n\nA researcher at @Paul Scherrer Institute has received a major grant to combine spintronics with quantum science. Spintronics uses the spin of electrons rather than their charge, a route to devices that store and process information with far less energy than conventional electronics.\n\nWhy it matters:\n⚛️ Spin-based devices could cut computing energy use sharply\n🔬 PSI's large-scale facilities give Swiss materials work an edge\n🇨🇭 Swiss labs positioned at the quantum hardware frontier\n\nThe hardware layer of quantum is where Switzerland's instrument-building tradition compounds fastest.\n\nhttps://www.admin.ch/en/newnsb/U6UeJA33Fa4O",
       "link": "https://www.admin.ch/en/newnsb/U6UeJA33Fa4O",
-      "mention": {},
+      "mention": {
+        "type": "Paul",
+        "expect": "Paul Scherrer Institute"
+      },
       "needs_check": false,
       "claims": [
         "the company is Paul Scherrer Institute"
@@ -70,18 +76,15 @@
     },
     {
       "index": 7,
-      "text": "🇨🇭 Six ETH researchers win ERC Starting Grants\n\n@ETH Zürich has landed six ERC Starting Grants, spanning AI, robotics, biomedicine and chemistry. The awards fund early-career principal investigators building independent research groups, the stage at which most future deeptech spin-offs first take shape.\n\nWhy it matters:\n🔬 ERC grants signal European confidence in Swiss science\n🤖 AI and robotics remain ETH's deepest bench\n🇨🇭 Six awards in one round is unusual concentration\n\".replace(\"\\\\\",\"\") && \"Research funding wins rarely make headlines, yet they predict the company pipeline years ahead.\"\n\nhttps://ethz.ch/en/news-and-events/eth-news/news/2026/09/erc-starting-grants-for-six-eth-researchers.html",
+      "text": "🇨🇭 Six ETH researchers win ERC Starting Grants\n\nSix researchers at ETH Zürich have been awarded ERC Starting Grants, spanning AI, robotics, biomedicine and chemistry. The grants fund early-career scientists building independent research groups, typically the stage at which the most spin-off-relevant work begins.\n\nWhy it matters:\n🧪 ERC Starting Grants fund the group-building phase, not incremental work\n🤖 Four fields where Swiss spin-offs already have commercial traction\n🇨🇭 Continued European funding access remains strategically decisive for Switzerland\n\nSix grants in one institution is less a milestone than a measure of steady scientific depth.\n\nhttps://ethz.ch/en/news-and-events/eth-news/news/2026/09/erc-starting-grants-for-six-eth-researchers.html",
       "link": "https://ethz.ch/en/news-and-events/eth-news/news/2026/09/erc-starting-grants-for-six-eth-researchers.html",
-      "mention": {
-        "type": "ETH",
-        "expect": "ETH Zurich"
-      },
+      "mention": {},
       "needs_check": false,
       "claims": []
     },
     {
       "index": 8,
-      "text": "🇨🇭 Swiss biotech partners on stable gene therapy manufacturing\n\n@NewBiologix has signed a partner to advance stable cell line technologies for rAAV production, the viral vector behind most gene therapies. The Vaud-based company is targeting the yield and consistency problems that make gene therapy manufacturing slow and expensive.\n\nWhy it matters:\n🧬 Vector supply, not science, limits gene therapy access\n🏭 Stable cell lines cut batch variability and cost\n🇨🇭 Swiss biomanufacturing expertise moving into advanced therapies\n\nManufacturing bottlenecks are where Swiss process engineering has always found its advantage.\n\nhttps://www.newbiologix.com/raav-testing-platform",
+      "text": "🇨🇭 Swiss biotech advances stable gene therapy manufacturing\n\n@NewBiologix, based in the Lausanne region, has added a partner to advance stable cell line technologies for rAAV manufacturing. Gene therapy production still leans on transient transfection, which is expensive and hard to scale. Stable lines aim to make viral vector supply reproducible.\n\nWhy it matters:\n🧬 Manufacturing cost is the main barrier to gene therapy access\n🏭 Stable cell lines shift production from artisanal to industrial\n🇨🇭 Swiss bioprocessing expertise applied to a global bottleneck\n\nThe gene therapy field will be unlocked by process engineering long before it is unlocked by new biology.\n\nhttps://www.newbiologix.com/raav-testing-platform",
       "link": "https://www.newbiologix.com/raav-testing-platform",
       "mention": {
         "type": "NewBiologix",
@@ -92,7 +95,7 @@
     },
     {
       "index": 9,
-      "text": "🇨🇭 Swiss AI learns to doubt its own predictions\n\nA team at @EPFL has built a framework that trains large language models to design AI systems for finding the best experimental recipe. It draws on Bayesian optimization, which learns from past results, ranks promising options and quantifies how uncertain each prediction is.\n\nWhy it matters:\n🧪 Lab time, not compute, is the real research constraint\n❓ Calibrated uncertainty makes AI usable in physical science\n🇨🇭 EPFL positioning AI as an instrument for discovery\n\nAI that knows what it does not know is far more useful to scientists.\n\nhttps://actu.epfl.ch/news/an-ai-capable-of-doubt-can-optimize-scientific-dis",
+      "text": "🇨🇭 Swiss AI learns to doubt its own predictions\n\nA team at @EPFL has built a framework that trains large language models to design scientific experiments, choosing the best setup among vast numbers of possible molecules, materials and reactions. It borrows from Bayesian optimization, which weighs both predictions and how uncertain those predictions are.\n\nWhy it matters:\n🧪 Cuts the number of physical experiments needed per result\n❓ Calibrated uncertainty is what makes AI usable in labs\n🇨🇭 Swiss research connecting language models to real experimental design\n\nAn AI that knows what it does not know is worth more to a chemist than one that never hesitates.\n\nhttps://actu.epfl.ch/news/an-ai-capable-of-doubt-can-optimize-scientific-dis",
       "link": "https://actu.epfl.ch/news/an-ai-capable-of-doubt-can-optimize-scientific-dis",
       "mention": {
         "type": "EPFL",
@@ -103,7 +106,7 @@
     },
     {
       "index": 10,
-      "text": "🇨🇭 Swiss biotech targets acute spinal cord injury\n\n@NovaGo Therapeutics, a clinical-stage company built on Swiss neuroscience, is advancing anti-Nogo-A biologics designed to release the brakes on nerve regeneration. New financing will fund a proof-of-concept study in patients with acute spinal cord injury.\n\nWhy it matters:\n🧠 Anti-Nogo-A biology traces back to decades of Zurich research\n🩺 Acute spinal cord injury has no disease-modifying treatment\n🇨🇭 Swiss neuroscience reaching clinical proof-of-concept stage\n\nThirty years of academic neuroscience finally being tested in patients is the payoff Switzerland was built for.\n\nhttps://www.startupticker.ch/en/news/novago-secures-usd-30-million-to-advance-proof-of-concept-study-in-acute-spinal-cord-injury",
+      "text": "🇨🇭 Swiss biotech targets acute spinal cord injury\n\n@NovaGo Therapeutics, a clinical-stage Swiss biotech, is advancing anti-Nogo-A biologics into a proof-of-concept study in acute spinal cord injury. The approach blocks a protein that inhibits nerve fibre regrowth, building on decades of Zurich neuroscience research.\n\nWhy it matters:\n🧠 No approved therapy currently restores function after spinal cord injury\n⏳ Acute intervention window makes trial design unusually demanding\n🇨🇭 Swiss neuroscience moving from fundamental discovery to clinical test\n\nThirty years from a laboratory finding to a patient trial is the real timescale of biotech.\n\nhttps://www.startupticker.ch/en/news/novago-secures-usd-30-million-to-advance-proof-of-concept-study-in-acute-spinal-cord-injury",
       "link": "https://www.startupticker.ch/en/news/novago-secures-usd-30-million-to-advance-proof-of-concept-study-in-acute-spinal-cord-injury",
       "mention": {
         "type": "NovaGo",
@@ -114,7 +117,7 @@
     },
     {
       "index": 11,
-      "text": "🇨🇭 Swiss AI Weeks reach 37 cities nationwide\n\nThe @Swiss AI Weeks bring 220 partners together for a nationwide series of hackathons and events across 37 Swiss cities. The programme is designed to move AI beyond research institutions and into companies, public bodies and local communities.\n\nWhy it matters:\n🤝 220 partners signals unusually broad institutional buy-in\n💻 Hackathons surface practical use cases faster than strategy papers\n🇨🇭 Diffusion, not invention, is Switzerland's current AI challenge\n\nA country adopts technology at the speed its smaller cities do, not its flagship labs.\n\nhttps://www.ad-hoc-news.de/wissenschaft/swiss-ai-weeks-220-partner-bringen-ki-in-37-schweizer-staedte/70041671",
+      "text": "🇨🇭 Swiss AI Weeks reach 37 cities nationwide\n\nThe @Swiss AI Weeks have brought together 220 partners to run hackathons and AI events across 37 Swiss cities. The series is designed to move AI literacy beyond the two federal institutes and into companies, administrations and regional communities.\n\nWhy it matters:\n🤝 220 partners is unusual coordination for a decentralised country\n🏙️ 37 cities pushes AI beyond the Zurich-Lausanne axis\n🇨🇭 Broad adoption matters more than a single national champion\n\nDiffusion, not invention, is where most countries lose the value of their AI research.\n\nhttps://www.ad-hoc-news.de/wissenschaft/swiss-ai-weeks-220-partner-bringen-ki-in-37-schweizer-staedte/70041671",
       "link": "https://www.ad-hoc-news.de/wissenschaft/swiss-ai-weeks-220-partner-bringen-ki-in-37-schweizer-staedte/70041671",
       "mention": {
         "type": "Swiss",
@@ -125,7 +128,7 @@
     },
     {
       "index": 12,
-      "text": "🇨🇭 Swiss email security goes after European sovereignty\n\n@xorlab, an ETH Zurich spin-off, is building a behavioural AI email security platform for European enterprises. It models normal communication patterns inside an organisation to catch targeted attacks that signature-based filters miss, with new funding aimed at scaling a sovereign European alternative.\n\nWhy it matters:\n📧 Email remains the entry point for most enterprise breaches\n🔐 Data sovereignty is now a purchasing criterion in Europe\n🇨🇭 Swiss neutrality is becoming a cybersecurity sales argument\n\nSovereignty concerns are opening a market that Swiss security firms are well placed to take.\n\nhttps://www.startupticker.ch/en/news/xorlab-raises-eur-5-million-to-build-europe-s-sovereign-email-security-platform",
+      "text": "🇨🇭 Swiss cybersecurity firm builds sovereign email defence\n\n@xorlab, an ETH Zurich spin-off, has raised new funding to build a European sovereign email security platform. Its behavioural AI models how each organisation actually communicates, then flags anomalies, rather than relying on signature lists of known threats.\n\nWhy it matters:\n📧 Email remains the entry point for most enterprise breaches\n🛡️ Sovereignty is now a purchasing criterion for European buyers\n🇨🇭 Swiss neutrality turning into a commercial argument in cybersecurity\n\nData sovereignty has quietly become one of the few durable European moats in software.\n\nhttps://www.startupticker.ch/en/news/xorlab-raises-eur-5-million-to-build-europe-s-sovereign-email-security-platform",
       "link": "https://www.startupticker.ch/en/news/xorlab-raises-eur-5-million-to-build-europe-s-sovereign-email-security-platform",
       "mention": {
         "type": "xorlab",
@@ -136,7 +139,7 @@
     },
     {
       "index": 13,
-      "text": "🇨🇭 Swiss bankers warn against post-Credit Suisse overcorrection\n\nThe Swiss Bankers Association, chaired by the CEO of a Zurich-based private bank, is cautioning that banking reforms drafted after the Credit Suisse collapse risk overshooting. The debate centres on how much additional capital and supervisory power is proportionate for the remaining Swiss banking sector.\n\nWhy it matters:\n⚖️ Regulatory calibration shapes where financial innovation happens\n🏦 Capital rules affect appetite for new banking models\n🇨🇭 Switzerland balancing stability against financial-centre competitiveness\n\nHow Switzerland settles this question will quietly shape its fintech landscape for a decade.\n\nhttps://fintechnews.ch/regtech/swiss-banking-reforms/85202/",
+      "text": "🇨🇭 Swiss bankers warn against post-Credit Suisse overcorrection\n\nThe Zurich-based private bank whose CEO chairs the Swiss Bankers Association has cautioned that regulatory reforms following the Credit Suisse collapse risk overshooting. The debate centres on capital requirements and supervisory powers, and on how much they weigh on smaller institutions alongside the largest.\n\nWhy it matters:\n⚖️ Capital rules calibrated for one bank affect the entire sector\n🏦 Compliance cost falls hardest on small and mid-sized players\n🇨🇭 Swiss financial regulation is being redrawn in real time\n\nHow Switzerland settles this will shape whether fintech and banking innovation still choose Zurich.\n\nhttps://fintechnews.ch/regtech/swiss-banking-reforms/85202/",
       "link": "https://fintechnews.ch/regtech/swiss-banking-reforms/85202/",
       "mention": {},
       "needs_check": false,
@@ -144,22 +147,11 @@
     },
     {
       "index": 14,
-      "text": "🇨🇭 Swiss implant tackles preterm birth after foetal surgery\n\n@KOVE Medical has raised new funding for an implantable device that closes the fetal membrane after foetal surgery. Membrane rupture is a leading cause of preterm birth following such procedures, and no reliable sealing solution exists today.\n\nWhy it matters:\n👶 Preterm birth remains the top driver of neonatal complications\n🩹 Sealing the membrane addresses an unsolved surgical gap\n🇨🇭 Swiss medtech precision applied to an extremely delicate tissue\n\nNarrow clinical problems with no existing answer are where medtech still creates real value.\n\nhttps://www.eu-startups.com/2026/08/reducing-preterm-birth-risks-in-foetal-surgery-kove-medical-secures-e1-7-million/",
+      "text": "🇨🇭 Swiss implant tackles preterm birth after foetal surgery\n\n@KOVE Medical has raised new funding for an implantable device that seals the fetal membrane after foetal surgery. Membrane rupture is the leading complication of these procedures, and preterm birth remains the main cause of death in children under five.\n\nWhy it matters:\n🩺 Addresses the top complication limiting foetal surgery adoption\n👶 Preterm birth carries lifelong costs for health systems\n🇨🇭 Swiss medtech solving a narrow problem with wide consequences\n\nThe best medtech companies fix one specific failure mode that surgeons have simply learned to live with.\n\nhttps://www.eu-startups.com/2026/08/reducing-preterm-birth-risks-in-foetal-surgery-kove-medical-secures-e1-7-million/",
       "link": "https://www.eu-startups.com/2026/08/reducing-preterm-birth-risks-in-foetal-surgery-kove-medical-secures-e1-7-million/",
       "mention": {
         "type": "KOVE",
         "expect": "KOVE Medical"
-      },
-      "needs_check": false,
-      "claims": []
-    },
-    {
-      "index": 15,
-      "text": "🇨🇭 Swiss expertise reads Nepal's deadly flash flood\n\n@EPFL professor Christophe Ancey, a specialist in natural disasters, analysed the flood that destroyed hundreds of homes in a Nepalese valley near the Tibetan border on 26 August. Early assessments point to a partial glacier collapse rather than a conventional mudslide or debris flow.\n\nWhy it matters:\n🏔️ Glacier retreat is changing alpine hazard models everywhere\n🌊 Distinguishing flood mechanisms determines which defences work\n🇨🇭 Swiss geophysics research applies directly at home\n\nSwitzerland studies mountain risk abroad because the same physics is unfolding in its own valleys.\n\nhttps://actu.epfl.ch/news/what-triggered-the-devastating-flash-flood-in-nepa",
-      "link": "https://actu.epfl.ch/news/what-triggered-the-devastating-flash-flood-in-nepa",
-      "mention": {
-        "type": "EPFL",
-        "expect": "EPFL"
       },
       "needs_check": false,
       "claims": []
