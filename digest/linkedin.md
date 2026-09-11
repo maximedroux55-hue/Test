@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 10 September 2026. 15 stories from the last 10 days, newest published first. Written by Claude in Max's voice. Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 11 September 2026. 15 stories from the last 10 days, newest published first. Written by Claude in Max's voice. Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -41,275 +41,274 @@ Report what was scheduled and what was held.
 
 The stories themselves are below.
 
-## 1. General — published 10 September
+## 1. General — published 11 September
 
 ```
-🇨🇭 Swiss medtech warns its home advantage is eroding
+🇨🇭 Zeal raises $10M to target four million terminals
 
-Swiss Medtech, the industry association, reports that Switzerland's appeal as a medtech location is weakening, squeezed by regulatory cost, EU market access friction and tariff pressure. Medtech remains one of the country's largest export sectors, employing tens of thousands across Bern, Solothurn and Zurich.
+@Zeal, the London-based fintech, has raised US$10 million, taking total funding to US$14 million. Its loyalty and merchant-intelligence software sits directly on payment terminals, and signed acquirer contracts should activate it on more than four million machines within two years. Investors were not disclosed.
 
 Why it matters:
-🩺 Regulatory access, not science, is the binding constraint
-📉 Export-heavy sector feels cost pressure first
-🇨🇭 A pillar of Swiss industry asking for policy clarity
+💳 Distribution through acquirers beats selling merchants one by one
+📈 Four million terminals in two years is aggressive scale
+🇨🇭 Swiss fintech coverage tracks where payments infrastructure value shifts
 
-World-class engineering does not survive on its own if market access keeps slipping.
+Owning the software layer on hardware already installed is the cheapest route to scale in payments.
+
+https://fintechnews.ch/london/zeal-payments-funding-card-machines/85517/
+```
+🖼️ **Article image:** https://fintechnews.ch/wp-content/uploads/2026/09/Zeal-Eyes-Four-Million-Card-Machines-After-US10M-Funding.webp
+
+## 2. Regulatory — published 11 September
+
+```
+🇨🇭 Swiss biotechs collect approvals and trial wins
+
+@Startupticker reports a strong week for Swiss biotech: Fast Track and Orphan Drug designations for therapies against ventilator-associated bacterial pneumonia and thymic epithelial tumours. Windward Bio and Pharvaris posted positive late-stage results, while Avrios Therapeutics signed a collaboration to advance AVR-001, a preclinical gene therapy for familial forms of ALS.
+
+Why it matters:
+🧬 Regulatory designations shorten timelines for rare disease programmes
+🤝 Partnerships fund preclinical gene therapy without dilutive rounds
+🇨🇭 Swiss pipelines maturing across bacterial, oncology and neuro indications
+
+A cluster this dense in one week says the Swiss biotech bench is deeper than headline exits suggest.
+
+https://www.startupticker.ch/en/news/key-approvals-and-a-partnership-deal-to-fast-track-new-medications
+```
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Clinical_Trial_doctors.jpg
+
+## 3. General — published 10 September
+
+```
+🇨🇭 Switzerland gets its first IBM quantum computer
+
+@IBM and Lockheed Martin are launching a Swiss Quantum Innovation Hub at ETH Zurich, anchored by the country's first IBM quantum computer on site. The hub pairs machine access with industrial users, putting hardware next to the researchers and engineers who need it.
+
+Why it matters:
+⚛️ On-premise access beats cloud queues for serious research
+🛰️ Aerospace demand pulls quantum toward real applications
+🇨🇭 ETH Zurich becomes a European anchor for quantum industry
+
+Hardware on campus changes what local startups can credibly build.
+
+https://newsroom.ibm.com/2026-09-10-ibm,-lockheed-martin-announce-swiss-quantum-innovation-hub-at-eth-zurich,-anchored-by-switzerlands-first-ibm-quantum-computer
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 4. Research — published 10 September
+
+```
+🇨🇭 Swiss medtech warns its home base is slipping
+
+A new industry study covered by @Finanz und Wirtschaft finds medtech companies increasingly see Switzerland as a location at risk. Cost pressure, regulatory burden and access to European markets are cited as the drivers, with consequences for where firms hire and invest next.
+
+Why it matters:
+🏭 Location decisions follow regulation, not sentiment
+📉 Investment intent is the leading indicator to watch
+🇨🇭 Swiss medtech still exports far above its weight
+
+An industry this export-dependent feels policy friction before anyone else does.
+
+https://www.fuw.ch/die-medtech-industrie-sieht-den-standort-schweiz-in-gefahr-867279418060
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 5. General — published 10 September
+
+```
+🇨🇭 ETH Zurich to host new IBM quantum machine
+
+@ETH Zürich will host a new IBM quantum computer on its own premises, the first such system in Switzerland. Local hosting gives researchers direct access to the hardware rather than remote cloud time, and puts Switzerland on the short list of countries with a machine in-country.
+
+Why it matters:
+🖥️ Local hardware shortens experiment cycles considerably
+🎓 Talent follows machines, not press releases
+🇨🇭 Switzerland joins a small club of quantum host nations
+
+Infrastructure decided today sets the ceiling for Swiss quantum companies a decade out.
+
+https://de.newsroom.ibm.com/ETH-Zurich-IBM-Quantencomputer
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 6. General — published 10 September
+
+```
+🇨🇭 Swiss medtech flags eroding location appeal
+
+The Swiss medtech sector is warning that Switzerland's attractiveness as a base is eroding, according to reporting by @Cash. Companies point to costs and market access, and the survey links that judgement directly to weaker hiring and investment intentions at home.
+
+Why it matters:
+💸 Cost pressure now shapes where production lands
+🧑‍🔬 Hiring plans soften before revenue does
+🇨🇭 Swiss medtech remains a top-three export industry
+
+Competitiveness erodes slowly, then shows up all at once in factory decisions.
 
 https://www.cash.ch/news/top-news/schweizer-medtech-branche-warnt-vor-erodierender-standortattraktivitat-967519
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 2. General — published 10 September
+## 7. Research — published 10 September
 
 ```
-🇨🇭 Swiss quantum hub lands at ETH Zurich
+🇨🇭 EPFL tunes infrared light in real time
 
-ETH Zürich will host Switzerland's first IBM Quantum System Two, anchoring a Swiss Quantum Innovation Hub built with IBM and Lockheed Martin. Researchers and industry partners get on-site access to utility-scale quantum hardware rather than remote cloud queues.
+Researchers at @EPFL have built ultra-thin silicon structures that rapidly change how they interact with mid-infrared light. Mid-IR is the band used to identify drugs, pollutants and biological material, and also carries data in free-space optical links, where fast tuning has long been the bottleneck.
 
 Why it matters:
-⚛️ First IBM Quantum System Two installed in Switzerland
-🏭 Aerospace and research users on the same machine
-🇨🇭 Swiss campuses become quantum infrastructure, not just quantum papers
+🔬 Mid-IR spectroscopy identifies molecules with chemical specificity
+📡 Free-space optical links need fast, compact modulation
+🇨🇭 Swiss photonics research feeding sensing and quantum hardware
 
-Hardware on campus is what turns a research strength into an industrial one.
+Silicon-compatible photonics is where lab results travel fastest into products.
 
-https://newsroom.ibm.com/latest-news-research-and-innovation
-```
-🖼️ **Article image:** https://newsroom.ibm.com/image/IBM+Quantum-System-Two-Poughkeepsie-thumbnail.jpg
-🔗 **Links to the original source.**
-
-## 3. Grant — published 10 September
-
-```
-🇨🇭 Swiss Top100 crowns a new deeptech champion
-
-Venturelab handed out the Top100 Swiss Startup Award 2026 at its award night, with an engineering company taking the top spot. The ranking has tracked Swiss startups for two decades and its alumni list reads like a map of the country's deeptech scale-ups.
-
-Why it matters:
-🏆 Engineering, not software, wins the headline prize
-📊 Twenty years of data on Swiss startup cohorts
-🇨🇭 Hardware remains the centre of gravity in Switzerland
-
-The Swiss startup podium still rewards machines you can touch.
-
-https://www.moneycab.com/startups/venturelab-feiert-an-der-top100-award-night-die-naechste-generation-schweizer-deeptech-champions/
+https://actu.epfl.ch/news/a-new-way-to-control-infrared-light-in-real-time-2
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 4. Round — published 09 September
+## 8. General — published 10 September
 
 ```
-🇨🇭 Swiss startup builds the tooling layer for fusion
+🇨🇭 Swiss medtech balances cost pressure against new openings
 
-@Fusionality has raised a pre-seed round to build technologies that let fusion companies operate, monitor and analyse their devices. Rather than chasing a reactor design, it sells into every reactor programme that needs to know what its machine is actually doing.
+The latest industry study from @Swiss Medtech shows strong revenue growth over the past two years, but a weakening assessment of Switzerland as a business location. The association links that shift directly to companies' recruitment and investment intentions, even as members identify new market opportunities.
 
 Why it matters:
-🔧 Picks the tooling layer over the reactor race
-🌍 Customer base spans competing fusion approaches
-🇨🇭 Swiss plasma physics heritage finding a commercial edge
+📊 Growth and location confidence are moving in opposite directions
+🏗️ Investment intent signals where capacity gets built next
+🇨🇭 Swiss medtech employs tens of thousands across the country
 
-Selling shovels to the fusion gold rush is the smarter Swiss position.
+Strong order books can hide a location problem for years, until they don't.
+
+https://www.swiss-medtech.ch/zahlen-und-fakten
+```
+🖼️ **Article image:** none found, grab one from the article page.
+🔗 **Links to the original source.**
+
+## 9. Round — published 09 September
+
+```
+🇨🇭 Swiss startup builds the control layer for fusion
+
+@Fusionality is developing software and tooling that lets fusion companies operate, monitor and analyse their devices. As fusion machines move from physics experiments toward engineered systems, the diagnostic and control layer becomes its own market, sold to every developer in the field rather than betting on one.
+
+Why it matters:
+⚛️ Picks and shovels beat betting on a single reactor
+📉 Device data is the constraint on iteration speed
+🇨🇭 Swiss engineering entering fusion through instrumentation
+
+Selling infrastructure to a whole sector is often the smarter fusion bet.
 
 https://www.startupticker.ch/en/news/fusionality-raises-chf-3-million-to-take-fusion-devices-next-level
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Fusionality%20Founders.jpg
 
-## 5. Research — published 09 September
+## 10. Research — published 09 September
 
 ```
-🇨🇭 Swiss lakes hide far more microplastics than thought
+🇨🇭 EPFL finds far more microplastics in Lake Geneva
 
-@EPFL researchers developed a detection technique showing that the smallest microplastics in Lake Geneva and its tributaries are far more abundant than previous surveys suggested. Particles under five millimetres persist for decades, and the tiniest fraction had been largely invisible to standard methods.
+A new detection technique from @EPFL shows that microplastics in Lake Geneva and its tributaries are far more abundant than previously measured. The smallest particles, below five millimetres and hardest to classify, had been systematically undercounted, and most plastics persist for decades or centuries.
 
 Why it matters:
-🔬 New method reaches particles standard surveys miss
-💧 Baseline data for Lake Geneva monitoring and regulation
-🇨🇭 Swiss instrumentation turning an environmental blind spot visible
+🔍 Measurement methods define what regulators can act on
+💧 Freshwater contamination data lags ocean research badly
+🇨🇭 Swiss instrumentation expertise applied to environmental monitoring
 
-Measurement breakthroughs usually arrive before the policy that needs them.
+Better sensors usually arrive before better policy, and force it.
 
 https://actu.epfl.ch/news/hidden-microplastic-pollution-in-swiss-waters-unco
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 6. General — published 09 September
+## 11. Research — published 08 September
 
 ```
-🇨🇭 Swiss bank makes AI skills a hiring requirement
+🇨🇭 EPFL images living cells in one exposure
 
-@UBS will require graduates and interns joining its global banking and markets arm in 2027 to demonstrate AI ability, on top of the existing degree bar, according to the Financial Times. It is a hiring standard, not a training programme.
+A fluorescence microscopy method from @EPFL produces super-resolution images from a single camera exposure. Existing approaches stack hundreds or thousands of frames, which only works on still samples, so this opens up fast movements inside living cells that current techniques cannot capture.
 
 Why it matters:
-🤖 AI fluency now screened at the application stage
-🏦 Junior banking workload is being redistributed to models
-🇨🇭 Switzerland's largest bank sets a labour-market signal
+🔬 Single-shot imaging removes the motion-blur constraint
+🧫 Live-cell dynamics become observable at nanoscale
+🇨🇭 Swiss optics research keeps setting microscopy standards
 
-When the biggest employer rewrites the entry test, the talent pipeline follows fast.
-
-https://fintechnews.ch/aifintech/ubs-junior-bankers-ai-skills/85413/
-```
-🖼️ **Article image:** https://fintechnews.ch/wp-content/uploads/2026/09/UBS-Sets-AI-Fluency-as-a-New-Bar-for-Junior-Investment-Bankers.webp
-
-## 7. General — published 09 September
-
-```
-🇨🇭 European firms lead quantum computing adoption
-
-Research from @McKinsey & Company identifies over 300 organisations already using quantum computing, with private European companies ahead of other regions. Named adopters include Airbus and Boehringer Ingelheim, working on problems in energy, financial services and pharmaceuticals.
-
-Why it matters:
-⚛️ 300+ organisations already past the pilot stage
-💊 Pharma and energy are the earliest real use cases
-🇨🇭 Swiss pharma and banking sit in both target sectors
-
-Europe's industrial base is quietly becoming quantum's first serious customer.
-
-https://fintechnews.ch/innovation/private-european-firms-lead-quantum-computing-adoption/85397/
-```
-🖼️ **Article image:** https://fintechnews.ch/wp-content/uploads/2026/09/Private-European-Firms-Lead-Quantum-Computing-Adoption.webp
-
-## 8. Research — published 08 September
-
-```
-🇨🇭 Swiss microscopy sees living cells in one shot
-
-@EPFL has developed a fluorescence microscopy technique that produces super-resolution images from a single camera exposure. Existing methods stack hundreds or thousands of frames, which fails when the sample moves, so fast processes inside living cells stayed out of reach.
-
-Why it matters:
-🔬 One exposure replaces thousands of stacked frames
-⚡ Opens fast intracellular dynamics to super-resolution imaging
-🇨🇭 Swiss optics research feeding the global instrument market
-
-Swiss labs keep winning on instruments, the layer everyone else has to buy.
+Instrumentation advances compound quietly, then reshape entire fields of biology.
 
 https://actu.epfl.ch/news/super-resolution-imaging-reveals-details-inside--2
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 9. Grant — published 08 September
+## 12. General — published 04 September
 
 ```
-🇨🇭 Geneva backs three startups from careers to neurotech
+🇨🇭 Zurich startup rethinks in-orbit rocket engines
 
-The Canton of Geneva's FIF innovation programme has funded three companies: Goodwall for its skills and careers platform for young people, Roofless Labs for K4MERA, a digital stereoscopic camera, and Infera Neuro for neural decoding chips powering non-invasive thought-to-speech interfaces.
+@Stellar Alpina, based in Zurich, is developing rotating detonation rocket engines that shrink propulsion systems while raising performance. The robotics startup has secured CHF 150,000 from Venture Kick to build a new generation of compact engines for moving spacecraft once they reach orbit.
 
 Why it matters:
-🧠 Non-invasive thought-to-speech decoding moving out of the lab
-🎥 Stereoscopic imaging hardware built in Geneva
-🇨🇭 Cantonal money reaching pre-revenue technical teams
+🚀 Orbital mobility is the bottleneck for satellite servicing
+⚙️ Detonation cycles promise higher efficiency, fewer parts
+🇨🇭 Swiss space suppliers moving from components to propulsion
 
-Cantonal cheques are small, but they arrive at the stage nobody else funds.
+Hard thermodynamics with few moving parts plays to Swiss manufacturing strengths.
 
-https://www.startupticker.ch/en/news/goodwall-roofless-labs-and-infera-neuro-awarded-fif-funding
+https://www.startupticker.ch/en/news/stellar-alpina-s-innovation-opens-new-possibilities-for-orbital-mobility
 ```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/FIF-4.png
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/StellarAlpina.jpg
 
-## 10. General — published 04 September
+## 13. Grant — published 03 September
 
 ```
-🇨🇭 Swiss AI grant programme picks four EPFL projects
+🇨🇭 PSI researcher wins major grant for quantum spintronics
 
-The Startup Launchpad AI Track powered by @UBS has selected four new EPFL projects, which will share CHF 160,000. It is the first Swiss grant programme dedicated to AI, following six inaugural grantees in 2025, and all four teams are expected to incorporate in the coming months.
+A researcher at @Paul Scherrer Institute has been awarded a major grant to combine spintronics with quantum technologies, work that uses electron spin rather than charge to store and process information. PSI's large-scale facilities, including its neutron and muon sources, give this kind of materials research infrastructure few labs can match.
 
 Why it matters:
-🧪 Grants sized for the lab-to-company gap
-🏢 Four incorporations expected within months
-🇨🇭 Bank capital funding Swiss AI research directly
+🧲 Spin-based devices promise lower-power information processing
+🔭 Large-scale facilities are a durable research advantage
+🇨🇭 Swiss labs funding fundamental work with industrial horizons
 
-Small, early, non-dilutive money is how most Swiss spin-offs actually start.
+The materials layer is where quantum advantage will ultimately be won or lost.
 
-https://www.startupticker.ch/en/news/2026-ai-track-powered-by-ubs-selects-four-trailblazers
-```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/AI_grant_illustration_1.jpg
-
-## 11. Grant — published 04 September
-
-```
-🇨🇭 Swiss AI fellowships target the postdoc layer
-
-The @EPFL AI Center has opened postdoctoral fellowships for 2026-2027 in partnership with the Swiss AI Initiative, the national effort behind sovereign Swiss language models trained on the Alps supercomputer. Fellows work across research groups rather than inside a single lab.
-
-Why it matters:
-🧑‍🔬 Postdocs are the real bottleneck in AI research capacity
-🖥️ Ties talent to national compute infrastructure
-🇨🇭 Switzerland building sovereign AI from the people up
-
-Compute without researchers is just an expensive building.
-
-https://www.epfl.ch/research/funding/epfl-programmes/ai-center/
-```
-🖼️ **Article image:** none found, grab one from the article page.
-🔗 **Links to the original source.**
-
-## 12. Grant — published 03 September
-
-```
-🇨🇭 Six ETH researchers win ERC Starting Grants
-
-@ETH Zürich reports that six of its researchers have secured ERC Starting Grants, the European Research Council's award for scientists building their first independent group. The grants typically run five years and fund fundamental work well before any commercial application.
-
-Why it matters:
-🔬 Six new independent research groups funded at once
-🇪🇺 Swiss access to European research money still holding
-🇨🇭 Tomorrow's spin-offs start in grants like these
-
-Most Swiss deeptech companies can trace their origin to a grant awarded a decade earlier.
-
-https://ethz.ch/en/news-and-events/eth-news/news/2026/09/erc-starting-grants-for-six-eth-researchers.html
+https://www.admin.ch/en/newnsb/U6UeJA33Fa4O
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 13. General — published 02 September
+## 14. General — published 02 September
 
 ```
-🇨🇭 Swiss AI Weeks push adoption beyond the labs
+🇨🇭 Swiss AI Weeks push adoption across the economy
 
-The @Swiss AI Weeks bring workshops, hackathons and open events across the country to get Swiss companies and public bodies practically fluent in AI. The focus is deployment inside existing organisations rather than new model development.
+The @Swiss AI Weeks bring together companies, researchers and public institutions to build practical AI capability across Switzerland, with hands-on formats rather than conference panels. The programme targets the gap between available models and organisations that have yet to deploy them.
 
 Why it matters:
-📚 Targets adoption capacity, the real national bottleneck
-🏢 SMEs and public sector included, not just startups
-🇨🇭 Swiss AI strength depends on who actually uses it
+🧠 Adoption, not model building, is the Swiss bottleneck
+🏢 SMEs hold most of the untapped productivity gains
+🇨🇭 Swiss coordination between academia, industry and government
 
-A country can host world-class models and still lose on adoption speed.
+Countries win the AI decade on diffusion speed, not on flagship models.
 
 https://www.moneytoday.ch/news/die-swiss-ai-weeks-machen-die-schweiz-fit-fuers-ki-zeitalter
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 14. Research — published 02 September
+## 15. Research — published 02 September
 
 ```
-🇨🇭 Swiss AI learns to doubt its own predictions
+🇨🇭 EPFL builds an AI that knows its uncertainty
 
-A team at @EPFL has built a framework that trains large language models to design the best setup for a scientific experiment, borrowing from Bayesian optimisation by estimating how uncertain each prediction is. Testing every possible molecule or reaction in the lab is slow and expensive.
+A team at @EPFL has developed a framework that trains large language models to design the best setup for a scientific experiment. It borrows from Bayesian optimization, learning from prior results and estimating how uncertain each prediction is, so labs test fewer combinations to find the right recipe.
 
 Why it matters:
-🧪 Cuts the number of physical experiments needed
-🤔 Calibrated uncertainty makes LLM suggestions usable in labs
-🇨🇭 Swiss research pairing AI with wet-lab chemistry
+🧪 Fewer experiments per discovery cuts R&D cost directly
+🤔 Calibrated uncertainty is what makes AI usable in science
+🇨🇭 Swiss research targeting the lab workflow itself
 
-The useful AI in science is the kind that knows what it does not know.
+AI that admits doubt will outperform AI that sounds certain in any lab.
 
 https://actu.epfl.ch/news/an-ai-capable-of-doubt-can-optimize-scientific-dis
 ```
 🖼️ **Article image:** none found, grab one from the article page.
-
-## 15. Launch — published 31 August
-
-```
-🇨🇭 Swiss spin-off ships third-generation IT AI platform
-
-@Logmind, an EPFL spin-off, has launched the third generation of its platform, which analyses IT operational data and log files to detect problems before they surface as outages. Enterprise IT estates generate volumes of logs no operations team can read manually.
-
-Why it matters:
-📊 Log analysis is a permanent enterprise pain point
-🔁 Third generation signals real customer feedback loops
-🇨🇭 Swiss B2B software compounding through product iterations
-
-Three generations of product is a better signal than any funding announcement.
-
-https://ggba.swiss/en/logmind-launches-its-third-generation-ai-platform-for-it-operations/
-```
-🖼️ **Article image:** https://ggba.swiss/app/uploads/2026/08/Logmind-v3-1180x811-1.png
 
