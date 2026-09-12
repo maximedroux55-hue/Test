@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 11 September 2026. 15 stories from the last 10 days, newest published first. Written by Claude in Max's voice. Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 12 September 2026. 15 stories from the last 10 days, newest published first. Written by Claude in Max's voice. Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -44,271 +44,255 @@ The stories themselves are below.
 ## 1. General — published 11 September
 
 ```
-🇨🇭 Zeal raises $10M to target four million terminals
+🇨🇭 Swiss spin-off builds control software for fusion reactors
 
-@Zeal, the London-based fintech, has raised US$10 million, taking total funding to US$14 million. Its loyalty and merchant-intelligence software sits directly on payment terminals, and signed acquirer contracts should activate it on more than four million machines within two years. Investors were not disclosed.
+@Fusionality, an EPFL spin-off, is developing control systems that keep fusion plasma stable, one of the hardest engineering problems standing between fusion research and working power plants. The team draws on decades of tokamak control work done at EPFL's Swiss Plasma Center, as reported by ICTjournal.
 
 Why it matters:
-💳 Distribution through acquirers beats selling merchants one by one
-📈 Four million terminals in two years is aggressive scale
-🇨🇭 Swiss fintech coverage tracks where payments infrastructure value shifts
+⚛️ Plasma control is the bottleneck every fusion reactor hits
+🧠 Software layer sells into hardware programmes worldwide
+🇨🇭 EPFL plasma physics converted into a commercial product
 
-Owning the software layer on hardware already installed is the cheapest route to scale in payments.
+Fusion will be won as much on control code as on magnets.
+https://www.ictjournal.ch/news/2026-09-11/la-spin-off-de-lepfl-fusionality-leve-3-millions-pour-piloter-les-reacteurs-a
+```
+🖼️ **Article image:** none found, grab one from the article page.
 
+## 2. Round — published 11 September
+
+```
+🇨🇭 Swiss cleantech startup funds itself through the crowd
+
+@Nullpunkt, a Swiss cleantech company working on decarbonisation, has closed a crowdfunding round backed by retail investors rather than institutional funds, according to Dealroom. The approach gives early climate hardware a route to capital when traditional venture appetite for the sector has cooled.
+
+Why it matters:
+🌍 Climate hardware still struggles to find early institutional capital
+👥 Crowd rounds double as a customer acquisition channel
+🇨🇭 Swiss cleantech proving alternative financing paths work
+
+When one funding channel narrows, founders find another, and that adaptability is the real signal.
+https://app.dealroom.co/news/note/swiss-cleantech-startup-nullpunkt-raises-450-000-from-the-crowd
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 3. Research — published 11 September
+
+```
+🇨🇭 Swiss satellite analysis sharpens conflict damage assessment
+
+Researchers at @EPFL, with ETH Zurich and the University of Zurich, have shown that satellite imagery can map war damage far more reliably than media-sourced incident records. The method captures destroyed infrastructure and displacement patterns that text-based databases systematically miss.
+
+Why it matters:
+🛰️ Satellite data corrects the blind spots in conflict reporting
+🏛️ Humanitarian agencies gain evidence for faster targeted response
+🇨🇭 Three Swiss institutions combining remote sensing and social science
+
+Geneva's humanitarian cluster and Swiss earth observation research belong in the same sentence more often than they are.
+https://actu.epfl.ch/news/satellite-imagery-gives-experts-a-better-understan
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 4. General — published 11 September
+
+```
+🇨🇭 Payment terminals become a loyalty network
+
+@Zeal has raised US$10 million, bringing its total to US$14 million, to turn existing card machines into loyalty and merchant-intelligence tools. The London-based company has signed acquirer contracts to activate its software on more than four million terminals within two years. Investors were not disclosed.
+
+Why it matters:
+💳 Software upgrade on installed hardware beats new device rollouts
+📈 Four million terminals is distribution most fintechs never reach
+🇨🇭 Swiss fintech press tracking Europe's payments infrastructure layer
+
+The most scalable fintech plays keep turning out to be thin software on hardware someone else already deployed.
 https://fintechnews.ch/london/zeal-payments-funding-card-machines/85517/
 ```
 🖼️ **Article image:** https://fintechnews.ch/wp-content/uploads/2026/09/Zeal-Eyes-Four-Million-Card-Machines-After-US10M-Funding.webp
 
-## 2. Regulatory — published 11 September
+## 5. Regulatory — published 11 September
 
 ```
-🇨🇭 Swiss biotechs collect approvals and trial wins
+🇨🇭 Swiss biotechs clear regulators and report trial wins
 
-@Startupticker reports a strong week for Swiss biotech: Fast Track and Orphan Drug designations for therapies against ventilator-associated bacterial pneumonia and thymic epithelial tumours. Windward Bio and Pharvaris posted positive late-stage results, while Avrios Therapeutics signed a collaboration to advance AVR-001, a preclinical gene therapy for familial forms of ALS.
+@Avrios Therapeutics has signed a strategic collaboration to advance AVR-001, a preclinical gene therapy for familial forms of ALS. In the same week, Windward Bio and Pharvaris reported positive late-stage results, while FDA Fast Track and EMA Orphan Drug designations landed for pneumonia and thymic tumour therapies.
 
 Why it matters:
-🧬 Regulatory designations shorten timelines for rare disease programmes
-🤝 Partnerships fund preclinical gene therapy without dilutive rounds
-🇨🇭 Swiss pipelines maturing across bacterial, oncology and neuro indications
+🧬 Gene therapy for ALS moving toward the clinic
+⏱️ Fast Track and Orphan Drug status compress timelines materially
+🇨🇭 Swiss biotech clusters producing regulatory wins in parallel
 
-A cluster this dense in one week says the Swiss biotech bench is deeper than headline exits suggest.
-
+A single week of designations and readouts says more about pipeline depth than any funding tally.
 https://www.startupticker.ch/en/news/key-approvals-and-a-partnership-deal-to-fast-track-new-medications
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Clinical_Trial_doctors.jpg
 
-## 3. General — published 10 September
+## 6. General — published 10 September
 
 ```
 🇨🇭 Switzerland gets its first IBM quantum computer
 
-@IBM and Lockheed Martin are launching a Swiss Quantum Innovation Hub at ETH Zurich, anchored by the country's first IBM quantum computer on site. The hub pairs machine access with industrial users, putting hardware next to the researchers and engineers who need it.
+@IBM and Lockheed Martin are establishing a Swiss Quantum Innovation Hub at ETH Zurich, anchored by an IBM Quantum System Two, the first IBM quantum computer installed in Switzerland. Researchers and industrial partners will get direct access to the machine on Swiss soil.
 
 Why it matters:
-⚛️ On-premise access beats cloud queues for serious research
-🛰️ Aerospace demand pulls quantum toward real applications
-🇨🇭 ETH Zurich becomes a European anchor for quantum industry
+⚛️ On-site hardware beats cloud access for serious research
+🏭 Aerospace and defence pulling quantum toward real applications
+🇨🇭 ETH Zurich becomes a European quantum anchor point
 
-Hardware on campus changes what local startups can credibly build.
-
+Hardware sovereignty in quantum is being decided now, and Switzerland just secured a seat.
 https://newsroom.ibm.com/2026-09-10-ibm,-lockheed-martin-announce-swiss-quantum-innovation-hub-at-eth-zurich,-anchored-by-switzerlands-first-ibm-quantum-computer
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 4. Research — published 10 September
+## 7. General — published 10 September
 
 ```
-🇨🇭 Swiss medtech warns its home base is slipping
+🇨🇭 ETH Zurich to host a new IBM quantum machine
 
-A new industry study covered by @Finanz und Wirtschaft finds medtech companies increasingly see Switzerland as a location at risk. Cost pressure, regulatory burden and access to European markets are cited as the drivers, with consequences for where firms hire and invest next.
+@ETH Zürich will host an IBM quantum computer on campus, giving Swiss researchers and industry partners local access to quantum hardware instead of remote cloud time. The installation places one of the region's most advanced systems inside a Swiss university.
 
 Why it matters:
-🏭 Location decisions follow regulation, not sentiment
-📉 Investment intent is the leading indicator to watch
-🇨🇭 Swiss medtech still exports far above its weight
+🔬 Local hardware shortens the loop between theory and experiment
+👩‍🎓 Talent pipeline trains on machines, not simulators
+🇨🇭 Switzerland moves from quantum research to quantum infrastructure
 
-An industry this export-dependent feels policy friction before anyone else does.
-
-https://www.fuw.ch/die-medtech-industrie-sieht-den-standort-schweiz-in-gefahr-867279418060
-```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 5. General — published 10 September
-
-```
-🇨🇭 ETH Zurich to host new IBM quantum machine
-
-@ETH Zürich will host a new IBM quantum computer on its own premises, the first such system in Switzerland. Local hosting gives researchers direct access to the hardware rather than remote cloud time, and puts Switzerland on the short list of countries with a machine in-country.
-
-Why it matters:
-🖥️ Local hardware shortens experiment cycles considerably
-🎓 Talent follows machines, not press releases
-🇨🇭 Switzerland joins a small club of quantum host nations
-
-Infrastructure decided today sets the ceiling for Swiss quantum companies a decade out.
-
+Universities that host the machines end up hosting the spin-offs too.
 https://de.newsroom.ibm.com/ETH-Zurich-IBM-Quantencomputer
-```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 6. General — published 10 September
-
-```
-🇨🇭 Swiss medtech flags eroding location appeal
-
-The Swiss medtech sector is warning that Switzerland's attractiveness as a base is eroding, according to reporting by @Cash. Companies point to costs and market access, and the survey links that judgement directly to weaker hiring and investment intentions at home.
-
-Why it matters:
-💸 Cost pressure now shapes where production lands
-🧑‍🔬 Hiring plans soften before revenue does
-🇨🇭 Swiss medtech remains a top-three export industry
-
-Competitiveness erodes slowly, then shows up all at once in factory decisions.
-
-https://www.cash.ch/news/top-news/schweizer-medtech-branche-warnt-vor-erodierender-standortattraktivitat-967519
-```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 7. Research — published 10 September
-
-```
-🇨🇭 EPFL tunes infrared light in real time
-
-Researchers at @EPFL have built ultra-thin silicon structures that rapidly change how they interact with mid-infrared light. Mid-IR is the band used to identify drugs, pollutants and biological material, and also carries data in free-space optical links, where fast tuning has long been the bottleneck.
-
-Why it matters:
-🔬 Mid-IR spectroscopy identifies molecules with chemical specificity
-📡 Free-space optical links need fast, compact modulation
-🇨🇭 Swiss photonics research feeding sensing and quantum hardware
-
-Silicon-compatible photonics is where lab results travel fastest into products.
-
-https://actu.epfl.ch/news/a-new-way-to-control-infrared-light-in-real-time-2
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
 ## 8. General — published 10 September
 
 ```
-🇨🇭 Swiss medtech balances cost pressure against new openings
+🇨🇭 Swiss medtech warns its home base is eroding
 
-The latest industry study from @Swiss Medtech shows strong revenue growth over the past two years, but a weakening assessment of Switzerland as a business location. The association links that shift directly to companies' recruitment and investment intentions, even as members identify new market opportunities.
+Switzerland's medtech industry is warning that the country's attractiveness as a location is deteriorating, according to Cash. Regulatory burden from European rules, market access friction and rising costs are pushing manufacturers to weigh production and clinical work elsewhere.
 
 Why it matters:
-📊 Growth and location confidence are moving in opposite directions
-🏗️ Investment intent signals where capacity gets built next
-🇨🇭 Swiss medtech employs tens of thousands across the country
+⚠️ Regulatory friction now rivals cost as a relocation driver
+🏥 Medtech is one of Switzerland's largest export industries
+🇨🇭 Location advantage is maintained by policy, not inherited
 
-Strong order books can hide a location problem for years, until they don't.
-
-https://www.swiss-medtech.ch/zahlen-und-fakten
+Swiss DeepTech leadership is a policy outcome, and warnings like this are worth reading early.
+https://www.cash.ch/news/top-news/schweizer-medtech-branche-warnt-vor-erodierender-standortattraktivitat-967519
 ```
 🖼️ **Article image:** none found, grab one from the article page.
-🔗 **Links to the original source.**
 
-## 9. Round — published 09 September
+## 9. Research — published 10 September
 
 ```
-🇨🇭 Swiss startup builds the control layer for fusion
+🇨🇭 Swiss silicon tunes infrared light in real time
 
-@Fusionality is developing software and tooling that lets fusion companies operate, monitor and analyse their devices. As fusion machines move from physics experiments toward engineered systems, the diagnostic and control layer becomes its own market, sold to every developer in the field rather than betting on one.
+Researchers at @EPFL have built ultra-thin silicon structures that rapidly change how they interact with mid-infrared light, solving a long-standing photonics bottleneck. Mid-IR is used to identify drugs, pollutants and biological materials, and to carry data through free-space optical links.
 
 Why it matters:
-⚛️ Picks and shovels beat betting on a single reactor
-📉 Device data is the constraint on iteration speed
-🇨🇭 Swiss engineering entering fusion through instrumentation
+💡 Real-time tuning unlocks faster chemical and pollutant sensing
+🔗 Silicon platform means existing foundries can manufacture it
+🇨🇭 EPFL photonics feeding sensing, comms and quantum at once
 
-Selling infrastructure to a whole sector is often the smarter fusion bet.
-
-https://www.startupticker.ch/en/news/fusionality-raises-chf-3-million-to-take-fusion-devices-next-level
+Platform technologies that ride standard silicon are the ones that actually reach production.
+https://actu.epfl.ch/news/a-new-way-to-control-infrared-light-in-real-time-2
 ```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Fusionality%20Founders.jpg
+🖼️ **Article image:** none found, grab one from the article page.
 
-## 10. Research — published 09 September
+## 10. General — published 10 September
 
 ```
-🇨🇭 EPFL finds far more microplastics in Lake Geneva
+🇨🇭 Swiss quantum hub lands at ETH Zurich
 
-A new detection technique from @EPFL shows that microplastics in Lake Geneva and its tributaries are far more abundant than previously measured. The smallest particles, below five millimetres and hardest to classify, had been systematically undercounted, and most plastics persist for decades or centuries.
+@IBM and Lockheed Martin are creating a Swiss Quantum Innovation Hub at ETH Zurich, built around an IBM Quantum System Two, the first such system in the country. The hub is designed to bring industrial users alongside academic researchers on the same hardware.
 
 Why it matters:
-🔍 Measurement methods define what regulators can act on
-💧 Freshwater contamination data lags ocean research badly
-🇨🇭 Swiss instrumentation expertise applied to environmental monitoring
+⚛️ Industry and academia sharing one machine accelerates real use cases
+🌍 Anchors Switzerland in the global quantum hardware map
+🇨🇭 First IBM Quantum System Two installed on Swiss soil
 
-Better sensors usually arrive before better policy, and force it.
+Global players choose where to put their hardware, and that choice is itself a verdict.
+https://newsroom.ibm.com/2026-09-10-ibm,-lockheed-martin-announce-swiss-quantum-innovation-hub-at-eth-zurich,-anchored-by-switzerlands-first-ibm-quantum-computer
+```
+🖼️ **Article image:** none found, grab one from the article page.
 
+## 11. Research — published 09 September
+
+```
+🇨🇭 Swiss lakes hold far more microplastics than thought
+
+A detection technique developed at @EPFL shows that the smallest microplastics in Lake Geneva and its tributaries are far more abundant than earlier surveys suggested. Conventional methods count larger particles well but miss the sub-millimetre fraction that dominates by number.
+
+Why it matters:
+🔬 New measurement standards reset environmental baselines and regulation
+💧 Water utilities need detection before they can filter
+🇨🇭 Lake Geneva becomes a reference case for European monitoring
+
+Instrumentation breakthroughs quietly rewrite policy, because you cannot regulate what you cannot measure.
 https://actu.epfl.ch/news/hidden-microplastic-pollution-in-swiss-waters-unco
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 11. Research — published 08 September
+## 12. Research — published 08 September
 
 ```
-🇨🇭 EPFL images living cells in one exposure
+🇨🇭 Swiss microscopy captures living cells in one shot
 
-A fluorescence microscopy method from @EPFL produces super-resolution images from a single camera exposure. Existing approaches stack hundreds or thousands of frames, which only works on still samples, so this opens up fast movements inside living cells that current techniques cannot capture.
+@EPFL researchers have developed a fluorescence microscopy method that produces super-resolution images from a single camera exposure. Existing techniques stack hundreds or thousands of frames, which fails on fast-moving structures inside living cells.
 
 Why it matters:
-🔬 Single-shot imaging removes the motion-blur constraint
-🧫 Live-cell dynamics become observable at nanoscale
-🇨🇭 Swiss optics research keeps setting microscopy standards
+⚡ Single-exposure imaging opens up fast intracellular dynamics
+🧫 Live-cell compatibility matters more than raw resolution numbers
+🇨🇭 Swiss optics research feeding the global life sciences toolchain
 
-Instrumentation advances compound quietly, then reshape entire fields of biology.
-
+Switzerland keeps exporting the instruments other people's discoveries depend on.
 https://actu.epfl.ch/news/super-resolution-imaging-reveals-details-inside--2
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 12. General — published 04 September
+## 13. Grant — published 08 September
 
 ```
-🇨🇭 Zurich startup rethinks in-orbit rocket engines
+🇨🇭 Geneva backs three startups through its innovation fund
 
-@Stellar Alpina, based in Zurich, is developing rotating detonation rocket engines that shrink propulsion systems while raising performance. The robotics startup has secured CHF 150,000 from Venture Kick to build a new generation of compact engines for moving spacecraft once they reach orbit.
+@Infera Neuro has won a grant from Geneva's FIF innovation financing programme to advance neural decoding chips for non-invasive thought-to-speech interfaces. The same round supported Goodwall's skills and careers platform and Roofless Labs' K4MERA digital stereoscopic camera.
 
 Why it matters:
-🚀 Orbital mobility is the bottleneck for satellite servicing
-⚙️ Detonation cycles promise higher efficiency, fewer parts
-🇨🇭 Swiss space suppliers moving from components to propulsion
+🧠 Non-invasive brain interfaces are moving from lab to silicon
+🏛️ Cantonal funding fills the gap before institutional venture rounds
+🇨🇭 Geneva building a deeptech pipeline beyond finance and diplomacy
 
-Hard thermodynamics with few moving parts plays to Swiss manufacturing strengths.
-
-https://www.startupticker.ch/en/news/stellar-alpina-s-innovation-opens-new-possibilities-for-orbital-mobility
+Regional public funding rarely makes headlines, but it is where a lot of Swiss hardware starts.
+https://www.startupticker.ch/en/news/goodwall-roofless-labs-and-infera-neuro-awarded-fif-funding
 ```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/StellarAlpina.jpg
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/FIF-4.png
 
-## 13. Grant — published 03 September
+## 14. Grant — published 03 September
 
 ```
 🇨🇭 PSI researcher wins major grant for quantum spintronics
 
-A researcher at @Paul Scherrer Institute has been awarded a major grant to combine spintronics with quantum technologies, work that uses electron spin rather than charge to store and process information. PSI's large-scale facilities, including its neutron and muon sources, give this kind of materials research infrastructure few labs can match.
+A researcher at the Paul Scherrer Institute has received a major grant to combine spintronics with quantum technologies, work that uses electron spin rather than charge to store and process information. @Paul Scherrer Institute PSI runs some of Europe's most capable large-scale research facilities for exactly this kind of materials science.
 
 Why it matters:
-🧲 Spin-based devices promise lower-power information processing
-🔭 Large-scale facilities are a durable research advantage
-🇨🇭 Swiss labs funding fundamental work with industrial horizons
+🧲 Spin-based devices promise lower power than charge electronics
+🔬 PSI's beamlines give Swiss materials research a structural edge
+🇨🇭 Federal research infrastructure underwriting the next computing substrate
 
-The materials layer is where quantum advantage will ultimately be won or lost.
-
+Big national facilities are the unglamorous foundation under every Swiss quantum headline.
 https://www.admin.ch/en/newnsb/U6UeJA33Fa4O
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 14. General — published 02 September
+## 15. Grant — published 03 September
 
 ```
-🇨🇭 Swiss AI Weeks push adoption across the economy
+🇨🇭 Six ETH researchers win ERC Starting Grants
 
-The @Swiss AI Weeks bring together companies, researchers and public institutions to build practical AI capability across Switzerland, with hands-on formats rather than conference panels. The programme targets the gap between available models and organisations that have yet to deploy them.
+Six researchers at @ETH Zürich have been awarded ERC Starting Grants, the European Research Council's flagship support for early-career scientists building their first independent labs. The grants fund high-risk fundamental work over several years, the stage where most future deeptech spin-offs are formed.
 
 Why it matters:
-🧠 Adoption, not model building, is the Swiss bottleneck
-🏢 SMEs hold most of the untapped productivity gains
-🇨🇭 Swiss coordination between academia, industry and government
+🔬 Early-career grants seed the spin-offs of the next decade
+🇪🇺 Continued ERC access matters for Swiss research competitiveness
+🇨🇭 Six awards at a single institution signals unusual depth
 
-Countries win the AI decade on diffusion speed, not on flagship models.
-
-https://www.moneytoday.ch/news/die-swiss-ai-weeks-machen-die-schweiz-fit-fuers-ki-zeitalter
-```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 15. Research — published 02 September
-
-```
-🇨🇭 EPFL builds an AI that knows its uncertainty
-
-A team at @EPFL has developed a framework that trains large language models to design the best setup for a scientific experiment. It borrows from Bayesian optimization, learning from prior results and estimating how uncertain each prediction is, so labs test fewer combinations to find the right recipe.
-
-Why it matters:
-🧪 Fewer experiments per discovery cuts R&D cost directly
-🤔 Calibrated uncertainty is what makes AI usable in science
-🇨🇭 Swiss research targeting the lab workflow itself
-
-AI that admits doubt will outperform AI that sounds certain in any lab.
-
-https://actu.epfl.ch/news/an-ai-capable-of-doubt-can-optimize-scientific-dis
+The spin-off pipeline is visible years earlier if you read the grant lists.
+https://ethz.ch/en/news-and-events/eth-news/news/2026/09/erc-starting-grants-for-six-eth-researchers.html
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
