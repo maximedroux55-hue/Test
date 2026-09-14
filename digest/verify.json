@@ -1,9 +1,9 @@
 {
-  "generated": "2026-09-13",
+  "generated": "2026-09-14",
   "note": "Rounds worth checking against a primary source.",
   "how_to_report": "For each round below, find the primary source: the company's own release, the filing, or the outlet that reported it first. Check the four things that have actually been wrong. Has the transaction closed, or is it announced, in progress, or subject to approval? Is the label right, where a first listing is an IPO, an already listed company selling shares is a Follow-on, a merger with a listed shell is a De-SPAC, and a purchase is an Acquisition rather than a round? Is the figure money received, or a ceiling, a gross, or a target? And did the named investors take part in THIS round, rather than an earlier one?\n\nReport back as entries for corrections.json, keyed on the company name, setting only the fields that are wrong. Add \"verified\" with today's date and \"verified_source\" naming what you read. An empty string clears a wrong value. For example:\n\n  \"Prem\": {\n    \"status\": \"announced\",\n    \"amount_note\": \"raising, expected to close in Q3\",\n    \"investors\": \"\",\n    \"verified\": \"2026-08-03\",\n    \"verified_source\": \"Bloomberg, 18 June 2026\"\n  }\n\nWhere a round checks out, still send back \"verified\" and \"verified_source\" so it is not queued again. Say plainly when a primary source cannot be found: an unverifiable round should stay unverified rather than be marked correct.",
   "corrections_file": "deeptech-news/corrections.json",
-  "count": 24,
+  "count": 27,
   "rounds": [
     {
       "company": "Gravis Robotics",
@@ -402,6 +402,26 @@
       "last_verified": ""
     },
     {
+      "company": "Goodwall",
+      "as_recorded": {
+        "stage": "Grant",
+        "amount": "USD 490K",
+        "amount_note": "grant",
+        "status": "closed",
+        "investors": "Fondation pour l'Innovation Technologique (FIF)",
+        "date": "2026-09-08",
+        "hq": "Geneva"
+      },
+      "check": [
+        "the figure carries a condition (grant): is it the amount actually raised"
+      ],
+      "sources": [
+        "Dealroom"
+      ],
+      "link": "https://app.dealroom.co/news/note/geneva-s-fif-grants-490-000-to-skills-platform-goodwall-in-latest-funding-round",
+      "last_verified": ""
+    },
+    {
       "company": "Bewe",
       "as_recorded": {
         "stage": "",
@@ -442,6 +462,26 @@
       "last_verified": ""
     },
     {
+      "company": "Verretex",
+      "as_recorded": {
+        "stage": "Grant",
+        "amount": "CHF 100K",
+        "amount_note": "part of CHF 216,882 total project budget",
+        "status": "closed",
+        "investors": "State of Vaud",
+        "date": "2026-09-14",
+        "hq": "Lausanne"
+      },
+      "check": [
+        "the figure carries a condition (part of CHF 216,882 total project budget): is it the amount actually raised"
+      ],
+      "sources": [
+        "Startupticker"
+      ],
+      "link": "https://www.startupticker.ch/en/news/verretex-lands-spei-sustainable-collaborative-project",
+      "last_verified": ""
+    },
+    {
       "company": "Infera Neuro",
       "as_recorded": {
         "stage": "Growth",
@@ -459,6 +499,27 @@
         "Startupticker"
       ],
       "link": "https://www.startupticker.ch/en/news/goodwall-roofless-labs-and-infera-neuro-awarded-fif-funding",
+      "last_verified": ""
+    },
+    {
+      "company": "Aeon",
+      "as_recorded": {
+        "stage": "Seed",
+        "amount": "",
+        "amount_note": "seed extension; total seed funding over USD 14M",
+        "status": "closed",
+        "investors": "Araya Ventures, Concentric, GoHub Ventures, Kadmos Capital, Calm/Storm Ventures, N&V Capital, Bigwave Capital",
+        "date": "2026-09-14",
+        "hq": "Zurich"
+      },
+      "check": [
+        "the figure carries a condition (seed extension; total seed funding over USD 14M): is it the amount actually raised"
+      ],
+      "sources": [
+        "Startupticker",
+        "EU-Startups"
+      ],
+      "link": "https://www.startupticker.ch/en/news/following-a-seed-extension-aeon-acquires-consumer-blood-diagnostics-platform",
       "last_verified": ""
     },
     {
