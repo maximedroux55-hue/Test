@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 16 September 2026. 15 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 17 September 2026. 15 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -41,7 +41,56 @@ Report what was scheduled and what was held.
 
 The stories themselves are below.
 
-## 1. Round — published 16 September
+## 1. General — published 17 September
+
+```
+🇨🇭 Lockheed Martin F-35 Offset Deal Funds IBM Quantum Computer at ETH...
+
+streamlinefeed.co.ke covers the story in Zurich. It is another sign that Swiss quantum and photonics research is edging toward commercial products.
+
+Why it matters:
+📈 Photonics is one of the rare quantum fields with a credible near-term path to revenue.
+🇨🇭 Switzerland's strength in precision engineering and optics gives its quantum spinouts a real head start.
+🧭 Deep science on a lean capital plan is exactly the Swiss DeepTech we look for at Climb.
+
+https://streamlinefeed.co.ke/news/lockheed-martin-f-35-offset-deal-funds-ibm-quantum-computer-at-eth-zurich
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 2. General — published 17 September
+
+```
+🇨🇭 St.Gallen prägt die DeepTech-Landschaft der Ostschweiz
+
+St.Gallen prägt die DeepTech-Landschaft der Ostschweiz LEADER Digital
+
+Why it matters:
+📈 Deep technology is where durable, defensible companies get built.
+🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
+🧭 Backing that research early and capital-efficiently is what we do at Climb.
+
+https://www.leaderdigital.ch/news/st-gallen-praegt-die-deeptech-landschaft-der-ostschweiz-16314.html
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 3. General — published 16 September
+
+```
+🇨🇭 ETH Zurich plans Swiss Quantum Innovation Hub – IBM, Lockheed Martin
+
+🇨🇭 ETH Zurich plans Swiss Quantum Innovation Hub – IBM, Lockheed Martin Electronics Weekly
+
+Why it matters:
+📈 Photonics is one of the rare quantum fields with a credible near-term path to revenue.
+🇨🇭 Switzerland's strength in precision engineering and optics gives its quantum spinouts a real head start.
+🧭 Deep science on a lean capital plan is exactly the Swiss DeepTech we look for at Climb.
+
+https://news.lockheedmartin.com/2026-09-10-IBM,-Lockheed-Martin-Announce-Swiss-Quantum-Innovation-Hub-at-ETH-Zurich,-Anchored-by-Switzerlands-First-IBM-Quantum-Computer
+```
+🖼️ **Article image:** none found, grab one from the article page.
+🔗 **Links to the original source.**
+
+## 4. Round — published 16 September
 
 ```
 🇨🇭 Fin.com Raises US$20M in Funding to Expand Cross-Border Payments
@@ -57,44 +106,28 @@ https://fintechnews.ch/funding/fin-com-seed-funding-payments/85715/
 ```
 🖼️ **Article image:** https://fintechnewsch-22e90.kxcdn.com/wp-content/uploads/2026/09/Fin.com-Raises-US20M-in-Funding-to-Rebuild-Cross-Border-Payments.webp
 
-## 2. Round — published 16 September
+## 5. Research — published 16 September
 
 ```
-🇨🇭 ETFBOOK Raises US$13M to Expand Data Platform in Americas, APAC
+🇨🇭 Bulgarian student joins elite ETH Zurich programme to study AI safety
 
-Fintechnews Switzerland covers the story in Zurich. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at $13M.
+БНР Новини covers the story in Zurich. Swiss robotics and applied AI keep moving from demo to deployment.
 
 Why it matters:
-💰 Capital keeps following Swiss deep science, this time at $13M.
-🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
-🧭 Backing that research early and capital-efficiently is what we do at Climb.
+📈 Automation is shifting from pilots to real commercial operations.
+🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
+🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
 
-https://fintechnews.ch/funding/etfbook-raises-us13m-to-expand-data-platform-in-americas-apac/85692/
+https://bnrnews.bg/en/post/529173/bulgarian-student-joins-elite-eth-zurich-programme-to-study-ai-safety
 ```
-🖼️ **Article image:** https://fintechnewsch-22e90.kxcdn.com/wp-content/uploads/2026/09/ETFBOOK-Raises-US13M-to-Expand-Data-Platform-in-Americas-APAC.webp
+🖼️ **Article image:** none found, grab one from the article page.
 
-## 3. Round — published 16 September
-
-```
-🇨🇭 Visa, Circle and Ripple Join Velocity’s US$10M Fundraise for...
-
-Fintechnews Switzerland covers the story in Sion. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at $10M.
-
-Why it matters:
-💰 Capital keeps following Swiss deep science, this time at $10M.
-🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
-🧭 Backing that research early and capital-efficiently is what we do at Climb.
-
-https://fintechnews.ch/london/velocity-stablecoin-funding-visa-circle-ripple/85718/
-```
-🖼️ **Article image:** https://fintechnewsch-22e90.kxcdn.com/wp-content/uploads/2026/09/Visa-Circle-and-Ripple-Join-Velocitys-US10-Million-Fundraise-for-Stablecoin-Platform.webp
-
-## 4. Research — published 15 September
+## 6. Research — published 15 September
 
 ```
 🇨🇭 Beyond the supercomputer
 
-Beyond the supercomputer ETH Zürich
+Beyond the supercomputer ethz.ch
 
 Why it matters:
 📈 Deep technology is where durable, defensible companies get built.
@@ -105,7 +138,7 @@ https://ethz.ch/en/news-and-events/eth-news/news/2026/09/beyond-the-supercompute
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 5. Research — published 14 September
+## 7. Research — published 14 September
 
 ```
 🇨🇭 EPFL researchers identify rubber-related chemicals in Swiss milk
@@ -121,7 +154,7 @@ https://actu.epfl.ch/news/epfl-researchers-identify-rubber-related-chemicals
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 6. General — published 14 September
+## 8. General — published 14 September
 
 ```
 🇨🇭 Ingredients innovator Ferm Labs secures €3M
@@ -137,7 +170,7 @@ https://www.startupticker.ch/en/news/ingredients-innovator-ferm-labs-secures-3m
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/ferm_Lab_Founders_Stephanie_Luepold_Mattia_Baroni.jpg
 
-## 7. Acquisition — published 14 September
+## 9. Acquisition — published 14 September
 
 ```
 🇨🇭 Following a seed extension, AEON acquires consumer blood diagnostics...
@@ -153,7 +186,23 @@ https://www.startupticker.ch/en/news/following-a-seed-extension-aeon-acquires-co
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/AeonTimSeithe.jpg
 
-## 8. Round — published 11 September
+## 10. General — published 11 September
+
+```
+🇨🇭 La spin-off de l’EPFL Fusionality lève 3 millions pour piloter les...
+
+ICTjournal covers the story in Sion. Swiss cleantech keeps pairing serious science with real-world deployment. The round is reported at 3 million.
+
+Why it matters:
+💰 Capital keeps following Swiss deep science, this time at 3 million.
+🇨🇭 Switzerland combines deep materials science with disciplined engineering.
+🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.
+
+https://www.ictjournal.ch/news/2026-09-11/la-spin-off-de-lepfl-fusionality-leve-3-millions-pour-piloter-les-reacteurs-a
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 11. Round — published 11 September
 
 ```
 🇨🇭 Swiss cleantech startup Nullpunkt raises €450,000 from the crowd
@@ -169,28 +218,12 @@ https://app.dealroom.co/news/note/swiss-cleantech-startup-nullpunkt-raises-450-0
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 9. Research — published 11 September
-
-```
-🇨🇭 Satellite imagery gives experts a better understanding of conflict
-
-EPFL News covers the story in Zurich. Swiss cleantech keeps pairing serious science with real-world deployment.
-
-Why it matters:
-📈 Energy and climate hardware is moving from subsidy toward genuine demand.
-🇨🇭 Switzerland combines deep materials science with disciplined engineering.
-🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.
-
-https://actu.epfl.ch/news/satellite-imagery-gives-experts-a-better-understan
-```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 10. General — published 10 September
+## 12. General — published 10 September
 
 ```
 🇨🇭 IBM, Lockheed Martin Announce Swiss Quantum Innovation Hub at ETH...
 
-IBM Newsroom covers the story in Zurich. It is another sign that Swiss quantum and photonics research is edging toward commercial products.
+newsroom.ibm.com covers the story in Zurich. It is another sign that Swiss quantum and photonics research is edging toward commercial products.
 
 Why it matters:
 📈 Photonics is one of the rare quantum fields with a credible near-term path to revenue.
@@ -201,55 +234,39 @@ https://newsroom.ibm.com/2026-09-10-ibm,-lockheed-martin-announce-swiss-quantum-
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 11. General — published 10 September
+## 13. Research — published 10 September
 
 ```
-🇨🇭 ETH Zürich hostet neuen IBM-Quantencomputer
+🇨🇭 ETH Zurich to host a new IBM quantum computer
 
-ETH Zürich hostet neuen IBM-Quantencomputer IBM DACH Newsroom
-
-Why it matters:
-📈 Deep technology is where durable, defensible companies get built.
-🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
-🧭 Backing that research early and capital-efficiently is what we do at Climb.
-
-https://de.newsroom.ibm.com/ETH-Zurich-IBM-Quantencomputer
-```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 12. Research — published 10 September
-
-```
-🇨🇭 A new way to control infrared light in real time
-
-EPFL News covers the story. It is another sign that Swiss quantum and photonics research is edging toward commercial products.
+ETH Zurich to host a new IBM quantum computer ethz.ch
 
 Why it matters:
 📈 Photonics is one of the rare quantum fields with a credible near-term path to revenue.
 🇨🇭 Switzerland's strength in precision engineering and optics gives its quantum spinouts a real head start.
 🧭 Deep science on a lean capital plan is exactly the Swiss DeepTech we look for at Climb.
 
-https://actu.epfl.ch/news/a-new-way-to-control-infrared-light-in-real-time-2
+https://ethz.ch/en/news-and-events/eth-news/news/2026/09/eth-zurich-to-host-a-new-ibm-quantum-computer.html
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 13. Round — published 09 September
+## 14. Research — published 10 September
 
 ```
-🇨🇭 Fusionality raises CHF 3 million to take fusion devices next level
+🇨🇭 Branchenstudie: Die Medtech-Industrie sieht den Standort Schweiz in...
 
-Fusionality today announced a CHF 3 million pre-seed round co-led by Founderful and Playfair. The company is building technologies that enable fusion companies to operate, monitor and analyze their devices. The round is reported at CHF 3 m.
+fuw.ch covers the story. Mechanism-level biology is where tomorrow's therapeutics quietly begin.
 
 Why it matters:
-💰 Capital keeps following Swiss deep science, this time at CHF 3 m.
-🇨🇭 Switzerland combines deep materials science with disciplined engineering.
-🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.
+📈 Early biological insight compounds into products years before anyone names a company.
+🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.
+🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.
 
-https://www.startupticker.ch/en/news/fusionality-raises-chf-3-million-to-take-fusion-devices-next-level
+https://www.fuw.ch/die-medtech-industrie-sieht-den-standort-schweiz-in-gefahr-867279418060
 ```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Fusionality%20Founders.jpg
+🖼️ **Article image:** none found, grab one from the article page.
 
-## 14. Research — published 09 September
+## 15. Research — published 09 September
 
 ```
 🇨🇭 Hidden microplastic pollution in Swiss waters uncovered
@@ -262,22 +279,6 @@ Why it matters:
 🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
 
 https://actu.epfl.ch/news/hidden-microplastic-pollution-in-swiss-waters-unco
-```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 15. Research — published 08 September
-
-```
-🇨🇭 Super-resolution imaging reveals details inside living cells
-
-EPFL News covers the story in Sion. Swiss cleantech keeps pairing serious science with real-world deployment.
-
-Why it matters:
-📈 Energy and climate hardware is moving from subsidy toward genuine demand.
-🇨🇭 Switzerland combines deep materials science with disciplined engineering.
-🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.
-
-https://actu.epfl.ch/news/super-resolution-imaging-reveals-details-inside--2
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
