@@ -1,20 +1,22 @@
 {
-  "generated": "2026-09-18",
+  "generated": "2026-09-19",
   "mode": "Template drafts (set ANTHROPIC_API_KEY for AI-written posts).",
   "note": "Times are local. Schedule each post at its time on its date.",
   "cowork_prompt": "Open https://maxime-droux.com/digest/posts.json and schedule the posts listed at the end of this message, and only those. The file holds the shortlist; the list below says which of them I picked and when each one goes out. Match them by `index`. Ignore every other post in the file.\n\nFor each post, in order:\n- Type the `text` straight through, once, with real keystrokes. Never insert\n  text via JavaScript. It already ends with the article URL on its own line,\n  so do not add, move or retype the URL separately: typing it last is what makes\n  the link preview load the article photo.\n- Each post has exactly one @mention. Type `mention.type`, wait for the\n  dropdown, click the row matching `mention.expect`. If no row matches, post\n  it without the mention rather than tagging the wrong company. LinkedIn will\n  render the official name: that is expected and fine, do not fight it, do not\n  restart the post, do not rewrite it.\n- Schedule it at the date and time given for it in the list below. If no link\n  preview appears, schedule it anyway: do not hunt for an image.\n\nTwo attempts per post, then stop. If a post is not scheduled after two tries,\nleave it, move to the next one, and list it at the end. Never start a third.\n\nBefore you start, open the scheduled-posts list once and note what is already\nthere. Skip any post already scheduled: never schedule the same one twice.\n\nVerification:\n- Claims already settled against the article are not in the file. Check only\n  what `claims` still lists, and posts with needs_check: true (a figure nobody\n  has verified: confirm round closed / round name / amount received / investors\n  in THIS round). Both empty and false means schedule it, no research.\n\nAnything that fails: do not schedule it, and do not edit any file or commit\nanything. List the held posts at the end with the sentence you read and the\npage you read it on, and I will record them.\n\nReport what was scheduled and what was held.",
   "posts": [
     {
       "index": 1,
-      "text": "🇨🇭 Lockheed Martin F-35 Offset Deal Funds IBM Quantum Computer at ETH...\n\nstreamlinefeed.co.ke covers the story in Zurich. It is another sign that Swiss quantum and photonics research is edging toward commercial products.\n\nWhy it matters:\n📈 Photonics is one of the rare quantum fields with a credible near-term path to revenue.\n🇨🇭 Switzerland's strength in precision engineering and optics gives its quantum spinouts a real head start.\n🧭 Deep science on a lean capital plan is exactly the Swiss DeepTech we look for at Climb.\n\nhttps://streamlinefeed.co.ke/news/lockheed-martin-f-35-offset-deal-funds-ibm-quantum-computer-at-eth-zurich",
-      "link": "https://streamlinefeed.co.ke/news/lockheed-martin-f-35-offset-deal-funds-ibm-quantum-computer-at-eth-zurich",
+      "text": "🇨🇭 Following a CHF 2.4 million seed round, Aseptuva progressed to...\n\n🇨🇭 Last year Swiss-UK Medtech startup Aseptuva raised CHF 2.4 million from prominent healthcare entrepreneurs and investors. The financing has enabled Aseptuva to progress from early prototyping to preclinical validation in Europe. The round is reported at CHF 2.4 m.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at CHF 2.4 m.\n🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.\n🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.\n\nhttps://www.startupticker.ch/en/news/following-a-chf-2-4-million-seed-round-aseptuva-progressed-to-preclinical-validation",
+      "link": "https://www.startupticker.ch/en/news/following-a-chf-2-4-million-seed-round-aseptuva-progressed-to-preclinical-validation",
       "mention": {},
-      "needs_check": false,
-      "claims": []
+      "needs_check": true,
+      "claims": [
+        "the post states CHF 2.4 m: is that money received rather than a ceiling or a target, and has the round closed"
+      ]
     },
     {
       "index": 2,
-      "text": "🇨🇭 St.Gallen prägt die DeepTech-Landschaft der Ostschweiz\n\nSt.Gallen prägt die DeepTech-Landschaft der Ostschweiz LEADER Digital\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.leaderdigital.ch/news/st-gallen-praegt-die-deeptech-landschaft-der-ostschweiz-16314.html",
+      "text": "🇨🇭 St.Gallen prägt die DeepTech-Landschaft der Ostschweiz\n\nSt.Gallen prägt die DeepTech-Landschaft der Ostschweiz leaderdigital.ch\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.leaderdigital.ch/news/st-gallen-praegt-die-deeptech-landschaft-der-ostschweiz-16314.html",
       "link": "https://www.leaderdigital.ch/news/st-gallen-praegt-die-deeptech-landschaft-der-ostschweiz-16314.html",
       "mention": {},
       "needs_check": false,
@@ -70,6 +72,14 @@
     },
     {
       "index": 9,
+      "text": "🇨🇭 La medtech suisse croît deux fois plus vite que l’économie\n\nLa medtech suisse croît deux fois plus vite que l’économie Greater Geneva Bern area (GGBa)\n\nWhy it matters:\n📈 Early biological insight compounds into products years before anyone names a company.\n🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.\n🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.\n\nhttps://www.swiss-medtech.ch/fr/news/etude-2026-sur-le-secteur-des-technologies-medicales",
+      "link": "https://www.swiss-medtech.ch/fr/news/etude-2026-sur-le-secteur-des-technologies-medicales",
+      "mention": {},
+      "needs_check": false,
+      "claims": []
+    },
+    {
+      "index": 10,
       "text": "🇨🇭 Ingredients innovator Ferm Labs secures €3M\n\n🇨🇭 One year following its incorporation, Swiss-Italian startup Ferm Labs AG has announced the closing of a €3M funding round. The capital will be used to scale the company’s bioprocessing platform which enables the production of saltless, clean‑label flavour enhancers for industrial food manufacturers. The round is reported at €3M.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at €3M.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.startupticker.ch/en/news/ingredients-innovator-ferm-labs-secures-3m",
       "link": "https://www.startupticker.ch/en/news/ingredients-innovator-ferm-labs-secures-3m",
       "mention": {},
@@ -79,17 +89,15 @@
       ]
     },
     {
-      "index": 10,
-      "text": "🇨🇭 Following a seed extension, AEON acquires consumer blood diagnostics...\n\nAeon, the Zurich-based preventive healthcare company focussed on AI-powered whole-body health check-ups, closed a seed extension round bringing the total money raised in this round to USD 14 million. The round is reported at USD 14 m.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at USD 14 m.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.startupticker.ch/en/news/following-a-seed-extension-aeon-acquires-consumer-blood-diagnostics-platform",
-      "link": "https://www.startupticker.ch/en/news/following-a-seed-extension-aeon-acquires-consumer-blood-diagnostics-platform",
+      "index": 11,
+      "text": "🇨🇭 La spin-off de l’EPFL Fusionality lève 3 millions pour piloter les...\n\nICTjournal covers the story in Sion. Swiss cleantech keeps pairing serious science with real-world deployment. The round is reported at 3 million.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at 3 million.\n🇨🇭 Switzerland combines deep materials science with disciplined engineering.\n🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.\n\nhttps://www.ictjournal.ch/news/2026-09-11/la-spin-off-de-lepfl-fusionality-leve-3-millions-pour-piloter-les-reacteurs-a",
+      "link": "https://www.ictjournal.ch/news/2026-09-11/la-spin-off-de-lepfl-fusionality-leve-3-millions-pour-piloter-les-reacteurs-a",
       "mention": {},
-      "needs_check": true,
-      "claims": [
-        "the post states USD 14 m: is that money received rather than a ceiling or a target, and has the round closed"
-      ]
+      "needs_check": false,
+      "claims": []
     },
     {
-      "index": 11,
+      "index": 12,
       "text": "🇨🇭 Swiss cleantech startup Nullpunkt raises €450,000 from the crowd\n\n🇨🇭 Swiss cleantech startup Nullpunkt raises €450,000 from the crowd Dealroom The round is reported at €450,000.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at €450,000.\n🇨🇭 Switzerland combines deep materials science with disciplined engineering.\n🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.\n\nhttps://app.dealroom.co/news/note/swiss-cleantech-startup-nullpunkt-raises-450-000-from-the-crowd",
       "link": "https://app.dealroom.co/news/note/swiss-cleantech-startup-nullpunkt-raises-450-000-from-the-crowd",
       "mention": {},
@@ -100,15 +108,15 @@
       ]
     },
     {
-      "index": 12,
-      "text": "🇨🇭 IBM, Lockheed Martin Announce Swiss Quantum Innovation Hub at ETH...\n\nIBM Newsroom covers the story in Zurich. It is another sign that Swiss quantum and photonics research is edging toward commercial products.\n\nWhy it matters:\n📈 Photonics is one of the rare quantum fields with a credible near-term path to revenue.\n🇨🇭 Switzerland's strength in precision engineering and optics gives its quantum spinouts a real head start.\n🧭 Deep science on a lean capital plan is exactly the Swiss DeepTech we look for at Climb.\n\nhttps://newsroom.ibm.com/2026-09-10-ibm,-lockheed-martin-announce-swiss-quantum-innovation-hub-at-eth-zurich,-anchored-by-switzerlands-first-ibm-quantum-computer",
+      "index": 13,
+      "text": "🇨🇭 IBM, Lockheed Martin Announce Swiss Quantum Innovation Hub at ETH...\n\nnewsroom.ibm.com covers the story in Zurich. It is another sign that Swiss quantum and photonics research is edging toward commercial products.\n\nWhy it matters:\n📈 Photonics is one of the rare quantum fields with a credible near-term path to revenue.\n🇨🇭 Switzerland's strength in precision engineering and optics gives its quantum spinouts a real head start.\n🧭 Deep science on a lean capital plan is exactly the Swiss DeepTech we look for at Climb.\n\nhttps://newsroom.ibm.com/2026-09-10-ibm,-lockheed-martin-announce-swiss-quantum-innovation-hub-at-eth-zurich,-anchored-by-switzerlands-first-ibm-quantum-computer",
       "link": "https://newsroom.ibm.com/2026-09-10-ibm,-lockheed-martin-announce-swiss-quantum-innovation-hub-at-eth-zurich,-anchored-by-switzerlands-first-ibm-quantum-computer",
       "mention": {},
       "needs_check": false,
       "claims": []
     },
     {
-      "index": 13,
+      "index": 14,
       "text": "🇨🇭 ETH Zurich to host a new IBM quantum computer\n\nETH Zurich to host a new IBM quantum computer ETH Zürich\n\nWhy it matters:\n📈 Photonics is one of the rare quantum fields with a credible near-term path to revenue.\n🇨🇭 Switzerland's strength in precision engineering and optics gives its quantum spinouts a real head start.\n🧭 Deep science on a lean capital plan is exactly the Swiss DeepTech we look for at Climb.\n\nhttps://ethz.ch/en/news-and-events/eth-news/news/2026/09/eth-zurich-to-host-a-new-ibm-quantum-computer.html",
       "link": "https://ethz.ch/en/news-and-events/eth-news/news/2026/09/eth-zurich-to-host-a-new-ibm-quantum-computer.html",
       "mention": {},
@@ -116,19 +124,9 @@
       "claims": []
     },
     {
-      "index": 14,
-      "text": "🇨🇭 Fusionality raises CHF 3 million to take fusion devices next level\n\nFusionality today announced a CHF 3 million pre-seed round co-led by Founderful and Playfair. The company is building technologies that enable fusion companies to operate, monitor and analyze their devices. The round is reported at CHF 3 m.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at CHF 3 m.\n🇨🇭 Switzerland combines deep materials science with disciplined engineering.\n🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.\n\nhttps://www.startupticker.ch/en/news/fusionality-raises-chf-3-million-to-take-fusion-devices-next-level",
-      "link": "https://www.startupticker.ch/en/news/fusionality-raises-chf-3-million-to-take-fusion-devices-next-level",
-      "mention": {},
-      "needs_check": true,
-      "claims": [
-        "the post states CHF 3 m: is that money received rather than a ceiling or a target, and has the round closed"
-      ]
-    },
-    {
       "index": 15,
-      "text": "🇨🇭 Hidden microplastic pollution in Swiss waters uncovered\n\nEPFL News covers the story in Geneva. Swiss robotics and applied AI keep moving from demo to deployment.\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://actu.epfl.ch/news/hidden-microplastic-pollution-in-swiss-waters-unco",
-      "link": "https://actu.epfl.ch/news/hidden-microplastic-pollution-in-swiss-waters-unco",
+      "text": "🇨🇭 ETH Zürich hostet neuen IBM-Quantencomputer\n\nETH Zürich hostet neuen IBM-Quantencomputer IBM DACH Newsroom\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://de.newsroom.ibm.com/ETH-Zurich-IBM-Quantencomputer",
+      "link": "https://de.newsroom.ibm.com/ETH-Zurich-IBM-Quantencomputer",
       "mention": {},
       "needs_check": false,
       "claims": []
