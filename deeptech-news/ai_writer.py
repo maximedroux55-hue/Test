@@ -23,6 +23,11 @@ import re
 # cheaper one (e.g. claude-sonnet-5).
 DEFAULT_MODEL = "claude-opus-5"
 
+# Why the last run fell back to templates, for the caller to report. A failed
+# run still publishes template posts, so without this the only signal is that
+# the week reads flat. Mirrors extract.LAST_RUN_ERROR.
+LAST_RUN_ERROR = ""
+
 SYSTEM_PROMPT = """You write LinkedIn posts for Maxime Droux (Max), General \
 Partner at Climb Ventures, a Geneva-based, FINMA-authorized venture capital firm \
 backing Swiss DeepTech scale-ups. Style model: Charles-Henry Monchau. \
@@ -257,6 +262,13 @@ def generate_posts(articles: list, days: int, model: str | None = None):
         posts = [p.strip() for p in posts if isinstance(p, str) and p.strip()] or None
         _warn_missing_mentions(posts)
         return posts
-    except Exception:
-        # Any failure (network, auth, parsing) falls back to templates.
+    except Exception as exc:
+        # Any failure (network, auth, parsing) falls back to templates, but it
+        # has to say which. A dead credit balance once ran for five days
+        # reported as "every request failed", which names no action.
+        import sys
+
+        global LAST_RUN_ERROR
+        LAST_RUN_ERROR = f"{type(exc).__name__}: {str(exc)[:300]}"
+        print(f"    post writing error: {LAST_RUN_ERROR}", file=sys.stderr)
         return None

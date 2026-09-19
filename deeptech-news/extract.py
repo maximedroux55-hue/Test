@@ -812,6 +812,6 @@ def _extract_batch(articles: list, model: str | None = None):
     except Exception as exc:
         import sys
         global LAST_RUN_ERROR
-        LAST_RUN_ERROR = f"{type(exc).__name__}: {str(exc)[:200]}"
+        LAST_RUN_ERROR = f"{type(exc).__name__}: {str(exc)[:300]}"
         print(f"    extraction error: {LAST_RUN_ERROR}", file=sys.stderr)
         return None

@@ -23,6 +23,76 @@ import money            # noqa: E402
 import scraper          # noqa: E402
 
 
+# ------------------------------------------------------- failure reason -----
+# The Anthropic credit balance ran out. Both workflows failed every morning for
+# five days, and the notification email said only "every request failed", which
+# names no action. The writer swallowed the exception, and the one line GitHub
+# turns into the email carried the generic sentence rather than the cause.
+
+def test_the_writer_says_why_it_fell_back():
+    import ai_writer
+
+    class _Dead:
+        class Anthropic:
+            def __init__(self, *a, **k):
+                raise RuntimeError(
+                    "Error code: 400 - {'type': 'error', 'error': {'type': "
+                    "'invalid_request_error', 'message': 'Your credit balance "
+                    "is too low to access the Anthropic API. Please go to "
+                    "Plans & Billing to upgrade or purchase credits.'}}")
+
+    ai_writer.LAST_RUN_ERROR = ""
+    saved_key = os.environ.get("ANTHROPIC_API_KEY")
+    os.environ["ANTHROPIC_API_KEY"] = "sk-ant-test"
+    sys.modules["anthropic"] = _Dead
+    try:
+        assert ai_writer.generate_posts([{"title": "x"}], 7) is None
+    finally:
+        del sys.modules["anthropic"]
+        if saved_key is None:
+            os.environ.pop("ANTHROPIC_API_KEY", None)
+        else:
+            os.environ["ANTHROPIC_API_KEY"] = saved_key
+
+    # The cause survives, including the sentence that says what to do about it.
+    assert "RuntimeError" in ai_writer.LAST_RUN_ERROR
+    assert "credit balance is too low" in ai_writer.LAST_RUN_ERROR
+    assert "purchase credits" in ai_writer.LAST_RUN_ERROR, (
+        "truncated before the actionable part: " + ai_writer.LAST_RUN_ERROR)
+
+
+def test_the_failure_email_names_the_cause_on_its_first_line():
+    import ai_writer
+    import tempfile
+
+    class _Args:
+        archive_only = False
+        posts_only = True
+
+    args = _Args()
+    ai_writer.LAST_RUN_ERROR = ("BadRequestError: Error code: 400 - your credit "
+                                "balance is too low")
+    extract.LAST_RUN_ERROR = ""
+    saved_key = os.environ.get("ANTHROPIC_API_KEY")
+    os.environ["ANTHROPIC_API_KEY"] = "sk-ant-test"
+    try:
+        with tempfile.TemporaryDirectory() as tmp:
+            args.outdir = tmp
+            scraper._flag_missing_ai([{"title": "x"}], "template", args)
+            with open(os.path.join(tmp, "AI_UNAVAILABLE"), encoding="utf-8") as f:
+                first_line = f.readline()
+    finally:
+        ai_writer.LAST_RUN_ERROR = ""
+        if saved_key is None:
+            os.environ.pop("ANTHROPIC_API_KEY", None)
+        else:
+            os.environ["ANTHROPIC_API_KEY"] = saved_key
+
+    # The workflow pipes `head -1` into the GitHub annotation and the email.
+    assert "credit balance is too low" in first_line, (
+        "the emailed line still does not say why: " + first_line)
+
+
 # ---------------------------------------------------------------- stage -----
 # SWISSto12's article opened "has closed a USD 70 million Series C funding
 # round" and the read came back "Growth", inferred from the size and the word
@@ -2003,7 +2073,7 @@ def test_a_write_up_without_a_figure_is_not_a_second_round():
 
 # Locking the count means a test appended below the runner, where it would
 # never execute, shows up as a failure rather than as silence. That happened.
-EXPECTED = 73
+EXPECTED = 75
 
 
 if __name__ == "__main__":

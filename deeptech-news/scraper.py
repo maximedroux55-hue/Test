@@ -2792,9 +2792,15 @@ def _flag_missing_ai(articles: list, mode: str, args) -> None:
     if not problems:
         return
 
-    reason = extract_mod.LAST_RUN_ERROR or "every request failed"
+    import ai_writer as ai_writer_mod
+
+    reason = (ai_writer_mod.LAST_RUN_ERROR or extract_mod.LAST_RUN_ERROR
+              or "every request failed")
+    # The reason stays on the first line: the workflow turns `head -1` of this
+    # file into the GitHub annotation and the notification email, so a reason
+    # on line two never reaches the person who has to act on it.
     note = ("The Anthropic API was unavailable for this run, so "
-            + " and ".join(problems) + f".\n{reason}")
+            + " and ".join(problems) + f". {reason}")
     with open(os.path.join(args.outdir, "AI_UNAVAILABLE"), "w",
               encoding="utf-8") as f:
         f.write(note)
