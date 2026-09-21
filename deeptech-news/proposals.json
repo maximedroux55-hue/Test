@@ -117,8 +117,17 @@
       "verified_by": "automated weekly check"
     }
   },
-  "last_run": "2026-09-14",
-  "could_not_verify": [],
+  "last_run": "2026-09-21",
+  "could_not_verify": [
+    "Gravis Robotics",
+    "Terra Quantum",
+    "Vaderis Therapeutics",
+    "Prem",
+    "Adaptyv Biosystems",
+    "Adaptyv Bio",
+    "NovaGo Therapeutics AG",
+    "Basilea Pharmaceutica"
+  ],
   "withdrawn": {
     "Prem": "The pass read QueryAI's release, a different company in South Dakota, because the name check was a substring and 'prem' sits inside 'premises'. Withdrawn, and the check now requires the name as a word near the top of the page."
   },
