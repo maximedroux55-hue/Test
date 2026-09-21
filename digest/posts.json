@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-20",
+  "generated": "2026-09-21",
   "mode": "Template drafts (set ANTHROPIC_API_KEY for AI-written posts).",
   "note": "Times are local. Schedule each post at its time on its date.",
   "cowork_prompt": "Open https://maxime-droux.com/digest/posts.json and schedule the posts listed at the end of this message, and only those. The file holds the shortlist; the list below says which of them I picked and when each one goes out. Match them by `index`. Ignore every other post in the file.\n\nFor each post, in order:\n- Type the `text` straight through, once, with real keystrokes. Never insert\n  text via JavaScript. It already ends with the article URL on its own line,\n  so do not add, move or retype the URL separately: typing it last is what makes\n  the link preview load the article photo.\n- Each post has exactly one @mention. Type `mention.type`, wait for the\n  dropdown, click the row matching `mention.expect`. If no row matches, post\n  it without the mention rather than tagging the wrong company. LinkedIn will\n  render the official name: that is expected and fine, do not fight it, do not\n  restart the post, do not rewrite it.\n- Schedule it at the date and time given for it in the list below. If no link\n  preview appears, schedule it anyway: do not hunt for an image.\n\nTwo attempts per post, then stop. If a post is not scheduled after two tries,\nleave it, move to the next one, and list it at the end. Never start a third.\n\nBefore you start, open the scheduled-posts list once and note what is already\nthere. Skip any post already scheduled: never schedule the same one twice.\n\nVerification:\n- Claims already settled against the article are not in the file. Check only\n  what `claims` still lists, and posts with needs_check: true (a figure nobody\n  has verified: confirm round closed / round name / amount received / investors\n  in THIS round). Both empty and false means schedule it, no research.\n\nAnything that fails: do not schedule it, and do not edit any file or commit\nanything. List the held posts at the end with the sentence you read and the\npage you read it on, and I will record them.\n\nReport what was scheduled and what was held.",
@@ -32,14 +32,6 @@
     },
     {
       "index": 4,
-      "text": "🇨🇭 ETH Zurich plans Swiss Quantum Innovation Hub – IBM, Lockheed Martin\n\n🇨🇭 ETH Zurich plans Swiss Quantum Innovation Hub – IBM, Lockheed Martin Electronics Weekly\n\nWhy it matters:\n📈 Photonics is one of the rare quantum fields with a credible near-term path to revenue.\n🇨🇭 Switzerland's strength in precision engineering and optics gives its quantum spinouts a real head start.\n🧭 Deep science on a lean capital plan is exactly the Swiss DeepTech we look for at Climb.\n\nhttps://news.lockheedmartin.com/2026-09-10-IBM,-Lockheed-Martin-Announce-Swiss-Quantum-Innovation-Hub-at-ETH-Zurich,-Anchored-by-Switzerlands-First-IBM-Quantum-Computer",
-      "link": "https://news.lockheedmartin.com/2026-09-10-IBM,-Lockheed-Martin-Announce-Swiss-Quantum-Innovation-Hub-at-ETH-Zurich,-Anchored-by-Switzerlands-First-IBM-Quantum-Computer",
-      "mention": {},
-      "needs_check": false,
-      "claims": []
-    },
-    {
-      "index": 5,
       "text": "🇨🇭 Fin.com Raises US$20M in Funding to Expand Cross-Border Payments\n\nFintechnews Switzerland covers the story. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at $20M.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at $20M.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://fintechnews.ch/funding/fin-com-seed-funding-payments/85715/",
       "link": "https://fintechnews.ch/funding/fin-com-seed-funding-payments/85715/",
       "mention": {},
@@ -47,7 +39,7 @@
       "claims": []
     },
     {
-      "index": 6,
+      "index": 5,
       "text": "🇨🇭 ETH and EPFL join forces in learning sciences research\n\nETH and EPFL join forces in learning sciences research ETH Zürich\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://ethz.ch/en/news-and-events/eth-news/news/2026/09/eth-and-pefl-join-forces-in-learning-sciences-research.html",
       "link": "https://ethz.ch/en/news-and-events/eth-news/news/2026/09/eth-and-pefl-join-forces-in-learning-sciences-research.html",
       "mention": {},
@@ -55,15 +47,7 @@
       "claims": []
     },
     {
-      "index": 7,
-      "text": "🇨🇭 Bulgarian student joins elite ETH Zurich programme to study AI safety\n\nБНР Новини covers the story in Zurich. Swiss robotics and applied AI keep moving from demo to deployment.\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://bnrnews.bg/en/post/529173/bulgarian-student-joins-elite-eth-zurich-programme-to-study-ai-safety",
-      "link": "https://bnrnews.bg/en/post/529173/bulgarian-student-joins-elite-eth-zurich-programme-to-study-ai-safety",
-      "mention": {},
-      "needs_check": false,
-      "claims": []
-    },
-    {
-      "index": 8,
+      "index": 6,
       "text": "🇨🇭 Giotto Sovereign AI seduces Groupe Mutuel\n\n🇨🇭 Giotto.ai, the Swiss artificial intelligence company specialising in advanced reasoning systems, and Groupe Mutuel, Switzerland’s only global insurer serving over 1.3 million clients, have started a collaboration to deploy the AI model Giotto across some use cases. The round is reported at 1.3 million.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at 1.3 million.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://www.startupticker.ch/en/news/giotto-and-groupe-mutuel-to-develop-sovereign-high-performance-ai-for-clients",
       "link": "https://www.startupticker.ch/en/news/giotto-and-groupe-mutuel-to-develop-sovereign-high-performance-ai-for-clients",
       "mention": {},
@@ -71,15 +55,7 @@
       "claims": []
     },
     {
-      "index": 9,
-      "text": "🇨🇭 Visa, Circle and Ripple Join Velocity’s US$10M Fundraise for...\n\nFintechnews Switzerland covers the story in Sion. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at $10M.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at $10M.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://fintechnews.ch/london/velocity-stablecoin-funding-visa-circle-ripple/85718/",
-      "link": "https://fintechnews.ch/london/velocity-stablecoin-funding-visa-circle-ripple/85718/",
-      "mention": {},
-      "needs_check": true,
-      "claims": []
-    },
-    {
-      "index": 10,
+      "index": 7,
       "text": "🇨🇭 Beyond the supercomputer\n\nBeyond the supercomputer ETH Zürich\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://ethz.ch/en/news-and-events/eth-news/news/2026/09/beyond-the-supercomputer.html",
       "link": "https://ethz.ch/en/news-and-events/eth-news/news/2026/09/beyond-the-supercomputer.html",
       "mention": {},
@@ -87,7 +63,15 @@
       "claims": []
     },
     {
-      "index": 11,
+      "index": 8,
+      "text": "🇨🇭 Clean sweep for cutting-edge research\n\nClean sweep for cutting-edge research ETH Zürich\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://ethz.ch/en/news-and-events/eth-news/news/2026/09/clean-sweep-for-cutting-edge-research.html",
+      "link": "https://ethz.ch/en/news-and-events/eth-news/news/2026/09/clean-sweep-for-cutting-edge-research.html",
+      "mention": {},
+      "needs_check": false,
+      "claims": []
+    },
+    {
+      "index": 9,
       "text": "🇨🇭 EPFL researchers identify rubber-related chemicals in Swiss milk\n\nEPFL News covers the story. It is another data point in Switzerland's steady deep-tech build-out.\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://actu.epfl.ch/news/epfl-researchers-identify-rubber-related-chemicals",
       "link": "https://actu.epfl.ch/news/epfl-researchers-identify-rubber-related-chemicals",
       "mention": {},
@@ -95,7 +79,7 @@
       "claims": []
     },
     {
-      "index": 12,
+      "index": 10,
       "text": "🇨🇭 La medtech suisse croît deux fois plus vite que l’économie\n\nLa medtech suisse croît deux fois plus vite que l’économie Greater Geneva Bern area (GGBa)\n\nWhy it matters:\n📈 Early biological insight compounds into products years before anyone names a company.\n🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.\n🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.\n\nhttps://www.swiss-medtech.ch/fr/news/etude-2026-sur-le-secteur-des-technologies-medicales",
       "link": "https://www.swiss-medtech.ch/fr/news/etude-2026-sur-le-secteur-des-technologies-medicales",
       "mention": {},
@@ -103,7 +87,7 @@
       "claims": []
     },
     {
-      "index": 13,
+      "index": 11,
       "text": "🇨🇭 Ingredients innovator Ferm Labs secures €3M\n\n🇨🇭 One year following its incorporation, Swiss-Italian startup Ferm Labs AG has announced the closing of a €3M funding round. The capital will be used to scale the company’s bioprocessing platform which enables the production of saltless, clean‑label flavour enhancers for industrial food manufacturers. The round is reported at €3M.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at €3M.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.startupticker.ch/en/news/ingredients-innovator-ferm-labs-secures-3m",
       "link": "https://www.startupticker.ch/en/news/ingredients-innovator-ferm-labs-secures-3m",
       "mention": {},
@@ -113,7 +97,15 @@
       ]
     },
     {
-      "index": 14,
+      "index": 12,
+      "text": "🇨🇭 AI takes root in university curriculum\n\nEPFL News covers the story in Sion. Swiss robotics and applied AI keep moving from demo to deployment.\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://actu.epfl.ch/news/ai-takes-root-in-university-curriculum",
+      "link": "https://actu.epfl.ch/news/ai-takes-root-in-university-curriculum",
+      "mention": {},
+      "needs_check": false,
+      "claims": []
+    },
+    {
+      "index": 13,
       "text": "🇨🇭 La spin-off de l’EPFL Fusionality lève 3 millions pour piloter les...\n\nICTjournal covers the story in Sion. Swiss cleantech keeps pairing serious science with real-world deployment. The round is reported at 3 million.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at 3 million.\n🇨🇭 Switzerland combines deep materials science with disciplined engineering.\n🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.\n\nhttps://www.ictjournal.ch/news/2026-09-11/la-spin-off-de-lepfl-fusionality-leve-3-millions-pour-piloter-les-reacteurs-a",
       "link": "https://www.ictjournal.ch/news/2026-09-11/la-spin-off-de-lepfl-fusionality-leve-3-millions-pour-piloter-les-reacteurs-a",
       "mention": {},
@@ -121,7 +113,7 @@
       "claims": []
     },
     {
-      "index": 15,
+      "index": 14,
       "text": "🇨🇭 Swiss cleantech startup Nullpunkt raises €450,000 from the crowd\n\n🇨🇭 Swiss cleantech startup Nullpunkt raises €450,000 from the crowd Dealroom The round is reported at €450,000.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at €450,000.\n🇨🇭 Switzerland combines deep materials science with disciplined engineering.\n🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.\n\nhttps://app.dealroom.co/news/note/swiss-cleantech-startup-nullpunkt-raises-450-000-from-the-crowd",
       "link": "https://app.dealroom.co/news/note/swiss-cleantech-startup-nullpunkt-raises-450-000-from-the-crowd",
       "mention": {},
@@ -130,6 +122,14 @@
         "the post states €450,000: is that money received rather than a ceiling or a target, and has the round closed",
         "the post states €450,000.: is that money received rather than a ceiling or a target, and has the round closed"
       ]
+    },
+    {
+      "index": 15,
+      "text": "🇨🇭 Satellite imagery gives experts a better understanding of conflict\n\nEPFL News covers the story in Zurich. Swiss cleantech keeps pairing serious science with real-world deployment.\n\nWhy it matters:\n📈 Energy and climate hardware is moving from subsidy toward genuine demand.\n🇨🇭 Switzerland combines deep materials science with disciplined engineering.\n🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.\n\nhttps://actu.epfl.ch/news/satellite-imagery-gives-experts-a-better-understan",
+      "link": "https://actu.epfl.ch/news/satellite-imagery-gives-experts-a-better-understan",
+      "mention": {},
+      "needs_check": false,
+      "claims": []
     }
   ]
 }
