@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 23 September 2026. 15 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 24 September 2026. 15 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -41,7 +41,23 @@ Report what was scheduled and what was held.
 
 The stories themselves are below.
 
-## 1. Round — published 23 September
+## 1. General — published 24 September
+
+```
+🇨🇭 CSEM hilft Deep-Tech-Start-ups über die Prototypenhürde
+
+CSEM hilft Deep-Tech-Start-ups über die Prototypenhürde Technische Rundschau
+
+Why it matters:
+📈 Deep technology is where durable, defensible companies get built.
+🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
+🧭 Backing that research early and capital-efficiently is what we do at Climb.
+
+https://www.technische-rundschau.ch/csem-hilft-deep-tech-start-ups-ueber-die-prototypenhuerde
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 2. Round — published 23 September
 
 ```
 🇨🇭 German AI startup mika raises €6M to simplify accounting and tax for...
@@ -57,7 +73,23 @@ https://tech.eu/2026/09/23/german-ai-startup-mika-raises-eur6m-to-simplify-accou
 ```
 🖼️ **Article image:** https://cdn.tech.eu/uploads/2026/09/mika-featured-203_240x135.png
 
-## 2. General — published 23 September
+## 3. Round — published 23 September
+
+```
+🇨🇭 Berlin-based mika raises €6 million to scale its AI-native...
+
+EU-Startups covers the story in Basel. Swiss robotics and applied AI keep moving from demo to deployment. The round is reported at €6 m.
+
+Why it matters:
+💰 Capital keeps following Swiss deep science, this time at €6 m.
+🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
+🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
+
+https://www.eu-startups.com/2026/09/berlin-based-mika-raises-e6-million-to-scale-its-ai-native-alternative-to-traditional-tax-firms/
+```
+🖼️ **Article image:** https://www.eu-startups.com/wp-content/uploads/2026/09/Untitled-design-2026-09-23T120359.308.jpg
+
+## 4. General — published 23 September
 
 ```
 🇨🇭 Relai Hits US$90M Valuation as New Investors Join US$2.5M Round
@@ -73,23 +105,56 @@ https://fintechnews.ch/blockchain_bitcoin/relai-funding-round-bitcoin-savings-va
 ```
 🖼️ **Article image:** https://fintechnewsch-22e90.kxcdn.com/wp-content/uploads/2026/09/Relai-Hits-US90M-Valuation-as-New-Investors-Join-Latest-Round.webp
 
-## 3. General — published 22 September
+## 5. Research — published 23 September
 
 ```
-🇨🇭 Tenity Names Felix Haldner to Board as AI and Digital Assets Focus Grows
+🇨🇭 Tiny OLED pixels can be manufactured like microchips
 
-Fintechnews Switzerland covers the story. Swiss robotics and applied AI keep moving from demo to deployment.
+Tiny OLED pixels can be manufactured like microchips ETH Zürich
+
+Why it matters:
+📈 Semiconductors sit under almost every growth market, from AI to defense to mobility.
+🇨🇭 Switzerland punches above its weight in specialised chips and advanced materials.
+🧭 Capital-efficient hardware built on Swiss research is core to the Climb thesis.
+
+https://ethz.ch/en/news-and-events/eth-news/news/2026/09/tiny-oled-pixels-can-be-manufactured-like-microchips.html
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 6. Partnership — published 21 September
+
+```
+🇨🇭 IBM and ETH Zurich collaborate on quantum computer to be hosted in...
+
+Data Center Dynamics covers the story in Zurich. It is another sign that Swiss quantum and photonics research is edging toward commercial products.
+
+Why it matters:
+📈 Photonics is one of the rare quantum fields with a credible near-term path to revenue.
+🇨🇭 Switzerland's strength in precision engineering and optics gives its quantum spinouts a real head start.
+🧭 Deep science on a lean capital plan is exactly the Swiss DeepTech we look for at Climb.
+
+https://www.datacenterdynamics.com/en/news/ibm-and-eth-zurich-collaborate-on-quantum-computer-to-be-hosted-in-lugano-switzerland/
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 7. Launch — published 19 September
+
+```
+🇨🇭 EPFL AI Center Postdoctoral Fellowship 2026: Fully Funded Research...
+
+🇨🇭 The announcement lands. Swiss robotics and applied AI keep moving from demo to deployment.
 
 Why it matters:
 📈 Automation is shifting from pilots to real commercial operations.
 🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
 🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
 
-https://fintechnews.ch/fintech/tenity-board-felix-haldner-appointment/85856/
+https://www.epfl.ch/research/funding/epfl-programmes/ai-center/
 ```
-🖼️ **Article image:** https://fintechnewsch-22e90.kxcdn.com/wp-content/uploads/2026/09/Tenity-Names-Felix-Haldner-to-Board-as-AI-and-Digital-Assets-Focus-Grows.webp
+🖼️ **Article image:** none found, grab one from the article page.
+🔗 **Links to the original source.**
 
-## 4. General — published 18 September
+## 8. General — published 18 September
 
 ```
 🇨🇭 FireDrone: EPFL and Empa spin-off developing heat-resistant drones
@@ -105,7 +170,7 @@ https://app.dealroom.co/news/note/firedrone-epfl-and-empa-spin-off-developing-he
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 5. Round — published 18 September
+## 9. Round — published 18 September
 
 ```
 🇨🇭 Following a CHF 2.4 million seed round, Aseptuva progressed to...
@@ -121,23 +186,7 @@ https://www.startupticker.ch/en/news/following-a-chf-2-4-million-seed-round-asep
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Aseptuvateam.jpg
 
-## 6. Grant — published 18 September
-
-```
-🇨🇭 ESORICS 2026 Outstanding Research Award für David Basin – Staffnet
-
-ESORICS 2026 Outstanding Research Award für David Basin – Staffnet ETH Zürich
-
-Why it matters:
-📈 Deep technology is where durable, defensible companies get built.
-🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
-🧭 Backing that research early and capital-efficiently is what we do at Climb.
-
-https://ethz.ch/staffnet/de/news-und-veranstaltungen/intern-aktuell/archiv/2026/09/esorics-2026-outstanding-research-award-fuer-david-basin.html
-```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 7. General — published 17 September
+## 10. General — published 17 September
 
 ```
 🇨🇭 St.Gallen prägt die DeepTech-Landschaft der Ostschweiz
@@ -153,7 +202,7 @@ https://www.leaderdigital.ch/news/st-gallen-praegt-die-deeptech-landschaft-der-o
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 8. Round — published 16 September
+## 11. Round — published 16 September
 
 ```
 🇨🇭 ETFBOOK raises $13 million to expand ETF data intelligence layer
@@ -169,7 +218,7 @@ https://www.startupticker.ch/en/news/etfbook-raises-13-million-to-expand-etf-dat
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/ETF_image.jpg
 
-## 9. Research — published 16 September
+## 12. Research — published 16 September
 
 ```
 🇨🇭 ETH and EPFL join forces in learning sciences research
@@ -185,23 +234,7 @@ https://ethz.ch/en/news-and-events/eth-news/news/2026/09/eth-and-pefl-join-force
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 10. Policy — published 16 September
-
-```
-🇨🇭 Giotto Sovereign AI seduces Groupe Mutuel
-
-🇨🇭 Giotto.ai, the Swiss artificial intelligence company specialising in advanced reasoning systems, and Groupe Mutuel, Switzerland’s only global insurer serving over 1.3 million clients, have started a collaboration to deploy the AI model Giotto across some use cases. The round is reported at 1.3 million.
-
-Why it matters:
-💰 Capital keeps following Swiss deep science, this time at 1.3 million.
-🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
-🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
-
-https://www.startupticker.ch/en/news/giotto-and-groupe-mutuel-to-develop-sovereign-high-performance-ai-for-clients
-```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/symbolbilder/K%C3%BCnstlicheIntelligenzagent.jpg
-
-## 11. Research — published 15 September
+## 13. Research — published 15 September
 
 ```
 🇨🇭 Beyond the supercomputer
@@ -217,28 +250,12 @@ https://ethz.ch/en/news-and-events/eth-news/news/2026/09/beyond-the-supercompute
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 12. Research — published 14 September
-
-```
-🇨🇭 EPFL researchers identify rubber-related chemicals in Swiss milk
-
-EPFL News covers the story. It is another data point in Switzerland's steady deep-tech build-out.
-
-Why it matters:
-📈 Deep technology is where durable, defensible companies get built.
-🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
-🧭 Backing that research early and capital-efficiently is what we do at Climb.
-
-https://actu.epfl.ch/news/epfl-researchers-identify-rubber-related-chemicals
-```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 13. General — published 14 September
+## 14. General — published 14 September
 
 ```
 🇨🇭 La medtech suisse croît deux fois plus vite que l’économie
 
-La medtech suisse croît deux fois plus vite que l’économie Greater Geneva Bern area (GGBa)
+🇨🇭 La medtech suisse croît deux fois plus vite que l’économie ggba.swiss
 
 Why it matters:
 📈 Early biological insight compounds into products years before anyone names a company.
@@ -249,22 +266,6 @@ https://www.swiss-medtech.ch/fr/news/etude-2026-sur-le-secteur-des-technologies-
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 🔗 **Links to the original source.**
-
-## 14. General — published 14 September
-
-```
-🇨🇭 SurfAce Cleantech lève CHF 250K pour l'emballage compostable
-
-SurfAce Cleantech lève CHF 250K pour l'emballage compostable Greater Geneva Bern area (GGBa) The round is reported at CHF 250.
-
-Why it matters:
-💰 Capital keeps following Swiss deep science, this time at CHF 250.
-🇨🇭 Switzerland combines deep materials science with disciplined engineering.
-🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.
-
-https://ggba.swiss/fr/surface-cleantech-leve-chf-250000-pour-lemballage-compostable/
-```
-🖼️ **Article image:** https://ggba.swiss/app/uploads/2026/09/Surface-Cleantech-250k-1180x811-1.png
 
 ## 15. General — published 14 September
 
