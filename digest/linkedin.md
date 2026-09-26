@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 25 September 2026. 15 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 26 September 2026. 15 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -41,7 +41,23 @@ Report what was scheduled and what was held.
 
 The stories themselves are below.
 
-## 1. Research — published 25 September
+## 1. General — published 25 September
+
+```
+🇨🇭 CHF2 million to integrate quantum processors in high-performance...
+
+Qambria builds the classical engine designed to address the bottlenecks between quantum and classical compute. The company from the Canton of Thurgau has closed a pre-seed round backed by a an international group of family offices, VCs and specialist investors. The round is reported at CHF2 m.
+
+Why it matters:
+💰 Capital keeps following Swiss deep science, this time at CHF2 m.
+🇨🇭 Switzerland's strength in precision engineering and optics gives its quantum spinouts a real head start.
+🧭 Deep science on a lean capital plan is exactly the Swiss DeepTech we look for at Climb.
+
+https://www.startupticker.ch/en/news/chf2-million-to-integrate-quantum-processors-in-high-performance-computers
+```
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/symbolbilder/Datenspeicher.png
+
+## 2. Research — published 25 September
 
 ```
 🇨🇭 From the faucet to the sewer, and vice versa
@@ -54,22 +70,6 @@ Why it matters:
 🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.
 
 https://actu.epfl.ch/news/from-the-faucet-to-the-sewer-and-vice-versa
-```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 2. General — published 24 September
-
-```
-🇨🇭 ETH Zurich develops new organic material for color-emitting OLEDs
-
-ETH Zurich develops new organic material for color-emitting OLEDs Optics.org
-
-Why it matters:
-📈 Deep technology is where durable, defensible companies get built.
-🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
-🧭 Backing that research early and capital-efficiently is what we do at Climb.
-
-https://optics.org/news/eth-zurich-develops-new-organic-material-for-color-emitting-oleds
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
@@ -121,7 +121,23 @@ https://ethz.ch/en/news-and-events/eth-news/news/2026/09/tiny-oled-pixels-can-be
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 6. General — published 22 September
+## 6. Round — published 23 September
+
+```
+🇨🇭 German AI startup mika raises €6M to simplify accounting and tax for...
+
+Tech.eu covers the story. Swiss robotics and applied AI keep moving from demo to deployment. The round is reported at €6M.
+
+Why it matters:
+💰 Capital keeps following Swiss deep science, this time at €6M.
+🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
+🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
+
+https://tech.eu/2026/09/23/german-ai-startup-mika-raises-eur6m-to-simplify-accounting-and-tax-for-smes/
+```
+🖼️ **Article image:** https://cdn.tech.eu/uploads/2026/09/mika-featured-203.png
+
+## 7. General — published 22 September
 
 ```
 🇨🇭 Tenity Names Felix Haldner to Board as AI and Digital Assets Focus Grows
@@ -137,7 +153,7 @@ https://fintechnews.ch/fintech/tenity-board-felix-haldner-appointment/85856/
 ```
 🖼️ **Article image:** https://fintechnewsch-22e90.kxcdn.com/wp-content/uploads/2026/09/Tenity-Names-Felix-Haldner-to-Board-as-AI-and-Digital-Assets-Focus-Grows.webp
 
-## 7. General — published 22 September
+## 8. General — published 22 September
 
 ```
 🇨🇭 Bluelion to support nine startups accelerate development
@@ -153,28 +169,44 @@ https://www.startupticker.ch/en/news/bluelion-to-support-nine-startups-accelerat
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Bluelion_Fall_batch2026.png
 
-## 8. Grant — published 21 September
+## 9. Expansion — published 22 September
 
 ```
-🇨🇭 Strüngmann Award-Gewinner zum 3. Mal in Folge mit Schweiz-Bezug
+🇨🇭 SEALSQ and WISeKey Expand Quantum Highway Linking Switzerland,...
 
-Der Biotech-Unternehmer Jonathan Talbot gewinnt den mit 100.000 Euro dotierten Strüngmann Award 2026. Talbot hat mehrere Startups im Bereich Life-Sciences – darunter Mosanna Therapeutics - aufgebaut und von der Gründung bis in die klinische Entwicklung überführt.
+Quiver Quantitative covers the story. It is another sign that Swiss quantum and photonics research is edging toward commercial products.
 
 Why it matters:
-📈 Early biological insight compounds into products years before anyone names a company.
-🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.
-🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.
+📈 Photonics is one of the rare quantum fields with a credible near-term path to revenue.
+🇨🇭 Switzerland's strength in precision engineering and optics gives its quantum spinouts a real head start.
+🧭 Deep science on a lean capital plan is exactly the Swiss DeepTech we look for at Climb.
 
-https://www.startupticker.ch/en/news/struengmann-award-gewinner-zum-3-mal-in-folge-mit-schweiz-bezug
+https://www.quiverquant.com/news/SEALSQ+and+WISeKey+Expand+Quantum+Highway+Linking+Switzerland,+Spain,+France,+U.S.,+India+and+Space
 ```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Str%C3%BCngmann%20Award%2026.jpg
+🖼️ **Article image:** none found, grab one from the article page.
 
-## 9. Launch — published 19 September
+## 10. General — published 22 September
+
+```
+🇨🇭 Swiss PPP to establish a post-quantum semiconductor and...
+
+Digital Watch Observatory covers the story. It is another sign that Swiss quantum and photonics research is edging toward commercial products.
+
+Why it matters:
+📈 Photonics is one of the rare quantum fields with a credible near-term path to revenue.
+🇨🇭 Switzerland's strength in precision engineering and optics gives its quantum spinouts a real head start.
+🧭 Deep science on a lean capital plan is exactly the Swiss DeepTech we look for at Climb.
+
+https://dig.watch/updates/swiss-post-quantum-semiconductor-centre
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 11. Grant — published 19 September
 
 ```
 🇨🇭 EPFL AI Center Postdoctoral Fellowship 2026: Fully Funded Research...
 
-🇨🇭 The announcement lands. Swiss robotics and applied AI keep moving from demo to deployment.
+Postdoctoral fellowship programme for interdisciplinary AI research
 
 Why it matters:
 📈 Automation is shifting from pilots to real commercial operations.
@@ -186,7 +218,7 @@ https://www.epfl.ch/research/funding/epfl-programmes/ai-center/
 🖼️ **Article image:** none found, grab one from the article page.
 🔗 **Links to the original source.**
 
-## 10. General — published 18 September
+## 12. General — published 18 September
 
 ```
 🇨🇭 FireDrone: EPFL and Empa spin-off developing heat-resistant drones
@@ -202,7 +234,7 @@ https://app.dealroom.co/news/note/firedrone-epfl-and-empa-spin-off-developing-he
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 11. Round — published 18 September
+## 13. Round — published 18 September
 
 ```
 🇨🇭 Following a CHF 2.4 million seed round, Aseptuva progressed to...
@@ -218,12 +250,12 @@ https://www.startupticker.ch/en/news/following-a-chf-2-4-million-seed-round-asep
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Aseptuvateam.jpg
 
-## 12. Grant — published 18 September
+## 14. Grant — published 18 September
 
 ```
 🇨🇭 ESORICS 2026 Outstanding Research Award für David Basin – Staffnet
 
-ESORICS 2026 Outstanding Research Award für David Basin – Staffnet ETH Zürich
+ETH Zürich covers the story in Zürich. It is another data point in Switzerland's steady deep-tech build-out.
 
 Why it matters:
 📈 Deep technology is where durable, defensible companies get built.
@@ -234,7 +266,7 @@ https://ethz.ch/staffnet/de/news-und-veranstaltungen/intern-aktuell/archiv/2026/
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 13. General — published 17 September
+## 15. General — published 17 September
 
 ```
 🇨🇭 St.Gallen prägt die DeepTech-Landschaft der Ostschweiz
@@ -247,38 +279,6 @@ Why it matters:
 🧭 Backing that research early and capital-efficiently is what we do at Climb.
 
 https://www.leaderdigital.ch/news/st-gallen-praegt-die-deeptech-landschaft-der-ostschweiz-16314.html
-```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 14. Round — published 16 September
-
-```
-🇨🇭 ETFBOOK raises $13 million to expand ETF data intelligence layer
-
-ETFBOOK (SquaredData AG) has raised $13M in a funding round led by Expedition Growth Capital, with participation from existing investor BlackFin Capital Partners. The round is reported at $13 m.
-
-Why it matters:
-💰 Capital keeps following Swiss deep science, this time at $13 m.
-🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
-🧭 Backing that research early and capital-efficiently is what we do at Climb.
-
-https://www.startupticker.ch/en/news/etfbook-raises-13-million-to-expand-etf-data-intelligence-layer
-```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/ETF_image.jpg
-
-## 15. Research — published 16 September
-
-```
-🇨🇭 ETH and EPFL join forces in learning sciences research
-
-ETH and EPFL join forces in learning sciences research ETH Zürich
-
-Why it matters:
-📈 Deep technology is where durable, defensible companies get built.
-🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
-🧭 Backing that research early and capital-efficiently is what we do at Climb.
-
-https://ethz.ch/en/news-and-events/eth-news/news/2026/09/eth-and-pefl-join-forces-in-learning-sciences-research.html
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
