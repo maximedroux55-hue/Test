@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 26 September 2026. 15 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 27 September 2026. 15 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -41,23 +41,7 @@ Report what was scheduled and what was held.
 
 The stories themselves are below.
 
-## 1. General — published 25 September
-
-```
-🇨🇭 CHF2 million to integrate quantum processors in high-performance...
-
-Qambria builds the classical engine designed to address the bottlenecks between quantum and classical compute. The company from the Canton of Thurgau has closed a pre-seed round backed by a an international group of family offices, VCs and specialist investors. The round is reported at CHF2 m.
-
-Why it matters:
-💰 Capital keeps following Swiss deep science, this time at CHF2 m.
-🇨🇭 Switzerland's strength in precision engineering and optics gives its quantum spinouts a real head start.
-🧭 Deep science on a lean capital plan is exactly the Swiss DeepTech we look for at Climb.
-
-https://www.startupticker.ch/en/news/chf2-million-to-integrate-quantum-processors-in-high-performance-computers
-```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/symbolbilder/Datenspeicher.png
-
-## 2. Research — published 25 September
+## 1. Research — published 25 September
 
 ```
 🇨🇭 From the faucet to the sewer, and vice versa
@@ -73,7 +57,7 @@ https://actu.epfl.ch/news/from-the-faucet-to-the-sewer-and-vice-versa
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 3. General — published 24 September
+## 2. General — published 24 September
 
 ```
 🇨🇭 USD 5.4 Million to advance Prevision Medicine’s functional precision...
@@ -89,7 +73,7 @@ https://www.startupticker.ch/en/news/usd-5-4-million-to-advance-prevision-medici
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/PrevisionTeam.jpg
 
-## 4. General — published 23 September
+## 3. General — published 23 September
 
 ```
 🇨🇭 Relai Hits US$90M Valuation as New Investors Join US$2.5M Round
@@ -105,7 +89,7 @@ https://fintechnews.ch/blockchain_bitcoin/relai-funding-round-bitcoin-savings-va
 ```
 🖼️ **Article image:** https://fintechnewsch-22e90.kxcdn.com/wp-content/uploads/2026/09/Relai-Hits-US90M-Valuation-as-New-Investors-Join-Latest-Round.webp
 
-## 5. Research — published 23 September
+## 4. Research — published 23 September
 
 ```
 🇨🇭 Tiny OLED pixels can be manufactured like microchips
@@ -121,7 +105,7 @@ https://ethz.ch/en/news-and-events/eth-news/news/2026/09/tiny-oled-pixels-can-be
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 6. Round — published 23 September
+## 5. Round — published 23 September
 
 ```
 🇨🇭 German AI startup mika raises €6M to simplify accounting and tax for...
@@ -137,7 +121,7 @@ https://tech.eu/2026/09/23/german-ai-startup-mika-raises-eur6m-to-simplify-accou
 ```
 🖼️ **Article image:** https://cdn.tech.eu/uploads/2026/09/mika-featured-203.png
 
-## 7. General — published 22 September
+## 6. General — published 22 September
 
 ```
 🇨🇭 Tenity Names Felix Haldner to Board as AI and Digital Assets Focus Grows
@@ -153,7 +137,7 @@ https://fintechnews.ch/fintech/tenity-board-felix-haldner-appointment/85856/
 ```
 🖼️ **Article image:** https://fintechnewsch-22e90.kxcdn.com/wp-content/uploads/2026/09/Tenity-Names-Felix-Haldner-to-Board-as-AI-and-Digital-Assets-Focus-Grows.webp
 
-## 8. General — published 22 September
+## 7. General — published 22 September
 
 ```
 🇨🇭 Bluelion to support nine startups accelerate development
@@ -169,7 +153,7 @@ https://www.startupticker.ch/en/news/bluelion-to-support-nine-startups-accelerat
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Bluelion_Fall_batch2026.png
 
-## 9. Expansion — published 22 September
+## 8. Expansion — published 22 September
 
 ```
 🇨🇭 SEALSQ and WISeKey Expand Quantum Highway Linking Switzerland,...
@@ -185,7 +169,7 @@ https://www.quiverquant.com/news/SEALSQ+and+WISeKey+Expand+Quantum+Highway+Linki
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 10. General — published 22 September
+## 9. General — published 22 September
 
 ```
 🇨🇭 Swiss PPP to establish a post-quantum semiconductor and...
@@ -200,6 +184,22 @@ Why it matters:
 https://dig.watch/updates/swiss-post-quantum-semiconductor-centre
 ```
 🖼️ **Article image:** none found, grab one from the article page.
+
+## 10. Grant — published 21 September
+
+```
+🇨🇭 Strüngmann Award-Gewinner zum 3. Mal in Folge mit Schweiz-Bezug
+
+Der Biotech-Unternehmer Jonathan Talbot gewinnt den mit 100.000 Euro dotierten Strüngmann Award 2026. Talbot hat mehrere Startups im Bereich Life-Sciences – darunter Mosanna Therapeutics - aufgebaut und von der Gründung bis in die klinische Entwicklung überführt.
+
+Why it matters:
+📈 Early biological insight compounds into products years before anyone names a company.
+🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.
+🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.
+
+https://www.startupticker.ch/en/news/struengmann-award-gewinner-zum-3-mal-in-folge-mit-schweiz-bezug
+```
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Str%C3%BCngmann%20Award%2026.jpg
 
 ## 11. Grant — published 19 September
 
@@ -223,7 +223,7 @@ https://www.epfl.ch/research/funding/epfl-programmes/ai-center/
 ```
 🇨🇭 FireDrone: EPFL and Empa spin-off developing heat-resistant drones
 
-FireDrone: EPFL and Empa spin-off developing heat-resistant drones Dealroom
+FireDrone: EPFL and Empa spin-off developing heat-resistant drones Dealroom.co
 
 Why it matters:
 📈 Deep technology is where durable, defensible companies get built.
@@ -266,19 +266,19 @@ https://ethz.ch/staffnet/de/news-und-veranstaltungen/intern-aktuell/archiv/2026/
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 15. General — published 17 September
+## 15. Partnership — published 17 September
 
 ```
-🇨🇭 St.Gallen prägt die DeepTech-Landschaft der Ostschweiz
+🇨🇭 Apertus partners with Proton's Lumo AI assistant
 
-St.Gallen prägt die DeepTech-Landschaft der Ostschweiz LEADER Digital
+EPFL News covers the story. Swiss robotics and applied AI keep moving from demo to deployment.
 
 Why it matters:
-📈 Deep technology is where durable, defensible companies get built.
-🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
-🧭 Backing that research early and capital-efficiently is what we do at Climb.
+📈 Automation is shifting from pilots to real commercial operations.
+🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
+🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
 
-https://www.leaderdigital.ch/news/st-gallen-praegt-die-deeptech-landschaft-der-ostschweiz-16314.html
+https://actu.epfl.ch/news/apertus-partners-with-proton-s-lumo-ai-assistant
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
