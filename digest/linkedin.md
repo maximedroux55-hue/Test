@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 27 September 2026. 15 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 28 September 2026. 15 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -41,7 +41,23 @@ Report what was scheduled and what was held.
 
 The stories themselves are below.
 
-## 1. Research — published 25 September
+## 1. Research — published 28 September
+
+```
+🇨🇭 Helping bladder cells to clear urinary infections
+
+EPFL News covers the story. It is another data point in Switzerland's steady deep-tech build-out.
+
+Why it matters:
+📈 Deep technology is where durable, defensible companies get built.
+🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
+🧭 Backing that research early and capital-efficiently is what we do at Climb.
+
+https://actu.epfl.ch/news/helping-bladder-cells-to-clear-urinary-infections
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 2. Research — published 25 September
 
 ```
 🇨🇭 From the faucet to the sewer, and vice versa
@@ -57,7 +73,7 @@ https://actu.epfl.ch/news/from-the-faucet-to-the-sewer-and-vice-versa
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 2. General — published 24 September
+## 3. General — published 24 September
 
 ```
 🇨🇭 USD 5.4 Million to advance Prevision Medicine’s functional precision...
@@ -73,28 +89,12 @@ https://www.startupticker.ch/en/news/usd-5-4-million-to-advance-prevision-medici
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/PrevisionTeam.jpg
 
-## 3. General — published 23 September
-
-```
-🇨🇭 Relai Hits US$90M Valuation as New Investors Join US$2.5M Round
-
-Fintechnews Switzerland covers the story. Swiss robotics and applied AI keep moving from demo to deployment. The round is reported at $90M.
-
-Why it matters:
-💰 Capital keeps following Swiss deep science, this time at $90M.
-🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
-🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
-
-https://fintechnews.ch/blockchain_bitcoin/relai-funding-round-bitcoin-savings-valuation/85882/
-```
-🖼️ **Article image:** https://fintechnewsch-22e90.kxcdn.com/wp-content/uploads/2026/09/Relai-Hits-US90M-Valuation-as-New-Investors-Join-Latest-Round.webp
-
 ## 4. Research — published 23 September
 
 ```
 🇨🇭 Tiny OLED pixels can be manufactured like microchips
 
-Tiny OLED pixels can be manufactured like microchips ETH Zürich
+Tiny OLED pixels can be manufactured like microchips ethz.ch
 
 Why it matters:
 📈 Semiconductors sit under almost every growth market, from AI to defense to mobility.
@@ -124,18 +124,18 @@ https://tech.eu/2026/09/23/german-ai-startup-mika-raises-eur6m-to-simplify-accou
 ## 6. General — published 22 September
 
 ```
-🇨🇭 Tenity Names Felix Haldner to Board as AI and Digital Assets Focus Grows
+🇨🇭 A gentle cradle : Protecting satellites from vibrations
 
-Fintechnews Switzerland covers the story. Swiss robotics and applied AI keep moving from demo to deployment.
+🇨🇭 A gentle cradle : Protecting satellites from vibrations Swiss government
 
 Why it matters:
-📈 Automation is shifting from pilots to real commercial operations.
-🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
-🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
+📈 Deep technology is where durable, defensible companies get built.
+🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
+🧭 Backing that research early and capital-efficiently is what we do at Climb.
 
-https://fintechnews.ch/fintech/tenity-board-felix-haldner-appointment/85856/
+https://www.admin.ch/en/newnsb/6YnVmJuWxrHa
 ```
-🖼️ **Article image:** https://fintechnewsch-22e90.kxcdn.com/wp-content/uploads/2026/09/Tenity-Names-Felix-Haldner-to-Board-as-AI-and-Digital-Assets-Focus-Grows.webp
+🖼️ **Article image:** none found, grab one from the article page.
 
 ## 7. General — published 22 September
 
@@ -201,7 +201,23 @@ https://www.startupticker.ch/en/news/struengmann-award-gewinner-zum-3-mal-in-fol
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Str%C3%BCngmann%20Award%2026.jpg
 
-## 11. Grant — published 19 September
+## 11. General — published 21 September
+
+```
+🇨🇭 Rising Perovskia scales up and eyes space tech
+
+Over the past few months, Perovskia Solar has achieved some major milestones: the company has moved from the laboratory stage to large-scale production, is now supplying customers who are developing energy-autonomous electronic devices, and is embarking on a new chapter in India, where it has signed a key memorandum of understanding to explore the potential of next-generation perovskite solar technology for space applications.
+
+Why it matters:
+📈 Energy and climate hardware is moving from subsidy toward genuine demand.
+🇨🇭 Switzerland combines deep materials science with disciplined engineering.
+🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.
+
+https://www.startupticker.ch/en/news/rising-perovskia-scales-up-and-eyes-space-tech
+```
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Perovskia%20scaleup.jpeg
+
+## 12. Grant — published 19 September
 
 ```
 🇨🇭 EPFL AI Center Postdoctoral Fellowship 2026: Fully Funded Research...
@@ -218,7 +234,7 @@ https://www.epfl.ch/research/funding/epfl-programmes/ai-center/
 🖼️ **Article image:** none found, grab one from the article page.
 🔗 **Links to the original source.**
 
-## 12. General — published 18 September
+## 13. General — published 18 September
 
 ```
 🇨🇭 FireDrone: EPFL and Empa spin-off developing heat-resistant drones
@@ -234,7 +250,7 @@ https://app.dealroom.co/news/note/firedrone-epfl-and-empa-spin-off-developing-he
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 13. Round — published 18 September
+## 14. Round — published 18 September
 
 ```
 🇨🇭 Following a CHF 2.4 million seed round, Aseptuva progressed to...
@@ -250,7 +266,7 @@ https://www.startupticker.ch/en/news/following-a-chf-2-4-million-seed-round-asep
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Aseptuvateam.jpg
 
-## 14. Grant — published 18 September
+## 15. Grant — published 18 September
 
 ```
 🇨🇭 ESORICS 2026 Outstanding Research Award für David Basin – Staffnet
@@ -263,22 +279,6 @@ Why it matters:
 🧭 Backing that research early and capital-efficiently is what we do at Climb.
 
 https://ethz.ch/staffnet/de/news-und-veranstaltungen/intern-aktuell/archiv/2026/09/esorics-2026-outstanding-research-award-fuer-david-basin.html
-```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 15. Partnership — published 17 September
-
-```
-🇨🇭 Apertus partners with Proton's Lumo AI assistant
-
-EPFL News covers the story. Swiss robotics and applied AI keep moving from demo to deployment.
-
-Why it matters:
-📈 Automation is shifting from pilots to real commercial operations.
-🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
-🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
-
-https://actu.epfl.ch/news/apertus-partners-with-proton-s-lumo-ai-assistant
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
