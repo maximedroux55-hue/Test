@@ -1,11 +1,40 @@
 {
-  "generated": "2026-09-28",
+  "generated": "2026-09-29",
   "mode": "Template drafts (set ANTHROPIC_API_KEY for AI-written posts).",
   "note": "Times are local. Schedule each post at its time on its date.",
   "cowork_prompt": "Open https://maxime-droux.com/digest/posts.json and schedule the posts listed at the end of this message, and only those. The file holds the shortlist; the list below says which of them I picked and when each one goes out. Match them by `index`. Ignore every other post in the file.\n\nFor each post, in order:\n- Type the `text` straight through, once, with real keystrokes. Never insert\n  text via JavaScript. It already ends with the article URL on its own line,\n  so do not add, move or retype the URL separately: typing it last is what makes\n  the link preview load the article photo.\n- Each post has exactly one @mention. Type `mention.type`, wait for the\n  dropdown, click the row matching `mention.expect`. If no row matches, post\n  it without the mention rather than tagging the wrong company. LinkedIn will\n  render the official name: that is expected and fine, do not fight it, do not\n  restart the post, do not rewrite it.\n- Schedule it at the date and time given for it in the list below. If no link\n  preview appears, schedule it anyway: do not hunt for an image.\n\nTwo attempts per post, then stop. If a post is not scheduled after two tries,\nleave it, move to the next one, and list it at the end. Never start a third.\n\nBefore you start, open the scheduled-posts list once and note what is already\nthere. Skip any post already scheduled: never schedule the same one twice.\n\nVerification:\n- Claims already settled against the article are not in the file. Check only\n  what `claims` still lists, and posts with needs_check: true (a figure nobody\n  has verified: confirm round closed / round name / amount received / investors\n  in THIS round). Both empty and false means schedule it, no research.\n\nAnything that fails: do not schedule it, and do not edit any file or commit\nanything. List the held posts at the end with the sentence you read and the\npage you read it on, and I will record them.\n\nReport what was scheduled and what was held.",
   "posts": [
     {
       "index": 1,
+      "text": "🇨🇭 Tech4Trust to empower 30 startups securing AI\n\n🇨🇭 Trust Valley has just announced the 30 startups—including 15 from Switzerland—selected for the eighth edition of Tech4Trust, its global accelerator dedicated to digital trust and cybersecurity.\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://www.startupticker.ch/en/news/tech4trust-to-empower-30-startups-securing-ai",
+      "link": "https://www.startupticker.ch/en/news/tech4trust-to-empower-30-startups-securing-ai",
+      "mention": {},
+      "needs_check": false,
+      "claims": []
+    },
+    {
+      "index": 2,
+      "text": "🇨🇭 RheoCarti awarded CHF 150,000 to advance hydrogel-articulated joint...\n\nBased in Zurich, RheoCarti is developing a new generation of joint implants designed to mimic the properties of natural cartilage. The round is reported at CHF 150,000.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at CHF 150,000.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.startupticker.ch/en/news/rheocarti-awarded-chf-150-000-to-advance-hydrogel-articulated-joint-implants",
+      "link": "https://www.startupticker.ch/en/news/rheocarti-awarded-chf-150-000-to-advance-hydrogel-articulated-joint-implants",
+      "mention": {},
+      "needs_check": true,
+      "claims": [
+        "the post states CHF 150,000.: is that money received rather than a ceiling or a target, and has the round closed"
+      ]
+    },
+    {
+      "index": 3,
+      "text": "🇨🇭 Grand prize in Italy and more for Swiss startups\n\n🇨🇭 Medtech startup CC Cardio and its partner have been awarded €160,000 from the Tech Europe Foundation to further develop its single-ventricle pump while Besfort Biljali, cofounder of Lighting tech company Lumvin received the swissalbs Entrepreneur Award, recognizing his professional success, innovation, and social engagement. The round is reported at €160,000.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at €160,000.\n🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.\n🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.\n\nhttps://www.startupticker.ch/en/news/grand-prize-in-italy-and-more-for-swiss-startups",
+      "link": "https://www.startupticker.ch/en/news/grand-prize-in-italy-and-more-for-swiss-startups",
+      "mention": {},
+      "needs_check": true,
+      "claims": [
+        "the post states €160,000: is that money received rather than a ceiling or a target, and has the round closed",
+        "the post states €160,000.: is that money received rather than a ceiling or a target, and has the round closed"
+      ]
+    },
+    {
+      "index": 4,
       "text": "🇨🇭 Helping bladder cells to clear urinary infections\n\nEPFL News covers the story. It is another data point in Switzerland's steady deep-tech build-out.\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://actu.epfl.ch/news/helping-bladder-cells-to-clear-urinary-infections",
       "link": "https://actu.epfl.ch/news/helping-bladder-cells-to-clear-urinary-infections",
       "mention": {},
@@ -13,7 +42,7 @@
       "claims": []
     },
     {
-      "index": 2,
+      "index": 5,
       "text": "🇨🇭 From the faucet to the sewer, and vice versa\n\nEPFL News covers the story in Zurich. Swiss cleantech keeps pairing serious science with real-world deployment.\n\nWhy it matters:\n📈 Energy and climate hardware is moving from subsidy toward genuine demand.\n🇨🇭 Switzerland combines deep materials science with disciplined engineering.\n🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.\n\nhttps://actu.epfl.ch/news/from-the-faucet-to-the-sewer-and-vice-versa",
       "link": "https://actu.epfl.ch/news/from-the-faucet-to-the-sewer-and-vice-versa",
       "mention": {},
@@ -21,25 +50,33 @@
       "claims": []
     },
     {
-      "index": 3,
-      "text": "🇨🇭 USD 5.4 Million to advance Prevision Medicine’s functional precision...\n\nPrevision Medicine closed its seed round. The funding will accelerate the commercialization of its precision medicine test for hematological malignancies and solid tumors. The round is reported at USD 5.4 M.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at USD 5.4 M.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.startupticker.ch/en/news/usd-5-4-million-to-advance-prevision-medicine-s-functional-precision-oncology-platform",
-      "link": "https://www.startupticker.ch/en/news/usd-5-4-million-to-advance-prevision-medicine-s-functional-precision-oncology-platform",
+      "index": 6,
+      "text": "🇨🇭 Geneva startup runs sovereign AI and open-sources agent cockpit\n\nGeneva-based NINABOT just launched SOKKAN 2.0, an open-source dashboard designed for teams running multiple AI inference agents in parallel. In total NINABOT, which was founded only a few months ago, already operates four interconnected products.\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://www.startupticker.ch/en/news/geneva-startup-runs-sovereign-ai-and-open-sources-agent-cockpit",
+      "link": "https://www.startupticker.ch/en/news/geneva-startup-runs-sovereign-ai-and-open-sources-agent-cockpit",
+      "mention": {},
+      "needs_check": false,
+      "claims": []
+    },
+    {
+      "index": 7,
+      "text": "🇨🇭 Italy’s Clastix raises €2.9 million with Mistral backing to build...\n\n🇨🇭 The announcement lands in Bern. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at €2.9 m.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at €2.9 m.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://clastix.io/post/clastix-receives-seed-investment-to-control-and-scale-cloud-infrastructures",
+      "link": "https://clastix.io/post/clastix-receives-seed-investment-to-control-and-scale-cloud-infrastructures",
       "mention": {},
       "needs_check": true,
       "claims": [
-        "the post states USD 5.4 M: is that money received rather than a ceiling or a target, and has the round closed"
+        "the post states €2.9 m: is that money received rather than a ceiling or a target, and has the round closed"
       ]
     },
     {
-      "index": 4,
-      "text": "🇨🇭 Tiny OLED pixels can be manufactured like microchips\n\nTiny OLED pixels can be manufactured like microchips ethz.ch\n\nWhy it matters:\n📈 Semiconductors sit under almost every growth market, from AI to defense to mobility.\n🇨🇭 Switzerland punches above its weight in specialised chips and advanced materials.\n🧭 Capital-efficient hardware built on Swiss research is core to the Climb thesis.\n\nhttps://ethz.ch/en/news-and-events/eth-news/news/2026/09/tiny-oled-pixels-can-be-manufactured-like-microchips.html",
+      "index": 8,
+      "text": "🇨🇭 Tiny OLED pixels can be manufactured like microchips\n\nTiny OLED pixels can be manufactured like microchips ETH Zürich\n\nWhy it matters:\n📈 Semiconductors sit under almost every growth market, from AI to defense to mobility.\n🇨🇭 Switzerland punches above its weight in specialised chips and advanced materials.\n🧭 Capital-efficient hardware built on Swiss research is core to the Climb thesis.\n\nhttps://ethz.ch/en/news-and-events/eth-news/news/2026/09/tiny-oled-pixels-can-be-manufactured-like-microchips.html",
       "link": "https://ethz.ch/en/news-and-events/eth-news/news/2026/09/tiny-oled-pixels-can-be-manufactured-like-microchips.html",
       "mention": {},
       "needs_check": false,
       "claims": []
     },
     {
-      "index": 5,
+      "index": 9,
       "text": "🇨🇭 German AI startup mika raises €6M to simplify accounting and tax for...\n\nTech.eu covers the story. Swiss robotics and applied AI keep moving from demo to deployment. The round is reported at €6M.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at €6M.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://tech.eu/2026/09/23/german-ai-startup-mika-raises-eur6m-to-simplify-accounting-and-tax-for-smes/",
       "link": "https://tech.eu/2026/09/23/german-ai-startup-mika-raises-eur6m-to-simplify-accounting-and-tax-for-smes/",
       "mention": {},
@@ -50,15 +87,7 @@
       ]
     },
     {
-      "index": 6,
-      "text": "🇨🇭 A gentle cradle : Protecting satellites from vibrations\n\n🇨🇭 A gentle cradle : Protecting satellites from vibrations Swiss government\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.admin.ch/en/newnsb/6YnVmJuWxrHa",
-      "link": "https://www.admin.ch/en/newnsb/6YnVmJuWxrHa",
-      "mention": {},
-      "needs_check": false,
-      "claims": []
-    },
-    {
-      "index": 7,
+      "index": 10,
       "text": "🇨🇭 Bluelion to support nine startups accelerate development\n\nThis autumn, nine promising pre-seed startups will obtain support from the Bluelion ecosystem, including workshops, hands-on guidance and access to its network with the aim of enabling the teams transform their ideas into sustainable business cases.\n\nWhy it matters:\n📈 Early biological insight compounds into products years before anyone names a company.\n🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.\n🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.\n\nhttps://www.startupticker.ch/en/news/bluelion-to-support-nine-startups-accelerate-development",
       "link": "https://www.startupticker.ch/en/news/bluelion-to-support-nine-startups-accelerate-development",
       "mention": {},
@@ -66,7 +95,7 @@
       "claims": []
     },
     {
-      "index": 8,
+      "index": 11,
       "text": "🇨🇭 SEALSQ and WISeKey Expand Quantum Highway Linking Switzerland,...\n\nQuiver Quantitative covers the story. It is another sign that Swiss quantum and photonics research is edging toward commercial products.\n\nWhy it matters:\n📈 Photonics is one of the rare quantum fields with a credible near-term path to revenue.\n🇨🇭 Switzerland's strength in precision engineering and optics gives its quantum spinouts a real head start.\n🧭 Deep science on a lean capital plan is exactly the Swiss DeepTech we look for at Climb.\n\nhttps://www.quiverquant.com/news/SEALSQ+and+WISeKey+Expand+Quantum+Highway+Linking+Switzerland,+Spain,+France,+U.S.,+India+and+Space",
       "link": "https://www.quiverquant.com/news/SEALSQ+and+WISeKey+Expand+Quantum+Highway+Linking+Switzerland,+Spain,+France,+U.S.,+India+and+Space",
       "mention": {},
@@ -74,7 +103,7 @@
       "claims": []
     },
     {
-      "index": 9,
+      "index": 12,
       "text": "🇨🇭 Swiss PPP to establish a post-quantum semiconductor and...\n\nDigital Watch Observatory covers the story. It is another sign that Swiss quantum and photonics research is edging toward commercial products.\n\nWhy it matters:\n📈 Photonics is one of the rare quantum fields with a credible near-term path to revenue.\n🇨🇭 Switzerland's strength in precision engineering and optics gives its quantum spinouts a real head start.\n🧭 Deep science on a lean capital plan is exactly the Swiss DeepTech we look for at Climb.\n\nhttps://dig.watch/updates/swiss-post-quantum-semiconductor-centre",
       "link": "https://dig.watch/updates/swiss-post-quantum-semiconductor-centre",
       "mention": {},
@@ -82,7 +111,7 @@
       "claims": []
     },
     {
-      "index": 10,
+      "index": 13,
       "text": "🇨🇭 Strüngmann Award-Gewinner zum 3. Mal in Folge mit Schweiz-Bezug\n\nDer Biotech-Unternehmer Jonathan Talbot gewinnt den mit 100.000 Euro dotierten Strüngmann Award 2026. Talbot hat mehrere Startups im Bereich Life-Sciences – darunter Mosanna Therapeutics - aufgebaut und von der Gründung bis in die klinische Entwicklung überführt.\n\nWhy it matters:\n📈 Early biological insight compounds into products years before anyone names a company.\n🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.\n🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.\n\nhttps://www.startupticker.ch/en/news/struengmann-award-gewinner-zum-3-mal-in-folge-mit-schweiz-bezug",
       "link": "https://www.startupticker.ch/en/news/struengmann-award-gewinner-zum-3-mal-in-folge-mit-schweiz-bezug",
       "mention": {},
@@ -90,7 +119,7 @@
       "claims": []
     },
     {
-      "index": 11,
+      "index": 14,
       "text": "🇨🇭 Rising Perovskia scales up and eyes space tech\n\nOver the past few months, Perovskia Solar has achieved some major milestones: the company has moved from the laboratory stage to large-scale production, is now supplying customers who are developing energy-autonomous electronic devices, and is embarking on a new chapter in India, where it has signed a key memorandum of understanding to explore the potential of next-generation perovskite solar technology for space applications.\n\nWhy it matters:\n📈 Energy and climate hardware is moving from subsidy toward genuine demand.\n🇨🇭 Switzerland combines deep materials science with disciplined engineering.\n🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.\n\nhttps://www.startupticker.ch/en/news/rising-perovskia-scales-up-and-eyes-space-tech",
       "link": "https://www.startupticker.ch/en/news/rising-perovskia-scales-up-and-eyes-space-tech",
       "mention": {},
@@ -98,35 +127,9 @@
       "claims": []
     },
     {
-      "index": 12,
+      "index": 15,
       "text": "🇨🇭 EPFL AI Center Postdoctoral Fellowship 2026: Fully Funded Research...\n\nPostdoctoral fellowship programme for interdisciplinary AI research\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://www.epfl.ch/research/funding/epfl-programmes/ai-center/",
       "link": "https://www.epfl.ch/research/funding/epfl-programmes/ai-center/",
-      "mention": {},
-      "needs_check": false,
-      "claims": []
-    },
-    {
-      "index": 13,
-      "text": "🇨🇭 FireDrone: EPFL and Empa spin-off developing heat-resistant drones\n\nFireDrone: EPFL and Empa spin-off developing heat-resistant drones Dealroom.co\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://app.dealroom.co/news/note/firedrone-epfl-and-empa-spin-off-developing-heat-resistant-drones",
-      "link": "https://app.dealroom.co/news/note/firedrone-epfl-and-empa-spin-off-developing-heat-resistant-drones",
-      "mention": {},
-      "needs_check": false,
-      "claims": []
-    },
-    {
-      "index": 14,
-      "text": "🇨🇭 Following a CHF 2.4 million seed round, Aseptuva progressed to...\n\n🇨🇭 Last year Swiss-UK Medtech startup Aseptuva raised CHF 2.4 million from prominent healthcare entrepreneurs and investors. The financing has enabled Aseptuva to progress from early prototyping to preclinical validation in Europe. The round is reported at CHF 2.4 m.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at CHF 2.4 m.\n🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.\n🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.\n\nhttps://www.startupticker.ch/en/news/following-a-chf-2-4-million-seed-round-aseptuva-progressed-to-preclinical-validation",
-      "link": "https://www.startupticker.ch/en/news/following-a-chf-2-4-million-seed-round-aseptuva-progressed-to-preclinical-validation",
-      "mention": {},
-      "needs_check": true,
-      "claims": [
-        "the post states CHF 2.4 m: is that money received rather than a ceiling or a target, and has the round closed"
-      ]
-    },
-    {
-      "index": 15,
-      "text": "🇨🇭 ESORICS 2026 Outstanding Research Award für David Basin – Staffnet\n\nETH Zürich covers the story in Zürich. It is another data point in Switzerland's steady deep-tech build-out.\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://ethz.ch/staffnet/de/news-und-veranstaltungen/intern-aktuell/archiv/2026/09/esorics-2026-outstanding-research-award-fuer-david-basin.html",
-      "link": "https://ethz.ch/staffnet/de/news-und-veranstaltungen/intern-aktuell/archiv/2026/09/esorics-2026-outstanding-research-award-fuer-david-basin.html",
       "mention": {},
       "needs_check": false,
       "claims": []

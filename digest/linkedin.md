@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 28 September 2026. 15 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 29 September 2026. 15 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -41,7 +41,55 @@ Report what was scheduled and what was held.
 
 The stories themselves are below.
 
-## 1. Research — published 28 September
+## 1. General — published 29 September
+
+```
+🇨🇭 Tech4Trust to empower 30 startups securing AI
+
+🇨🇭 Trust Valley has just announced the 30 startups—including 15 from Switzerland—selected for the eighth edition of Tech4Trust, its global accelerator dedicated to digital trust and cybersecurity.
+
+Why it matters:
+📈 Automation is shifting from pilots to real commercial operations.
+🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
+🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
+
+https://www.startupticker.ch/en/news/tech4trust-to-empower-30-startups-securing-ai
+```
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Tech4Trust%20Unveil%202026.JPG
+
+## 2. Grant — published 28 September
+
+```
+🇨🇭 RheoCarti awarded CHF 150,000 to advance hydrogel-articulated joint...
+
+Based in Zurich, RheoCarti is developing a new generation of joint implants designed to mimic the properties of natural cartilage. The round is reported at CHF 150,000.
+
+Why it matters:
+💰 Capital keeps following Swiss deep science, this time at CHF 150,000.
+🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
+🧭 Backing that research early and capital-efficiently is what we do at Climb.
+
+https://www.startupticker.ch/en/news/rheocarti-awarded-chf-150-000-to-advance-hydrogel-articulated-joint-implants
+```
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/RheoCarti_founder.png
+
+## 3. Award — published 28 September
+
+```
+🇨🇭 Grand prize in Italy and more for Swiss startups
+
+🇨🇭 Medtech startup CC Cardio and its partner have been awarded €160,000 from the Tech Europe Foundation to further develop its single-ventricle pump while Besfort Biljali, cofounder of Lighting tech company Lumvin received the swissalbs Entrepreneur Award, recognizing his professional success, innovation, and social engagement. The round is reported at €160,000.
+
+Why it matters:
+💰 Capital keeps following Swiss deep science, this time at €160,000.
+🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.
+🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.
+
+https://www.startupticker.ch/en/news/grand-prize-in-italy-and-more-for-swiss-startups
+```
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/SwissAlbsAward.png
+
+## 4. Research — published 28 September
 
 ```
 🇨🇭 Helping bladder cells to clear urinary infections
@@ -57,7 +105,7 @@ https://actu.epfl.ch/news/helping-bladder-cells-to-clear-urinary-infections
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 2. Research — published 25 September
+## 5. Research — published 25 September
 
 ```
 🇨🇭 From the faucet to the sewer, and vice versa
@@ -73,28 +121,45 @@ https://actu.epfl.ch/news/from-the-faucet-to-the-sewer-and-vice-versa
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 3. General — published 24 September
+## 6. Policy — published 24 September
 
 ```
-🇨🇭 USD 5.4 Million to advance Prevision Medicine’s functional precision...
+🇨🇭 Geneva startup runs sovereign AI and open-sources agent cockpit
 
-Prevision Medicine closed its seed round. The funding will accelerate the commercialization of its precision medicine test for hematological malignancies and solid tumors. The round is reported at USD 5.4 M.
+Geneva-based NINABOT just launched SOKKAN 2.0, an open-source dashboard designed for teams running multiple AI inference agents in parallel. In total NINABOT, which was founded only a few months ago, already operates four interconnected products.
 
 Why it matters:
-💰 Capital keeps following Swiss deep science, this time at USD 5.4 M.
+📈 Automation is shifting from pilots to real commercial operations.
+🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
+🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
+
+https://www.startupticker.ch/en/news/geneva-startup-runs-sovereign-ai-and-open-sources-agent-cockpit
+```
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/symbolbilder/KIAgent.jpg
+
+## 7. Round — published 24 September
+
+```
+🇨🇭 Italy’s Clastix raises €2.9 million with Mistral backing to build...
+
+🇨🇭 The announcement lands in Bern. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at €2.9 m.
+
+Why it matters:
+💰 Capital keeps following Swiss deep science, this time at €2.9 m.
 🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
 🧭 Backing that research early and capital-efficiently is what we do at Climb.
 
-https://www.startupticker.ch/en/news/usd-5-4-million-to-advance-prevision-medicine-s-functional-precision-oncology-platform
+https://clastix.io/post/clastix-receives-seed-investment-to-control-and-scale-cloud-infrastructures
 ```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/PrevisionTeam.jpg
+🖼️ **Article image:** https://cdn.sanity.io/images/yc0c7rzu/production/93b0993d8467f5a6591c0debec9b889c9a1aae0c-5760x3240.png?w=1200&amp;h=630&amp;fit=crop
+🔗 **Links to the original source.**
 
-## 4. Research — published 23 September
+## 8. Research — published 23 September
 
 ```
 🇨🇭 Tiny OLED pixels can be manufactured like microchips
 
-Tiny OLED pixels can be manufactured like microchips ethz.ch
+Tiny OLED pixels can be manufactured like microchips ETH Zürich
 
 Why it matters:
 📈 Semiconductors sit under almost every growth market, from AI to defense to mobility.
@@ -105,7 +170,7 @@ https://ethz.ch/en/news-and-events/eth-news/news/2026/09/tiny-oled-pixels-can-be
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 5. Round — published 23 September
+## 9. Round — published 23 September
 
 ```
 🇨🇭 German AI startup mika raises €6M to simplify accounting and tax for...
@@ -121,23 +186,7 @@ https://tech.eu/2026/09/23/german-ai-startup-mika-raises-eur6m-to-simplify-accou
 ```
 🖼️ **Article image:** https://cdn.tech.eu/uploads/2026/09/mika-featured-203.png
 
-## 6. General — published 22 September
-
-```
-🇨🇭 A gentle cradle : Protecting satellites from vibrations
-
-🇨🇭 A gentle cradle : Protecting satellites from vibrations Swiss government
-
-Why it matters:
-📈 Deep technology is where durable, defensible companies get built.
-🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
-🧭 Backing that research early and capital-efficiently is what we do at Climb.
-
-https://www.admin.ch/en/newnsb/6YnVmJuWxrHa
-```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 7. General — published 22 September
+## 10. General — published 22 September
 
 ```
 🇨🇭 Bluelion to support nine startups accelerate development
@@ -153,7 +202,7 @@ https://www.startupticker.ch/en/news/bluelion-to-support-nine-startups-accelerat
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Bluelion_Fall_batch2026.png
 
-## 8. Expansion — published 22 September
+## 11. Expansion — published 22 September
 
 ```
 🇨🇭 SEALSQ and WISeKey Expand Quantum Highway Linking Switzerland,...
@@ -169,7 +218,7 @@ https://www.quiverquant.com/news/SEALSQ+and+WISeKey+Expand+Quantum+Highway+Linki
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 9. General — published 22 September
+## 12. General — published 22 September
 
 ```
 🇨🇭 Swiss PPP to establish a post-quantum semiconductor and...
@@ -185,7 +234,7 @@ https://dig.watch/updates/swiss-post-quantum-semiconductor-centre
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 10. Grant — published 21 September
+## 13. Grant — published 21 September
 
 ```
 🇨🇭 Strüngmann Award-Gewinner zum 3. Mal in Folge mit Schweiz-Bezug
@@ -201,7 +250,7 @@ https://www.startupticker.ch/en/news/struengmann-award-gewinner-zum-3-mal-in-fol
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Str%C3%BCngmann%20Award%2026.jpg
 
-## 11. General — published 21 September
+## 14. General — published 21 September
 
 ```
 🇨🇭 Rising Perovskia scales up and eyes space tech
@@ -217,7 +266,7 @@ https://www.startupticker.ch/en/news/rising-perovskia-scales-up-and-eyes-space-t
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Perovskia%20scaleup.jpeg
 
-## 12. Grant — published 19 September
+## 15. Grant — published 19 September
 
 ```
 🇨🇭 EPFL AI Center Postdoctoral Fellowship 2026: Fully Funded Research...
@@ -233,52 +282,4 @@ https://www.epfl.ch/research/funding/epfl-programmes/ai-center/
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 🔗 **Links to the original source.**
-
-## 13. General — published 18 September
-
-```
-🇨🇭 FireDrone: EPFL and Empa spin-off developing heat-resistant drones
-
-FireDrone: EPFL and Empa spin-off developing heat-resistant drones Dealroom.co
-
-Why it matters:
-📈 Deep technology is where durable, defensible companies get built.
-🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
-🧭 Backing that research early and capital-efficiently is what we do at Climb.
-
-https://app.dealroom.co/news/note/firedrone-epfl-and-empa-spin-off-developing-heat-resistant-drones
-```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 14. Round — published 18 September
-
-```
-🇨🇭 Following a CHF 2.4 million seed round, Aseptuva progressed to...
-
-🇨🇭 Last year Swiss-UK Medtech startup Aseptuva raised CHF 2.4 million from prominent healthcare entrepreneurs and investors. The financing has enabled Aseptuva to progress from early prototyping to preclinical validation in Europe. The round is reported at CHF 2.4 m.
-
-Why it matters:
-💰 Capital keeps following Swiss deep science, this time at CHF 2.4 m.
-🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.
-🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.
-
-https://www.startupticker.ch/en/news/following-a-chf-2-4-million-seed-round-aseptuva-progressed-to-preclinical-validation
-```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Aseptuvateam.jpg
-
-## 15. Grant — published 18 September
-
-```
-🇨🇭 ESORICS 2026 Outstanding Research Award für David Basin – Staffnet
-
-ETH Zürich covers the story in Zürich. It is another data point in Switzerland's steady deep-tech build-out.
-
-Why it matters:
-📈 Deep technology is where durable, defensible companies get built.
-🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
-🧭 Backing that research early and capital-efficiently is what we do at Climb.
-
-https://ethz.ch/staffnet/de/news-und-veranstaltungen/intern-aktuell/archiv/2026/09/esorics-2026-outstanding-research-award-fuer-david-basin.html
-```
-🖼️ **Article image:** none found, grab one from the article page.
 
