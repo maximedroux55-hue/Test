@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 29 September 2026. 15 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 30 September 2026. 15 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -41,7 +41,39 @@ Report what was scheduled and what was held.
 
 The stories themselves are below.
 
-## 1. General — published 29 September
+## 1. General — published 30 September
+
+```
+🇨🇭 Tech Scale-Ups Emerge as Key Pillars of the Swiss Economy
+
+Fintechnews Switzerland covers the story. It is another data point in Switzerland's steady deep-tech build-out.
+
+Why it matters:
+📈 Deep technology is where durable, defensible companies get built.
+🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
+🧭 Backing that research early and capital-efficiently is what we do at Climb.
+
+https://fintechnews.ch/innovation/tech-scale-ups-emerge-as-key-pillars-of-the-swiss-economy/86052/
+```
+🖼️ **Article image:** https://fintechnewsch-22e90.kxcdn.com/wp-content/uploads/2026/09/Tech-Scale-Ups-Emerge-as-Key-Pillars-of-the-Swiss-Economy.webp
+
+## 2. Research — published 30 September
+
+```
+🇨🇭 Alpine bacteria show unexpected ability to fight viruses
+
+30.09.26 - EPFL researchers found that bacterial communities in Alpine lakes, which are resistant to viruses that infect them, can reduce the infectivity of other viruses in the lab. These findings suggest potential biotechnological applications in various fields, including agriculture.
+
+Why it matters:
+📈 Early biological insight compounds into products years before anyone names a company.
+🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.
+🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.
+
+https://actu.epfl.ch/news/alpine-bacteria-show-unexpected-ability-to-fight-v
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 3. General — published 29 September
 
 ```
 🇨🇭 Tech4Trust to empower 30 startups securing AI
@@ -57,7 +89,7 @@ https://www.startupticker.ch/en/news/tech4trust-to-empower-30-startups-securing-
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Tech4Trust%20Unveil%202026.JPG
 
-## 2. Grant — published 28 September
+## 4. Grant — published 28 September
 
 ```
 🇨🇭 RheoCarti awarded CHF 150,000 to advance hydrogel-articulated joint...
@@ -73,7 +105,7 @@ https://www.startupticker.ch/en/news/rheocarti-awarded-chf-150-000-to-advance-hy
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/RheoCarti_founder.png
 
-## 3. Award — published 28 September
+## 5. Award — published 28 September
 
 ```
 🇨🇭 Grand prize in Italy and more for Swiss startups
@@ -89,7 +121,7 @@ https://www.startupticker.ch/en/news/grand-prize-in-italy-and-more-for-swiss-sta
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/SwissAlbsAward.png
 
-## 4. Research — published 28 September
+## 6. Research — published 28 September
 
 ```
 🇨🇭 Helping bladder cells to clear urinary infections
@@ -105,7 +137,23 @@ https://actu.epfl.ch/news/helping-bladder-cells-to-clear-urinary-infections
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 5. Research — published 25 September
+## 7. General — published 25 September
+
+```
+🇨🇭 CHF2 million to integrate quantum processors in high-performance...
+
+Qambria builds the classical engine designed to address the bottlenecks between quantum and classical compute. The company from the Canton of Thurgau has closed a pre-seed round backed by a an international group of family offices, VCs and specialist investors. The round is reported at CHF2 m.
+
+Why it matters:
+💰 Capital keeps following Swiss deep science, this time at CHF2 m.
+🇨🇭 Switzerland's strength in precision engineering and optics gives its quantum spinouts a real head start.
+🧭 Deep science on a lean capital plan is exactly the Swiss DeepTech we look for at Climb.
+
+https://www.startupticker.ch/en/news/chf2-million-to-integrate-quantum-processors-in-high-performance-computers
+```
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/symbolbilder/Datenspeicher.png
+
+## 8. Research — published 25 September
 
 ```
 🇨🇭 From the faucet to the sewer, and vice versa
@@ -121,7 +169,7 @@ https://actu.epfl.ch/news/from-the-faucet-to-the-sewer-and-vice-versa
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 6. Policy — published 24 September
+## 9. Policy — published 24 September
 
 ```
 🇨🇭 Geneva startup runs sovereign AI and open-sources agent cockpit
@@ -137,7 +185,7 @@ https://www.startupticker.ch/en/news/geneva-startup-runs-sovereign-ai-and-open-s
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/symbolbilder/KIAgent.jpg
 
-## 7. Round — published 24 September
+## 10. Round — published 24 September
 
 ```
 🇨🇭 Italy’s Clastix raises €2.9 million with Mistral backing to build...
@@ -154,23 +202,7 @@ https://clastix.io/post/clastix-receives-seed-investment-to-control-and-scale-cl
 🖼️ **Article image:** https://cdn.sanity.io/images/yc0c7rzu/production/93b0993d8467f5a6591c0debec9b889c9a1aae0c-5760x3240.png?w=1200&amp;h=630&amp;fit=crop
 🔗 **Links to the original source.**
 
-## 8. Research — published 23 September
-
-```
-🇨🇭 Tiny OLED pixels can be manufactured like microchips
-
-Tiny OLED pixels can be manufactured like microchips ETH Zürich
-
-Why it matters:
-📈 Semiconductors sit under almost every growth market, from AI to defense to mobility.
-🇨🇭 Switzerland punches above its weight in specialised chips and advanced materials.
-🧭 Capital-efficient hardware built on Swiss research is core to the Climb thesis.
-
-https://ethz.ch/en/news-and-events/eth-news/news/2026/09/tiny-oled-pixels-can-be-manufactured-like-microchips.html
-```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 9. Round — published 23 September
+## 11. Round — published 23 September
 
 ```
 🇨🇭 German AI startup mika raises €6M to simplify accounting and tax for...
@@ -186,23 +218,7 @@ https://tech.eu/2026/09/23/german-ai-startup-mika-raises-eur6m-to-simplify-accou
 ```
 🖼️ **Article image:** https://cdn.tech.eu/uploads/2026/09/mika-featured-203.png
 
-## 10. General — published 22 September
-
-```
-🇨🇭 Bluelion to support nine startups accelerate development
-
-This autumn, nine promising pre-seed startups will obtain support from the Bluelion ecosystem, including workshops, hands-on guidance and access to its network with the aim of enabling the teams transform their ideas into sustainable business cases.
-
-Why it matters:
-📈 Early biological insight compounds into products years before anyone names a company.
-🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.
-🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.
-
-https://www.startupticker.ch/en/news/bluelion-to-support-nine-startups-accelerate-development
-```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Bluelion_Fall_batch2026.png
-
-## 11. Expansion — published 22 September
+## 12. Expansion — published 22 September
 
 ```
 🇨🇭 SEALSQ and WISeKey Expand Quantum Highway Linking Switzerland,...
@@ -218,7 +234,7 @@ https://www.quiverquant.com/news/SEALSQ+and+WISeKey+Expand+Quantum+Highway+Linki
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 12. General — published 22 September
+## 13. General — published 22 September
 
 ```
 🇨🇭 Swiss PPP to establish a post-quantum semiconductor and...
@@ -234,7 +250,23 @@ https://dig.watch/updates/swiss-post-quantum-semiconductor-centre
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 13. Grant — published 21 September
+## 14. General — published 22 September
+
+```
+🇨🇭 Bluelion to support nine startups accelerate development
+
+This autumn, nine promising pre-seed startups will obtain support from the Bluelion ecosystem, including workshops, hands-on guidance and access to its network with the aim of enabling the teams transform their ideas into sustainable business cases.
+
+Why it matters:
+📈 Early biological insight compounds into products years before anyone names a company.
+🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.
+🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.
+
+https://www.startupticker.ch/en/news/bluelion-to-support-nine-startups-accelerate-development
+```
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Bluelion_Fall_batch2026.png
+
+## 15. Grant — published 21 September
 
 ```
 🇨🇭 Strüngmann Award-Gewinner zum 3. Mal in Folge mit Schweiz-Bezug
@@ -249,37 +281,4 @@ Why it matters:
 https://www.startupticker.ch/en/news/struengmann-award-gewinner-zum-3-mal-in-folge-mit-schweiz-bezug
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Str%C3%BCngmann%20Award%2026.jpg
-
-## 14. General — published 21 September
-
-```
-🇨🇭 Rising Perovskia scales up and eyes space tech
-
-Over the past few months, Perovskia Solar has achieved some major milestones: the company has moved from the laboratory stage to large-scale production, is now supplying customers who are developing energy-autonomous electronic devices, and is embarking on a new chapter in India, where it has signed a key memorandum of understanding to explore the potential of next-generation perovskite solar technology for space applications.
-
-Why it matters:
-📈 Energy and climate hardware is moving from subsidy toward genuine demand.
-🇨🇭 Switzerland combines deep materials science with disciplined engineering.
-🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.
-
-https://www.startupticker.ch/en/news/rising-perovskia-scales-up-and-eyes-space-tech
-```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Perovskia%20scaleup.jpeg
-
-## 15. Grant — published 19 September
-
-```
-🇨🇭 EPFL AI Center Postdoctoral Fellowship 2026: Fully Funded Research...
-
-Postdoctoral fellowship programme for interdisciplinary AI research
-
-Why it matters:
-📈 Automation is shifting from pilots to real commercial operations.
-🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
-🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
-
-https://www.epfl.ch/research/funding/epfl-programmes/ai-center/
-```
-🖼️ **Article image:** none found, grab one from the article page.
-🔗 **Links to the original source.**
 
