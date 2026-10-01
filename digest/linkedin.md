@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 30 September 2026. 15 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 01 October 2026. 15 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -44,6 +44,22 @@ The stories themselves are below.
 ## 1. General — published 30 September
 
 ```
+🇨🇭 Twenty female founders shaping Switzerland’s AI, data-science and...
+
+🇨🇭 The second edition of “Top 100+ Women in AI + Data + Robotics in Switzerland 2026” report is out, providing a snapshot of women who are making significant contributions to Switzerland’s AI, data science, and robotics ecosystems.
+
+Why it matters:
+📈 Automation is shifting from pilots to real commercial operations.
+🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
+🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
+
+https://www.startupticker.ch/en/news/twenty-female-founders-shaping-switzerland-s-ai-data-science-and-robotics-ecosystem
+```
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Women_in_AI_report.png
+
+## 2. General — published 30 September
+
+```
 🇨🇭 Tech Scale-Ups Emerge as Key Pillars of the Swiss Economy
 
 Fintechnews Switzerland covers the story. It is another data point in Switzerland's steady deep-tech build-out.
@@ -57,7 +73,7 @@ https://fintechnews.ch/innovation/tech-scale-ups-emerge-as-key-pillars-of-the-sw
 ```
 🖼️ **Article image:** https://fintechnewsch-22e90.kxcdn.com/wp-content/uploads/2026/09/Tech-Scale-Ups-Emerge-as-Key-Pillars-of-the-Swiss-Economy.webp
 
-## 2. Research — published 30 September
+## 3. Research — published 30 September
 
 ```
 🇨🇭 Alpine bacteria show unexpected ability to fight viruses
@@ -73,23 +89,39 @@ https://actu.epfl.ch/news/alpine-bacteria-show-unexpected-ability-to-fight-v
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 3. General — published 29 September
+## 4. Round — published 29 September
 
 ```
-🇨🇭 Tech4Trust to empower 30 startups securing AI
+🇨🇭 Cotierra raises $3M to scale decentralised biochar across tropical...
 
-🇨🇭 Trust Valley has just announced the 30 startups—including 15 from Switzerland—selected for the eighth edition of Tech4Trust, its global accelerator dedicated to digital trust and cybersecurity.
+Tech.eu covers the story. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at $3M.
 
 Why it matters:
-📈 Automation is shifting from pilots to real commercial operations.
-🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
-🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
+💰 Capital keeps following Swiss deep science, this time at $3M.
+🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
+🧭 Backing that research early and capital-efficiently is what we do at Climb.
 
-https://www.startupticker.ch/en/news/tech4trust-to-empower-30-startups-securing-ai
+https://tech.eu/2026/09/29/cotierra-raises-3m-to-scale-decentralised-biochar-across-tropical-agriculture/
 ```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Tech4Trust%20Unveil%202026.JPG
+🖼️ **Article image:** https://cdn.tech.eu/uploads/2026/09/untitled-design-35-781.png
 
-## 4. Grant — published 28 September
+## 5. Launch — published 29 September
+
+```
+🇨🇭 Terra Quantum and Empa Develop AI Model That Brings Real-Time...
+
+Business Wire covers the story. It is another sign that Swiss quantum and photonics research is edging toward commercial products.
+
+Why it matters:
+📈 Photonics is one of the rare quantum fields with a credible near-term path to revenue.
+🇨🇭 Switzerland's strength in precision engineering and optics gives its quantum spinouts a real head start.
+🧭 Deep science on a lean capital plan is exactly the Swiss DeepTech we look for at Climb.
+
+https://www.businesswire.com/news/home/20260929856203/en/Terra-Quantum-and-Empa-Develop-AI-Model-That-Brings-Real-Time-Prediction-to-Laser-Welding-Process-Control
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 6. Grant — published 28 September
 
 ```
 🇨🇭 RheoCarti awarded CHF 150,000 to advance hydrogel-articulated joint...
@@ -105,7 +137,7 @@ https://www.startupticker.ch/en/news/rheocarti-awarded-chf-150-000-to-advance-hy
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/RheoCarti_founder.png
 
-## 5. Award — published 28 September
+## 7. Award — published 28 September
 
 ```
 🇨🇭 Grand prize in Italy and more for Swiss startups
@@ -121,7 +153,7 @@ https://www.startupticker.ch/en/news/grand-prize-in-italy-and-more-for-swiss-sta
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/SwissAlbsAward.png
 
-## 6. Research — published 28 September
+## 8. Research — published 28 September
 
 ```
 🇨🇭 Helping bladder cells to clear urinary infections
@@ -137,23 +169,7 @@ https://actu.epfl.ch/news/helping-bladder-cells-to-clear-urinary-infections
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 7. General — published 25 September
-
-```
-🇨🇭 CHF2 million to integrate quantum processors in high-performance...
-
-Qambria builds the classical engine designed to address the bottlenecks between quantum and classical compute. The company from the Canton of Thurgau has closed a pre-seed round backed by a an international group of family offices, VCs and specialist investors. The round is reported at CHF2 m.
-
-Why it matters:
-💰 Capital keeps following Swiss deep science, this time at CHF2 m.
-🇨🇭 Switzerland's strength in precision engineering and optics gives its quantum spinouts a real head start.
-🧭 Deep science on a lean capital plan is exactly the Swiss DeepTech we look for at Climb.
-
-https://www.startupticker.ch/en/news/chf2-million-to-integrate-quantum-processors-in-high-performance-computers
-```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/symbolbilder/Datenspeicher.png
-
-## 8. Research — published 25 September
+## 9. Research — published 25 September
 
 ```
 🇨🇭 From the faucet to the sewer, and vice versa
@@ -169,7 +185,7 @@ https://actu.epfl.ch/news/from-the-faucet-to-the-sewer-and-vice-versa
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 9. Policy — published 24 September
+## 10. Policy — published 24 September
 
 ```
 🇨🇭 Geneva startup runs sovereign AI and open-sources agent cockpit
@@ -185,7 +201,7 @@ https://www.startupticker.ch/en/news/geneva-startup-runs-sovereign-ai-and-open-s
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/symbolbilder/KIAgent.jpg
 
-## 10. Round — published 24 September
+## 11. Round — published 24 September
 
 ```
 🇨🇭 Italy’s Clastix raises €2.9 million with Mistral backing to build...
@@ -202,7 +218,7 @@ https://clastix.io/post/clastix-receives-seed-investment-to-control-and-scale-cl
 🖼️ **Article image:** https://cdn.sanity.io/images/yc0c7rzu/production/93b0993d8467f5a6591c0debec9b889c9a1aae0c-5760x3240.png?w=1200&amp;h=630&amp;fit=crop
 🔗 **Links to the original source.**
 
-## 11. Round — published 23 September
+## 12. Round — published 23 September
 
 ```
 🇨🇭 German AI startup mika raises €6M to simplify accounting and tax for...
@@ -217,22 +233,6 @@ Why it matters:
 https://tech.eu/2026/09/23/german-ai-startup-mika-raises-eur6m-to-simplify-accounting-and-tax-for-smes/
 ```
 🖼️ **Article image:** https://cdn.tech.eu/uploads/2026/09/mika-featured-203.png
-
-## 12. Expansion — published 22 September
-
-```
-🇨🇭 SEALSQ and WISeKey Expand Quantum Highway Linking Switzerland,...
-
-Quiver Quantitative covers the story. It is another sign that Swiss quantum and photonics research is edging toward commercial products.
-
-Why it matters:
-📈 Photonics is one of the rare quantum fields with a credible near-term path to revenue.
-🇨🇭 Switzerland's strength in precision engineering and optics gives its quantum spinouts a real head start.
-🧭 Deep science on a lean capital plan is exactly the Swiss DeepTech we look for at Climb.
-
-https://www.quiverquant.com/news/SEALSQ+and+WISeKey+Expand+Quantum+Highway+Linking+Switzerland,+Spain,+France,+U.S.,+India+and+Space
-```
-🖼️ **Article image:** none found, grab one from the article page.
 
 ## 13. General — published 22 September
 
@@ -250,35 +250,35 @@ https://dig.watch/updates/swiss-post-quantum-semiconductor-centre
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 14. General — published 22 September
+## 14. Expansion — published 22 September
 
 ```
-🇨🇭 Bluelion to support nine startups accelerate development
+🇨🇭 SEALSQ and WISeKey Expand Quantum Highway Linking Switzerland,...
 
-This autumn, nine promising pre-seed startups will obtain support from the Bluelion ecosystem, including workshops, hands-on guidance and access to its network with the aim of enabling the teams transform their ideas into sustainable business cases.
+Quiver Quantitative covers the story. It is another sign that Swiss quantum and photonics research is edging toward commercial products.
 
 Why it matters:
-📈 Early biological insight compounds into products years before anyone names a company.
-🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.
-🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.
+📈 Photonics is one of the rare quantum fields with a credible near-term path to revenue.
+🇨🇭 Switzerland's strength in precision engineering and optics gives its quantum spinouts a real head start.
+🧭 Deep science on a lean capital plan is exactly the Swiss DeepTech we look for at Climb.
 
-https://www.startupticker.ch/en/news/bluelion-to-support-nine-startups-accelerate-development
+https://www.quiverquant.com/news/SEALSQ+and+WISeKey+Expand+Quantum+Highway+Linking+Switzerland,+Spain,+France,+U.S.,+India+and+Space
 ```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Bluelion_Fall_batch2026.png
+🖼️ **Article image:** none found, grab one from the article page.
 
-## 15. Grant — published 21 September
+## 15. General — published 21 September
 
 ```
-🇨🇭 Strüngmann Award-Gewinner zum 3. Mal in Folge mit Schweiz-Bezug
+🇨🇭 WISeKey, SEALSQ and Canton of Jura Sign MoU to Establish a Swiss...
 
-Der Biotech-Unternehmer Jonathan Talbot gewinnt den mit 100.000 Euro dotierten Strüngmann Award 2026. Talbot hat mehrere Startups im Bereich Life-Sciences – darunter Mosanna Therapeutics - aufgebaut und von der Gründung bis in die klinische Entwicklung überführt.
+markets.businessinsider.com covers the story. It is another sign that Swiss quantum and photonics research is edging toward commercial products.
 
 Why it matters:
-📈 Early biological insight compounds into products years before anyone names a company.
-🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.
-🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.
+📈 Photonics is one of the rare quantum fields with a credible near-term path to revenue.
+🇨🇭 Switzerland's strength in precision engineering and optics gives its quantum spinouts a real head start.
+🧭 Deep science on a lean capital plan is exactly the Swiss DeepTech we look for at Climb.
 
-https://www.startupticker.ch/en/news/struengmann-award-gewinner-zum-3-mal-in-folge-mit-schweiz-bezug
+https://markets.businessinsider.com/news/stocks/wisekey-sealsq-and-canton-of-jura-sign-mou-to-establish-a-swiss-post-quantum-semiconductor-and-cybersecurity-center-1036559227
 ```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Str%C3%BCngmann%20Award%2026.jpg
+🖼️ **Article image:** none found, grab one from the article page.
 
