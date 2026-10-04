@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 03 October 2026. 15 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 04 October 2026. 15 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -41,7 +41,23 @@ Report what was scheduled and what was held.
 
 The stories themselves are below.
 
-## 1. Research — published 02 October
+## 1. Research — published 03 October
+
+```
+🇨🇭 EPFL celebrates its 1,565 Master's graduates of 2026
+
+03.10.26 - The traditional Master’s graduation ceremony took place on Saturday, 3 October. The event provided the opportunity to celebrate EPFL’s engineers and recognise certain outstanding achievements.
+
+Why it matters:
+📈 Energy and climate hardware is moving from subsidy toward genuine demand.
+🇨🇭 Switzerland combines deep materials science with disciplined engineering.
+🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.
+
+https://actu.epfl.ch/news/epfl-celebrates-its-1565-master-s-graduates-of-202
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 2. Research — published 02 October
 
 ```
 🇨🇭 ETH Zurich Researcher Calls for More Rigorous Evidence When...
@@ -57,7 +73,7 @@ https://www.digitalinformationworld.com/2026/10/eth-zurich-ai-safety-researcher-
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 2. General — published 02 October
+## 3. General — published 02 October
 
 ```
 🇨🇭 Start-ups and scale-ups are shaping the Swiss robotics sector
@@ -73,7 +89,7 @@ https://www.startupticker.ch/en/news/start-ups-and-scale-ups-are-shaping-the-swi
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/VoliroDrone.jpg
 
-## 3. General — published 01 October
+## 4. General — published 01 October
 
 ```
 🇨🇭 High marks for Switzerland and food for thought on deep-tech start-ups
@@ -89,7 +105,7 @@ https://www.startupticker.ch/en/news/high-marks-for-switzerland
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/symbolbilder/Datenanalyse2.jpg
 
-## 4. General — published 30 September
+## 5. General — published 30 September
 
 ```
 🇨🇭 Tech Scale-Ups Emerge as Key Pillars of the Swiss Economy
@@ -105,7 +121,7 @@ https://fintechnews.ch/innovation/tech-scale-ups-emerge-as-key-pillars-of-the-sw
 ```
 🖼️ **Article image:** https://fintechnewsch-22e90.kxcdn.com/wp-content/uploads/2026/09/Tech-Scale-Ups-Emerge-as-Key-Pillars-of-the-Swiss-Economy.webp
 
-## 5. Research — published 30 September
+## 6. Research — published 30 September
 
 ```
 🇨🇭 Alpine bacteria show unexpected ability to fight viruses
@@ -121,7 +137,7 @@ https://actu.epfl.ch/news/alpine-bacteria-show-unexpected-ability-to-fight-v
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 6. Grant — published 30 September
+## 7. Grant — published 30 September
 
 ```
 🇨🇭 EPFL AI Center Postdoctoral Fellowship 2026: Fully Funded Research...
@@ -138,7 +154,7 @@ https://www.epfl.ch/research/funding/epfl-programmes/ai-center/
 🖼️ **Article image:** none found, grab one from the article page.
 🔗 **Links to the original source.**
 
-## 7. Round — published 29 September
+## 8. Round — published 29 September
 
 ```
 🇨🇭 Cotierra raises $3M to scale decentralised biochar across tropical...
@@ -154,7 +170,7 @@ https://tech.eu/2026/09/29/cotierra-raises-3m-to-scale-decentralised-biochar-acr
 ```
 🖼️ **Article image:** https://cdn.tech.eu/uploads/2026/09/untitled-design-35-781.png
 
-## 8. Launch — published 29 September
+## 9. Launch — published 29 September
 
 ```
 🇨🇭 Terra Quantum and Empa Develop AI Model That Brings Real-Time...
@@ -170,7 +186,7 @@ https://www.businesswire.com/news/home/20260929856203/en/Terra-Quantum-and-Empa-
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 9. Grant — published 28 September
+## 10. Grant — published 28 September
 
 ```
 🇨🇭 RheoCarti awarded CHF 150,000 to advance hydrogel-articulated joint...
@@ -186,7 +202,7 @@ https://www.startupticker.ch/en/news/rheocarti-awarded-chf-150-000-to-advance-hy
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/RheoCarti_founder.png
 
-## 10. Award — published 28 September
+## 11. Award — published 28 September
 
 ```
 🇨🇭 Grand prize in Italy and more for Swiss startups
@@ -202,7 +218,7 @@ https://www.startupticker.ch/en/news/grand-prize-in-italy-and-more-for-swiss-sta
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/SwissAlbsAward.png
 
-## 11. Research — published 28 September
+## 12. Research — published 28 September
 
 ```
 🇨🇭 Helping bladder cells to clear urinary infections
@@ -218,7 +234,7 @@ https://actu.epfl.ch/news/helping-bladder-cells-to-clear-urinary-infections
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 12. Research — published 25 September
+## 13. Research — published 25 September
 
 ```
 🇨🇭 From the faucet to the sewer, and vice versa
@@ -234,7 +250,7 @@ https://actu.epfl.ch/news/from-the-faucet-to-the-sewer-and-vice-versa
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 13. General — published 24 September
+## 14. General — published 24 September
 
 ```
 🇨🇭 ETH Zurich develops new organic material for color-emitting OLEDs
@@ -250,7 +266,7 @@ https://optics.org/news/eth-zurich-develops-new-organic-material-for-color-emitt
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 14. General — published 24 September
+## 15. General — published 24 September
 
 ```
 🇨🇭 10 Switzerland-Based AI Scale-Ups You Need to Know in 2026
@@ -265,21 +281,4 @@ Why it matters:
 https://theaiinsider.tech/2026/09/24/10-switzerland-based-ai-scale-ups-you-need-to-know-in-2026/
 ```
 🖼️ **Article image:** none found, grab one from the article page.
-
-## 15. Round — published 24 September
-
-```
-🇨🇭 Italy’s Clastix raises €2.9 million with Mistral backing to build...
-
-🇨🇭 The announcement lands in Bern. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at €2.9 m.
-
-Why it matters:
-💰 Capital keeps following Swiss deep science, this time at €2.9 m.
-🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
-🧭 Backing that research early and capital-efficiently is what we do at Climb.
-
-https://clastix.io/post/clastix-receives-seed-investment-to-control-and-scale-cloud-infrastructures
-```
-🖼️ **Article image:** https://cdn.sanity.io/images/yc0c7rzu/production/93b0993d8467f5a6591c0debec9b889c9a1aae0c-5760x3240.png?w=1200&amp;h=630&amp;fit=crop
-🔗 **Links to the original source.**
 
