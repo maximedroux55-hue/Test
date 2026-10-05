@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 04 October 2026. 15 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 05 October 2026. 14 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -41,7 +41,23 @@ Report what was scheduled and what was held.
 
 The stories themselves are below.
 
-## 1. Research — published 03 October
+## 1. General — published 03 October
+
+```
+🇨🇭 EPFL builds 150-microgram microdrones that fly using sound alone
+
+EPFL builds 150-microgram microdrones that fly using sound alone DongA Science
+
+Why it matters:
+📈 Deep technology is where durable, defensible companies get built.
+🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
+🧭 Backing that research early and capital-efficiently is what we do at Climb.
+
+https://www.dongascience.com/en/news/80161
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 2. Research — published 03 October
 
 ```
 🇨🇭 EPFL celebrates its 1,565 Master's graduates of 2026
@@ -54,22 +70,6 @@ Why it matters:
 🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.
 
 https://actu.epfl.ch/news/epfl-celebrates-its-1565-master-s-graduates-of-202
-```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 2. Research — published 02 October
-
-```
-🇨🇭 ETH Zurich Researcher Calls for More Rigorous Evidence When...
-
-Digital Information World covers the story in Zurich. Swiss robotics and applied AI keep moving from demo to deployment.
-
-Why it matters:
-📈 Automation is shifting from pilots to real commercial operations.
-🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
-🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
-
-https://www.digitalinformationworld.com/2026/10/eth-zurich-ai-safety-researcher-says-ai-behaviour-can-be-mistaken-for-deception-without-evidence-of-intent.html
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
@@ -89,7 +89,23 @@ https://www.startupticker.ch/en/news/start-ups-and-scale-ups-are-shaping-the-swi
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/VoliroDrone.jpg
 
-## 4. General — published 01 October
+## 4. Grant — published 02 October
+
+```
+🇨🇭 La deeptech neuchateloise NovoViz ravit le Prix BCN Innovation 2026
+
+La deeptech neuchateloise NovoViz ravit le Prix BCN Innovation 2026 Startupticker
+
+Why it matters:
+📈 Deep technology is where durable, defensible companies get built.
+🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
+🧭 Backing that research early and capital-efficiently is what we do at Climb.
+
+https://www.startupticker.ch/en/news/la-deeptech-neuchateloise-novoviz-ravit-le-prix-bcn-innovation-2026
+```
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/NovoViz%20BCN%20Award%202026.png
+
+## 5. General — published 01 October
 
 ```
 🇨🇭 High marks for Switzerland and food for thought on deep-tech start-ups
@@ -104,22 +120,6 @@ Why it matters:
 https://www.startupticker.ch/en/news/high-marks-for-switzerland
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/symbolbilder/Datenanalyse2.jpg
-
-## 5. General — published 30 September
-
-```
-🇨🇭 Tech Scale-Ups Emerge as Key Pillars of the Swiss Economy
-
-Fintechnews Switzerland covers the story. It is another data point in Switzerland's steady deep-tech build-out.
-
-Why it matters:
-📈 Deep technology is where durable, defensible companies get built.
-🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
-🧭 Backing that research early and capital-efficiently is what we do at Climb.
-
-https://fintechnews.ch/innovation/tech-scale-ups-emerge-as-key-pillars-of-the-swiss-economy/86052/
-```
-🖼️ **Article image:** https://fintechnewsch-22e90.kxcdn.com/wp-content/uploads/2026/09/Tech-Scale-Ups-Emerge-as-Key-Pillars-of-the-Swiss-Economy.webp
 
 ## 6. Research — published 30 September
 
@@ -186,7 +186,23 @@ https://www.businesswire.com/news/home/20260929856203/en/Terra-Quantum-and-Empa-
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 10. Grant — published 28 September
+## 10. General — published 29 September
+
+```
+🇨🇭 Tech4Trust to empower 30 startups securing AI
+
+🇨🇭 Trust Valley has just announced the 30 startups—including 15 from Switzerland—selected for the eighth edition of Tech4Trust, its global accelerator dedicated to digital trust and cybersecurity.
+
+Why it matters:
+📈 Automation is shifting from pilots to real commercial operations.
+🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
+🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
+
+https://www.startupticker.ch/en/news/tech4trust-to-empower-30-startups-securing-ai
+```
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Tech4Trust%20Unveil%202026.JPG
+
+## 11. Grant — published 28 September
 
 ```
 🇨🇭 RheoCarti awarded CHF 150,000 to advance hydrogel-articulated joint...
@@ -201,22 +217,6 @@ Why it matters:
 https://www.startupticker.ch/en/news/rheocarti-awarded-chf-150-000-to-advance-hydrogel-articulated-joint-implants
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/RheoCarti_founder.png
-
-## 11. Award — published 28 September
-
-```
-🇨🇭 Grand prize in Italy and more for Swiss startups
-
-🇨🇭 Medtech startup CC Cardio and its partner have been awarded €160,000 from the Tech Europe Foundation to further develop its single-ventricle pump while Besfort Biljali, cofounder of Lighting tech company Lumvin received the swissalbs Entrepreneur Award, recognizing his professional success, innovation, and social engagement. The round is reported at €160,000.
-
-Why it matters:
-💰 Capital keeps following Swiss deep science, this time at €160,000.
-🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.
-🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.
-
-https://www.startupticker.ch/en/news/grand-prize-in-italy-and-more-for-swiss-startups
-```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/SwissAlbsAward.png
 
 ## 12. Research — published 28 September
 
@@ -234,51 +234,36 @@ https://actu.epfl.ch/news/helping-bladder-cells-to-clear-urinary-infections
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 13. Research — published 25 September
+## 13. Award — published 28 September
 
 ```
-🇨🇭 From the faucet to the sewer, and vice versa
+🇨🇭 Grand prize in Italy and more for Swiss startups
 
-EPFL News covers the story in Zurich. Swiss cleantech keeps pairing serious science with real-world deployment.
+🇨🇭 Medtech startup CC Cardio and its partner have been awarded €160,000 from the Tech Europe Foundation to further develop its single-ventricle pump while Besfort Biljali, cofounder of Lighting tech company Lumvin received the swissalbs Entrepreneur Award, recognizing his professional success, innovation, and social engagement. The round is reported at €160,000.
 
 Why it matters:
-📈 Energy and climate hardware is moving from subsidy toward genuine demand.
-🇨🇭 Switzerland combines deep materials science with disciplined engineering.
-🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.
+💰 Capital keeps following Swiss deep science, this time at €160,000.
+🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.
+🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.
 
-https://actu.epfl.ch/news/from-the-faucet-to-the-sewer-and-vice-versa
+https://www.startupticker.ch/en/news/grand-prize-in-italy-and-more-for-swiss-startups
 ```
-🖼️ **Article image:** none found, grab one from the article page.
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/SwissAlbsAward.png
 
-## 14. General — published 24 September
+## 14. Launch — published 25 September
 
 ```
-🇨🇭 ETH Zurich develops new organic material for color-emitting OLEDs
+🇨🇭 CSEM lanciert Förderprogramm für Schweizer Deep-Tech-Start-ups
 
-ETH Zurich develops new organic material for color-emitting OLEDs Optics.org
+🇨🇭 The announcement lands. It is another data point in Switzerland's steady deep-tech build-out.
 
 Why it matters:
 📈 Deep technology is where durable, defensible companies get built.
 🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
 🧭 Backing that research early and capital-efficiently is what we do at Climb.
 
-https://optics.org/news/eth-zurich-develops-new-organic-material-for-color-emitting-oleds
+https://www.csem.ch/de/startup-elevate-programm/
 ```
 🖼️ **Article image:** none found, grab one from the article page.
-
-## 15. General — published 24 September
-
-```
-🇨🇭 10 Switzerland-Based AI Scale-Ups You Need to Know in 2026
-
-🇨🇭 10 Switzerland-Based AI Scale-Ups You Need to Know in 2026 AI Insider
-
-Why it matters:
-📈 Automation is shifting from pilots to real commercial operations.
-🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
-🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
-
-https://theaiinsider.tech/2026/09/24/10-switzerland-based-ai-scale-ups-you-need-to-know-in-2026/
-```
-🖼️ **Article image:** none found, grab one from the article page.
+🔗 **Links to the original source.**
 
