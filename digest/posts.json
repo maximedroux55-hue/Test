@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-07",
+  "generated": "2026-10-08",
   "mode": "Template drafts (set ANTHROPIC_API_KEY for AI-written posts).",
   "note": "Times are local. Schedule each post at its time on its date.",
   "cowork_prompt": "Open https://maxime-droux.com/digest/posts.json and schedule the posts listed at the end of this message, and only those. The file holds the shortlist; the list below says which of them I picked and when each one goes out. Match them by `index`. Ignore every other post in the file.\n\nFor each post, in order:\n- Type the `text` straight through, once, with real keystrokes. Never insert\n  text via JavaScript. It already ends with the article URL on its own line,\n  so do not add, move or retype the URL separately: typing it last is what makes\n  the link preview load the article photo.\n- Each post has exactly one @mention. Type `mention.type`, wait for the\n  dropdown, click the row matching `mention.expect`. If no row matches, post\n  it without the mention rather than tagging the wrong company. LinkedIn will\n  render the official name: that is expected and fine, do not fight it, do not\n  restart the post, do not rewrite it.\n- Schedule it at the date and time given for it in the list below. If no link\n  preview appears, schedule it anyway: do not hunt for an image.\n\nTwo attempts per post, then stop. If a post is not scheduled after two tries,\nleave it, move to the next one, and list it at the end. Never start a third.\n\nBefore you start, open the scheduled-posts list once and note what is already\nthere. Skip any post already scheduled: never schedule the same one twice.\n\nVerification:\n- Claims already settled against the article are not in the file. Check only\n  what `claims` still lists, and posts with needs_check: true (a figure nobody\n  has verified: confirm round closed / round name / amount received / investors\n  in THIS round). Both empty and false means schedule it, no research.\n\nAnything that fails: do not schedule it, and do not edit any file or commit\nanything. List the held posts at the end with the sentence you read and the\npage you read it on, and I will record them.\n\nReport what was scheduled and what was held.",
@@ -25,8 +25,8 @@
     },
     {
       "index": 3,
-      "text": "🇨🇭 Postdoctoral Fellowships at ETH Zurich for Danish Researchers in...\n\nfundsforNGOs - Grants and Resources for Sustainability covers the story in Zurich. It is another data point in Switzerland's steady deep-tech build-out.\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www2.fundsforngos.org/innovation/postdoctoral-fellowships-at-eth-zurich-for-danish-researchers-in-denmark/amp/",
-      "link": "https://www2.fundsforngos.org/innovation/postdoctoral-fellowships-at-eth-zurich-for-danish-researchers-in-denmark/amp/",
+      "text": "🇨🇭 Postdoctoral Fellowships at ETH Zurich for Danish Researchers in...\n\nfundsforNGOs - Grants and Resources for Sustainability covers the story in Zurich. It is another data point in Switzerland's steady deep-tech build-out.\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www2.fundsforngos.org/innovation/postdoctoral-fellowships-at-eth-zurich-for-danish-researchers-in-denmark/",
+      "link": "https://www2.fundsforngos.org/innovation/postdoctoral-fellowships-at-eth-zurich-for-danish-researchers-in-denmark/",
       "mention": {},
       "needs_check": false,
       "claims": []
@@ -131,11 +131,13 @@
     },
     {
       "index": 15,
-      "text": "🇨🇭 Helping bladder cells to clear urinary infections\n\nEPFL News covers the story. It is another data point in Switzerland's steady deep-tech build-out.\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://actu.epfl.ch/news/helping-bladder-cells-to-clear-urinary-infections",
-      "link": "https://actu.epfl.ch/news/helping-bladder-cells-to-clear-urinary-infections",
+      "text": "🇨🇭 RheoCarti awarded CHF 150,000 to advance hydrogel-articulated joint...\n\nBased in Zurich, RheoCarti is developing a new generation of joint implants designed to mimic the properties of natural cartilage. The round is reported at CHF 150,000.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at CHF 150,000.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.startupticker.ch/en/news/rheocarti-awarded-chf-150-000-to-advance-hydrogel-articulated-joint-implants",
+      "link": "https://www.startupticker.ch/en/news/rheocarti-awarded-chf-150-000-to-advance-hydrogel-articulated-joint-implants",
       "mention": {},
-      "needs_check": false,
-      "claims": []
+      "needs_check": true,
+      "claims": [
+        "the post states CHF 150,000.: is that money received rather than a ceiling or a target, and has the round closed"
+      ]
     }
   ]
 }

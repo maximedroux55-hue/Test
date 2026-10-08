@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 07 October 2026. 15 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 08 October 2026. 15 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -85,7 +85,7 @@ Why it matters:
 🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
 🧭 Backing that research early and capital-efficiently is what we do at Climb.
 
-https://www2.fundsforngos.org/innovation/postdoctoral-fellowships-at-eth-zurich-for-danish-researchers-in-denmark/amp/
+https://www2.fundsforngos.org/innovation/postdoctoral-fellowships-at-eth-zurich-for-danish-researchers-in-denmark/
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
@@ -266,19 +266,19 @@ https://www.businesswire.com/news/home/20260929856203/en/Terra-Quantum-and-Empa-
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 15. Research — published 28 September
+## 15. Grant — published 28 September
 
 ```
-🇨🇭 Helping bladder cells to clear urinary infections
+🇨🇭 RheoCarti awarded CHF 150,000 to advance hydrogel-articulated joint...
 
-EPFL News covers the story. It is another data point in Switzerland's steady deep-tech build-out.
+Based in Zurich, RheoCarti is developing a new generation of joint implants designed to mimic the properties of natural cartilage. The round is reported at CHF 150,000.
 
 Why it matters:
-📈 Deep technology is where durable, defensible companies get built.
+💰 Capital keeps following Swiss deep science, this time at CHF 150,000.
 🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
 🧭 Backing that research early and capital-efficiently is what we do at Climb.
 
-https://actu.epfl.ch/news/helping-bladder-cells-to-clear-urinary-infections
+https://www.startupticker.ch/en/news/rheocarti-awarded-chf-150-000-to-advance-hydrogel-articulated-joint-implants
 ```
-🖼️ **Article image:** none found, grab one from the article page.
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/RheoCarti_founder.png
 
