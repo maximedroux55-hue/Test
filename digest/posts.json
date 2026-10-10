@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-09",
+  "generated": "2026-10-10",
   "mode": "Template drafts (set ANTHROPIC_API_KEY for AI-written posts).",
   "note": "Times are local. Schedule each post at its time on its date.",
   "cowork_prompt": "Open https://maxime-droux.com/digest/posts.json and schedule the posts listed at the end of this message, and only those. The file holds the shortlist; the list below says which of them I picked and when each one goes out. Match them by `index`. Ignore every other post in the file.\n\nFor each post, in order:\n- Type the `text` straight through, once, with real keystrokes. Never insert\n  text via JavaScript. It already ends with the article URL on its own line,\n  so do not add, move or retype the URL separately: typing it last is what makes\n  the link preview load the article photo.\n- Each post has exactly one @mention. Type `mention.type`, wait for the\n  dropdown, click the row matching `mention.expect`. If no row matches, post\n  it without the mention rather than tagging the wrong company. LinkedIn will\n  render the official name: that is expected and fine, do not fight it, do not\n  restart the post, do not rewrite it.\n- Schedule it at the date and time given for it in the list below. If no link\n  preview appears, schedule it anyway: do not hunt for an image.\n\nTwo attempts per post, then stop. If a post is not scheduled after two tries,\nleave it, move to the next one, and list it at the end. Never start a third.\n\nBefore you start, open the scheduled-posts list once and note what is already\nthere. Skip any post already scheduled: never schedule the same one twice.\n\nVerification:\n- Claims already settled against the article are not in the file. Check only\n  what `claims` still lists, and posts with needs_check: true (a figure nobody\n  has verified: confirm round closed / round name / amount received / investors\n  in THIS round). Both empty and false means schedule it, no research.\n\nAnything that fails: do not schedule it, and do not edit any file or commit\nanything. List the held posts at the end with the sentence you read and the\npage you read it on, and I will record them.\n\nReport what was scheduled and what was held.",
@@ -14,27 +14,36 @@
     },
     {
       "index": 2,
-      "text": "🇨🇭 Bern-based Besso raises €4.29 million to scale its AI-powered trade...\n\nEU-Startups covers the story in Bern. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at €4.29 m.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at €4.29 m.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.eu-startups.com/2026/10/bern-based-besso-raises-e4-29-million-to-scale-its-ai-powered-trade-regulation-intelligence-platform/",
-      "link": "https://www.eu-startups.com/2026/10/bern-based-besso-raises-e4-29-million-to-scale-its-ai-powered-trade-regulation-intelligence-platform/",
+      "text": "🇨🇭 Medtech-Firmen planen weniger Investitionen in der Schweiz\n\nMedtech-Firmen planen weniger Investitionen in der Schweiz Blick\n\nWhy it matters:\n📈 Early biological insight compounds into products years before anyone names a company.\n🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.\n🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.\n\nhttps://www.blick.ch/wirtschaft/medtech-branche-raphael-laubscher-will-eu-rahmenabkommen/f94cgkk",
+      "link": "https://www.blick.ch/wirtschaft/medtech-branche-raphael-laubscher-will-eu-rahmenabkommen/f94cgkk",
       "mention": {},
-      "needs_check": true,
-      "claims": [
-        "the post states €4.29 m: is that money received rather than a ceiling or a target, and has the round closed"
-      ]
+      "needs_check": false,
+      "claims": []
     },
     {
       "index": 3,
-      "text": "🇨🇭 Swiss-US company Namespace closes USD 42 Series B round\n\n🇨🇭 Following a Series A in March 2026, Namespace announced the closing of its Series B, bringing the total funding to USD 65 million. The company builds a development platform for the coding agent age. Namespace is registered in the US with a strong footprint in Switzerland. The round is reported at USD 42.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at USD 42.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.startupticker.ch/en/news/swiss-us-company-namespace-closes-usd-42-series-b-round",
-      "link": "https://www.startupticker.ch/en/news/swiss-us-company-namespace-closes-usd-42-series-b-round",
+      "text": "🇨🇭 AI startup Visorway raises pre-seed funding\n\nStartupticker covers the story. Swiss robotics and applied AI keep moving from demo to deployment.\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://www.startupticker.ch/en/news/ai-startup-visorway-raises-pre-seed-funding",
+      "link": "https://www.startupticker.ch/en/news/ai-startup-visorway-raises-pre-seed-funding",
       "mention": {},
       "needs_check": true,
       "claims": [
-        "the post states USD 65 m: is that money received rather than a ceiling or a target, and has the round closed",
-        "the post states USD 42.: is that money received rather than a ceiling or a target, and has the round closed"
+        "the company is Visorway",
+        "the post calls it a pre-seed: is that the right name for this transaction"
       ]
     },
     {
       "index": 4,
+      "text": "🇨🇭 UniSieve raises $9M to move towards broader commercial deployment\n\nStartupticker covers the story. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at $9M.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at $9M.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.startupticker.ch/en/news/unisieve-raises-9m-to-move-towards-broader-commercial-deployment",
+      "link": "https://www.startupticker.ch/en/news/unisieve-raises-9m-to-move-towards-broader-commercial-deployment",
+      "mention": {},
+      "needs_check": true,
+      "claims": [
+        "the company is UniSieve",
+        "the post states $9M: is that money received rather than a ceiling or a target, and has the round closed"
+      ]
+    },
+    {
+      "index": 5,
       "text": "🇨🇭 Researchers design a motor that looks like a thread\n\nEPFL News covers the story in Sion. Swiss robotics and applied AI keep moving from demo to deployment.\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://actu.epfl.ch/news/researchers-design-a-motor-that-looks-like-a-thr-2",
       "link": "https://actu.epfl.ch/news/researchers-design-a-motor-that-looks-like-a-thr-2",
       "mention": {},
@@ -42,7 +51,17 @@
       "claims": []
     },
     {
-      "index": 5,
+      "index": 6,
+      "text": "🇨🇭 Namespace Raises US$42M Series B to Expand Software Build Services\n\nFintechnews Switzerland covers the story. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at $42M.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at $42M.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://fintechnews.ch/funding/namespace-series-b-42-million/86183/",
+      "link": "https://fintechnews.ch/funding/namespace-series-b-42-million/86183/",
+      "mention": {},
+      "needs_check": true,
+      "claims": [
+        "the post states $42M: is that money received rather than a ceiling or a target, and has the round closed"
+      ]
+    },
+    {
+      "index": 7,
       "text": "🇨🇭 Swiss startup Milan Aircraft raises seed round to build electric...\n\nDealroom covers the story. It is another data point in Switzerland's steady deep-tech build-out.\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://app.dealroom.co/news/note/swiss-startup-milan-aircraft-raises-seed-round-to-build-electric-powertrain-prototype",
       "link": "https://app.dealroom.co/news/note/swiss-startup-milan-aircraft-raises-seed-round-to-build-electric-powertrain-prototype",
       "mention": {},
@@ -50,7 +69,7 @@
       "claims": []
     },
     {
-      "index": 6,
+      "index": 8,
       "text": "🇨🇭 EPFL spin-off Baio Labs lands $181,000 grant for AI drug design\n\nDealroom covers the story. Swiss robotics and applied AI keep moving from demo to deployment. The round is reported at $181,000.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at $181,000.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://app.dealroom.co/news/note/epfl-spin-off-baio-labs-lands-181-000-grant-for-ai-drug-design",
       "link": "https://app.dealroom.co/news/note/epfl-spin-off-baio-labs-lands-181-000-grant-for-ai-drug-design",
       "mention": {},
@@ -62,17 +81,7 @@
       ]
     },
     {
-      "index": 7,
-      "text": "🇨🇭 SensorX Solutions raises CHF 1.5 million to accelerate international...\n\n🇨🇭 Swiss climate-tech company SensorX Solutions AG has secured CHF 1.5 million seed capital to scale methane monitoring technology globally. The financing package combines a loan guarantee from the Swiss Technology Fund with equity capital from private investors and the founding team. The round is reported at CHF 1.5 m.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at CHF 1.5 m.\n🇨🇭 Switzerland combines deep materials science with disciplined engineering.\n🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.\n\nhttps://www.startupticker.ch/en/news/sensorx-solutions-raises-chf-1-5-million-to-accelerate-international-scale-up",
-      "link": "https://www.startupticker.ch/en/news/sensorx-solutions-raises-chf-1-5-million-to-accelerate-international-scale-up",
-      "mention": {},
-      "needs_check": true,
-      "claims": [
-        "the post states CHF 1.5 m: is that money received rather than a ceiling or a target, and has the round closed"
-      ]
-    },
-    {
-      "index": 8,
+      "index": 9,
       "text": "🇨🇭 EPFL builds 150-microgram microdrones that fly using sound alone\n\nEPFL builds 150-microgram microdrones that fly using sound alone DongA Science\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.dongascience.com/en/news/80161",
       "link": "https://www.dongascience.com/en/news/80161",
       "mention": {},
@@ -80,7 +89,7 @@
       "claims": []
     },
     {
-      "index": 9,
+      "index": 10,
       "text": "🇨🇭 EPFL celebrates its 1,565 Master's graduates of 2026\n\n03.10.26 - The traditional Master’s graduation ceremony took place on Saturday, 3 October. The event provided the opportunity to celebrate EPFL’s engineers and recognise certain outstanding achievements.\n\nWhy it matters:\n📈 Energy and climate hardware is moving from subsidy toward genuine demand.\n🇨🇭 Switzerland combines deep materials science with disciplined engineering.\n🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.\n\nhttps://actu.epfl.ch/news/epfl-celebrates-its-1565-master-s-graduates-of-202",
       "link": "https://actu.epfl.ch/news/epfl-celebrates-its-1565-master-s-graduates-of-202",
       "mention": {},
@@ -88,7 +97,7 @@
       "claims": []
     },
     {
-      "index": 10,
+      "index": 11,
       "text": "🇨🇭 ETH Zurich Researcher Calls for More Rigorous Evidence When...\n\nDigital Information World covers the story in Zurich. Swiss robotics and applied AI keep moving from demo to deployment.\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://www.digitalinformationworld.com/2026/10/eth-zurich-ai-safety-researcher-says-ai-behaviour-can-be-mistaken-for-deception-without-evidence-of-intent.html",
       "link": "https://www.digitalinformationworld.com/2026/10/eth-zurich-ai-safety-researcher-says-ai-behaviour-can-be-mistaken-for-deception-without-evidence-of-intent.html",
       "mention": {},
@@ -96,46 +105,43 @@
       "claims": []
     },
     {
-      "index": 11,
-      "text": "🇨🇭 Start-ups and scale-ups are shaping the Swiss robotics sector\n\n🇨🇭 The Swiss robotics sector is highly dynamic. Almost half of the companies are less than seven years old. Many of them have managed to attract investors. This puts Switzerland in a very strong position by international standards, as a new analysis by Raiffeisen Switzerland shows.\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://www.startupticker.ch/en/news/start-ups-and-scale-ups-are-shaping-the-swiss-robotics-sector",
+      "index": 12,
+      "text": "🇨🇭 Start-ups and scale-ups are shaping the Swiss robotics sector\n\n🇨🇭 Start-ups and scale-ups are shaping the Swiss robotics sector Startupticker\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://www.startupticker.ch/en/news/start-ups-and-scale-ups-are-shaping-the-swiss-robotics-sector",
       "link": "https://www.startupticker.ch/en/news/start-ups-and-scale-ups-are-shaping-the-swiss-robotics-sector",
       "mention": {},
       "needs_check": false,
       "claims": []
     },
     {
-      "index": 12,
-      "text": "🇨🇭 High marks for Switzerland and food for thought on deep-tech start-ups\n\n🇨🇭 Switzerland has once again topped the WIPO Global Innovation Index. However, the Global Innovation Index’s focus topic – deep tech start-ups – also provides important insights into the challenges and weaknesses that persist in Switzerland, despite the country’s many strengths.\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.startupticker.ch/en/news/high-marks-for-switzerland",
-      "link": "https://www.startupticker.ch/en/news/high-marks-for-switzerland",
-      "mention": {},
-      "needs_check": false,
-      "claims": []
-    },
-    {
       "index": 13,
-      "text": "🇨🇭 Alpine bacteria show unexpected ability to fight viruses\n\n30.09.26 - EPFL researchers found that bacterial communities in Alpine lakes, which are resistant to viruses that infect them, can reduce the infectivity of other viruses in the lab. These findings suggest potential biotechnological applications in various fields, including agriculture.\n\nWhy it matters:\n📈 Early biological insight compounds into products years before anyone names a company.\n🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.\n🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.\n\nhttps://actu.epfl.ch/news/alpine-bacteria-show-unexpected-ability-to-fight-v",
-      "link": "https://actu.epfl.ch/news/alpine-bacteria-show-unexpected-ability-to-fight-v",
+      "text": "🇨🇭 Healthtech PolaSight receives $100K investment at Constructor Start...\n\nStartupticker covers the story. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at $100.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at $100.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.startupticker.ch/en/news/healthtech-polasight-receives-100k-investment-at-constructor-start-demo-day",
+      "link": "https://www.startupticker.ch/en/news/healthtech-polasight-receives-100k-investment-at-constructor-start-demo-day",
       "mention": {},
-      "needs_check": false,
-      "claims": []
+      "needs_check": true,
+      "claims": [
+        "the company is Healthtech PolaSight",
+        "the post states $100K: is that money received rather than a ceiling or a target, and has the round closed",
+        "the post states $100.: is that money received rather than a ceiling or a target, and has the round closed"
+      ]
     },
     {
       "index": 14,
+      "text": "🇨🇭 FOOD FOUNDERS Studio raises €4 million to build foodtech companies\n\nStartupticker covers the story. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at €4 m.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at €4 m.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.startupticker.ch/en/news/food-founders-studio-raises-4-million-to-build-foodtech-companies",
+      "link": "https://www.startupticker.ch/en/news/food-founders-studio-raises-4-million-to-build-foodtech-companies",
+      "mention": {},
+      "needs_check": true,
+      "claims": [
+        "the company is FOOD FOUNDERS Studio",
+        "the post states €4 m: is that money received rather than a ceiling or a target, and has the round closed"
+      ]
+    },
+    {
+      "index": 15,
       "text": "🇨🇭 EPFL AI Center Postdoctoral Fellowship 2026: Fully Funded Research...\n\nPostdoctoral fellowship programme for interdisciplinary AI research\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://www.epfl.ch/research/funding/epfl-programmes/ai-center/",
       "link": "https://www.epfl.ch/research/funding/epfl-programmes/ai-center/",
       "mention": {},
       "needs_check": false,
       "claims": []
-    },
-    {
-      "index": 15,
-      "text": "🇨🇭 Cotierra raises $3M to scale decentralised biochar across tropical...\n\nTech.eu covers the story. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at $3M.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at $3M.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://tech.eu/2026/09/29/cotierra-raises-3m-to-scale-decentralised-biochar-across-tropical-agriculture/",
-      "link": "https://tech.eu/2026/09/29/cotierra-raises-3m-to-scale-decentralised-biochar-across-tropical-agriculture/",
-      "mention": {},
-      "needs_check": true,
-      "claims": [
-        "the post states $3M: is that money received rather than a ceiling or a target, and has the round closed"
-      ]
     }
   ]
 }
