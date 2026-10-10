@@ -1,5 +1,5 @@
 # Swiss DeepTech news digest
-_Generated 09 October 2026, covering the last 14 days. 35 stories._
+_Generated 10 October 2026, covering the last 14 days. 35 stories._
 
 1. **[GR3N closes a €15.5M Series B round](https://www.startupticker.ch/en/news/gr3n-closes-a-15-5m-series-b-round)**  
    startupticker.ch · sent in
@@ -9,7 +9,7 @@ _Generated 09 October 2026, covering the last 14 days. 35 stories._
    Dealroom · 02 Oct 2026 · relevance 28
 4. **[TrueLayer Raises US$27M as Italy’s CDP Leads Funding Round](https://fintechnews.ch/london/truelayer-funding-cdp-venture-capital/86256/)**  
    Fintechnews Switzerland · 09 Oct 2026 · relevance 25
-5. **[Swiss-US company Namespace closes USD 42 Series B round](https://www.startupticker.ch/en/news/swiss-us-company-namespace-closes-usd-42-series-b-round)**  
+5. **[Swiss-US company Namespace closes USD 42 million Series B round](https://www.startupticker.ch/en/news/swiss-us-company-namespace-closes-usd-42-series-b-round)**  
    Startupticker · 07 Oct 2026 · relevance 24
 6. **[Swiss AI Startup Klarent Raises €7.13 Million to Expand Software Testing Platform into US - https://ascendants.in/](https://news.google.com/rss/articles/CBMiogFBVV95cUxPM0hlQUlPWkR4Um9nZktmN0JJWUttdHBIRGRtNzFaUjkzWm9XMFZzcFp1QzNFMEtNQ3pLSWEwNFdDczhqV3NlQUlxc0NGRDNUNGdqcE5OM0tkSkJNWnZrM2hwSmxYODNXZklSMzk1UVJYcWlOVWhFRzFGekJKUTBicTIxYVFpZDFsOEdyR0lCTVZMSHdVM3U4ekZVeGhBQ051OGc?oc=5)**  
    https://ascendants.in/ · 09 Oct 2026 · relevance 21
@@ -41,32 +41,32 @@ _Generated 09 October 2026, covering the last 14 days. 35 stories._
    Fintechnews Switzerland · 08 Oct 2026 · relevance 11
 20. **[Project Eleven acquires Riva Labs to expand post-quantum research and engineering](https://www.startupticker.ch/en/news/project-eleven-acquires-riva-labs-to-expand-post-quantum-research-and-engineering)**  
    Startupticker · 01 Oct 2026 · relevance 11
-21. **[Swiss companies prepare to take center stage at Bio Europe](https://www.startupticker.ch/en/news/swiss-companies-prepare-to-take-center-stage-at-bio-europe)**  
+21. **[Medtech-Firmen planen weniger Investitionen in der Schweiz - Blick](https://news.google.com/rss/articles/CBMinAFBVV95cUxQOXNDY21mcFFNMkQ2RkhUMHAwSHJEMWRKWUhXeE9DOWYtVWRZZk5ESnQwVkR4UUJ5YjJSTTlhN0Y4ZzdMT19EcWVaMkdxMG1pOHR0ODNxay00VkhHLW1IZF9MZ3Q3b3FjV3o2TWVfTGhuMWYtSkxuclBoZnpqeF9BU2JNMldRRjBxMDBhaV9XNnBySW5uSTExeEtNOFM?oc=5)**  
+   Blick · 09 Oct 2026 · relevance 10
+22. **[Swiss companies prepare to take center stage at Bio Europe](https://www.startupticker.ch/en/news/swiss-companies-prepare-to-take-center-stage-at-bio-europe)**  
    Startupticker · 09 Oct 2026 · relevance 10
-22. **[EPFL builds 150-microgram microdrones that fly using sound alone - DongA Science](https://news.google.com/rss/articles/CBMiVEFVX3lxTE9wN0lFVVdDUWY4cFlzaHoyZi1xNU13LU1zSUk0VUszS0JydlgwUkgyM2VuRXdRQ0QxNDM5VmVRYkFCRGxtWUlzN01XTzl4dDhHTXczaQ?oc=5)**  
+23. **[EPFL builds 150-microgram microdrones that fly using sound alone - DongA Science](https://news.google.com/rss/articles/CBMiVEFVX3lxTE9wN0lFVVdDUWY4cFlzaHoyZi1xNU13LU1zSUk0VUszS0JydlgwUkgyM2VuRXdRQ0QxNDM5VmVRYkFCRGxtWUlzN01XTzl4dDhHTXczaQ?oc=5)**  
    DongA Science · 03 Oct 2026 · relevance 10
-23. **[CHF 150,000 to tackle innate-immune-driven chronic inflammation at its source](https://www.startupticker.ch/en/news/chf-150-000-to-tackle-innate-immune-driven-chronic-inflammation-at-its-source)**  
+24. **[CHF 150,000 to tackle innate-immune-driven chronic inflammation at its source](https://www.startupticker.ch/en/news/chf-150-000-to-tackle-innate-immune-driven-chronic-inflammation-at-its-source)**  
    Startupticker · 02 Oct 2026 · relevance 10
-24. **[Ascento accelerates US expansion with New York office](https://www.startupticker.ch/en/news/ascento-accelerates-us-expansion-with-new-york-office)**  
+25. **[Ascento accelerates US expansion with New York office](https://www.startupticker.ch/en/news/ascento-accelerates-us-expansion-with-new-york-office)**  
    Startupticker · 08 Oct 2026 · relevance 9
-25. **[Y-Combinator backs Swiss trailblazer Ageospatial](https://www.startupticker.ch/en/news/y-combinator-backs-swiss-trailblazer-ageospatial)**  
+26. **[Y-Combinator backs Swiss trailblazer Ageospatial](https://www.startupticker.ch/en/news/y-combinator-backs-swiss-trailblazer-ageospatial)**  
    Startupticker · 06 Oct 2026 · relevance 9
-26. **[EPFL celebrates its 1,565 Master's graduates of 2026](https://actu.epfl.ch/news/epfl-celebrates-its-1565-master-s-graduates-of-202)**  
+27. **[EPFL celebrates its 1,565 Master's graduates of 2026](https://actu.epfl.ch/news/epfl-celebrates-its-1565-master-s-graduates-of-202)**  
    EPFL News · 03 Oct 2026 · relevance 9
-27. **[Grand prize in Italy and more for Swiss startups](https://www.startupticker.ch/en/news/grand-prize-in-italy-and-more-for-swiss-startups)**  
+28. **[Grand prize in Italy and more for Swiss startups](https://www.startupticker.ch/en/news/grand-prize-in-italy-and-more-for-swiss-startups)**  
    Startupticker · 28 Sep 2026 · relevance 8
-28. **[Helping bladder cells to clear urinary infections](https://actu.epfl.ch/news/helping-bladder-cells-to-clear-urinary-infections)**  
+29. **[Helping bladder cells to clear urinary infections](https://actu.epfl.ch/news/helping-bladder-cells-to-clear-urinary-infections)**  
    EPFL News · 28 Sep 2026 · relevance 8
-29. **[Researchers design a motor that looks like a thread](https://actu.epfl.ch/news/researchers-design-a-motor-that-looks-like-a-thr-2)**  
+30. **[Researchers design a motor that looks like a thread](https://actu.epfl.ch/news/researchers-design-a-motor-that-looks-like-a-thr-2)**  
    EPFL News · 07 Oct 2026 · relevance 7
-30. **[$3million to scale Cotierra's biochar production system](https://www.startupticker.ch/en/news/3million-to-scale-cotierras-biochar-production-system)**  
+31. **[$3million to scale Cotierra's biochar production system](https://www.startupticker.ch/en/news/3million-to-scale-cotierras-biochar-production-system)**  
    Startupticker · 29 Sep 2026 · relevance 7
-31. **[Startups erhalten Förderung vom Pionierfonds](https://www.startupticker.ch/en/news/startups-erhalten-foerderung-vom-pionierfonds)**  
+32. **[Startups erhalten Förderung vom Pionierfonds](https://www.startupticker.ch/en/news/startups-erhalten-foerderung-vom-pionierfonds)**  
    Startupticker · 06 Oct 2026 · relevance 6
-32. **[Alpine bacteria show unexpected ability to fight viruses](https://actu.epfl.ch/news/alpine-bacteria-show-unexpected-ability-to-fight-v)**  
+33. **[Alpine bacteria show unexpected ability to fight viruses](https://actu.epfl.ch/news/alpine-bacteria-show-unexpected-ability-to-fight-v)**  
    EPFL News · 30 Sep 2026 · relevance 6
-33. **[Neural Concept expands in India with new hubs](https://www.startupticker.ch/en/news/neural-concept-expands-in-india-with-new-hubs)**  
-   Startupticker · 25 Sep 2026 · relevance 6
 34. **[Thriving Aurora’s Grid to enter new growth phase](https://www.startupticker.ch/en/news/thriving-aurora-s-grid-to-enter-new-growth-phase)**  
    Startupticker · 01 Oct 2026 · relevance 5
 35. **[Tech4Trust to empower 30 startups securing AI](https://www.startupticker.ch/en/news/tech4trust-to-empower-30-startups-securing-ai)**  
