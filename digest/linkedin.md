@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 10 October 2026. 15 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 11 October 2026. 15 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -73,37 +73,37 @@ https://www.blick.ch/wirtschaft/medtech-branche-raphael-laubscher-will-eu-rahmen
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 3. Round — published 08 October
+## 3. Expansion — published 08 October
 
 ```
-🇨🇭 AI startup Visorway raises pre-seed funding
+🇨🇭 Ascento accelerates US expansion with New York office
 
-Startupticker covers the story. Swiss robotics and applied AI keep moving from demo to deployment.
+Robotics startup Ascento is accelerating its international expansion by opening an office in New York, as the US becomes the company’s fastest-growing market.
 
 Why it matters:
 📈 Automation is shifting from pilots to real commercial operations.
 🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
 🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
 
-https://www.startupticker.ch/en/news/ai-startup-visorway-raises-pre-seed-funding
+https://www.startupticker.ch/en/news/ascento-accelerates-us-expansion-with-new-york-office
 ```
-🖼️ **Article image:** none found, grab one from the article page.
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/NewYorkCity_Panorama.jpg
 
-## 4. Round — published 08 October
+## 4. Round — published 07 October
 
 ```
-🇨🇭 UniSieve raises $9M to move towards broader commercial deployment
+🇨🇭 Swiss-US company Namespace closes USD 42 million Series B round
 
-Startupticker covers the story. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at $9M.
+🇨🇭 Following a Series A in March 2026, Namespace announced the closing of its Series B, bringing the total funding to USD 65 million. The company builds a development platform for the coding agent age. Namespace is registered in the US with a strong footprint in Switzerland. The round is reported at USD 42 m.
 
 Why it matters:
-💰 Capital keeps following Swiss deep science, this time at $9M.
+💰 Capital keeps following Swiss deep science, this time at USD 42 m.
 🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
 🧭 Backing that research early and capital-efficiently is what we do at Climb.
 
-https://www.startupticker.ch/en/news/unisieve-raises-9m-to-move-towards-broader-commercial-deployment
+https://www.startupticker.ch/en/news/swiss-us-company-namespace-closes-usd-42-series-b-round
 ```
-🖼️ **Article image:** none found, grab one from the article page.
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/symbolbilder/CodeServerDaten.jpg
 
 ## 5. Research — published 07 October
 
@@ -121,23 +121,7 @@ https://actu.epfl.ch/news/researchers-design-a-motor-that-looks-like-a-thr-2
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 6. Round — published 07 October
-
-```
-🇨🇭 Namespace Raises US$42M Series B to Expand Software Build Services
-
-Fintechnews Switzerland covers the story. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at $42M.
-
-Why it matters:
-💰 Capital keeps following Swiss deep science, this time at $42M.
-🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
-🧭 Backing that research early and capital-efficiently is what we do at Climb.
-
-https://fintechnews.ch/funding/namespace-series-b-42-million/86183/
-```
-🖼️ **Article image:** https://fintechnewsch-22e90.kxcdn.com/wp-content/uploads/2026/10/Namespace-Raises-US42M-Series-B-to-Expand-Software-Build-Services.webp
-
-## 7. Round — published 06 October
+## 6. Round — published 06 October
 
 ```
 🇨🇭 Swiss startup Milan Aircraft raises seed round to build electric...
@@ -153,7 +137,7 @@ https://app.dealroom.co/news/note/swiss-startup-milan-aircraft-raises-seed-round
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 8. Grant — published 06 October
+## 7. Grant — published 06 October
 
 ```
 🇨🇭 EPFL spin-off Baio Labs lands $181,000 grant for AI drug design
@@ -169,7 +153,55 @@ https://app.dealroom.co/news/note/epfl-spin-off-baio-labs-lands-181-000-grant-fo
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 9. General — published 03 October
+## 8. General — published 06 October
+
+```
+🇨🇭 Y-Combinator backs Swiss trailblazer Ageospatial
+
+Ageospatial has just been selected for Y-Combinator’s Fall 2026 cohort, thereby securing its financial support.
+
+Why it matters:
+📈 Deep technology is where durable, defensible companies get built.
+🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
+🧭 Backing that research early and capital-efficiently is what we do at Climb.
+
+https://www.startupticker.ch/en/news/y-combinator-backs-swiss-trailblazer-ageospatial
+```
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Maaz%20Cheikh%20Ageospatial.jpeg
+
+## 9. Grant — published 06 October
+
+```
+🇨🇭 Startups erhalten Förderung vom Pionierfonds
+
+Seit Anfang 2026 hat der Migros-Pionierfonds mehrere neue Projekte in seine Förderung aufgenommen.
+
+Why it matters:
+📈 Deep technology is where durable, defensible companies get built.
+🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
+🧭 Backing that research early and capital-efficiently is what we do at Climb.
+
+https://www.startupticker.ch/en/news/startups-erhalten-foerderung-vom-pionierfonds
+```
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/symbolbilder/support%20.jpg
+
+## 10. Round — published 05 October
+
+```
+🇨🇭 SensorX Solutions raises CHF 1.5 million to accelerate international...
+
+🇨🇭 Swiss climate-tech company SensorX Solutions AG has secured CHF 1.5 million seed capital to scale methane monitoring technology globally. The financing package combines a loan guarantee from the Swiss Technology Fund with equity capital from private investors and the founding team. The round is reported at CHF 1.5 m.
+
+Why it matters:
+💰 Capital keeps following Swiss deep science, this time at CHF 1.5 m.
+🇨🇭 Switzerland combines deep materials science with disciplined engineering.
+🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.
+
+https://www.startupticker.ch/en/news/sensorx-solutions-raises-chf-1-5-million-to-accelerate-international-scale-up
+```
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/SensorX_Robot.png
+
+## 11. General — published 03 October
 
 ```
 🇨🇭 EPFL builds 150-microgram microdrones that fly using sound alone
@@ -185,7 +217,7 @@ https://www.dongascience.com/en/news/80161
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 10. Research — published 03 October
+## 12. Research — published 03 October
 
 ```
 🇨🇭 EPFL celebrates its 1,565 Master's graduates of 2026
@@ -201,28 +233,12 @@ https://actu.epfl.ch/news/epfl-celebrates-its-1565-master-s-graduates-of-202
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 11. Research — published 02 October
-
-```
-🇨🇭 ETH Zurich Researcher Calls for More Rigorous Evidence When...
-
-Digital Information World covers the story in Zurich. Swiss robotics and applied AI keep moving from demo to deployment.
-
-Why it matters:
-📈 Automation is shifting from pilots to real commercial operations.
-🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
-🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
-
-https://www.digitalinformationworld.com/2026/10/eth-zurich-ai-safety-researcher-says-ai-behaviour-can-be-mistaken-for-deception-without-evidence-of-intent.html
-```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 12. General — published 02 October
+## 13. General — published 02 October
 
 ```
 🇨🇭 Start-ups and scale-ups are shaping the Swiss robotics sector
 
-🇨🇭 Start-ups and scale-ups are shaping the Swiss robotics sector Startupticker
+🇨🇭 The Swiss robotics sector is highly dynamic. Almost half of the companies are less than seven years old. Many of them have managed to attract investors. This puts Switzerland in a very strong position by international standards, as a new analysis by Raiffeisen Switzerland shows.
 
 Why it matters:
 📈 Automation is shifting from pilots to real commercial operations.
@@ -231,54 +247,37 @@ Why it matters:
 
 https://www.startupticker.ch/en/news/start-ups-and-scale-ups-are-shaping-the-swiss-robotics-sector
 ```
-🖼️ **Article image:** none found, grab one from the article page.
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/VoliroDrone.jpg
 
-## 13. Round — published 02 October
+## 14. Grant — published 02 October
 
 ```
-🇨🇭 Healthtech PolaSight receives $100K investment at Constructor Start...
+🇨🇭 La deeptech neuchateloise NovoViz ravit le Prix BCN Innovation 2026
 
-Startupticker covers the story. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at $100.
+La deeptech neuchateloise NovoViz ravit le Prix BCN Innovation 2026 Startupticker
 
 Why it matters:
-💰 Capital keeps following Swiss deep science, this time at $100.
+📈 Deep technology is where durable, defensible companies get built.
 🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
 🧭 Backing that research early and capital-efficiently is what we do at Climb.
 
-https://www.startupticker.ch/en/news/healthtech-polasight-receives-100k-investment-at-constructor-start-demo-day
+https://www.startupticker.ch/en/news/la-deeptech-neuchateloise-novoviz-ravit-le-prix-bcn-innovation-2026
 ```
-🖼️ **Article image:** none found, grab one from the article page.
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/NovoViz%20BCN%20Award%202026.png
 
-## 14. Round — published 01 October
+## 15. General — published 01 October
 
 ```
-🇨🇭 FOOD FOUNDERS Studio raises €4 million to build foodtech companies
+🇨🇭 High marks for Switzerland and food for thought on deep-tech start-ups
 
-Startupticker covers the story. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at €4 m.
+🇨🇭 Switzerland has once again topped the WIPO Global Innovation Index. However, the Global Innovation Index’s focus topic – deep tech start-ups – also provides important insights into the challenges and weaknesses that persist in Switzerland, despite the country’s many strengths.
 
 Why it matters:
-💰 Capital keeps following Swiss deep science, this time at €4 m.
+📈 Deep technology is where durable, defensible companies get built.
 🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
 🧭 Backing that research early and capital-efficiently is what we do at Climb.
 
-https://www.startupticker.ch/en/news/food-founders-studio-raises-4-million-to-build-foodtech-companies
+https://www.startupticker.ch/en/news/high-marks-for-switzerland
 ```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 15. Grant — published 30 September
-
-```
-🇨🇭 EPFL AI Center Postdoctoral Fellowship 2026: Fully Funded Research...
-
-Postdoctoral fellowship programme for interdisciplinary AI research
-
-Why it matters:
-📈 Automation is shifting from pilots to real commercial operations.
-🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
-🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
-
-https://www.epfl.ch/research/funding/epfl-programmes/ai-center/
-```
-🖼️ **Article image:** none found, grab one from the article page.
-🔗 **Links to the original source.**
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/symbolbilder/Datenanalyse2.jpg
 
