@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 12 October 2026. 15 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 13 October 2026. 15 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -41,7 +41,23 @@ Report what was scheduled and what was held.
 
 The stories themselves are below.
 
-## 1. Research — published 12 October
+## 1. Research — published 13 October
+
+```
+🇨🇭 EPFL labs can now measure CO₂ emissions and focus reduction efforts
+
+13.10.26 - EPFL has developed a carbon emissions calculator that helps research labs better target their reduction efforts. It gives a customized, granular view of a lab’s carbon emissions so that scientists can see where they should focus their attention.
+
+Why it matters:
+📈 Energy and climate hardware is moving from subsidy toward genuine demand.
+🇨🇭 Switzerland combines deep materials science with disciplined engineering.
+🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.
+
+https://actu.epfl.ch/news/epfl-labs-can-now-measure-co2-emissions-and-focus
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 2. Research — published 12 October
 
 ```
 🇨🇭 Bacteria use collisions to navigate crowded environments
@@ -57,7 +73,7 @@ https://actu.epfl.ch/news/bacteria-use-collisions-to-navigate-crowded-enviro
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 2. General — published 12 October
+## 3. General — published 12 October
 
 ```
 🇨🇭 Banks Share Principles for Agentic Commerce
@@ -73,7 +89,7 @@ https://fintechnews.ch/aifintech/banks-share-principles-for-agentic-commerce/862
 ```
 🖼️ **Article image:** https://fintechnewsch-22e90.kxcdn.com/wp-content/uploads/2026/10/Banks-Share-Principles-for-Trusted-Agentic-Commerce-Emphasizing-Transparency-Safety-Interoperability.webp
 
-## 3. Round — published 09 October
+## 4. Round — published 09 October
 
 ```
 🇨🇭 TrueLayer Raises US$27M as Italy’s CDP Leads Funding Round
@@ -88,22 +104,6 @@ Why it matters:
 https://fintechnews.ch/london/truelayer-funding-cdp-venture-capital/86256/
 ```
 🖼️ **Article image:** https://fintechnewsch-22e90.kxcdn.com/wp-content/uploads/2026/10/TrueLayer-Raises-US27M-as-Italys-CDP-Leads-Funding-Round.webp
-
-## 4. Round — published 09 October
-
-```
-🇨🇭 Bern-based Besso raises €4.29 million to scale its AI-powered trade...
-
-EU-Startups covers the story in Bern. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at €4.29 m.
-
-Why it matters:
-💰 Capital keeps following Swiss deep science, this time at €4.29 m.
-🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
-🧭 Backing that research early and capital-efficiently is what we do at Climb.
-
-https://www.eu-startups.com/2026/10/bern-based-besso-raises-e4-29-million-to-scale-its-ai-powered-trade-regulation-intelligence-platform/
-```
-🖼️ **Article image:** https://www.eu-startups.com/wp-content/uploads/2026/10/Besso.jpg
 
 ## 5. General — published 09 October
 
@@ -169,23 +169,7 @@ https://www.startupticker.ch/en/news/swiss-us-company-namespace-closes-usd-42-se
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/symbolbilder/CodeServerDaten.jpg
 
-## 9. Research — published 07 October
-
-```
-🇨🇭 Researchers design a motor that looks like a thread
-
-EPFL News covers the story in Sion. Swiss robotics and applied AI keep moving from demo to deployment.
-
-Why it matters:
-📈 Automation is shifting from pilots to real commercial operations.
-🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
-🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
-
-https://actu.epfl.ch/news/researchers-design-a-motor-that-looks-like-a-thr-2
-```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 10. Round — published 06 October
+## 9. Round — published 06 October
 
 ```
 🇨🇭 Swiss startup Milan Aircraft raises seed round to build electric...
@@ -198,6 +182,22 @@ Why it matters:
 🧭 Backing that research early and capital-efficiently is what we do at Climb.
 
 https://app.dealroom.co/news/note/swiss-startup-milan-aircraft-raises-seed-round-to-build-electric-powertrain-prototype
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 10. Grant — published 06 October
+
+```
+🇨🇭 EPFL spin-off Baio Labs lands $181,000 grant for AI drug design
+
+EPFL spin-off Baio Labs lands $181,000 grant for AI drug design Dealroom The round is reported at $181,000.
+
+Why it matters:
+💰 Capital keeps following Swiss deep science, this time at $181,000.
+🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
+🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
+
+https://app.dealroom.co/news/note/epfl-spin-off-baio-labs-lands-181-000-grant-for-ai-drug-design
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 

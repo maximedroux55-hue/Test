@@ -1,11 +1,19 @@
 {
-  "generated": "2026-10-12",
+  "generated": "2026-10-13",
   "mode": "Template drafts (set ANTHROPIC_API_KEY for AI-written posts).",
   "note": "Times are local. Schedule each post at its time on its date.",
   "cowork_prompt": "Open https://maxime-droux.com/digest/posts.json and schedule the posts listed at the end of this message, and only those. The file holds the shortlist; the list below says which of them I picked and when each one goes out. Match them by `index`. Ignore every other post in the file.\n\nFor each post, in order:\n- Type the `text` straight through, once, with real keystrokes. Never insert\n  text via JavaScript. It already ends with the article URL on its own line,\n  so do not add, move or retype the URL separately: typing it last is what makes\n  the link preview load the article photo.\n- Each post has exactly one @mention. Type `mention.type`, wait for the\n  dropdown, click the row matching `mention.expect`. If no row matches, post\n  it without the mention rather than tagging the wrong company. LinkedIn will\n  render the official name: that is expected and fine, do not fight it, do not\n  restart the post, do not rewrite it.\n- Schedule it at the date and time given for it in the list below. If no link\n  preview appears, schedule it anyway: do not hunt for an image.\n\nTwo attempts per post, then stop. If a post is not scheduled after two tries,\nleave it, move to the next one, and list it at the end. Never start a third.\n\nBefore you start, open the scheduled-posts list once and note what is already\nthere. Skip any post already scheduled: never schedule the same one twice.\n\nVerification:\n- Claims already settled against the article are not in the file. Check only\n  what `claims` still lists, and posts with needs_check: true (a figure nobody\n  has verified: confirm round closed / round name / amount received / investors\n  in THIS round). Both empty and false means schedule it, no research.\n\nAnything that fails: do not schedule it, and do not edit any file or commit\nanything. List the held posts at the end with the sentence you read and the\npage you read it on, and I will record them.\n\nReport what was scheduled and what was held.",
   "posts": [
     {
       "index": 1,
+      "text": "🇨🇭 EPFL labs can now measure CO₂ emissions and focus reduction efforts\n\n13.10.26 - EPFL has developed a carbon emissions calculator that helps research labs better target their reduction efforts. It gives a customized, granular view of a lab’s carbon emissions so that scientists can see where they should focus their attention.\n\nWhy it matters:\n📈 Energy and climate hardware is moving from subsidy toward genuine demand.\n🇨🇭 Switzerland combines deep materials science with disciplined engineering.\n🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.\n\nhttps://actu.epfl.ch/news/epfl-labs-can-now-measure-co2-emissions-and-focus",
+      "link": "https://actu.epfl.ch/news/epfl-labs-can-now-measure-co2-emissions-and-focus",
+      "mention": {},
+      "needs_check": false,
+      "claims": []
+    },
+    {
+      "index": 2,
       "text": "🇨🇭 Bacteria use collisions to navigate crowded environments\n\nEPFL News covers the story in Sion. It is another data point in Switzerland's steady deep-tech build-out.\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://actu.epfl.ch/news/bacteria-use-collisions-to-navigate-crowded-enviro",
       "link": "https://actu.epfl.ch/news/bacteria-use-collisions-to-navigate-crowded-enviro",
       "mention": {},
@@ -13,7 +21,7 @@
       "claims": []
     },
     {
-      "index": 2,
+      "index": 3,
       "text": "🇨🇭 Banks Share Principles for Agentic Commerce\n\nFintechnews Switzerland covers the story. Swiss robotics and applied AI keep moving from demo to deployment.\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://fintechnews.ch/aifintech/banks-share-principles-for-agentic-commerce/86263/",
       "link": "https://fintechnews.ch/aifintech/banks-share-principles-for-agentic-commerce/86263/",
       "mention": {},
@@ -21,22 +29,12 @@
       "claims": []
     },
     {
-      "index": 3,
+      "index": 4,
       "text": "🇨🇭 TrueLayer Raises US$27M as Italy’s CDP Leads Funding Round\n\nFintechnews Switzerland covers the story. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at $27M.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at $27M.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://fintechnews.ch/london/truelayer-funding-cdp-venture-capital/86256/",
       "link": "https://fintechnews.ch/london/truelayer-funding-cdp-venture-capital/86256/",
       "mention": {},
       "needs_check": true,
       "claims": []
-    },
-    {
-      "index": 4,
-      "text": "🇨🇭 Bern-based Besso raises €4.29 million to scale its AI-powered trade...\n\nEU-Startups covers the story in Bern. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at €4.29 m.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at €4.29 m.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.eu-startups.com/2026/10/bern-based-besso-raises-e4-29-million-to-scale-its-ai-powered-trade-regulation-intelligence-platform/",
-      "link": "https://www.eu-startups.com/2026/10/bern-based-besso-raises-e4-29-million-to-scale-its-ai-powered-trade-regulation-intelligence-platform/",
-      "mention": {},
-      "needs_check": true,
-      "claims": [
-        "the post states €4.29 m: is that money received rather than a ceiling or a target, and has the round closed"
-      ]
     },
     {
       "index": 5,
@@ -75,19 +73,22 @@
     },
     {
       "index": 9,
-      "text": "🇨🇭 Researchers design a motor that looks like a thread\n\nEPFL News covers the story in Sion. Swiss robotics and applied AI keep moving from demo to deployment.\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://actu.epfl.ch/news/researchers-design-a-motor-that-looks-like-a-thr-2",
-      "link": "https://actu.epfl.ch/news/researchers-design-a-motor-that-looks-like-a-thr-2",
-      "mention": {},
-      "needs_check": false,
-      "claims": []
-    },
-    {
-      "index": 10,
       "text": "🇨🇭 Swiss startup Milan Aircraft raises seed round to build electric...\n\nDealroom covers the story. It is another data point in Switzerland's steady deep-tech build-out.\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://app.dealroom.co/news/note/swiss-startup-milan-aircraft-raises-seed-round-to-build-electric-powertrain-prototype",
       "link": "https://app.dealroom.co/news/note/swiss-startup-milan-aircraft-raises-seed-round-to-build-electric-powertrain-prototype",
       "mention": {},
       "needs_check": true,
       "claims": []
+    },
+    {
+      "index": 10,
+      "text": "🇨🇭 EPFL spin-off Baio Labs lands $181,000 grant for AI drug design\n\nEPFL spin-off Baio Labs lands $181,000 grant for AI drug design Dealroom The round is reported at $181,000.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at $181,000.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://app.dealroom.co/news/note/epfl-spin-off-baio-labs-lands-181-000-grant-for-ai-drug-design",
+      "link": "https://app.dealroom.co/news/note/epfl-spin-off-baio-labs-lands-181-000-grant-for-ai-drug-design",
+      "mention": {},
+      "needs_check": true,
+      "claims": [
+        "the post states $181,000: is that money received rather than a ceiling or a target, and has the round closed",
+        "the post states $181,000.: is that money received rather than a ceiling or a target, and has the round closed"
+      ]
     },
     {
       "index": 11,
