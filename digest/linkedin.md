@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 13 October 2026. 15 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 14 October 2026. 15 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -121,7 +121,23 @@ https://www.blick.ch/wirtschaft/medtech-branche-raphael-laubscher-will-eu-rahmen
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 6. Research — published 08 October
+## 6. Round — published 09 October
+
+```
+🇨🇭 Bern-based Besso raises €4.29 million to scale its AI-powered trade...
+
+EU-Startups covers the story in Bern. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at €4.29 m.
+
+Why it matters:
+💰 Capital keeps following Swiss deep science, this time at €4.29 m.
+🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
+🧭 Backing that research early and capital-efficiently is what we do at Climb.
+
+https://www.eu-startups.com/2026/10/bern-based-besso-raises-e4-29-million-to-scale-its-ai-powered-trade-regulation-intelligence-platform/
+```
+🖼️ **Article image:** https://www.eu-startups.com/wp-content/uploads/2026/10/Besso.jpg
+
+## 7. Research — published 08 October
 
 ```
 🇨🇭 EPFL is serving up the agriculture and food systems of tomorrow
@@ -137,7 +153,7 @@ https://actu.epfl.ch/news/epfl-is-serving-up-the-agriculture-and-food-system
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 7. Expansion — published 08 October
+## 8. Expansion — published 08 October
 
 ```
 🇨🇭 Ascento accelerates US expansion with New York office
@@ -153,7 +169,7 @@ https://www.startupticker.ch/en/news/ascento-accelerates-us-expansion-with-new-y
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/NewYorkCity_Panorama.jpg
 
-## 8. Round — published 07 October
+## 9. Round — published 07 October
 
 ```
 🇨🇭 Swiss-US company Namespace closes USD 42 million Series B round
@@ -169,7 +185,7 @@ https://www.startupticker.ch/en/news/swiss-us-company-namespace-closes-usd-42-se
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/symbolbilder/CodeServerDaten.jpg
 
-## 9. Round — published 06 October
+## 10. Round — published 06 October
 
 ```
 🇨🇭 Swiss startup Milan Aircraft raises seed round to build electric...
@@ -185,7 +201,7 @@ https://app.dealroom.co/news/note/swiss-startup-milan-aircraft-raises-seed-round
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 10. Grant — published 06 October
+## 11. Grant — published 06 October
 
 ```
 🇨🇭 EPFL spin-off Baio Labs lands $181,000 grant for AI drug design
@@ -201,7 +217,7 @@ https://app.dealroom.co/news/note/epfl-spin-off-baio-labs-lands-181-000-grant-fo
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 11. General — published 06 October
+## 12. General — published 06 October
 
 ```
 🇨🇭 Y-Combinator backs Swiss trailblazer Ageospatial
@@ -217,7 +233,7 @@ https://www.startupticker.ch/en/news/y-combinator-backs-swiss-trailblazer-ageosp
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Maaz%20Cheikh%20Ageospatial.jpeg
 
-## 12. Grant — published 06 October
+## 13. Grant — published 06 October
 
 ```
 🇨🇭 Startups erhalten Förderung vom Pionierfonds
@@ -233,7 +249,7 @@ https://www.startupticker.ch/en/news/startups-erhalten-foerderung-vom-pionierfon
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/symbolbilder/support%20.jpg
 
-## 13. Round — published 05 October
+## 14. Round — published 05 October
 
 ```
 🇨🇭 SensorX Solutions raises CHF 1.5 million to accelerate international...
@@ -249,35 +265,19 @@ https://www.startupticker.ch/en/news/sensorx-solutions-raises-chf-1-5-million-to
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/SensorX_Robot.png
 
-## 14. General — published 03 October
+## 15. Grant — published 05 October
 
 ```
-🇨🇭 EPFL builds 150-microgram microdrones that fly using sound alone
+🇨🇭 EPFL Master's Thesis wins Prix LITRA 2026 for Transport Research
 
-EPFL builds 150-microgram microdrones that fly using sound alone DongA Science
+EPFL News covers the story. It is another data point in Switzerland's steady deep-tech build-out.
 
 Why it matters:
 📈 Deep technology is where durable, defensible companies get built.
 🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
 🧭 Backing that research early and capital-efficiently is what we do at Climb.
 
-https://www.dongascience.com/en/news/80161
-```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 15. Research — published 03 October
-
-```
-🇨🇭 EPFL celebrates its 1,565 Master's graduates of 2026
-
-03.10.26 - The traditional Master’s graduation ceremony took place on Saturday, 3 October. The event provided the opportunity to celebrate EPFL’s engineers and recognise certain outstanding achievements.
-
-Why it matters:
-📈 Energy and climate hardware is moving from subsidy toward genuine demand.
-🇨🇭 Switzerland combines deep materials science with disciplined engineering.
-🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.
-
-https://actu.epfl.ch/news/epfl-celebrates-its-1565-master-s-graduates-of-202
+https://actu.epfl.ch/news/epfl-master-s-thesis-wins-prix-litra-2026-for-tr-3/
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
