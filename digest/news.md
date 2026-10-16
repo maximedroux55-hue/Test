@@ -1,5 +1,5 @@
 # Swiss DeepTech news digest
-_Generated 15 October 2026, covering the last 14 days. 32 stories._
+_Generated 16 October 2026, covering the last 14 days. 32 stories._
 
 1. **[GR3N closes a €15.5M Series B round](https://www.startupticker.ch/en/news/gr3n-closes-a-15-5m-series-b-round)**  
    startupticker.ch · sent in
@@ -21,28 +21,28 @@ _Generated 15 October 2026, covering the last 14 days. 32 stories._
    Startupticker · 05 Oct 2026 · relevance 17
 10. **[UniSieve raises $9M to move towards broader commercial deployment](https://www.startupticker.ch/en/news/unisieve-raises-9m-to-move-towards-broader-commercial-deployment)**  
    Startupticker · 08 Oct 2026 · relevance 16
-11. **[High marks for Switzerland and food for thought on deep-tech start-ups](https://www.startupticker.ch/en/news/high-marks-for-switzerland)**  
-   Startupticker · 01 Oct 2026 · relevance 15
-12. **[Elon Musk's Terafab Aims to Match Swiss GDP with Semiconductor Production in Texas - Gagadget.com](https://news.google.com/rss/articles/CBMiswFBVV95cUxNeXY3ZTh1d20wMXZTTFhIbkdvTk5XTkFVRXZpVVU3cHlvMEcyYV9LR0s4Y3lULVY4QXpSZ3dJMzZWajFkMmJqUUFhY2NnRjdEdUdNYjBCVl9Ga21fVE52OTk5UXJMbmRkX1VWMWdTVHhvMURkbG5GbTM1b0tCTGJ2ZkFnbEZycTRqTW54VjVuSG1NTE5aMFVoYzNEYXY3eHVfNGsxT3k3Q3pNbFhsOTFxNnBENNIBuAFBVV95cUxQMTQtVmhyY2Y2OU05d0NDUVVHeDhxQ1RuWE5YTEkxOTBBaF9JQVBOYkxRQTVZMWJ0WGlGNF82WDFWNXhDWjVRcE1fVWdkZnZWZ2lVMjlBc01YaDI4YTA3a0xUWDdramc3cEJpZGlxaUw2ZzRBdEJaOWU1YUVJaDJJT3hUcXIwUnZqaGR6Q2JZa2Z1clQydWNmNzhjSy1GVVdJcFEyY25FTHY0d29HdExFSDl6SVE5Z2xL?oc=5)**  
+11. **[D-Wave Quantum Aktie: Kommt die Swiss-Wette auf? - Kapitalmarktexperten](https://news.google.com/rss/articles/CBMiiwFBVV95cUxOZjRSeDZQT2hGYzRGMk85MmplbG1UemNLYnItWVA4M2NSM1NiMTh2M1Zpa3AtamJzaG1PMVBZUlJ1ZjJkdFotd0UxMW1xOWFBb1lPR1JUcXYyTWJ0dHlNTzNJbkJSVG5DdEd5RmMxMzFsVXY5d2xHaDFWdXFvVUZocmJTbWNEUktyU0ZV?oc=5)**  
+   Kapitalmarktexperten · 15 Oct 2026 · relevance 12
+12. **[Chipfertiger TSMC mit Rekordgewinn dank KI-Nachfrage - SWI swissinfo.ch](https://news.google.com/rss/articles/CBMilAFBVV95cUxOdWFjYnppR19WaV9ybFJva2x4N1hJTmlJbkZNVGF0YlE4RHhEWUxtSkFlMlZhSzd0X2F2NVBTQnBmNnVicGFTVzVmb0FwT3NMSUIybkhPRy1mZlNNUUR5ZXRocWphTWxTMHYwZ1h4aFpiOEdocF9ieG5Hdl9UbS1kSDJKUXFXUW04OWYwQ3NwdlNtVFBC?oc=5)**  
+   SWI swissinfo.ch · 15 Oct 2026 · relevance 12
+13. **[Elon Musk's Terafab Aims to Match Swiss GDP with Semiconductor Production in Texas - Gagadget.com](https://news.google.com/rss/articles/CBMiswFBVV95cUxNeXY3ZTh1d20wMXZTTFhIbkdvTk5XTkFVRXZpVVU3cHlvMEcyYV9LR0s4Y3lULVY4QXpSZ3dJMzZWajFkMmJqUUFhY2NnRjdEdUdNYjBCVl9Ga21fVE52OTk5UXJMbmRkX1VWMWdTVHhvMURkbG5GbTM1b0tCTGJ2ZkFnbEZycTRqTW54VjVuSG1NTE5aMFVoYzNEYXY3eHVfNGsxT3k3Q3pNbFhsOTFxNnBENNIBuAFBVV95cUxQMTQtVmhyY2Y2OU05d0NDUVVHeDhxQ1RuWE5YTEkxOTBBaF9JQVBOYkxRQTVZMWJ0WGlGNF82WDFWNXhDWjVRcE1fVWdkZnZWZ2lVMjlBc01YaDI4YTA3a0xUWDdramc3cEJpZGlxaUw2ZzRBdEJaOWU1YUVJaDJJT3hUcXIwUnZqaGR6Q2JZa2Z1clQydWNmNzhjSy1GVVdJcFEyY25FTHY0d29HdExFSDl6SVE5Z2xL?oc=5)**  
    Gagadget.com · 12 Oct 2026 · relevance 12
-13. **[ETH Zurich Researcher Calls for More Rigorous Evidence When Interpreting Human-Like Behaviour in AI Systems - Digital Information World](https://news.google.com/rss/articles/CBMi8AFBVV95cUxOX0RVQmFUcFA2VDRXMmIzOGY3aHVvNENuREZLTFhPbEIwLTZwbVoxWGRFcXZJTnZXeERTanVvYkJlak9VTDFuYXJILWxYUHZHMDVJR0lZalZFVUNfSnVWWU13MkNUOUF3YXdTd3lCdk44Y1NhQ1I2b3dfeHRteC1KZ1RYVFlJblF6SHh4RzFIQ0VaV2FSVkw1S3RfMTRrYVFhYW1CUU9VSjBrVmdRTG15R0V3d2p1M1NHNnlKdFo2dlhySmdYSVdsNkdsZVIyV0trcTVYekhqRHZCOWFQeUlNcllSSElsU0xmVWpnUGJEWHM?oc=5)**  
-   Digital Information World · 02 Oct 2026 · relevance 12
 14. **[Start-ups and scale-ups are shaping the Swiss robotics sector - Startupticker](https://news.google.com/rss/articles/CBMinwFBVV95cUxQOWZQOFk5QnozV2YxeU9sT2NyamJTTkdGTDhYeHc4cFQ1bFlKcjE0THBoTjdqLVRUMmxfNVVKZ2tIeFBrYVQxeHprS0xoTVZXRWRweDhiX0Fpc2FTVGpyVU9vZXMxaGlaTmdzV2RGQnJkaUpTb0Yyem42UDRfNGJmeE00WENPMHU4dVJUWUJIbFYza093SEdRVEZzazRKcFk?oc=5)**  
    Startupticker · 02 Oct 2026 · relevance 12
 15. **[Healthtech PolaSight receives $100K investment at Constructor Start Demo Day](https://www.startupticker.ch/en/news/healthtech-polasight-receives-100k-investment-at-constructor-start-demo-day)**  
    Startupticker · 02 Oct 2026 · relevance 12
-16. **[La deeptech neuchateloise NovoViz ravit le Prix BCN Innovation 2026 - Startupticker](https://news.google.com/rss/articles/CBMipwFBVV95cUxNU2xTR3BuZ3NXMl9OeEdJZzd2Sml5NThjS0oyT2lYVldpMVY1SlhhZkU1UktDTHdQbURDVGEybk5wSk5kSUhLeGJJY0MwMThpUjhRcDVmVkNVaW5Ld3lvMzh0ZGpsQmtyaFZGZzY1ZUIzM3NRYXpkSzIxY0hLeTM0Qnp3NVA5WjJPLV9FM3MyQ0VJSjBWbC0tS05IN2tKcS1XZTV5WHFBMA?oc=5)**  
-   Startupticker · 02 Oct 2026 · relevance 11
+16. **[Stocks Fall on Inflation Woes as Chip Rout Deepens: Markets Wrap - SWI swissinfo.ch](https://news.google.com/rss/articles/CBMipwFBVV95cUxNMHZTUGE4dGJqRmVqYjZYMWNDY1lSdGN4MGxfdFBqY0xNeHMwUVI4SE5FdU43Q2FvNnFDdW1KWjBHOVU5VkdGaEV1N3ZnM1Bsa2dONlhBcnVGLUx3YTFsXzZ1azAzZVNQZDktZ2tfclI5ejlyWXZXNlhrc3V2OHpVUVNnR1NFbFlrMk1QbXk3b2h1Vk1sS1F5Tm16bkZGSUh0enZIaDBpQQ?oc=5)**  
+   SWI swissinfo.ch · 14 Oct 2026 · relevance 10
 17. **[Medtech-Firmen planen weniger Investitionen in der Schweiz - Blick](https://news.google.com/rss/articles/CBMinAFBVV95cUxQOXNDY21mcFFNMkQ2RkhUMHAwSHJEMWRKWUhXeE9DOWYtVWRZZk5ESnQwVkR4UUJ5YjJSTTlhN0Y4ZzdMT19EcWVaMkdxMG1pOHR0ODNxay00VkhHLW1IZF9MZ3Q3b3FjV3o2TWVfTGhuMWYtSkxuclBoZnpqeF9BU2JNMldRRjBxMDBhaV9XNnBySW5uSTExeEtNOFM?oc=5)**  
    Blick · 09 Oct 2026 · relevance 10
 18. **[Swiss companies prepare to take center stage at Bio Europe](https://www.startupticker.ch/en/news/swiss-companies-prepare-to-take-center-stage-at-bio-europe)**  
    Startupticker · 09 Oct 2026 · relevance 10
 19. **[EPFL builds 150-microgram microdrones that fly using sound alone - DongA Science](https://news.google.com/rss/articles/CBMiVEFVX3lxTE9wN0lFVVdDUWY4cFlzaHoyZi1xNU13LU1zSUk0VUszS0JydlgwUkgyM2VuRXdRQ0QxNDM5VmVRYkFCRGxtWUlzN01XTzl4dDhHTXczaQ?oc=5)**  
    DongA Science · 04 Oct 2026 · relevance 10
-20. **[CHF 150,000 to tackle innate-immune-driven chronic inflammation at its source](https://www.startupticker.ch/en/news/chf-150-000-to-tackle-innate-immune-driven-chronic-inflammation-at-its-source)**  
-   Startupticker · 02 Oct 2026 · relevance 10
-21. **[Major wins for Swiss startups](https://www.startupticker.ch/en/news/major-wins-for-swiss-startups)**  
+20. **[Major wins for Swiss startups](https://www.startupticker.ch/en/news/major-wins-for-swiss-startups)**  
    Startupticker · 14 Oct 2026 · relevance 9
+21. **[EPFL is serving up the agriculture and food systems of tomorrow](https://actu.epfl.ch/news/epfl-is-serving-up-the-agriculture-and-food-system)**  
+   EPFL News · 08 Oct 2026 · relevance 9
 22. **[Ascento accelerates US expansion with New York office](https://www.startupticker.ch/en/news/ascento-accelerates-us-expansion-with-new-york-office)**  
    Startupticker · 08 Oct 2026 · relevance 9
 23. **[Y-Combinator backs Swiss trailblazer Ageospatial](https://www.startupticker.ch/en/news/y-combinator-backs-swiss-trailblazer-ageospatial)**  
