@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-17",
+  "generated": "2026-10-18",
   "mode": "Template drafts (set ANTHROPIC_API_KEY for AI-written posts).",
   "note": "Times are local. Schedule each post at its time on its date.",
   "cowork_prompt": "Open https://maxime-droux.com/digest/posts.json and schedule the posts listed at the end of this message, and only those. The file holds the shortlist; the list below says which of them I picked and when each one goes out. Match them by `index`. Ignore every other post in the file.\n\nFor each post, in order:\n- Type the `text` straight through, once, with real keystrokes. Never insert\n  text via JavaScript. It already ends with the article URL on its own line,\n  so do not add, move or retype the URL separately: typing it last is what makes\n  the link preview load the article photo.\n- Each post has exactly one @mention. Type `mention.type`, wait for the\n  dropdown, click the row matching `mention.expect`. If no row matches, post\n  it without the mention rather than tagging the wrong company. LinkedIn will\n  render the official name: that is expected and fine, do not fight it, do not\n  restart the post, do not rewrite it.\n- Schedule it at the date and time given for it in the list below. If no link\n  preview appears, schedule it anyway: do not hunt for an image.\n\nTwo attempts per post, then stop. If a post is not scheduled after two tries,\nleave it, move to the next one, and list it at the end. Never start a third.\n\nBefore you start, open the scheduled-posts list once and note what is already\nthere. Skip any post already scheduled: never schedule the same one twice.\n\nVerification:\n- Claims already settled against the article are not in the file. Check only\n  what `claims` still lists, and posts with needs_check: true (a figure nobody\n  has verified: confirm round closed / round name / amount received / investors\n  in THIS round). Both empty and false means schedule it, no research.\n\nAnything that fails: do not schedule it, and do not edit any file or commit\nanything. List the held posts at the end with the sentence you read and the\npage you read it on, and I will record them.\n\nReport what was scheduled and what was held.",
@@ -14,14 +14,6 @@
     },
     {
       "index": 2,
-      "text": "🇨🇭 How much CO₂ do research labs emit? EPFL has a new way to find out\n\nHow much CO₂ do research labs emit? EPFL has a new way to find out Tech Explorist\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.techexplorist.com/co%E2%82%82-research-labs-emit-epfl-new-way-find-out/105798/",
-      "link": "https://www.techexplorist.com/co%E2%82%82-research-labs-emit-epfl-new-way-find-out/105798/",
-      "mention": {},
-      "needs_check": false,
-      "claims": []
-    },
-    {
-      "index": 3,
       "text": "🇨🇭 Chipfertiger TSMC mit Rekordgewinn dank KI-Nachfrage\n\n🇨🇭 Chipfertiger TSMC mit Rekordgewinn dank KI-Nachfrage SWI swissinfo.ch\n\nWhy it matters:\n📈 Semiconductors sit under almost every growth market, from AI to defense to mobility.\n🇨🇭 Switzerland punches above its weight in specialised chips and advanced materials.\n🧭 Capital-efficient hardware built on Swiss research is core to the Climb thesis.\n\nhttps://www.swissinfo.ch/ger/chipfertiger-tsmc-mit-rekordgewinn-dank-ki-nachfrage/92220243",
       "link": "https://www.swissinfo.ch/ger/chipfertiger-tsmc-mit-rekordgewinn-dank-ki-nachfrage/92220243",
       "mention": {},
@@ -29,7 +21,7 @@
       "claims": []
     },
     {
-      "index": 4,
+      "index": 3,
       "text": "🇨🇭 Yoon Seok Kim, flying in the orbit of Nobels\n\nEPFL News covers the story in Sion. Swiss cleantech keeps pairing serious science with real-world deployment.\n\nWhy it matters:\n📈 Energy and climate hardware is moving from subsidy toward genuine demand.\n🇨🇭 Switzerland combines deep materials science with disciplined engineering.\n🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.\n\nhttps://actu.epfl.ch/news/yoon-seok-kim-flying-in-the-orbit-of-nobels",
       "link": "https://actu.epfl.ch/news/yoon-seok-kim-flying-in-the-orbit-of-nobels",
       "mention": {},
@@ -37,7 +29,7 @@
       "claims": []
     },
     {
-      "index": 5,
+      "index": 4,
       "text": "🇨🇭 Stocks Fall on Inflation Woes as Chip Rout Deepens: Markets Wrap\n\n🇨🇭 Stocks Fall on Inflation Woes as Chip Rout Deepens: Markets Wrap SWI swissinfo.ch\n\nWhy it matters:\n📈 Semiconductors sit under almost every growth market, from AI to defense to mobility.\n🇨🇭 Switzerland punches above its weight in specialised chips and advanced materials.\n🧭 Capital-efficient hardware built on Swiss research is core to the Climb thesis.\n\nhttps://www.swissinfo.ch/eng/stocks-fall-on-inflation-woes-as-chip-rout-deepens%3A-markets-wrap/92211728",
       "link": "https://www.swissinfo.ch/eng/stocks-fall-on-inflation-woes-as-chip-rout-deepens%3A-markets-wrap/92211728",
       "mention": {},
@@ -45,7 +37,7 @@
       "claims": []
     },
     {
-      "index": 6,
+      "index": 5,
       "text": "🇨🇭 Major wins for Swiss startups\n\n🇨🇭 Cleantech, Medtech and AI startups from Switzerland have won competitions organized by organizations in various parts of the worldwide, including Anthropic. Prizes range from cash and partnership deals to joining accelerator programs that support further development.\n\nWhy it matters:\n📈 Early biological insight compounds into products years before anyone names a company.\n🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.\n🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.\n\nhttps://www.startupticker.ch/en/news/major-wins-for-swiss-startups",
       "link": "https://www.startupticker.ch/en/news/major-wins-for-swiss-startups",
       "mention": {},
@@ -53,7 +45,7 @@
       "claims": []
     },
     {
-      "index": 7,
+      "index": 6,
       "text": "🇨🇭 Google.org Impact Challenge 2026: AI for Science Names AITHYRA-EPFL...\n\nÖsterreichische Akademie der Wissenschaften covers the story. Swiss robotics and applied AI keep moving from demo to deployment.\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://www.oeaw.ac.at/aithyra/news/googleorg-impact-challenge-2026-ai-for-science-names-aithyra-epfl-consortium-as-a-winner",
       "link": "https://www.oeaw.ac.at/aithyra/news/googleorg-impact-challenge-2026-ai-for-science-names-aithyra-epfl-consortium-as-a-winner",
       "mention": {},
@@ -61,15 +53,7 @@
       "claims": []
     },
     {
-      "index": 8,
-      "text": "🇨🇭 The satellite that whispers to the wheat\n\nThe satellite that whispers to the wheat ETH Zürich\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://usys.ethz.ch/en/news-events/news/archive/2026/09/terensis.html",
-      "link": "https://usys.ethz.ch/en/news-events/news/archive/2026/09/terensis.html",
-      "mention": {},
-      "needs_check": false,
-      "claims": []
-    },
-    {
-      "index": 9,
+      "index": 7,
       "text": "🇨🇭 EPFL labs can now measure CO₂ emissions and focus reduction efforts\n\n13.10.26 - EPFL has developed a carbon emissions calculator that helps research labs better target their reduction efforts. It gives a customized, granular view of a lab’s carbon emissions so that scientists can see where they should focus their attention.\n\nWhy it matters:\n📈 Energy and climate hardware is moving from subsidy toward genuine demand.\n🇨🇭 Switzerland combines deep materials science with disciplined engineering.\n🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.\n\nhttps://actu.epfl.ch/news/epfl-labs-can-now-measure-co2-emissions-and-focus",
       "link": "https://actu.epfl.ch/news/epfl-labs-can-now-measure-co2-emissions-and-focus",
       "mention": {},
@@ -77,15 +61,7 @@
       "claims": []
     },
     {
-      "index": 10,
-      "text": "🇨🇭 Nobel Prize meets PSI research\n\nNobel Prize meets PSI research eda.admin\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.eda.admin.ch/en/newnsb/cSBSQnY0wdKS",
-      "link": "https://www.eda.admin.ch/en/newnsb/cSBSQnY0wdKS",
-      "mention": {},
-      "needs_check": false,
-      "claims": []
-    },
-    {
-      "index": 11,
+      "index": 8,
       "text": "🇨🇭 Bacteria use collisions to navigate crowded environments\n\nEPFL News covers the story in Sion. It is another data point in Switzerland's steady deep-tech build-out.\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://actu.epfl.ch/news/bacteria-use-collisions-to-navigate-crowded-enviro",
       "link": "https://actu.epfl.ch/news/bacteria-use-collisions-to-navigate-crowded-enviro",
       "mention": {},
@@ -93,7 +69,18 @@
       "claims": []
     },
     {
-      "index": 12,
+      "index": 9,
+      "text": "🇨🇭 Gaius Capital closes debut fund at €50 million, raises another €6...\n\nEU-Startups covers the story. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at €50 m.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at €50 m.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.eu-startups.com/2026/10/gaius-capital-closes-debut-fund-at-e50-million-raises-another-e6-million-via-co-investment-vehicle/",
+      "link": "https://www.eu-startups.com/2026/10/gaius-capital-closes-debut-fund-at-e50-million-raises-another-e6-million-via-co-investment-vehicle/",
+      "mention": {},
+      "needs_check": true,
+      "claims": [
+        "the post states €50 m: is that money received rather than a ceiling or a target, and has the round closed",
+        "the post states €6...: is that money received rather than a ceiling or a target, and has the round closed"
+      ]
+    },
+    {
+      "index": 10,
       "text": "🇨🇭 Medtech-Firmen planen weniger Investitionen in der Schweiz\n\nMedtech-Firmen planen weniger Investitionen in der Schweiz Blick\n\nWhy it matters:\n📈 Early biological insight compounds into products years before anyone names a company.\n🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.\n🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.\n\nhttps://www.blick.ch/wirtschaft/medtech-branche-raphael-laubscher-will-eu-rahmenabkommen/f94cgkk",
       "link": "https://www.blick.ch/wirtschaft/medtech-branche-raphael-laubscher-will-eu-rahmenabkommen/f94cgkk",
       "mention": {},
@@ -101,30 +88,23 @@
       "claims": []
     },
     {
-      "index": 13,
-      "text": "🇨🇭 EPFL is serving up the agriculture and food systems of tomorrow\n\n🇨🇭 08.10.26 - EPFL will take part in Olma, Switzerland’s autumn fair, in St. Gallen from 8 to 18 October 2026. Under the theme “Preserve, cultivate, feed – Research for the agriculture and food systems of tomorrow”, the school will showcase a selection of projects from its laboratories and start-ups.\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://actu.epfl.ch/news/epfl-is-serving-up-the-agriculture-and-food-system",
-      "link": "https://actu.epfl.ch/news/epfl-is-serving-up-the-agriculture-and-food-system",
-      "mention": {},
-      "needs_check": false,
-      "claims": []
-    },
-    {
-      "index": 14,
-      "text": "🇨🇭 Ascento accelerates US expansion with New York office\n\nRobotics startup Ascento is accelerating its international expansion by opening an office in New York, as the US becomes the company’s fastest-growing market.\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://www.startupticker.ch/en/news/ascento-accelerates-us-expansion-with-new-york-office",
-      "link": "https://www.startupticker.ch/en/news/ascento-accelerates-us-expansion-with-new-york-office",
-      "mention": {},
-      "needs_check": false,
-      "claims": []
-    },
-    {
-      "index": 15,
-      "text": "🇨🇭 Swiss-US company Namespace closes USD 42 million Series B round\n\n🇨🇭 Following a Series A in March 2026, Namespace announced the closing of its Series B, bringing the total funding to USD 65 million. The company builds a development platform for the coding agent age. Namespace is registered in the US with a strong footprint in Switzerland. The round is reported at USD 42 m.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at USD 42 m.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.startupticker.ch/en/news/swiss-us-company-namespace-closes-usd-42-series-b-round",
-      "link": "https://www.startupticker.ch/en/news/swiss-us-company-namespace-closes-usd-42-series-b-round",
+      "index": 11,
+      "text": "🇨🇭 Bern-based Besso raises €4.29 million to scale its AI-powered trade...\n\nEU-Startups covers the story in Bern. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at €4.29 m.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at €4.29 m.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.eu-startups.com/2026/10/bern-based-besso-raises-e4-29-million-to-scale-its-ai-powered-trade-regulation-intelligence-platform/",
+      "link": "https://www.eu-startups.com/2026/10/bern-based-besso-raises-e4-29-million-to-scale-its-ai-powered-trade-regulation-intelligence-platform/",
       "mention": {},
       "needs_check": true,
       "claims": [
-        "the post states USD 42 m: is that money received rather than a ceiling or a target, and has the round closed",
-        "the post states USD 65 m: is that money received rather than a ceiling or a target, and has the round closed"
+        "the post states €4.29 m: is that money received rather than a ceiling or a target, and has the round closed"
+      ]
+    },
+    {
+      "index": 12,
+      "text": "🇨🇭 UniSieve raises $9M to move towards broader commercial deployment\n\nStartupticker covers the story. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at $9M.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at $9M.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.startupticker.ch/en/news/unisieve-raises-9m-to-move-towards-broader-commercial-deployment",
+      "link": "https://www.startupticker.ch/en/news/unisieve-raises-9m-to-move-towards-broader-commercial-deployment",
+      "mention": {},
+      "needs_check": true,
+      "claims": [
+        "the post states $9M: is that money received rather than a ceiling or a target, and has the round closed"
       ]
     }
   ]

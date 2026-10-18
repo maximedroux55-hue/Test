@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 17 October 2026. 15 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 18 October 2026. 12 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -57,23 +57,7 @@ https://www.startupticker.ch/en/news/swissnex-is-empowering-swiss-ai-startups-to
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/swissnex26Post12.jpg
 
-## 2. Research — published 16 October
-
-```
-🇨🇭 How much CO₂ do research labs emit? EPFL has a new way to find out
-
-How much CO₂ do research labs emit? EPFL has a new way to find out Tech Explorist
-
-Why it matters:
-📈 Deep technology is where durable, defensible companies get built.
-🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
-🧭 Backing that research early and capital-efficiently is what we do at Climb.
-
-https://www.techexplorist.com/co%E2%82%82-research-labs-emit-epfl-new-way-find-out/105798/
-```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 3. General — published 15 October
+## 2. General — published 15 October
 
 ```
 🇨🇭 Chipfertiger TSMC mit Rekordgewinn dank KI-Nachfrage
@@ -89,7 +73,7 @@ https://www.swissinfo.ch/ger/chipfertiger-tsmc-mit-rekordgewinn-dank-ki-nachfrag
 ```
 🖼️ **Article image:** https://www.swissinfo.ch/content/wp-content/uploads/sites/13/2026/10/c75f1fe7add33ec1e2151e3f295fb4392b5960ed-92220230.jpg?ver=a1750769&fit=1200,900
 
-## 4. Research — published 15 October
+## 3. Research — published 15 October
 
 ```
 🇨🇭 Yoon Seok Kim, flying in the orbit of Nobels
@@ -105,7 +89,7 @@ https://actu.epfl.ch/news/yoon-seok-kim-flying-in-the-orbit-of-nobels
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 5. General — published 14 October
+## 4. General — published 14 October
 
 ```
 🇨🇭 Stocks Fall on Inflation Woes as Chip Rout Deepens: Markets Wrap
@@ -121,7 +105,7 @@ https://www.swissinfo.ch/eng/stocks-fall-on-inflation-woes-as-chip-rout-deepens%
 ```
 🖼️ **Article image:** https://www.swissinfo.ch/eng/wp-content/uploads/swissinfo-theme/swi-fallback-featured-image.jpg?ver=1791280929
 
-## 6. Award — published 14 October
+## 5. Award — published 14 October
 
 ```
 🇨🇭 Major wins for Swiss startups
@@ -137,7 +121,7 @@ https://www.startupticker.ch/en/news/major-wins-for-swiss-startups
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/GaiaTurbine_BancoStato.png
 
-## 7. Award — published 14 October
+## 6. Award — published 14 October
 
 ```
 🇨🇭 Google.org Impact Challenge 2026: AI for Science Names AITHYRA-EPFL...
@@ -153,23 +137,7 @@ https://www.oeaw.ac.at/aithyra/news/googleorg-impact-challenge-2026-ai-for-scien
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 8. Research — published 13 October
-
-```
-🇨🇭 The satellite that whispers to the wheat
-
-The satellite that whispers to the wheat ETH Zürich
-
-Why it matters:
-📈 Deep technology is where durable, defensible companies get built.
-🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
-🧭 Backing that research early and capital-efficiently is what we do at Climb.
-
-https://usys.ethz.ch/en/news-events/news/archive/2026/09/terensis.html
-```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 9. Research — published 13 October
+## 7. Research — published 13 October
 
 ```
 🇨🇭 EPFL labs can now measure CO₂ emissions and focus reduction efforts
@@ -185,23 +153,7 @@ https://actu.epfl.ch/news/epfl-labs-can-now-measure-co2-emissions-and-focus
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 10. Award — published 12 October
-
-```
-🇨🇭 Nobel Prize meets PSI research
-
-Nobel Prize meets PSI research eda.admin
-
-Why it matters:
-📈 Deep technology is where durable, defensible companies get built.
-🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
-🧭 Backing that research early and capital-efficiently is what we do at Climb.
-
-https://www.eda.admin.ch/en/newnsb/cSBSQnY0wdKS
-```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 11. Research — published 12 October
+## 8. Research — published 12 October
 
 ```
 🇨🇭 Bacteria use collisions to navigate crowded environments
@@ -217,7 +169,23 @@ https://actu.epfl.ch/news/bacteria-use-collisions-to-navigate-crowded-enviro
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 12. General — published 09 October
+## 9. Round — published 12 October
+
+```
+🇨🇭 Gaius Capital closes debut fund at €50 million, raises another €6...
+
+EU-Startups covers the story. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at €50 m.
+
+Why it matters:
+💰 Capital keeps following Swiss deep science, this time at €50 m.
+🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
+🧭 Backing that research early and capital-efficiently is what we do at Climb.
+
+https://www.eu-startups.com/2026/10/gaius-capital-closes-debut-fund-at-e50-million-raises-another-e6-million-via-co-investment-vehicle/
+```
+🖼️ **Article image:** https://www.eu-startups.com/wp-content/uploads/2026/10/Untitled-design-2026-10-11T223537.013.jpg
+
+## 10. General — published 09 October
 
 ```
 🇨🇭 Medtech-Firmen planen weniger Investitionen in der Schweiz
@@ -233,51 +201,35 @@ https://www.blick.ch/wirtschaft/medtech-branche-raphael-laubscher-will-eu-rahmen
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 13. Research — published 08 October
+## 11. Round — published 09 October
 
 ```
-🇨🇭 EPFL is serving up the agriculture and food systems of tomorrow
+🇨🇭 Bern-based Besso raises €4.29 million to scale its AI-powered trade...
 
-🇨🇭 08.10.26 - EPFL will take part in Olma, Switzerland’s autumn fair, in St. Gallen from 8 to 18 October 2026. Under the theme “Preserve, cultivate, feed – Research for the agriculture and food systems of tomorrow”, the school will showcase a selection of projects from its laboratories and start-ups.
+EU-Startups covers the story in Bern. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at €4.29 m.
 
 Why it matters:
-📈 Automation is shifting from pilots to real commercial operations.
-🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
-🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
-
-https://actu.epfl.ch/news/epfl-is-serving-up-the-agriculture-and-food-system
-```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 14. Expansion — published 08 October
-
-```
-🇨🇭 Ascento accelerates US expansion with New York office
-
-Robotics startup Ascento is accelerating its international expansion by opening an office in New York, as the US becomes the company’s fastest-growing market.
-
-Why it matters:
-📈 Automation is shifting from pilots to real commercial operations.
-🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
-🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
-
-https://www.startupticker.ch/en/news/ascento-accelerates-us-expansion-with-new-york-office
-```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/NewYorkCity_Panorama.jpg
-
-## 15. Round — published 07 October
-
-```
-🇨🇭 Swiss-US company Namespace closes USD 42 million Series B round
-
-🇨🇭 Following a Series A in March 2026, Namespace announced the closing of its Series B, bringing the total funding to USD 65 million. The company builds a development platform for the coding agent age. Namespace is registered in the US with a strong footprint in Switzerland. The round is reported at USD 42 m.
-
-Why it matters:
-💰 Capital keeps following Swiss deep science, this time at USD 42 m.
+💰 Capital keeps following Swiss deep science, this time at €4.29 m.
 🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
 🧭 Backing that research early and capital-efficiently is what we do at Climb.
 
-https://www.startupticker.ch/en/news/swiss-us-company-namespace-closes-usd-42-series-b-round
+https://www.eu-startups.com/2026/10/bern-based-besso-raises-e4-29-million-to-scale-its-ai-powered-trade-regulation-intelligence-platform/
 ```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/symbolbilder/CodeServerDaten.jpg
+🖼️ **Article image:** https://www.eu-startups.com/wp-content/uploads/2026/10/Besso.jpg
+
+## 12. Round — published 08 October
+
+```
+🇨🇭 UniSieve raises $9M to move towards broader commercial deployment
+
+Startupticker covers the story. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at $9M.
+
+Why it matters:
+💰 Capital keeps following Swiss deep science, this time at $9M.
+🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
+🧭 Backing that research early and capital-efficiently is what we do at Climb.
+
+https://www.startupticker.ch/en/news/unisieve-raises-9m-to-move-towards-broader-commercial-deployment
+```
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/UnisieveFounders.jpg
 
