@@ -1,11 +1,19 @@
 {
-  "generated": "2026-10-18",
+  "generated": "2026-10-19",
   "mode": "Template drafts (set ANTHROPIC_API_KEY for AI-written posts).",
   "note": "Times are local. Schedule each post at its time on its date.",
   "cowork_prompt": "Open https://maxime-droux.com/digest/posts.json and schedule the posts listed at the end of this message, and only those. The file holds the shortlist; the list below says which of them I picked and when each one goes out. Match them by `index`. Ignore every other post in the file.\n\nFor each post, in order:\n- Type the `text` straight through, once, with real keystrokes. Never insert\n  text via JavaScript. It already ends with the article URL on its own line,\n  so do not add, move or retype the URL separately: typing it last is what makes\n  the link preview load the article photo.\n- Each post has exactly one @mention. Type `mention.type`, wait for the\n  dropdown, click the row matching `mention.expect`. If no row matches, post\n  it without the mention rather than tagging the wrong company. LinkedIn will\n  render the official name: that is expected and fine, do not fight it, do not\n  restart the post, do not rewrite it.\n- Schedule it at the date and time given for it in the list below. If no link\n  preview appears, schedule it anyway: do not hunt for an image.\n\nTwo attempts per post, then stop. If a post is not scheduled after two tries,\nleave it, move to the next one, and list it at the end. Never start a third.\n\nBefore you start, open the scheduled-posts list once and note what is already\nthere. Skip any post already scheduled: never schedule the same one twice.\n\nVerification:\n- Claims already settled against the article are not in the file. Check only\n  what `claims` still lists, and posts with needs_check: true (a figure nobody\n  has verified: confirm round closed / round name / amount received / investors\n  in THIS round). Both empty and false means schedule it, no research.\n\nAnything that fails: do not schedule it, and do not edit any file or commit\nanything. List the held posts at the end with the sentence you read and the\npage you read it on, and I will record them.\n\nReport what was scheduled and what was held.",
   "posts": [
     {
       "index": 1,
+      "text": "🇨🇭 How to make climate transitions stick\n\nEPFL News covers the story in Sion. Swiss cleantech keeps pairing serious science with real-world deployment.\n\nWhy it matters:\n📈 Energy and climate hardware is moving from subsidy toward genuine demand.\n🇨🇭 Switzerland combines deep materials science with disciplined engineering.\n🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.\n\nhttps://actu.epfl.ch/news/how-to-make-climate-transitions-stick",
+      "link": "https://actu.epfl.ch/news/how-to-make-climate-transitions-stick",
+      "mention": {},
+      "needs_check": false,
+      "claims": []
+    },
+    {
+      "index": 2,
       "text": "🇨🇭 Swissnex is Empowering Swiss AI Startups to Go Global\n\n🇨🇭 Artificial Intelligence may be born in code, but its true value is proven when real customers actually buy and use it. For Switzerland’s most ambitious AI entrepreneurs, going global takes the right local connections, real credibility and a foot in the door.\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://www.startupticker.ch/en/news/swissnex-is-empowering-swiss-ai-startups-to-go-global",
       "link": "https://www.startupticker.ch/en/news/swissnex-is-empowering-swiss-ai-startups-to-go-global",
       "mention": {},
@@ -13,7 +21,7 @@
       "claims": []
     },
     {
-      "index": 2,
+      "index": 3,
       "text": "🇨🇭 Chipfertiger TSMC mit Rekordgewinn dank KI-Nachfrage\n\n🇨🇭 Chipfertiger TSMC mit Rekordgewinn dank KI-Nachfrage SWI swissinfo.ch\n\nWhy it matters:\n📈 Semiconductors sit under almost every growth market, from AI to defense to mobility.\n🇨🇭 Switzerland punches above its weight in specialised chips and advanced materials.\n🧭 Capital-efficient hardware built on Swiss research is core to the Climb thesis.\n\nhttps://www.swissinfo.ch/ger/chipfertiger-tsmc-mit-rekordgewinn-dank-ki-nachfrage/92220243",
       "link": "https://www.swissinfo.ch/ger/chipfertiger-tsmc-mit-rekordgewinn-dank-ki-nachfrage/92220243",
       "mention": {},
@@ -21,17 +29,9 @@
       "claims": []
     },
     {
-      "index": 3,
+      "index": 4,
       "text": "🇨🇭 Yoon Seok Kim, flying in the orbit of Nobels\n\nEPFL News covers the story in Sion. Swiss cleantech keeps pairing serious science with real-world deployment.\n\nWhy it matters:\n📈 Energy and climate hardware is moving from subsidy toward genuine demand.\n🇨🇭 Switzerland combines deep materials science with disciplined engineering.\n🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.\n\nhttps://actu.epfl.ch/news/yoon-seok-kim-flying-in-the-orbit-of-nobels",
       "link": "https://actu.epfl.ch/news/yoon-seok-kim-flying-in-the-orbit-of-nobels",
-      "mention": {},
-      "needs_check": false,
-      "claims": []
-    },
-    {
-      "index": 4,
-      "text": "🇨🇭 Stocks Fall on Inflation Woes as Chip Rout Deepens: Markets Wrap\n\n🇨🇭 Stocks Fall on Inflation Woes as Chip Rout Deepens: Markets Wrap SWI swissinfo.ch\n\nWhy it matters:\n📈 Semiconductors sit under almost every growth market, from AI to defense to mobility.\n🇨🇭 Switzerland punches above its weight in specialised chips and advanced materials.\n🧭 Capital-efficient hardware built on Swiss research is core to the Climb thesis.\n\nhttps://www.swissinfo.ch/eng/stocks-fall-on-inflation-woes-as-chip-rout-deepens%3A-markets-wrap/92211728",
-      "link": "https://www.swissinfo.ch/eng/stocks-fall-on-inflation-woes-as-chip-rout-deepens%3A-markets-wrap/92211728",
       "mention": {},
       "needs_check": false,
       "claims": []
@@ -89,22 +89,22 @@
     },
     {
       "index": 11,
+      "text": "🇨🇭 Swiss AI Startup Klarent Raises €7.13 Million to Expand Software...\n\nhttps://ascendants.in/ covers the story. Swiss robotics and applied AI keep moving from demo to deployment. The round is reported at €7.13 M.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at €7.13 M.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://ascendants.in/business-stories/klarent-raises-7-13-million-ai-software-testing-us-expansion/",
+      "link": "https://ascendants.in/business-stories/klarent-raises-7-13-million-ai-software-testing-us-expansion/",
+      "mention": {},
+      "needs_check": true,
+      "claims": [
+        "the post states €7.13 M: is that money received rather than a ceiling or a target, and has the round closed"
+      ]
+    },
+    {
+      "index": 12,
       "text": "🇨🇭 Bern-based Besso raises €4.29 million to scale its AI-powered trade...\n\nEU-Startups covers the story in Bern. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at €4.29 m.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at €4.29 m.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.eu-startups.com/2026/10/bern-based-besso-raises-e4-29-million-to-scale-its-ai-powered-trade-regulation-intelligence-platform/",
       "link": "https://www.eu-startups.com/2026/10/bern-based-besso-raises-e4-29-million-to-scale-its-ai-powered-trade-regulation-intelligence-platform/",
       "mention": {},
       "needs_check": true,
       "claims": [
         "the post states €4.29 m: is that money received rather than a ceiling or a target, and has the round closed"
-      ]
-    },
-    {
-      "index": 12,
-      "text": "🇨🇭 UniSieve raises $9M to move towards broader commercial deployment\n\nStartupticker covers the story. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at $9M.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at $9M.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.startupticker.ch/en/news/unisieve-raises-9m-to-move-towards-broader-commercial-deployment",
-      "link": "https://www.startupticker.ch/en/news/unisieve-raises-9m-to-move-towards-broader-commercial-deployment",
-      "mention": {},
-      "needs_check": true,
-      "claims": [
-        "the post states $9M: is that money received rather than a ceiling or a target, and has the round closed"
       ]
     }
   ]

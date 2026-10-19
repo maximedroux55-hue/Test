@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 18 October 2026. 12 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 19 October 2026. 12 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -41,7 +41,23 @@ Report what was scheduled and what was held.
 
 The stories themselves are below.
 
-## 1. General — published 16 October
+## 1. Research — published 19 October
+
+```
+🇨🇭 How to make climate transitions stick
+
+EPFL News covers the story in Sion. Swiss cleantech keeps pairing serious science with real-world deployment.
+
+Why it matters:
+📈 Energy and climate hardware is moving from subsidy toward genuine demand.
+🇨🇭 Switzerland combines deep materials science with disciplined engineering.
+🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.
+
+https://actu.epfl.ch/news/how-to-make-climate-transitions-stick
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 2. General — published 16 October
 
 ```
 🇨🇭 Swissnex is Empowering Swiss AI Startups to Go Global
@@ -57,7 +73,7 @@ https://www.startupticker.ch/en/news/swissnex-is-empowering-swiss-ai-startups-to
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/swissnex26Post12.jpg
 
-## 2. General — published 15 October
+## 3. General — published 15 October
 
 ```
 🇨🇭 Chipfertiger TSMC mit Rekordgewinn dank KI-Nachfrage
@@ -73,7 +89,7 @@ https://www.swissinfo.ch/ger/chipfertiger-tsmc-mit-rekordgewinn-dank-ki-nachfrag
 ```
 🖼️ **Article image:** https://www.swissinfo.ch/content/wp-content/uploads/sites/13/2026/10/c75f1fe7add33ec1e2151e3f295fb4392b5960ed-92220230.jpg?ver=a1750769&fit=1200,900
 
-## 3. Research — published 15 October
+## 4. Research — published 15 October
 
 ```
 🇨🇭 Yoon Seok Kim, flying in the orbit of Nobels
@@ -88,22 +104,6 @@ Why it matters:
 https://actu.epfl.ch/news/yoon-seok-kim-flying-in-the-orbit-of-nobels
 ```
 🖼️ **Article image:** none found, grab one from the article page.
-
-## 4. General — published 14 October
-
-```
-🇨🇭 Stocks Fall on Inflation Woes as Chip Rout Deepens: Markets Wrap
-
-🇨🇭 Stocks Fall on Inflation Woes as Chip Rout Deepens: Markets Wrap SWI swissinfo.ch
-
-Why it matters:
-📈 Semiconductors sit under almost every growth market, from AI to defense to mobility.
-🇨🇭 Switzerland punches above its weight in specialised chips and advanced materials.
-🧭 Capital-efficient hardware built on Swiss research is core to the Climb thesis.
-
-https://www.swissinfo.ch/eng/stocks-fall-on-inflation-woes-as-chip-rout-deepens%3A-markets-wrap/92211728
-```
-🖼️ **Article image:** https://www.swissinfo.ch/eng/wp-content/uploads/swissinfo-theme/swi-fallback-featured-image.jpg?ver=1791280929
 
 ## 5. Award — published 14 October
 
@@ -185,7 +185,7 @@ https://www.eu-startups.com/2026/10/gaius-capital-closes-debut-fund-at-e50-milli
 ```
 🖼️ **Article image:** https://www.eu-startups.com/wp-content/uploads/2026/10/Untitled-design-2026-10-11T223537.013.jpg
 
-## 10. General — published 09 October
+## 10. General — published 10 October
 
 ```
 🇨🇭 Medtech-Firmen planen weniger Investitionen in der Schweiz
@@ -204,6 +204,22 @@ https://www.blick.ch/wirtschaft/medtech-branche-raphael-laubscher-will-eu-rahmen
 ## 11. Round — published 09 October
 
 ```
+🇨🇭 Swiss AI Startup Klarent Raises €7.13 Million to Expand Software...
+
+https://ascendants.in/ covers the story. Swiss robotics and applied AI keep moving from demo to deployment. The round is reported at €7.13 M.
+
+Why it matters:
+💰 Capital keeps following Swiss deep science, this time at €7.13 M.
+🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
+🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
+
+https://ascendants.in/business-stories/klarent-raises-7-13-million-ai-software-testing-us-expansion/
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 12. Round — published 09 October
+
+```
 🇨🇭 Bern-based Besso raises €4.29 million to scale its AI-powered trade...
 
 EU-Startups covers the story in Bern. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at €4.29 m.
@@ -216,20 +232,4 @@ Why it matters:
 https://www.eu-startups.com/2026/10/bern-based-besso-raises-e4-29-million-to-scale-its-ai-powered-trade-regulation-intelligence-platform/
 ```
 🖼️ **Article image:** https://www.eu-startups.com/wp-content/uploads/2026/10/Besso.jpg
-
-## 12. Round — published 08 October
-
-```
-🇨🇭 UniSieve raises $9M to move towards broader commercial deployment
-
-Startupticker covers the story. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at $9M.
-
-Why it matters:
-💰 Capital keeps following Swiss deep science, this time at $9M.
-🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
-🧭 Backing that research early and capital-efficiently is what we do at Climb.
-
-https://www.startupticker.ch/en/news/unisieve-raises-9m-to-move-towards-broader-commercial-deployment
-```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/UnisieveFounders.jpg
 
