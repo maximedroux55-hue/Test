@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 19 October 2026. 12 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 20 October 2026. 14 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -41,7 +41,39 @@ Report what was scheduled and what was held.
 
 The stories themselves are below.
 
-## 1. Research — published 19 October
+## 1. General — published 20 October
+
+```
+🇨🇭 Swiss semiconductor firm Comet sales boosted by chip demand
+
+🇨🇭 Swiss semiconductor firm Comet sales boosted by chip demand SWI swissinfo.ch
+
+Why it matters:
+📈 Semiconductors sit under almost every growth market, from AI to defense to mobility.
+🇨🇭 Switzerland punches above its weight in specialised chips and advanced materials.
+🧭 Capital-efficient hardware built on Swiss research is core to the Climb thesis.
+
+https://www.swissinfo.ch/eng/global-trade/comets-sales-soar-in-the-third-quarter/92242384
+```
+🖼️ **Article image:** https://www.swissinfo.ch/content/wp-content/uploads/sites/13/2026/10/97ef6fb366d7c0f98f557ae55a114d8ba221f26d-92242288.jpg?ver=fb64892d&fit=1200,900
+
+## 2. General — published 20 October
+
+```
+🇨🇭 UBS Ranks 6th Globally in AI Banking Maturity
+
+Fintechnews Switzerland covers the story. Swiss robotics and applied AI keep moving from demo to deployment.
+
+Why it matters:
+📈 Automation is shifting from pilots to real commercial operations.
+🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
+🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
+
+https://fintechnews.ch/aifintech/ubs-ranks-6th-globally-in-ai-banking-maturity/86373/
+```
+🖼️ **Article image:** https://fintechnewsch-22e90.kxcdn.com/wp-content/uploads/2026/10/UBS-Ranks-6th-Globally-in-AI-Maturity.jpg
+
+## 3. Research — published 19 October
 
 ```
 🇨🇭 How to make climate transitions stick
@@ -57,7 +89,23 @@ https://actu.epfl.ch/news/how-to-make-climate-transitions-stick
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 2. General — published 16 October
+## 4. Acquisition — published 19 October
+
+```
+🇨🇭 Apple buys Swiss AI audio startup Samplab to sharpen Logic Pro
+
+🇨🇭 Apple buys Swiss AI audio startup Samplab to sharpen Logic Pro Dealroom
+
+Why it matters:
+📈 Automation is shifting from pilots to real commercial operations.
+🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
+🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
+
+https://app.dealroom.co/news/note/apple-buys-swiss-ai-audio-startup-samplab-to-sharpen-logic-pro
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 5. General — published 16 October
 
 ```
 🇨🇭 Swissnex is Empowering Swiss AI Startups to Go Global
@@ -73,7 +121,7 @@ https://www.startupticker.ch/en/news/swissnex-is-empowering-swiss-ai-startups-to
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/swissnex26Post12.jpg
 
-## 3. General — published 15 October
+## 6. General — published 15 October
 
 ```
 🇨🇭 Chipfertiger TSMC mit Rekordgewinn dank KI-Nachfrage
@@ -89,7 +137,23 @@ https://www.swissinfo.ch/ger/chipfertiger-tsmc-mit-rekordgewinn-dank-ki-nachfrag
 ```
 🖼️ **Article image:** https://www.swissinfo.ch/content/wp-content/uploads/sites/13/2026/10/c75f1fe7add33ec1e2151e3f295fb4392b5960ed-92220230.jpg?ver=a1750769&fit=1200,900
 
-## 4. Research — published 15 October
+## 7. General — published 15 October
+
+```
+🇨🇭 Robotik live erleben: Swiss Robotics Day 2026
+
+🇨🇭 Robotik live erleben: Swiss Robotics Day 2026 Swissmem
+
+Why it matters:
+📈 Automation is shifting from pilots to real commercial operations.
+🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
+🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
+
+https://www.swissmem.ch/de/wissen/robotik-live-erleben-swiss-robotics-day-2026.html
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 8. Research — published 15 October
 
 ```
 🇨🇭 Yoon Seok Kim, flying in the orbit of Nobels
@@ -105,7 +169,7 @@ https://actu.epfl.ch/news/yoon-seok-kim-flying-in-the-orbit-of-nobels
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 5. Award — published 14 October
+## 9. Award — published 14 October
 
 ```
 🇨🇭 Major wins for Swiss startups
@@ -121,7 +185,7 @@ https://www.startupticker.ch/en/news/major-wins-for-swiss-startups
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/GaiaTurbine_BancoStato.png
 
-## 6. Award — published 14 October
+## 10. Award — published 14 October
 
 ```
 🇨🇭 Google.org Impact Challenge 2026: AI for Science Names AITHYRA-EPFL...
@@ -137,7 +201,23 @@ https://www.oeaw.ac.at/aithyra/news/googleorg-impact-challenge-2026-ai-for-scien
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 7. Research — published 13 October
+## 11. Research — published 13 October
+
+```
+🇨🇭 The satellite that whispers to the wheat
+
+The satellite that whispers to the wheat ETH Zürich
+
+Why it matters:
+📈 Deep technology is where durable, defensible companies get built.
+🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
+🧭 Backing that research early and capital-efficiently is what we do at Climb.
+
+https://usys.ethz.ch/en/news-events/news/archive/2026/09/terensis.html
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 12. Research — published 13 October
 
 ```
 🇨🇭 EPFL labs can now measure CO₂ emissions and focus reduction efforts
@@ -153,7 +233,7 @@ https://actu.epfl.ch/news/epfl-labs-can-now-measure-co2-emissions-and-focus
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 8. Research — published 12 October
+## 13. Research — published 12 October
 
 ```
 🇨🇭 Bacteria use collisions to navigate crowded environments
@@ -169,7 +249,7 @@ https://actu.epfl.ch/news/bacteria-use-collisions-to-navigate-crowded-enviro
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 9. Round — published 12 October
+## 14. Round — published 12 October
 
 ```
 🇨🇭 Gaius Capital closes debut fund at €50 million, raises another €6...
@@ -184,52 +264,4 @@ Why it matters:
 https://www.eu-startups.com/2026/10/gaius-capital-closes-debut-fund-at-e50-million-raises-another-e6-million-via-co-investment-vehicle/
 ```
 🖼️ **Article image:** https://www.eu-startups.com/wp-content/uploads/2026/10/Untitled-design-2026-10-11T223537.013.jpg
-
-## 10. General — published 10 October
-
-```
-🇨🇭 Medtech-Firmen planen weniger Investitionen in der Schweiz
-
-Medtech-Firmen planen weniger Investitionen in der Schweiz Blick
-
-Why it matters:
-📈 Early biological insight compounds into products years before anyone names a company.
-🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.
-🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.
-
-https://www.blick.ch/wirtschaft/medtech-branche-raphael-laubscher-will-eu-rahmenabkommen/f94cgkk
-```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 11. Round — published 09 October
-
-```
-🇨🇭 Swiss AI Startup Klarent Raises €7.13 Million to Expand Software...
-
-https://ascendants.in/ covers the story. Swiss robotics and applied AI keep moving from demo to deployment. The round is reported at €7.13 M.
-
-Why it matters:
-💰 Capital keeps following Swiss deep science, this time at €7.13 M.
-🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
-🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
-
-https://ascendants.in/business-stories/klarent-raises-7-13-million-ai-software-testing-us-expansion/
-```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 12. Round — published 09 October
-
-```
-🇨🇭 Bern-based Besso raises €4.29 million to scale its AI-powered trade...
-
-EU-Startups covers the story in Bern. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at €4.29 m.
-
-Why it matters:
-💰 Capital keeps following Swiss deep science, this time at €4.29 m.
-🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
-🧭 Backing that research early and capital-efficiently is what we do at Climb.
-
-https://www.eu-startups.com/2026/10/bern-based-besso-raises-e4-29-million-to-scale-its-ai-powered-trade-regulation-intelligence-platform/
-```
-🖼️ **Article image:** https://www.eu-startups.com/wp-content/uploads/2026/10/Besso.jpg
 
