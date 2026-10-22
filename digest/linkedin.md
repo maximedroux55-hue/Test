@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 21 October 2026. 15 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 22 October 2026. 15 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -41,23 +41,39 @@ Report what was scheduled and what was held.
 
 The stories themselves are below.
 
-## 1. Research — published 20 October
+## 1. Round — published 22 October
 
 ```
-🇨🇭 Spin-off developing “conductors” for quantum computers
+🇨🇭 Backed by Yann LeCun and Arthur Mensch, Swiss Physical AI startup...
 
-Spin-off developing “conductors” for quantum computers ETH Zürich
+EU-Startups covers the story. Swiss robotics and applied AI keep moving from demo to deployment. The round is reported at €26.68 m.
 
 Why it matters:
-📈 Photonics is one of the rare quantum fields with a credible near-term path to revenue.
-🇨🇭 Switzerland's strength in precision engineering and optics gives its quantum spinouts a real head start.
-🧭 Deep science on a lean capital plan is exactly the Swiss DeepTech we look for at Climb.
+💰 Capital keeps following Swiss deep science, this time at €26.68 m.
+🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
+🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
 
-https://ethz.ch/en/news-and-events/eth-news/news/2026/10/spin-off-developing-conductors-for-quantum-computers.html
+https://www.eu-startups.com/2026/10/backed-by-yann-lecun-and-arthur-mensch-swiss-physical-ai-startup-enact-intelligence-exits-stealth-with-e26-68-million/
 ```
-🖼️ **Article image:** none found, grab one from the article page.
+🖼️ **Article image:** https://www.eu-startups.com/wp-content/uploads/2026/10/Enact-Intelligence.jpg
 
-## 2. General — published 20 October
+## 2. Round — published 21 October
+
+```
+🇨🇭 Sonexos raises CHF 5 Million to reduce noise with plasmacoustic...
+
+🇨🇭 Sonexos SA, a Swiss deep-tech company developing solid-state active noise control, attracted CHF 5 million in new equity financing. The financing will support the transition from engineered prototypes to qualified industrial products. First series production is targeted for early 2028. The round is reported at CHF 5 M.
+
+Why it matters:
+💰 Capital keeps following Swiss deep science, this time at CHF 5 M.
+🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
+🧭 Backing that research early and capital-efficiently is what we do at Climb.
+
+https://www.startupticker.ch/en/news/sonexos-raises-chf-5-million-to-reduce-noise-with-plasmacoustic-technology
+```
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/SonexosPanel.jpg
+
+## 3. General — published 20 October
 
 ```
 🇨🇭 Swiss semiconductor firm Comet sales boosted by chip demand
@@ -73,7 +89,39 @@ https://www.swissinfo.ch/eng/global-trade/comets-sales-soar-in-the-third-quarter
 ```
 🖼️ **Article image:** https://www.swissinfo.ch/content/wp-content/uploads/sites/13/2026/10/97ef6fb366d7c0f98f557ae55a114d8ba221f26d-92242288.jpg?ver=fb64892d&fit=1200,900
 
-## 3. Research — published 19 October
+## 4. Acquisition — published 20 October
+
+```
+🇨🇭 Apple quietly buys Samplab, a Swiss AI audio startup, for Logic Pro
+
+🇨🇭 Apple quietly buys Samplab, a Swiss AI audio startup, for Logic Pro Gagadget.com
+
+Why it matters:
+📈 Automation is shifting from pilots to real commercial operations.
+🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
+🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
+
+https://gagadget.com/en/730820-apple-quietly-buys-samplab-a-swiss-ai-audio-startup-for-logic-pro/
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 5. General — published 19 October
+
+```
+🇨🇭 Découvrez la robotique en direct : Swiss Robotics Day 2026
+
+🇨🇭 Découvrez la robotique en direct : Swiss Robotics Day 2026 Swissmem
+
+Why it matters:
+📈 Automation is shifting from pilots to real commercial operations.
+🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
+🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
+
+https://www.swissmem.ch/fr/connaissances/decouvrez-la-robotique-en-direct-swiss-robotics-day-2026.html
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 6. Research — published 19 October
 
 ```
 🇨🇭 How to make climate transitions stick
@@ -89,39 +137,7 @@ https://actu.epfl.ch/news/how-to-make-climate-transitions-stick
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 4. Acquisition — published 19 October
-
-```
-🇨🇭 Apple buys Swiss AI audio startup Samplab to sharpen Logic Pro
-
-🇨🇭 Apple buys Swiss AI audio startup Samplab to sharpen Logic Pro Dealroom
-
-Why it matters:
-📈 Automation is shifting from pilots to real commercial operations.
-🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
-🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
-
-https://app.dealroom.co/news/note/apple-buys-swiss-ai-audio-startup-samplab-to-sharpen-logic-pro
-```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 5. General — published 16 October
-
-```
-🇨🇭 Chip Stocks Post Longest Losing Streak Since 2008: Markets Wrap
-
-🇨🇭 Chip Stocks Post Longest Losing Streak Since 2008: Markets Wrap SWI swissinfo.ch
-
-Why it matters:
-📈 Semiconductors sit under almost every growth market, from AI to defense to mobility.
-🇨🇭 Switzerland punches above its weight in specialised chips and advanced materials.
-🧭 Capital-efficient hardware built on Swiss research is core to the Climb thesis.
-
-https://www.swissinfo.ch/eng/chip-stocks-post-longest-losing-streak-since-2008%3A-markets-wrap/92225060
-```
-🖼️ **Article image:** https://www.swissinfo.ch/eng/wp-content/uploads/swissinfo-theme/swi-fallback-featured-image.jpg?ver=1792148608
-
-## 6. General — published 16 October
+## 7. General — published 16 October
 
 ```
 🇨🇭 Swissnex is Empowering Swiss AI Startups to Go Global
@@ -137,7 +153,7 @@ https://www.startupticker.ch/en/news/swissnex-is-empowering-swiss-ai-startups-to
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/swissnex26Post12.jpg
 
-## 7. General — published 15 October
+## 8. General — published 15 October
 
 ```
 🇨🇭 Chipfertiger TSMC mit Rekordgewinn dank KI-Nachfrage
@@ -153,7 +169,7 @@ https://www.swissinfo.ch/ger/chipfertiger-tsmc-mit-rekordgewinn-dank-ki-nachfrag
 ```
 🖼️ **Article image:** https://www.swissinfo.ch/content/wp-content/uploads/sites/13/2026/10/c75f1fe7add33ec1e2151e3f295fb4392b5960ed-92220230.jpg?ver=a1750769&fit=1200,900
 
-## 8. General — published 15 October
+## 9. General — published 15 October
 
 ```
 🇨🇭 Robotik live erleben: Swiss Robotics Day 2026
@@ -169,7 +185,7 @@ https://www.swissmem.ch/de/wissen/robotik-live-erleben-swiss-robotics-day-2026.h
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 9. Research — published 15 October
+## 10. Research — published 15 October
 
 ```
 🇨🇭 Yoon Seok Kim, flying in the orbit of Nobels
@@ -185,7 +201,7 @@ https://actu.epfl.ch/news/yoon-seok-kim-flying-in-the-orbit-of-nobels
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 10. Award — published 14 October
+## 11. Award — published 14 October
 
 ```
 🇨🇭 Major wins for Swiss startups
@@ -201,7 +217,7 @@ https://www.startupticker.ch/en/news/major-wins-for-swiss-startups
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/GaiaTurbine_BancoStato.png
 
-## 11. Award — published 14 October
+## 12. Award — published 14 October
 
 ```
 🇨🇭 Google.org Impact Challenge 2026: AI for Science Names AITHYRA-EPFL...
@@ -217,7 +233,7 @@ https://www.oeaw.ac.at/aithyra/news/googleorg-impact-challenge-2026-ai-for-scien
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 12. Research — published 13 October
+## 13. Research — published 13 October
 
 ```
 🇨🇭 The satellite that whispers to the wheat
@@ -233,51 +249,35 @@ https://usys.ethz.ch/en/news-events/news/archive/2026/09/terensis.html
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 13. Research — published 13 October
+## 14. Research — published 13 October
 
 ```
 🇨🇭 EPFL labs can now measure CO₂ emissions and focus reduction efforts
 
-EPFL labs can now measure CO₂ emissions and focus reduction efforts EPFL News
+13.10.26 - EPFL has developed a carbon emissions calculator that helps research labs better target their reduction efforts. It gives a customized, granular view of a lab’s carbon emissions so that scientists can see where they should focus their attention.
 
 Why it matters:
-📈 Deep technology is where durable, defensible companies get built.
-🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
-🧭 Backing that research early and capital-efficiently is what we do at Climb.
+📈 Energy and climate hardware is moving from subsidy toward genuine demand.
+🇨🇭 Switzerland combines deep materials science with disciplined engineering.
+🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.
 
-https://actu.epfl.ch/news/epfl-labs-can-now-measure-co2-emissions-and-focus/
+https://actu.epfl.ch/news/epfl-labs-can-now-measure-co2-emissions-and-focus
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 14. Research — published 12 October
+## 15. Partnership — published 12 October
 
 ```
-🇨🇭 Bacteria use collisions to navigate crowded environments
+🇨🇭 Infineon and ZuriQ partner to scale quantum processing units toward...
 
-EPFL News covers the story in Sion. It is another data point in Switzerland's steady deep-tech build-out.
+Startupticker covers the story. It is another sign that Swiss quantum and photonics research is edging toward commercial products.
 
 Why it matters:
-📈 Deep technology is where durable, defensible companies get built.
-🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
-🧭 Backing that research early and capital-efficiently is what we do at Climb.
+📈 Photonics is one of the rare quantum fields with a credible near-term path to revenue.
+🇨🇭 Switzerland's strength in precision engineering and optics gives its quantum spinouts a real head start.
+🧭 Deep science on a lean capital plan is exactly the Swiss DeepTech we look for at Climb.
 
-https://actu.epfl.ch/news/bacteria-use-collisions-to-navigate-crowded-enviro
+https://www.startupticker.ch/en/news/infineon-and-zuriq-partner-to-scale-quantum-processing-units-toward-commercial-systems
 ```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 15. Round — published 12 October
-
-```
-🇨🇭 Gaius Capital closes debut fund at €50 million, raises another €6...
-
-EU-Startups covers the story. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at €50 m.
-
-Why it matters:
-💰 Capital keeps following Swiss deep science, this time at €50 m.
-🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
-🧭 Backing that research early and capital-efficiently is what we do at Climb.
-
-https://www.eu-startups.com/2026/10/gaius-capital-closes-debut-fund-at-e50-million-raises-another-e6-million-via-co-investment-vehicle/
-```
-🖼️ **Article image:** https://www.eu-startups.com/wp-content/uploads/2026/10/Untitled-design-2026-10-11T223537.013.jpg
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/zuriqInfineonChip.jpg
 
