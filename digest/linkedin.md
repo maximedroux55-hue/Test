@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 23 October 2026. 14 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 24 October 2026. 11 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -41,7 +41,23 @@ Report what was scheduled and what was held.
 
 The stories themselves are below.
 
-## 1. General — published 22 October
+## 1. Research — published 22 October
+
+```
+🇨🇭 Tackling diabetes with an electronic implant: how a tiny catalyst...
+
+ETH Zürich covers the story in Zürich. It is another data point in Switzerland's steady deep-tech build-out.
+
+Why it matters:
+📈 Deep technology is where durable, defensible companies get built.
+🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
+🧭 Backing that research early and capital-efficiently is what we do at Climb.
+
+https://ethz.ch/en/news-and-events/eth-news/news/2026/10/tackling-diabetes-with-an-electronic-implant.html
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 2. General — published 22 October
 
 ```
 🇨🇭 FIF backs four pomising deep tech projects
@@ -57,7 +73,7 @@ https://www.startupticker.ch/en/news/fif-backs-four-promising-projects-emerging-
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Juturna%20Bio.jpg
 
-## 2. Round — published 22 October
+## 3. Round — published 22 October
 
 ```
 🇨🇭 Backed by Yann LeCun and Arthur Mensch, Swiss Physical AI startup...
@@ -73,7 +89,7 @@ https://www.eu-startups.com/2026/10/backed-by-yann-lecun-and-arthur-mensch-swiss
 ```
 🖼️ **Article image:** https://www.eu-startups.com/wp-content/uploads/2026/10/Enact-Intelligence.jpg
 
-## 3. Round — published 21 October
+## 4. Round — published 21 October
 
 ```
 🇨🇭 Sonexos raises CHF 5 Million to reduce noise with plasmacoustic...
@@ -89,39 +105,7 @@ https://www.startupticker.ch/en/news/sonexos-raises-chf-5-million-to-reduce-nois
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/SonexosPanel.jpg
 
-## 4. Research — published 21 October
-
-```
-🇨🇭 EDCH research day
-
-EDCH research day EPFL News
-
-Why it matters:
-📈 Deep technology is where durable, defensible companies get built.
-🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
-🧭 Backing that research early and capital-efficiently is what we do at Climb.
-
-https://actu.epfl.ch/news/edch-research-day/
-```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 5. Research — published 20 October
-
-```
-🇨🇭 Spin-off developing “conductors” for quantum computers
-
-Spin-off developing “conductors” for quantum computers ETH Zürich
-
-Why it matters:
-📈 Photonics is one of the rare quantum fields with a credible near-term path to revenue.
-🇨🇭 Switzerland's strength in precision engineering and optics gives its quantum spinouts a real head start.
-🧭 Deep science on a lean capital plan is exactly the Swiss DeepTech we look for at Climb.
-
-https://ethz.ch/en/news-and-events/eth-news/news/2026/10/spin-off-developing-conductors-for-quantum-computers.html
-```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 6. General — published 20 October
+## 5. General — published 20 October
 
 ```
 🇨🇭 Swiss semiconductor firm Comet sales boosted by chip demand
@@ -137,23 +121,7 @@ https://www.swissinfo.ch/eng/global-trade/comets-sales-soar-in-the-third-quarter
 ```
 🖼️ **Article image:** https://www.swissinfo.ch/content/wp-content/uploads/sites/13/2026/10/97ef6fb366d7c0f98f557ae55a114d8ba221f26d-92242288.jpg?ver=fb64892d&fit=1200,900
 
-## 7. General — published 19 October
-
-```
-🇨🇭 Découvrez la robotique en direct : Swiss Robotics Day 2026
-
-🇨🇭 Découvrez la robotique en direct : Swiss Robotics Day 2026 Swissmem
-
-Why it matters:
-📈 Automation is shifting from pilots to real commercial operations.
-🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
-🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
-
-https://www.swissmem.ch/fr/connaissances/decouvrez-la-robotique-en-direct-swiss-robotics-day-2026.html
-```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 8. Research — published 19 October
+## 6. Research — published 19 October
 
 ```
 🇨🇭 How to make climate transitions stick
@@ -169,7 +137,7 @@ https://actu.epfl.ch/news/how-to-make-climate-transitions-stick
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 9. Acquisition — published 19 October
+## 7. Acquisition — published 19 October
 
 ```
 🇨🇭 Apple buys Swiss AI audio startup Samplab to sharpen Logic Pro
@@ -185,7 +153,7 @@ https://app.dealroom.co/news/note/apple-buys-swiss-ai-audio-startup-samplab-to-s
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 10. General — published 16 October
+## 8. General — published 16 October
 
 ```
 🇨🇭 Swissnex is Empowering Swiss AI Startups to Go Global
@@ -201,23 +169,7 @@ https://www.startupticker.ch/en/news/swissnex-is-empowering-swiss-ai-startups-to
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/swissnex26Post12.jpg
 
-## 11. General — published 15 October
-
-```
-🇨🇭 Robotik live erleben: Swiss Robotics Day 2026
-
-🇨🇭 Robotik live erleben: Swiss Robotics Day 2026 Swissmem
-
-Why it matters:
-📈 Automation is shifting from pilots to real commercial operations.
-🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
-🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
-
-https://www.swissmem.ch/de/wissen/robotik-live-erleben-swiss-robotics-day-2026.html
-```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 12. Research — published 15 October
+## 9. Research — published 15 October
 
 ```
 🇨🇭 Yoon Seok Kim, flying in the orbit of Nobels
@@ -233,7 +185,7 @@ https://actu.epfl.ch/news/yoon-seok-kim-flying-in-the-orbit-of-nobels
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 13. Award — published 14 October
+## 10. Award — published 14 October
 
 ```
 🇨🇭 Major wins for Swiss startups
@@ -249,7 +201,7 @@ https://www.startupticker.ch/en/news/major-wins-for-swiss-startups
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/GaiaTurbine_BancoStato.png
 
-## 14. Award — published 14 October
+## 11. Award — published 14 October
 
 ```
 🇨🇭 Google.org Impact Challenge 2026: AI for Science Names AITHYRA-EPFL...
