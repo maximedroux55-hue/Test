@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 24 October 2026. 11 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 25 October 2026. 9 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -105,7 +105,23 @@ https://www.startupticker.ch/en/news/sonexos-raises-chf-5-million-to-reduce-nois
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/SonexosPanel.jpg
 
-## 5. General — published 20 October
+## 5. General — published 21 October
+
+```
+🇨🇭 Innovation: Une deeptech suisse veut rendre les IA plus fiables
+
+Innovation: Une deeptech suisse veut rendre les IA plus fiables Bilan
+
+Why it matters:
+📈 Deep technology is where durable, defensible companies get built.
+🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
+🧭 Backing that research early and capital-efficiently is what we do at Climb.
+
+https://www.bilan.ch/story/intelligence-artificielle-une-start-up-suisse-veut-fiabiliser-chatgpt-371226471079
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 6. General — published 20 October
 
 ```
 🇨🇭 Swiss semiconductor firm Comet sales boosted by chip demand
@@ -121,7 +137,7 @@ https://www.swissinfo.ch/eng/global-trade/comets-sales-soar-in-the-third-quarter
 ```
 🖼️ **Article image:** https://www.swissinfo.ch/content/wp-content/uploads/sites/13/2026/10/97ef6fb366d7c0f98f557ae55a114d8ba221f26d-92242288.jpg?ver=fb64892d&fit=1200,900
 
-## 6. Research — published 19 October
+## 7. Research — published 19 October
 
 ```
 🇨🇭 How to make climate transitions stick
@@ -134,22 +150,6 @@ Why it matters:
 🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.
 
 https://actu.epfl.ch/news/how-to-make-climate-transitions-stick
-```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 7. Acquisition — published 19 October
-
-```
-🇨🇭 Apple buys Swiss AI audio startup Samplab to sharpen Logic Pro
-
-🇨🇭 Apple buys Swiss AI audio startup Samplab to sharpen Logic Pro Dealroom
-
-Why it matters:
-📈 Automation is shifting from pilots to real commercial operations.
-🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
-🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
-
-https://app.dealroom.co/news/note/apple-buys-swiss-ai-audio-startup-samplab-to-sharpen-logic-pro
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
@@ -169,51 +169,19 @@ https://www.startupticker.ch/en/news/swissnex-is-empowering-swiss-ai-startups-to
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/swissnex26Post12.jpg
 
-## 9. Research — published 15 October
+## 9. General — published 16 October
 
 ```
-🇨🇭 Yoon Seok Kim, flying in the orbit of Nobels
+🇨🇭 Chip Stocks Post Longest Losing Streak Since 2008: Markets Wrap
 
-EPFL News covers the story in Sion. Swiss cleantech keeps pairing serious science with real-world deployment.
+🇨🇭 Chip Stocks Post Longest Losing Streak Since 2008: Markets Wrap SWI swissinfo.ch
 
 Why it matters:
-📈 Energy and climate hardware is moving from subsidy toward genuine demand.
-🇨🇭 Switzerland combines deep materials science with disciplined engineering.
-🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.
+📈 Semiconductors sit under almost every growth market, from AI to defense to mobility.
+🇨🇭 Switzerland punches above its weight in specialised chips and advanced materials.
+🧭 Capital-efficient hardware built on Swiss research is core to the Climb thesis.
 
-https://actu.epfl.ch/news/yoon-seok-kim-flying-in-the-orbit-of-nobels
+https://www.swissinfo.ch/eng/chip-stocks-post-longest-losing-streak-since-2008%3A-markets-wrap/92225060
 ```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 10. Award — published 14 October
-
-```
-🇨🇭 Major wins for Swiss startups
-
-🇨🇭 Cleantech, Medtech and AI startups from Switzerland have won competitions organized by organizations in various parts of the worldwide, including Anthropic. Prizes range from cash and partnership deals to joining accelerator programs that support further development.
-
-Why it matters:
-📈 Early biological insight compounds into products years before anyone names a company.
-🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.
-🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.
-
-https://www.startupticker.ch/en/news/major-wins-for-swiss-startups
-```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/GaiaTurbine_BancoStato.png
-
-## 11. Award — published 14 October
-
-```
-🇨🇭 Google.org Impact Challenge 2026: AI for Science Names AITHYRA-EPFL...
-
-Österreichische Akademie der Wissenschaften covers the story. Swiss robotics and applied AI keep moving from demo to deployment.
-
-Why it matters:
-📈 Automation is shifting from pilots to real commercial operations.
-🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
-🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
-
-https://www.oeaw.ac.at/aithyra/news/googleorg-impact-challenge-2026-ai-for-science-names-aithyra-epfl-consortium-as-a-winner
-```
-🖼️ **Article image:** none found, grab one from the article page.
+🖼️ **Article image:** https://www.swissinfo.ch/eng/wp-content/uploads/swissinfo-theme/swi-fallback-featured-image.jpg?ver=1792148608
 
