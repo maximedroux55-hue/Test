@@ -1,11 +1,27 @@
 {
-  "generated": "2026-10-25",
+  "generated": "2026-10-26",
   "mode": "Template drafts (set ANTHROPIC_API_KEY for AI-written posts).",
   "note": "Times are local. Schedule each post at its time on its date.",
   "cowork_prompt": "Open https://maxime-droux.com/digest/posts.json and schedule the posts listed at the end of this message, and only those. The file holds the shortlist; the list below says which of them I picked and when each one goes out. Match them by `index`. Ignore every other post in the file.\n\nFor each post, in order:\n- Type the `text` straight through, once, with real keystrokes. Never insert\n  text via JavaScript. It already ends with the article URL on its own line,\n  so do not add, move or retype the URL separately: typing it last is what makes\n  the link preview load the article photo.\n- Each post has exactly one @mention. Type `mention.type`, wait for the\n  dropdown, click the row matching `mention.expect`. If no row matches, post\n  it without the mention rather than tagging the wrong company. LinkedIn will\n  render the official name: that is expected and fine, do not fight it, do not\n  restart the post, do not rewrite it.\n- Schedule it at the date and time given for it in the list below. If no link\n  preview appears, schedule it anyway: do not hunt for an image.\n\nTwo attempts per post, then stop. If a post is not scheduled after two tries,\nleave it, move to the next one, and list it at the end. Never start a third.\n\nBefore you start, open the scheduled-posts list once and note what is already\nthere. Skip any post already scheduled: never schedule the same one twice.\n\nVerification:\n- Claims already settled against the article are not in the file. Check only\n  what `claims` still lists, and posts with needs_check: true (a figure nobody\n  has verified: confirm round closed / round name / amount received / investors\n  in THIS round). Both empty and false means schedule it, no research.\n\nAnything that fails: do not schedule it, and do not edit any file or commit\nanything. List the held posts at the end with the sentence you read and the\npage you read it on, and I will record them.\n\nReport what was scheduled and what was held.",
   "posts": [
     {
       "index": 1,
+      "text": "🇨🇭 ELCA buys majority of Swiss data startup Beyond Civic to deepen AI push\n\n🇨🇭 ELCA buys majority of Swiss data startup Beyond Civic to deepen AI push Dealroom\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://app.dealroom.co/news/note/elca-buys-majority-of-swiss-data-startup-beyond-civic-to-deepen-ai-push",
+      "link": "https://app.dealroom.co/news/note/elca-buys-majority-of-swiss-data-startup-beyond-civic-to-deepen-ai-push",
+      "mention": {},
+      "needs_check": false,
+      "claims": []
+    },
+    {
+      "index": 2,
+      "text": "🇨🇭 AI Reshapes Finance Marketing\n\nFintechnews Switzerland covers the story. Swiss robotics and applied AI keep moving from demo to deployment.\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://fintechnews.ch/aifintech/ai-reshapes-finance-marketing/86607/",
+      "link": "https://fintechnews.ch/aifintech/ai-reshapes-finance-marketing/86607/",
+      "mention": {},
+      "needs_check": false,
+      "claims": []
+    },
+    {
+      "index": 3,
       "text": "🇨🇭 Tackling diabetes with an electronic implant: how a tiny catalyst...\n\nETH Zürich covers the story in Zürich. It is another data point in Switzerland's steady deep-tech build-out.\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://ethz.ch/en/news-and-events/eth-news/news/2026/10/tackling-diabetes-with-an-electronic-implant.html",
       "link": "https://ethz.ch/en/news-and-events/eth-news/news/2026/10/tackling-diabetes-with-an-electronic-implant.html",
       "mention": {},
@@ -13,7 +29,7 @@
       "claims": []
     },
     {
-      "index": 2,
+      "index": 4,
       "text": "🇨🇭 FIF backs four pomising deep tech projects\n\ndEEGtal, S-SENTIA, Juturna Bio and Pixels Métallurgiques are the latest projects to receive funding from the FIF, the Canton of Geneva’s innovation financing programme supporting technology-driven startups, scale-ups and SMEs. The round is reported at CHF 100.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at CHF 100.\n🇨🇭 Switzerland punches above its weight in specialised chips and advanced materials.\n🧭 Capital-efficient hardware built on Swiss research is core to the Climb thesis.\n\nhttps://www.startupticker.ch/en/news/fif-backs-four-promising-projects-emerging-from-geneva-s-academic-institutions",
       "link": "https://www.startupticker.ch/en/news/fif-backs-four-promising-projects-emerging-from-geneva-s-academic-institutions",
       "mention": {},
@@ -23,7 +39,7 @@
       ]
     },
     {
-      "index": 3,
+      "index": 5,
       "text": "🇨🇭 Backed by Yann LeCun and Arthur Mensch, Swiss Physical AI startup...\n\nEU-Startups covers the story. Swiss robotics and applied AI keep moving from demo to deployment. The round is reported at €26.68 m.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at €26.68 m.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://www.eu-startups.com/2026/10/backed-by-yann-lecun-and-arthur-mensch-swiss-physical-ai-startup-enact-intelligence-exits-stealth-with-e26-68-million/",
       "link": "https://www.eu-startups.com/2026/10/backed-by-yann-lecun-and-arthur-mensch-swiss-physical-ai-startup-enact-intelligence-exits-stealth-with-e26-68-million/",
       "mention": {},
@@ -33,26 +49,15 @@
       ]
     },
     {
-      "index": 4,
-      "text": "🇨🇭 Sonexos raises CHF 5 Million to reduce noise with plasmacoustic...\n\n🇨🇭 Sonexos SA, a Swiss deep-tech company developing solid-state active noise control, attracted CHF 5 million in new equity financing. The financing will support the transition from engineered prototypes to qualified industrial products. First series production is targeted for early 2028. The round is reported at CHF 5 M.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at CHF 5 M.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.startupticker.ch/en/news/sonexos-raises-chf-5-million-to-reduce-noise-with-plasmacoustic-technology",
-      "link": "https://www.startupticker.ch/en/news/sonexos-raises-chf-5-million-to-reduce-noise-with-plasmacoustic-technology",
-      "mention": {},
-      "needs_check": true,
-      "claims": [
-        "the post states CHF 5 M: is that money received rather than a ceiling or a target, and has the round closed",
-        "the post states CHF 5 m: is that money received rather than a ceiling or a target, and has the round closed"
-      ]
-    },
-    {
-      "index": 5,
-      "text": "🇨🇭 Innovation: Une deeptech suisse veut rendre les IA plus fiables\n\nInnovation: Une deeptech suisse veut rendre les IA plus fiables Bilan\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.bilan.ch/story/intelligence-artificielle-une-start-up-suisse-veut-fiabiliser-chatgpt-371226471079",
-      "link": "https://www.bilan.ch/story/intelligence-artificielle-une-start-up-suisse-veut-fiabiliser-chatgpt-371226471079",
+      "index": 6,
+      "text": "🇨🇭 EDCH research day\n\nEDCH research day EPFL News\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://actu.epfl.ch/news/edch-research-day/",
+      "link": "https://actu.epfl.ch/news/edch-research-day/",
       "mention": {},
       "needs_check": false,
       "claims": []
     },
     {
-      "index": 6,
+      "index": 7,
       "text": "🇨🇭 Swiss semiconductor firm Comet sales boosted by chip demand\n\n🇨🇭 Swiss semiconductor firm Comet sales boosted by chip demand SWI swissinfo.ch\n\nWhy it matters:\n📈 Semiconductors sit under almost every growth market, from AI to defense to mobility.\n🇨🇭 Switzerland punches above its weight in specialised chips and advanced materials.\n🧭 Capital-efficient hardware built on Swiss research is core to the Climb thesis.\n\nhttps://www.swissinfo.ch/eng/global-trade/comets-sales-soar-in-the-third-quarter/92242384",
       "link": "https://www.swissinfo.ch/eng/global-trade/comets-sales-soar-in-the-third-quarter/92242384",
       "mention": {},
@@ -60,7 +65,15 @@
       "claims": []
     },
     {
-      "index": 7,
+      "index": 8,
+      "text": "🇨🇭 Apple quietly buys Samplab, a Swiss AI audio startup, for Logic Pro\n\n🇨🇭 Apple quietly buys Samplab, a Swiss AI audio startup, for Logic Pro Gagadget.com\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://gagadget.com/en/730820-apple-quietly-buys-samplab-a-swiss-ai-audio-startup-for-logic-pro/",
+      "link": "https://gagadget.com/en/730820-apple-quietly-buys-samplab-a-swiss-ai-audio-startup-for-logic-pro/",
+      "mention": {},
+      "needs_check": false,
+      "claims": []
+    },
+    {
+      "index": 9,
       "text": "🇨🇭 How to make climate transitions stick\n\nEPFL News covers the story in Sion. Swiss cleantech keeps pairing serious science with real-world deployment.\n\nWhy it matters:\n📈 Energy and climate hardware is moving from subsidy toward genuine demand.\n🇨🇭 Switzerland combines deep materials science with disciplined engineering.\n🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.\n\nhttps://actu.epfl.ch/news/how-to-make-climate-transitions-stick",
       "link": "https://actu.epfl.ch/news/how-to-make-climate-transitions-stick",
       "mention": {},
@@ -68,17 +81,9 @@
       "claims": []
     },
     {
-      "index": 8,
+      "index": 10,
       "text": "🇨🇭 Swissnex is Empowering Swiss AI Startups to Go Global\n\n🇨🇭 Artificial Intelligence may be born in code, but its true value is proven when real customers actually buy and use it. For Switzerland’s most ambitious AI entrepreneurs, going global takes the right local connections, real credibility and a foot in the door.\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://www.startupticker.ch/en/news/swissnex-is-empowering-swiss-ai-startups-to-go-global",
       "link": "https://www.startupticker.ch/en/news/swissnex-is-empowering-swiss-ai-startups-to-go-global",
-      "mention": {},
-      "needs_check": false,
-      "claims": []
-    },
-    {
-      "index": 9,
-      "text": "🇨🇭 Chip Stocks Post Longest Losing Streak Since 2008: Markets Wrap\n\n🇨🇭 Chip Stocks Post Longest Losing Streak Since 2008: Markets Wrap SWI swissinfo.ch\n\nWhy it matters:\n📈 Semiconductors sit under almost every growth market, from AI to defense to mobility.\n🇨🇭 Switzerland punches above its weight in specialised chips and advanced materials.\n🧭 Capital-efficient hardware built on Swiss research is core to the Climb thesis.\n\nhttps://www.swissinfo.ch/eng/chip-stocks-post-longest-losing-streak-since-2008%3A-markets-wrap/92225060",
-      "link": "https://www.swissinfo.ch/eng/chip-stocks-post-longest-losing-streak-since-2008%3A-markets-wrap/92225060",
       "mention": {},
       "needs_check": false,
       "claims": []
