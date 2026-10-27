@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 26 October 2026. 10 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 27 October 2026. 10 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -41,23 +41,55 @@ Report what was scheduled and what was held.
 
 The stories themselves are below.
 
-## 1. Acquisition — published 26 October
+## 1. General — published 26 October
 
 ```
-🇨🇭 ELCA buys majority of Swiss data startup Beyond Civic to deepen AI push
+🇨🇭 Windward Bio files for IPO at Nasdaq
 
-🇨🇭 ELCA buys majority of Swiss data startup Beyond Civic to deepen AI push Dealroom
+Basel-based Windward Bio, a clinical-stage biotechnology company focussing on immunological diseases has applied to list its common shares on the Nasdaq Global Market. The round is reported at $365M.
+
+Why it matters:
+💰 Capital keeps following Swiss deep science, this time at $365M.
+🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.
+🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.
+
+https://www.startupticker.ch/en/news/windward-bio-files-for-ipo-at-nasdaq
+```
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/symbolbilder/Nasdaq.jpg
+
+## 2. Acquisition — published 26 October
+
+```
+🇨🇭 ELCA acquires majority stake in Beyond Civic
+
+🇨🇭 Swiss IT firm ELCA has acquired a majority stake in Beyond Civic AG, the Lucerne-based specialist in data ecosystems and trusted data exchange.
 
 Why it matters:
 📈 Automation is shifting from pilots to real commercial operations.
 🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
 🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
 
-https://app.dealroom.co/news/note/elca-buys-majority-of-swiss-data-startup-beyond-civic-to-deepen-ai-push
+https://www.startupticker.ch/en/news/elca-acquires-majority-stake-in-beyond-civic
 ```
-🖼️ **Article image:** none found, grab one from the article page.
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/elcabeyondpublic.jpg
 
-## 2. Regulatory — published 26 October
+## 3. Launch — published 26 October
+
+```
+🇨🇭 CHF 150,000 to bring CHD pregnancy monitoring into patients’ homes
+
+Biopôle-based medtech startup CHD (Connected Health Development) has obtained CHF 150,000 from Venture Kick to advance digital solutions for remote maternal and fetal monitoring. The round is reported at CHF 150,000.
+
+Why it matters:
+💰 Capital keeps following Swiss deep science, this time at CHF 150,000.
+🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.
+🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.
+
+https://www.startupticker.ch/en/news/chf-150-000-to-bring-chd-pregnancy-monitoring-into-patients-homes
+```
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/CHD%20Vanguard%20Biopole.jpg
+
+## 4. Regulatory — published 26 October
 
 ```
 🇨🇭 AI Reshapes Finance Marketing
@@ -73,7 +105,7 @@ https://fintechnews.ch/aifintech/ai-reshapes-finance-marketing/86607/
 ```
 🖼️ **Article image:** https://fintechnewsch-22e90.kxcdn.com/wp-content/uploads/2026/10/AI-Reshapes-Finance-Marketing.webp
 
-## 3. Research — published 22 October
+## 5. Research — published 22 October
 
 ```
 🇨🇭 Tackling diabetes with an electronic implant: how a tiny catalyst...
@@ -89,7 +121,7 @@ https://ethz.ch/en/news-and-events/eth-news/news/2026/10/tackling-diabetes-with-
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 4. General — published 22 October
+## 6. General — published 22 October
 
 ```
 🇨🇭 FIF backs four pomising deep tech projects
@@ -105,7 +137,7 @@ https://www.startupticker.ch/en/news/fif-backs-four-promising-projects-emerging-
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Juturna%20Bio.jpg
 
-## 5. Round — published 22 October
+## 7. Round — published 22 October
 
 ```
 🇨🇭 Backed by Yann LeCun and Arthur Mensch, Swiss Physical AI startup...
@@ -121,23 +153,7 @@ https://www.eu-startups.com/2026/10/backed-by-yann-lecun-and-arthur-mensch-swiss
 ```
 🖼️ **Article image:** https://www.eu-startups.com/wp-content/uploads/2026/10/Enact-Intelligence.jpg
 
-## 6. Research — published 21 October
-
-```
-🇨🇭 EDCH research day
-
-EDCH research day EPFL News
-
-Why it matters:
-📈 Deep technology is where durable, defensible companies get built.
-🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
-🧭 Backing that research early and capital-efficiently is what we do at Climb.
-
-https://actu.epfl.ch/news/edch-research-day/
-```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 7. General — published 20 October
+## 8. General — published 20 October
 
 ```
 🇨🇭 Swiss semiconductor firm Comet sales boosted by chip demand
@@ -153,7 +169,7 @@ https://www.swissinfo.ch/eng/global-trade/comets-sales-soar-in-the-third-quarter
 ```
 🖼️ **Article image:** https://www.swissinfo.ch/content/wp-content/uploads/sites/13/2026/10/97ef6fb366d7c0f98f557ae55a114d8ba221f26d-92242288.jpg?ver=fb64892d&fit=1200,900
 
-## 8. Acquisition — published 20 October
+## 9. Acquisition — published 20 October
 
 ```
 🇨🇭 Apple quietly buys Samplab, a Swiss AI audio startup, for Logic Pro
@@ -169,7 +185,7 @@ https://gagadget.com/en/730820-apple-quietly-buys-samplab-a-swiss-ai-audio-start
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 9. Research — published 19 October
+## 10. Research — published 19 October
 
 ```
 🇨🇭 How to make climate transitions stick
@@ -184,20 +200,4 @@ Why it matters:
 https://actu.epfl.ch/news/how-to-make-climate-transitions-stick
 ```
 🖼️ **Article image:** none found, grab one from the article page.
-
-## 10. General — published 16 October
-
-```
-🇨🇭 Swissnex is Empowering Swiss AI Startups to Go Global
-
-🇨🇭 Artificial Intelligence may be born in code, but its true value is proven when real customers actually buy and use it. For Switzerland’s most ambitious AI entrepreneurs, going global takes the right local connections, real credibility and a foot in the door.
-
-Why it matters:
-📈 Automation is shifting from pilots to real commercial operations.
-🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
-🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
-
-https://www.startupticker.ch/en/news/swissnex-is-empowering-swiss-ai-startups-to-go-global
-```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/swissnex26Post12.jpg
 
