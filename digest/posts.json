@@ -1,11 +1,19 @@
 {
-  "generated": "2026-10-28",
+  "generated": "2026-10-29",
   "mode": "Template drafts (set ANTHROPIC_API_KEY for AI-written posts).",
   "note": "Times are local. Schedule each post at its time on its date.",
   "cowork_prompt": "Open https://maxime-droux.com/digest/posts.json and schedule the posts listed at the end of this message, and only those. The file holds the shortlist; the list below says which of them I picked and when each one goes out. Match them by `index`. Ignore every other post in the file.\n\nFor each post, in order:\n- Type the `text` straight through, once, with real keystrokes. Never insert\n  text via JavaScript. It already ends with the article URL on its own line,\n  so do not add, move or retype the URL separately: typing it last is what makes\n  the link preview load the article photo.\n- Each post has exactly one @mention. Type `mention.type`, wait for the\n  dropdown, click the row matching `mention.expect`. If no row matches, post\n  it without the mention rather than tagging the wrong company. LinkedIn will\n  render the official name: that is expected and fine, do not fight it, do not\n  restart the post, do not rewrite it.\n- Schedule it at the date and time given for it in the list below. If no link\n  preview appears, schedule it anyway: do not hunt for an image.\n\nTwo attempts per post, then stop. If a post is not scheduled after two tries,\nleave it, move to the next one, and list it at the end. Never start a third.\n\nBefore you start, open the scheduled-posts list once and note what is already\nthere. Skip any post already scheduled: never schedule the same one twice.\n\nVerification:\n- Claims already settled against the article are not in the file. Check only\n  what `claims` still lists, and posts with needs_check: true (a figure nobody\n  has verified: confirm round closed / round name / amount received / investors\n  in THIS round). Both empty and false means schedule it, no research.\n\nAnything that fails: do not schedule it, and do not edit any file or commit\nanything. List the held posts at the end with the sentence you read and the\npage you read it on, and I will record them.\n\nReport what was scheduled and what was held.",
   "posts": [
     {
       "index": 1,
+      "text": "🇨🇭 Deeptech startups join forces to accelerate development\n\nThree partnerships have emerged as deeptech startups seek to expand their capabilities.\n\nWhy it matters:\n📈 Photonics is one of the rare quantum fields with a credible near-term path to revenue.\n🇨🇭 Switzerland's strength in precision engineering and optics gives its quantum spinouts a real head start.\n🧭 Deep science on a lean capital plan is exactly the Swiss DeepTech we look for at Climb.\n\nhttps://www.startupticker.ch/en/news/deeptech-startups-join-forces-to-accelerate-development",
+      "link": "https://www.startupticker.ch/en/news/deeptech-startups-join-forces-to-accelerate-development",
+      "mention": {},
+      "needs_check": false,
+      "claims": []
+    },
+    {
+      "index": 2,
       "text": "🇨🇭 Wealthsimple Valued at About US$9.8 Billion in GIC-Led Funding Round\n\nFintechnews Switzerland covers the story. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at $9.8 Billion.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at $9.8 Billion.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://fintechnews.ch/canada/wealthsimple-funding-round-gic-valuation/86708/",
       "link": "https://fintechnews.ch/canada/wealthsimple-funding-round-gic-valuation/86708/",
       "mention": {},
@@ -13,7 +21,15 @@
       "claims": []
     },
     {
-      "index": 2,
+      "index": 3,
+      "text": "🇨🇭 First ANYmals for explosive environments set for shipment\n\nANYmal X is the world’s first four-legged inspection robot designed to operate in hazardous environments of oil, gas, and chemical sectors while meeting safety standards. Developed by ETH spinoff ANYbotics over the past seven years, the robot is now ready for delivery to first customers.\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://www.startupticker.ch/en/news/first-anymals-for-explosive-environments-set-for-shipment",
+      "link": "https://www.startupticker.ch/en/news/first-anymals-for-explosive-environments-set-for-shipment",
+      "mention": {},
+      "needs_check": false,
+      "claims": []
+    },
+    {
+      "index": 4,
       "text": "🇨🇭 Data-Driven Analysis of Switzerland as an AI Hub\n\n🇨🇭 A study by Joel Niklaus, a machine learning engineer at Hugging Face, provides the first data-driven evidence that Switzerland is a strong hub for AI research. However, the country has only been able to convert this strength into economic success to a limited extent.\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://www.startupticker.ch/en/news/data-driven-analysis-of-switzerland-as-an-ai-hub",
       "link": "https://www.startupticker.ch/en/news/data-driven-analysis-of-switzerland-as-an-ai-hub",
       "mention": {},
@@ -21,17 +37,15 @@
       "claims": []
     },
     {
-      "index": 3,
-      "text": "🇨🇭 Windward Bio files for IPO at Nasdaq\n\nBasel-based Windward Bio, a clinical-stage biotechnology company focussing on immunological diseases has applied to list its common shares on the Nasdaq Global Market. The round is reported at $365M.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at $365M.\n🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.\n🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.\n\nhttps://www.startupticker.ch/en/news/windward-bio-files-for-ipo-at-nasdaq",
-      "link": "https://www.startupticker.ch/en/news/windward-bio-files-for-ipo-at-nasdaq",
+      "index": 5,
+      "text": "🇨🇭 Swiss AI drug trial startup receives funding from Spotify-backer...\n\nET Enterprise AI covers the story. Swiss robotics and applied AI keep moving from demo to deployment.\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://enterpriseai.economictimes.indiatimes.com/news/industry/swiss-ai-drug-trial-startup-receives-funding-from-spotify-backer-creandum/135244297",
+      "link": "https://enterpriseai.economictimes.indiatimes.com/news/industry/swiss-ai-drug-trial-startup-receives-funding-from-spotify-backer-creandum/135244297",
       "mention": {},
-      "needs_check": true,
-      "claims": [
-        "the post states $365M: is that money received rather than a ceiling or a target, and has the round closed"
-      ]
+      "needs_check": false,
+      "claims": []
     },
     {
-      "index": 4,
+      "index": 6,
       "text": "🇨🇭 ELCA acquires majority stake in Beyond Civic\n\n🇨🇭 Swiss IT firm ELCA has acquired a majority stake in Beyond Civic AG, the Lucerne-based specialist in data ecosystems and trusted data exchange.\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://www.startupticker.ch/en/news/elca-acquires-majority-stake-in-beyond-civic",
       "link": "https://www.startupticker.ch/en/news/elca-acquires-majority-stake-in-beyond-civic",
       "mention": {},
@@ -39,7 +53,7 @@
       "claims": []
     },
     {
-      "index": 5,
+      "index": 7,
       "text": "🇨🇭 CHF 150,000 to bring CHD pregnancy monitoring into patients’ homes\n\nBiopôle-based medtech startup CHD (Connected Health Development) has obtained CHF 150,000 from Venture Kick to advance digital solutions for remote maternal and fetal monitoring. The round is reported at CHF 150,000.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at CHF 150,000.\n🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.\n🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.\n\nhttps://www.startupticker.ch/en/news/chf-150-000-to-bring-chd-pregnancy-monitoring-into-patients-homes",
       "link": "https://www.startupticker.ch/en/news/chf-150-000-to-bring-chd-pregnancy-monitoring-into-patients-homes",
       "mention": {},
@@ -49,7 +63,7 @@
       ]
     },
     {
-      "index": 6,
+      "index": 8,
       "text": "🇨🇭 Tackling diabetes with an electronic implant: how a tiny catalyst...\n\nETH Zürich covers the story in Zürich. It is another data point in Switzerland's steady deep-tech build-out.\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://ethz.ch/en/news-and-events/eth-news/news/2026/10/tackling-diabetes-with-an-electronic-implant.html",
       "link": "https://ethz.ch/en/news-and-events/eth-news/news/2026/10/tackling-diabetes-with-an-electronic-implant.html",
       "mention": {},
@@ -57,7 +71,7 @@
       "claims": []
     },
     {
-      "index": 7,
+      "index": 9,
       "text": "🇨🇭 FIF backs four pomising deep tech projects\n\ndEEGtal, S-SENTIA, Juturna Bio and Pixels Métallurgiques are the latest projects to receive funding from the FIF, the Canton of Geneva’s innovation financing programme supporting technology-driven startups, scale-ups and SMEs. The round is reported at CHF 100.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at CHF 100.\n🇨🇭 Switzerland punches above its weight in specialised chips and advanced materials.\n🧭 Capital-efficient hardware built on Swiss research is core to the Climb thesis.\n\nhttps://www.startupticker.ch/en/news/fif-backs-four-promising-projects-emerging-from-geneva-s-academic-institutions",
       "link": "https://www.startupticker.ch/en/news/fif-backs-four-promising-projects-emerging-from-geneva-s-academic-institutions",
       "mention": {},
@@ -67,7 +81,7 @@
       ]
     },
     {
-      "index": 8,
+      "index": 10,
       "text": "🇨🇭 Backed by Yann LeCun and Arthur Mensch, Swiss Physical AI startup...\n\nEU-Startups covers the story. Swiss robotics and applied AI keep moving from demo to deployment. The round is reported at €26.68 m.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at €26.68 m.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://www.eu-startups.com/2026/10/backed-by-yann-lecun-and-arthur-mensch-swiss-physical-ai-startup-enact-intelligence-exits-stealth-with-e26-68-million/",
       "link": "https://www.eu-startups.com/2026/10/backed-by-yann-lecun-and-arthur-mensch-swiss-physical-ai-startup-enact-intelligence-exits-stealth-with-e26-68-million/",
       "mention": {},
@@ -77,28 +91,9 @@
       ]
     },
     {
-      "index": 9,
-      "text": "🇨🇭 Sonexos raises CHF 5 Million to reduce noise with plasmacoustic...\n\n🇨🇭 Sonexos SA, a Swiss deep-tech company developing solid-state active noise control, attracted CHF 5 million in new equity financing. The financing will support the transition from engineered prototypes to qualified industrial products. First series production is targeted for early 2028. The round is reported at CHF 5 M.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at CHF 5 M.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.startupticker.ch/en/news/sonexos-raises-chf-5-million-to-reduce-noise-with-plasmacoustic-technology",
-      "link": "https://www.startupticker.ch/en/news/sonexos-raises-chf-5-million-to-reduce-noise-with-plasmacoustic-technology",
-      "mention": {},
-      "needs_check": true,
-      "claims": [
-        "the post states CHF 5 M: is that money received rather than a ceiling or a target, and has the round closed",
-        "the post states CHF 5 m: is that money received rather than a ceiling or a target, and has the round closed"
-      ]
-    },
-    {
-      "index": 10,
+      "index": 11,
       "text": "🇨🇭 Swiss semiconductor firm Comet sales boosted by chip demand\n\n🇨🇭 Swiss semiconductor firm Comet sales boosted by chip demand SWI swissinfo.ch\n\nWhy it matters:\n📈 Semiconductors sit under almost every growth market, from AI to defense to mobility.\n🇨🇭 Switzerland punches above its weight in specialised chips and advanced materials.\n🧭 Capital-efficient hardware built on Swiss research is core to the Climb thesis.\n\nhttps://www.swissinfo.ch/eng/global-trade/comets-sales-soar-in-the-third-quarter/92242384",
       "link": "https://www.swissinfo.ch/eng/global-trade/comets-sales-soar-in-the-third-quarter/92242384",
-      "mention": {},
-      "needs_check": false,
-      "claims": []
-    },
-    {
-      "index": 11,
-      "text": "🇨🇭 How to make climate transitions stick\n\nEPFL News covers the story in Sion. Swiss cleantech keeps pairing serious science with real-world deployment.\n\nWhy it matters:\n📈 Energy and climate hardware is moving from subsidy toward genuine demand.\n🇨🇭 Switzerland combines deep materials science with disciplined engineering.\n🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.\n\nhttps://actu.epfl.ch/news/how-to-make-climate-transitions-stick",
-      "link": "https://actu.epfl.ch/news/how-to-make-climate-transitions-stick",
       "mention": {},
       "needs_check": false,
       "claims": []
@@ -110,6 +105,16 @@
       "mention": {},
       "needs_check": false,
       "claims": []
+    },
+    {
+      "index": 13,
+      "text": "🇨🇭 Nouscom raises $135 Million to advance its cancer immunotherapy\n\nStartupticker covers the story. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at $135 M.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at $135 M.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.startupticker.ch/en/news/nouscom-raises-135-million-to-advance-its-cancer-immunotherapy",
+      "link": "https://www.startupticker.ch/en/news/nouscom-raises-135-million-to-advance-its-cancer-immunotherapy",
+      "mention": {},
+      "needs_check": true,
+      "claims": [
+        "the post states $135 M: is that money received rather than a ceiling or a target, and has the round closed"
+      ]
     }
   ]
 }
