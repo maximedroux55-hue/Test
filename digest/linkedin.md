@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 29 October 2026. 13 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 30 October 2026. 9 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -57,23 +57,7 @@ https://www.startupticker.ch/en/news/deeptech-startups-join-forces-to-accelerate
 ```
 🖼️ **Article image:** https://www.startupticker.ch/images/startupticker/rss.png
 
-## 2. Round — published 28 October
-
-```
-🇨🇭 Wealthsimple Valued at About US$9.8 Billion in GIC-Led Funding Round
-
-Fintechnews Switzerland covers the story. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at $9.8 Billion.
-
-Why it matters:
-💰 Capital keeps following Swiss deep science, this time at $9.8 Billion.
-🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
-🧭 Backing that research early and capital-efficiently is what we do at Climb.
-
-https://fintechnews.ch/canada/wealthsimple-funding-round-gic-valuation/86708/
-```
-🖼️ **Article image:** https://fintechnewsch-22e90.kxcdn.com/wp-content/uploads/2026/10/Wealthsimple-Valued-at-CA13.8-Billion-in-GIC-Led-Funding-Round.webp
-
-## 3. General — published 28 October
+## 2. General — published 28 October
 
 ```
 🇨🇭 First ANYmals for explosive environments set for shipment
@@ -89,7 +73,7 @@ https://www.startupticker.ch/en/news/first-anymals-for-explosive-environments-se
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/AnyMalX_gas_inspectio.jpg
 
-## 4. General — published 27 October
+## 3. General — published 27 October
 
 ```
 🇨🇭 Data-Driven Analysis of Switzerland as an AI Hub
@@ -105,23 +89,23 @@ https://www.startupticker.ch/en/news/data-driven-analysis-of-switzerland-as-an-a
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/symbolbilder/k%C3%BCnstlicheIntelligenzAIrot.png
 
-## 5. General — published 27 October
+## 4. General — published 26 October
 
 ```
-🇨🇭 Swiss AI drug trial startup receives funding from Spotify-backer...
+🇨🇭 Windward Bio files for IPO at Nasdaq
 
-ET Enterprise AI covers the story. Swiss robotics and applied AI keep moving from demo to deployment.
+Basel-based Windward Bio, a clinical-stage biotechnology company focussing on immunological diseases has applied to list its common shares on the Nasdaq Global Market. The round is reported at $365M.
 
 Why it matters:
-📈 Automation is shifting from pilots to real commercial operations.
-🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
-🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
+💰 Capital keeps following Swiss deep science, this time at $365M.
+🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.
+🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.
 
-https://enterpriseai.economictimes.indiatimes.com/news/industry/swiss-ai-drug-trial-startup-receives-funding-from-spotify-backer-creandum/135244297
+https://www.startupticker.ch/en/news/windward-bio-files-for-ipo-at-nasdaq
 ```
-🖼️ **Article image:** none found, grab one from the article page.
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/symbolbilder/Nasdaq.jpg
 
-## 6. Acquisition — published 26 October
+## 5. Acquisition — published 26 October
 
 ```
 🇨🇭 ELCA acquires majority stake in Beyond Civic
@@ -137,23 +121,7 @@ https://www.startupticker.ch/en/news/elca-acquires-majority-stake-in-beyond-civi
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/elcabeyondpublic.jpg
 
-## 7. Launch — published 26 October
-
-```
-🇨🇭 CHF 150,000 to bring CHD pregnancy monitoring into patients’ homes
-
-Biopôle-based medtech startup CHD (Connected Health Development) has obtained CHF 150,000 from Venture Kick to advance digital solutions for remote maternal and fetal monitoring. The round is reported at CHF 150,000.
-
-Why it matters:
-💰 Capital keeps following Swiss deep science, this time at CHF 150,000.
-🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.
-🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.
-
-https://www.startupticker.ch/en/news/chf-150-000-to-bring-chd-pregnancy-monitoring-into-patients-homes
-```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/CHD%20Vanguard%20Biopole.jpg
-
-## 8. Research — published 22 October
+## 6. Research — published 22 October
 
 ```
 🇨🇭 Tackling diabetes with an electronic implant: how a tiny catalyst...
@@ -169,7 +137,7 @@ https://ethz.ch/en/news-and-events/eth-news/news/2026/10/tackling-diabetes-with-
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 9. General — published 22 October
+## 7. General — published 22 October
 
 ```
 🇨🇭 FIF backs four pomising deep tech projects
@@ -185,7 +153,7 @@ https://www.startupticker.ch/en/news/fif-backs-four-promising-projects-emerging-
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Juturna%20Bio.jpg
 
-## 10. Round — published 22 October
+## 8. Round — published 22 October
 
 ```
 🇨🇭 Backed by Yann LeCun and Arthur Mensch, Swiss Physical AI startup...
@@ -201,51 +169,19 @@ https://www.eu-startups.com/2026/10/backed-by-yann-lecun-and-arthur-mensch-swiss
 ```
 🖼️ **Article image:** https://www.eu-startups.com/wp-content/uploads/2026/10/Enact-Intelligence.jpg
 
-## 11. General — published 20 October
+## 9. Round — published 21 October
 
 ```
-🇨🇭 Swiss semiconductor firm Comet sales boosted by chip demand
+🇨🇭 Sonexos raises CHF 5 Million to reduce noise with plasmacoustic...
 
-🇨🇭 Swiss semiconductor firm Comet sales boosted by chip demand SWI swissinfo.ch
+🇨🇭 Sonexos SA, a Swiss deep-tech company developing solid-state active noise control, attracted CHF 5 million in new equity financing. The financing will support the transition from engineered prototypes to qualified industrial products. First series production is targeted for early 2028. The round is reported at CHF 5 M.
 
 Why it matters:
-📈 Semiconductors sit under almost every growth market, from AI to defense to mobility.
-🇨🇭 Switzerland punches above its weight in specialised chips and advanced materials.
-🧭 Capital-efficient hardware built on Swiss research is core to the Climb thesis.
-
-https://www.swissinfo.ch/eng/global-trade/comets-sales-soar-in-the-third-quarter/92242384
-```
-🖼️ **Article image:** https://www.swissinfo.ch/content/wp-content/uploads/sites/13/2026/10/97ef6fb366d7c0f98f557ae55a114d8ba221f26d-92242288.jpg?ver=fb64892d&fit=1200,900
-
-## 12. Acquisition — published 20 October
-
-```
-🇨🇭 Apple buys Swiss AI audio startup Samplab to sharpen Logic Pro
-
-🇨🇭 Apple buys Swiss AI audio startup Samplab to sharpen Logic Pro Dealroom
-
-Why it matters:
-📈 Automation is shifting from pilots to real commercial operations.
-🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
-🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
-
-https://app.dealroom.co/news/note/apple-buys-swiss-ai-audio-startup-samplab-to-sharpen-logic-pro
-```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 13. Round — published 19 October
-
-```
-🇨🇭 Nouscom raises $135 Million to advance its cancer immunotherapy
-
-Startupticker covers the story. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at $135 M.
-
-Why it matters:
-💰 Capital keeps following Swiss deep science, this time at $135 M.
+💰 Capital keeps following Swiss deep science, this time at CHF 5 M.
 🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
 🧭 Backing that research early and capital-efficiently is what we do at Climb.
 
-https://www.startupticker.ch/en/news/nouscom-raises-135-million-to-advance-its-cancer-immunotherapy
+https://www.startupticker.ch/en/news/sonexos-raises-chf-5-million-to-reduce-noise-with-plasmacoustic-technology
 ```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/symbolbilder/CancerWord2.jpg
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/SonexosPanel.jpg
 
