@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 30 October 2026. 9 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 31 October 2026. 11 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -41,7 +41,23 @@ Report what was scheduled and what was held.
 
 The stories themselves are below.
 
-## 1. General — published 29 October
+## 1. General — published 30 October
+
+```
+🇨🇭 Drei Startups auf dem Podest beim Clima Now Spotlight
+
+Die diesjährige Ausschreibung zur Förderung von Innovationen im Klimabereich, dem Clima Now Spotlight, legte den Fokus auf das Schweizer Ernährungssystem. Symactiv, Luya und Mokä konnten mit ihren Cleantech- und FoodTech-Lösungen die Jury überzeugen.
+
+Why it matters:
+📈 Energy and climate hardware is moving from subsidy toward genuine demand.
+🇨🇭 Switzerland combines deep materials science with disciplined engineering.
+🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.
+
+https://www.startupticker.ch/en/news/drei-startups-auf-dem-podest-beim-clima-now-spotlight
+```
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/climanow_vlnr_mok%C3%A4_symactiv_luya.png
+
+## 2. General — published 29 October
 
 ```
 🇨🇭 Deeptech startups join forces to accelerate development
@@ -57,7 +73,7 @@ https://www.startupticker.ch/en/news/deeptech-startups-join-forces-to-accelerate
 ```
 🖼️ **Article image:** https://www.startupticker.ch/images/startupticker/rss.png
 
-## 2. General — published 28 October
+## 3. General — published 28 October
 
 ```
 🇨🇭 First ANYmals for explosive environments set for shipment
@@ -73,7 +89,7 @@ https://www.startupticker.ch/en/news/first-anymals-for-explosive-environments-se
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/AnyMalX_gas_inspectio.jpg
 
-## 3. General — published 27 October
+## 4. General — published 27 October
 
 ```
 🇨🇭 Data-Driven Analysis of Switzerland as an AI Hub
@@ -89,7 +105,23 @@ https://www.startupticker.ch/en/news/data-driven-analysis-of-switzerland-as-an-a
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/symbolbilder/k%C3%BCnstlicheIntelligenzAIrot.png
 
-## 4. General — published 26 October
+## 5. General — published 27 October
+
+```
+🇨🇭 Swiss AI drug trial startup receives funding from Spotify-backer...
+
+ET Enterprise AI covers the story. Swiss robotics and applied AI keep moving from demo to deployment.
+
+Why it matters:
+📈 Automation is shifting from pilots to real commercial operations.
+🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
+🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
+
+https://enterpriseai.economictimes.indiatimes.com/news/industry/swiss-ai-drug-trial-startup-receives-funding-from-spotify-backer-creandum/135244297
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 6. General — published 26 October
 
 ```
 🇨🇭 Windward Bio files for IPO at Nasdaq
@@ -105,7 +137,7 @@ https://www.startupticker.ch/en/news/windward-bio-files-for-ipo-at-nasdaq
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/symbolbilder/Nasdaq.jpg
 
-## 5. Acquisition — published 26 October
+## 7. Acquisition — published 26 October
 
 ```
 🇨🇭 ELCA acquires majority stake in Beyond Civic
@@ -121,7 +153,7 @@ https://www.startupticker.ch/en/news/elca-acquires-majority-stake-in-beyond-civi
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/elcabeyondpublic.jpg
 
-## 6. Research — published 22 October
+## 8. Research — published 22 October
 
 ```
 🇨🇭 Tackling diabetes with an electronic implant: how a tiny catalyst...
@@ -137,10 +169,10 @@ https://ethz.ch/en/news-and-events/eth-news/news/2026/10/tackling-diabetes-with-
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 7. General — published 22 October
+## 9. General — published 22 October
 
 ```
-🇨🇭 FIF backs four pomising deep tech projects
+🇨🇭 FIF backs four promising deep tech projects
 
 dEEGtal, S-SENTIA, Juturna Bio and Pixels Métallurgiques are the latest projects to receive funding from the FIF, the Canton of Geneva’s innovation financing programme supporting technology-driven startups, scale-ups and SMEs. The round is reported at CHF 100.
 
@@ -153,7 +185,7 @@ https://www.startupticker.ch/en/news/fif-backs-four-promising-projects-emerging-
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Juturna%20Bio.jpg
 
-## 8. Round — published 22 October
+## 10. Round — published 22 October
 
 ```
 🇨🇭 Backed by Yann LeCun and Arthur Mensch, Swiss Physical AI startup...
@@ -169,7 +201,7 @@ https://www.eu-startups.com/2026/10/backed-by-yann-lecun-and-arthur-mensch-swiss
 ```
 🖼️ **Article image:** https://www.eu-startups.com/wp-content/uploads/2026/10/Enact-Intelligence.jpg
 
-## 9. Round — published 21 October
+## 11. Round — published 21 October
 
 ```
 🇨🇭 Sonexos raises CHF 5 Million to reduce noise with plasmacoustic...
