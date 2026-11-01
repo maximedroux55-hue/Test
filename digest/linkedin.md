@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 31 October 2026. 11 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 01 November 2026. 9 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -105,23 +105,7 @@ https://www.startupticker.ch/en/news/data-driven-analysis-of-switzerland-as-an-a
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/symbolbilder/k%C3%BCnstlicheIntelligenzAIrot.png
 
-## 5. General — published 27 October
-
-```
-🇨🇭 Swiss AI drug trial startup receives funding from Spotify-backer...
-
-ET Enterprise AI covers the story. Swiss robotics and applied AI keep moving from demo to deployment.
-
-Why it matters:
-📈 Automation is shifting from pilots to real commercial operations.
-🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
-🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
-
-https://enterpriseai.economictimes.indiatimes.com/news/industry/swiss-ai-drug-trial-startup-receives-funding-from-spotify-backer-creandum/135244297
-```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 6. General — published 26 October
+## 5. General — published 26 October
 
 ```
 🇨🇭 Windward Bio files for IPO at Nasdaq
@@ -137,7 +121,7 @@ https://www.startupticker.ch/en/news/windward-bio-files-for-ipo-at-nasdaq
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/symbolbilder/Nasdaq.jpg
 
-## 7. Acquisition — published 26 October
+## 6. Acquisition — published 26 October
 
 ```
 🇨🇭 ELCA acquires majority stake in Beyond Civic
@@ -153,23 +137,23 @@ https://www.startupticker.ch/en/news/elca-acquires-majority-stake-in-beyond-civi
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/elcabeyondpublic.jpg
 
-## 8. Research — published 22 October
+## 7. Round — published 26 October
 
 ```
-🇨🇭 Tackling diabetes with an electronic implant: how a tiny catalyst...
+🇨🇭 Sonexos Raises CHF 5M in Pre-Series A Funding
 
-ETH Zürich covers the story in Zürich. It is another data point in Switzerland's steady deep-tech build-out.
+FinSMEs covers the story. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at CHF 5M.
 
 Why it matters:
-📈 Deep technology is where durable, defensible companies get built.
+💰 Capital keeps following Swiss deep science, this time at CHF 5M.
 🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
 🧭 Backing that research early and capital-efficiently is what we do at Climb.
 
-https://ethz.ch/en/news-and-events/eth-news/news/2026/10/tackling-diabetes-with-an-electronic-implant.html
+https://www.finsmes.com/2026/10/sonexos-raises-chf-5m-in-pre-series-a-funding.html
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 9. General — published 22 October
+## 8. General — published 22 October
 
 ```
 🇨🇭 FIF backs four promising deep tech projects
@@ -185,7 +169,7 @@ https://www.startupticker.ch/en/news/fif-backs-four-promising-projects-emerging-
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Juturna%20Bio.jpg
 
-## 10. Round — published 22 October
+## 9. Round — published 22 October
 
 ```
 🇨🇭 Backed by Yann LeCun and Arthur Mensch, Swiss Physical AI startup...
@@ -200,20 +184,4 @@ Why it matters:
 https://www.eu-startups.com/2026/10/backed-by-yann-lecun-and-arthur-mensch-swiss-physical-ai-startup-enact-intelligence-exits-stealth-with-e26-68-million/
 ```
 🖼️ **Article image:** https://www.eu-startups.com/wp-content/uploads/2026/10/Enact-Intelligence.jpg
-
-## 11. Round — published 21 October
-
-```
-🇨🇭 Sonexos raises CHF 5 Million to reduce noise with plasmacoustic...
-
-🇨🇭 Sonexos SA, a Swiss deep-tech company developing solid-state active noise control, attracted CHF 5 million in new equity financing. The financing will support the transition from engineered prototypes to qualified industrial products. First series production is targeted for early 2028. The round is reported at CHF 5 M.
-
-Why it matters:
-💰 Capital keeps following Swiss deep science, this time at CHF 5 M.
-🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
-🧭 Backing that research early and capital-efficiently is what we do at Climb.
-
-https://www.startupticker.ch/en/news/sonexos-raises-chf-5-million-to-reduce-noise-with-plasmacoustic-technology
-```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/SonexosPanel.jpg
 
