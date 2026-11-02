@@ -1,63 +1,61 @@
 # Swiss DeepTech news digest
-_Generated 01 November 2026, covering the last 14 days. 30 stories._
+_Generated 02 November 2026, covering the last 14 days. 29 stories._
 
 1. **[GR3N closes a €15.5M Series B round](https://www.startupticker.ch/en/news/gr3n-closes-a-15-5m-series-b-round)**  
    startupticker.ch · sent in
 2. **[Mistral boss and Yann LeCun back Swiss robotics startup Enact in $30M pre-seed round - Tech.eu](https://news.google.com/rss/articles/CBMisAFBVV95cUxNdHYtVnVYSzFISGkteUZ5Rlh6bzRGLTVlWmtfSWJRQWZzRXVNMndYRXluSmVaQld6SGM0NzVMSV9hVFQwVWVDNFJRTURaM3R1TFVOMkFPQnhPWFQzcHJad1NoSTJxUHcyTFh5anVjMG4wQllJajA2NlByYnRZZXdNSjZFR3FmN0xET3NxbFdVV2U3MndTbDg0QkxDenVVLTd2akM2VGR5VXlRWHRWQU1nRg?oc=5)**  
    Tech.eu · 22 Oct 2026 · relevance 29
-3. **[Sonexos Raises CHF 5M in Pre-Series A Funding - FinSMEs](https://news.google.com/rss/articles/CBMiigFBVV95cUxNeGxaTVRpMVZBUWtlczlTdnN2bnFMby1nRjRYUzRsdlRVWEVfQVFpR21UTzE1emxsTG5NenFjQ014dUxiYmJJenFBRmp4RUlBOVIzUGNveVgyS19EdUl2eFdqSEJrbjVheXVCSkFpM2xaZWpmT2lTTkVKUVRHOWNPYVhZbE1wdGg3VXc?oc=5)**  
-   FinSMEs · 26 Oct 2026 · relevance 26
+3. **[Spin-off developing “conductors” for quantum computers - ETH Zürich](https://news.google.com/rss/articles/CBMitAFBVV95cUxNRHFUN0x5S0YwQjM4R2Z3WW1pVWZmM3pfdUtpMjkxWmJ2WmtNM3RHSE8xNE5qcWZiRTF3UmxPbGNONHNYa0NiVXhneXp1U0cyRkhHUFVYNFVYUXNYQUFUSmk4NmIxR28xc1V4MDVhSk9PWjNoOWc0M2RSNDJFR3pkZUJlOUg2ZXd2ZEZjTGppU3NQZzE0ME5EVnUwOGgxcFZjSmxYd05kWFhFQXladDNZcGtxYS0?oc=5)**  
+   ETH Zürich · 20 Oct 2026 · relevance 25
 4. **[Swiss biotech Atlas Bio raises USD 12.5m to simulate drug trials in virtual patients - AllSci](https://news.google.com/rss/articles/CBMiiAFBVV95cUxOWFctYnVGdmU5bXpRaDBzSW00SFRSdlVXOGVXaUY4T2dNQzc2bVp0Vm5WcFJWbk5jYklVc3VWRVZ3WGh6T3FqT0pVQkNDNVlBM3pPdWZJRVBFU2ZZb3lPTEM4X3hQRUZMdXY1b1pHSVFBUkJwdy1rTXpETUoyUDRTSHA2a3VsRkdY?oc=5)**  
    AllSci · 29 Oct 2026 · relevance 22
-5. **[Swiss biotech Nouscom secures $135M, pushing cancer prevention vaccine forward - Tech Funding News](https://news.google.com/rss/articles/CBMiqAFBVV95cUxOWHdvTFRnZHYxcUJmbi1hS1hZZDdDUmdKWU9pTThqQ3lGRGloV000RDZCSkxpT2g1VW1lb0czSElNZWZBN0NONXFXT0VGZVh3MDFzZ2FyRnFOSmNMNHNOU1JiQlZXS3M4V0JMeXRZeUstUE9aR2Q5VU5GSHJaNUJVSTVUUUlGemZXRXpOQXc3Z1p3c1MzN0F3bTdrNDc5LXFsRVJLMVNUV00?oc=5)**  
-   Tech Funding News · 19 Oct 2026 · relevance 19
-6. **[CHF 150,000 from Venture Kick to turn scientific knowledge into business opportunities](https://www.startupticker.ch/en/news/chf-150-000-from-venture-kick-to-turn-scientific-knowledge-into-business-opportunities)**  
+5. **[CHF 150,000 from Venture Kick to turn scientific knowledge into business opportunities](https://www.startupticker.ch/en/news/chf-150-000-from-venture-kick-to-turn-scientific-knowledge-into-business-opportunities)**  
    Startupticker · 30 Oct 2026 · relevance 16
-7. **[Swiss biotech Windward Bio files for Nasdaq IPO to fund China-derived assets and in-house R&D - Endpoints News](https://news.google.com/rss/articles/CBMipAFBVV95cUxNdmRlTmI1Q2cyb0VuSzNzUXF5NHFWS01BakYtbTdRcjQwLVFEcGw4V0w3dGtybUxMcTE4U09VVGdZc1JHVlRGckVOLWpyNEl1X1JRY2lVYm95NlVJdUJnSUMyVExNa05UZmVMQklUN3ZmSWp1VHl5ZVZUQmZ6dW5aaUcwWnhRSGNyVFZBYmlaTGphbkx2aFFFS1FHWXo2bGplV1dPMA?oc=5)**  
-   Endpoints News · 23 Oct 2026 · relevance 16
-8. **[SBI Investment Invests US$8 Million in Swiss AI Startup SCEPTICS, Maker of Magnetic Learning Companion Sparkie - mykxlg.com](https://news.google.com/rss/articles/CBMioAJBVV95cUxPaEdSZU1oaTJHeFdpUzNIdDQ1QTI4SXpEYUpZQlFhVkRmR1BydkVMdXNac0VOQ2wxazdiNmxPOFE4NkdMSVNwWjUzcllPcHk5d2o3WjFpR2lvNTZ1UVVVYzJNVGQxV1JKUWtSRUxKS1BUeUxyYmtWNWE3dmNrQUp2S1R1QWNEUmZyb1lERTA3NldvRG85MU1iSTMySEtZYzljakc4Qkp3N3VNZ0JUb2JvMjNfUVVCMHp3dlU0Zk9XeE5FZno0clVKdUM1WDZoRXB3MFNzNUdZUERrWFVCdjhTMERXcG95UDUyXzlibExzRXowcy13MlJTYjZPcFJlcENPdnllbDM2eE9kNlU2TXczX0t0SGExRGJBSEtWX2Zza0c?oc=5)**  
+6. **[Sonexos raises CHF 5 Million to reduce noise with plasmacoustic technology](https://www.startupticker.ch/en/news/sonexos-raises-chf-5-million-to-reduce-noise-with-plasmacoustic-technology)**  
+   Startupticker · 21 Oct 2026 · relevance 16
+7. **[SBI Investment Invests US$8 Million in Swiss AI Startup SCEPTICS, Maker of Magnetic Learning Companion Sparkie - mykxlg.com](https://news.google.com/rss/articles/CBMioAJBVV95cUxPaEdSZU1oaTJHeFdpUzNIdDQ1QTI4SXpEYUpZQlFhVkRmR1BydkVMdXNac0VOQ2wxazdiNmxPOFE4NkdMSVNwWjUzcllPcHk5d2o3WjFpR2lvNTZ1UVVVYzJNVGQxV1JKUWtSRUxKS1BUeUxyYmtWNWE3dmNrQUp2S1R1QWNEUmZyb1lERTA3NldvRG85MU1iSTMySEtZYzljakc4Qkp3N3VNZ0JUb2JvMjNfUVVCMHp3dlU0Zk9XeE5FZno0clVKdUM1WDZoRXB3MFNzNUdZUERrWFVCdjhTMERXcG95UDUyXzlibExzRXowcy13MlJTYjZPcFJlcENPdnllbDM2eE9kNlU2TXczX0t0SGExRGJBSEtWX2Zza0c?oc=5)**  
    mykxlg.com · 31 Oct 2026 · relevance 14
-9. **[Swiss semiconductor firm Comet sales boosted by chip demand - SWI swissinfo.ch](https://news.google.com/rss/articles/CBMikwFBVV95cUxNMFNIWVNZaWpwTEhfeF9idF9QYzcyelp5dFJPSDRGeHhTTndpQ1VYdl9iYWlUQUxsTHNaZWt3dDNUck9nRUIzSG1WYjZ4YkczQkV4eURCS012aGZHZXkzanlZWjBZU3lIdDRiY25jZFZzU0lnUl9zVUNxYkFwM0phZl95T3dWdXJIS0RnU3dDSWdUMW8?oc=5)**  
+8. **[Swiss semiconductor firm Comet sales boosted by chip demand - SWI swissinfo.ch](https://news.google.com/rss/articles/CBMikwFBVV95cUxNMFNIWVNZaWpwTEhfeF9idF9QYzcyelp5dFJPSDRGeHhTTndpQ1VYdl9iYWlUQUxsTHNaZWt3dDNUck9nRUIzSG1WYjZ4YkczQkV4eURCS012aGZHZXkzanlZWjBZU3lIdDRiY25jZFZzU0lnUl9zVUNxYkFwM0phZl95T3dWdXJIS0RnU3dDSWdUMW8?oc=5)**  
    SWI swissinfo.ch · 20 Oct 2026 · relevance 14
-10. **[Tackling diabetes with an electronic implant: how a tiny catalyst lowers blood sugar - ETH Zürich](https://news.google.com/rss/articles/CBMiqgFBVV95cUxQY21tVFdFR0M4UFdLWTRoUGs3ZU8xNC1ubDRucEtlRmVQaE5HcmZYdXFjckpNTUNkQldaVTBjd3FORDlSSVJ2ejd1Q1NtaVNGeFoyVGtJVlNMeV8yVGJHd1E0dUZBd0xoLTZFaEMzY2V0UmJEY3pVdmxQTmVEdEhCVW5DZWhJbFNFRHlLWWNrWGE2cHMwTEFwNEZxNjBBeVhGUUFOOG5sejd0QQ?oc=5)**  
+9. **[Tackling diabetes with an electronic implant: how a tiny catalyst lowers blood sugar - ETH Zürich](https://news.google.com/rss/articles/CBMiqgFBVV95cUxQY21tVFdFR0M4UFdLWTRoUGs3ZU8xNC1ubDRucEtlRmVQaE5HcmZYdXFjckpNTUNkQldaVTBjd3FORDlSSVJ2ejd1Q1NtaVNGeFoyVGtJVlNMeV8yVGJHd1E0dUZBd0xoLTZFaEMzY2V0UmJEY3pVdmxQTmVEdEhCVW5DZWhJbFNFRHlLWWNrWGE2cHMwTEFwNEZxNjBBeVhGUUFOOG5sejd0QQ?oc=5)**  
    ETH Zürich · 22 Oct 2026 · relevance 13
-11. **[GIST teams up with Switzerland to develop next-generation quantum communication technology - 헤럴드경제](https://news.google.com/rss/articles/CBMiV0FVX3lxTFBqc01vVTJUWlJHY2FHNExlZ0R1al84Z01RMTBLSnZEMDRyQV94TkplMGhmMlkyemRIb19GbTNnRXR4TE9TUDhHWE5lcjBiQzJkYmNCUEZOMA?oc=5)**  
-   헤럴드경제 · 28 Oct 2026 · relevance 12
-12. **[Neural chip decodes interactions between brain regions](https://actu.epfl.ch/news/neural-chip-decodes-interactions-between-brain-r-2)**  
+10. **[Windward Bio files for IPO at Nasdaq](https://www.startupticker.ch/en/news/windward-bio-files-for-ipo-at-nasdaq)**  
+   Startupticker · 26 Oct 2026 · relevance 12
+11. **[Neural chip decodes interactions between brain regions](https://actu.epfl.ch/news/neural-chip-decodes-interactions-between-brain-r-2)**  
    EPFL News · 23 Oct 2026 · relevance 11
-13. **[CelLBxHealth lands contract with Swiss biotech for clinical study - Yahoo Finance UK](https://news.google.com/rss/articles/CBMilAFBVV95cUxQYk52c013SEVJbVN6UnRoelpJLUk5azM0VTRDNG41YjNUMjBQRHM5b3hINmZhaWZjM29LSnFiVHJBNFlNamVrcG9uMHNsYTQ0LTFQa2F3bVo3bzVDYzdRdkF1a3lwVVZBemlDSTAzQllMMXZ0eHByNnkxcmNWWTEwSFRHUGFJUDNNR0lROEZOR1dEWHhD?oc=5)**  
-   Yahoo Finance UK · 20 Oct 2026 · relevance 11
-14. **[Biodelphis Therapeutics, PolaSight and Swiss Soil get FIT backing](https://www.startupticker.ch/en/news/biodelphis-therapeutics-polasight-and-swiss-soil-get-fit-backing)**  
+12. **[Biodelphis Therapeutics, PolaSight and Swiss Soil get FIT backing](https://www.startupticker.ch/en/news/biodelphis-therapeutics-polasight-and-swiss-soil-get-fit-backing)**  
    Startupticker · 28 Oct 2026 · relevance 10
-15. **[Data-Driven Analysis of Switzerland as an AI Hub](https://www.startupticker.ch/en/news/data-driven-analysis-of-switzerland-as-an-ai-hub)**  
+13. **[Data-Driven Analysis of Switzerland as an AI Hub](https://www.startupticker.ch/en/news/data-driven-analysis-of-switzerland-as-an-ai-hub)**  
    Startupticker · 27 Oct 2026 · relevance 10
-16. **[Von Solarzellen zu Quanten-Kristallen - Swiss-Press.com](https://news.google.com/rss/articles/CBMihwFBVV95cUxPUWl3RFhlT2pQTDR6M1pjSllSZ2ZQMTZJY2JIbENaZXNPZTUyTTloX0lMdG9ZTU9uRlJsU0JrQWdINk8wM3QxZ05rVDFWdVFNOVo0NjV1MGR1M2tkRjJVNFFXZjVFZ3l4MUd4UUpja0twaENiV0pBSkI2aWFuSHJCdnBya3JqRXc?oc=5)**  
+14. **[Von Solarzellen zu Quanten-Kristallen - Swiss-Press.com](https://news.google.com/rss/articles/CBMihwFBVV95cUxPUWl3RFhlT2pQTDR6M1pjSllSZ2ZQMTZJY2JIbENaZXNPZTUyTTloX0lMdG9ZTU9uRlJsU0JrQWdINk8wM3QxZ05rVDFWdVFNOVo0NjV1MGR1M2tkRjJVNFFXZjVFZ3l4MUd4UUpja0twaENiV0pBSkI2aWFuSHJCdnBya3JqRXc?oc=5)**  
    Swiss-Press.com · 26 Oct 2026 · relevance 10
-17. **[FIF backs four promising deep tech projects](https://www.startupticker.ch/en/news/fif-backs-four-promising-projects-emerging-from-geneva-s-academic-institutions)**  
+15. **[ETH Zurich research finds 407 cyber incidents targeting the space sector in 2025 - space & defense](https://news.google.com/rss/articles/CBMirAFBVV95cUxNMG56ZG1SY1dkbkNnc1FXTWc4SURZUVd0R0JNZXhiR1ZRN21OZDRpaDBMQnNsRWRCVFNYUGg5ZEV3SXBpcGd3TWFtZHFyNXg2ZjllRldHV1VNWnEtbVE2QnhlWVhPSDhmRGxwYlVNSTVRUGVMNFdLazFtWWZxbVZzZUY0YnBaeWJQM2ZSU2dPN3NROGpBX2pDLUFib21pVjl6Vzk5V2F3Ymx3UGNF?oc=5)**  
+   space & defense · 26 Oct 2026 · relevance 10
+16. **[FIF backs four promising deep tech projects](https://www.startupticker.ch/en/news/fif-backs-four-promising-projects-emerging-from-geneva-s-academic-institutions)**  
    Startupticker · 22 Oct 2026 · relevance 10
-18. **[49ing’s Hockey AI platform builds momentum for growth and expansion](https://www.startupticker.ch/en/news/49ing-s-hockey-ai-platform-builds-momentum-for-growth-and-expansion)**  
+17. **[49ing’s Hockey AI platform builds momentum for growth and expansion](https://www.startupticker.ch/en/news/49ing-s-hockey-ai-platform-builds-momentum-for-growth-and-expansion)**  
    Startupticker · 21 Oct 2026 · relevance 10
-19. **[Deeptech startups join forces to accelerate development](https://www.startupticker.ch/en/news/deeptech-startups-join-forces-to-accelerate-development)**  
+18. **[Deeptech startups join forces to accelerate development](https://www.startupticker.ch/en/news/deeptech-startups-join-forces-to-accelerate-development)**  
    Startupticker · 29 Oct 2026 · relevance 9
-20. **[ELCA acquires majority stake in Beyond Civic](https://www.startupticker.ch/en/news/elca-acquires-majority-stake-in-beyond-civic)**  
+19. **[ELCA acquires majority stake in Beyond Civic](https://www.startupticker.ch/en/news/elca-acquires-majority-stake-in-beyond-civic)**  
    Startupticker · 26 Oct 2026 · relevance 9
-21. **[How to make climate transitions stick](https://actu.epfl.ch/news/how-to-make-climate-transitions-stick)**  
-   EPFL News · 19 Oct 2026 · relevance 9
-22. **[Swiss AI drug trial startup receives funding from Spotify-backer Creandum - ET Enterprise AI](https://news.google.com/rss/articles/CBMi4AFBVV95cUxOQlh2TzhzbmpDaFF5SDhvWjEweHlLOUxRREZqWU9yQURVdlpxRzNGVC1ZanhaTUhXM3BHTm0tbnR5VzdBQmI0QXhFUW1lOHNydzE5Mi1sVGNuZ0FScGZRM1ZoQzRYOHVCSlEtNTZYQXNEclFDbHBuakVSaFYzLWhrd2g0eG1NYkNDbVhxYkR6SThiN08xLUl3MEJ2NVRSdnpxZms5ZWxiV0x5QlBOdXBkODgzT0lxODk2dkNMZDVtOEUxQ0JJZVRlLWMycmpsUDV1TXlqdWFtYkpkS24wR1Z5MtIB5gFBVV95cUxQc1drQi1FZnVwYmpHaDJLYlFJbDYtRGJUOFN0aDJ0WHJ1WkdlaDNHVjZtZENVQnFkTWxqeFl2NUxyeERCc2U2VWo5aWxPTkZoNjVIaFpvMWxFaFp6bWlheFhXb0ZaS1Z1N2lvWEFoZ0lZSkF2WmtCU0o2VC1PTkJWSExGN3I1eWJ5S2lXVFQ5LV9CQlAxcmJXZzVPWmxXLVJEdlRNVEFHZ1k0MThJeGdMRUlsRUVMX09FTGRyR0UzN3lmZ3VXUXN5Z3pNdGc1TWhndFNEdGdZWFJvR2F2Tjh4QlV5bndOZw?oc=5)**  
-   ET Enterprise AI · 27 Oct 2026 · relevance 8
-23. **[EDCH research day - EPFL](https://news.google.com/rss/articles/CBMiWkFVX3lxTFBKRnFKeHpFTVlqQXl2clVNX2pPWTJlLW9zQXRWaElHbElwOHd1Y095aWk2LWIxR0tvRm5JOGx0M0h1ZjJFVkhPSF9jb0FycG4xYUZiYV9zVUpwZw?oc=5)**  
+20. **[ETH research team creates robots with real muscles - SWI swissinfo.ch](https://news.google.com/rss/articles/CBMiqwFBVV95cUxQZkNmRWxGeFRaNVRSc1ZzQ3VyVzVyV2ZWTHROanhmZXhjcDNIcmJmTVlYSE1mS2xTaU04SVJBWWxLOEZmVllES2ZLZ1RDU2lMYW9QMVpQUlItM3g5ZFdESHJOSzhkcHdlQTFzODR2VWdlcm5PVUpOZVJ2MTFhLTYxSklFQkowbkkzVU94RUt5eXZYZ1pMYjBlRVozbkw1QmgwQnZpV2Y4amhKU00?oc=5)**  
+   SWI swissinfo.ch · 22 Oct 2026 · relevance 8
+21. **[EDCH research day - EPFL](https://news.google.com/rss/articles/CBMiV0FVX3lxTFBaZEd2NDcyMVJQdUJaSEtVak0zejRZeE94TFU4alBXNTNXWXlZTHFyX1oyZ1hSaHIwWUI4bDZCQUVqQVRGaldhVG9BVzhsZ3laYm50NWVNaw?oc=5)**  
    EPFL · 21 Oct 2026 · relevance 8
-24. **[Apple quietly buys Samplab, a Swiss AI audio startup, for Logic Pro - Gagadget.com](https://news.google.com/rss/articles/CBMingFBVV95cUxOSHBfakpiN1M2ak9vTUlhN29ubW5yajZmMHlrdXUtaHlEa2IxbmxwZHQ1OENWNThhd1liZzhDNUxoQThIdXI3M012RlZFRXU2eGY3NmVtN1AwU19nR2lET3dVb0hrVlR5bmxKTWE0OVZ3ODN5T0Y1NjZuT2xYTGJCaUtDRDREUnZVMkpXcmFNQi00aGl6X1lTX20zSFJWZ9IBowFBVV95cUxObVZCeXRBOUFDT3JId1BPczV1VGk3TmF0Z1VFSHlzbTFsazRva3hMZ2FCMG51RFdsYnFoQkZTZXRaTEFEZzZMOFlrSVNFV2dhTko4WEstVDFSZHQ3cmFXUnl6dkJ3c2JOOFBMUnlyS2UwRW80b3lIY29tZ1BZbkhjOTQ5TVp1eXJtcmdzU3B0T1hiUzBZNTBoUlAtQWVsc3RwMjZv?oc=5)**  
-   Gagadget.com · 20 Oct 2026 · relevance 8
-25. **[First ANYmals for explosive environments set for shipment](https://www.startupticker.ch/en/news/first-anymals-for-explosive-environments-set-for-shipment)**  
+22. **[First ANYmals for explosive environments set for shipment](https://www.startupticker.ch/en/news/first-anymals-for-explosive-environments-set-for-shipment)**  
    Startupticker · 28 Oct 2026 · relevance 7
-26. **[How cities can make room for robotaxis](https://actu.epfl.ch/news/how-cities-can-make-room-for-robotaxis)**  
+23. **[How cities can make room for robotaxis](https://actu.epfl.ch/news/how-cities-can-make-room-for-robotaxis)**  
    EPFL News · 30 Oct 2026 · relevance 6
-27. **[UMich, PSI researchers report new airborne radiation-detection method - American Nuclear Society](https://news.google.com/rss/articles/CBMiqgFBVV95cUxONnY4Z2N1UWt0N2VtWUZIOTMwRDItWDJVUVAzNUgzR0RqcThzU0ZZbXdtck04b1NTelV6eFNOaGlGbnFqOV80VG9LUGlEcXVlYXRlRzVZODB3UE5HdFplaHE5a0RhdnJoa2l0SlZoMHY5TWJRbU9LemwzTHkzTGVCV3RBSjRseFVRVXBFcTZkT1VzblpIMkctdDl1SzBaRndFMTFtUFQwcXlVUQ?oc=5)**  
+24. **[UMich, PSI researchers report new airborne radiation-detection method - American Nuclear Society](https://news.google.com/rss/articles/CBMiqgFBVV95cUxONnY4Z2N1UWt0N2VtWUZIOTMwRDItWDJVUVAzNUgzR0RqcThzU0ZZbXdtck04b1NTelV6eFNOaGlGbnFqOV80VG9LUGlEcXVlYXRlRzVZODB3UE5HdFplaHE5a0RhdnJoa2l0SlZoMHY5TWJRbU9LemwzTHkzTGVCV3RBSjRseFVRVXBFcTZkT1VzblpIMkctdDl1SzBaRndFMTFtUFQwcXlVUQ?oc=5)**  
    American Nuclear Society · 28 Oct 2026 · relevance 6
-28. **[Drei Startups auf dem Podest beim Clima Now Spotlight](https://www.startupticker.ch/en/news/drei-startups-auf-dem-podest-beim-clima-now-spotlight)**  
+25. **[UBS Grows Live AI Use Cases to 608 as Staff Run 12,700 Agents](https://fintechnews.ch/aifintech/ubs-ai-use-cases-608-live/86805/)**  
+   Fintechnews Switzerland · 02 Nov 2026 · relevance 5
+26. **[Drei Startups auf dem Podest beim Clima Now Spotlight](https://www.startupticker.ch/en/news/drei-startups-auf-dem-podest-beim-clima-now-spotlight)**  
    Startupticker · 30 Oct 2026 · relevance 5
-29. **[Massenentlassung bei Molecular Partners](https://www.startupticker.ch/en/news/massenentlassung-bei-molecular-partners)**  
+27. **[Massenentlassung bei Molecular Partners](https://www.startupticker.ch/en/news/massenentlassung-bei-molecular-partners)**  
    Startupticker · 29 Oct 2026 · relevance 5
-30. **[Airglitch launches to help travelers save on flights](https://www.startupticker.ch/en/news/airglitch-launches-to-help-travelers-save-on-flights)**  
-   Startupticker · 21 Oct 2026 · relevance 4
+28. **[Square8 launches AI Workers for enterprise operations](https://www.startupticker.ch/en/news/square8-launches-ai-workers-for-enterprise-operations)**  
+   Startupticker · 02 Nov 2026 · relevance 4
+29. **[Cancer Research: Mini-Antibodies Reactivate the Guardian of the Genome - Goethe University Frankfurt](https://news.google.com/rss/articles/CBMibkFVX3lxTFBqd1psQWZhbTFnVjZheEFOTk83TFRnUXVxX1NUNlNnMXJ3ZnVuaGdnOGV4MUdIOE1xdzl5T29ua3JXdjdIY29CVzdTM01mNDdwNmlTcmRTZ19hYzJtR3ZUZGtwNUR3V3VYR3pVN0RB?oc=5)**  
+   Goethe University Frankfurt · 23 Oct 2026 · relevance 4
