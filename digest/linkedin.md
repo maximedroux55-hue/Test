@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 01 November 2026. 9 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 02 November 2026. 8 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -41,7 +41,39 @@ Report what was scheduled and what was held.
 
 The stories themselves are below.
 
-## 1. General — published 30 October
+## 1. General — published 02 November
+
+```
+🇨🇭 UBS Grows Live AI Use Cases to 608 as Staff Run 12,700 Agents
+
+Fintechnews Switzerland covers the story. Swiss robotics and applied AI keep moving from demo to deployment. The round is reported at $2.7 billion.
+
+Why it matters:
+💰 Capital keeps following Swiss deep science, this time at $2.7 billion.
+🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
+🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
+
+https://fintechnews.ch/aifintech/ubs-ai-use-cases-608-live/86805/
+```
+🖼️ **Article image:** https://fintechnewsch-22e90.kxcdn.com/wp-content/uploads/2026/11/UBS-AI-Use-Cases-Rise-81-to-608-as-Employees-Run-12700-AI-Agents.webp
+
+## 2. General — published 30 October
+
+```
+🇨🇭 Flycatcher and Trilliome shine at MassChallenge Switzerland Awards
+
+🇨🇭 Flycatcher and Trilliome shine at MassChallenge Switzerland Awards Startupticker.ch
+
+Why it matters:
+📈 Deep technology is where durable, defensible companies get built.
+🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
+🧭 Backing that research early and capital-efficiently is what we do at Climb.
+
+https://www.startupticker.ch/en/news/flycatcher-and-trilliome-shine-at-masschallenge-switzerland-awards
+```
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/MassChallenge%20CH_HD%C2%A9Anne-Laure-Lechat.jpg
+
+## 3. General — published 30 October
 
 ```
 🇨🇭 Drei Startups auf dem Podest beim Clima Now Spotlight
@@ -57,7 +89,7 @@ https://www.startupticker.ch/en/news/drei-startups-auf-dem-podest-beim-clima-now
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/climanow_vlnr_mok%C3%A4_symactiv_luya.png
 
-## 2. General — published 29 October
+## 4. General — published 29 October
 
 ```
 🇨🇭 Deeptech startups join forces to accelerate development
@@ -73,7 +105,7 @@ https://www.startupticker.ch/en/news/deeptech-startups-join-forces-to-accelerate
 ```
 🖼️ **Article image:** https://www.startupticker.ch/images/startupticker/rss.png
 
-## 3. General — published 28 October
+## 5. General — published 28 October
 
 ```
 🇨🇭 First ANYmals for explosive environments set for shipment
@@ -89,7 +121,7 @@ https://www.startupticker.ch/en/news/first-anymals-for-explosive-environments-se
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/AnyMalX_gas_inspectio.jpg
 
-## 4. General — published 27 October
+## 6. General — published 27 October
 
 ```
 🇨🇭 Data-Driven Analysis of Switzerland as an AI Hub
@@ -105,7 +137,7 @@ https://www.startupticker.ch/en/news/data-driven-analysis-of-switzerland-as-an-a
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/symbolbilder/k%C3%BCnstlicheIntelligenzAIrot.png
 
-## 5. General — published 26 October
+## 7. General — published 26 October
 
 ```
 🇨🇭 Windward Bio files for IPO at Nasdaq
@@ -121,7 +153,7 @@ https://www.startupticker.ch/en/news/windward-bio-files-for-ipo-at-nasdaq
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/symbolbilder/Nasdaq.jpg
 
-## 6. Acquisition — published 26 October
+## 8. Acquisition — published 26 October
 
 ```
 🇨🇭 ELCA acquires majority stake in Beyond Civic
@@ -136,52 +168,4 @@ Why it matters:
 https://www.startupticker.ch/en/news/elca-acquires-majority-stake-in-beyond-civic
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/elcabeyondpublic.jpg
-
-## 7. Round — published 26 October
-
-```
-🇨🇭 Sonexos Raises CHF 5M in Pre-Series A Funding
-
-FinSMEs covers the story. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at CHF 5M.
-
-Why it matters:
-💰 Capital keeps following Swiss deep science, this time at CHF 5M.
-🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
-🧭 Backing that research early and capital-efficiently is what we do at Climb.
-
-https://www.finsmes.com/2026/10/sonexos-raises-chf-5m-in-pre-series-a-funding.html
-```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 8. General — published 22 October
-
-```
-🇨🇭 FIF backs four promising deep tech projects
-
-dEEGtal, S-SENTIA, Juturna Bio and Pixels Métallurgiques are the latest projects to receive funding from the FIF, the Canton of Geneva’s innovation financing programme supporting technology-driven startups, scale-ups and SMEs. The round is reported at CHF 100.
-
-Why it matters:
-💰 Capital keeps following Swiss deep science, this time at CHF 100.
-🇨🇭 Switzerland punches above its weight in specialised chips and advanced materials.
-🧭 Capital-efficient hardware built on Swiss research is core to the Climb thesis.
-
-https://www.startupticker.ch/en/news/fif-backs-four-promising-projects-emerging-from-geneva-s-academic-institutions
-```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Juturna%20Bio.jpg
-
-## 9. Round — published 22 October
-
-```
-🇨🇭 Backed by Yann LeCun and Arthur Mensch, Swiss Physical AI startup...
-
-EU-Startups covers the story. Swiss robotics and applied AI keep moving from demo to deployment. The round is reported at €26.68 m.
-
-Why it matters:
-💰 Capital keeps following Swiss deep science, this time at €26.68 m.
-🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
-🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
-
-https://www.eu-startups.com/2026/10/backed-by-yann-lecun-and-arthur-mensch-swiss-physical-ai-startup-enact-intelligence-exits-stealth-with-e26-68-million/
-```
-🖼️ **Article image:** https://www.eu-startups.com/wp-content/uploads/2026/10/Enact-Intelligence.jpg
 
