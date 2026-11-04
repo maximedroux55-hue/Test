@@ -1,19 +1,29 @@
 {
-  "generated": "2026-11-03",
+  "generated": "2026-11-04",
   "mode": "Template drafts (set ANTHROPIC_API_KEY for AI-written posts).",
   "note": "Times are local. Schedule each post at its time on its date.",
   "cowork_prompt": "Open https://maxime-droux.com/digest/posts.json and schedule the posts listed at the end of this message, and only those. The file holds the shortlist; the list below says which of them I picked and when each one goes out. Match them by `index`. Ignore every other post in the file.\n\nFor each post, in order:\n- Type the `text` straight through, once, with real keystrokes. Never insert\n  text via JavaScript. It already ends with the article URL on its own line,\n  so do not add, move or retype the URL separately: typing it last is what makes\n  the link preview load the article photo.\n- Each post has exactly one @mention. Type `mention.type`, wait for the\n  dropdown, click the row matching `mention.expect`. If no row matches, post\n  it without the mention rather than tagging the wrong company. LinkedIn will\n  render the official name: that is expected and fine, do not fight it, do not\n  restart the post, do not rewrite it.\n- Schedule it at the date and time given for it in the list below. If no link\n  preview appears, schedule it anyway: do not hunt for an image.\n\nTwo attempts per post, then stop. If a post is not scheduled after two tries,\nleave it, move to the next one, and list it at the end. Never start a third.\n\nBefore you start, open the scheduled-posts list once and note what is already\nthere. Skip any post already scheduled: never schedule the same one twice.\n\nVerification:\n- Claims already settled against the article are not in the file. Check only\n  what `claims` still lists, and posts with needs_check: true (a figure nobody\n  has verified: confirm round closed / round name / amount received / investors\n  in THIS round). Both empty and false means schedule it, no research.\n\nAnything that fails: do not schedule it, and do not edit any file or commit\nanything. List the held posts at the end with the sentence you read and the\npage you read it on, and I will record them.\n\nReport what was scheduled and what was held.",
   "posts": [
     {
       "index": 1,
-      "text": "🇨🇭 Strategic Brazil Partnership drives Picterra Vision\n\nSince its successful fundraising round in 2022, Picterra has established itself as a commodity intelligence company, collaborating with organizations such as Nespresso, JTI, Walter Matter, the FSC, DEFRA, and The Nature Conservancy.\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.startupticker.ch/en/news/strategic-brazil-partnership-drives-picterra-vision",
-      "link": "https://www.startupticker.ch/en/news/strategic-brazil-partnership-drives-picterra-vision",
+      "text": "🇨🇭 Swiss Fintechs to showcase innovation in Singapore\n\n🇨🇭 The next edition of the Singapore Fintech Festival which takes place from 18-20 November, will host the Swiss Pavilion for the 10th consecutive year.\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://www.startupticker.ch/en/news/swiss-fintechs-to-showcase-innovation-in-singapore",
+      "link": "https://www.startupticker.ch/en/news/swiss-fintechs-to-showcase-innovation-in-singapore",
       "mention": {},
       "needs_check": false,
       "claims": []
     },
     {
       "index": 2,
+      "text": "🇨🇭 CHF 150,000 to enable Apolarion protect seeds from pathogens with plasma\n\nThe EPFL spin-off Apolarion has obtained CHF 150,000 from Venture Kick to advance a chemical-free seed treatment technology powered by plasma. Using only air and electricity, the cleantech startup aims to protect crops from harmful pathogens while reducing the environmental impact of agriculture. The round is reported at CHF 150,000.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at CHF 150,000.\n🇨🇭 Switzerland combines deep materials science with disciplined engineering.\n🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.\n\nhttps://www.startupticker.ch/en/news/chf-150-000-to-enable-apolarion-protect-seeds-from-pathogens-with-plasma",
+      "link": "https://www.startupticker.ch/en/news/chf-150-000-to-enable-apolarion-protect-seeds-from-pathogens-with-plasma",
+      "mention": {},
+      "needs_check": true,
+      "claims": [
+        "the post states CHF 150,000.: is that money received rather than a ceiling or a target, and has the round closed"
+      ]
+    },
+    {
+      "index": 3,
       "text": "🇨🇭 UBS Grows Live AI Use Cases to 608 as Staff Run 12,700 Agents\n\nFintechnews Switzerland covers the story. Swiss robotics and applied AI keep moving from demo to deployment. The round is reported at $2.7 billion.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at $2.7 billion.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://fintechnews.ch/aifintech/ubs-ai-use-cases-608-live/86805/",
       "link": "https://fintechnews.ch/aifintech/ubs-ai-use-cases-608-live/86805/",
       "mention": {},
@@ -21,15 +31,15 @@
       "claims": []
     },
     {
-      "index": 3,
-      "text": "🇨🇭 Drei Startups auf dem Podest beim Clima Now Spotlight\n\nDie diesjährige Ausschreibung zur Förderung von Innovationen im Klimabereich, dem Clima Now Spotlight, legte den Fokus auf das Schweizer Ernährungssystem. Symactiv, Luya und Mokä konnten mit ihren Cleantech- und FoodTech-Lösungen die Jury überzeugen.\n\nWhy it matters:\n📈 Energy and climate hardware is moving from subsidy toward genuine demand.\n🇨🇭 Switzerland combines deep materials science with disciplined engineering.\n🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.\n\nhttps://www.startupticker.ch/en/news/drei-startups-auf-dem-podest-beim-clima-now-spotlight",
-      "link": "https://www.startupticker.ch/en/news/drei-startups-auf-dem-podest-beim-clima-now-spotlight",
+      "index": 4,
+      "text": "🇨🇭 Flycatcher and Trilliome shine at MassChallenge Switzerland Awards\n\n🇨🇭 Flycatcher and Trilliome shine at MassChallenge Switzerland Awards Startupticker.ch\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.startupticker.ch/en/news/flycatcher-and-trilliome-shine-at-masschallenge-switzerland-awards",
+      "link": "https://www.startupticker.ch/en/news/flycatcher-and-trilliome-shine-at-masschallenge-switzerland-awards",
       "mention": {},
       "needs_check": false,
       "claims": []
     },
     {
-      "index": 4,
+      "index": 5,
       "text": "🇨🇭 Deeptech startups join forces to accelerate development\n\nThree partnerships have emerged as deeptech startups seek to expand their capabilities.\n\nWhy it matters:\n📈 Photonics is one of the rare quantum fields with a credible near-term path to revenue.\n🇨🇭 Switzerland's strength in precision engineering and optics gives its quantum spinouts a real head start.\n🧭 Deep science on a lean capital plan is exactly the Swiss DeepTech we look for at Climb.\n\nhttps://www.startupticker.ch/en/news/deeptech-startups-join-forces-to-accelerate-development",
       "link": "https://www.startupticker.ch/en/news/deeptech-startups-join-forces-to-accelerate-development",
       "mention": {},
@@ -37,7 +47,7 @@
       "claims": []
     },
     {
-      "index": 5,
+      "index": 6,
       "text": "🇨🇭 First ANYmals for explosive environments set for shipment\n\nANYmal X is the world’s first four-legged inspection robot designed to operate in hazardous environments of oil, gas, and chemical sectors while meeting safety standards. Developed by ETH spinoff ANYbotics over the past seven years, the robot is now ready for delivery to first customers.\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://www.startupticker.ch/en/news/first-anymals-for-explosive-environments-set-for-shipment",
       "link": "https://www.startupticker.ch/en/news/first-anymals-for-explosive-environments-set-for-shipment",
       "mention": {},
@@ -45,7 +55,7 @@
       "claims": []
     },
     {
-      "index": 6,
+      "index": 7,
       "text": "🇨🇭 Data-Driven Analysis of Switzerland as an AI Hub\n\n🇨🇭 A study by Joel Niklaus, a machine learning engineer at Hugging Face, provides the first data-driven evidence that Switzerland is a strong hub for AI research. However, the country has only been able to convert this strength into economic success to a limited extent.\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://www.startupticker.ch/en/news/data-driven-analysis-of-switzerland-as-an-ai-hub",
       "link": "https://www.startupticker.ch/en/news/data-driven-analysis-of-switzerland-as-an-ai-hub",
       "mention": {},
@@ -53,7 +63,7 @@
       "claims": []
     },
     {
-      "index": 7,
+      "index": 8,
       "text": "🇨🇭 Windward Bio files for IPO at Nasdaq\n\nBasel-based Windward Bio, a clinical-stage biotechnology company focussing on immunological diseases has applied to list its common shares on the Nasdaq Global Market. The round is reported at $365M.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at $365M.\n🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.\n🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.\n\nhttps://www.startupticker.ch/en/news/windward-bio-files-for-ipo-at-nasdaq",
       "link": "https://www.startupticker.ch/en/news/windward-bio-files-for-ipo-at-nasdaq",
       "mention": {},
@@ -63,7 +73,7 @@
       ]
     },
     {
-      "index": 8,
+      "index": 9,
       "text": "🇨🇭 ELCA acquires majority stake in Beyond Civic\n\n🇨🇭 Swiss IT firm ELCA has acquired a majority stake in Beyond Civic AG, the Lucerne-based specialist in data ecosystems and trusted data exchange.\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://www.startupticker.ch/en/news/elca-acquires-majority-stake-in-beyond-civic",
       "link": "https://www.startupticker.ch/en/news/elca-acquires-majority-stake-in-beyond-civic",
       "mention": {},
