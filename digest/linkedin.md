@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 05 November 2026. 11 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 06 November 2026. 12 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -41,7 +41,55 @@ Report what was scheduled and what was held.
 
 The stories themselves are below.
 
-## 1. Research — published 05 November
+## 1. General — published 06 November
+
+```
+🇨🇭 UBS Job Cuts Hit London as Credit Suisse Integration Enters Final Phase
+
+Fintechnews Switzerland covers the story. It is another data point in Switzerland's steady deep-tech build-out.
+
+Why it matters:
+📈 Deep technology is where durable, defensible companies get built.
+🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
+🧭 Backing that research early and capital-efficiently is what we do at Climb.
+
+https://fintechnews.ch/london/ubs-job-cuts-london-credit-suisse/86871/
+```
+🖼️ **Article image:** https://fintechnewsch-22e90.kxcdn.com/wp-content/uploads/2026/11/UBS-Job-Cuts-Hit-London-as-Credit-Suisse-Integration-Enters-Final-Phase-1.webp
+
+## 2. General — published 06 November
+
+```
+🇨🇭 Monzo Weighs New Funding at £7.5 Billion Valuation as Buyout Talks Stall
+
+Fintechnews Switzerland covers the story. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at 7.5 Billion.
+
+Why it matters:
+💰 Capital keeps following Swiss deep science, this time at 7.5 Billion.
+🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
+🧭 Backing that research early and capital-efficiently is what we do at Climb.
+
+https://fintechnews.ch/london/monzo-valuation-fundraising-nubank-private-equity/86866/
+```
+🖼️ **Article image:** https://fintechnewsch-22e90.kxcdn.com/wp-content/uploads/2026/11/Monzo-Eyes-7.5-Billion-Valuation-as-Private-Equity-Talks-Stall.webp
+
+## 3. General — published 05 November
+
+```
+🇨🇭 Candi Solar secures USD50 million to finance projects in India
+
+The facility will finance rooftop, ground-mounted, and open-access solar installations paired with BESS across key business hubs in India. This will enable the avoidance of an estimated 397,000 tonnes of carbon dioxide emissions annually. The round is reported at USD50 m.
+
+Why it matters:
+💰 Capital keeps following Swiss deep science, this time at USD50 m.
+🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
+🧭 Backing that research early and capital-efficiently is what we do at Climb.
+
+https://www.startupticker.ch/en/news/candi-solar-secures-usd50-million-to-finance-projects-in-india
+```
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/CandiSolarProjectIndia.jpg
+
+## 4. Research — published 05 November
 
 ```
 🇨🇭 A new sensing architecture to detect small molecules
@@ -57,7 +105,7 @@ https://actu.epfl.ch/news/a-new-sensing-architecture-to-detect-small-molec-2
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 2. General — published 04 November
+## 5. General — published 04 November
 
 ```
 🇨🇭 Swiss Fintechs to showcase innovation in Singapore
@@ -73,7 +121,7 @@ https://www.startupticker.ch/en/news/swiss-fintechs-to-showcase-innovation-in-si
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Singapore.jpg
 
-## 3. General — published 03 November
+## 6. General — published 03 November
 
 ```
 🇨🇭 CHF 150,000 to enable Apolarion protect seeds from pathogens with plasma
@@ -89,7 +137,7 @@ https://www.startupticker.ch/en/news/chf-150-000-to-enable-apolarion-protect-see
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Apolarion%20_cofounders.png
 
-## 4. Partnership — published 03 November
+## 7. Partnership — published 03 November
 
 ```
 🇨🇭 Strategic Brazil Partnership drives Picterra Vision
@@ -105,7 +153,7 @@ https://www.startupticker.ch/en/news/strategic-brazil-partnership-drives-picterr
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Picterra-and-INPA.png
 
-## 5. General — published 02 November
+## 8. General — published 02 November
 
 ```
 🇨🇭 UBS Grows Live AI Use Cases to 608 as Staff Run 12,700 Agents
@@ -121,7 +169,23 @@ https://fintechnews.ch/aifintech/ubs-ai-use-cases-608-live/86805/
 ```
 🖼️ **Article image:** https://fintechnewsch-22e90.kxcdn.com/wp-content/uploads/2026/11/UBS-AI-Use-Cases-Rise-81-to-608-as-Employees-Run-12700-AI-Agents.webp
 
-## 6. General — published 29 October
+## 9. General — published 30 October
+
+```
+🇨🇭 Drei Startups auf dem Podest beim Clima Now Spotlight
+
+Die diesjährige Ausschreibung zur Förderung von Innovationen im Klimabereich, dem Clima Now Spotlight, legte den Fokus auf das Schweizer Ernährungssystem. Symactiv, Luya und Mokä konnten mit ihren Cleantech- und FoodTech-Lösungen die Jury überzeugen.
+
+Why it matters:
+📈 Energy and climate hardware is moving from subsidy toward genuine demand.
+🇨🇭 Switzerland combines deep materials science with disciplined engineering.
+🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.
+
+https://www.startupticker.ch/en/news/drei-startups-auf-dem-podest-beim-clima-now-spotlight
+```
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/climanow_vlnr_mok%C3%A4_symactiv_luya.png
+
+## 10. General — published 29 October
 
 ```
 🇨🇭 Deeptech startups join forces to accelerate development
@@ -137,7 +201,7 @@ https://www.startupticker.ch/en/news/deeptech-startups-join-forces-to-accelerate
 ```
 🖼️ **Article image:** https://www.startupticker.ch/images/startupticker/rss.png
 
-## 7. General — published 28 October
+## 11. General — published 28 October
 
 ```
 🇨🇭 First ANYmals for explosive environments set for shipment
@@ -153,7 +217,7 @@ https://www.startupticker.ch/en/news/first-anymals-for-explosive-environments-se
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/AnyMalX_gas_inspectio.jpg
 
-## 8. General — published 27 October
+## 12. General — published 27 October
 
 ```
 🇨🇭 Data-Driven Analysis of Switzerland as an AI Hub
@@ -168,52 +232,4 @@ Why it matters:
 https://www.startupticker.ch/en/news/data-driven-analysis-of-switzerland-as-an-ai-hub
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/symbolbilder/k%C3%BCnstlicheIntelligenzAIrot.png
-
-## 9. General — published 26 October
-
-```
-🇨🇭 Windward Bio files for IPO at Nasdaq
-
-Basel-based Windward Bio, a clinical-stage biotechnology company focussing on immunological diseases has applied to list its common shares on the Nasdaq Global Market. The round is reported at $365M.
-
-Why it matters:
-💰 Capital keeps following Swiss deep science, this time at $365M.
-🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.
-🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.
-
-https://www.startupticker.ch/en/news/windward-bio-files-for-ipo-at-nasdaq
-```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/symbolbilder/Nasdaq.jpg
-
-## 10. Round — published 26 October
-
-```
-🇨🇭 Sonexos Raises CHF 5M in Pre-Series A Funding
-
-FinSMEs covers the story. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at CHF 5M.
-
-Why it matters:
-💰 Capital keeps following Swiss deep science, this time at CHF 5M.
-🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
-🧭 Backing that research early and capital-efficiently is what we do at Climb.
-
-https://www.finsmes.com/2026/10/sonexos-raises-chf-5m-in-pre-series-a-funding.html
-```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 11. Acquisition — published 26 October
-
-```
-🇨🇭 ELCA acquires majority stake in Beyond Civic
-
-🇨🇭 Swiss IT firm ELCA has acquired a majority stake in Beyond Civic AG, the Lucerne-based specialist in data ecosystems and trusted data exchange.
-
-Why it matters:
-📈 Automation is shifting from pilots to real commercial operations.
-🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
-🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
-
-https://www.startupticker.ch/en/news/elca-acquires-majority-stake-in-beyond-civic
-```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/elcabeyondpublic.jpg
 
