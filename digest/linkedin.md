@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 06 November 2026. 12 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 07 November 2026. 11 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -153,21 +153,21 @@ https://www.startupticker.ch/en/news/strategic-brazil-partnership-drives-picterr
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Picterra-and-INPA.png
 
-## 8. General — published 02 November
+## 8. General — published 30 October
 
 ```
-🇨🇭 UBS Grows Live AI Use Cases to 608 as Staff Run 12,700 Agents
+🇨🇭 Flycatcher and Trilliome shine at MassChallenge Switzerland Awards
 
-Fintechnews Switzerland covers the story. Swiss robotics and applied AI keep moving from demo to deployment. The round is reported at $2.7 billion.
+🇨🇭 Flycatcher and Trilliome shine at MassChallenge Switzerland Awards Startupticker.ch
 
 Why it matters:
-💰 Capital keeps following Swiss deep science, this time at $2.7 billion.
-🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
-🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
+📈 Deep technology is where durable, defensible companies get built.
+🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
+🧭 Backing that research early and capital-efficiently is what we do at Climb.
 
-https://fintechnews.ch/aifintech/ubs-ai-use-cases-608-live/86805/
+https://www.startupticker.ch/en/news/flycatcher-and-trilliome-shine-at-masschallenge-switzerland-awards
 ```
-🖼️ **Article image:** https://fintechnewsch-22e90.kxcdn.com/wp-content/uploads/2026/11/UBS-AI-Use-Cases-Rise-81-to-608-as-Employees-Run-12700-AI-Agents.webp
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/MassChallenge%20CH_HD%C2%A9Anne-Laure-Lechat.jpg
 
 ## 9. General — published 30 October
 
@@ -216,20 +216,4 @@ Why it matters:
 https://www.startupticker.ch/en/news/first-anymals-for-explosive-environments-set-for-shipment
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/AnyMalX_gas_inspectio.jpg
-
-## 12. General — published 27 October
-
-```
-🇨🇭 Data-Driven Analysis of Switzerland as an AI Hub
-
-🇨🇭 A study by Joel Niklaus, a machine learning engineer at Hugging Face, provides the first data-driven evidence that Switzerland is a strong hub for AI research. However, the country has only been able to convert this strength into economic success to a limited extent.
-
-Why it matters:
-📈 Automation is shifting from pilots to real commercial operations.
-🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
-🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
-
-https://www.startupticker.ch/en/news/data-driven-analysis-of-switzerland-as-an-ai-hub
-```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/symbolbilder/k%C3%BCnstlicheIntelligenzAIrot.png
 
