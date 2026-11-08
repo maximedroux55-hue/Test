@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 07 November 2026. 11 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 08 November 2026. 11 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -44,6 +44,22 @@ The stories themselves are below.
 ## 1. General — published 06 November
 
 ```
+🇨🇭 With a new equity round in sight, Candi Solar secures €44 million...
+
+EU-Startups covers the story in Sion. Swiss cleantech keeps pairing serious science with real-world deployment. The round is reported at €44 m.
+
+Why it matters:
+💰 Capital keeps following Swiss deep science, this time at €44 m.
+🇨🇭 Switzerland combines deep materials science with disciplined engineering.
+🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.
+
+https://www.eu-startups.com/2026/11/with-a-new-equity-round-in-sight-candi-solar-secures-e44-million-for-solar-projects-in-india/
+```
+🖼️ **Article image:** https://www.eu-startups.com/wp-content/uploads/2026/11/candi-solar.png
+
+## 2. General — published 06 November
+
+```
 🇨🇭 UBS Job Cuts Hit London as Credit Suisse Integration Enters Final Phase
 
 Fintechnews Switzerland covers the story. It is another data point in Switzerland's steady deep-tech build-out.
@@ -57,7 +73,7 @@ https://fintechnews.ch/london/ubs-job-cuts-london-credit-suisse/86871/
 ```
 🖼️ **Article image:** https://fintechnewsch-22e90.kxcdn.com/wp-content/uploads/2026/11/UBS-Job-Cuts-Hit-London-as-Credit-Suisse-Integration-Enters-Final-Phase-1.webp
 
-## 2. General — published 06 November
+## 3. General — published 06 November
 
 ```
 🇨🇭 Monzo Weighs New Funding at £7.5 Billion Valuation as Buyout Talks Stall
@@ -72,22 +88,6 @@ Why it matters:
 https://fintechnews.ch/london/monzo-valuation-fundraising-nubank-private-equity/86866/
 ```
 🖼️ **Article image:** https://fintechnewsch-22e90.kxcdn.com/wp-content/uploads/2026/11/Monzo-Eyes-7.5-Billion-Valuation-as-Private-Equity-Talks-Stall.webp
-
-## 3. General — published 05 November
-
-```
-🇨🇭 Candi Solar secures USD50 million to finance projects in India
-
-The facility will finance rooftop, ground-mounted, and open-access solar installations paired with BESS across key business hubs in India. This will enable the avoidance of an estimated 397,000 tonnes of carbon dioxide emissions annually. The round is reported at USD50 m.
-
-Why it matters:
-💰 Capital keeps following Swiss deep science, this time at USD50 m.
-🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
-🧭 Backing that research early and capital-efficiently is what we do at Climb.
-
-https://www.startupticker.ch/en/news/candi-solar-secures-usd50-million-to-finance-projects-in-india
-```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/CandiSolarProjectIndia.jpg
 
 ## 4. Research — published 05 November
 
@@ -121,7 +121,23 @@ https://www.startupticker.ch/en/news/swiss-fintechs-to-showcase-innovation-in-si
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Singapore.jpg
 
-## 6. General — published 03 November
+## 6. General — published 04 November
+
+```
+🇨🇭 New InnoBooster recipients to accelerate development
+
+Four new projects have each received CHF 150,000 as part of the InnoBooster programme, powered by the Gebert Rüf Stiftung. The round is reported at CHF 150,000.
+
+Why it matters:
+💰 Capital keeps following Swiss deep science, this time at CHF 150,000.
+🇨🇭 Switzerland combines deep materials science with disciplined engineering.
+🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.
+
+https://www.startupticker.ch/en/news/new-innobooster-recipients-to-accelerate-development
+```
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Students_symbolicImage.jpg
+
+## 7. General — published 03 November
 
 ```
 🇨🇭 CHF 150,000 to enable Apolarion protect seeds from pathogens with plasma
@@ -137,7 +153,7 @@ https://www.startupticker.ch/en/news/chf-150-000-to-enable-apolarion-protect-see
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Apolarion%20_cofounders.png
 
-## 7. Partnership — published 03 November
+## 8. Partnership — published 03 November
 
 ```
 🇨🇭 Strategic Brazil Partnership drives Picterra Vision
@@ -153,23 +169,24 @@ https://www.startupticker.ch/en/news/strategic-brazil-partnership-drives-picterr
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Picterra-and-INPA.png
 
-## 8. General — published 30 October
+## 9. Launch — published 02 November
 
 ```
-🇨🇭 Flycatcher and Trilliome shine at MassChallenge Switzerland Awards
+🇨🇭 Square8 launches AI Workers for enterprise operations
 
-🇨🇭 Flycatcher and Trilliome shine at MassChallenge Switzerland Awards Startupticker.ch
+🇨🇭 The announcement lands. Swiss robotics and applied AI keep moving from demo to deployment.
 
 Why it matters:
-📈 Deep technology is where durable, defensible companies get built.
-🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
-🧭 Backing that research early and capital-efficiently is what we do at Climb.
+📈 Automation is shifting from pilots to real commercial operations.
+🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
+🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
 
-https://www.startupticker.ch/en/news/flycatcher-and-trilliome-shine-at-masschallenge-switzerland-awards
+https://square8.ai/ai-workers.html
 ```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/MassChallenge%20CH_HD%C2%A9Anne-Laure-Lechat.jpg
+🖼️ **Article image:** https://square8.ai/img/og-square8-en.png
+🔗 **Links to the original source.**
 
-## 9. General — published 30 October
+## 10. General — published 30 October
 
 ```
 🇨🇭 Drei Startups auf dem Podest beim Clima Now Spotlight
@@ -185,35 +202,20 @@ https://www.startupticker.ch/en/news/drei-startups-auf-dem-podest-beim-clima-now
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/climanow_vlnr_mok%C3%A4_symactiv_luya.png
 
-## 10. General — published 29 October
+## 11. Partnership — published 29 October
 
 ```
-🇨🇭 Deeptech startups join forces to accelerate development
+🇨🇭 Massenentlassung bei Molecular Partners
 
-Three partnerships have emerged as deeptech startups seek to expand their capabilities.
+🇨🇭 The announcement lands. It is another data point in Switzerland's steady deep-tech build-out.
 
 Why it matters:
-📈 Photonics is one of the rare quantum fields with a credible near-term path to revenue.
-🇨🇭 Switzerland's strength in precision engineering and optics gives its quantum spinouts a real head start.
-🧭 Deep science on a lean capital plan is exactly the Swiss DeepTech we look for at Climb.
+📈 Deep technology is where durable, defensible companies get built.
+🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
+🧭 Backing that research early and capital-efficiently is what we do at Climb.
 
-https://www.startupticker.ch/en/news/deeptech-startups-join-forces-to-accelerate-development
+https://www.molecularpartners.com/molecular-partners-announces-pricing-of-initial-public-offering-of-american-depositary-shares-in-the-united-states/
 ```
-🖼️ **Article image:** https://www.startupticker.ch/images/startupticker/rss.png
-
-## 11. General — published 28 October
-
-```
-🇨🇭 First ANYmals for explosive environments set for shipment
-
-ANYmal X is the world’s first four-legged inspection robot designed to operate in hazardous environments of oil, gas, and chemical sectors while meeting safety standards. Developed by ETH spinoff ANYbotics over the past seven years, the robot is now ready for delivery to first customers.
-
-Why it matters:
-📈 Automation is shifting from pilots to real commercial operations.
-🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
-🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
-
-https://www.startupticker.ch/en/news/first-anymals-for-explosive-environments-set-for-shipment
-```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/AnyMalX_gas_inspectio.jpg
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/symbolbilder/small-piptetting%20in%20lab.jpg
+🔗 **Links to the original source.**
 
