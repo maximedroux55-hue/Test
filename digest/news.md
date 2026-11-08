@@ -1,5 +1,5 @@
 # Swiss DeepTech news digest
-_Generated 07 November 2026, covering the last 14 days. 26 stories._
+_Generated 08 November 2026, covering the last 14 days. 25 stories._
 
 1. **[GR3N closes a €15.5M Series B round](https://www.startupticker.ch/en/news/gr3n-closes-a-15-5m-series-b-round)**  
    startupticker.ch · sent in
@@ -31,25 +31,23 @@ _Generated 07 November 2026, covering the last 14 days. 26 stories._
    Startupticker · 27 Oct 2026 · relevance 10
 15. **[A weekend to explore health technologies at EPFL](https://actu.epfl.ch/news/a-weekend-to-explore-health-technologies-at-epfl)**  
    EPFL News · 05 Nov 2026 · relevance 9
-16. **[Flycatcher and Trilliome shine at MassChallenge Switzerland Awards - Startupticker.ch](https://news.google.com/rss/articles/CBMipgFBVV95cUxORC1jQWFwME9aUDBOZkV3RFJMVUpZZ0QwNG5hRHRuSFhweU9QOHZJMDc1eDQxQ0l2VzM5dWxmZ1Z5ZU5kSkQ2ckhTZU5xS0dUeDdPRWhSaTJIZHQ1TjQwUnVtdWw2bFJwUkdiMU5pcnBpOXFZeUVKdEVLM0VtYW1US1JSaGxtandmTkFEMHdSUGZ6MllMNkptSTBXdU44TENtUWdQd0pB?oc=5)**  
-   Startupticker.ch · 30 Oct 2026 · relevance 9
-17. **[Deeptech startups join forces to accelerate development](https://www.startupticker.ch/en/news/deeptech-startups-join-forces-to-accelerate-development)**  
+16. **[Deeptech startups join forces to accelerate development](https://www.startupticker.ch/en/news/deeptech-startups-join-forces-to-accelerate-development)**  
    Startupticker · 29 Oct 2026 · relevance 9
-18. **[ELCA acquires majority stake in Beyond Civic](https://www.startupticker.ch/en/news/elca-acquires-majority-stake-in-beyond-civic)**  
+17. **[ELCA acquires majority stake in Beyond Civic](https://www.startupticker.ch/en/news/elca-acquires-majority-stake-in-beyond-civic)**  
    Startupticker · 26 Oct 2026 · relevance 9
-19. **[Switzerland's Embodied AI Unveils Humanoid Robot Designed to Learn Factory Tasks From Workers - AI Insider](https://news.google.com/rss/articles/CBMiygFBVV95cUxQczYyZDNpcWFjcmhtTXhoWnJ6X08yVnl6SDFFSnNiXy1keW1jUFJlRHBvMlhFTTByS2l4dG12eVVRcUF2QU9KLXNFYWxuMU45T3FyQ3k1WDBack82aVN6QkwyRGFxTXNpN1M2MHd0MmpyYS1iU2dMdWg4Yk5nS3RfaWFwRU1mbFBvdFMxcHBUemZnSVJxRk5pQlNhVy1SdnpIeXlOMm1lLTlDTFM3eWNSV1BEQ2QzcmtpUEdhWktxakpXNW9pb0ZjeDZ3?oc=5)**  
+18. **[Switzerland's Embodied AI Unveils Humanoid Robot Designed to Learn Factory Tasks From Workers - AI Insider](https://news.google.com/rss/articles/CBMiygFBVV95cUxQczYyZDNpcWFjcmhtTXhoWnJ6X08yVnl6SDFFSnNiXy1keW1jUFJlRHBvMlhFTTByS2l4dG12eVVRcUF2QU9KLXNFYWxuMU45T3FyQ3k1WDBack82aVN6QkwyRGFxTXNpN1M2MHd0MmpyYS1iU2dMdWg4Yk5nS3RfaWFwRU1mbFBvdFMxcHBUemZnSVJxRk5pQlNhVy1SdnpIeXlOMm1lLTlDTFM3eWNSV1BEQ2QzcmtpUEdhWktxakpXNW9pb0ZjeDZ3?oc=5)**  
    AI Insider · 06 Nov 2026 · relevance 8
-20. **[UBS Job Cuts Hit London as Credit Suisse Integration Enters Final Phase](https://fintechnews.ch/london/ubs-job-cuts-london-credit-suisse/86871/)**  
+19. **[UBS Job Cuts Hit London as Credit Suisse Integration Enters Final Phase](https://fintechnews.ch/london/ubs-job-cuts-london-credit-suisse/86871/)**  
    Fintechnews Switzerland · 06 Nov 2026 · relevance 8
-21. **[Monzo Weighs New Funding at £7.5 Billion Valuation as Buyout Talks Stall](https://fintechnews.ch/london/monzo-valuation-fundraising-nubank-private-equity/86866/)**  
+20. **[Monzo Weighs New Funding at £7.5 Billion Valuation as Buyout Talks Stall](https://fintechnews.ch/london/monzo-valuation-fundraising-nubank-private-equity/86866/)**  
    Fintechnews Switzerland · 06 Nov 2026 · relevance 8
-22. **[First ANYmals for explosive environments set for shipment](https://www.startupticker.ch/en/news/first-anymals-for-explosive-environments-set-for-shipment)**  
+21. **[First ANYmals for explosive environments set for shipment](https://www.startupticker.ch/en/news/first-anymals-for-explosive-environments-set-for-shipment)**  
    Startupticker · 28 Oct 2026 · relevance 7
-23. **[How cities can make room for robotaxis](https://actu.epfl.ch/news/how-cities-can-make-room-for-robotaxis)**  
+22. **[How cities can make room for robotaxis](https://actu.epfl.ch/news/how-cities-can-make-room-for-robotaxis)**  
    EPFL News · 30 Oct 2026 · relevance 6
-24. **[Strategic Brazil Partnership drives Picterra Vision](https://www.startupticker.ch/en/news/strategic-brazil-partnership-drives-picterra-vision)**  
+23. **[Strategic Brazil Partnership drives Picterra Vision](https://www.startupticker.ch/en/news/strategic-brazil-partnership-drives-picterra-vision)**  
    Startupticker · 03 Nov 2026 · relevance 5
-25. **[Drei Startups auf dem Podest beim Clima Now Spotlight](https://www.startupticker.ch/en/news/drei-startups-auf-dem-podest-beim-clima-now-spotlight)**  
+24. **[Drei Startups auf dem Podest beim Clima Now Spotlight](https://www.startupticker.ch/en/news/drei-startups-auf-dem-podest-beim-clima-now-spotlight)**  
    Startupticker · 30 Oct 2026 · relevance 5
-26. **[Massenentlassung bei Molecular Partners](https://www.startupticker.ch/en/news/massenentlassung-bei-molecular-partners)**  
+25. **[Massenentlassung bei Molecular Partners](https://www.startupticker.ch/en/news/massenentlassung-bei-molecular-partners)**  
    Startupticker · 29 Oct 2026 · relevance 5
