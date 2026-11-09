@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 08 November 2026. 11 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 09 November 2026. 8 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -44,22 +44,6 @@ The stories themselves are below.
 ## 1. General — published 06 November
 
 ```
-🇨🇭 With a new equity round in sight, Candi Solar secures €44 million...
-
-EU-Startups covers the story in Sion. Swiss cleantech keeps pairing serious science with real-world deployment. The round is reported at €44 m.
-
-Why it matters:
-💰 Capital keeps following Swiss deep science, this time at €44 m.
-🇨🇭 Switzerland combines deep materials science with disciplined engineering.
-🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.
-
-https://www.eu-startups.com/2026/11/with-a-new-equity-round-in-sight-candi-solar-secures-e44-million-for-solar-projects-in-india/
-```
-🖼️ **Article image:** https://www.eu-startups.com/wp-content/uploads/2026/11/candi-solar.png
-
-## 2. General — published 06 November
-
-```
 🇨🇭 UBS Job Cuts Hit London as Credit Suisse Integration Enters Final Phase
 
 Fintechnews Switzerland covers the story. It is another data point in Switzerland's steady deep-tech build-out.
@@ -73,7 +57,7 @@ https://fintechnews.ch/london/ubs-job-cuts-london-credit-suisse/86871/
 ```
 🖼️ **Article image:** https://fintechnewsch-22e90.kxcdn.com/wp-content/uploads/2026/11/UBS-Job-Cuts-Hit-London-as-Credit-Suisse-Integration-Enters-Final-Phase-1.webp
 
-## 3. General — published 06 November
+## 2. General — published 06 November
 
 ```
 🇨🇭 Monzo Weighs New Funding at £7.5 Billion Valuation as Buyout Talks Stall
@@ -88,6 +72,22 @@ Why it matters:
 https://fintechnews.ch/london/monzo-valuation-fundraising-nubank-private-equity/86866/
 ```
 🖼️ **Article image:** https://fintechnewsch-22e90.kxcdn.com/wp-content/uploads/2026/11/Monzo-Eyes-7.5-Billion-Valuation-as-Private-Equity-Talks-Stall.webp
+
+## 3. General — published 05 November
+
+```
+🇨🇭 Candi Solar secures USD50 million to finance projects in India
+
+The facility will finance rooftop, ground-mounted, and open-access solar installations paired with BESS across key business hubs in India. This will enable the avoidance of an estimated 397,000 tonnes of carbon dioxide emissions annually. The round is reported at USD50 m.
+
+Why it matters:
+💰 Capital keeps following Swiss deep science, this time at USD50 m.
+🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
+🧭 Backing that research early and capital-efficiently is what we do at Climb.
+
+https://www.startupticker.ch/en/news/candi-solar-secures-usd50-million-to-finance-projects-in-india
+```
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/CandiSolarProjectIndia.jpg
 
 ## 4. Research — published 05 November
 
@@ -121,23 +121,7 @@ https://www.startupticker.ch/en/news/swiss-fintechs-to-showcase-innovation-in-si
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Singapore.jpg
 
-## 6. General — published 04 November
-
-```
-🇨🇭 New InnoBooster recipients to accelerate development
-
-Four new projects have each received CHF 150,000 as part of the InnoBooster programme, powered by the Gebert Rüf Stiftung. The round is reported at CHF 150,000.
-
-Why it matters:
-💰 Capital keeps following Swiss deep science, this time at CHF 150,000.
-🇨🇭 Switzerland combines deep materials science with disciplined engineering.
-🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.
-
-https://www.startupticker.ch/en/news/new-innobooster-recipients-to-accelerate-development
-```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Students_symbolicImage.jpg
-
-## 7. General — published 03 November
+## 6. General — published 03 November
 
 ```
 🇨🇭 CHF 150,000 to enable Apolarion protect seeds from pathogens with plasma
@@ -153,7 +137,7 @@ https://www.startupticker.ch/en/news/chf-150-000-to-enable-apolarion-protect-see
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Apolarion%20_cofounders.png
 
-## 8. Partnership — published 03 November
+## 7. Partnership — published 03 November
 
 ```
 🇨🇭 Strategic Brazil Partnership drives Picterra Vision
@@ -169,7 +153,7 @@ https://www.startupticker.ch/en/news/strategic-brazil-partnership-drives-picterr
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Picterra-and-INPA.png
 
-## 9. Launch — published 02 November
+## 8. Launch — published 02 November
 
 ```
 🇨🇭 Square8 launches AI Workers for enterprise operations
@@ -184,38 +168,5 @@ Why it matters:
 https://square8.ai/ai-workers.html
 ```
 🖼️ **Article image:** https://square8.ai/img/og-square8-en.png
-🔗 **Links to the original source.**
-
-## 10. General — published 30 October
-
-```
-🇨🇭 Drei Startups auf dem Podest beim Clima Now Spotlight
-
-Die diesjährige Ausschreibung zur Förderung von Innovationen im Klimabereich, dem Clima Now Spotlight, legte den Fokus auf das Schweizer Ernährungssystem. Symactiv, Luya und Mokä konnten mit ihren Cleantech- und FoodTech-Lösungen die Jury überzeugen.
-
-Why it matters:
-📈 Energy and climate hardware is moving from subsidy toward genuine demand.
-🇨🇭 Switzerland combines deep materials science with disciplined engineering.
-🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.
-
-https://www.startupticker.ch/en/news/drei-startups-auf-dem-podest-beim-clima-now-spotlight
-```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/climanow_vlnr_mok%C3%A4_symactiv_luya.png
-
-## 11. Partnership — published 29 October
-
-```
-🇨🇭 Massenentlassung bei Molecular Partners
-
-🇨🇭 The announcement lands. It is another data point in Switzerland's steady deep-tech build-out.
-
-Why it matters:
-📈 Deep technology is where durable, defensible companies get built.
-🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
-🧭 Backing that research early and capital-efficiently is what we do at Climb.
-
-https://www.molecularpartners.com/molecular-partners-announces-pricing-of-initial-public-offering-of-american-depositary-shares-in-the-united-states/
-```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/symbolbilder/small-piptetting%20in%20lab.jpg
 🔗 **Links to the original source.**
 

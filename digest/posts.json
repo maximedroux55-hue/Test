@@ -1,21 +1,11 @@
 {
-  "generated": "2026-11-08",
+  "generated": "2026-11-09",
   "mode": "Template drafts (set ANTHROPIC_API_KEY for AI-written posts).",
   "note": "Times are local. Schedule each post at its time on its date.",
   "cowork_prompt": "Open https://maxime-droux.com/digest/posts.json and schedule the posts listed at the end of this message, and only those. The file holds the shortlist; the list below says which of them I picked and when each one goes out. Match them by `index`. Ignore every other post in the file.\n\nFor each post, in order:\n- Type the `text` straight through, once, with real keystrokes. Never insert\n  text via JavaScript. It already ends with the article URL on its own line,\n  so do not add, move or retype the URL separately: typing it last is what makes\n  the link preview load the article photo.\n- Each post has exactly one @mention. Type `mention.type`, wait for the\n  dropdown, click the row matching `mention.expect`. If no row matches, post\n  it without the mention rather than tagging the wrong company. LinkedIn will\n  render the official name: that is expected and fine, do not fight it, do not\n  restart the post, do not rewrite it.\n- Schedule it at the date and time given for it in the list below. If no link\n  preview appears, schedule it anyway: do not hunt for an image.\n\nTwo attempts per post, then stop. If a post is not scheduled after two tries,\nleave it, move to the next one, and list it at the end. Never start a third.\n\nBefore you start, open the scheduled-posts list once and note what is already\nthere. Skip any post already scheduled: never schedule the same one twice.\n\nVerification:\n- Claims already settled against the article are not in the file. Check only\n  what `claims` still lists, and posts with needs_check: true (a figure nobody\n  has verified: confirm round closed / round name / amount received / investors\n  in THIS round). Both empty and false means schedule it, no research.\n\nAnything that fails: do not schedule it, and do not edit any file or commit\nanything. List the held posts at the end with the sentence you read and the\npage you read it on, and I will record them.\n\nReport what was scheduled and what was held.",
   "posts": [
     {
       "index": 1,
-      "text": "🇨🇭 With a new equity round in sight, Candi Solar secures €44 million...\n\nEU-Startups covers the story in Sion. Swiss cleantech keeps pairing serious science with real-world deployment. The round is reported at €44 m.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at €44 m.\n🇨🇭 Switzerland combines deep materials science with disciplined engineering.\n🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.\n\nhttps://www.eu-startups.com/2026/11/with-a-new-equity-round-in-sight-candi-solar-secures-e44-million-for-solar-projects-in-india/",
-      "link": "https://www.eu-startups.com/2026/11/with-a-new-equity-round-in-sight-candi-solar-secures-e44-million-for-solar-projects-in-india/",
-      "mention": {},
-      "needs_check": true,
-      "claims": [
-        "the post states €44 m: is that money received rather than a ceiling or a target, and has the round closed"
-      ]
-    },
-    {
-      "index": 2,
       "text": "🇨🇭 UBS Job Cuts Hit London as Credit Suisse Integration Enters Final Phase\n\nFintechnews Switzerland covers the story. It is another data point in Switzerland's steady deep-tech build-out.\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://fintechnews.ch/london/ubs-job-cuts-london-credit-suisse/86871/",
       "link": "https://fintechnews.ch/london/ubs-job-cuts-london-credit-suisse/86871/",
       "mention": {},
@@ -23,13 +13,23 @@
       "claims": []
     },
     {
-      "index": 3,
+      "index": 2,
       "text": "🇨🇭 Monzo Weighs New Funding at £7.5 Billion Valuation as Buyout Talks Stall\n\nFintechnews Switzerland covers the story. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at 7.5 Billion.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at 7.5 Billion.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://fintechnews.ch/london/monzo-valuation-fundraising-nubank-private-equity/86866/",
       "link": "https://fintechnews.ch/london/monzo-valuation-fundraising-nubank-private-equity/86866/",
       "mention": {},
       "needs_check": true,
       "claims": [
         "the post states £7.5 Billion: is that money received rather than a ceiling or a target, and has the round closed"
+      ]
+    },
+    {
+      "index": 3,
+      "text": "🇨🇭 Candi Solar secures USD50 million to finance projects in India\n\nThe facility will finance rooftop, ground-mounted, and open-access solar installations paired with BESS across key business hubs in India. This will enable the avoidance of an estimated 397,000 tonnes of carbon dioxide emissions annually. The round is reported at USD50 m.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at USD50 m.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.startupticker.ch/en/news/candi-solar-secures-usd50-million-to-finance-projects-in-india",
+      "link": "https://www.startupticker.ch/en/news/candi-solar-secures-usd50-million-to-finance-projects-in-india",
+      "mention": {},
+      "needs_check": true,
+      "claims": [
+        "the post states USD50 m: is that money received rather than a ceiling or a target, and has the round closed"
       ]
     },
     {
@@ -50,16 +50,6 @@
     },
     {
       "index": 6,
-      "text": "🇨🇭 New InnoBooster recipients to accelerate development\n\nFour new projects have each received CHF 150,000 as part of the InnoBooster programme, powered by the Gebert Rüf Stiftung. The round is reported at CHF 150,000.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at CHF 150,000.\n🇨🇭 Switzerland combines deep materials science with disciplined engineering.\n🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.\n\nhttps://www.startupticker.ch/en/news/new-innobooster-recipients-to-accelerate-development",
-      "link": "https://www.startupticker.ch/en/news/new-innobooster-recipients-to-accelerate-development",
-      "mention": {},
-      "needs_check": true,
-      "claims": [
-        "the post states CHF 150,000.: is that money received rather than a ceiling or a target, and has the round closed"
-      ]
-    },
-    {
-      "index": 7,
       "text": "🇨🇭 CHF 150,000 to enable Apolarion protect seeds from pathogens with plasma\n\nThe EPFL spin-off Apolarion has obtained CHF 150,000 from Venture Kick to advance a chemical-free seed treatment technology powered by plasma. Using only air and electricity, the cleantech startup aims to protect crops from harmful pathogens while reducing the environmental impact of agriculture. The round is reported at CHF 150,000.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at CHF 150,000.\n🇨🇭 Switzerland combines deep materials science with disciplined engineering.\n🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.\n\nhttps://www.startupticker.ch/en/news/chf-150-000-to-enable-apolarion-protect-seeds-from-pathogens-with-plasma",
       "link": "https://www.startupticker.ch/en/news/chf-150-000-to-enable-apolarion-protect-seeds-from-pathogens-with-plasma",
       "mention": {},
@@ -69,7 +59,7 @@
       ]
     },
     {
-      "index": 8,
+      "index": 7,
       "text": "🇨🇭 Strategic Brazil Partnership drives Picterra Vision\n\nSince its successful fundraising round in 2022, Picterra has established itself as a commodity intelligence company, collaborating with organizations such as Nespresso, JTI, Walter Matter, the FSC, DEFRA, and The Nature Conservancy.\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.startupticker.ch/en/news/strategic-brazil-partnership-drives-picterra-vision",
       "link": "https://www.startupticker.ch/en/news/strategic-brazil-partnership-drives-picterra-vision",
       "mention": {},
@@ -77,25 +67,9 @@
       "claims": []
     },
     {
-      "index": 9,
+      "index": 8,
       "text": "🇨🇭 Square8 launches AI Workers for enterprise operations\n\n🇨🇭 The announcement lands. Swiss robotics and applied AI keep moving from demo to deployment.\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://square8.ai/ai-workers.html",
       "link": "https://square8.ai/ai-workers.html",
-      "mention": {},
-      "needs_check": false,
-      "claims": []
-    },
-    {
-      "index": 10,
-      "text": "🇨🇭 Drei Startups auf dem Podest beim Clima Now Spotlight\n\nDie diesjährige Ausschreibung zur Förderung von Innovationen im Klimabereich, dem Clima Now Spotlight, legte den Fokus auf das Schweizer Ernährungssystem. Symactiv, Luya und Mokä konnten mit ihren Cleantech- und FoodTech-Lösungen die Jury überzeugen.\n\nWhy it matters:\n📈 Energy and climate hardware is moving from subsidy toward genuine demand.\n🇨🇭 Switzerland combines deep materials science with disciplined engineering.\n🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.\n\nhttps://www.startupticker.ch/en/news/drei-startups-auf-dem-podest-beim-clima-now-spotlight",
-      "link": "https://www.startupticker.ch/en/news/drei-startups-auf-dem-podest-beim-clima-now-spotlight",
-      "mention": {},
-      "needs_check": false,
-      "claims": []
-    },
-    {
-      "index": 11,
-      "text": "🇨🇭 Massenentlassung bei Molecular Partners\n\n🇨🇭 The announcement lands. It is another data point in Switzerland's steady deep-tech build-out.\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.molecularpartners.com/molecular-partners-announces-pricing-of-initial-public-offering-of-american-depositary-shares-in-the-united-states/",
-      "link": "https://www.molecularpartners.com/molecular-partners-announces-pricing-of-initial-public-offering-of-american-depositary-shares-in-the-united-states/",
       "mention": {},
       "needs_check": false,
       "claims": []
