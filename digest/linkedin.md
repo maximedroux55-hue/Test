@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 09 November 2026. 8 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 10 November 2026. 10 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -41,39 +41,55 @@ Report what was scheduled and what was held.
 
 The stories themselves are below.
 
-## 1. General — published 06 November
+## 1. Round — published 10 November
 
 ```
-🇨🇭 UBS Job Cuts Hit London as Credit Suisse Integration Enters Final Phase
+🇨🇭 Redalpine closes oversubscribed $250M early-stage fund
 
-Fintechnews Switzerland covers the story. It is another data point in Switzerland's steady deep-tech build-out.
+Startupticker covers the story. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at $250M.
 
 Why it matters:
-📈 Deep technology is where durable, defensible companies get built.
+💰 Capital keeps following Swiss deep science, this time at $250M.
 🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
 🧭 Backing that research early and capital-efficiently is what we do at Climb.
 
-https://fintechnews.ch/london/ubs-job-cuts-london-credit-suisse/86871/
+https://www.startupticker.ch/en/news/redalpine-closes-oversubscribed-250m-early-stage-fund
 ```
-🖼️ **Article image:** https://fintechnewsch-22e90.kxcdn.com/wp-content/uploads/2026/11/UBS-Job-Cuts-Hit-London-as-Credit-Suisse-Integration-Enters-Final-Phase-1.webp
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/redalpine_team_websize.jpg
 
-## 2. General — published 06 November
+## 2. General — published 09 November
 
 ```
-🇨🇭 Monzo Weighs New Funding at £7.5 Billion Valuation as Buyout Talks Stall
+🇨🇭 Dexterous Endoscopes enters Biopôle Investment Programme
 
-Fintechnews Switzerland covers the story. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at 7.5 Billion.
+Biopôle Investment Programme (BIP) is welcoming Dexterous Endoscopes. The comprehensive 24-month programme at Biopôle Lausanne will provide both financial and strategic support as the medtech start-up prepares to move from preclinical validation towards regulatory submission and first clinical use.
 
 Why it matters:
-💰 Capital keeps following Swiss deep science, this time at 7.5 Billion.
-🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
-🧭 Backing that research early and capital-efficiently is what we do at Climb.
+📈 Early biological insight compounds into products years before anyone names a company.
+🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.
+🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.
 
-https://fintechnews.ch/london/monzo-valuation-fundraising-nubank-private-equity/86866/
+https://www.startupticker.ch/en/news/dexterous-endoscopes-enters-biopole-investment-programme
 ```
-🖼️ **Article image:** https://fintechnewsch-22e90.kxcdn.com/wp-content/uploads/2026/11/Monzo-Eyes-7.5-Billion-Valuation-as-Private-Equity-Talks-Stall.webp
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Dexterous%20Endoscop%20founders.jpg
 
-## 3. General — published 05 November
+## 3. General — published 09 November
+
+```
+🇨🇭 Vier Startups sichern sich einen Platz im «Büro Züri»
+
+🇨🇭 Kelva Systems, Talpa Inspection, Under Industries und Noctua werden Teil des Büro Züri im Switzerland Innovation Park Zürich. Die vier Jungunternehmen konnten die Jury mit ihren Lösungen in den Bereichen Robotics und Nachhaltigkeit überzeugen.
+
+Why it matters:
+📈 Automation is shifting from pilots to real commercial operations.
+🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
+🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
+
+https://www.startupticker.ch/en/news/vier-startups-sichern-sich-einen-platz-im-buero-zueri
+```
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/B%C3%BCro%20Z%C3%BCri%202027.jpg
+
+## 4. General — published 05 November
 
 ```
 🇨🇭 Candi Solar secures USD50 million to finance projects in India
@@ -89,7 +105,7 @@ https://www.startupticker.ch/en/news/candi-solar-secures-usd50-million-to-financ
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/CandiSolarProjectIndia.jpg
 
-## 4. Research — published 05 November
+## 5. Research — published 05 November
 
 ```
 🇨🇭 A new sensing architecture to detect small molecules
@@ -105,7 +121,7 @@ https://actu.epfl.ch/news/a-new-sensing-architecture-to-detect-small-molec-2
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 5. General — published 04 November
+## 6. General — published 04 November
 
 ```
 🇨🇭 Swiss Fintechs to showcase innovation in Singapore
@@ -121,7 +137,23 @@ https://www.startupticker.ch/en/news/swiss-fintechs-to-showcase-innovation-in-si
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Singapore.jpg
 
-## 6. General — published 03 November
+## 7. General — published 04 November
+
+```
+🇨🇭 New InnoBooster recipients to accelerate development
+
+Four new projects have each received CHF 150,000 as part of the InnoBooster programme, powered by the Gebert Rüf Stiftung. The round is reported at CHF 150,000.
+
+Why it matters:
+💰 Capital keeps following Swiss deep science, this time at CHF 150,000.
+🇨🇭 Switzerland combines deep materials science with disciplined engineering.
+🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.
+
+https://www.startupticker.ch/en/news/new-innobooster-recipients-to-accelerate-development
+```
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Students_symbolicImage.jpg
+
+## 8. General — published 03 November
 
 ```
 🇨🇭 CHF 150,000 to enable Apolarion protect seeds from pathogens with plasma
@@ -137,7 +169,7 @@ https://www.startupticker.ch/en/news/chf-150-000-to-enable-apolarion-protect-see
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Apolarion%20_cofounders.png
 
-## 7. Partnership — published 03 November
+## 9. Partnership — published 03 November
 
 ```
 🇨🇭 Strategic Brazil Partnership drives Picterra Vision
@@ -153,7 +185,7 @@ https://www.startupticker.ch/en/news/strategic-brazil-partnership-drives-picterr
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Picterra-and-INPA.png
 
-## 8. Launch — published 02 November
+## 10. Launch — published 02 November
 
 ```
 🇨🇭 Square8 launches AI Workers for enterprise operations
