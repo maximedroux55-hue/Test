@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 10 November 2026. 10 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 11 November 2026. 11 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -41,7 +41,39 @@ Report what was scheduled and what was held.
 
 The stories themselves are below.
 
-## 1. Round — published 10 November
+## 1. General — published 11 November
+
+```
+🇨🇭 Despite Broad AI Adoption in Investment Management, Applications...
+
+Fintechnews Switzerland covers the story in Sion. Swiss robotics and applied AI keep moving from demo to deployment.
+
+Why it matters:
+📈 Automation is shifting from pilots to real commercial operations.
+🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
+🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
+
+https://fintechnews.ch/aifintech/despite-broad-ai-adoption-in-investment-management-applications-remains-narrow/86975/
+```
+🖼️ **Article image:** https://fintechnewsch-22e90.kxcdn.com/wp-content/uploads/2026/11/Despite-Broad-AI-Adoption-in-Investment-Management-Applications-Remains-Narrow.webp
+
+## 2. General — published 10 November
+
+```
+🇨🇭 Une spin-off de l'EPFL dévoile un robot humanoïde qui apprend au travail
+
+Une spin-off de l'EPFL dévoile un robot humanoïde qui apprend au travail ICTjournal
+
+Why it matters:
+📈 Automation is shifting from pilots to real commercial operations.
+🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
+🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
+
+https://www.ictjournal.ch/news/2026-11-10/une-spin-off-de-lepfl-devoile-un-robot-humanoide-qui-apprend-au-travail
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 3. Round — published 10 November
 
 ```
 🇨🇭 Redalpine closes oversubscribed $250M early-stage fund
@@ -57,23 +89,7 @@ https://www.startupticker.ch/en/news/redalpine-closes-oversubscribed-250m-early-
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/redalpine_team_websize.jpg
 
-## 2. General — published 09 November
-
-```
-🇨🇭 Dexterous Endoscopes enters Biopôle Investment Programme
-
-Biopôle Investment Programme (BIP) is welcoming Dexterous Endoscopes. The comprehensive 24-month programme at Biopôle Lausanne will provide both financial and strategic support as the medtech start-up prepares to move from preclinical validation towards regulatory submission and first clinical use.
-
-Why it matters:
-📈 Early biological insight compounds into products years before anyone names a company.
-🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.
-🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.
-
-https://www.startupticker.ch/en/news/dexterous-endoscopes-enters-biopole-investment-programme
-```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Dexterous%20Endoscop%20founders.jpg
-
-## 3. General — published 09 November
+## 4. General — published 09 November
 
 ```
 🇨🇭 Vier Startups sichern sich einen Platz im «Büro Züri»
@@ -89,7 +105,7 @@ https://www.startupticker.ch/en/news/vier-startups-sichern-sich-einen-platz-im-b
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/B%C3%BCro%20Z%C3%BCri%202027.jpg
 
-## 4. General — published 05 November
+## 5. General — published 05 November
 
 ```
 🇨🇭 Candi Solar secures USD50 million to finance projects in India
@@ -105,7 +121,7 @@ https://www.startupticker.ch/en/news/candi-solar-secures-usd50-million-to-financ
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/CandiSolarProjectIndia.jpg
 
-## 5. Research — published 05 November
+## 6. Research — published 05 November
 
 ```
 🇨🇭 A new sensing architecture to detect small molecules
@@ -121,7 +137,7 @@ https://actu.epfl.ch/news/a-new-sensing-architecture-to-detect-small-molec-2
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 6. General — published 04 November
+## 7. General — published 04 November
 
 ```
 🇨🇭 Swiss Fintechs to showcase innovation in Singapore
@@ -137,7 +153,7 @@ https://www.startupticker.ch/en/news/swiss-fintechs-to-showcase-innovation-in-si
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Singapore.jpg
 
-## 7. General — published 04 November
+## 8. General — published 04 November
 
 ```
 🇨🇭 New InnoBooster recipients to accelerate development
@@ -153,7 +169,7 @@ https://www.startupticker.ch/en/news/new-innobooster-recipients-to-accelerate-de
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Students_symbolicImage.jpg
 
-## 8. General — published 03 November
+## 9. General — published 03 November
 
 ```
 🇨🇭 CHF 150,000 to enable Apolarion protect seeds from pathogens with plasma
@@ -169,7 +185,7 @@ https://www.startupticker.ch/en/news/chf-150-000-to-enable-apolarion-protect-see
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Apolarion%20_cofounders.png
 
-## 9. Partnership — published 03 November
+## 10. Partnership — published 03 November
 
 ```
 🇨🇭 Strategic Brazil Partnership drives Picterra Vision
@@ -185,7 +201,7 @@ https://www.startupticker.ch/en/news/strategic-brazil-partnership-drives-picterr
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Picterra-and-INPA.png
 
-## 10. Launch — published 02 November
+## 11. Launch — published 02 November
 
 ```
 🇨🇭 Square8 launches AI Workers for enterprise operations
