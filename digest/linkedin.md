@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 12 November 2026. 14 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 13 November 2026. 12 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -41,7 +41,23 @@ Report what was scheduled and what was held.
 
 The stories themselves are below.
 
-## 1. Launch — published 12 November
+## 1. General — published 13 November
+
+```
+🇨🇭 Awards for Western Switzerland Startups
+
+🇨🇭 From Taipei to Xiamen via Fribourg, Western Switzerland startups are winning awards and opening new business perspectives in fields such as chip-to-chip connectivity technologies, brain-computer interfaces (BCI), and reducing energy consumption in buildings without the need for renovations.
+
+Why it matters:
+📈 Semiconductors sit under almost every growth market, from AI to defense to mobility.
+🇨🇭 Switzerland punches above its weight in specialised chips and advanced materials.
+🧭 Capital-efficient hardware built on Swiss research is core to the Climb thesis.
+
+https://www.startupticker.ch/en/news/awards-for-western-switzerland-startups
+```
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Kandou%20Neurosoft%20Yord.png
+
+## 2. Launch — published 12 November
 
 ```
 🇨🇭 EPFL introduces a new Bachelor in Artificial Intelligence
@@ -57,39 +73,7 @@ https://actu.epfl.ch/news/epfl-introduces-a-new-bachelor-in-artificial-intel
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 2. Research — published 12 November
-
-```
-🇨🇭 Earkick’s AI emotional support chatbot finds new owner
-
-US-based Elomia Health has acquired Earkick, one of the first AI mental health therapists used by more than 250,000 people to vent, track patterns in mood, sleep, activity, and daily habits.
-
-Why it matters:
-📈 Automation is shifting from pilots to real commercial operations.
-🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
-🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
-
-https://www.startupticker.ch/en/news/earkick-s-ai-emotional-support-chatbot-finds-new-owner
-```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Elomia%20x%20Earkick.png
-
 ## 3. General — published 11 November
-
-```
-🇨🇭 Despite Broad AI Adoption in Investment Management, Applications...
-
-Fintechnews Switzerland covers the story in Sion. Swiss robotics and applied AI keep moving from demo to deployment.
-
-Why it matters:
-📈 Automation is shifting from pilots to real commercial operations.
-🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
-🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
-
-https://fintechnews.ch/aifintech/despite-broad-ai-adoption-in-investment-management-applications-remains-narrow/86975/
-```
-🖼️ **Article image:** https://fintechnewsch-22e90.kxcdn.com/wp-content/uploads/2026/11/Despite-Broad-AI-Adoption-in-Investment-Management-Applications-Remains-Narrow.webp
-
-## 4. General — published 11 November
 
 ```
 🇨🇭 redalpine Closes US$250 Million Fund to Back 20 European Startups
@@ -105,23 +89,7 @@ https://fintechnews.ch/funding/redalpine-250m-fund-rac-viii-close/87025/
 ```
 🖼️ **Article image:** https://fintechnewsch-22e90.kxcdn.com/wp-content/uploads/2026/11/redalpine-funding.webp
 
-## 5. General — published 11 November
-
-```
-🇨🇭 vVARDIS plans IPO in New York
-
-vVARDIS Holding AG, a Zug-based dental medtech company pioneering non-invasive cavity treatment, plans to list on the New York Stock Exchange. The company is aiming for a valuation of multiple billions of US dollars and intends to raise more than US$200 million. The round is reported at $200 m.
-
-Why it matters:
-💰 Capital keeps following Swiss deep science, this time at $200 m.
-🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.
-🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.
-
-https://www.startupticker.ch/en/news/vvardis-plans-ipo-in-new-york
-```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/vvardisProduct26.jpg
-
-## 6. General — published 10 November
+## 4. General — published 10 November
 
 ```
 🇨🇭 Une spin-off de l'EPFL dévoile un robot humanoïde qui apprend au travail
@@ -137,7 +105,7 @@ https://www.ictjournal.ch/news/2026-11-10/une-spin-off-de-lepfl-devoile-un-robot
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 7. Round — published 10 November
+## 5. Round — published 10 November
 
 ```
 🇨🇭 Redalpine closes oversubscribed $250M early-stage fund
@@ -153,7 +121,23 @@ https://www.startupticker.ch/en/news/redalpine-closes-oversubscribed-250m-early-
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/redalpine_team_websize.jpg
 
-## 8. General — published 09 November
+## 6. General — published 09 November
+
+```
+🇨🇭 Dexterous Endoscopes enters Biopôle Investment Programme
+
+Biopôle Investment Programme (BIP) is welcoming Dexterous Endoscopes. The comprehensive 24-month programme at Biopôle Lausanne will provide both financial and strategic support as the medtech start-up prepares to move from preclinical validation towards regulatory submission and first clinical use.
+
+Why it matters:
+📈 Early biological insight compounds into products years before anyone names a company.
+🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.
+🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.
+
+https://www.startupticker.ch/en/news/dexterous-endoscopes-enters-biopole-investment-programme
+```
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Dexterous%20Endoscop%20founders.jpg
+
+## 7. General — published 09 November
 
 ```
 🇨🇭 Vier Startups sichern sich einen Platz im «Büro Züri»
@@ -169,7 +153,7 @@ https://www.startupticker.ch/en/news/vier-startups-sichern-sich-einen-platz-im-b
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/B%C3%BCro%20Z%C3%BCri%202027.jpg
 
-## 9. General — published 05 November
+## 8. General — published 05 November
 
 ```
 🇨🇭 Candi Solar secures USD50 million to finance projects in India
@@ -185,7 +169,7 @@ https://www.startupticker.ch/en/news/candi-solar-secures-usd50-million-to-financ
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/CandiSolarProjectIndia.jpg
 
-## 10. Research — published 05 November
+## 9. Research — published 05 November
 
 ```
 🇨🇭 A new sensing architecture to detect small molecules
@@ -201,7 +185,7 @@ https://actu.epfl.ch/news/a-new-sensing-architecture-to-detect-small-molec-2
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 11. General — published 04 November
+## 10. General — published 04 November
 
 ```
 🇨🇭 Swiss Fintechs to showcase innovation in Singapore
@@ -216,6 +200,22 @@ Why it matters:
 https://www.startupticker.ch/en/news/swiss-fintechs-to-showcase-innovation-in-singapore
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Singapore.jpg
+
+## 11. General — published 04 November
+
+```
+🇨🇭 New InnoBooster recipients to accelerate development
+
+Four new projects have each received CHF 150,000 as part of the InnoBooster programme, powered by the Gebert Rüf Stiftung. The round is reported at CHF 150,000.
+
+Why it matters:
+💰 Capital keeps following Swiss deep science, this time at CHF 150,000.
+🇨🇭 Switzerland combines deep materials science with disciplined engineering.
+🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.
+
+https://www.startupticker.ch/en/news/new-innobooster-recipients-to-accelerate-development
+```
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Students_symbolicImage.jpg
 
 ## 12. General — published 03 November
 
@@ -232,37 +232,4 @@ Why it matters:
 https://www.startupticker.ch/en/news/chf-150-000-to-enable-apolarion-protect-seeds-from-pathogens-with-plasma
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Apolarion%20_cofounders.png
-
-## 13. Partnership — published 03 November
-
-```
-🇨🇭 Strategic Brazil Partnership drives Picterra Vision
-
-Since its successful fundraising round in 2022, Picterra has established itself as a commodity intelligence company, collaborating with organizations such as Nespresso, JTI, Walter Matter, the FSC, DEFRA, and The Nature Conservancy.
-
-Why it matters:
-📈 Deep technology is where durable, defensible companies get built.
-🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
-🧭 Backing that research early and capital-efficiently is what we do at Climb.
-
-https://www.startupticker.ch/en/news/strategic-brazil-partnership-drives-picterra-vision
-```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Picterra-and-INPA.png
-
-## 14. Launch — published 02 November
-
-```
-🇨🇭 Square8 launches AI Workers for enterprise operations
-
-🇨🇭 The announcement lands. Swiss robotics and applied AI keep moving from demo to deployment.
-
-Why it matters:
-📈 Automation is shifting from pilots to real commercial operations.
-🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
-🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
-
-https://square8.ai/ai-workers.html
-```
-🖼️ **Article image:** https://square8.ai/img/og-square8-en.png
-🔗 **Links to the original source.**
 
