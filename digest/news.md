@@ -1,5 +1,5 @@
 # Swiss DeepTech news digest
-_Generated 13 November 2026, covering the last 14 days. 27 stories._
+_Generated 14 November 2026, covering the last 14 days. 31 stories._
 
 1. **[GR3N closes a €15.5M Series B round](https://www.startupticker.ch/en/news/gr3n-closes-a-15-5m-series-b-round)**  
    startupticker.ch · sent in
@@ -13,45 +13,53 @@ _Generated 13 November 2026, covering the last 14 days. 27 stories._
    Fintechnews Switzerland · 13 Nov 2026 · relevance 17
 6. **[Aramco Ventures invests in GraphEnergyTech’s seed funding round](https://www.startupticker.ch/en/news/aramco-ventures-invests-in-graphenergytech-s-seed-funding-round)**  
    Startupticker · 06 Nov 2026 · relevance 17
-7. **[SoftBank Bets approximately $5.4 Billion on Swiss Robotics as Foreign Capital Influx Deepens - BigGo Finance](https://news.google.com/rss/articles/CBMidkFVX3lxTFBCOXZDcW9BcTVyM1BheVpUekFBcE1oTVZkZnUxMEIwRzZDaTQxazE3amJBNWZ1V1hFcG5jTlNQZ1RaTjhFVDdiWTJwZ0djRnBrNFo5dzE0S0dXVlFVRzI1TmNpRzhEM1M3cV9fTmtDZXNoRW9tU0E?oc=5)**  
+7. **[Two Swiss IPOs in one day](https://www.startupticker.ch/en/news/two-swiss-ipos-in-one-day)**  
+   Startupticker · 13 Nov 2026 · relevance 12
+8. **[SoftBank Bets approximately $5.4 Billion on Swiss Robotics as Foreign Capital Influx Deepens - BigGo Finance](https://news.google.com/rss/articles/CBMidkFVX3lxTFBCOXZDcW9BcTVyM1BheVpUekFBcE1oTVZkZnUxMEIwRzZDaTQxazE3amJBNWZ1V1hFcG5jTlNQZ1RaTjhFVDdiWTJwZ0djRnBrNFo5dzE0S0dXVlFVRzI1TmNpRzhEM1M3cV9fTmtDZXNoRW9tU0E?oc=5)**  
    BigGo Finance · 11 Nov 2026 · relevance 12
-8. **[redalpine Closes US$250 Million Fund to Back 20 European Startups](https://fintechnews.ch/funding/redalpine-250m-fund-rac-viii-close/87025/)**  
+9. **[redalpine Closes US$250 Million Fund to Back 20 European Startups](https://fintechnews.ch/funding/redalpine-250m-fund-rac-viii-close/87025/)**  
    Fintechnews Switzerland · 11 Nov 2026 · relevance 12
-9. **[Square8 strengthens security for AI workers with Korix acquisition](https://www.startupticker.ch/en/news/square8-strengthens-security-for-ai-workers-with-korix-acquisition)**  
+10. **[Square8 strengthens security for AI workers with Korix acquisition](https://www.startupticker.ch/en/news/square8-strengthens-security-for-ai-workers-with-korix-acquisition)**  
    Startupticker · 10 Nov 2026 · relevance 12
-10. **[STOXX GLOBAL PHOTONICS (EUR) (TRG) - Zonebourse Suisse](https://news.google.com/rss/articles/CBMigAFBVV95cUxNUkd5QmxzQ1lVTXgyZFpDMlFtdkhoOUpnWUc0VWxpS3RESDRnTmdqTlRxcWh3cW01NWpyZV9yUVU5bUUzOVdYZ2s1WkdXV3djQ1dQbEt1Y2RJLXlrSHlWTkNaZ3J6ZEFvYVhGc29nbUR4WVFOMUg0WTBUSWlRam1GRw?oc=5)**  
+11. **[STOXX GLOBAL PHOTONICS (EUR) (TRG) - Zonebourse Suisse](https://news.google.com/rss/articles/CBMigAFBVV95cUxNUkd5QmxzQ1lVTXgyZFpDMlFtdkhoOUpnWUc0VWxpS3RESDRnTmdqTlRxcWh3cW01NWpyZV9yUVU5bUUzOVdYZ2s1WkdXV3djQ1dQbEt1Y2RJLXlrSHlWTkNaZ3J6ZEFvYVhGc29nbUR4WVFOMUg0WTBUSWlRam1GRw?oc=5)**  
    Zonebourse Suisse · 10 Nov 2026 · relevance 12
-11. **[EPFL introduces a new Bachelor in Artificial Intelligence](https://actu.epfl.ch/news/epfl-introduces-a-new-bachelor-in-artificial-intel)**  
+12. **[Swisscanto (LU) Equity Fund - Swisscanto (LU) Equity Fund Sustainable Healthy Longevity Fonds - Finanzen.net](https://news.google.com/rss/articles/CBMiwwFBVV95cUxPcEVwWmduMnpuOFFDY1VZbnl3WmV2UndaSk1aUmZZZTNDNGo2UzFTbTB5UEN6LU40NUZvVUtYRmFtLXVvNzd5eUUzLUNlZ1pLSWRZN2dKbGFwUXpEbXphNDNjTUdpM25ycC0zY3RPcXM1UTA4bWNDV2RKV0t5UGRHLXNVTmpxSW5rYncxekp6RUpSR0dyeThUbTZ0QjZEYUkxaTRzZ2ZqTWI2aTdSbzMtVlBTb0w3QThmMVJBMEN3Z0lHYkE?oc=5)**  
+   Finanzen.net · 09 Nov 2026 · relevance 12
+13. **[201 Therapeutics obtains funding to advance new liver cancer therapy](https://www.startupticker.ch/en/news/201-therapeutics-obtains-funding-to-advance-new-liver-cancer-therapy)**  
+   Startupticker · 13 Nov 2026 · relevance 11
+14. **[EPFL introduces a new Bachelor in Artificial Intelligence](https://actu.epfl.ch/news/epfl-introduces-a-new-bachelor-in-artificial-intel)**  
    EPFL News · 12 Nov 2026 · relevance 11
-12. **[CHF 150,000 to enable Apolarion protect seeds from pathogens with plasma](https://www.startupticker.ch/en/news/chf-150-000-to-enable-apolarion-protect-seeds-from-pathogens-with-plasma)**  
+15. **[CHF 150,000 to enable Apolarion protect seeds from pathogens with plasma](https://www.startupticker.ch/en/news/chf-150-000-to-enable-apolarion-protect-seeds-from-pathogens-with-plasma)**  
    Startupticker · 03 Nov 2026 · relevance 11
-13. **[ETH Zurich builds AI avatar to support psychotherapy patients - https://streamlinefeed.co.ke/](https://news.google.com/rss/articles/CBMimwFBVV95cUxNcHpYX0FpOUdQTHdIcjkxQ1R5a1FISTlIdDNNVDVXdE84Y0hTZTlJb0F5UzlLZ2pDa2JvUEI0N2dGczNGUXgxN0k3d2ozLUtmUVM2RmNUUUdJMGdEenYwRE5hVldzc3FScVJ3cGM3Smh3SGdWNWF5Y0p0OVlxV1VsSGdzZmFabm1ydTI3emdoYWdxdkNEeEUxcC1Kcw?oc=5)**  
+16. **[ETH Zurich builds AI avatar to support psychotherapy patients - https://streamlinefeed.co.ke/](https://news.google.com/rss/articles/CBMimwFBVV95cUxNcHpYX0FpOUdQTHdIcjkxQ1R5a1FISTlIdDNNVDVXdE84Y0hTZTlJb0F5UzlLZ2pDa2JvUEI0N2dGczNGUXgxN0k3d2ozLUtmUVM2RmNUUUdJMGdEenYwRE5hVldzc3FScVJ3cGM3Smh3SGdWNWF5Y0p0OVlxV1VsSGdzZmFabm1ydTI3emdoYWdxdkNEeEUxcC1Kcw?oc=5)**  
    https://streamlinefeed.co.ke/ · 13 Nov 2026 · relevance 10
-14. **[Dexterous Endoscopes enters Biopôle Investment Programme](https://www.startupticker.ch/en/news/dexterous-endoscopes-enters-biopole-investment-programme)**  
+17. **[Dexterous Endoscopes enters Biopôle Investment Programme](https://www.startupticker.ch/en/news/dexterous-endoscopes-enters-biopole-investment-programme)**  
    Startupticker · 09 Nov 2026 · relevance 10
-15. **[AI agents doing research, shown live – Staffnet - ETH Zürich](https://news.google.com/rss/articles/CBMitAFBVV95cUxPakJKLTRkWEdtTW5JbFhNZjZ4TTRLMEJUZFpNNXY2bm1obnJhRV9BWXo3QnZfZ3N3MFpPcVJCZlh1R2l0Mmk2a0UtMF8ydV92ZF82MXFuNDFRUHNGaTFoOV9QNG90MUYxMWJvRXJDZmpZN0djSHdzMmZfc0F2V2I4NDRENnNQYnZUOS1Tc04zVlFwV1lSaWp1YklYanduNW11YmkxRGVvMi1oSjB2Q1IwU1BZTXg?oc=5)**  
+18. **[19 swiss biotech startups you’ll want to keep an eye on - Labiotech.eu](https://news.google.com/rss/articles/CBMidkFVX3lxTFBNa0pTM28zMmtaczdsdEw0MS1GRzFBai13Mjd6SS1mZEtVcG8xMVU4OXV6cnh6MUJhdnNjNlZQdGJ4cUpfSUMwNWdUVUx1bVZKandRbkt1S00zYjlkVFNXal9aMGFQS2dHUXFJcG56MzhzU1hpcXc?oc=5)**  
+   Labiotech.eu · 09 Nov 2026 · relevance 10
+19. **[AI agents doing research, shown live – Staffnet - ETH Zürich](https://news.google.com/rss/articles/CBMitAFBVV95cUxPakJKLTRkWEdtTW5JbFhNZjZ4TTRLMEJUZFpNNXY2bm1obnJhRV9BWXo3QnZfZ3N3MFpPcVJCZlh1R2l0Mmk2a0UtMF8ydV92ZF82MXFuNDFRUHNGaTFoOV9QNG90MUYxMWJvRXJDZmpZN0djSHdzMmZfc0F2V2I4NDRENnNQYnZUOS1Tc04zVlFwV1lSaWp1YklYanduNW11YmkxRGVvMi1oSjB2Q1IwU1BZTXg?oc=5)**  
    ETH Zürich · 06 Nov 2026 · relevance 10
-16. **[Candi Solar secures USD50 million to finance projects in India](https://www.startupticker.ch/en/news/candi-solar-secures-usd50-million-to-finance-projects-in-india)**  
+20. **[Candi Solar secures USD50 million to finance projects in India](https://www.startupticker.ch/en/news/candi-solar-secures-usd50-million-to-finance-projects-in-india)**  
    Startupticker · 05 Nov 2026 · relevance 10
-17. **[A new sensing architecture to detect small molecules](https://actu.epfl.ch/news/a-new-sensing-architecture-to-detect-small-molec-2)**  
+21. **[A new sensing architecture to detect small molecules](https://actu.epfl.ch/news/a-new-sensing-architecture-to-detect-small-molec-2)**  
    EPFL News · 05 Nov 2026 · relevance 10
-18. **[Swiss Fintechs to showcase innovation in Singapore](https://www.startupticker.ch/en/news/swiss-fintechs-to-showcase-innovation-in-singapore)**  
+22. **[Swiss Fintechs to showcase innovation in Singapore](https://www.startupticker.ch/en/news/swiss-fintechs-to-showcase-innovation-in-singapore)**  
    Startupticker · 04 Nov 2026 · relevance 10
-19. **[Awards for Western Switzerland Startups](https://www.startupticker.ch/en/news/awards-for-western-switzerland-startups)**  
+23. **[Switzerland Launches Chip ID Card Nov. 2: Plan Your EU Travel - deeparrival.com](https://news.google.com/rss/articles/CBMihwFBVV95cUxNY09oNno3bGVXb2Z3aXRIOUxralp2OUlRc0IxLTNtQVhkTUJCYnhoQUwzY3I0SHhVdHVQUHlsRW5NQ1d2UWVxSGZRUVYwTEpWeVR1czB3Q0xEeEZmTVBWRlFiY090YlRTS3g5NUpDX2ZuMk0xZUpNdmN6emlDX1hnM1pJcFM5S0U?oc=5)**  
+   deeparrival.com · 01 Nov 2026 · relevance 10
+24. **[Awards for Western Switzerland Startups](https://www.startupticker.ch/en/news/awards-for-western-switzerland-startups)**  
    Startupticker · 13 Nov 2026 · relevance 9
-20. **[A weekend to explore health technologies at EPFL](https://actu.epfl.ch/news/a-weekend-to-explore-health-technologies-at-epfl)**  
+25. **[A weekend to explore health technologies at EPFL](https://actu.epfl.ch/news/a-weekend-to-explore-health-technologies-at-epfl)**  
    EPFL News · 05 Nov 2026 · relevance 9
-21. **[$105 Million to transform neuropsychiatric care by fine-tuning brain signaling](https://www.startupticker.ch/en/news/105-million-to-transform-neuropsychiatric-care-by-fine-tuning-brain-signaling)**  
+26. **[$105 Million to transform neuropsychiatric care by fine-tuning brain signaling](https://www.startupticker.ch/en/news/105-million-to-transform-neuropsychiatric-care-by-fine-tuning-brain-signaling)**  
    Startupticker · 12 Nov 2026 · relevance 8
-22. **[How can we harness the energy potential of sea water?](https://actu.epfl.ch/news/how-can-we-harness-the-energy-potential-of-sea-wat)**  
+27. **[How can we harness the energy potential of sea water?](https://actu.epfl.ch/news/how-can-we-harness-the-energy-potential-of-sea-wat)**  
    EPFL News · 11 Nov 2026 · relevance 8
-23. **[Vier Startups sichern sich einen Platz im «Büro Züri»](https://www.startupticker.ch/en/news/vier-startups-sichern-sich-einen-platz-im-buero-zueri)**  
+28. **[Vier Startups sichern sich einen Platz im «Büro Züri»](https://www.startupticker.ch/en/news/vier-startups-sichern-sich-einen-platz-im-buero-zueri)**  
    Startupticker · 09 Nov 2026 · relevance 6
-24. **[Biotech collaborations to accelerate clinical progress](https://www.startupticker.ch/en/news/biotech-collaborations-to-accelerate-clinical-progress)**  
-   Startupticker · 02 Nov 2026 · relevance 6
-25. **[Strategic Brazil Partnership drives Picterra Vision](https://www.startupticker.ch/en/news/strategic-brazil-partnership-drives-picterra-vision)**  
+29. **[Strategic Brazil Partnership drives Picterra Vision](https://www.startupticker.ch/en/news/strategic-brazil-partnership-drives-picterra-vision)**  
    Startupticker · 03 Nov 2026 · relevance 5
-26. **[Drei Startups auf dem Podest beim Clima Now Spotlight](https://www.startupticker.ch/en/news/drei-startups-auf-dem-podest-beim-clima-now-spotlight)**  
-   Startupticker · 30 Oct 2026 · relevance 5
-27. **[Devia Agentic AI for GxP Pharma Quality Management arises from stealth](https://www.startupticker.ch/en/news/devia-agentic-ai-for-gxp-pharma-quality-management-arises-from-stealth)**  
+30. **[Devia Agentic AI for GxP Pharma Quality Management arises from stealth](https://www.startupticker.ch/en/news/devia-agentic-ai-for-gxp-pharma-quality-management-arises-from-stealth)**  
    Startupticker · 11 Nov 2026 · relevance 4
+31. **[New InnoBooster recipients to accelerate development](https://www.startupticker.ch/en/news/new-innobooster-recipients-to-accelerate-development)**  
+   Startupticker · 04 Nov 2026 · relevance 4
