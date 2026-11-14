@@ -1,11 +1,19 @@
 {
-  "generated": "2026-11-13",
+  "generated": "2026-11-14",
   "mode": "Template drafts (set ANTHROPIC_API_KEY for AI-written posts).",
   "note": "Times are local. Schedule each post at its time on its date.",
   "cowork_prompt": "Open https://maxime-droux.com/digest/posts.json and schedule the posts listed at the end of this message, and only those. The file holds the shortlist; the list below says which of them I picked and when each one goes out. Match them by `index`. Ignore every other post in the file.\n\nFor each post, in order:\n- Type the `text` straight through, once, with real keystrokes. Never insert\n  text via JavaScript. It already ends with the article URL on its own line,\n  so do not add, move or retype the URL separately: typing it last is what makes\n  the link preview load the article photo.\n- Each post has exactly one @mention. Type `mention.type`, wait for the\n  dropdown, click the row matching `mention.expect`. If no row matches, post\n  it without the mention rather than tagging the wrong company. LinkedIn will\n  render the official name: that is expected and fine, do not fight it, do not\n  restart the post, do not rewrite it.\n- Schedule it at the date and time given for it in the list below. If no link\n  preview appears, schedule it anyway: do not hunt for an image.\n\nTwo attempts per post, then stop. If a post is not scheduled after two tries,\nleave it, move to the next one, and list it at the end. Never start a third.\n\nBefore you start, open the scheduled-posts list once and note what is already\nthere. Skip any post already scheduled: never schedule the same one twice.\n\nVerification:\n- Claims already settled against the article are not in the file. Check only\n  what `claims` still lists, and posts with needs_check: true (a figure nobody\n  has verified: confirm round closed / round name / amount received / investors\n  in THIS round). Both empty and false means schedule it, no research.\n\nAnything that fails: do not schedule it, and do not edit any file or commit\nanything. List the held posts at the end with the sentence you read and the\npage you read it on, and I will record them.\n\nReport what was scheduled and what was held.",
   "posts": [
     {
       "index": 1,
+      "text": "🇨🇭 Two Swiss IPOs in one day\n\n🇨🇭 Today, two Swiss life sciences companies – Windward Bio and vVARDIS – are going public. The Basel-based biotech firm Windward has chosen Nasdaq, whilst vVARDIS is listed on the New York Stock Exchange as of today.\n\nWhy it matters:\n📈 Early biological insight compounds into products years before anyone names a company.\n🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.\n🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.\n\nhttps://www.startupticker.ch/en/news/two-swiss-ipos-in-one-day",
+      "link": "https://www.startupticker.ch/en/news/two-swiss-ipos-in-one-day",
+      "mention": {},
+      "needs_check": false,
+      "claims": []
+    },
+    {
+      "index": 2,
       "text": "🇨🇭 Awards for Western Switzerland Startups\n\n🇨🇭 From Taipei to Xiamen via Fribourg, Western Switzerland startups are winning awards and opening new business perspectives in fields such as chip-to-chip connectivity technologies, brain-computer interfaces (BCI), and reducing energy consumption in buildings without the need for renovations.\n\nWhy it matters:\n📈 Semiconductors sit under almost every growth market, from AI to defense to mobility.\n🇨🇭 Switzerland punches above its weight in specialised chips and advanced materials.\n🧭 Capital-efficient hardware built on Swiss research is core to the Climb thesis.\n\nhttps://www.startupticker.ch/en/news/awards-for-western-switzerland-startups",
       "link": "https://www.startupticker.ch/en/news/awards-for-western-switzerland-startups",
       "mention": {},
@@ -13,7 +21,7 @@
       "claims": []
     },
     {
-      "index": 2,
+      "index": 3,
       "text": "🇨🇭 EPFL introduces a new Bachelor in Artificial Intelligence\n\nEPFL News covers the story in Sion. Swiss robotics and applied AI keep moving from demo to deployment.\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://actu.epfl.ch/news/epfl-introduces-a-new-bachelor-in-artificial-intel",
       "link": "https://actu.epfl.ch/news/epfl-introduces-a-new-bachelor-in-artificial-intel",
       "mention": {},
@@ -21,7 +29,7 @@
       "claims": []
     },
     {
-      "index": 3,
+      "index": 4,
       "text": "🇨🇭 redalpine Closes US$250 Million Fund to Back 20 European Startups\n\nFintechnews Switzerland covers the story. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at $250 M.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at $250 M.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://fintechnews.ch/funding/redalpine-250m-fund-rac-viii-close/87025/",
       "link": "https://fintechnews.ch/funding/redalpine-250m-fund-rac-viii-close/87025/",
       "mention": {},
@@ -29,14 +37,6 @@
       "claims": [
         "the post states $250 M: is that money received rather than a ceiling or a target, and has the round closed"
       ]
-    },
-    {
-      "index": 4,
-      "text": "🇨🇭 Une spin-off de l'EPFL dévoile un robot humanoïde qui apprend au travail\n\nUne spin-off de l'EPFL dévoile un robot humanoïde qui apprend au travail ICTjournal\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://www.ictjournal.ch/news/2026-11-10/une-spin-off-de-lepfl-devoile-un-robot-humanoide-qui-apprend-au-travail",
-      "link": "https://www.ictjournal.ch/news/2026-11-10/une-spin-off-de-lepfl-devoile-un-robot-humanoide-qui-apprend-au-travail",
-      "mention": {},
-      "needs_check": false,
-      "claims": []
     },
     {
       "index": 5,
@@ -84,26 +84,8 @@
     },
     {
       "index": 10,
-      "text": "🇨🇭 Swiss Fintechs to showcase innovation in Singapore\n\n🇨🇭 The next edition of the Singapore Fintech Festival which takes place from 18-20 November, will host the Swiss Pavilion for the 10th consecutive year.\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://www.startupticker.ch/en/news/swiss-fintechs-to-showcase-innovation-in-singapore",
-      "link": "https://www.startupticker.ch/en/news/swiss-fintechs-to-showcase-innovation-in-singapore",
-      "mention": {},
-      "needs_check": false,
-      "claims": []
-    },
-    {
-      "index": 11,
       "text": "🇨🇭 New InnoBooster recipients to accelerate development\n\nFour new projects have each received CHF 150,000 as part of the InnoBooster programme, powered by the Gebert Rüf Stiftung. The round is reported at CHF 150,000.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at CHF 150,000.\n🇨🇭 Switzerland combines deep materials science with disciplined engineering.\n🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.\n\nhttps://www.startupticker.ch/en/news/new-innobooster-recipients-to-accelerate-development",
       "link": "https://www.startupticker.ch/en/news/new-innobooster-recipients-to-accelerate-development",
-      "mention": {},
-      "needs_check": true,
-      "claims": [
-        "the post states CHF 150,000.: is that money received rather than a ceiling or a target, and has the round closed"
-      ]
-    },
-    {
-      "index": 12,
-      "text": "🇨🇭 CHF 150,000 to enable Apolarion protect seeds from pathogens with plasma\n\nThe EPFL spin-off Apolarion has obtained CHF 150,000 from Venture Kick to advance a chemical-free seed treatment technology powered by plasma. Using only air and electricity, the cleantech startup aims to protect crops from harmful pathogens while reducing the environmental impact of agriculture. The round is reported at CHF 150,000.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at CHF 150,000.\n🇨🇭 Switzerland combines deep materials science with disciplined engineering.\n🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.\n\nhttps://www.startupticker.ch/en/news/chf-150-000-to-enable-apolarion-protect-seeds-from-pathogens-with-plasma",
-      "link": "https://www.startupticker.ch/en/news/chf-150-000-to-enable-apolarion-protect-seeds-from-pathogens-with-plasma",
       "mention": {},
       "needs_check": true,
       "claims": [

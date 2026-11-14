@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 13 November 2026. 12 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 14 November 2026. 10 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -44,6 +44,22 @@ The stories themselves are below.
 ## 1. General — published 13 November
 
 ```
+🇨🇭 Two Swiss IPOs in one day
+
+🇨🇭 Today, two Swiss life sciences companies – Windward Bio and vVARDIS – are going public. The Basel-based biotech firm Windward has chosen Nasdaq, whilst vVARDIS is listed on the New York Stock Exchange as of today.
+
+Why it matters:
+📈 Early biological insight compounds into products years before anyone names a company.
+🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.
+🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.
+
+https://www.startupticker.ch/en/news/two-swiss-ipos-in-one-day
+```
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/wallstreet_fotolia-gary.jpg
+
+## 2. General — published 13 November
+
+```
 🇨🇭 Awards for Western Switzerland Startups
 
 🇨🇭 From Taipei to Xiamen via Fribourg, Western Switzerland startups are winning awards and opening new business perspectives in fields such as chip-to-chip connectivity technologies, brain-computer interfaces (BCI), and reducing energy consumption in buildings without the need for renovations.
@@ -57,7 +73,7 @@ https://www.startupticker.ch/en/news/awards-for-western-switzerland-startups
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Kandou%20Neurosoft%20Yord.png
 
-## 2. Launch — published 12 November
+## 3. Launch — published 12 November
 
 ```
 🇨🇭 EPFL introduces a new Bachelor in Artificial Intelligence
@@ -73,7 +89,7 @@ https://actu.epfl.ch/news/epfl-introduces-a-new-bachelor-in-artificial-intel
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 3. General — published 11 November
+## 4. General — published 11 November
 
 ```
 🇨🇭 redalpine Closes US$250 Million Fund to Back 20 European Startups
@@ -88,22 +104,6 @@ Why it matters:
 https://fintechnews.ch/funding/redalpine-250m-fund-rac-viii-close/87025/
 ```
 🖼️ **Article image:** https://fintechnewsch-22e90.kxcdn.com/wp-content/uploads/2026/11/redalpine-funding.webp
-
-## 4. General — published 10 November
-
-```
-🇨🇭 Une spin-off de l'EPFL dévoile un robot humanoïde qui apprend au travail
-
-Une spin-off de l'EPFL dévoile un robot humanoïde qui apprend au travail ICTjournal
-
-Why it matters:
-📈 Automation is shifting from pilots to real commercial operations.
-🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
-🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
-
-https://www.ictjournal.ch/news/2026-11-10/une-spin-off-de-lepfl-devoile-un-robot-humanoide-qui-apprend-au-travail
-```
-🖼️ **Article image:** none found, grab one from the article page.
 
 ## 5. Round — published 10 November
 
@@ -188,22 +188,6 @@ https://actu.epfl.ch/news/a-new-sensing-architecture-to-detect-small-molec-2
 ## 10. General — published 04 November
 
 ```
-🇨🇭 Swiss Fintechs to showcase innovation in Singapore
-
-🇨🇭 The next edition of the Singapore Fintech Festival which takes place from 18-20 November, will host the Swiss Pavilion for the 10th consecutive year.
-
-Why it matters:
-📈 Automation is shifting from pilots to real commercial operations.
-🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
-🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
-
-https://www.startupticker.ch/en/news/swiss-fintechs-to-showcase-innovation-in-singapore
-```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Singapore.jpg
-
-## 11. General — published 04 November
-
-```
 🇨🇭 New InnoBooster recipients to accelerate development
 
 Four new projects have each received CHF 150,000 as part of the InnoBooster programme, powered by the Gebert Rüf Stiftung. The round is reported at CHF 150,000.
@@ -216,20 +200,4 @@ Why it matters:
 https://www.startupticker.ch/en/news/new-innobooster-recipients-to-accelerate-development
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Students_symbolicImage.jpg
-
-## 12. General — published 03 November
-
-```
-🇨🇭 CHF 150,000 to enable Apolarion protect seeds from pathogens with plasma
-
-The EPFL spin-off Apolarion has obtained CHF 150,000 from Venture Kick to advance a chemical-free seed treatment technology powered by plasma. Using only air and electricity, the cleantech startup aims to protect crops from harmful pathogens while reducing the environmental impact of agriculture. The round is reported at CHF 150,000.
-
-Why it matters:
-💰 Capital keeps following Swiss deep science, this time at CHF 150,000.
-🇨🇭 Switzerland combines deep materials science with disciplined engineering.
-🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.
-
-https://www.startupticker.ch/en/news/chf-150-000-to-enable-apolarion-protect-seeds-from-pathogens-with-plasma
-```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Apolarion%20_cofounders.png
 
