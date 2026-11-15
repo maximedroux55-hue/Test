@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 14 November 2026. 10 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 15 November 2026. 8 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -89,7 +89,23 @@ https://actu.epfl.ch/news/epfl-introduces-a-new-bachelor-in-artificial-intel
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 4. General — published 11 November
+## 4. Research — published 12 November
+
+```
+🇨🇭 Earkick’s AI emotional support chatbot finds new owner
+
+US-based Elomia Health has acquired Earkick, one of the first AI mental health therapists used by more than 250,000 people to vent, track patterns in mood, sleep, activity, and daily habits.
+
+Why it matters:
+📈 Automation is shifting from pilots to real commercial operations.
+🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
+🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
+
+https://www.startupticker.ch/en/news/earkick-s-ai-emotional-support-chatbot-finds-new-owner
+```
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Elomia%20x%20Earkick.png
+
+## 5. General — published 11 November
 
 ```
 🇨🇭 redalpine Closes US$250 Million Fund to Back 20 European Startups
@@ -105,7 +121,7 @@ https://fintechnews.ch/funding/redalpine-250m-fund-rac-viii-close/87025/
 ```
 🖼️ **Article image:** https://fintechnewsch-22e90.kxcdn.com/wp-content/uploads/2026/11/redalpine-funding.webp
 
-## 5. Round — published 10 November
+## 6. Round — published 10 November
 
 ```
 🇨🇭 Redalpine closes oversubscribed $250M early-stage fund
@@ -120,22 +136,6 @@ Why it matters:
 https://www.startupticker.ch/en/news/redalpine-closes-oversubscribed-250m-early-stage-fund
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/redalpine_team_websize.jpg
-
-## 6. General — published 09 November
-
-```
-🇨🇭 Dexterous Endoscopes enters Biopôle Investment Programme
-
-Biopôle Investment Programme (BIP) is welcoming Dexterous Endoscopes. The comprehensive 24-month programme at Biopôle Lausanne will provide both financial and strategic support as the medtech start-up prepares to move from preclinical validation towards regulatory submission and first clinical use.
-
-Why it matters:
-📈 Early biological insight compounds into products years before anyone names a company.
-🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.
-🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.
-
-https://www.startupticker.ch/en/news/dexterous-endoscopes-enters-biopole-investment-programme
-```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Dexterous%20Endoscop%20founders.jpg
 
 ## 7. General — published 09 November
 
@@ -168,36 +168,4 @@ Why it matters:
 https://www.startupticker.ch/en/news/candi-solar-secures-usd50-million-to-finance-projects-in-india
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/CandiSolarProjectIndia.jpg
-
-## 9. Research — published 05 November
-
-```
-🇨🇭 A new sensing architecture to detect small molecules
-
-05.11.26 - EPFL scientists have reimagined how aptamers – short DNA strands used in molecular sensors – detect their targets. Their versatile sensing method could enable rapid tests for small molecules like hormones and neurotransmitters.
-
-Why it matters:
-📈 Energy and climate hardware is moving from subsidy toward genuine demand.
-🇨🇭 Switzerland combines deep materials science with disciplined engineering.
-🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.
-
-https://actu.epfl.ch/news/a-new-sensing-architecture-to-detect-small-molec-2
-```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 10. General — published 04 November
-
-```
-🇨🇭 New InnoBooster recipients to accelerate development
-
-Four new projects have each received CHF 150,000 as part of the InnoBooster programme, powered by the Gebert Rüf Stiftung. The round is reported at CHF 150,000.
-
-Why it matters:
-💰 Capital keeps following Swiss deep science, this time at CHF 150,000.
-🇨🇭 Switzerland combines deep materials science with disciplined engineering.
-🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.
-
-https://www.startupticker.ch/en/news/new-innobooster-recipients-to-accelerate-development
-```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Students_symbolicImage.jpg
 
