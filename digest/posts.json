@@ -1,11 +1,42 @@
 {
-  "generated": "2026-11-15",
+  "generated": "2026-11-16",
   "mode": "Template drafts (set ANTHROPIC_API_KEY for AI-written posts).",
   "note": "Times are local. Schedule each post at its time on its date.",
   "cowork_prompt": "Open https://maxime-droux.com/digest/posts.json and schedule the posts listed at the end of this message, and only those. The file holds the shortlist; the list below says which of them I picked and when each one goes out. Match them by `index`. Ignore every other post in the file.\n\nFor each post, in order:\n- Type the `text` straight through, once, with real keystrokes. Never insert\n  text via JavaScript. It already ends with the article URL on its own line,\n  so do not add, move or retype the URL separately: typing it last is what makes\n  the link preview load the article photo.\n- Each post has exactly one @mention. Type `mention.type`, wait for the\n  dropdown, click the row matching `mention.expect`. If no row matches, post\n  it without the mention rather than tagging the wrong company. LinkedIn will\n  render the official name: that is expected and fine, do not fight it, do not\n  restart the post, do not rewrite it.\n- Schedule it at the date and time given for it in the list below. If no link\n  preview appears, schedule it anyway: do not hunt for an image.\n\nTwo attempts per post, then stop. If a post is not scheduled after two tries,\nleave it, move to the next one, and list it at the end. Never start a third.\n\nBefore you start, open the scheduled-posts list once and note what is already\nthere. Skip any post already scheduled: never schedule the same one twice.\n\nVerification:\n- Claims already settled against the article are not in the file. Check only\n  what `claims` still lists, and posts with needs_check: true (a figure nobody\n  has verified: confirm round closed / round name / amount received / investors\n  in THIS round). Both empty and false means schedule it, no research.\n\nAnything that fails: do not schedule it, and do not edit any file or commit\nanything. List the held posts at the end with the sentence you read and the\npage you read it on, and I will record them.\n\nReport what was scheduled and what was held.",
   "posts": [
     {
       "index": 1,
+      "text": "🇨🇭 VEDIC LAB builds momentum with natural, clinically proven hair-loss...\n\n🇨🇭 Based in Zug, VEDIC LAB combines Ayurvedic herb science with Swiss biotechnology to address hair loss and support scalp health. The round is reported at CHF 2 m.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at CHF 2 m.\n🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.\n🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.\n\nhttps://www.startupticker.ch/en/news/vedic-lab-builds-momentum-with-natural-clinically-proven-hair-loss-solutions",
+      "link": "https://www.startupticker.ch/en/news/vedic-lab-builds-momentum-with-natural-clinically-proven-hair-loss-solutions",
+      "mention": {},
+      "needs_check": true,
+      "claims": [
+        "the post states CHF 2 m: is that money received rather than a ceiling or a target, and has the round closed"
+      ]
+    },
+    {
+      "index": 2,
+      "text": "🇨🇭 Global recognition for Swiss innovators\n\nProcavea, Treeless, Windtracx, CUTISS and PolaSight have impressed juries worldwide with their novel solutions, winning prizes including a €20,000 grant, global visibility and a ticket in a European and US accelerator program. The companies are addressing major challenges in healthcare and materials. The round is reported at €20,000.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at €20,000.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.startupticker.ch/en/news/global-recognition-for-swiss-innovators",
+      "link": "https://www.startupticker.ch/en/news/global-recognition-for-swiss-innovators",
+      "mention": {},
+      "needs_check": true,
+      "claims": [
+        "the post states €20,000: is that money received rather than a ceiling or a target, and has the round closed",
+        "the post states €20,000.: is that money received rather than a ceiling or a target, and has the round closed"
+      ]
+    },
+    {
+      "index": 3,
+      "text": "🇨🇭 Swiss Robotics Day spotlights physical AI as firms race in touch and...\n\nChosunbiz covers the story. Swiss robotics and applied AI keep moving from demo to deployment.\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://biz.chosun.com/en/en-science/2026/11/15/VFLKF7G2WVFJPAV4EUAEHEEVYU/",
+      "link": "https://biz.chosun.com/en/en-science/2026/11/15/VFLKF7G2WVFJPAV4EUAEHEEVYU/",
+      "mention": {},
+      "needs_check": false,
+      "claims": [
+        "the company is Korea-Switzerland"
+      ]
+    },
+    {
+      "index": 4,
       "text": "🇨🇭 Two Swiss IPOs in one day\n\n🇨🇭 Today, two Swiss life sciences companies – Windward Bio and vVARDIS – are going public. The Basel-based biotech firm Windward has chosen Nasdaq, whilst vVARDIS is listed on the New York Stock Exchange as of today.\n\nWhy it matters:\n📈 Early biological insight compounds into products years before anyone names a company.\n🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.\n🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.\n\nhttps://www.startupticker.ch/en/news/two-swiss-ipos-in-one-day",
       "link": "https://www.startupticker.ch/en/news/two-swiss-ipos-in-one-day",
       "mention": {},
@@ -13,7 +44,7 @@
       "claims": []
     },
     {
-      "index": 2,
+      "index": 5,
       "text": "🇨🇭 Awards for Western Switzerland Startups\n\n🇨🇭 From Taipei to Xiamen via Fribourg, Western Switzerland startups are winning awards and opening new business perspectives in fields such as chip-to-chip connectivity technologies, brain-computer interfaces (BCI), and reducing energy consumption in buildings without the need for renovations.\n\nWhy it matters:\n📈 Semiconductors sit under almost every growth market, from AI to defense to mobility.\n🇨🇭 Switzerland punches above its weight in specialised chips and advanced materials.\n🧭 Capital-efficient hardware built on Swiss research is core to the Climb thesis.\n\nhttps://www.startupticker.ch/en/news/awards-for-western-switzerland-startups",
       "link": "https://www.startupticker.ch/en/news/awards-for-western-switzerland-startups",
       "mention": {},
@@ -21,7 +52,7 @@
       "claims": []
     },
     {
-      "index": 3,
+      "index": 6,
       "text": "🇨🇭 EPFL introduces a new Bachelor in Artificial Intelligence\n\nEPFL News covers the story in Sion. Swiss robotics and applied AI keep moving from demo to deployment.\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://actu.epfl.ch/news/epfl-introduces-a-new-bachelor-in-artificial-intel",
       "link": "https://actu.epfl.ch/news/epfl-introduces-a-new-bachelor-in-artificial-intel",
       "mention": {},
@@ -29,7 +60,7 @@
       "claims": []
     },
     {
-      "index": 4,
+      "index": 7,
       "text": "🇨🇭 Earkick’s AI emotional support chatbot finds new owner\n\nUS-based Elomia Health has acquired Earkick, one of the first AI mental health therapists used by more than 250,000 people to vent, track patterns in mood, sleep, activity, and daily habits.\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://www.startupticker.ch/en/news/earkick-s-ai-emotional-support-chatbot-finds-new-owner",
       "link": "https://www.startupticker.ch/en/news/earkick-s-ai-emotional-support-chatbot-finds-new-owner",
       "mention": {},
@@ -37,27 +68,23 @@
       "claims": []
     },
     {
-      "index": 5,
-      "text": "🇨🇭 redalpine Closes US$250 Million Fund to Back 20 European Startups\n\nFintechnews Switzerland covers the story. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at $250 M.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at $250 M.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://fintechnews.ch/funding/redalpine-250m-fund-rac-viii-close/87025/",
-      "link": "https://fintechnews.ch/funding/redalpine-250m-fund-rac-viii-close/87025/",
+      "index": 8,
+      "text": "🇨🇭 Kadoa triples revenue with web datasets for humans and AI agents in...\n\nZurich-based Kadoa is experiencing rapid growth with its platform for building and maintaining reliable web datasets, as artificial intelligence reshapes how investment firms access and process data.\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://www.startupticker.ch/en/news/kadoa-triples-revenue-with-web-datasets-for-humans-and-ai-agents-in-finance",
+      "link": "https://www.startupticker.ch/en/news/kadoa-triples-revenue-with-web-datasets-for-humans-and-ai-agents-in-finance",
       "mention": {},
-      "needs_check": true,
-      "claims": [
-        "the post states $250 M: is that money received rather than a ceiling or a target, and has the round closed"
-      ]
+      "needs_check": false,
+      "claims": []
     },
     {
-      "index": 6,
-      "text": "🇨🇭 Redalpine closes oversubscribed $250M early-stage fund\n\nStartupticker covers the story. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at $250M.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at $250M.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.startupticker.ch/en/news/redalpine-closes-oversubscribed-250m-early-stage-fund",
-      "link": "https://www.startupticker.ch/en/news/redalpine-closes-oversubscribed-250m-early-stage-fund",
+      "index": 9,
+      "text": "🇨🇭 Dexterous Endoscopes enters Biopôle Investment Programme\n\nBiopôle Investment Programme (BIP) is welcoming Dexterous Endoscopes. The comprehensive 24-month programme at Biopôle Lausanne will provide both financial and strategic support as the medtech start-up prepares to move from preclinical validation towards regulatory submission and first clinical use.\n\nWhy it matters:\n📈 Early biological insight compounds into products years before anyone names a company.\n🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.\n🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.\n\nhttps://www.startupticker.ch/en/news/dexterous-endoscopes-enters-biopole-investment-programme",
+      "link": "https://www.startupticker.ch/en/news/dexterous-endoscopes-enters-biopole-investment-programme",
       "mention": {},
-      "needs_check": true,
-      "claims": [
-        "the post states $250M: is that money received rather than a ceiling or a target, and has the round closed"
-      ]
+      "needs_check": false,
+      "claims": []
     },
     {
-      "index": 7,
+      "index": 10,
       "text": "🇨🇭 Vier Startups sichern sich einen Platz im «Büro Züri»\n\n🇨🇭 Kelva Systems, Talpa Inspection, Under Industries und Noctua werden Teil des Büro Züri im Switzerland Innovation Park Zürich. Die vier Jungunternehmen konnten die Jury mit ihren Lösungen in den Bereichen Robotics und Nachhaltigkeit überzeugen.\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://www.startupticker.ch/en/news/vier-startups-sichern-sich-einen-platz-im-buero-zueri",
       "link": "https://www.startupticker.ch/en/news/vier-startups-sichern-sich-einen-platz-im-buero-zueri",
       "mention": {},
@@ -65,13 +92,14 @@
       "claims": []
     },
     {
-      "index": 8,
-      "text": "🇨🇭 Candi Solar secures USD50 million to finance projects in India\n\nThe facility will finance rooftop, ground-mounted, and open-access solar installations paired with BESS across key business hubs in India. This will enable the avoidance of an estimated 397,000 tonnes of carbon dioxide emissions annually. The round is reported at USD50 m.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at USD50 m.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.startupticker.ch/en/news/candi-solar-secures-usd50-million-to-finance-projects-in-india",
-      "link": "https://www.startupticker.ch/en/news/candi-solar-secures-usd50-million-to-finance-projects-in-india",
+      "index": 11,
+      "text": "🇨🇭 With a new equity round in sight, Candi Solar secures €44 million...\n\nEU-Startups covers the story. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at €44 m.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at €44 m.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.eu-startups.com/2026/11/with-a-new-equity-round-in-sight-candi-solar-secures-e44-million-for-solar-projects-in-india/",
+      "link": "https://www.eu-startups.com/2026/11/with-a-new-equity-round-in-sight-candi-solar-secures-e44-million-for-solar-projects-in-india/",
       "mention": {},
       "needs_check": true,
       "claims": [
-        "the post states USD50 m: is that money received rather than a ceiling or a target, and has the round closed"
+        "the company is Candi Solar",
+        "the post states €44 m: is that money received rather than a ceiling or a target, and has the round closed"
       ]
     }
   ]
