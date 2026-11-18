@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-17",
+  "generated": "2026-11-18",
   "mode": "Template drafts (set ANTHROPIC_API_KEY for AI-written posts).",
   "note": "Times are local. Schedule each post at its time on its date.",
   "cowork_prompt": "Open https://maxime-droux.com/digest/posts.json and schedule the posts listed at the end of this message, and only those. The file holds the shortlist; the list below says which of them I picked and when each one goes out. Match them by `index`. Ignore every other post in the file.\n\nFor each post, in order:\n- Type the `text` straight through, once, with real keystrokes. Never insert\n  text via JavaScript. It already ends with the article URL on its own line,\n  so do not add, move or retype the URL separately: typing it last is what makes\n  the link preview load the article photo.\n- Each post has exactly one @mention. Type `mention.type`, wait for the\n  dropdown, click the row matching `mention.expect`. If no row matches, post\n  it without the mention rather than tagging the wrong company. LinkedIn will\n  render the official name: that is expected and fine, do not fight it, do not\n  restart the post, do not rewrite it.\n- Schedule it at the date and time given for it in the list below. If no link\n  preview appears, schedule it anyway: do not hunt for an image.\n\nTwo attempts per post, then stop. If a post is not scheduled after two tries,\nleave it, move to the next one, and list it at the end. Never start a third.\n\nBefore you start, open the scheduled-posts list once and note what is already\nthere. Skip any post already scheduled: never schedule the same one twice.\n\nVerification:\n- Claims already settled against the article are not in the file. Check only\n  what `claims` still lists, and posts with needs_check: true (a figure nobody\n  has verified: confirm round closed / round name / amount received / investors\n  in THIS round). Both empty and false means schedule it, no research.\n\nAnything that fails: do not schedule it, and do not edit any file or commit\nanything. List the held posts at the end with the sentence you read and the\npage you read it on, and I will record them.\n\nReport what was scheduled and what was held.",
@@ -24,7 +24,7 @@
     },
     {
       "index": 3,
-      "text": "🇨🇭 Une première installation Lightwing Solar raccordée à Lullier\n\nLe raccordement éléctrique de la première installation à échelle 1:1 de Lightwing Solar est en cours de finalisation à Lullier, dans le Canton de Genève. Le développement de ce projet pilote doit beaucoup à SIG.\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.startupticker.ch/en/news/une-premiere-installation-lightwing-solar-raccordee-a-lullier",
+      "text": "🇨🇭 Une première installation Lightswing Solar raccordée à Lullier\n\nLe raccordement éléctrique de la première installation à échelle 1:1 de Lightswing Solar est en cours de finalisation à Lullier, dans le Canton de Genève. Le développement de ce projet pilote doit beaucoup à SIG.\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.startupticker.ch/en/news/une-premiere-installation-lightwing-solar-raccordee-a-lullier",
       "link": "https://www.startupticker.ch/en/news/une-premiere-installation-lightwing-solar-raccordee-a-lullier",
       "mention": {},
       "needs_check": false,
@@ -74,6 +74,14 @@
     },
     {
       "index": 9,
+      "text": "🇨🇭 Prestigious ERC Synergy Grant awarded for research on transfer RNA\n\nUniversität Bern covers the story in Bern. It is another data point in Switzerland's steady deep-tech build-out.\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://mediarelations.unibe.ch/media_releases/2026/media_releases_2026/prestigious_erc_synergy_grant_awarded_for_research_on_transfer_rna/index_eng.html",
+      "link": "https://mediarelations.unibe.ch/media_releases/2026/media_releases_2026/prestigious_erc_synergy_grant_awarded_for_research_on_transfer_rna/index_eng.html",
+      "mention": {},
+      "needs_check": false,
+      "claims": []
+    },
+    {
+      "index": 10,
       "text": "🇨🇭 vVARDIS plans IPO in New York\n\nvVARDIS Holding AG, a Zug-based dental medtech company pioneering non-invasive cavity treatment, plans to list on the New York Stock Exchange. The company is aiming for a valuation of multiple billions of US dollars and intends to raise more than US$200 million. The round is reported at $200 m.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at $200 m.\n🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.\n🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.\n\nhttps://www.startupticker.ch/en/news/vvardis-plans-ipo-in-new-york",
       "link": "https://www.startupticker.ch/en/news/vvardis-plans-ipo-in-new-york",
       "mention": {},
@@ -83,17 +91,9 @@
       ]
     },
     {
-      "index": 10,
+      "index": 11,
       "text": "🇨🇭 Kadoa triples revenue with web datasets for humans and AI agents in...\n\nZurich-based Kadoa is experiencing rapid growth with its platform for building and maintaining reliable web datasets, as artificial intelligence reshapes how investment firms access and process data.\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://www.startupticker.ch/en/news/kadoa-triples-revenue-with-web-datasets-for-humans-and-ai-agents-in-finance",
       "link": "https://www.startupticker.ch/en/news/kadoa-triples-revenue-with-web-datasets-for-humans-and-ai-agents-in-finance",
-      "mention": {},
-      "needs_check": false,
-      "claims": []
-    },
-    {
-      "index": 11,
-      "text": "🇨🇭 Une spin-off de l'EPFL dévoile un robot humanoïde qui apprend au travail\n\nUne spin-off de l'EPFL dévoile un robot humanoïde qui apprend au travail ICTjournal\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://www.ictjournal.ch/news/2026-11-10/une-spin-off-de-lepfl-devoile-un-robot-humanoide-qui-apprend-au-travail",
-      "link": "https://www.ictjournal.ch/news/2026-11-10/une-spin-off-de-lepfl-devoile-un-robot-humanoide-qui-apprend-au-travail",
       "mention": {},
       "needs_check": false,
       "claims": []

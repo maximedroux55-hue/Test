@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 17 November 2026. 13 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 18 November 2026. 13 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -76,9 +76,9 @@ https://www.startupticker.ch/en/news/vedic-lab-builds-momentum-with-natural-clin
 ## 3. General — published 16 November
 
 ```
-🇨🇭 Une première installation Lightwing Solar raccordée à Lullier
+🇨🇭 Une première installation Lightswing Solar raccordée à Lullier
 
-Le raccordement éléctrique de la première installation à échelle 1:1 de Lightwing Solar est en cours de finalisation à Lullier, dans le Canton de Genève. Le développement de ce projet pilote doit beaucoup à SIG.
+Le raccordement éléctrique de la première installation à échelle 1:1 de Lightswing Solar est en cours de finalisation à Lullier, dans le Canton de Genève. Le développement de ce projet pilote doit beaucoup à SIG.
 
 Why it matters:
 📈 Deep technology is where durable, defensible companies get built.
@@ -87,7 +87,7 @@ Why it matters:
 
 https://www.startupticker.ch/en/news/une-premiere-installation-lightwing-solar-raccordee-a-lullier
 ```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Lightswing%20Solar%20Lullier.jpeg
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Lightwing%20solar%20Lullier.JPG
 
 ## 4. Partnership — published 14 November
 
@@ -169,7 +169,23 @@ https://actu.epfl.ch/news/epfl-introduces-a-new-bachelor-in-artificial-intel
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 9. General — published 11 November
+## 9. Grant — published 12 November
+
+```
+🇨🇭 Prestigious ERC Synergy Grant awarded for research on transfer RNA
+
+Universität Bern covers the story in Bern. It is another data point in Switzerland's steady deep-tech build-out.
+
+Why it matters:
+📈 Deep technology is where durable, defensible companies get built.
+🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
+🧭 Backing that research early and capital-efficiently is what we do at Climb.
+
+https://mediarelations.unibe.ch/media_releases/2026/media_releases_2026/prestigious_erc_synergy_grant_awarded_for_research_on_transfer_rna/index_eng.html
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 10. General — published 11 November
 
 ```
 🇨🇭 vVARDIS plans IPO in New York
@@ -185,7 +201,7 @@ https://www.startupticker.ch/en/news/vvardis-plans-ipo-in-new-york
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/vvardisProduct26.jpg
 
-## 10. General — published 11 November
+## 11. General — published 11 November
 
 ```
 🇨🇭 Kadoa triples revenue with web datasets for humans and AI agents in...
@@ -200,22 +216,6 @@ Why it matters:
 https://www.startupticker.ch/en/news/kadoa-triples-revenue-with-web-datasets-for-humans-and-ai-agents-in-finance
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Kadoa_team.png
-
-## 11. General — published 10 November
-
-```
-🇨🇭 Une spin-off de l'EPFL dévoile un robot humanoïde qui apprend au travail
-
-Une spin-off de l'EPFL dévoile un robot humanoïde qui apprend au travail ICTjournal
-
-Why it matters:
-📈 Automation is shifting from pilots to real commercial operations.
-🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
-🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
-
-https://www.ictjournal.ch/news/2026-11-10/une-spin-off-de-lepfl-devoile-un-robot-humanoide-qui-apprend-au-travail
-```
-🖼️ **Article image:** none found, grab one from the article page.
 
 ## 12. General — published 10 November
 
