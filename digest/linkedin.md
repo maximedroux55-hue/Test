@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 18 November 2026. 13 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 19 November 2026. 13 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -41,21 +41,21 @@ Report what was scheduled and what was held.
 
 The stories themselves are below.
 
-## 1. General — published 16 November
+## 1. General — published 18 November
 
 ```
-🇨🇭 Schweizer KMU: SwissCompanies.ch und SwissCompanies.ai setzen auf...
+🇨🇭 Smeetz closes CHF 5.5 million Series A2 and turns profitable
 
-Swiss-Press.com covers the story. It is another data point in Switzerland's steady deep-tech build-out.
+🇨🇭 Smeetz, the Swiss ticketing and dynamic pricing platform for leisure attractions, has closed a CHF 5.5 million Series A2 round led by Zurich-based QBIT Capital. The round is reported at CHF 5.5 m.
 
 Why it matters:
-📈 Deep technology is where durable, defensible companies get built.
+💰 Capital keeps following Swiss deep science, this time at CHF 5.5 m.
 🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
 🧭 Backing that research early and capital-efficiently is what we do at Climb.
 
-https://www.swiss-press.com/swisscompanies-kmu-unternehmensinfos/1830713
+https://www.startupticker.ch/en/news/smeetz-closes-chf-5-5-million-series-a2-and-turns-profitable
 ```
-🖼️ **Article image:** none found, grab one from the article page.
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/pexels-alessio-cesario-975080-1906839.jpg
 
 ## 2. General — published 16 November
 
@@ -73,23 +73,7 @@ https://www.startupticker.ch/en/news/vedic-lab-builds-momentum-with-natural-clin
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/VedicLab_cofounder_products.png
 
-## 3. General — published 16 November
-
-```
-🇨🇭 Une première installation Lightswing Solar raccordée à Lullier
-
-Le raccordement éléctrique de la première installation à échelle 1:1 de Lightswing Solar est en cours de finalisation à Lullier, dans le Canton de Genève. Le développement de ce projet pilote doit beaucoup à SIG.
-
-Why it matters:
-📈 Deep technology is where durable, defensible companies get built.
-🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
-🧭 Backing that research early and capital-efficiently is what we do at Climb.
-
-https://www.startupticker.ch/en/news/une-premiere-installation-lightwing-solar-raccordee-a-lullier
-```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Lightwing%20solar%20Lullier.JPG
-
-## 4. Partnership — published 14 November
+## 3. Partnership — published 14 November
 
 ```
 🇨🇭 Swiss Robotics Day spotlights physical AI as firms race in touch and...
@@ -105,7 +89,7 @@ https://biz.chosun.com/en/en-science/2026/11/15/VFLKF7G2WVFJPAV4EUAEHEEVYU/
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 5. General — published 13 November
+## 4. General — published 13 November
 
 ```
 🇨🇭 Two Swiss IPOs in one day
@@ -120,6 +104,22 @@ Why it matters:
 https://www.startupticker.ch/en/news/two-swiss-ipos-in-one-day
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/wallstreet_fotolia-gary.jpg
+
+## 5. Round — published 13 November
+
+```
+🇨🇭 Top News Today: South Korea's Chip Profit Gap, AI Disrupts...
+
+Analytics Insight covers the story in Sion. Swiss semiconductor work keeps turning academic research into industrial capability. The round is reported at USD 500M.
+
+Why it matters:
+💰 Capital keeps following Swiss deep science, this time at USD 500M.
+🇨🇭 Switzerland punches above its weight in specialised chips and advanced materials.
+🧭 Capital-efficient hardware built on Swiss research is core to the Climb thesis.
+
+https://www.analyticsinsight.net/tech-news/top-news-today-south-koreas-chip-profit-gap-ai-disrupts-consulting-bitcoin-hub-in-switzerland-agile-robots-raises-usd-500m-spacex-plans-usd-74b-ai-expansion
+```
+🖼️ **Article image:** none found, grab one from the article page.
 
 ## 6. General — published 13 November
 
@@ -137,23 +137,7 @@ https://www.startupticker.ch/en/news/awards-for-western-switzerland-startups
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Kandou%20Neurosoft%20Yord.png
 
-## 7. Round — published 13 November
-
-```
-🇨🇭 Top News Today: South Korea's Chip Profit Gap, AI Disrupts...
-
-Analytics Insight covers the story in Sion. Swiss semiconductor work keeps turning academic research into industrial capability. The round is reported at USD 500M.
-
-Why it matters:
-💰 Capital keeps following Swiss deep science, this time at USD 500M.
-🇨🇭 Switzerland punches above its weight in specialised chips and advanced materials.
-🧭 Capital-efficient hardware built on Swiss research is core to the Climb thesis.
-
-https://www.analyticsinsight.net/tech-news/top-news-today-south-koreas-chip-profit-gap-ai-disrupts-consulting-bitcoin-hub-in-switzerland-agile-robots-raises-usd-500m-spacex-plans-usd-74b-ai-expansion
-```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 8. Launch — published 12 November
+## 7. Launch — published 12 November
 
 ```
 🇨🇭 EPFL introduces a new Bachelor in Artificial Intelligence
@@ -169,7 +153,7 @@ https://actu.epfl.ch/news/epfl-introduces-a-new-bachelor-in-artificial-intel
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 9. Grant — published 12 November
+## 8. Grant — published 12 November
 
 ```
 🇨🇭 Prestigious ERC Synergy Grant awarded for research on transfer RNA
@@ -184,6 +168,22 @@ Why it matters:
 https://mediarelations.unibe.ch/media_releases/2026/media_releases_2026/prestigious_erc_synergy_grant_awarded_for_research_on_transfer_rna/index_eng.html
 ```
 🖼️ **Article image:** none found, grab one from the article page.
+
+## 9. Round — published 11 November
+
+```
+🇨🇭 Light Frame Raises US$5.1M to Upgrade Core Systems at Private Banks
+
+Fintechnews Switzerland covers the story. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at $5.1M.
+
+Why it matters:
+💰 Capital keeps following Swiss deep science, this time at $5.1M.
+🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
+🧭 Backing that research early and capital-efficiently is what we do at Climb.
+
+https://fintechnews.ch/funding/light-frame-raises-5-1-million-seed-core-banking/86990/
+```
+🖼️ **Article image:** https://fintechnewsch-22e90.kxcdn.com/wp-content/uploads/2026/11/Light-Frame-Raises-US5.1M-to-Upgrade-Core-Systems-at-Private-Banks.webp
 
 ## 10. General — published 11 November
 

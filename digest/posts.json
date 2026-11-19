@@ -1,16 +1,18 @@
 {
-  "generated": "2026-11-18",
+  "generated": "2026-11-19",
   "mode": "Template drafts (set ANTHROPIC_API_KEY for AI-written posts).",
   "note": "Times are local. Schedule each post at its time on its date.",
   "cowork_prompt": "Open https://maxime-droux.com/digest/posts.json and schedule the posts listed at the end of this message, and only those. The file holds the shortlist; the list below says which of them I picked and when each one goes out. Match them by `index`. Ignore every other post in the file.\n\nFor each post, in order:\n- Type the `text` straight through, once, with real keystrokes. Never insert\n  text via JavaScript. It already ends with the article URL on its own line,\n  so do not add, move or retype the URL separately: typing it last is what makes\n  the link preview load the article photo.\n- Each post has exactly one @mention. Type `mention.type`, wait for the\n  dropdown, click the row matching `mention.expect`. If no row matches, post\n  it without the mention rather than tagging the wrong company. LinkedIn will\n  render the official name: that is expected and fine, do not fight it, do not\n  restart the post, do not rewrite it.\n- Schedule it at the date and time given for it in the list below. If no link\n  preview appears, schedule it anyway: do not hunt for an image.\n\nTwo attempts per post, then stop. If a post is not scheduled after two tries,\nleave it, move to the next one, and list it at the end. Never start a third.\n\nBefore you start, open the scheduled-posts list once and note what is already\nthere. Skip any post already scheduled: never schedule the same one twice.\n\nVerification:\n- Claims already settled against the article are not in the file. Check only\n  what `claims` still lists, and posts with needs_check: true (a figure nobody\n  has verified: confirm round closed / round name / amount received / investors\n  in THIS round). Both empty and false means schedule it, no research.\n\nAnything that fails: do not schedule it, and do not edit any file or commit\nanything. List the held posts at the end with the sentence you read and the\npage you read it on, and I will record them.\n\nReport what was scheduled and what was held.",
   "posts": [
     {
       "index": 1,
-      "text": "🇨🇭 Schweizer KMU: SwissCompanies.ch und SwissCompanies.ai setzen auf...\n\nSwiss-Press.com covers the story. It is another data point in Switzerland's steady deep-tech build-out.\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.swiss-press.com/swisscompanies-kmu-unternehmensinfos/1830713",
-      "link": "https://www.swiss-press.com/swisscompanies-kmu-unternehmensinfos/1830713",
+      "text": "🇨🇭 Smeetz closes CHF 5.5 million Series A2 and turns profitable\n\n🇨🇭 Smeetz, the Swiss ticketing and dynamic pricing platform for leisure attractions, has closed a CHF 5.5 million Series A2 round led by Zurich-based QBIT Capital. The round is reported at CHF 5.5 m.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at CHF 5.5 m.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.startupticker.ch/en/news/smeetz-closes-chf-5-5-million-series-a2-and-turns-profitable",
+      "link": "https://www.startupticker.ch/en/news/smeetz-closes-chf-5-5-million-series-a2-and-turns-profitable",
       "mention": {},
-      "needs_check": false,
-      "claims": []
+      "needs_check": true,
+      "claims": [
+        "the post states CHF 5.5 m: is that money received rather than a ceiling or a target, and has the round closed"
+      ]
     },
     {
       "index": 2,
@@ -24,14 +26,6 @@
     },
     {
       "index": 3,
-      "text": "🇨🇭 Une première installation Lightswing Solar raccordée à Lullier\n\nLe raccordement éléctrique de la première installation à échelle 1:1 de Lightswing Solar est en cours de finalisation à Lullier, dans le Canton de Genève. Le développement de ce projet pilote doit beaucoup à SIG.\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.startupticker.ch/en/news/une-premiere-installation-lightwing-solar-raccordee-a-lullier",
-      "link": "https://www.startupticker.ch/en/news/une-premiere-installation-lightwing-solar-raccordee-a-lullier",
-      "mention": {},
-      "needs_check": false,
-      "claims": []
-    },
-    {
-      "index": 4,
       "text": "🇨🇭 Swiss Robotics Day spotlights physical AI as firms race in touch and...\n\nChosunbiz covers the story. Swiss robotics and applied AI keep moving from demo to deployment.\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://biz.chosun.com/en/en-science/2026/11/15/VFLKF7G2WVFJPAV4EUAEHEEVYU/",
       "link": "https://biz.chosun.com/en/en-science/2026/11/15/VFLKF7G2WVFJPAV4EUAEHEEVYU/",
       "mention": {},
@@ -41,11 +35,19 @@
       ]
     },
     {
-      "index": 5,
+      "index": 4,
       "text": "🇨🇭 Two Swiss IPOs in one day\n\n🇨🇭 Today, two Swiss life sciences companies – Windward Bio and vVARDIS – are going public. The Basel-based biotech firm Windward has chosen Nasdaq, whilst vVARDIS is listed on the New York Stock Exchange as of today.\n\nWhy it matters:\n📈 Early biological insight compounds into products years before anyone names a company.\n🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.\n🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.\n\nhttps://www.startupticker.ch/en/news/two-swiss-ipos-in-one-day",
       "link": "https://www.startupticker.ch/en/news/two-swiss-ipos-in-one-day",
       "mention": {},
       "needs_check": false,
+      "claims": []
+    },
+    {
+      "index": 5,
+      "text": "🇨🇭 Top News Today: South Korea's Chip Profit Gap, AI Disrupts...\n\nAnalytics Insight covers the story in Sion. Swiss semiconductor work keeps turning academic research into industrial capability. The round is reported at USD 500M.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at USD 500M.\n🇨🇭 Switzerland punches above its weight in specialised chips and advanced materials.\n🧭 Capital-efficient hardware built on Swiss research is core to the Climb thesis.\n\nhttps://www.analyticsinsight.net/tech-news/top-news-today-south-koreas-chip-profit-gap-ai-disrupts-consulting-bitcoin-hub-in-switzerland-agile-robots-raises-usd-500m-spacex-plans-usd-74b-ai-expansion",
+      "link": "https://www.analyticsinsight.net/tech-news/top-news-today-south-koreas-chip-profit-gap-ai-disrupts-consulting-bitcoin-hub-in-switzerland-agile-robots-raises-usd-500m-spacex-plans-usd-74b-ai-expansion",
+      "mention": {},
+      "needs_check": true,
       "claims": []
     },
     {
@@ -58,14 +60,6 @@
     },
     {
       "index": 7,
-      "text": "🇨🇭 Top News Today: South Korea's Chip Profit Gap, AI Disrupts...\n\nAnalytics Insight covers the story in Sion. Swiss semiconductor work keeps turning academic research into industrial capability. The round is reported at USD 500M.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at USD 500M.\n🇨🇭 Switzerland punches above its weight in specialised chips and advanced materials.\n🧭 Capital-efficient hardware built on Swiss research is core to the Climb thesis.\n\nhttps://www.analyticsinsight.net/tech-news/top-news-today-south-koreas-chip-profit-gap-ai-disrupts-consulting-bitcoin-hub-in-switzerland-agile-robots-raises-usd-500m-spacex-plans-usd-74b-ai-expansion",
-      "link": "https://www.analyticsinsight.net/tech-news/top-news-today-south-koreas-chip-profit-gap-ai-disrupts-consulting-bitcoin-hub-in-switzerland-agile-robots-raises-usd-500m-spacex-plans-usd-74b-ai-expansion",
-      "mention": {},
-      "needs_check": true,
-      "claims": []
-    },
-    {
-      "index": 8,
       "text": "🇨🇭 EPFL introduces a new Bachelor in Artificial Intelligence\n\nEPFL News covers the story in Sion. Swiss robotics and applied AI keep moving from demo to deployment.\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://actu.epfl.ch/news/epfl-introduces-a-new-bachelor-in-artificial-intel",
       "link": "https://actu.epfl.ch/news/epfl-introduces-a-new-bachelor-in-artificial-intel",
       "mention": {},
@@ -73,12 +67,22 @@
       "claims": []
     },
     {
-      "index": 9,
+      "index": 8,
       "text": "🇨🇭 Prestigious ERC Synergy Grant awarded for research on transfer RNA\n\nUniversität Bern covers the story in Bern. It is another data point in Switzerland's steady deep-tech build-out.\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://mediarelations.unibe.ch/media_releases/2026/media_releases_2026/prestigious_erc_synergy_grant_awarded_for_research_on_transfer_rna/index_eng.html",
       "link": "https://mediarelations.unibe.ch/media_releases/2026/media_releases_2026/prestigious_erc_synergy_grant_awarded_for_research_on_transfer_rna/index_eng.html",
       "mention": {},
       "needs_check": false,
       "claims": []
+    },
+    {
+      "index": 9,
+      "text": "🇨🇭 Light Frame Raises US$5.1M to Upgrade Core Systems at Private Banks\n\nFintechnews Switzerland covers the story. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at $5.1M.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at $5.1M.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://fintechnews.ch/funding/light-frame-raises-5-1-million-seed-core-banking/86990/",
+      "link": "https://fintechnews.ch/funding/light-frame-raises-5-1-million-seed-core-banking/86990/",
+      "mention": {},
+      "needs_check": true,
+      "claims": [
+        "the post states $5.1M: is that money received rather than a ceiling or a target, and has the round closed"
+      ]
     },
     {
       "index": 10,
