@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 19 November 2026. 13 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 20 November 2026. 15 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -41,7 +41,55 @@ Report what was scheduled and what was held.
 
 The stories themselves are below.
 
-## 1. General — published 18 November
+## 1. Round — published 20 November
+
+```
+🇨🇭 Payhawk Reaches US$2 Billion Valuation in Goldman Sachs-Led Series C
+
+Fintechnews Switzerland covers the story. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at $2 Billion.
+
+Why it matters:
+💰 Capital keeps following Swiss deep science, this time at $2 Billion.
+🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
+🧭 Backing that research early and capital-efficiently is what we do at Climb.
+
+https://fintechnews.ch/london/payhawk-2-billion-valuation-goldman-sachs/87209/
+```
+🖼️ **Article image:** https://fintechnewsch-22e90.kxcdn.com/wp-content/uploads/2026/11/Payhawk-Reaches-US2-Billion-Valuation-in-Goldman-Sachs-Led-Series-C.webp
+
+## 2. Research — published 20 November
+
+```
+🇨🇭 Solving a 40-year puzzle in fusion energy
+
+20.11.26 - EPFL researchers have developed a theory explaining how fusion plasmas enter a state of improved energy confinement, addressing a longstanding problem in the design and operation of tokamak reactors.
+
+Why it matters:
+📈 Energy and climate hardware is moving from subsidy toward genuine demand.
+🇨🇭 Switzerland combines deep materials science with disciplined engineering.
+🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.
+
+https://actu.epfl.ch/news/solving-a-40-year-puzzle-in-fusion-energy
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 3. General — published 19 November
+
+```
+🇨🇭 Experienced hands for supporters in the Swiss startup ecosystems
+
+🇨🇭 Former entrepreneurs behind some of Switzerland’s pioneering startups are returning to the startup ecosystem to support the next generation of founders with their expertise. Nicolas Durand is joining the Swiss Biotech Association, Matthias Peterhans the CSEM, and Michael Sauter Empa.
+
+Why it matters:
+📈 Early biological insight compounds into products years before anyone names a company.
+🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.
+🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.
+
+https://www.startupticker.ch/en/news/experienced-hands-for-supporters-in-the-swiss-startup-ecosystems
+```
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Supporter_experts_people.png
+
+## 4. General — published 18 November
 
 ```
 🇨🇭 Smeetz closes CHF 5.5 million Series A2 and turns profitable
@@ -57,7 +105,7 @@ https://www.startupticker.ch/en/news/smeetz-closes-chf-5-5-million-series-a2-and
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/pexels-alessio-cesario-975080-1906839.jpg
 
-## 2. General — published 16 November
+## 5. General — published 16 November
 
 ```
 🇨🇭 VEDIC LAB builds momentum with natural, clinically proven hair-loss...
@@ -73,7 +121,23 @@ https://www.startupticker.ch/en/news/vedic-lab-builds-momentum-with-natural-clin
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/VedicLab_cofounder_products.png
 
-## 3. Partnership — published 14 November
+## 6. General — published 16 November
+
+```
+🇨🇭 Une première installation Lightswing Solar raccordée à Lullier
+
+Le raccordement éléctrique de la première installation à échelle 1:1 de Lightswing Solar est en cours de finalisation à Lullier, dans le Canton de Genève. Le développement de ce projet pilote doit beaucoup à SIG.
+
+Why it matters:
+📈 Deep technology is where durable, defensible companies get built.
+🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
+🧭 Backing that research early and capital-efficiently is what we do at Climb.
+
+https://www.startupticker.ch/en/news/une-premiere-installation-lightwing-solar-raccordee-a-lullier
+```
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Lightwing%20solar%20Lullier.JPG
+
+## 7. Partnership — published 14 November
 
 ```
 🇨🇭 Swiss Robotics Day spotlights physical AI as firms race in touch and...
@@ -89,7 +153,7 @@ https://biz.chosun.com/en/en-science/2026/11/15/VFLKF7G2WVFJPAV4EUAEHEEVYU/
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 4. General — published 13 November
+## 8. General — published 13 November
 
 ```
 🇨🇭 Two Swiss IPOs in one day
@@ -105,23 +169,7 @@ https://www.startupticker.ch/en/news/two-swiss-ipos-in-one-day
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/wallstreet_fotolia-gary.jpg
 
-## 5. Round — published 13 November
-
-```
-🇨🇭 Top News Today: South Korea's Chip Profit Gap, AI Disrupts...
-
-Analytics Insight covers the story in Sion. Swiss semiconductor work keeps turning academic research into industrial capability. The round is reported at USD 500M.
-
-Why it matters:
-💰 Capital keeps following Swiss deep science, this time at USD 500M.
-🇨🇭 Switzerland punches above its weight in specialised chips and advanced materials.
-🧭 Capital-efficient hardware built on Swiss research is core to the Climb thesis.
-
-https://www.analyticsinsight.net/tech-news/top-news-today-south-koreas-chip-profit-gap-ai-disrupts-consulting-bitcoin-hub-in-switzerland-agile-robots-raises-usd-500m-spacex-plans-usd-74b-ai-expansion
-```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 6. General — published 13 November
+## 9. General — published 13 November
 
 ```
 🇨🇭 Awards for Western Switzerland Startups
@@ -137,7 +185,23 @@ https://www.startupticker.ch/en/news/awards-for-western-switzerland-startups
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Kandou%20Neurosoft%20Yord.png
 
-## 7. Launch — published 12 November
+## 10. Round — published 13 November
+
+```
+🇨🇭 Top News Today: South Korea's Chip Profit Gap, AI Disrupts...
+
+Analytics Insight covers the story in Sion. Swiss semiconductor work keeps turning academic research into industrial capability. The round is reported at USD 500M.
+
+Why it matters:
+💰 Capital keeps following Swiss deep science, this time at USD 500M.
+🇨🇭 Switzerland punches above its weight in specialised chips and advanced materials.
+🧭 Capital-efficient hardware built on Swiss research is core to the Climb thesis.
+
+https://www.analyticsinsight.net/tech-news/top-news-today-south-koreas-chip-profit-gap-ai-disrupts-consulting-bitcoin-hub-in-switzerland-agile-robots-raises-usd-500m-spacex-plans-usd-74b-ai-expansion
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 11. Launch — published 12 November
 
 ```
 🇨🇭 EPFL introduces a new Bachelor in Artificial Intelligence
@@ -153,7 +217,7 @@ https://actu.epfl.ch/news/epfl-introduces-a-new-bachelor-in-artificial-intel
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 8. Grant — published 12 November
+## 12. Grant — published 12 November
 
 ```
 🇨🇭 Prestigious ERC Synergy Grant awarded for research on transfer RNA
@@ -169,7 +233,7 @@ https://mediarelations.unibe.ch/media_releases/2026/media_releases_2026/prestigi
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 9. Round — published 11 November
+## 13. Round — published 11 November
 
 ```
 🇨🇭 Light Frame Raises US$5.1M to Upgrade Core Systems at Private Banks
@@ -185,7 +249,7 @@ https://fintechnews.ch/funding/light-frame-raises-5-1-million-seed-core-banking/
 ```
 🖼️ **Article image:** https://fintechnewsch-22e90.kxcdn.com/wp-content/uploads/2026/11/Light-Frame-Raises-US5.1M-to-Upgrade-Core-Systems-at-Private-Banks.webp
 
-## 10. General — published 11 November
+## 14. General — published 11 November
 
 ```
 🇨🇭 vVARDIS plans IPO in New York
@@ -201,7 +265,7 @@ https://www.startupticker.ch/en/news/vvardis-plans-ipo-in-new-york
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/vvardisProduct26.jpg
 
-## 11. General — published 11 November
+## 15. General — published 11 November
 
 ```
 🇨🇭 Kadoa triples revenue with web datasets for humans and AI agents in...
@@ -216,36 +280,4 @@ Why it matters:
 https://www.startupticker.ch/en/news/kadoa-triples-revenue-with-web-datasets-for-humans-and-ai-agents-in-finance
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Kadoa_team.png
-
-## 12. General — published 10 November
-
-```
-🇨🇭 Redalpine closes oversubscribed $250M early-stage fund
-
-Zurich-based venture capital firm redalpine announced the final close of its early-stage fund redalpine capital VIII (RAC VIII) at $250 million – the largest ever raised. In total, the VC now manages over $1.4bn in assets to back European technology companies from Seed to IPO. The round is reported at $250M.
-
-Why it matters:
-💰 Capital keeps following Swiss deep science, this time at $250M.
-🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
-🧭 Backing that research early and capital-efficiently is what we do at Climb.
-
-https://www.startupticker.ch/en/news/redalpine-closes-oversubscribed-250m-early-stage-fund
-```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/redalpine_team_websize.jpg
-
-## 13. General — published 09 November
-
-```
-🇨🇭 Dexterous Endoscopes enters Biopôle Investment Programme
-
-Biopôle Investment Programme (BIP) is welcoming Dexterous Endoscopes. The comprehensive 24-month programme at Biopôle Lausanne will provide both financial and strategic support as the medtech start-up prepares to move from preclinical validation towards regulatory submission and first clinical use.
-
-Why it matters:
-📈 Early biological insight compounds into products years before anyone names a company.
-🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.
-🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.
-
-https://www.startupticker.ch/en/news/dexterous-endoscopes-enters-biopole-investment-programme
-```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Dexterous%20Endoscop%20founders.jpg
 
