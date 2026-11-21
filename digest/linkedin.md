@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 20 November 2026. 15 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 21 November 2026. 15 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -108,6 +108,22 @@ https://www.startupticker.ch/en/news/smeetz-closes-chf-5-5-million-series-a2-and
 ## 5. General — published 16 November
 
 ```
+🇨🇭 Schweizer KMU: SwissCompanies.ch und SwissCompanies.ai setzen auf...
+
+Swiss-Press.com covers the story. It is another data point in Switzerland's steady deep-tech build-out.
+
+Why it matters:
+📈 Deep technology is where durable, defensible companies get built.
+🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
+🧭 Backing that research early and capital-efficiently is what we do at Climb.
+
+https://www.swiss-press.com/swisscompanies-kmu-unternehmensinfos/1830713
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 6. General — published 16 November
+
+```
 🇨🇭 VEDIC LAB builds momentum with natural, clinically proven hair-loss...
 
 🇨🇭 Based in Zug, VEDIC LAB combines Ayurvedic herb science with Swiss biotechnology to address hair loss and support scalp health. The round is reported at CHF 2 m.
@@ -121,7 +137,7 @@ https://www.startupticker.ch/en/news/vedic-lab-builds-momentum-with-natural-clin
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/VedicLab_cofounder_products.png
 
-## 6. General — published 16 November
+## 7. General — published 16 November
 
 ```
 🇨🇭 Une première installation Lightswing Solar raccordée à Lullier
@@ -137,7 +153,7 @@ https://www.startupticker.ch/en/news/une-premiere-installation-lightwing-solar-r
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Lightwing%20solar%20Lullier.JPG
 
-## 7. Partnership — published 14 November
+## 8. Partnership — published 14 November
 
 ```
 🇨🇭 Swiss Robotics Day spotlights physical AI as firms race in touch and...
@@ -153,7 +169,7 @@ https://biz.chosun.com/en/en-science/2026/11/15/VFLKF7G2WVFJPAV4EUAEHEEVYU/
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 8. General — published 13 November
+## 9. General — published 13 November
 
 ```
 🇨🇭 Two Swiss IPOs in one day
@@ -169,7 +185,7 @@ https://www.startupticker.ch/en/news/two-swiss-ipos-in-one-day
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/wallstreet_fotolia-gary.jpg
 
-## 9. General — published 13 November
+## 10. General — published 13 November
 
 ```
 🇨🇭 Awards for Western Switzerland Startups
@@ -185,7 +201,7 @@ https://www.startupticker.ch/en/news/awards-for-western-switzerland-startups
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Kandou%20Neurosoft%20Yord.png
 
-## 10. Round — published 13 November
+## 11. Round — published 13 November
 
 ```
 🇨🇭 Top News Today: South Korea's Chip Profit Gap, AI Disrupts...
@@ -201,7 +217,7 @@ https://www.analyticsinsight.net/tech-news/top-news-today-south-koreas-chip-prof
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 11. Launch — published 12 November
+## 12. Launch — published 12 November
 
 ```
 🇨🇭 EPFL introduces a new Bachelor in Artificial Intelligence
@@ -217,7 +233,7 @@ https://actu.epfl.ch/news/epfl-introduces-a-new-bachelor-in-artificial-intel
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 12. Grant — published 12 November
+## 13. Grant — published 12 November
 
 ```
 🇨🇭 Prestigious ERC Synergy Grant awarded for research on transfer RNA
@@ -233,7 +249,7 @@ https://mediarelations.unibe.ch/media_releases/2026/media_releases_2026/prestigi
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 13. Round — published 11 November
+## 14. Round — published 11 November
 
 ```
 🇨🇭 Light Frame Raises US$5.1M to Upgrade Core Systems at Private Banks
@@ -249,7 +265,7 @@ https://fintechnews.ch/funding/light-frame-raises-5-1-million-seed-core-banking/
 ```
 🖼️ **Article image:** https://fintechnewsch-22e90.kxcdn.com/wp-content/uploads/2026/11/Light-Frame-Raises-US5.1M-to-Upgrade-Core-Systems-at-Private-Banks.webp
 
-## 14. General — published 11 November
+## 15. General — published 11 November
 
 ```
 🇨🇭 vVARDIS plans IPO in New York
@@ -264,20 +280,4 @@ Why it matters:
 https://www.startupticker.ch/en/news/vvardis-plans-ipo-in-new-york
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/vvardisProduct26.jpg
-
-## 15. General — published 11 November
-
-```
-🇨🇭 Kadoa triples revenue with web datasets for humans and AI agents in...
-
-Zurich-based Kadoa is experiencing rapid growth with its platform for building and maintaining reliable web datasets, as artificial intelligence reshapes how investment firms access and process data.
-
-Why it matters:
-📈 Automation is shifting from pilots to real commercial operations.
-🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
-🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
-
-https://www.startupticker.ch/en/news/kadoa-triples-revenue-with-web-datasets-for-humans-and-ai-agents-in-finance
-```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Kadoa_team.png
 
