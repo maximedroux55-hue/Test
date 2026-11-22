@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 21 November 2026. 15 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 22 November 2026. 13 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -105,21 +105,21 @@ https://www.startupticker.ch/en/news/smeetz-closes-chf-5-5-million-series-a2-and
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/pexels-alessio-cesario-975080-1906839.jpg
 
-## 5. General — published 16 November
+## 5. General — published 18 November
 
 ```
-🇨🇭 Schweizer KMU: SwissCompanies.ch und SwissCompanies.ai setzen auf...
+🇨🇭 Gaphenaton transitions to commercialization
 
-Swiss-Press.com covers the story. It is another data point in Switzerland's steady deep-tech build-out.
+In the midst of its market entry year, Graphenaton’s first product incorporating ABF Graphene films—an outdoor pergola heating system developed in collaboration with the French manufacturer Coublanc—will soon be available on the market.
 
 Why it matters:
 📈 Deep technology is where durable, defensible companies get built.
 🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
 🧭 Backing that research early and capital-efficiently is what we do at Climb.
 
-https://www.swiss-press.com/swisscompanies-kmu-unternehmensinfos/1830713
+https://www.startupticker.ch/en/news/gaphenaton-transitions-to-commercialization
 ```
-🖼️ **Article image:** none found, grab one from the article page.
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Coublanc%20Pergola%20Heather%20powered%20by%20%20Graphenaton%20coublanc.png
 
 ## 6. General — published 16 November
 
@@ -153,7 +153,23 @@ https://www.startupticker.ch/en/news/une-premiere-installation-lightwing-solar-r
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Lightwing%20solar%20Lullier.JPG
 
-## 8. Partnership — published 14 November
+## 8. General — published 16 November
+
+```
+🇨🇭 Global recognition for Swiss innovators
+
+Procavea, Treeless, Windtracx, CUTISS and PolaSight have impressed juries worldwide with their novel solutions, winning prizes including a €20,000 grant, global visibility and a ticket in a European and US accelerator program. The companies are addressing major challenges in healthcare and materials. The round is reported at €20,000.
+
+Why it matters:
+💰 Capital keeps following Swiss deep science, this time at €20,000.
+🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
+🧭 Backing that research early and capital-efficiently is what we do at Climb.
+
+https://www.startupticker.ch/en/news/global-recognition-for-swiss-innovators
+```
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Awards_Nov26.png
+
+## 9. Partnership — published 14 November
 
 ```
 🇨🇭 Swiss Robotics Day spotlights physical AI as firms race in touch and...
@@ -169,7 +185,7 @@ https://biz.chosun.com/en/en-science/2026/11/15/VFLKF7G2WVFJPAV4EUAEHEEVYU/
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 9. General — published 13 November
+## 10. General — published 13 November
 
 ```
 🇨🇭 Two Swiss IPOs in one day
@@ -185,7 +201,7 @@ https://www.startupticker.ch/en/news/two-swiss-ipos-in-one-day
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/wallstreet_fotolia-gary.jpg
 
-## 10. General — published 13 November
+## 11. General — published 13 November
 
 ```
 🇨🇭 Awards for Western Switzerland Startups
@@ -201,7 +217,7 @@ https://www.startupticker.ch/en/news/awards-for-western-switzerland-startups
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Kandou%20Neurosoft%20Yord.png
 
-## 11. Round — published 13 November
+## 12. Round — published 13 November
 
 ```
 🇨🇭 Top News Today: South Korea's Chip Profit Gap, AI Disrupts...
@@ -214,22 +230,6 @@ Why it matters:
 🧭 Capital-efficient hardware built on Swiss research is core to the Climb thesis.
 
 https://www.analyticsinsight.net/tech-news/top-news-today-south-koreas-chip-profit-gap-ai-disrupts-consulting-bitcoin-hub-in-switzerland-agile-robots-raises-usd-500m-spacex-plans-usd-74b-ai-expansion
-```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 12. Launch — published 12 November
-
-```
-🇨🇭 EPFL introduces a new Bachelor in Artificial Intelligence
-
-EPFL News covers the story in Sion. Swiss robotics and applied AI keep moving from demo to deployment.
-
-Why it matters:
-📈 Automation is shifting from pilots to real commercial operations.
-🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
-🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
-
-https://actu.epfl.ch/news/epfl-introduces-a-new-bachelor-in-artificial-intel
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
@@ -248,36 +248,4 @@ Why it matters:
 https://mediarelations.unibe.ch/media_releases/2026/media_releases_2026/prestigious_erc_synergy_grant_awarded_for_research_on_transfer_rna/index_eng.html
 ```
 🖼️ **Article image:** none found, grab one from the article page.
-
-## 14. Round — published 11 November
-
-```
-🇨🇭 Light Frame Raises US$5.1M to Upgrade Core Systems at Private Banks
-
-Fintechnews Switzerland covers the story. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at $5.1M.
-
-Why it matters:
-💰 Capital keeps following Swiss deep science, this time at $5.1M.
-🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
-🧭 Backing that research early and capital-efficiently is what we do at Climb.
-
-https://fintechnews.ch/funding/light-frame-raises-5-1-million-seed-core-banking/86990/
-```
-🖼️ **Article image:** https://fintechnewsch-22e90.kxcdn.com/wp-content/uploads/2026/11/Light-Frame-Raises-US5.1M-to-Upgrade-Core-Systems-at-Private-Banks.webp
-
-## 15. General — published 11 November
-
-```
-🇨🇭 vVARDIS plans IPO in New York
-
-vVARDIS Holding AG, a Zug-based dental medtech company pioneering non-invasive cavity treatment, plans to list on the New York Stock Exchange. The company is aiming for a valuation of multiple billions of US dollars and intends to raise more than US$200 million. The round is reported at $200 m.
-
-Why it matters:
-💰 Capital keeps following Swiss deep science, this time at $200 m.
-🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.
-🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.
-
-https://www.startupticker.ch/en/news/vvardis-plans-ipo-in-new-york
-```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/vvardisProduct26.jpg
 
