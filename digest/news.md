@@ -1,36 +1,36 @@
 # Swiss DeepTech news digest
-_Generated 22 November 2026, covering the last 14 days. 33 stories._
+_Generated 23 November 2026, covering the last 14 days. 34 stories._
 
 1. **[GR3N closes a €15.5M Series B round](https://www.startupticker.ch/en/news/gr3n-closes-a-15-5m-series-b-round)**  
    startupticker.ch · sent in
-2. **[Onward Therapeutics Closes USD 28 Million Series B Financing](https://www.startupticker.ch/en/news/onward-therapeutics-closes-usd-28-million-series-b-financing)**  
+2. **[Swiss Robotics Startup coprod Raises $6M in Pre-Seed Funding to Simplify Custom Robot Hardware Development - AI Insider](https://news.google.com/rss/articles/CBMi2wFBVV95cUxNSExoZlJpSmw3ajlnUUhEYTlWaU1aUU0zdFlNNjJrVHlBRlZPTVNRd0NmYjBVZmNWaFprQ0RTYzcyM05yeWxoYXJRZ205N0xRbWh2LXR3WGtscUN1X2tKN2JSRDlKN0xKNV9aTjNubldfTERPWTZxYmh6SlpBbzNxemVFbVFIZXdpNDRPeVFzNnNrSGJ3Ry0zUmV1dEVrV1lEa2w0bnhYOGhDVXg2RWVJclJ4aUp2MWVWZkNXY0wyOUJTSjZnSzdJRkkwbXlpSjFzS0hMSTFLd0Z6UkU?oc=5)**  
+   AI Insider · 23 Nov 2026 · relevance 30
+3. **[Onward Therapeutics Closes USD 28 Million Series B Financing](https://www.startupticker.ch/en/news/onward-therapeutics-closes-usd-28-million-series-b-financing)**  
    Startupticker · 19 Nov 2026 · relevance 22
-3. **[Smeetz closes CHF 5.5 million Series A2 and turns profitable](https://www.startupticker.ch/en/news/smeetz-closes-chf-5-5-million-series-a2-and-turns-profitable)**  
+4. **[Smeetz closes CHF 5.5 million Series A2 and turns profitable](https://www.startupticker.ch/en/news/smeetz-closes-chf-5-5-million-series-a2-and-turns-profitable)**  
    Startupticker · 18 Nov 2026 · relevance 22
-4. **[Switzerland leads Europe in spinout value per capita](https://www.startupticker.ch/en/news/switzerland-leads-europe-in-spinout-value-per-capita)**  
+5. **[Switzerland leads Europe in spinout value per capita](https://www.startupticker.ch/en/news/switzerland-leads-europe-in-spinout-value-per-capita)**  
    Startupticker · 18 Nov 2026 · relevance 18
-5. **[Payhawk Reaches US$2 Billion Valuation in Goldman Sachs-Led Series C](https://fintechnews.ch/london/payhawk-2-billion-valuation-goldman-sachs/87209/)**  
+6. **[Nestlé opens its Deep Tech Center - Greater Geneva Bern area (GGBa)](https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBZaEFkTlAtcmMzekNGdDBVQk92S0pfcnl1b1BtaG5scVRiX19MNEdZSVZtWkZkZ3Fqc3JyalpYaW5McW5PbE85NHplTElyTThPbFY4aVltRVh0Qnozc1h6UVl1SlhMNFU?oc=5)**  
+   Greater Geneva Bern area (GGBa) · 23 Nov 2026 · relevance 14
+7. **[Payhawk Reaches US$2 Billion Valuation in Goldman Sachs-Led Series C](https://fintechnews.ch/london/payhawk-2-billion-valuation-goldman-sachs/87209/)**  
    Fintechnews Switzerland · 20 Nov 2026 · relevance 14
-6. **[Nestlé Opens Swiss Deep Tech Hub to Shrink Product Timelines and Factory Costs - ad-hoc-news.de](https://news.google.com/rss/articles/CBMi5AFBVV95cUxNVGdlYm9SNmY1TXJ6OUp3UVAzNzYtVTVMX2M4UjQwOVpOMVNTb3h5S01ncXEwQzNwdVVpYXZsdDRSU1oyNVhubUktQUZEMi0zclk1bF9SdFBLSk9rb1FKcWt5RDFxOFFiZXM5cFFUWld5VXpySHdocTAtVWlxM3NJNGRGbDBwU3BvTmx1TGNrUnJBTk9zSjg0bHJ0LWxGNU5WTGhNbHVuVzlqNDhsdWdtbWRzZ01EdWtOb1dpclp6Yi00RWtwM3Zrd2RaV3RFLXktRm0xclVoc0RRZlc2a0N3Z25FWUs?oc=5)**  
-   ad-hoc-news.de · 20 Nov 2026 · relevance 13
-7. **[Two Swiss IPOs in one day](https://www.startupticker.ch/en/news/two-swiss-ipos-in-one-day)**  
+8. **[Two Swiss IPOs in one day](https://www.startupticker.ch/en/news/two-swiss-ipos-in-one-day)**  
    Startupticker · 13 Nov 2026 · relevance 12
-8. **[Square8 strengthens security for AI workers with Korix acquisition](https://www.startupticker.ch/en/news/square8-strengthens-security-for-ai-workers-with-korix-acquisition)**  
+9. **[Square8 strengthens security for AI workers with Korix acquisition](https://www.startupticker.ch/en/news/square8-strengthens-security-for-ai-workers-with-korix-acquisition)**  
    Startupticker · 10 Nov 2026 · relevance 12
-9. **[Solving a 40-year puzzle in fusion energy](https://actu.epfl.ch/news/solving-a-40-year-puzzle-in-fusion-energy)**  
+10. **[Solving a 40-year puzzle in fusion energy](https://actu.epfl.ch/news/solving-a-40-year-puzzle-in-fusion-energy)**  
    EPFL News · 20 Nov 2026 · relevance 11
-10. **[EPFL introduces a new Bachelor in Artificial Intelligence](https://actu.epfl.ch/news/epfl-introduces-a-new-bachelor-in-artificial-intel)**  
+11. **[EPFL introduces a new Bachelor in Artificial Intelligence](https://actu.epfl.ch/news/epfl-introduces-a-new-bachelor-in-artificial-intel)**  
    EPFL News · 12 Nov 2026 · relevance 11
-11. **[Redalpine closes oversubscribed $250M early-stage fund](https://www.startupticker.ch/en/news/redalpine-closes-oversubscribed-250m-early-stage-fund)**  
+12. **[Redalpine closes oversubscribed $250M early-stage fund](https://www.startupticker.ch/en/news/redalpine-closes-oversubscribed-250m-early-stage-fund)**  
    Startupticker · 10 Nov 2026 · relevance 11
-12. **[Theseus Robotics to launch shelf-stocking robot in US supermarkets](https://www.startupticker.ch/en/news/theseus-robotics-to-launch-shelf-stocking-robot-in-us-supermarkets)**  
-   Startupticker · 20 Nov 2026 · relevance 10
-13. **[Switzerland Launches Biometric ID Card with Secure NFC Chip - WIoT Group](https://news.google.com/rss/articles/CBMikgFBVV95cUxPQVFFUXd2dXF2SlFadWhERHZtallQanpBVFhaNFBiblVSbDNpQTRlbWJ4QnFDT2tiaG5VcWs3aWFPeG5XVmlhS3l1YjZpZXNwRTVjajNfbWNFSmdXSUxMRERZQ0lFbzhoOF96bmp0ZEtLdV82MUpzWG8zeG8wbVFwSjlOS2tURFZtOGpLalM1TDZndw?oc=5)**  
+13. **[How proteins from viruses control genes](https://actu.epfl.ch/news/how-proteins-from-viruses-control-genes)**  
+   EPFL News · 23 Nov 2026 · relevance 10
+14. **[Switzerland Launches Biometric ID Card with Secure NFC Chip - WIoT Group](https://news.google.com/rss/articles/CBMikgFBVV95cUxPQVFFUXd2dXF2SlFadWhERHZtallQanpBVFhaNFBiblVSbDNpQTRlbWJ4QnFDT2tiaG5VcWs3aWFPeG5XVmlhS3l1YjZpZXNwRTVjajNfbWNFSmdXSUxMRERZQ0lFbzhoOF96bmp0ZEtLdV82MUpzWG8zeG8wbVFwSjlOS2tURFZtOGpLalM1TDZndw?oc=5)**  
    WIoT Group · 10 Nov 2026 · relevance 10
-14. **[Dexterous Endoscopes enters Biopôle Investment Programme](https://www.startupticker.ch/en/news/dexterous-endoscopes-enters-biopole-investment-programme)**  
+15. **[Dexterous Endoscopes enters Biopôle Investment Programme](https://www.startupticker.ch/en/news/dexterous-endoscopes-enters-biopole-investment-programme)**  
    Startupticker · 09 Nov 2026 · relevance 10
-15. **[19 swiss biotech startups you’ll want to keep an eye on - Labiotech.eu](https://news.google.com/rss/articles/CBMidkFVX3lxTFBNa0pTM28zMmtaczdsdEw0MS1GRzFBai13Mjd6SS1mZEtVcG8xMVU4OXV6cnh6MUJhdnNjNlZQdGJ4cUpfSUMwNWdUVUx1bVZKandRbkt1S00zYjlkVFNXal9aMGFQS2dHUXFJcG56MzhzU1hpcXc?oc=5)**  
-   Labiotech.eu · 09 Nov 2026 · relevance 10
 16. **[VEDIC LAB builds momentum with natural, clinically proven hair-loss solutions](https://www.startupticker.ch/en/news/vedic-lab-builds-momentum-with-natural-clinically-proven-hair-loss-solutions)**  
    Startupticker · 16 Nov 2026 · relevance 9
 17. **[Making infrastructure inspections safer and more reliable](https://actu.epfl.ch/news/making-infrastructure-inspections-safer-and-more-r)**  
@@ -47,10 +47,10 @@ _Generated 22 November 2026, covering the last 14 days. 33 stories._
    Startupticker · 13 Nov 2026 · relevance 8
 23. **[vVARDIS plans IPO in New York](https://www.startupticker.ch/en/news/vvardis-plans-ipo-in-new-york)**  
    Startupticker · 11 Nov 2026 · relevance 8
-24. **[Kadoa triples revenue with web datasets for humans and AI agents in finance](https://www.startupticker.ch/en/news/kadoa-triples-revenue-with-web-datasets-for-humans-and-ai-agents-in-finance)**  
+24. **[AI to Define to Banking Sector’s Agenda in 2027](https://fintechnews.ch/aifintech/ai-to-define-to-banking-sectors-agenda-in-2027/87142/)**  
+   Fintechnews Switzerland · 23 Nov 2026 · relevance 7
+25. **[Kadoa triples revenue with web datasets for humans and AI agents in finance](https://www.startupticker.ch/en/news/kadoa-triples-revenue-with-web-datasets-for-humans-and-ai-agents-in-finance)**  
    Startupticker · 11 Nov 2026 · relevance 7
-25. **[Fintech Marketers Adapt As AI-Powered Search Reshapes Brand Discovery](https://fintechnews.ch/aifintech/fintech-marketers-adapt-as-ai-powered-search-reshapes-brand-discovery/87055/)**  
-   Fintechnews Switzerland · 17 Nov 2026 · relevance 6
 26. **[Une première installation Lightswing Solar raccordée à Lullier](https://www.startupticker.ch/en/news/une-premiere-installation-lightwing-solar-raccordee-a-lullier)**  
    Startupticker · 16 Nov 2026 · relevance 6
 27. **[Earkick’s AI emotional support chatbot finds new owner](https://www.startupticker.ch/en/news/earkick-s-ai-emotional-support-chatbot-finds-new-owner)**  
@@ -59,11 +59,13 @@ _Generated 22 November 2026, covering the last 14 days. 33 stories._
    Universität Bern · 12 Nov 2026 · relevance 6
 29. **[Vier Startups sichern sich einen Platz im «Büro Züri»](https://www.startupticker.ch/en/news/vier-startups-sichern-sich-einen-platz-im-buero-zueri)**  
    Startupticker · 09 Nov 2026 · relevance 6
-30. **[Gaphenaton transitions to commercialization](https://www.startupticker.ch/en/news/gaphenaton-transitions-to-commercialization)**  
+30. **[Milestone FDA Clearance paves way for Multiwave U.S. Launch](https://www.startupticker.ch/en/news/milestone-fda-clearance-paves-way-for-multiwave-u-s-launch)**  
+   Startupticker · 20 Nov 2026 · relevance 5
+31. **[Graphenaton transitions to commercialization](https://www.startupticker.ch/en/news/gaphenaton-transitions-to-commercialization)**  
    Startupticker · 18 Nov 2026 · relevance 5
-31. **[Global recognition for Swiss innovators](https://www.startupticker.ch/en/news/global-recognition-for-swiss-innovators)**  
+32. **[Global recognition for Swiss innovators](https://www.startupticker.ch/en/news/global-recognition-for-swiss-innovators)**  
    Startupticker · 16 Nov 2026 · relevance 5
-32. **[Key milestones from biotechs advancing treatments across multiple indications](https://www.startupticker.ch/en/news/key-milestones-from-biotechs-advancing-treatments-across-multiple-indications)**  
+33. **[Key milestones from biotechs advancing treatments across multiple indications](https://www.startupticker.ch/en/news/key-milestones-from-biotechs-advancing-treatments-across-multiple-indications)**  
    Startupticker · 19 Nov 2026 · relevance 4
-33. **[Devia Agentic AI for GxP Pharma Quality Management arises from stealth](https://www.startupticker.ch/en/news/devia-agentic-ai-for-gxp-pharma-quality-management-arises-from-stealth)**  
+34. **[Devia Agentic AI for GxP Pharma Quality Management arises from stealth](https://www.startupticker.ch/en/news/devia-agentic-ai-for-gxp-pharma-quality-management-arises-from-stealth)**  
    Startupticker · 11 Nov 2026 · relevance 4
