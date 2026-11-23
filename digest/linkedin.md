@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 22 November 2026. 13 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 23 November 2026. 14 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -41,7 +41,39 @@ Report what was scheduled and what was held.
 
 The stories themselves are below.
 
-## 1. Round — published 20 November
+## 1. Research — published 23 November
+
+```
+🇨🇭 How proteins from viruses control genes
+
+23.11.26 - EPFL researchers have identified a family of proteins that keeps ancient mobile DNA sequences under control through an unexpected form of gene regulation.
+
+Why it matters:
+📈 Deep technology is where durable, defensible companies get built.
+🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
+🧭 Backing that research early and capital-efficiently is what we do at Climb.
+
+https://actu.epfl.ch/news/how-proteins-from-viruses-control-genes
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 2. General — published 23 November
+
+```
+🇨🇭 AI to Define to Banking Sector’s Agenda in 2027
+
+Fintechnews Switzerland covers the story. Swiss robotics and applied AI keep moving from demo to deployment.
+
+Why it matters:
+📈 Automation is shifting from pilots to real commercial operations.
+🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
+🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
+
+https://fintechnews.ch/aifintech/ai-to-define-to-banking-sectors-agenda-in-2027/87142/
+```
+🖼️ **Article image:** https://fintechnewsch-22e90.kxcdn.com/wp-content/uploads/2026/11/AI-to-Define-to-Banking-Sectors-Agenda-in-2027.webp
+
+## 3. Round — published 20 November
 
 ```
 🇨🇭 Payhawk Reaches US$2 Billion Valuation in Goldman Sachs-Led Series C
@@ -57,7 +89,7 @@ https://fintechnews.ch/london/payhawk-2-billion-valuation-goldman-sachs/87209/
 ```
 🖼️ **Article image:** https://fintechnewsch-22e90.kxcdn.com/wp-content/uploads/2026/11/Payhawk-Reaches-US2-Billion-Valuation-in-Goldman-Sachs-Led-Series-C.webp
 
-## 2. Research — published 20 November
+## 4. Research — published 20 November
 
 ```
 🇨🇭 Solving a 40-year puzzle in fusion energy
@@ -73,7 +105,7 @@ https://actu.epfl.ch/news/solving-a-40-year-puzzle-in-fusion-energy
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 3. General — published 19 November
+## 5. General — published 19 November
 
 ```
 🇨🇭 Experienced hands for supporters in the Swiss startup ecosystems
@@ -89,7 +121,7 @@ https://www.startupticker.ch/en/news/experienced-hands-for-supporters-in-the-swi
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Supporter_experts_people.png
 
-## 4. General — published 18 November
+## 6. General — published 18 November
 
 ```
 🇨🇭 Smeetz closes CHF 5.5 million Series A2 and turns profitable
@@ -105,10 +137,10 @@ https://www.startupticker.ch/en/news/smeetz-closes-chf-5-5-million-series-a2-and
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/pexels-alessio-cesario-975080-1906839.jpg
 
-## 5. General — published 18 November
+## 7. General — published 18 November
 
 ```
-🇨🇭 Gaphenaton transitions to commercialization
+🇨🇭 Graphenaton transitions to commercialization
 
 In the midst of its market entry year, Graphenaton’s first product incorporating ABF Graphene films—an outdoor pergola heating system developed in collaboration with the French manufacturer Coublanc—will soon be available on the market.
 
@@ -121,7 +153,23 @@ https://www.startupticker.ch/en/news/gaphenaton-transitions-to-commercialization
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Coublanc%20Pergola%20Heather%20powered%20by%20%20Graphenaton%20coublanc.png
 
-## 6. General — published 16 November
+## 8. General — published 16 November
+
+```
+🇨🇭 Schweizer KMU: SwissCompanies.ch und SwissCompanies.ai setzen auf...
+
+Swiss-Press.com covers the story. It is another data point in Switzerland's steady deep-tech build-out.
+
+Why it matters:
+📈 Deep technology is where durable, defensible companies get built.
+🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
+🧭 Backing that research early and capital-efficiently is what we do at Climb.
+
+https://www.swiss-press.com/swisscompanies-kmu-unternehmensinfos/1830713
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 9. General — published 16 November
 
 ```
 🇨🇭 VEDIC LAB builds momentum with natural, clinically proven hair-loss...
@@ -137,7 +185,7 @@ https://www.startupticker.ch/en/news/vedic-lab-builds-momentum-with-natural-clin
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/VedicLab_cofounder_products.png
 
-## 7. General — published 16 November
+## 10. General — published 16 November
 
 ```
 🇨🇭 Une première installation Lightswing Solar raccordée à Lullier
@@ -153,7 +201,7 @@ https://www.startupticker.ch/en/news/une-premiere-installation-lightwing-solar-r
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Lightwing%20solar%20Lullier.JPG
 
-## 8. General — published 16 November
+## 11. General — published 16 November
 
 ```
 🇨🇭 Global recognition for Swiss innovators
@@ -169,7 +217,7 @@ https://www.startupticker.ch/en/news/global-recognition-for-swiss-innovators
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Awards_Nov26.png
 
-## 9. Partnership — published 14 November
+## 12. Partnership — published 14 November
 
 ```
 🇨🇭 Swiss Robotics Day spotlights physical AI as firms race in touch and...
@@ -185,39 +233,7 @@ https://biz.chosun.com/en/en-science/2026/11/15/VFLKF7G2WVFJPAV4EUAEHEEVYU/
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 10. General — published 13 November
-
-```
-🇨🇭 Two Swiss IPOs in one day
-
-🇨🇭 Today, two Swiss life sciences companies – Windward Bio and vVARDIS – are going public. The Basel-based biotech firm Windward has chosen Nasdaq, whilst vVARDIS is listed on the New York Stock Exchange as of today.
-
-Why it matters:
-📈 Early biological insight compounds into products years before anyone names a company.
-🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.
-🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.
-
-https://www.startupticker.ch/en/news/two-swiss-ipos-in-one-day
-```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/wallstreet_fotolia-gary.jpg
-
-## 11. General — published 13 November
-
-```
-🇨🇭 Awards for Western Switzerland Startups
-
-🇨🇭 From Taipei to Xiamen via Fribourg, Western Switzerland startups are winning awards and opening new business perspectives in fields such as chip-to-chip connectivity technologies, brain-computer interfaces (BCI), and reducing energy consumption in buildings without the need for renovations.
-
-Why it matters:
-📈 Semiconductors sit under almost every growth market, from AI to defense to mobility.
-🇨🇭 Switzerland punches above its weight in specialised chips and advanced materials.
-🧭 Capital-efficient hardware built on Swiss research is core to the Climb thesis.
-
-https://www.startupticker.ch/en/news/awards-for-western-switzerland-startups
-```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Kandou%20Neurosoft%20Yord.png
-
-## 12. Round — published 13 November
+## 13. Round — published 13 November
 
 ```
 🇨🇭 Top News Today: South Korea's Chip Profit Gap, AI Disrupts...
@@ -233,19 +249,19 @@ https://www.analyticsinsight.net/tech-news/top-news-today-south-koreas-chip-prof
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 13. Grant — published 12 November
+## 14. General — published 13 November
 
 ```
-🇨🇭 Prestigious ERC Synergy Grant awarded for research on transfer RNA
+🇨🇭 Awards for Western Switzerland Startups
 
-Universität Bern covers the story in Bern. It is another data point in Switzerland's steady deep-tech build-out.
+Startupticker covers the story. It is another data point in Switzerland's steady deep-tech build-out.
 
 Why it matters:
 📈 Deep technology is where durable, defensible companies get built.
 🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
 🧭 Backing that research early and capital-efficiently is what we do at Climb.
 
-https://mediarelations.unibe.ch/media_releases/2026/media_releases_2026/prestigious_erc_synergy_grant_awarded_for_research_on_transfer_rna/index_eng.html
+https://www.startupticker.ch/en/news/awards-for-western-switzerland-startups
 ```
-🖼️ **Article image:** none found, grab one from the article page.
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Kandou%20Neurosoft%20Yord.png
 
