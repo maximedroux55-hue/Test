@@ -1,11 +1,29 @@
 {
-  "generated": "2026-11-23",
+  "generated": "2026-11-24",
   "mode": "Template drafts (set ANTHROPIC_API_KEY for AI-written posts).",
   "note": "Times are local. Schedule each post at its time on its date.",
   "cowork_prompt": "Open https://maxime-droux.com/digest/posts.json and schedule the posts listed at the end of this message, and only those. The file holds the shortlist; the list below says which of them I picked and when each one goes out. Match them by `index`. Ignore every other post in the file.\n\nFor each post, in order:\n- Type the `text` straight through, once, with real keystrokes. Never insert\n  text via JavaScript. It already ends with the article URL on its own line,\n  so do not add, move or retype the URL separately: typing it last is what makes\n  the link preview load the article photo.\n- Each post has exactly one @mention. Type `mention.type`, wait for the\n  dropdown, click the row matching `mention.expect`. If no row matches, post\n  it without the mention rather than tagging the wrong company. LinkedIn will\n  render the official name: that is expected and fine, do not fight it, do not\n  restart the post, do not rewrite it.\n- Schedule it at the date and time given for it in the list below. If no link\n  preview appears, schedule it anyway: do not hunt for an image.\n\nTwo attempts per post, then stop. If a post is not scheduled after two tries,\nleave it, move to the next one, and list it at the end. Never start a third.\n\nBefore you start, open the scheduled-posts list once and note what is already\nthere. Skip any post already scheduled: never schedule the same one twice.\n\nVerification:\n- Claims already settled against the article are not in the file. Check only\n  what `claims` still lists, and posts with needs_check: true (a figure nobody\n  has verified: confirm round closed / round name / amount received / investors\n  in THIS round). Both empty and false means schedule it, no research.\n\nAnything that fails: do not schedule it, and do not edit any file or commit\nanything. List the held posts at the end with the sentence you read and the\npage you read it on, and I will record them.\n\nReport what was scheduled and what was held.",
   "posts": [
     {
       "index": 1,
+      "text": "🇨🇭 In the age of AI, EPFL rethinks its study programmes\n\nEPFL News covers the story in Sion. Swiss robotics and applied AI keep moving from demo to deployment.\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://actu.epfl.ch/news/in-the-age-of-ai-epfl-rethinks-its-study-program-5",
+      "link": "https://actu.epfl.ch/news/in-the-age-of-ai-epfl-rethinks-its-study-program-5",
+      "mention": {},
+      "needs_check": false,
+      "claims": []
+    },
+    {
+      "index": 2,
+      "text": "🇨🇭 Surelio raises CHF 1M to secure AI agents\n\nSurelio just raised CHF 1 million to help companies secure their AI agents. The round was led by a Geneva-based investment fund, with business angels who hold executive roles at international companies. The round is reported at CHF 1M.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at CHF 1M.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://www.startupticker.ch/en/news/surelio-raises-chf-1m-to-secure-ai-agents",
+      "link": "https://www.startupticker.ch/en/news/surelio-raises-chf-1m-to-secure-ai-agents",
+      "mention": {},
+      "needs_check": true,
+      "claims": [
+        "the post states CHF 1 m: is that money received rather than a ceiling or a target, and has the round closed"
+      ]
+    },
+    {
+      "index": 3,
       "text": "🇨🇭 How proteins from viruses control genes\n\n23.11.26 - EPFL researchers have identified a family of proteins that keeps ancient mobile DNA sequences under control through an unexpected form of gene regulation.\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://actu.epfl.ch/news/how-proteins-from-viruses-control-genes",
       "link": "https://actu.epfl.ch/news/how-proteins-from-viruses-control-genes",
       "mention": {},
@@ -13,7 +31,7 @@
       "claims": []
     },
     {
-      "index": 2,
+      "index": 4,
       "text": "🇨🇭 AI to Define to Banking Sector’s Agenda in 2027\n\nFintechnews Switzerland covers the story. Swiss robotics and applied AI keep moving from demo to deployment.\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://fintechnews.ch/aifintech/ai-to-define-to-banking-sectors-agenda-in-2027/87142/",
       "link": "https://fintechnews.ch/aifintech/ai-to-define-to-banking-sectors-agenda-in-2027/87142/",
       "mention": {},
@@ -21,7 +39,15 @@
       "claims": []
     },
     {
-      "index": 3,
+      "index": 5,
+      "text": "🇨🇭 Quantencomputer: Schweizer Banken sind ungenügend vorbereitet\n\nQuantencomputer: Schweizer Banken sind ungenügend vorbereitet Nau\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.nau.ch/news/wirtschaft/quantencomputer-schweizer-banken-sind-ungenugend-vorbereitet-67204934",
+      "link": "https://www.nau.ch/news/wirtschaft/quantencomputer-schweizer-banken-sind-ungenugend-vorbereitet-67204934",
+      "mention": {},
+      "needs_check": false,
+      "claims": []
+    },
+    {
+      "index": 6,
       "text": "🇨🇭 Payhawk Reaches US$2 Billion Valuation in Goldman Sachs-Led Series C\n\nFintechnews Switzerland covers the story. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at $2 Billion.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at $2 Billion.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://fintechnews.ch/london/payhawk-2-billion-valuation-goldman-sachs/87209/",
       "link": "https://fintechnews.ch/london/payhawk-2-billion-valuation-goldman-sachs/87209/",
       "mention": {},
@@ -29,7 +55,7 @@
       "claims": []
     },
     {
-      "index": 4,
+      "index": 7,
       "text": "🇨🇭 Solving a 40-year puzzle in fusion energy\n\n20.11.26 - EPFL researchers have developed a theory explaining how fusion plasmas enter a state of improved energy confinement, addressing a longstanding problem in the design and operation of tokamak reactors.\n\nWhy it matters:\n📈 Energy and climate hardware is moving from subsidy toward genuine demand.\n🇨🇭 Switzerland combines deep materials science with disciplined engineering.\n🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.\n\nhttps://actu.epfl.ch/news/solving-a-40-year-puzzle-in-fusion-energy",
       "link": "https://actu.epfl.ch/news/solving-a-40-year-puzzle-in-fusion-energy",
       "mention": {},
@@ -37,7 +63,15 @@
       "claims": []
     },
     {
-      "index": 5,
+      "index": 8,
+      "text": "🇨🇭 Blue-chip stocks shield the Swiss stock market from major losses\n\n🇨🇭 Blue-chip stocks shield the Swiss stock market from major losses blue News\n\nWhy it matters:\n📈 Semiconductors sit under almost every growth market, from AI to defense to mobility.\n🇨🇭 Switzerland punches above its weight in specialised chips and advanced materials.\n🧭 Capital-efficient hardware built on Swiss research is core to the Climb thesis.\n\nhttps://www.bluewin.ch/en/news/blue-chip-stocks-shield-the-swiss-stock-market-from-major-losses-li.3680569",
+      "link": "https://www.bluewin.ch/en/news/blue-chip-stocks-shield-the-swiss-stock-market-from-major-losses-li.3680569",
+      "mention": {},
+      "needs_check": false,
+      "claims": []
+    },
+    {
+      "index": 9,
       "text": "🇨🇭 Experienced hands for supporters in the Swiss startup ecosystems\n\n🇨🇭 Former entrepreneurs behind some of Switzerland’s pioneering startups are returning to the startup ecosystem to support the next generation of founders with their expertise. Nicolas Durand is joining the Swiss Biotech Association, Matthias Peterhans the CSEM, and Michael Sauter Empa.\n\nWhy it matters:\n📈 Early biological insight compounds into products years before anyone names a company.\n🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.\n🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.\n\nhttps://www.startupticker.ch/en/news/experienced-hands-for-supporters-in-the-swiss-startup-ecosystems",
       "link": "https://www.startupticker.ch/en/news/experienced-hands-for-supporters-in-the-swiss-startup-ecosystems",
       "mention": {},
@@ -45,7 +79,15 @@
       "claims": []
     },
     {
-      "index": 6,
+      "index": 10,
+      "text": "🇨🇭 Swiss researchers identify new species of prehistoric reptile using...\n\nSWI swissinfo.ch covers the story. It is another data point in Switzerland's steady deep-tech build-out.\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.swissinfo.ch/eng/research-frontiers/swiss-researchers-identify-new-species-of-prehistoric-reptile-using-neutrons/92407747",
+      "link": "https://www.swissinfo.ch/eng/research-frontiers/swiss-researchers-identify-new-species-of-prehistoric-reptile-using-neutrons/92407747",
+      "mention": {},
+      "needs_check": false,
+      "claims": []
+    },
+    {
+      "index": 11,
       "text": "🇨🇭 Smeetz closes CHF 5.5 million Series A2 and turns profitable\n\n🇨🇭 Smeetz, the Swiss ticketing and dynamic pricing platform for leisure attractions, has closed a CHF 5.5 million Series A2 round led by Zurich-based QBIT Capital. The round is reported at CHF 5.5 m.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at CHF 5.5 m.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.startupticker.ch/en/news/smeetz-closes-chf-5-5-million-series-a2-and-turns-profitable",
       "link": "https://www.startupticker.ch/en/news/smeetz-closes-chf-5-5-million-series-a2-and-turns-profitable",
       "mention": {},
@@ -55,7 +97,7 @@
       ]
     },
     {
-      "index": 7,
+      "index": 12,
       "text": "🇨🇭 Graphenaton transitions to commercialization\n\nIn the midst of its market entry year, Graphenaton’s first product incorporating ABF Graphene films—an outdoor pergola heating system developed in collaboration with the French manufacturer Coublanc—will soon be available on the market.\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.startupticker.ch/en/news/gaphenaton-transitions-to-commercialization",
       "link": "https://www.startupticker.ch/en/news/gaphenaton-transitions-to-commercialization",
       "mention": {},
@@ -63,15 +105,7 @@
       "claims": []
     },
     {
-      "index": 8,
-      "text": "🇨🇭 Schweizer KMU: SwissCompanies.ch und SwissCompanies.ai setzen auf...\n\nSwiss-Press.com covers the story. It is another data point in Switzerland's steady deep-tech build-out.\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.swiss-press.com/swisscompanies-kmu-unternehmensinfos/1830713",
-      "link": "https://www.swiss-press.com/swisscompanies-kmu-unternehmensinfos/1830713",
-      "mention": {},
-      "needs_check": false,
-      "claims": []
-    },
-    {
-      "index": 9,
+      "index": 13,
       "text": "🇨🇭 VEDIC LAB builds momentum with natural, clinically proven hair-loss...\n\n🇨🇭 Based in Zug, VEDIC LAB combines Ayurvedic herb science with Swiss biotechnology to address hair loss and support scalp health. The round is reported at CHF 2 m.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at CHF 2 m.\n🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.\n🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.\n\nhttps://www.startupticker.ch/en/news/vedic-lab-builds-momentum-with-natural-clinically-proven-hair-loss-solutions",
       "link": "https://www.startupticker.ch/en/news/vedic-lab-builds-momentum-with-natural-clinically-proven-hair-loss-solutions",
       "mention": {},
@@ -81,7 +115,7 @@
       ]
     },
     {
-      "index": 10,
+      "index": 14,
       "text": "🇨🇭 Une première installation Lightswing Solar raccordée à Lullier\n\nLe raccordement éléctrique de la première installation à échelle 1:1 de Lightswing Solar est en cours de finalisation à Lullier, dans le Canton de Genève. Le développement de ce projet pilote doit beaucoup à SIG.\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.startupticker.ch/en/news/une-premiere-installation-lightwing-solar-raccordee-a-lullier",
       "link": "https://www.startupticker.ch/en/news/une-premiere-installation-lightwing-solar-raccordee-a-lullier",
       "mention": {},
@@ -89,18 +123,7 @@
       "claims": []
     },
     {
-      "index": 11,
-      "text": "🇨🇭 Global recognition for Swiss innovators\n\nProcavea, Treeless, Windtracx, CUTISS and PolaSight have impressed juries worldwide with their novel solutions, winning prizes including a €20,000 grant, global visibility and a ticket in a European and US accelerator program. The companies are addressing major challenges in healthcare and materials. The round is reported at €20,000.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at €20,000.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.startupticker.ch/en/news/global-recognition-for-swiss-innovators",
-      "link": "https://www.startupticker.ch/en/news/global-recognition-for-swiss-innovators",
-      "mention": {},
-      "needs_check": true,
-      "claims": [
-        "the post states €20,000: is that money received rather than a ceiling or a target, and has the round closed",
-        "the post states €20,000.: is that money received rather than a ceiling or a target, and has the round closed"
-      ]
-    },
-    {
-      "index": 12,
+      "index": 15,
       "text": "🇨🇭 Swiss Robotics Day spotlights physical AI as firms race in touch and...\n\nChosunbiz covers the story. Swiss robotics and applied AI keep moving from demo to deployment.\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://biz.chosun.com/en/en-science/2026/11/15/VFLKF7G2WVFJPAV4EUAEHEEVYU/",
       "link": "https://biz.chosun.com/en/en-science/2026/11/15/VFLKF7G2WVFJPAV4EUAEHEEVYU/",
       "mention": {},
@@ -108,22 +131,6 @@
       "claims": [
         "the company is Korea-Switzerland"
       ]
-    },
-    {
-      "index": 13,
-      "text": "🇨🇭 Top News Today: South Korea's Chip Profit Gap, AI Disrupts...\n\nAnalytics Insight covers the story in Sion. Swiss semiconductor work keeps turning academic research into industrial capability. The round is reported at USD 500M.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at USD 500M.\n🇨🇭 Switzerland punches above its weight in specialised chips and advanced materials.\n🧭 Capital-efficient hardware built on Swiss research is core to the Climb thesis.\n\nhttps://www.analyticsinsight.net/tech-news/top-news-today-south-koreas-chip-profit-gap-ai-disrupts-consulting-bitcoin-hub-in-switzerland-agile-robots-raises-usd-500m-spacex-plans-usd-74b-ai-expansion",
-      "link": "https://www.analyticsinsight.net/tech-news/top-news-today-south-koreas-chip-profit-gap-ai-disrupts-consulting-bitcoin-hub-in-switzerland-agile-robots-raises-usd-500m-spacex-plans-usd-74b-ai-expansion",
-      "mention": {},
-      "needs_check": true,
-      "claims": []
-    },
-    {
-      "index": 14,
-      "text": "🇨🇭 Awards for Western Switzerland Startups\n\nStartupticker covers the story. It is another data point in Switzerland's steady deep-tech build-out.\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.startupticker.ch/en/news/awards-for-western-switzerland-startups",
-      "link": "https://www.startupticker.ch/en/news/awards-for-western-switzerland-startups",
-      "mention": {},
-      "needs_check": false,
-      "claims": []
     }
   ]
 }
