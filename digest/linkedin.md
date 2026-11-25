@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 24 November 2026. 15 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 25 November 2026. 15 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -41,7 +41,55 @@ Report what was scheduled and what was held.
 
 The stories themselves are below.
 
-## 1. Research — published 24 November
+## 1. Round — published 25 November
+
+```
+🇨🇭 Synature raises CHF 5M to build the listening layer for animals
+
+🇨🇭 Synature, the Swiss EPFL spin-off turning animal sounds into actionable data, today announced CHF 5M in the first close of its seed round led by Anaïs Ventures. The round is reported at CHF 5M.
+
+Why it matters:
+💰 Capital keeps following Swiss deep science, this time at CHF 5M.
+🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
+🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
+
+https://www.startupticker.ch/en/news/synature-raises-chf-5m-led-by-anais-ventures-to-build-the-listening-layer-for-animals
+```
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/SynatureGr%C3%BCnder.jpg
+
+## 2. General — published 25 November
+
+```
+🇨🇭 Relai Stacks Adds Goal-Based Bitcoin Saving for Swiss and EU Users
+
+Fintechnews Switzerland covers the story. It is another data point in Switzerland's steady deep-tech build-out.
+
+Why it matters:
+📈 Deep technology is where durable, defensible companies get built.
+🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
+🧭 Backing that research early and capital-efficiently is what we do at Climb.
+
+https://fintechnews.ch/blockchain_bitcoin/relai-stacks-bitcoin-savings-goals/87337/
+```
+🖼️ **Article image:** https://fintechnewsch-22e90.kxcdn.com/wp-content/uploads/2026/11/Relai-Stacks-Adds-Goal-Based-Bitcoin-Saving-for-Swiss-and-EU-Users.webp
+
+## 3. General — published 25 November
+
+```
+🇨🇭 Agentic AI, Institutional Intelligence to Define Banking in 2027
+
+Fintechnews Switzerland covers the story. Swiss robotics and applied AI keep moving from demo to deployment.
+
+Why it matters:
+📈 Automation is shifting from pilots to real commercial operations.
+🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
+🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
+
+https://fintechnews.ch/aifintech/agentic-ai-institutional-intelligence-to-define-banking-in-2027/87160/
+```
+🖼️ **Article image:** https://fintechnewsch-22e90.kxcdn.com/wp-content/uploads/2026/11/Agentic-AI-Institutional-Intelligence-to-Define-Banking-in-2027.webp
+
+## 4. Research — published 24 November
 
 ```
 🇨🇭 In the age of AI, EPFL rethinks its study programmes
@@ -57,7 +105,7 @@ https://actu.epfl.ch/news/in-the-age-of-ai-epfl-rethinks-its-study-program-5
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 2. Round — published 23 November
+## 5. Round — published 23 November
 
 ```
 🇨🇭 Surelio raises CHF 1M to secure AI agents
@@ -73,7 +121,7 @@ https://www.startupticker.ch/en/news/surelio-raises-chf-1m-to-secure-ai-agents
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Surelio%20Founders.png
 
-## 3. Research — published 23 November
+## 6. Research — published 23 November
 
 ```
 🇨🇭 How proteins from viruses control genes
@@ -89,23 +137,7 @@ https://actu.epfl.ch/news/how-proteins-from-viruses-control-genes
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 4. General — published 23 November
-
-```
-🇨🇭 AI to Define to Banking Sector’s Agenda in 2027
-
-Fintechnews Switzerland covers the story. Swiss robotics and applied AI keep moving from demo to deployment.
-
-Why it matters:
-📈 Automation is shifting from pilots to real commercial operations.
-🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
-🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
-
-https://fintechnews.ch/aifintech/ai-to-define-to-banking-sectors-agenda-in-2027/87142/
-```
-🖼️ **Article image:** https://fintechnewsch-22e90.kxcdn.com/wp-content/uploads/2026/11/AI-to-Define-to-Banking-Sectors-Agenda-in-2027.webp
-
-## 5. General — published 22 November
+## 7. General — published 22 November
 
 ```
 🇨🇭 Quantencomputer: Schweizer Banken sind ungenügend vorbereitet
@@ -121,23 +153,7 @@ https://www.nau.ch/news/wirtschaft/quantencomputer-schweizer-banken-sind-ungenug
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 6. Round — published 20 November
-
-```
-🇨🇭 Payhawk Reaches US$2 Billion Valuation in Goldman Sachs-Led Series C
-
-Fintechnews Switzerland covers the story. It is another data point in Switzerland's steady deep-tech build-out. The round is reported at $2 Billion.
-
-Why it matters:
-💰 Capital keeps following Swiss deep science, this time at $2 Billion.
-🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
-🧭 Backing that research early and capital-efficiently is what we do at Climb.
-
-https://fintechnews.ch/london/payhawk-2-billion-valuation-goldman-sachs/87209/
-```
-🖼️ **Article image:** https://fintechnewsch-22e90.kxcdn.com/wp-content/uploads/2026/11/Payhawk-Reaches-US2-Billion-Valuation-in-Goldman-Sachs-Led-Series-C.webp
-
-## 7. Research — published 20 November
+## 8. Research — published 20 November
 
 ```
 🇨🇭 Solving a 40-year puzzle in fusion energy
@@ -150,22 +166,6 @@ Why it matters:
 🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.
 
 https://actu.epfl.ch/news/solving-a-40-year-puzzle-in-fusion-energy
-```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 8. General — published 20 November
-
-```
-🇨🇭 Blue-chip stocks shield the Swiss stock market from major losses
-
-🇨🇭 Blue-chip stocks shield the Swiss stock market from major losses blue News
-
-Why it matters:
-📈 Semiconductors sit under almost every growth market, from AI to defense to mobility.
-🇨🇭 Switzerland punches above its weight in specialised chips and advanced materials.
-🧭 Capital-efficient hardware built on Swiss research is core to the Climb thesis.
-
-https://www.bluewin.ch/en/news/blue-chip-stocks-shield-the-swiss-stock-market-from-major-losses-li.3680569
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
@@ -229,7 +229,7 @@ Why it matters:
 🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
 🧭 Backing that research early and capital-efficiently is what we do at Climb.
 
-https://www.startupticker.ch/en/news/gaphenaton-transitions-to-commercialization
+https://www.startupticker.ch/en/news/graphenaton-transitions-to-commercialization
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Coublanc%20Pergola%20Heather%20powered%20by%20%20Graphenaton%20coublanc.png
 
@@ -261,7 +261,7 @@ Why it matters:
 🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
 🧭 Backing that research early and capital-efficiently is what we do at Climb.
 
-https://www.startupticker.ch/en/news/une-premiere-installation-lightwing-solar-raccordee-a-lullier
+https://www.startupticker.ch/en/news/une-premiere-installation-lightswing-solar-raccordee-a-lullier
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Lightwing%20solar%20Lullier.JPG
 
