@@ -1,11 +1,19 @@
 {
-  "generated": "2026-11-25",
+  "generated": "2026-11-26",
   "mode": "Template drafts (set ANTHROPIC_API_KEY for AI-written posts).",
   "note": "Times are local. Schedule each post at its time on its date.",
   "cowork_prompt": "Open https://maxime-droux.com/digest/posts.json and schedule the posts listed at the end of this message, and only those. The file holds the shortlist; the list below says which of them I picked and when each one goes out. Match them by `index`. Ignore every other post in the file.\n\nFor each post, in order:\n- Type the `text` straight through, once, with real keystrokes. Never insert\n  text via JavaScript. It already ends with the article URL on its own line,\n  so do not add, move or retype the URL separately: typing it last is what makes\n  the link preview load the article photo.\n- Each post has exactly one @mention. Type `mention.type`, wait for the\n  dropdown, click the row matching `mention.expect`. If no row matches, post\n  it without the mention rather than tagging the wrong company. LinkedIn will\n  render the official name: that is expected and fine, do not fight it, do not\n  restart the post, do not rewrite it.\n- Schedule it at the date and time given for it in the list below. If no link\n  preview appears, schedule it anyway: do not hunt for an image.\n\nTwo attempts per post, then stop. If a post is not scheduled after two tries,\nleave it, move to the next one, and list it at the end. Never start a third.\n\nBefore you start, open the scheduled-posts list once and note what is already\nthere. Skip any post already scheduled: never schedule the same one twice.\n\nVerification:\n- Claims already settled against the article are not in the file. Check only\n  what `claims` still lists, and posts with needs_check: true (a figure nobody\n  has verified: confirm round closed / round name / amount received / investors\n  in THIS round). Both empty and false means schedule it, no research.\n\nAnything that fails: do not schedule it, and do not edit any file or commit\nanything. List the held posts at the end with the sentence you read and the\npage you read it on, and I will record them.\n\nReport what was scheduled and what was held.",
   "posts": [
     {
       "index": 1,
+      "text": "🇨🇭 Cleantech macht das Rennen beim Swiss Technology Award\n\n🇨🇭 Die Gewinnerinnen und Gewinner des diesjährigen Swiss Technology Award stehen fest. Die Auszeichnung ging an BTRY in der Kategorie Inventors, an Voltiris in der Kategorie Start-ups (Rising Stars) sowie an die Sefar Group in der Kategorie Industry Innovation.\n\nWhy it matters:\n📈 Energy and climate hardware is moving from subsidy toward genuine demand.\n🇨🇭 Switzerland combines deep materials science with disciplined engineering.\n🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.\n\nhttps://www.technologyfund.ch/fileadmin/user_upload/presse/2019/2019.04.10_Swiss_Shrimp_im_Final_des_Swiss_Economic_Award.pdf",
+      "link": "https://www.technologyfund.ch/fileadmin/user_upload/presse/2019/2019.04.10_Swiss_Shrimp_im_Final_des_Swiss_Economic_Award.pdf",
+      "mention": {},
+      "needs_check": false,
+      "claims": []
+    },
+    {
+      "index": 2,
       "text": "🇨🇭 Synature raises CHF 5M to build the listening layer for animals\n\n🇨🇭 Synature, the Swiss EPFL spin-off turning animal sounds into actionable data, today announced CHF 5M in the first close of its seed round led by Anaïs Ventures. The round is reported at CHF 5M.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at CHF 5M.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://www.startupticker.ch/en/news/synature-raises-chf-5m-led-by-anais-ventures-to-build-the-listening-layer-for-animals",
       "link": "https://www.startupticker.ch/en/news/synature-raises-chf-5m-led-by-anais-ventures-to-build-the-listening-layer-for-animals",
       "mention": {},
@@ -13,23 +21,7 @@
       "claims": []
     },
     {
-      "index": 2,
-      "text": "🇨🇭 Relai Stacks Adds Goal-Based Bitcoin Saving for Swiss and EU Users\n\nFintechnews Switzerland covers the story. It is another data point in Switzerland's steady deep-tech build-out.\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://fintechnews.ch/blockchain_bitcoin/relai-stacks-bitcoin-savings-goals/87337/",
-      "link": "https://fintechnews.ch/blockchain_bitcoin/relai-stacks-bitcoin-savings-goals/87337/",
-      "mention": {},
-      "needs_check": false,
-      "claims": []
-    },
-    {
       "index": 3,
-      "text": "🇨🇭 Agentic AI, Institutional Intelligence to Define Banking in 2027\n\nFintechnews Switzerland covers the story. Swiss robotics and applied AI keep moving from demo to deployment.\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://fintechnews.ch/aifintech/agentic-ai-institutional-intelligence-to-define-banking-in-2027/87160/",
-      "link": "https://fintechnews.ch/aifintech/agentic-ai-institutional-intelligence-to-define-banking-in-2027/87160/",
-      "mention": {},
-      "needs_check": false,
-      "claims": []
-    },
-    {
-      "index": 4,
       "text": "🇨🇭 In the age of AI, EPFL rethinks its study programmes\n\nEPFL News covers the story in Sion. Swiss robotics and applied AI keep moving from demo to deployment.\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://actu.epfl.ch/news/in-the-age-of-ai-epfl-rethinks-its-study-program-5",
       "link": "https://actu.epfl.ch/news/in-the-age-of-ai-epfl-rethinks-its-study-program-5",
       "mention": {},
@@ -37,7 +29,7 @@
       "claims": []
     },
     {
-      "index": 5,
+      "index": 4,
       "text": "🇨🇭 Surelio raises CHF 1M to secure AI agents\n\nSurelio just raised CHF 1 million to help companies secure their AI agents. The round was led by a Geneva-based investment fund, with business angels who hold executive roles at international companies. The round is reported at CHF 1M.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at CHF 1M.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://www.startupticker.ch/en/news/surelio-raises-chf-1m-to-secure-ai-agents",
       "link": "https://www.startupticker.ch/en/news/surelio-raises-chf-1m-to-secure-ai-agents",
       "mention": {},
@@ -47,7 +39,7 @@
       ]
     },
     {
-      "index": 6,
+      "index": 5,
       "text": "🇨🇭 How proteins from viruses control genes\n\n23.11.26 - EPFL researchers have identified a family of proteins that keeps ancient mobile DNA sequences under control through an unexpected form of gene regulation.\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://actu.epfl.ch/news/how-proteins-from-viruses-control-genes",
       "link": "https://actu.epfl.ch/news/how-proteins-from-viruses-control-genes",
       "mention": {},
@@ -55,15 +47,7 @@
       "claims": []
     },
     {
-      "index": 7,
-      "text": "🇨🇭 Quantencomputer: Schweizer Banken sind ungenügend vorbereitet\n\nQuantencomputer: Schweizer Banken sind ungenügend vorbereitet Nau\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.nau.ch/news/wirtschaft/quantencomputer-schweizer-banken-sind-ungenugend-vorbereitet-67204934",
-      "link": "https://www.nau.ch/news/wirtschaft/quantencomputer-schweizer-banken-sind-ungenugend-vorbereitet-67204934",
-      "mention": {},
-      "needs_check": false,
-      "claims": []
-    },
-    {
-      "index": 8,
+      "index": 6,
       "text": "🇨🇭 Solving a 40-year puzzle in fusion energy\n\n20.11.26 - EPFL researchers have developed a theory explaining how fusion plasmas enter a state of improved energy confinement, addressing a longstanding problem in the design and operation of tokamak reactors.\n\nWhy it matters:\n📈 Energy and climate hardware is moving from subsidy toward genuine demand.\n🇨🇭 Switzerland combines deep materials science with disciplined engineering.\n🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.\n\nhttps://actu.epfl.ch/news/solving-a-40-year-puzzle-in-fusion-energy",
       "link": "https://actu.epfl.ch/news/solving-a-40-year-puzzle-in-fusion-energy",
       "mention": {},
@@ -71,7 +55,15 @@
       "claims": []
     },
     {
-      "index": 9,
+      "index": 7,
+      "text": "🇨🇭 Milestone FDA Clearance paves way for Multiwave U.S. Launch\n\nStartupticker covers the story. It is another data point in Switzerland's steady deep-tech build-out.\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.startupticker.ch/en/news/milestone-fda-clearance-paves-way-for-multiwave-u-s-launch",
+      "link": "https://www.startupticker.ch/en/news/milestone-fda-clearance-paves-way-for-multiwave-u-s-launch",
+      "mention": {},
+      "needs_check": false,
+      "claims": []
+    },
+    {
+      "index": 8,
       "text": "🇨🇭 Experienced hands for supporters in the Swiss startup ecosystems\n\n🇨🇭 Former entrepreneurs behind some of Switzerland’s pioneering startups are returning to the startup ecosystem to support the next generation of founders with their expertise. Nicolas Durand is joining the Swiss Biotech Association, Matthias Peterhans the CSEM, and Michael Sauter Empa.\n\nWhy it matters:\n📈 Early biological insight compounds into products years before anyone names a company.\n🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.\n🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.\n\nhttps://www.startupticker.ch/en/news/experienced-hands-for-supporters-in-the-swiss-startup-ecosystems",
       "link": "https://www.startupticker.ch/en/news/experienced-hands-for-supporters-in-the-swiss-startup-ecosystems",
       "mention": {},
@@ -79,15 +71,7 @@
       "claims": []
     },
     {
-      "index": 10,
-      "text": "🇨🇭 Swiss researchers identify new species of prehistoric reptile using...\n\nSWI swissinfo.ch covers the story. It is another data point in Switzerland's steady deep-tech build-out.\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.swissinfo.ch/eng/research-frontiers/swiss-researchers-identify-new-species-of-prehistoric-reptile-using-neutrons/92407747",
-      "link": "https://www.swissinfo.ch/eng/research-frontiers/swiss-researchers-identify-new-species-of-prehistoric-reptile-using-neutrons/92407747",
-      "mention": {},
-      "needs_check": false,
-      "claims": []
-    },
-    {
-      "index": 11,
+      "index": 9,
       "text": "🇨🇭 Smeetz closes CHF 5.5 million Series A2 and turns profitable\n\n🇨🇭 Smeetz, the Swiss ticketing and dynamic pricing platform for leisure attractions, has closed a CHF 5.5 million Series A2 round led by Zurich-based QBIT Capital. The round is reported at CHF 5.5 m.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at CHF 5.5 m.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.startupticker.ch/en/news/smeetz-closes-chf-5-5-million-series-a2-and-turns-profitable",
       "link": "https://www.startupticker.ch/en/news/smeetz-closes-chf-5-5-million-series-a2-and-turns-profitable",
       "mention": {},
@@ -97,7 +81,7 @@
       ]
     },
     {
-      "index": 12,
+      "index": 10,
       "text": "🇨🇭 Graphenaton transitions to commercialization\n\nIn the midst of its market entry year, Graphenaton’s first product incorporating ABF Graphene films—an outdoor pergola heating system developed in collaboration with the French manufacturer Coublanc—will soon be available on the market.\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.startupticker.ch/en/news/graphenaton-transitions-to-commercialization",
       "link": "https://www.startupticker.ch/en/news/graphenaton-transitions-to-commercialization",
       "mention": {},
@@ -105,17 +89,7 @@
       "claims": []
     },
     {
-      "index": 13,
-      "text": "🇨🇭 VEDIC LAB builds momentum with natural, clinically proven hair-loss...\n\n🇨🇭 Based in Zug, VEDIC LAB combines Ayurvedic herb science with Swiss biotechnology to address hair loss and support scalp health. The round is reported at CHF 2 m.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at CHF 2 m.\n🇨🇭 Swiss academic biology remains one of Europe's most underrated sources of DeepTech company creation.\n🧭 Patient capital behind rigorous science is what turns Swiss labs into global businesses.\n\nhttps://www.startupticker.ch/en/news/vedic-lab-builds-momentum-with-natural-clinically-proven-hair-loss-solutions",
-      "link": "https://www.startupticker.ch/en/news/vedic-lab-builds-momentum-with-natural-clinically-proven-hair-loss-solutions",
-      "mention": {},
-      "needs_check": true,
-      "claims": [
-        "the post states CHF 2 m: is that money received rather than a ceiling or a target, and has the round closed"
-      ]
-    },
-    {
-      "index": 14,
+      "index": 11,
       "text": "🇨🇭 Une première installation Lightswing Solar raccordée à Lullier\n\nLe raccordement éléctrique de la première installation à échelle 1:1 de Lightswing Solar est en cours de finalisation à Lullier, dans le Canton de Genève. Le développement de ce projet pilote doit beaucoup à SIG.\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.startupticker.ch/en/news/une-premiere-installation-lightswing-solar-raccordee-a-lullier",
       "link": "https://www.startupticker.ch/en/news/une-premiere-installation-lightswing-solar-raccordee-a-lullier",
       "mention": {},
@@ -123,14 +97,12 @@
       "claims": []
     },
     {
-      "index": 15,
-      "text": "🇨🇭 Swiss Robotics Day spotlights physical AI as firms race in touch and...\n\nChosunbiz covers the story. Swiss robotics and applied AI keep moving from demo to deployment.\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://biz.chosun.com/en/en-science/2026/11/15/VFLKF7G2WVFJPAV4EUAEHEEVYU/",
-      "link": "https://biz.chosun.com/en/en-science/2026/11/15/VFLKF7G2WVFJPAV4EUAEHEEVYU/",
+      "index": 12,
+      "text": "🇨🇭 VEDIC LAB builds momentum with natural, clinically proven hair-loss...\n\nStartupticker covers the story. It is another data point in Switzerland's steady deep-tech build-out.\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.startupticker.ch/en/news/vedic-lab-builds-momentum-with-natural-clinically-proven-hair-loss-solutions",
+      "link": "https://www.startupticker.ch/en/news/vedic-lab-builds-momentum-with-natural-clinically-proven-hair-loss-solutions",
       "mention": {},
       "needs_check": false,
-      "claims": [
-        "the company is Korea-Switzerland"
-      ]
+      "claims": []
     }
   ]
 }
