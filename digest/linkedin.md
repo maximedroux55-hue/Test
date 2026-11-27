@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 26 November 2026. 12 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 27 November 2026. 14 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -41,12 +41,76 @@ Report what was scheduled and what was held.
 
 The stories themselves are below.
 
-## 1. Grant — published 26 November
+## 1. Round — published 27 November
+
+```
+🇨🇭 Nextesy, Swiss AI Startup with Balkan Roots, Raises €9M Seed Led by...
+
+The Recursive covers the story. Swiss robotics and applied AI keep moving from demo to deployment. The round is reported at €9M.
+
+Why it matters:
+💰 Capital keeps following Swiss deep science, this time at €9M.
+🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
+🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
+
+https://www.therecursive.com/nextesy-swiss-ai-startup-with-balkan-roots-raises-eur9m-seed-led-by-swisscom-ventures/
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 2. Round — published 27 November
+
+```
+🇨🇭 Swiss AI scouting startup Footbao raises $599K, signs Corinthians
+
+🇨🇭 Swiss AI scouting startup Footbao raises $599K, signs Corinthians Dealroom The round is reported at $599.
+
+Why it matters:
+💰 Capital keeps following Swiss deep science, this time at $599.
+🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
+🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
+
+https://app.dealroom.co/news/note/swiss-ai-scouting-startup-footbao-raises-599k-signs-corinthians
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 3. Research — published 27 November
+
+```
+🇨🇭 When moving in a crowd, peripheral vision takes over
+
+EPFL News covers the story in Sion. Swiss robotics and applied AI keep moving from demo to deployment.
+
+Why it matters:
+📈 Automation is shifting from pilots to real commercial operations.
+🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.
+🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.
+
+https://actu.epfl.ch/news/when-moving-in-a-crowd-peripheral-vision-takes-o-2
+```
+🖼️ **Article image:** none found, grab one from the article page.
+
+## 4. General — published 26 November
+
+```
+🇨🇭 Investoren, Verbände und Kantone wollen Pensionskassen zu...
+
+🇨🇭 Eine neue Initiative von Kantonen, Investoren, Deep Tech Nation Switzerland Foundation, economiesuisse und der Swiss Startup Association will Pensionskassen und Venture Capital näher zusammenbringen.
+
+Why it matters:
+📈 Deep technology is where durable, defensible companies get built.
+🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
+🧭 Backing that research early and capital-efficiently is what we do at Climb.
+
+https://www.startupticker.ch/en/news/investoren-verbaende-und-kantone-wollen-pensionskassen-zu-vc-investments-motivieren
+```
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/symbolbilder/Wachstum4iStockGetty.jpg
+
+## 5. Grant — published 26 November
 
 ```
 🇨🇭 Cleantech macht das Rennen beim Swiss Technology Award
 
-🇨🇭 Die Gewinnerinnen und Gewinner des diesjährigen Swiss Technology Award stehen fest. Die Auszeichnung ging an BTRY in der Kategorie Inventors, an Voltiris in der Kategorie Start-ups (Rising Stars) sowie an die Sefar Group in der Kategorie Industry Innovation.
+🇨🇭 Cleantech macht das Rennen beim Swiss Technology Award Startupticker.ch
 
 Why it matters:
 📈 Energy and climate hardware is moving from subsidy toward genuine demand.
@@ -58,7 +122,7 @@ https://www.technologyfund.ch/fileadmin/user_upload/presse/2019/2019.04.10_Swiss
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/SwissTechnologyAward26.jpg
 🔗 **Links to the original source.**
 
-## 2. Round — published 25 November
+## 6. Round — published 25 November
 
 ```
 🇨🇭 Synature raises CHF 5M to build the listening layer for animals
@@ -74,7 +138,7 @@ https://www.startupticker.ch/en/news/synature-raises-chf-5m-led-by-anais-venture
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/SynatureGr%C3%BCnder.jpg
 
-## 3. Research — published 24 November
+## 7. Research — published 24 November
 
 ```
 🇨🇭 In the age of AI, EPFL rethinks its study programmes
@@ -90,7 +154,7 @@ https://actu.epfl.ch/news/in-the-age-of-ai-epfl-rethinks-its-study-program-5
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 4. Round — published 23 November
+## 8. Round — published 23 November
 
 ```
 🇨🇭 Surelio raises CHF 1M to secure AI agents
@@ -106,7 +170,7 @@ https://www.startupticker.ch/en/news/surelio-raises-chf-1m-to-secure-ai-agents
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Surelio%20Founders.png
 
-## 5. Research — published 23 November
+## 9. Research — published 23 November
 
 ```
 🇨🇭 How proteins from viruses control genes
@@ -122,7 +186,7 @@ https://actu.epfl.ch/news/how-proteins-from-viruses-control-genes
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 6. Research — published 20 November
+## 10. Research — published 20 November
 
 ```
 🇨🇭 Solving a 40-year puzzle in fusion energy
@@ -138,7 +202,7 @@ https://actu.epfl.ch/news/solving-a-40-year-puzzle-in-fusion-energy
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 7. Partnership — published 20 November
+## 11. Partnership — published 20 November
 
 ```
 🇨🇭 Milestone FDA Clearance paves way for Multiwave U.S. Launch
@@ -154,7 +218,7 @@ https://www.startupticker.ch/en/news/milestone-fda-clearance-paves-way-for-multi
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Multiwave%20founders.jpeg
 
-## 8. General — published 19 November
+## 12. General — published 19 November
 
 ```
 🇨🇭 Experienced hands for supporters in the Swiss startup ecosystems
@@ -170,7 +234,7 @@ https://www.startupticker.ch/en/news/experienced-hands-for-supporters-in-the-swi
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Supporter_experts_people.png
 
-## 9. General — published 18 November
+## 13. General — published 18 November
 
 ```
 🇨🇭 Smeetz closes CHF 5.5 million Series A2 and turns profitable
@@ -186,7 +250,7 @@ https://www.startupticker.ch/en/news/smeetz-closes-chf-5-5-million-series-a2-and
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/pexels-alessio-cesario-975080-1906839.jpg
 
-## 10. General — published 18 November
+## 14. General — published 18 November
 
 ```
 🇨🇭 Graphenaton transitions to commercialization
@@ -201,36 +265,4 @@ Why it matters:
 https://www.startupticker.ch/en/news/graphenaton-transitions-to-commercialization
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Coublanc%20Pergola%20Heather%20powered%20by%20%20Graphenaton%20coublanc.png
-
-## 11. General — published 16 November
-
-```
-🇨🇭 Une première installation Lightswing Solar raccordée à Lullier
-
-Le raccordement éléctrique de la première installation à échelle 1:1 de Lightswing Solar est en cours de finalisation à Lullier, dans le Canton de Genève. Le développement de ce projet pilote doit beaucoup à SIG.
-
-Why it matters:
-📈 Deep technology is where durable, defensible companies get built.
-🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
-🧭 Backing that research early and capital-efficiently is what we do at Climb.
-
-https://www.startupticker.ch/en/news/une-premiere-installation-lightswing-solar-raccordee-a-lullier
-```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Lightwing%20solar%20Lullier.JPG
-
-## 12. Round — published 16 November
-
-```
-🇨🇭 VEDIC LAB builds momentum with natural, clinically proven hair-loss...
-
-Startupticker covers the story. It is another data point in Switzerland's steady deep-tech build-out.
-
-Why it matters:
-📈 Deep technology is where durable, defensible companies get built.
-🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
-🧭 Backing that research early and capital-efficiently is what we do at Climb.
-
-https://www.startupticker.ch/en/news/vedic-lab-builds-momentum-with-natural-clinically-proven-hair-loss-solutions
-```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/VedicLab_cofounder_products.png
 
