@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-27",
+  "generated": "2026-11-28",
   "mode": "Template drafts (set ANTHROPIC_API_KEY for AI-written posts).",
   "note": "Times are local. Schedule each post at its time on its date.",
   "cowork_prompt": "Open https://maxime-droux.com/digest/posts.json and schedule the posts listed at the end of this message, and only those. The file holds the shortlist; the list below says which of them I picked and when each one goes out. Match them by `index`. Ignore every other post in the file.\n\nFor each post, in order:\n- Type the `text` straight through, once, with real keystrokes. Never insert\n  text via JavaScript. It already ends with the article URL on its own line,\n  so do not add, move or retype the URL separately: typing it last is what makes\n  the link preview load the article photo.\n- Each post has exactly one @mention. Type `mention.type`, wait for the\n  dropdown, click the row matching `mention.expect`. If no row matches, post\n  it without the mention rather than tagging the wrong company. LinkedIn will\n  render the official name: that is expected and fine, do not fight it, do not\n  restart the post, do not rewrite it.\n- Schedule it at the date and time given for it in the list below. If no link\n  preview appears, schedule it anyway: do not hunt for an image.\n\nTwo attempts per post, then stop. If a post is not scheduled after two tries,\nleave it, move to the next one, and list it at the end. Never start a third.\n\nBefore you start, open the scheduled-posts list once and note what is already\nthere. Skip any post already scheduled: never schedule the same one twice.\n\nVerification:\n- Claims already settled against the article are not in the file. Check only\n  what `claims` still lists, and posts with needs_check: true (a figure nobody\n  has verified: confirm round closed / round name / amount received / investors\n  in THIS round). Both empty and false means schedule it, no research.\n\nAnything that fails: do not schedule it, and do not edit any file or commit\nanything. List the held posts at the end with the sentence you read and the\npage you read it on, and I will record them.\n\nReport what was scheduled and what was held.",
@@ -28,6 +28,17 @@
     },
     {
       "index": 3,
+      "text": "🇨🇭 Mobile energy startup emost secures two SECO contracts worth CHF 10...\n\n🇨🇭 Zurich-based emost has been awarded two Swiss government contracts worth more than CHF 10 million to provide mobile battery systems to Ukraine. The round is reported at CHF 10 m.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at CHF 10 m.\n🇨🇭 Switzerland combines deep materials science with disciplined engineering.\n🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.\n\nhttps://www.startupticker.ch/en/news/mobile-energy-startup-emost-secures-two-seco-contracts-worth-chf-10-million",
+      "link": "https://www.startupticker.ch/en/news/mobile-energy-startup-emost-secures-two-seco-contracts-worth-chf-10-million",
+      "mention": {},
+      "needs_check": true,
+      "claims": [
+        "the post states CHF 10...: is that money received rather than a ceiling or a target, and has the round closed",
+        "the post states CHF 10 m: is that money received rather than a ceiling or a target, and has the round closed"
+      ]
+    },
+    {
+      "index": 4,
       "text": "🇨🇭 When moving in a crowd, peripheral vision takes over\n\nEPFL News covers the story in Sion. Swiss robotics and applied AI keep moving from demo to deployment.\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://actu.epfl.ch/news/when-moving-in-a-crowd-peripheral-vision-takes-o-2",
       "link": "https://actu.epfl.ch/news/when-moving-in-a-crowd-peripheral-vision-takes-o-2",
       "mention": {},
@@ -35,7 +46,7 @@
       "claims": []
     },
     {
-      "index": 4,
+      "index": 5,
       "text": "🇨🇭 Investoren, Verbände und Kantone wollen Pensionskassen zu...\n\n🇨🇭 Eine neue Initiative von Kantonen, Investoren, Deep Tech Nation Switzerland Foundation, economiesuisse und der Swiss Startup Association will Pensionskassen und Venture Capital näher zusammenbringen.\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.startupticker.ch/en/news/investoren-verbaende-und-kantone-wollen-pensionskassen-zu-vc-investments-motivieren",
       "link": "https://www.startupticker.ch/en/news/investoren-verbaende-und-kantone-wollen-pensionskassen-zu-vc-investments-motivieren",
       "mention": {},
@@ -43,7 +54,7 @@
       "claims": []
     },
     {
-      "index": 5,
+      "index": 6,
       "text": "🇨🇭 Cleantech macht das Rennen beim Swiss Technology Award\n\n🇨🇭 Cleantech macht das Rennen beim Swiss Technology Award Startupticker.ch\n\nWhy it matters:\n📈 Energy and climate hardware is moving from subsidy toward genuine demand.\n🇨🇭 Switzerland combines deep materials science with disciplined engineering.\n🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.\n\nhttps://www.technologyfund.ch/fileadmin/user_upload/presse/2019/2019.04.10_Swiss_Shrimp_im_Final_des_Swiss_Economic_Award.pdf",
       "link": "https://www.technologyfund.ch/fileadmin/user_upload/presse/2019/2019.04.10_Swiss_Shrimp_im_Final_des_Swiss_Economic_Award.pdf",
       "mention": {},
@@ -51,7 +62,7 @@
       "claims": []
     },
     {
-      "index": 6,
+      "index": 7,
       "text": "🇨🇭 Synature raises CHF 5M to build the listening layer for animals\n\n🇨🇭 Synature, the Swiss EPFL spin-off turning animal sounds into actionable data, today announced CHF 5M in the first close of its seed round led by Anaïs Ventures. The round is reported at CHF 5M.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at CHF 5M.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://www.startupticker.ch/en/news/synature-raises-chf-5m-led-by-anais-ventures-to-build-the-listening-layer-for-animals",
       "link": "https://www.startupticker.ch/en/news/synature-raises-chf-5m-led-by-anais-ventures-to-build-the-listening-layer-for-animals",
       "mention": {},
@@ -59,7 +70,7 @@
       "claims": []
     },
     {
-      "index": 7,
+      "index": 8,
       "text": "🇨🇭 In the age of AI, EPFL rethinks its study programmes\n\nEPFL News covers the story in Sion. Swiss robotics and applied AI keep moving from demo to deployment.\n\nWhy it matters:\n📈 Automation is shifting from pilots to real commercial operations.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://actu.epfl.ch/news/in-the-age-of-ai-epfl-rethinks-its-study-program-5",
       "link": "https://actu.epfl.ch/news/in-the-age-of-ai-epfl-rethinks-its-study-program-5",
       "mention": {},
@@ -67,7 +78,7 @@
       "claims": []
     },
     {
-      "index": 8,
+      "index": 9,
       "text": "🇨🇭 Surelio raises CHF 1M to secure AI agents\n\nSurelio just raised CHF 1 million to help companies secure their AI agents. The round was led by a Geneva-based investment fund, with business angels who hold executive roles at international companies. The round is reported at CHF 1M.\n\nWhy it matters:\n💰 Capital keeps following Swiss deep science, this time at CHF 1M.\n🇨🇭 Switzerland's robotics ecosystem, anchored by ETH and EPFL, is world class.\n🧭 Hard engineering with a clear path to revenue is the Swiss DeepTech we back at Climb.\n\nhttps://www.startupticker.ch/en/news/surelio-raises-chf-1m-to-secure-ai-agents",
       "link": "https://www.startupticker.ch/en/news/surelio-raises-chf-1m-to-secure-ai-agents",
       "mention": {},
@@ -77,17 +88,9 @@
       ]
     },
     {
-      "index": 9,
+      "index": 10,
       "text": "🇨🇭 How proteins from viruses control genes\n\n23.11.26 - EPFL researchers have identified a family of proteins that keeps ancient mobile DNA sequences under control through an unexpected form of gene regulation.\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://actu.epfl.ch/news/how-proteins-from-viruses-control-genes",
       "link": "https://actu.epfl.ch/news/how-proteins-from-viruses-control-genes",
-      "mention": {},
-      "needs_check": false,
-      "claims": []
-    },
-    {
-      "index": 10,
-      "text": "🇨🇭 Solving a 40-year puzzle in fusion energy\n\n20.11.26 - EPFL researchers have developed a theory explaining how fusion plasmas enter a state of improved energy confinement, addressing a longstanding problem in the design and operation of tokamak reactors.\n\nWhy it matters:\n📈 Energy and climate hardware is moving from subsidy toward genuine demand.\n🇨🇭 Switzerland combines deep materials science with disciplined engineering.\n🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.\n\nhttps://actu.epfl.ch/news/solving-a-40-year-puzzle-in-fusion-energy",
-      "link": "https://actu.epfl.ch/news/solving-a-40-year-puzzle-in-fusion-energy",
       "mention": {},
       "needs_check": false,
       "claims": []
@@ -117,14 +120,6 @@
       "claims": [
         "the post states CHF 5.5 m: is that money received rather than a ceiling or a target, and has the round closed"
       ]
-    },
-    {
-      "index": 14,
-      "text": "🇨🇭 Graphenaton transitions to commercialization\n\nIn the midst of its market entry year, Graphenaton’s first product incorporating ABF Graphene films—an outdoor pergola heating system developed in collaboration with the French manufacturer Coublanc—will soon be available on the market.\n\nWhy it matters:\n📈 Deep technology is where durable, defensible companies get built.\n🇨🇭 Switzerland turns world-class research into companies with unusual consistency.\n🧭 Backing that research early and capital-efficiently is what we do at Climb.\n\nhttps://www.startupticker.ch/en/news/graphenaton-transitions-to-commercialization",
-      "link": "https://www.startupticker.ch/en/news/graphenaton-transitions-to-commercialization",
-      "mention": {},
-      "needs_check": false,
-      "claims": []
     }
   ]
 }

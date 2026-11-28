@@ -1,5 +1,5 @@
 # Climb Ventures Swiss DeepTech shortlist
-_Generated 27 November 2026. 14 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
+_Generated 28 November 2026. 13 stories from the last 10 days, newest published first. Template drafts (set ANTHROPIC_API_KEY for AI-written posts). Pick the ones worth posting; the page at maxime-droux.com/plan builds the Cowork instruction from your picks. Review and edit before posting._
 
 ## Publish with Claude Cowork
 The instruction below schedules whichever posts you name at the end of it (it reads the structured file `digest/posts.json` next to this one). The web page writes that list for you:
@@ -73,7 +73,23 @@ https://app.dealroom.co/news/note/swiss-ai-scouting-startup-footbao-raises-599k-
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 3. Research — published 27 November
+## 3. General — published 27 November
+
+```
+🇨🇭 Mobile energy startup emost secures two SECO contracts worth CHF 10...
+
+🇨🇭 Zurich-based emost has been awarded two Swiss government contracts worth more than CHF 10 million to provide mobile battery systems to Ukraine. The round is reported at CHF 10 m.
+
+Why it matters:
+💰 Capital keeps following Swiss deep science, this time at CHF 10 m.
+🇨🇭 Switzerland combines deep materials science with disciplined engineering.
+🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.
+
+https://www.startupticker.ch/en/news/mobile-energy-startup-emost-secures-two-seco-contracts-worth-chf-10-million
+```
+🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/emost_systems.png
+
+## 4. Research — published 27 November
 
 ```
 🇨🇭 When moving in a crowd, peripheral vision takes over
@@ -89,7 +105,7 @@ https://actu.epfl.ch/news/when-moving-in-a-crowd-peripheral-vision-takes-o-2
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 4. General — published 26 November
+## 5. General — published 26 November
 
 ```
 🇨🇭 Investoren, Verbände und Kantone wollen Pensionskassen zu...
@@ -105,7 +121,7 @@ https://www.startupticker.ch/en/news/investoren-verbaende-und-kantone-wollen-pen
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/symbolbilder/Wachstum4iStockGetty.jpg
 
-## 5. Grant — published 26 November
+## 6. Grant — published 26 November
 
 ```
 🇨🇭 Cleantech macht das Rennen beim Swiss Technology Award
@@ -122,7 +138,7 @@ https://www.technologyfund.ch/fileadmin/user_upload/presse/2019/2019.04.10_Swiss
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/SwissTechnologyAward26.jpg
 🔗 **Links to the original source.**
 
-## 6. Round — published 25 November
+## 7. Round — published 25 November
 
 ```
 🇨🇭 Synature raises CHF 5M to build the listening layer for animals
@@ -138,7 +154,7 @@ https://www.startupticker.ch/en/news/synature-raises-chf-5m-led-by-anais-venture
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/SynatureGr%C3%BCnder.jpg
 
-## 7. Research — published 24 November
+## 8. Research — published 24 November
 
 ```
 🇨🇭 In the age of AI, EPFL rethinks its study programmes
@@ -154,7 +170,7 @@ https://actu.epfl.ch/news/in-the-age-of-ai-epfl-rethinks-its-study-program-5
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
-## 8. Round — published 23 November
+## 9. Round — published 23 November
 
 ```
 🇨🇭 Surelio raises CHF 1M to secure AI agents
@@ -170,7 +186,7 @@ https://www.startupticker.ch/en/news/surelio-raises-chf-1m-to-secure-ai-agents
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Surelio%20Founders.png
 
-## 9. Research — published 23 November
+## 10. Research — published 23 November
 
 ```
 🇨🇭 How proteins from viruses control genes
@@ -183,22 +199,6 @@ Why it matters:
 🧭 Backing that research early and capital-efficiently is what we do at Climb.
 
 https://actu.epfl.ch/news/how-proteins-from-viruses-control-genes
-```
-🖼️ **Article image:** none found, grab one from the article page.
-
-## 10. Research — published 20 November
-
-```
-🇨🇭 Solving a 40-year puzzle in fusion energy
-
-20.11.26 - EPFL researchers have developed a theory explaining how fusion plasmas enter a state of improved energy confinement, addressing a longstanding problem in the design and operation of tokamak reactors.
-
-Why it matters:
-📈 Energy and climate hardware is moving from subsidy toward genuine demand.
-🇨🇭 Switzerland combines deep materials science with disciplined engineering.
-🧭 Capital-efficient climate hardware fits squarely in the Climb thesis.
-
-https://actu.epfl.ch/news/solving-a-40-year-puzzle-in-fusion-energy
 ```
 🖼️ **Article image:** none found, grab one from the article page.
 
@@ -249,20 +249,4 @@ Why it matters:
 https://www.startupticker.ch/en/news/smeetz-closes-chf-5-5-million-series-a2-and-turns-profitable
 ```
 🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/pexels-alessio-cesario-975080-1906839.jpg
-
-## 14. General — published 18 November
-
-```
-🇨🇭 Graphenaton transitions to commercialization
-
-In the midst of its market entry year, Graphenaton’s first product incorporating ABF Graphene films—an outdoor pergola heating system developed in collaboration with the French manufacturer Coublanc—will soon be available on the market.
-
-Why it matters:
-📈 Deep technology is where durable, defensible companies get built.
-🇨🇭 Switzerland turns world-class research into companies with unusual consistency.
-🧭 Backing that research early and capital-efficiently is what we do at Climb.
-
-https://www.startupticker.ch/en/news/graphenaton-transitions-to-commercialization
-```
-🖼️ **Article image:** https://www.startupticker.ch/assets/images/articles/Coublanc%20Pergola%20Heather%20powered%20by%20%20Graphenaton%20coublanc.png
 
